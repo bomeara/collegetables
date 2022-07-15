@@ -1,0 +1,114 @@
+---
+title: College Tables
+output:
+  html_document:
+    includes:
+       in_header: GA_Script.html
+params:
+  sumtab: "unknown"
+---
+
+My kids are looking at colleges; this aggregates information that may be useful for them but which is harder to get from existing websites.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+source("_packages.R")
+source("R/functions.R")
+tar_load(hospital_knox)
+tar_load(daily_focal)
+tar_load(tn_death_predictions)
+tar_load(tn_death_history)
+tar_load(cdc_all_reports)
+cdc_knox <- GetCommunityLevel(subset(cdc_all_reports, FIPS==047093))
+cdc_knox$County <- "Knox"
+cdc_anderson <- GetCommunityLevel(subset(cdc_all_reports, FIPS==047001))
+cdc_anderson$County <- "Anderson"
+cdc_local <- rbind(cdc_knox, cdc_anderson) 
+cdc_local <- subset(cdc_local, Cases_7_days_per_100K_County>0) # since these reflect lack of reporting
+cdc_local$Date <- as.Date(cdc_local$ReportDate, format="%Y%m%d")
+counties_in_hospital_region <- FocalCountiesEastTN()
+last_hospital_update <- max(hospital_knox$Date)
+#daily_focal$PercentActive <- 100*daily_focal$TOTAL_ACTIVE/daily_focal$Population
+daily_focal$PercentDead <- 100*daily_focal$TOTAL_DEATHS/daily_focal$Population
+daily_focal$PercentHospitalized <- 100*daily_focal$TOTAL_HOSPITALIZED/daily_focal$Population
+daily_focal$PercentConfirmed <- 100*daily_focal$TOTAL_CONFIRMED/daily_focal$Population
+daily_region <- subset(daily_focal, Region=="East TN")
+#current_active_region <- daily_region$PercentActive[which.max(daily_region$DATE)]
+current_percent_dead_region <- daily_region$PercentDead[which.max(daily_region$DATE)]
+current_percent_hospitalized_region <- daily_region$PercentHospitalized[which.max(daily_region$DATE)]
+current_percent_confirmed_region <- daily_region$PercentConfirmed[which.max(daily_region$DATE)]
+neyland_capacity <- 102455
+```
+
+As of the last time the data were updated, the 19 regional hospitals around Knoxville had **only `r tail(subset(hospital_knox, Resource=="ICU Beds")$Available,1)` ICU beds available of `r tail(subset(hospital_knox, Resource=="ICU Beds")$Total.Capacity,1)` total**, based on info from the [Knox County Health Department](https://covid.knoxcountytn.gov/case-count.html).
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+	tn_death_predictions_point <- subset(tn_death_predictions, type=="point")
+
+	tn_death_prediction_organized <- data.frame(Date=tn_death_predictions_point$target_end_date,Expected_Deaths=tn_death_predictions_point$value, Range=rep(NA, nrow(tn_death_predictions_point)))
+	for (i in sequence(nrow(tn_death_prediction_organized))) {
+		tn_death_prediction_organized$Range[i] <- paste0(subset(tn_death_predictions, quantile==0.025 & target_end_date== tn_death_prediction_organized$Date[i])$value, "-", subset(tn_death_predictions, quantile==0.975 & target_end_date== tn_death_prediction_organized$Date[i])$value)
+	}
+	tn_death_prediction_organized <- tn_death_prediction_organized[order(tn_death_prediction_organized$Date),]
+
+
+#knitr::kable(tn_death_prediction_organized)
+```
+
+As of `r format(as.Date(tail(tn_death_history$target_end_date,1)),format="%a, %b %d, %Y")`, **`r format(tail(tn_death_history$value,1),big.mark=",",scientific=FALSE)` people have died from covid in Tennessee.** 
+
+The [COVID-19 Forecast Hub](https://covid19forecasthub.org) makes predictions based on a number of models every week. They predict that in the week ending on **`r format(as.Date(tn_death_prediction_organized$Date[1]),format="%b %d")`, an additional `r tn_death_prediction_organized$Expected_Deaths[1]` people (range `r tn_death_prediction_organized$Range[1]`) will have died from covid in Tennessee**, with `r tn_death_prediction_organized$Expected_Deaths[2]` more covid deaths by `r format(as.Date(tn_death_prediction_organized$Date[2]),format="%b %d")`.
+
+*To get a vaccine to protect others and yourself, go to https://www.vaccines.gov/.*
+
+
+We can also plot using the [new (Feb 2022) guidelines from the CDC](https://www.cdc.gov/coronavirus/2019-ncov/your-health/covid-by-county.html) for low, medium, high community level; I've also recalculated past data so we can see how it would apply then. The dashed line shows 500 new cases per 7 days per 100K people; under TN law, the governor can allow mask mandates if the level hits 1,000 cases per 14 days per 100K, so this shows the weekly average needed for this (but having 1,300 cases in one week, and none the week before, would also trigger this). All counties went [well above the required threshold](https://twitter.com/BrettKelman/status/1484210159161327632?s=20) during the omicron wave but no masking requirements were reinstated, so this line might not be relevant in practice. Note that though I plot case numbers, which are used by the CDC among other metrics, these might not be the most informative given the current state of testing; the hospitalization data (see tab above) could be useful.
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.alt="Cases per 100K and CDC color"}
+cdc_local$`Community Level` <- factor(cdc_local$New_Community_Level, levels = c("Low", "Medium", "High"))
+
+cdc_new_plot <- ggplot(cdc_local, aes(x=Date, y=Cases_7_days_per_100K_County, color=`Community Level`)) + scale_color_manual(values=c("mediumseagreen", "goldenrod2", "orangered2")) + geom_point() + ylab("Seven day number of covid cases per 100K people") + xlab("Date") + facet_wrap(~ County, ncol=1)
+print(cdc_new_plot)
+```
+
+
+Here are the percent of tests positive, averaged over a week.
+
+```{r percentagpositive, echo=FALSE, message=FALSE, warning=FALSE, fig.alt="Percentage of positive tests over time"}
+
+positivity <- ggplot(daily_focal, aes(x=DATE, y=PositivityPercentage_per_week, group=Region)) + geom_line(aes(colour=Region)) + ylab("Percent of positive tests reported to state") + xlab("Date") + ylim(0,NA)  + scale_colour_viridis_d(end=0.8) + theme_light() + theme(legend.justification = c(0, 1), legend.position = c(0.1, .9))
+
+print(positivity)
+```
+
+
+
+Here are the deaths over time associated with covid in East TN (excluding Dec 22, 2021, when there seems to be an error in the state's death records).  
+
+```{r deaths, echo=FALSE, message=FALSE, warning=FALSE, fig.alt="Covid associated deaths over time"}
+daily_focal_easttn <- subset(daily_focal, Region=="East TN")
+daily_focal_easttn <- subset(daily_focal_easttn, DATE!=as.Date("20211222", format="%Y%m%d"))
+try(daily_death_plot <- ggplot(daily_focal_easttn, aes(x=DATE, y=NEW_DEATHS)) + theme_light() + geom_ma(aes( linetype="a"), n=7) +  guides(linetype = "none") + ylab("Deaths per day (7 day average)") + xlab("Date") + ggtitle("Covid-Associated Deaths in East TN") )
+try(print(daily_death_plot))
+
+```
+
+
+
+```{r percentageactive, echo=FALSE, eval=FALSE, message=FALSE, warning=FALSE, fig.alt="Percentage of people in the region with active covid-19"}
+# Here are the percent of people who have active covid cases right now, who have tested and gotten positive tests, *and* who have reported this to the state. 
+ 
+active <- ggplot(daily_focal, aes(x=DATE, y=PercentActive, group=Region)) + geom_line(aes(colour=Region)) + ylab("Percent of people with active covid infections each day") + xlab("Date") + ylim(0,NA)  + scale_colour_viridis_d(end=0.8) + theme_light() + theme(legend.justification = c(0, 1), legend.position = c(0.1, .9)) 
+
+print(active)
+```
+
+
+
+A high level overview of the pandemic in Tennessee as a whole (using Tennessee's definitions of groups):
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+tar_load(sumtabfraction)
+knitr::kable(sumtabfraction)
+```
