@@ -12,6 +12,7 @@ AggregateIPEDS <- function() {
 			}
 		}
 	}
+	raw_data <- select(raw_data, -'...253')
 	load("data/epa_walkability.rda")	
 	walkability_aggregated <- walkability %>% group_by(CBSA_Name) %>% summarise(NatWalkInd=mean(NatWalkInd), Population=sum(TotPop), HousingUnits = sum(CountHU), DistanceToTransit = mean(D4A))
 	raw_data <- left_join(raw_data, walkability_aggregated, by=c("Core Based Statistical Area (CBSA) (HD2019)" = "CBSA_Name"))
@@ -20,5 +21,12 @@ AggregateIPEDS <- function() {
 	raw_data$BannedCATravel <- "No"
 	raw_data$BannedCATravel[pull(raw_data, `State abbreviation (HD2019)`) %in% banned_states] <- "Yes"
 	return(raw_data)
+}
+
+CleanNames <- function(college_data) {
+	RemoveHD <- function(x) {
+		return(gsub(" \\(AL2019_RV\\)", "", gsub(" \\(DRVEF2019_RV\\)", "", gsub(" \\(ADM2019_RV\\)", "", gsub(" \\(EF2019D_RV\\)" ,"", gsub(" \\(DRVADM2019_RV\\)", "", gsub("S2019_IS_RV  ", "", gsub(" \\(IC2019\\)", "", gsub(" \\(DRVAL2020\\)", "", gsub(" \\(FLAGS2019\\)", "", gsub(" \\(HD2020\\)", "", gsub(" \\(HD2019\\)", "", x))))))))))))
+	}
+	colnames(college_data) <- RemoveHD(colnames(college_data))
 }
 

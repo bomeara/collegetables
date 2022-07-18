@@ -19,5 +19,5 @@ options(download.file.method = "libcurl")
 
 # End this file with a list of target objects.
 list(
-  tar_target(college_data, AggregateIPEDS())
+  tar_target(college_data, CleanNames(AggregateIPEDS()))
 )
