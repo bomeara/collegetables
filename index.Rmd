@@ -14,4 +14,6 @@ My kids are looking at colleges; this aggregates information that may be useful 
 source("_packages.R")
 source("R/functions.R")
 tar_load(college_data)
+
+DT::datatable(college_data,rownames=FALSE, filter="top", escape=FALSE)
 ```

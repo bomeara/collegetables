@@ -8,7 +8,6 @@ source("R/functions.R")
 tar_make()
 
 rmarkdown::render_site()
-Sys.sleep(10)
 #system("cp /Users/bomeara/Documents/MyDocuments/GitClones/EastTN/data/*csv /Users/bomeara/Documents/MyDocuments/GitClones/EastTN/docs")
 system("git add docs")
 system("git commit -m'updated data' -a")
