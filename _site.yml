@@ -1,45 +1,9 @@
-name: "East Tennessee Info"
+name: "College Tables"
 navbar:
-  title: "East TN Info"
+  title: "College Tables"
   left:
     - text: "Home"
       href: index.html
-    - text: Last X Weeks
-      menu:
-        - text: "Last Four Weeks"
-          href: "lastfourweeks.html"
-        - text: "Last Eight Weeks"
-          href: "lasteightweeks.html"
-    - text: "Cases year by year"
-      href: yearbyyear.html
-    - text: "Vaccination"
-      href: vaccination.html
-    - text: "Risk by Activity"
-      href: microcovid.html
-    - text: "Hospitalization"
-      menu:
-        - text: "Knoxville Region"
-          href: "hospitals_knox.html"
-        - text: "Individual Hospitals"
-          href: "individualhospitals.html"
-    - text: "K-12 Schools"
-      menu: 
-        - text: "Oak Ridge"
-          href: "oakridgeschools.html"
-        - text: "Knox County"
-          href: "knoxschools.html"
-    - text: "UT Knoxville"
-      menu:
-        - text: "2021-2 Academic Year"
-          href: "utk_2021.html"
-        - text: "2020-1 Academic Year"
-          href: "utk_2020.html"
-        - text: "Comparisons with others"
-          href: "comparisons.html"
-    - text: "Travel"
-      href: travel.html
-    - text: "Wastewater"
-      href: sewage.html
     - text: "About"
       href: about.html
 
