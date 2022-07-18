@@ -15,7 +15,7 @@ AggregateIPEDS <- function() {
 	raw_data <- select(raw_data, -'...253')
 	load("data/epa_walkability.rda")	
 	walkability$D4A[walkability$D4A == -99999] <- NA
-	walkability_aggregated <- walkability %>% group_by(CBSA_Name) %>% summarise(NatWalkInd=mean(NatWalkInd), Population=sum(TotPop), HousingUnits = sum(CountHU, na.rm=TRUE), DistanceToTransit = mean(D4A, na.rm=TRUE))
+	walkability_aggregated <- walkability %>% group_by(CBSA_Name) %>% summarise(NatWalkInd=round(mean(NatWalkInd),1), Population=sum(TotPop), HousingUnits = sum(CountHU, na.rm=TRUE), DistanceToTransit = round(mean(D4A, na.rm=TRUE)))
 	raw_data <- left_join(raw_data, walkability_aggregated, by=c("Core Based Statistical Area (CBSA) (HD2019)" = "CBSA_Name"))
 	rm(walkability)
 	banned_states <- c("Alabama", "Arkansas", "Florida", "Idaho", "Indiana", "Iowa", "Kansas", "Kentucky", "Mississippi", "Montana", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "West Virginia")
