@@ -19,5 +19,7 @@ options(download.file.method = "libcurl")
 
 # End this file with a list of target objects.
 list(
-  tar_target(college_data, CleanNames(AggregateIPEDS()))
+  tar_target(college_data, AggregateIPEDS()),
+  tar_target(save_raw_data, write.csv(college_data, "docs/college_data.csv")),
+  tar_target(degree_granting , FilterForDegreeGranting(college_data))
 )

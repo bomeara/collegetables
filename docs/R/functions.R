@@ -14,20 +14,36 @@ AggregateIPEDS <- function() {
 	}
 	raw_data <- select(raw_data, -'...253')
 	load("data/epa_walkability.rda")	
-	walkability_aggregated <- walkability %>% group_by(CBSA_Name) %>% summarise(NatWalkInd=mean(NatWalkInd), Population=sum(TotPop), HousingUnits = sum(CountHU), DistanceToTransit = mean(D4A))
+	walkability$D4A[walkability$D4A == -99999] <- NA
+	walkability_aggregated <- walkability %>% group_by(CBSA_Name) %>% summarise(NatWalkInd=mean(NatWalkInd), Population=sum(TotPop), HousingUnits = sum(CountHU, na.rm=TRUE), DistanceToTransit = mean(D4A, na.rm=TRUE))
 	raw_data <- left_join(raw_data, walkability_aggregated, by=c("Core Based Statistical Area (CBSA) (HD2019)" = "CBSA_Name"))
 	rm(walkability)
 	banned_states <- c("Alabama", "Arkansas", "Florida", "Idaho", "Indiana", "Iowa", "Kansas", "Kentucky", "Mississippi", "Montana", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "West Virginia")
 	raw_data$BannedCATravel <- "No"
 	raw_data$BannedCATravel[pull(raw_data, `State abbreviation (HD2019)`) %in% banned_states] <- "Yes"
+	raw_data <- CleanNames(raw_data)
+	raw_data$NumberOfPhysicalBooksPerUndergrad <- as.numeric(pull(raw_data, "Number of physical books"))/as.numeric(pull(raw_data, "Undergraduate enrollment"))
+	raw_data$NumberOfDigitalBooksPerUndergrad <- as.numeric(pull( raw_data,  "Number of digital/electronic books" ))/as.numeric(pull(raw_data, "Undergraduate enrollment"))
+	raw_data$TenureTrackFacultyCount <- as.numeric(pull(raw_data, "All ranks (All full-time instructional staff)")) - ((as.numeric(pull(raw_data, "Professors (All full-time instructional staff)" ))) + (as.numeric(pull(raw_data, "Associate professors (All full-time instructional staff)" ))) + (as.numeric(pull(raw_data, "Assistant professors (All full-time instructional staff)" ))))
+	raw_data$PercentageOfTenureTrackInstructors <- round(100*as.numeric(pull(raw_data, "TenureTrackFacultyCount")/as.numeric(pull(raw_data, "All ranks (All full-time instructional staff)"))))
+	raw_data$StudentToTenureTrackRatio <- as.numeric(pull(raw_data, "TenureTrackFacultyCount"))/as.numeric(pull(raw_data, "Undergraduate enrollment"))
 	return(raw_data)
 }
 
 CleanNames <- function(college_data) {
 	RemoveHD <- function(x) {
-		return(gsub("S2019_SIS_RV  ", "", gsub(" \\(IC2019_RV\\)", "", gsub(" \\(DRVF2019_RV\\)", "", gsub("  \\(DRVIC2019\\)", "", gsub(" \\(AL2019_RV\\)", "", gsub(" \\(DRVEF2019_RV\\)", "", gsub(" \\(ADM2019_RV\\)", "", gsub(" \\(EF2019D_RV\\)" ,"", gsub(" \\(DRVADM2019_RV\\)", "", gsub("S2019_IS_RV  ", "", gsub(" \\(IC2019\\)", "", gsub(" \\(DRVAL2020\\)", "", gsub(" \\(FLAGS2019\\)", "", gsub(" \\(HD2020\\)", "", gsub(" \\(HD2019\\)", "", x))))))))))))))))
+		return(gsub(" \\(DRVAL2019_RV\\)", "", gsub(" \\(DRVGR2019_RV\\)", "", gsub("S2019_SIS_RV  ", "", gsub(" \\(IC2019_RV\\)", "", gsub(" \\(DRVF2019_RV\\)", "", gsub("  \\(DRVIC2019\\)", "", gsub(" \\(AL2019_RV\\)", "", gsub(" \\(DRVEF2019_RV\\)", "", gsub(" \\(ADM2019_RV\\)", "", gsub(" \\(EF2019D_RV\\)" ,"", gsub(" \\(DRVADM2019_RV\\)", "", gsub("S2019_IS_RV  ", "", gsub(" \\(IC2019\\)", "", gsub(" \\(DRVAL2020\\)", "", gsub(" \\(FLAGS2019\\)", "", gsub(" \\(HD2020\\)", "", gsub(" \\(HD2019\\)", "", x))))))))))))))))))
 	}
 	colnames(college_data) <- RemoveHD(colnames(college_data))
 	return(college_data)
+}
+
+FilterForDegreeGranting <- function(college_data) {
+	return(subset(college_data, college_data$"Degree-granting status"=="Degree-granting"))	
+}
+
+GetOverviewColumns <- function(college_data) {
+	overview <- college_data %>% select("Institution Name", "Sector of institution", "Carnegie Classification 2018: Basic", "Historically Black College or University", "Tribal college", "Land Grant Institution", "Degree of urbanization (Urban-centric locale)", "Institution size category", "Calendar system", "City location of institution","State abbreviation", "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019", "Undergraduate enrollment", "Graduation rate  total cohort", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "NumberOfPhysicalBooksPerUndergrad", "NumberOfDigitalBooksPerUndergrad", "TenureTrackFacultyCount", "PercentageOfTenureTrackInstructors", "StudentToTenureTrackRatio")
+	return(overview)
 }
 
