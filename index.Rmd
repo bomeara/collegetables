@@ -15,5 +15,5 @@ source("_packages.R")
 source("R/functions.R")
 tar_load(degree_granting)
 
-DT::datatable(GetOverviewColumns(college_data),rownames=FALSE, filter="top", escape=FALSE)
+DT::datatable(GetOverviewColumns(degree_granting),rownames=FALSE, filter="top", escape=FALSE)
 ```
