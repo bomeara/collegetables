@@ -18,7 +18,7 @@ AggregateIPEDS <- function() {
 	walkability_aggregated <- walkability %>% group_by(CBSA_Name) %>% summarise(NatWalkInd=round(mean(NatWalkInd),1), Population=sum(TotPop), HousingUnits = sum(CountHU, na.rm=TRUE), DistanceToTransit = round(mean(D4A, na.rm=TRUE)))
 	raw_data <- left_join(raw_data, walkability_aggregated, by=c("Core Based Statistical Area (CBSA) (HD2019)" = "CBSA_Name"))
 	rm(walkability)
-	banned_states <- c("Alabama", "Arkansas", "Florida", "Idaho", "Indiana", "Iowa", "Kansas", "Kentucky", "Mississippi", "Montana", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "West Virginia")
+	banned_states <- c("AL", "AR", "FL", "ID", "IN", "IA", "KS", "KY", "MI", "MO", "NC", "ND", "OH", "OK", "SC", "SD", "TN", "TX", "UT", "WV")
 	raw_data$BannedCATravel <- "No"
 	raw_data$BannedCATravel[pull(raw_data, `State abbreviation (HD2019)`) %in% banned_states] <- "Yes"
 	raw_data <- CleanNames(raw_data)
@@ -35,6 +35,7 @@ CleanNames <- function(college_data) {
 		return(gsub(" \\(DRVAL2019_RV\\)", "", gsub(" \\(DRVGR2019_RV\\)", "", gsub("S2019_SIS_RV  ", "", gsub(" \\(IC2019_RV\\)", "", gsub(" \\(DRVF2019_RV\\)", "", gsub("  \\(DRVIC2019\\)", "", gsub(" \\(AL2019_RV\\)", "", gsub(" \\(DRVEF2019_RV\\)", "", gsub(" \\(ADM2019_RV\\)", "", gsub(" \\(EF2019D_RV\\)" ,"", gsub(" \\(DRVADM2019_RV\\)", "", gsub("S2019_IS_RV  ", "", gsub(" \\(IC2019\\)", "", gsub(" \\(DRVAL2020\\)", "", gsub(" \\(FLAGS2019\\)", "", gsub(" \\(HD2020\\)", "", gsub(" \\(HD2019\\)", "", x))))))))))))))))))
 	}
 	colnames(college_data) <- RemoveHD(colnames(college_data))
+	gsub(" in the City of New York", "", college_data$"Institution Name")
 	return(college_data)
 }
 
