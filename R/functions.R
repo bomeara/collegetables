@@ -89,7 +89,7 @@ GetOverviewColumns <- function(college_data) {
 	overview$RankingProxy <- as.numeric(overview$RankingProxy)
 	overview <- subset(overview, !is.na(overview$RankingProxy))
 	overview <- dplyr::distinct(overview[order(overview$RankingProxy, decreasing=TRUE),])
-	overview$NatWalkInd <- as.numeric(overview$NatWalkInd)/20
+	overview$NatWalkInd <- round(as.numeric(overview$NatWalkInd)/20,2)
 	
 	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Locale=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `anti-LGBTQ+ laws`=BannedCATravel, `Books/student`=NumberOfPhysicalBooksPerUndergrad, `Students/TT Faculty`=StudentToTenureTrackRatio, Yield="Admissions yield - total", `Distance (m) to transit`=DistanceToTransit, Admission="Percent admitted - total", `First year retention`="Full-time retention rate  2019", "Graduation"="Graduation rate  total cohort", "Covid vax (students)"="AllStudentsVaccinatedAgainstCovid19", "Covid vax (employees)"="AllEmployeesVaccinatedAgainstCovid19", "Misconduct reports"="InMisconductDatabase")
 	overview$Yield <- as.numeric(overview$Yield)/100
@@ -104,6 +104,8 @@ GetOverviewColumns <- function(college_data) {
 	overview$`Covid vax (employees)` <- as.factor(overview$`Covid vax (employees)`)
 	overview$`Misconduct reports` <- as.factor(overview$`Misconduct reports`)
 	overview$Sector <- as.factor(overview$Sector)
+	overview$`Undergraduate enrollment` <- as.numeric(overview$`Undergraduate enrollment`)
+	overview <- select(overview, -RankingProxy)
 	
 	return(overview)
 }
