@@ -15,7 +15,7 @@ AggregateIPEDS <- function() {
 	raw_data <- select(raw_data, -'...253')
 	load("data/epa_walkability.rda")	
 	walkability$D4A[walkability$D4A == -99999] <- NA
-	walkability_aggregated <- walkability %>% group_by(CBSA_Name) %>% summarise(NatWalkInd=round(mean(NatWalkInd),1), Population=sum(TotPop), HousingUnits = sum(CountHU, na.rm=TRUE), DistanceToTransit = round(mean(D4A, na.rm=TRUE)))
+	walkability_aggregated <- walkability %>% group_by(CBSA_Name) %>% summarise(NatWalkInd=round(median(NatWalkInd),1), Population=sum(TotPop), HousingUnits = sum(CountHU, na.rm=TRUE), DistanceToTransit = round(median(D4A, na.rm=TRUE)))
 	raw_data <- left_join(raw_data, walkability_aggregated, by=c("Core Based Statistical Area (CBSA) (HD2019)" = "CBSA_Name"))
 	rm(walkability)
 	banned_states <- c("AL", "AR", "FL", "ID", "IN", "IA", "KS", "KY", "MI", "MO", "NC", "ND", "OH", "OK", "SC", "SD", "TN", "TX", "UT", "WV")
@@ -84,12 +84,14 @@ FilterForDegreeGranting <- function(college_data) {
 }
 
 GetOverviewColumns <- function(college_data) {
-	overview <- as.data.frame(college_data %>% select("Institution Name", "Sector of institution", "CollegeType", "Degree of urbanization (Urban-centric locale)", "City location of institution","State abbreviation", "Calendar system",  "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019", "Undergraduate enrollment", "Graduation rate  total cohort", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "NumberOfPhysicalBooksPerUndergrad", "NumberOfDigitalBooksPerUndergrad", "TenureTrackFacultyCount", "PercentageOfTenureTrackInstructors", "StudentToTenureTrackRatio", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase"))
+	overview <- as.data.frame(college_data %>% select("Institution Name", "Sector of institution", "CollegeType","City location of institution","State abbreviation",  "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019", "Undergraduate enrollment", "Graduation rate  total cohort",  "Degree of urbanization (Urban-centric locale)", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "NumberOfPhysicalBooksPerUndergrad", "StudentToTenureTrackRatio", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase"))
 	overview$RankingProxy <- (100 - as.numeric(overview$"Percent admitted - total")) + as.numeric(overview$"Graduation rate  total cohort")
 	overview$RankingProxy <- as.numeric(overview$RankingProxy)
 	overview <- subset(overview, !is.na(overview$RankingProxy))
 	overview <- dplyr::distinct(overview[order(overview$RankingProxy, decreasing=TRUE),])
-	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Location=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation")
+	overview$NatWalkInd <- as.numeric(overview$NatWalkInd)/20
+	
+	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Location=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `anti-LGBTQ+ laws`=BannedCATravel, `Books/student`=NumberOfPhysicalBooksPerUndergrad, `Students/TT Faculty`=StudentToTenureTrackRatio, Yield="Admissions yield - total")
 	overview$Sector <- as.factor(overview$Sector)
 	
 	return(overview)
