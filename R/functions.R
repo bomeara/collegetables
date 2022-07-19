@@ -27,6 +27,15 @@ AggregateIPEDS <- function() {
 	raw_data$TenureTrackFacultyCount <- as.numeric(pull(raw_data, "All ranks (All full-time instructional staff)")) - ((as.numeric(pull(raw_data, "Professors (All full-time instructional staff)" ))) + (as.numeric(pull(raw_data, "Associate professors (All full-time instructional staff)" ))) + (as.numeric(pull(raw_data, "Assistant professors (All full-time instructional staff)" ))))
 	raw_data$PercentageOfTenureTrackInstructors <- round(100*as.numeric(pull(raw_data, "TenureTrackFacultyCount")/as.numeric(pull(raw_data, "All ranks (All full-time instructional staff)"))))
 	raw_data$StudentToTenureTrackRatio <- round(as.numeric(pull(raw_data, "Undergraduate enrollment"))/as.numeric(pull(raw_data, "TenureTrackFacultyCount")),1)
+	raw_data$CollegeType <- paste0(pull(raw_data, "Carnegie Classification 2018: Basic"))
+	for (i in sequence(nrow(raw_data))) {
+		if(raw_data$"Historically Black College or University"[i] == "Yes") {
+			raw_data$CollegeType[i] <- paste0(raw_data$CollegeType[i], "; Historically Black College or University (HBCU)")
+		}	
+		if(raw_data$"Land Grant Institution"[i] == "Land Grant Institution") {
+			raw_data$CollegeType[i] <- paste0(raw_data$CollegeType[i], "; Land Grant Institution")
+		}	
+	}
 	return(raw_data)
 }
 
@@ -75,12 +84,13 @@ FilterForDegreeGranting <- function(college_data) {
 }
 
 GetOverviewColumns <- function(college_data) {
-	overview <- as.data.frame(college_data %>% select("Institution Name", "Sector of institution", "Carnegie Classification 2018: Basic", "Historically Black College or University", "Tribal college", "Land Grant Institution", "Degree of urbanization (Urban-centric locale)", "Institution size category", "Calendar system", "City location of institution","State abbreviation", "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019", "Undergraduate enrollment", "Graduation rate  total cohort", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "NumberOfPhysicalBooksPerUndergrad", "NumberOfDigitalBooksPerUndergrad", "TenureTrackFacultyCount", "PercentageOfTenureTrackInstructors", "StudentToTenureTrackRatio", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase"))
+	overview <- as.data.frame(college_data %>% select("Institution Name", "Sector of institution", "CollegeType", "Degree of urbanization (Urban-centric locale)", "Institution size category", "Calendar system", "City location of institution","State abbreviation", "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019", "Undergraduate enrollment", "Graduation rate  total cohort", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "NumberOfPhysicalBooksPerUndergrad", "NumberOfDigitalBooksPerUndergrad", "TenureTrackFacultyCount", "PercentageOfTenureTrackInstructors", "StudentToTenureTrackRatio", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase"))
 	overview$RankingProxy <- (100 - as.numeric(overview$"Percent admitted - total")) + as.numeric(overview$"Graduation rate  total cohort")
 	overview$RankingProxy <- as.numeric(overview$RankingProxy)
 	overview <- subset(overview, !is.na(overview$RankingProxy))
 	overview <- dplyr::distinct(overview[order(overview$RankingProxy, decreasing=TRUE),])
-	overview <- dplyr::rename(overview, Name = `Institution Name`)
+	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`)
+	overview$Sector <- as.factor(overview$Sector)
 	return(overview)
 }
 
