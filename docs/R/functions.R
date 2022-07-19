@@ -3,7 +3,7 @@ AggregateIPEDS <- function() {
 	traits <- mutate_all(read_csv("data/ipeds_ValueLabels_7-15-2022---124.csv", col_types="c"), as.character)
 	possible_colnames <- unique(traits$VariableName)
 	for (col_index in seq_along(possible_colnames)) {
-		if(!grepl("fips", possible_colnames[col_index], ignore.case=TRUE)) {
+		if(!grepl("fips|abbreviation", possible_colnames[col_index], ignore.case=TRUE)) {
 			matching_col <- which(colnames(raw_data) == possible_colnames[col_index])
 			trait_subset <- traits[traits$VariableName == possible_colnames[col_index],]
 			for (value_index in sequence(nrow(trait_subset))) {
@@ -76,6 +76,7 @@ FilterForDegreeGranting <- function(college_data) {
 GetOverviewColumns <- function(college_data) {
 	overview <- as.data.frame(college_data %>% select("Institution Name", "Sector of institution", "Carnegie Classification 2018: Basic", "Historically Black College or University", "Tribal college", "Land Grant Institution", "Degree of urbanization (Urban-centric locale)", "Institution size category", "Calendar system", "City location of institution","State abbreviation", "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019", "Undergraduate enrollment", "Graduation rate  total cohort", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "NumberOfPhysicalBooksPerUndergrad", "NumberOfDigitalBooksPerUndergrad", "TenureTrackFacultyCount", "PercentageOfTenureTrackInstructors", "StudentToTenureTrackRatio", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase"))
 	overview$RankingProxy <- as.numeric(overview$"Admissions yield - total") + (100 - as.numeric(overview$"Percent admitted - total")) + as.numeric(overview$"Graduation rate  total cohort")
+	overview$RankingProxy <- as.numeric(overview$RankingProxy)
 	overview <- subset(overview, !is.na(overview$RankingProxy))
 	overview <- overview[sort(overview$RankingProxy, decreasing=TRUE),]
 	return(overview)
