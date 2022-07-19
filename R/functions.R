@@ -44,7 +44,7 @@ CleanNames <- function(college_data) {
 		return(gsub(" \\(DRVAL2019_RV\\)", "", gsub(" \\(DRVGR2019_RV\\)", "", gsub("S2019_SIS_RV  ", "", gsub(" \\(IC2019_RV\\)", "", gsub(" \\(DRVF2019_RV\\)", "", gsub("  \\(DRVIC2019\\)", "", gsub(" \\(AL2019_RV\\)", "", gsub(" \\(DRVEF2019_RV\\)", "", gsub(" \\(ADM2019_RV\\)", "", gsub(" \\(EF2019D_RV\\)" ,"", gsub(" \\(DRVADM2019_RV\\)", "", gsub("S2019_IS_RV  ", "", gsub(" \\(IC2019\\)", "", gsub(" \\(DRVAL2020\\)", "", gsub(" \\(FLAGS2019\\)", "", gsub(" \\(HD2020\\)", "", gsub(" \\(HD2019\\)", "", x))))))))))))))))))
 	}
 	colnames(college_data) <- RemoveHD(colnames(college_data))
-	gsub(" in the City of New York", "", college_data$"Institution Name")
+	gsub("in the City of New York", "", college_data$"Institution Name")
 	return(college_data)
 }
 
@@ -91,9 +91,18 @@ GetOverviewColumns <- function(college_data) {
 	overview <- dplyr::distinct(overview[order(overview$RankingProxy, decreasing=TRUE),])
 	overview$NatWalkInd <- as.numeric(overview$NatWalkInd)/20
 	
-	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Locale=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `anti-LGBTQ+ laws`=BannedCATravel, `Books/student`=NumberOfPhysicalBooksPerUndergrad, `Students/TT Faculty`=StudentToTenureTrackRatio, Yield="Admissions yield - total", `Distance (m) to transit`=DistanceToTransit, Admission="Percent admitted - total", `First year retention`="Full-time retention rate  2019", "Graduation"="Graduation rate  total cohort", "Covid vax (student)"="AllStudentsVaccinatedAgainstCovid19", "Covid vax (employees)"="AllEmployeesVaccinatedAgainstCovid19", "Misconduct reports"="InMisconductDatabase")
-	#overview$Yield <- as.numeric(overview$Yield/100)
-	
+	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Locale=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `anti-LGBTQ+ laws`=BannedCATravel, `Books/student`=NumberOfPhysicalBooksPerUndergrad, `Students/TT Faculty`=StudentToTenureTrackRatio, Yield="Admissions yield - total", `Distance (m) to transit`=DistanceToTransit, Admission="Percent admitted - total", `First year retention`="Full-time retention rate  2019", "Graduation"="Graduation rate  total cohort", "Covid vax (students)"="AllStudentsVaccinatedAgainstCovid19", "Covid vax (employees)"="AllEmployeesVaccinatedAgainstCovid19", "Misconduct reports"="InMisconductDatabase")
+	overview$Yield <- as.numeric(overview$Yield)/100
+	overview$Admission <- as.numeric(overview$Admission)/100
+	overview$`First year retention` <- as.numeric(overview$`First year retention`)/100
+	overview$Graduation <- as.numeric(overview$Graduation)/100
+	overview$`anti-LGBTQ+ laws` <- as.factor(overview$`anti-LGBTQ+ laws`)
+	overview$`Books/student` <- as.numeric(overview$`Books/student`)
+	overview$`Students/TT Faculty` <- as.numeric(overview$`Students/TT Faculty`)
+	overview$`Distance (m) to transit` <- as.numeric(overview$`Distance (m) to transit`)
+	overview$`Covid vax (students)` <- as.factor(overview$`Covid vax (students)`)
+	overview$`Covid vax (employees)` <- as.factor(overview$`Covid vax (employees)`)
+	overview$`Misconduct reports` <- as.factor(overview$`Misconduct reports`)
 	overview$Sector <- as.factor(overview$Sector)
 	
 	return(overview)
