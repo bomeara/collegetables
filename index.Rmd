@@ -15,5 +15,9 @@ source("_packages.R")
 source("R/functions.R")
 tar_load(overview)
 
-DT::datatable(overview,rownames=FALSE, filter="top", escape=FALSE)
+DT::datatable(overview,rownames=FALSE, filter="top", escape=FALSE, extensions = 'Buttons', options = list(
+    dom = 'Bfrtip',
+    buttons = c('copy', 'csv', 'excel', 'pdf', 'print')
+  )
+)
 ```
