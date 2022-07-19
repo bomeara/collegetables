@@ -26,13 +26,11 @@ source("_packages.R")
 source("R/functions.R")
 tar_load(overview)
 
-DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions = c('Buttons', 'FixedColumns', 'FixedHeader', 'Scroller'), options = list(
+DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions = c('Buttons', 'FixedColumns', 'FixedHeader'), options = list(
     dom = 'Bfrtip',
 	buttons = I('colvis'),
-	deferRender = TRUE,
-  	scrollY = 200,
-  	scroller = TRUE,
 	fixedColumns = list(leftColumns=1),
+	pageLength = 200,
 	fixedHeader = TRUE
   )
 ) %>% formatPercentage(c("Yield", "Admission", "Graduation", "First year retention", "Walkability"), 0)
