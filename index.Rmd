@@ -13,7 +13,7 @@ My kids are looking at colleges; this aggregates information that may be useful 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 source("_packages.R")
 source("R/functions.R")
-tar_load(degree_granting)
+tar_load(overview)
 
-DT::datatable(GetOverviewColumns(degree_granting),rownames=FALSE, filter="top", escape=FALSE)
+DT::datatable(overview,rownames=FALSE, filter="top", escape=FALSE)
 ```

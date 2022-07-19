@@ -21,5 +21,7 @@ options(download.file.method = "libcurl")
 list(
   tar_target(college_data, AppendMisconduct(AppendVaccination(AggregateIPEDS()))),
   tar_target(save_raw_data, write.csv(college_data, "docs/college_data.csv")),
-  tar_target(degree_granting , FilterForDegreeGranting(college_data))
+  tar_target(degree_granting , FilterForDegreeGranting(college_data)),
+  tar_target(overview, GetOverviewColumns(degree_granting))
+
 )
