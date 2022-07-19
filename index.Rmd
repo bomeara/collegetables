@@ -26,10 +26,11 @@ source("_packages.R")
 source("R/functions.R")
 tar_load(overview)
 
-DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions = 'Buttons', options = list(
+DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions = c('Buttons', 'FixedColumns'), options = list(
     dom = 'Bfrtip',
     buttons = c('copy', 'csv', 'excel', 'pdf', 'print'),
-	pageLength = 100
+	pageLength = 100,
+	fixedColumns = list(leftColumns=1)
   )
 ) %>% formatPercentage(c("Yield", "Admission", "Graduation", "First year retention", "Walkability"), 0)
 ```
