@@ -105,6 +105,7 @@ GetOverviewColumns <- function(college_data) {
 	overview$`Misconduct reports` <- as.factor(overview$`Misconduct reports`)
 	overview$Sector <- as.factor(overview$Sector)
 	overview$State <- as.factor(overview$State)
+	overview$Locale <- as.factor(overview$Locale)
 	overview$`Undergraduate enrollment` <- as.numeric(overview$`Undergraduate enrollment`)
 	overview$Name <- paste0(overview$Name, " (", overview$City, ", ", overview$State, ")")
 

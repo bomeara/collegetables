@@ -19,5 +19,5 @@ DT::datatable(overview,rownames=FALSE, filter="top", escape=FALSE, extensions = 
     dom = 'Bfrtip',
     buttons = c('copy', 'csv', 'excel', 'pdf', 'print')
   )
-)
+) %>% formatPercentage(c("Yield", "Admission", "Graduation", "First year retention"), 1)
 ```
