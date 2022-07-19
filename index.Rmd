@@ -8,7 +8,17 @@ params:
   sumtab: "unknown"
 ---
 
-My kids are looking at colleges; this aggregates information that may be useful for them but which is harder to get from existing websites.
+This is an aggregation of information on colleges that often isn't emphasized by other sites for comparing colleges. Some of the fields:
+
+* Percentage of students who are admitted, who decide to come (yield), who stay after their first year, and who graduate
+* Students per tenure-track professor: many universities use a mixture of contingent faculty (people on short term contracts) and people who are on the tenure track (people who, if they pass various hurdles, receive the protections of tenure, which grants academic freedom from capricous firing, though they can still be fired for cause). People in tenure track positions often (but not always) have research or other creative activities as part of their job and have a lower teaching load than contingent faculty. They also tend to be more stably employed (so can be long term mentors and letter writers) and more decently paid. Many institutions have cut costs by hiring people into contingent roles rather than investing in tenure track positions.
+* Walkability comes from [US EPA data](https://www.epa.gov/smartgrowth/smart-location-mapping): I've rescaled it so that 76-100% is most walkable, 52-76% is above average walkable, 29-52% is below average walkable, and 0-29% is least walkable.
+* Anti-LGBTQ+ laws come from assessments made under [California bill 1887](https://oag.ca.gov/ab1887), which requires the California Attorney General to determine which states have laws that support discrimination against against lesbian, gay, bisexual, and transgender people and bans state-sponsored travel to those states.
+* Books per student is based on federal data on the number of physical books in an institution's library.
+* Covid vaccination requirements for students and employees comes from a [database compiled by Andy Thomason and Brian O'Leary for *The Chronicle of Higher Education*](https://www.chronicle.com/blogs/live-coronavirus-updates/heres-a-list-of-colleges-that-will-require-students-to-be-vaccinated-against-covid-19).
+* Misconduct reports are whether a school has reports in the [https://academic-sexual-misconduct-database.org/](Academic Sexual Misconduct Database), started by Dr. Julie Libarkin. This aggregates public information on misconduct reports. Misconduct is a serious problem in academia, but not all universities have created an environment where people feel safe reporting, their reports are taken seriously, and they can have public consequences. 
+
+All the fields can be filtered on. For ones with a few options (Yes/No, States, Sector, etc.) you can select from pre-computed selections; for numbers, you can filter by the upper and lower limits; for free text, you can search. For example, "HBCU" in Type will include only historically Black colleges and universities.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 source("_packages.R")
