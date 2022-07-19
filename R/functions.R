@@ -80,6 +80,7 @@ GetOverviewColumns <- function(college_data) {
 	overview$RankingProxy <- as.numeric(overview$RankingProxy)
 	overview <- subset(overview, !is.na(overview$RankingProxy))
 	overview <- dplyr::distinct(overview[order(overview$RankingProxy, decreasing=TRUE),])
+	overview <- dplyr::rename(overview, Name = `Institution Name`)
 	return(overview)
 }
 
