@@ -79,19 +79,26 @@ AppendMisconduct <- function(college_data) {
 	return(college_data)
 }
 
+AppendAbortion <- function(college_data) {
+	abortion <- read.csv("data/abortion.csv", header=TRUE)
+	colnames(abortion) <- gsub("\\.", " ", colnames(abortion))
+	return(left_join(college_data, abortion, by="State abbreviation"))
+	
+}
+
 FilterForDegreeGranting <- function(college_data) {
 	return(subset(college_data, college_data$"Degree-granting status"=="Degree-granting"))	
 }
 
 GetOverviewColumns <- function(college_data) {
-	overview <- as.data.frame(college_data %>% select("Institution Name", "Sector of institution", "CollegeType","City location of institution","State abbreviation",  "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019",  "Graduation rate  total cohort", "Undergraduate enrollment",  "StudentToTenureTrackRatio", "Degree of urbanization (Urban-centric locale)", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "NumberOfPhysicalBooksPerUndergrad", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase"))
+	overview <- as.data.frame(college_data %>% select("Institution Name", "Sector of institution", "CollegeType","City location of institution","State abbreviation",  "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019",  "Graduation rate  total cohort", "Undergraduate enrollment",  "StudentToTenureTrackRatio", "Degree of urbanization (Urban-centric locale)", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "Abortion restrictions", "NumberOfPhysicalBooksPerUndergrad", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase"))
 	overview$RankingProxy <- (100 - as.numeric(overview$"Percent admitted - total")) + as.numeric(overview$"Graduation rate  total cohort")
 	overview$RankingProxy <- as.numeric(overview$RankingProxy)
 	overview <- subset(overview, !is.na(overview$RankingProxy))
 	overview <- dplyr::distinct(overview[order(overview$RankingProxy, decreasing=TRUE),])
 	overview$NatWalkInd <- round(as.numeric(overview$NatWalkInd)/20,2)
 	
-	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Locale=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `anti-LGBTQ+ laws`=BannedCATravel, `Books/student`=NumberOfPhysicalBooksPerUndergrad, `Students per tenure-track professor`=StudentToTenureTrackRatio, Yield="Admissions yield - total", `Distance (m) to transit`=DistanceToTransit, Admission="Percent admitted - total", `First year retention`="Full-time retention rate  2019", "Graduation"="Graduation rate  total cohort", "Covid vax (students)"="AllStudentsVaccinatedAgainstCovid19", "Covid vax (employees)"="AllEmployeesVaccinatedAgainstCovid19", "Misconduct reports"="InMisconductDatabase")
+	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Locale=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `anti-LGBTQ+ laws`=BannedCATravel, `Books/student`=NumberOfPhysicalBooksPerUndergrad, `Students per tenure-track professor`=StudentToTenureTrackRatio, Yield="Admissions yield - total", `Distance (m) to transit`=DistanceToTransit, Admission="Percent admitted - total", `First year retention`="Full-time retention rate  2019", "Graduation"="Graduation rate  total cohort", "Covid vax (students)"="AllStudentsVaccinatedAgainstCovid19", "Covid vax (employees)"="AllEmployeesVaccinatedAgainstCovid19", "Misconduct reports"="InMisconductDatabase", "Abortion"="Abortion restrictions")
 	overview$Yield <- as.numeric(overview$Yield)/100
 	overview$Admission <- as.numeric(overview$Admission)/100
 	overview$`First year retention` <- as.numeric(overview$`First year retention`)/100
@@ -103,6 +110,7 @@ GetOverviewColumns <- function(college_data) {
 	overview$`Covid vax (students)` <- as.factor(overview$`Covid vax (students)`)
 	overview$`Covid vax (employees)` <- as.factor(overview$`Covid vax (employees)`)
 	overview$`Misconduct reports` <- as.factor(overview$`Misconduct reports`)
+	overview$Abortion <- as.factor(overview$Abortion)
 	overview$Sector <- as.factor(overview$Sector)
 	overview$State <- as.factor(overview$State)
 	overview$Locale <- as.factor(overview$Locale)
