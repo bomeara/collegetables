@@ -91,21 +91,26 @@ GetOverviewColumns <- function(college_data) {
 	overview <- dplyr::distinct(overview[order(overview$RankingProxy, decreasing=TRUE),])
 	overview$NatWalkInd <- round(as.numeric(overview$NatWalkInd)/20,2)
 	
-	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Locale=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `anti-LGBTQ+ laws`=BannedCATravel, `Books/student`=NumberOfPhysicalBooksPerUndergrad, `Students/TT Faculty`=StudentToTenureTrackRatio, Yield="Admissions yield - total", `Distance (m) to transit`=DistanceToTransit, Admission="Percent admitted - total", `First year retention`="Full-time retention rate  2019", "Graduation"="Graduation rate  total cohort", "Covid vax (students)"="AllStudentsVaccinatedAgainstCovid19", "Covid vax (employees)"="AllEmployeesVaccinatedAgainstCovid19", "Misconduct reports"="InMisconductDatabase")
+	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Locale=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `anti-LGBTQ+ laws`=BannedCATravel, `Books/student`=NumberOfPhysicalBooksPerUndergrad, `Students per tenure-track professor`=StudentToTenureTrackRatio, Yield="Admissions yield - total", `Distance (m) to transit`=DistanceToTransit, Admission="Percent admitted - total", `First year retention`="Full-time retention rate  2019", "Graduation"="Graduation rate  total cohort", "Covid vax (students)"="AllStudentsVaccinatedAgainstCovid19", "Covid vax (employees)"="AllEmployeesVaccinatedAgainstCovid19", "Misconduct reports"="InMisconductDatabase")
 	overview$Yield <- as.numeric(overview$Yield)/100
 	overview$Admission <- as.numeric(overview$Admission)/100
 	overview$`First year retention` <- as.numeric(overview$`First year retention`)/100
 	overview$Graduation <- as.numeric(overview$Graduation)/100
 	overview$`anti-LGBTQ+ laws` <- as.factor(overview$`anti-LGBTQ+ laws`)
 	overview$`Books/student` <- as.numeric(overview$`Books/student`)
-	overview$`Students/TT Faculty` <- as.numeric(overview$`Students/TT Faculty`)
+	overview$`Students per tenure-track professor` <- as.numeric(overview$`Students per tenure-track professor`)
 	overview$`Distance (m) to transit` <- as.numeric(overview$`Distance (m) to transit`)
 	overview$`Covid vax (students)` <- as.factor(overview$`Covid vax (students)`)
 	overview$`Covid vax (employees)` <- as.factor(overview$`Covid vax (employees)`)
 	overview$`Misconduct reports` <- as.factor(overview$`Misconduct reports`)
 	overview$Sector <- as.factor(overview$Sector)
+	overview$State <- as.factor(overview$State)
 	overview$`Undergraduate enrollment` <- as.numeric(overview$`Undergraduate enrollment`)
+	overview$Name <- paste0(overview$Name, " (", overview$City, ", ", overview$State, ")")
+
 	overview <- select(overview, -RankingProxy)
+	overview <- select(overview, -City)
+
 	
 	return(overview)
 }
