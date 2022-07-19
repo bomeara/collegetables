@@ -26,10 +26,12 @@ source("_packages.R")
 source("R/functions.R")
 tar_load(overview)
 
-DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions = c('Buttons', 'FixedColumns', 'FixedHeader'), options = list(
+DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions = c('Buttons', 'FixedColumns', 'FixedHeader', 'Scroller'), options = list(
     dom = 'Bfrtip',
 	buttons = I('colvis'),
-	pageLength = 100,
+	deferRender = TRUE,
+  	scrollY = 200,
+  	scroller = TRUE,
 	fixedColumns = list(leftColumns=1),
 	fixedHeader = TRUE
   )
