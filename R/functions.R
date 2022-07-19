@@ -75,7 +75,7 @@ FilterForDegreeGranting <- function(college_data) {
 
 GetOverviewColumns <- function(college_data) {
 	overview <- as.data.frame(college_data %>% select("Institution Name", "Sector of institution", "Carnegie Classification 2018: Basic", "Historically Black College or University", "Tribal college", "Land Grant Institution", "Degree of urbanization (Urban-centric locale)", "Institution size category", "Calendar system", "City location of institution","State abbreviation", "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019", "Undergraduate enrollment", "Graduation rate  total cohort", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "NumberOfPhysicalBooksPerUndergrad", "NumberOfDigitalBooksPerUndergrad", "TenureTrackFacultyCount", "PercentageOfTenureTrackInstructors", "StudentToTenureTrackRatio", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase"))
-	overview$RankingProxy <- as.numeric(overview$"Admissions yield - total") + (100 - as.numeric(overview$"Percent admitted - total")) + as.numeric(overview$"Graduation rate  total cohort")
+	overview$RankingProxy <- (100 - as.numeric(overview$"Percent admitted - total")) + as.numeric(overview$"Graduation rate  total cohort")
 	overview$RankingProxy <- as.numeric(overview$RankingProxy)
 	overview <- subset(overview, !is.na(overview$RankingProxy))
 	overview <- dplyr::distinct(overview[order(overview$RankingProxy, decreasing=TRUE),])
