@@ -84,14 +84,16 @@ FilterForDegreeGranting <- function(college_data) {
 }
 
 GetOverviewColumns <- function(college_data) {
-	overview <- as.data.frame(college_data %>% select("Institution Name", "Sector of institution", "CollegeType","City location of institution","State abbreviation",  "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019", "Undergraduate enrollment", "Graduation rate  total cohort",  "Degree of urbanization (Urban-centric locale)", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "NumberOfPhysicalBooksPerUndergrad", "StudentToTenureTrackRatio", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase"))
+	overview <- as.data.frame(college_data %>% select("Institution Name", "Sector of institution", "CollegeType","City location of institution","State abbreviation",  "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019",  "Graduation rate  total cohort", "Undergraduate enrollment",  "StudentToTenureTrackRatio", "Degree of urbanization (Urban-centric locale)", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "NumberOfPhysicalBooksPerUndergrad", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase"))
 	overview$RankingProxy <- (100 - as.numeric(overview$"Percent admitted - total")) + as.numeric(overview$"Graduation rate  total cohort")
 	overview$RankingProxy <- as.numeric(overview$RankingProxy)
 	overview <- subset(overview, !is.na(overview$RankingProxy))
 	overview <- dplyr::distinct(overview[order(overview$RankingProxy, decreasing=TRUE),])
 	overview$NatWalkInd <- as.numeric(overview$NatWalkInd)/20
 	
-	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Location=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `anti-LGBTQ+ laws`=BannedCATravel, `Books/student`=NumberOfPhysicalBooksPerUndergrad, `Students/TT Faculty`=StudentToTenureTrackRatio, Yield="Admissions yield - total")
+	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Locale=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `anti-LGBTQ+ laws`=BannedCATravel, `Books/student`=NumberOfPhysicalBooksPerUndergrad, `Students/TT Faculty`=StudentToTenureTrackRatio, Yield="Admissions yield - total", `Distance (m) to transit`=DistanceToTransit, Admission="Percent admitted - total", `First year retention`="Full-time retention rate  2019", "Graduation"="Graduation rate  total cohort", "Covid vax (student)"="AllStudentsVaccinatedAgainstCovid19", "Covid vax (employees)"="AllEmployeesVaccinatedAgainstCovid19", "Misconduct reports"="InMisconductDatabase")
+	#overview$Yield <- as.numeric(overview$Yield/100)
+	
 	overview$Sector <- as.factor(overview$Sector)
 	
 	return(overview)
