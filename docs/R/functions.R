@@ -78,7 +78,7 @@ GetOverviewColumns <- function(college_data) {
 	overview$RankingProxy <- as.numeric(overview$"Admissions yield - total") + (100 - as.numeric(overview$"Percent admitted - total")) + as.numeric(overview$"Graduation rate  total cohort")
 	overview$RankingProxy <- as.numeric(overview$RankingProxy)
 	overview <- subset(overview, !is.na(overview$RankingProxy))
-	overview <- overview[sort(overview$RankingProxy, decreasing=TRUE),]
+	overview <- dplyr::distinct(overview[order(overview$RankingProxy, decreasing=TRUE),])
 	return(overview)
 }
 
