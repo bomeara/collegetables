@@ -50,7 +50,8 @@ DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions =
     dom = 'Bfrtip',
     buttons = list(
     	list(extend = 'colvis', columns = -1+sequence(ncol(overview))),
-        list(extend= "colvisGroup",text="Show All",show=":hidden")
+        list(extend= "colvisGroup",text="Show All",show=":hidden"),
+		list(extend= "colvisGroup",text="Admissions",show=c(3,4,5))
     ), # all 5 are hideable/showable by the button
 	fixedColumns = list(leftColumns=1),
 	pageLength = 200,
