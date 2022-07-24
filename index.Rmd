@@ -48,7 +48,7 @@ Filtering
 
 DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions = c('Buttons', 'FixedColumns', 'FixedHeader'), options = list(
     dom = 'Bfrtip',
-buttons = list(list(extend = 'colvis', columns = c(0,1,2,3,4)),
+buttons = list(list(extend = 'colvis', columns = -1+sequence(ncol(overview))),
                    list(extend= "colvisGroup",text="Show All",show=":hidden") # show all button
                    ), # all 5 are hideable/showable by the button
 	fixedColumns = list(leftColumns=1),
