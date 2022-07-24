@@ -51,13 +51,13 @@ DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions =
     buttons = list(
     	list(extend = 'colvis', columns = -1+sequence(ncol(overview))),
         list(extend= "colvisGroup",text="Show All",show=":hidden"),
-		list(extend= "colvisGroup",text="Admissions",show=c(3,4,5))
+		list(extend= "colvisGroup",text="Admissions",show=c(5,6,7))
     ), # all 5 are hideable/showable by the button
 	fixedColumns = list(leftColumns=1),
 	pageLength = 200,
 	fixedHeader = TRUE,
 	columnDefs = list(
-      list(targets = c(8:(ncol(overview)-1)), visible = FALSE)
+      list(targets = c(4:(ncol(overview)-1)), visible = FALSE)
     )
   )
 ) %>% formatPercentage(c("Yield", "Admission", "Graduation", "First year retention", "Walkability"), 0)
