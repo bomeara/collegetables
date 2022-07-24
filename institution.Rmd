@@ -1,0 +1,16 @@
+---
+output: 
+  html_document:
+    theme: null
+    includes:
+      in_header: GA_Script.html
+params:
+  institution_name: "nothing"
+  institution_table: "nothing"
+title: "`r paste0('Information for ', params$institution_name)`"
+
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(dev="png")
+```
