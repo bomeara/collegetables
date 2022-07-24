@@ -44,7 +44,11 @@ DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions =
     dom = 'Bfrtip',
     buttons = list(
         list(extend= "colvisGroup",text="Show All",show=":hidden"),
-		list(extend= "colvisGroup", text="Reset", show=-1+sequence(ncol(overview))),
+		list(
+			extend= "colvisGroup", 
+			text="Reset", 
+			show=c(0, GetMatchingColumnsInOverview(Basic))
+		),
 		list(
 			extend= "colvisGroup",
 			text="Admissions",
