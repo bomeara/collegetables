@@ -6,7 +6,8 @@ output:
       in_header: GA_Script.html
 params:
   institution_name: "nothing"
-  institution_table: "nothing"
+  overview_table: "nothing"
+  raw_table: "nothing"
 title: "`r paste0('Information for ', params$institution_name)`"
 
 ---
