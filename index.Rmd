@@ -47,7 +47,8 @@ DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions =
 		list(
 			extend= "colvisGroup", 
 			text="Reset", 
-			show=c(0, GetMatchingColumnsInOverview(Basic))
+			show=c(0, GetMatchingColumnsInOverview(Basic)),
+			hide=GetNotMatchingColumnsInOverview(Basic)
 		),
 		list(
 			extend= "colvisGroup",
