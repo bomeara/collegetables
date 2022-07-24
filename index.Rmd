@@ -32,12 +32,12 @@ Basic <- c("Name", "Sector", "Type", "Undergraduate enrollment")
 Admissions_and_outcomes <- c("Admission", "Yield", "First year retention", "Graduation")
 
 GetMatchingColumnsInOverview <- function(to_find) {
-	return(match(to_find, colnames(overview)))	
+	return(-1+match(to_find, colnames(overview)))	
 }
 
 GetNotMatchingColumnsInOverview <- function(to_find) {
 	unmatched <- setdiff(colnames(overview), unique(c("Name", to_find)))
-	return(match(unmatched, colnames(overview)))	
+	return(-1+match(unmatched, colnames(overview)))	
 }
 
 DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions = c('Buttons', 'FixedColumns', 'FixedHeader'), options = list(
