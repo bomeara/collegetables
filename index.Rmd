@@ -34,7 +34,7 @@ DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions =
     buttons = list(
         list(extend= "colvisGroup",text="Show All",show=":hidden"),
 		list(extend= "colvisGroup", text="Reset", show=-1+sequence(ncol(overview))),
-		list(extend= "colvisGroup",text="Admissions",show=c(0, match(c("Admission", "Yield"),colnames(overview)))),
+		list(extend= "colvisGroup",text="Admissions",show=c(0, -1+match(c("Admission", "Yield"),colnames(overview))), hide=c(-1+match(c("Name", "Admission", "Yield"),colnames(overview), incomparables=TRUE))), # need to remember javascript starts with 0
 		list(extend = 'colvis', columns = -1+sequence(ncol(overview)))
 
     ), # all 5 are hideable/showable by the button
