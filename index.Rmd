@@ -28,6 +28,23 @@ source("_packages.R")
 source("R/functions.R")
 tar_load(overview)
 
+DT::datatable(
+  iris, rownames = FALSE,
+  extensions = 'Buttons', options = list(
+    dom = 'Bfrtip',
+    buttons = list(list(extend = 'colvis', columns = c(0,1,2,3,4)),
+                   list(extend= "colvisGroup",text="Show All",show=":hidden") # show all button
+                   ) # all 5 are hideable/showable by the button
+    ,columnDefs = list(list(visible=FALSE, targets=c(0,1))  # first two start hidden
+    )
+  ))
+  ```
+  
+
+Filtering
+  
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
 DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions = c('Buttons', 'FixedColumns', 'FixedHeader'), options = list(
     dom = 'Bfrtip',
 	buttons = I('colvis'),
