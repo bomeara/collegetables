@@ -173,7 +173,7 @@ RenderInstitutionPages <- function(overview) {
 	institutions <- unique(overview$Name)
 	#for (i in seq_along(institutions)) {
 	for (i in sequence(5)) {
-		rmarkdown::render(input="institution.Rmd", output_file=paste0("docs/", utils::URLencode(institutions[i]), ".html"), 
+		rmarkdown::render(input="institution.Rmd", output_file=paste0( utils::URLencode(institutions[i]), ".html"), 
         params = list(
 			institution_name = institutions[i],
 			institution_table = subset(overview, overview$Name == institutions[i])
