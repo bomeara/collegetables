@@ -31,7 +31,7 @@ tar_load(overview)
 Basic <- c("Name", "Sector", "Type", "Undergraduate enrollment")
 Admissions_and_outcomes <- c("Admission", "Yield", "First year retention", "Graduation")
 Location <- c("State", "Locale", "Walkability", "Distance (m) to transit")
-Safety <- c("anti-LGBTQ+ laws", "Abortion", "Covid vax (students)", "Covid vax (employees)", "Misconduct reports")
+Safety <- c("Anti-LGBTQ+ state laws", "Abortion restrictions", "Covid vax (students)", "Covid vax (employees)", "Misconduct reports")
 
 GetMatchingColumnsInOverview <- function(to_find) {
 	return(-1+match(to_find, colnames(overview)))	
