@@ -32,6 +32,7 @@ Basic <- c("Name", "Sector", "Type", "Undergraduate enrollment")
 Admissions_and_outcomes <- c("Admission", "Yield", "First year retention", "Graduation")
 Location <- c("State", "Locale", "Walkability", "Distance (m) to transit")
 Safety <- c("Anti-LGBTQ+ state laws", "Abortion restrictions", "Covid vax (students)", "Covid vax (employees)", "Misconduct reports")
+AcademicResources <- c("Students per tenure-track professor", "Books/student")
 
 GetMatchingColumnsInOverview <- function(to_find) {
 	return(-1+match(to_find, colnames(overview)))	
@@ -47,7 +48,7 @@ DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions =
     buttons = list(
 		list(
 			extend= "colvisGroup", 
-			text="Reset", 
+			text="Overview", 
 			show=c(0, GetMatchingColumnsInOverview(Basic)),
 			hide=GetNotMatchingColumnsInOverview(Basic)
 		),
@@ -62,6 +63,12 @@ DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions =
 			text="Location",
 			show=c(0, GetMatchingColumnsInOverview(Location)), 
 			hide=GetNotMatchingColumnsInOverview(Location)
+		),
+		list(
+			extend= "colvisGroup",
+			text="Academic resources",
+			show=c(0, GetMatchingColumnsInOverview(AcademicResources)), 
+			hide=GetNotMatchingColumnsInOverview(AcademicResources)
 		),
 		list(
 			extend= "colvisGroup",
@@ -81,5 +88,5 @@ DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions =
       list(targets = c(4:(ncol(overview)-1)), visible = FALSE)
     )
   )
-) %>% formatPercentage(c("Yield", "Admission", "Graduation", "First year retention", "Walkability"), 0)
+) %>% formatPercentage(c("Yield", "Admission", "Graduation", "First year retention", "Walkability", (colnames(overview)[grepl("undergrads", colnames(overview))] )  ), 0)
 ```
