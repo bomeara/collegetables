@@ -17,18 +17,18 @@ This is an aggregation of information on colleges that often isn't emphasized by
 * Abortion restrictions come from assessments by the [Guttmacher Institute](https://states.guttmacher.org/policies/).
 * Books per student is based on federal data on the number of physical books in an institution's library.
 * Covid vaccination requirements for students and employees comes from a [database compiled by Andy Thomason and Brian O'Leary for *The Chronicle of Higher Education*](https://www.chronicle.com/blogs/live-coronavirus-updates/heres-a-list-of-colleges-that-will-require-students-to-be-vaccinated-against-covid-19).
-* Misconduct reports are whether a school has reports in the [https://academic-sexual-misconduct-database.org/](Academic Sexual Misconduct Database), started by Dr. Julie Libarkin. This aggregates public information on misconduct reports. Misconduct is a serious problem in academia, but not all universities have created an environment where people feel safe reporting, their reports are taken seriously, and they can have public consequences. A college with no reports may inicate lack of such an environment; a college with many reports could indicate a different sort of issue.
+* Misconduct reports are whether a school has reports in the [https://academic-sexual-misconduct-database.org/](Academic Sexual Misconduct Database), started by Dr. Julie Libarkin. This aggregates public information on misconduct reports. Misconduct is a serious problem in academia, but not all universities have created an environment where people feel safe reporting, their reports are taken seriously, and they can have public consequences. A college with no reports may indicate lack of such an environment; a college with many reports could indicate a different sort of issue.
 
 Both the vaccination and misconduct information is based on linking the college names, but this may be subject to error if names are very similar between two different colleges.
 
-All the fields can be filtered on. For ones with a few options (Yes/No, States, Sector, Abortion, etc.) you can select from pre-computed selections; for numbers, you can filter by the upper and lower limits; for free text, you can search. For example, "HBCU" in Type will include only historically Black colleges and universities.
+All the fields can be filtered on. For ones with a few options (Yes/No, States, Sector, Abortion, etc.) you can select from pre-computed selections; for numbers, you can filter by the upper and lower limits; for free text, you can search. 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 source("_packages.R")
 source("R/functions.R")
 tar_load(overview)
 
-Basic <- c("Name", "Sector", "Type", "Undergraduate enrollment")
+Basic <- c("Name", "Sector", "Type", "Historically Black College or University", "Undergraduate enrollment")
 Admissions_and_outcomes <- c("Admission", "Yield", "First year retention", "Graduation")
 Location <- c("State", "Locale", "Walkability", "Minimum distance to mass transit (minutes walking)")
 Safety <- c("Anti-LGBTQ+ state laws", "Abortion restrictions", "Covid vax (students)", "Covid vax (employees)", "Misconduct reports")

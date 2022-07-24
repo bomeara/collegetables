@@ -8,10 +8,13 @@ params:
   institution_name: "nothing"
   overview_table: "nothing"
   raw_table: "nothing"
-title: "`r paste0('Information for ', params$institution_name)`"
+title: "`r paste0(params$institution_name)`"
 
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(dev="png")
 ```
+
+* `r print(params$overview_table['Sector'])`
+* `r print(params$overview_table['Type'])`
