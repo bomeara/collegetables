@@ -102,7 +102,7 @@ GetOverviewColumns <- function(college_data) {
 
 	Percent_of_undergrad_cols <- which(grepl("Percent of undergraduate enrollment that are", colnames(overview)))
 	for (i in seq_along(Percent_of_undergrad_cols)) {
-		colnames(overview)[Percent_of_undergrad_cols[i]] <- gsub("women", "Women", paste0(gsub("Percent of undergraduate enrollment that are ", "", colnames(overview)[Percent_of_undergrad_cols[i]])," (undergrads)"))
+		colnames(overview)[Percent_of_undergrad_cols[i]] <- gsub("two or more", "Two or more", gsub("women", "Women", paste0(gsub("Percent of undergraduate enrollment that are ", "", colnames(overview)[Percent_of_undergrad_cols[i]])," (undergrads)")))
 		overview[,Percent_of_undergrad_cols[i]] <- 0.01*(as.numeric(overview[,Percent_of_undergrad_cols[i]]))
 	}
 	
