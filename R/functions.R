@@ -159,6 +159,7 @@ GetOverviewColumns <- function(college_data) {
 	overview$State <- as.factor(overview$State)
 	overview$Locale <- as.factor(overview$Locale)
 	overview$`Undergraduate enrollment` <- as.numeric(overview$`Undergraduate enrollment`)
+	overview$ShortName <- overview$Name
 	overview$Name <- paste0(overview$Name, " (", overview$City, ", ", overview$State, ")")
 
 	overview <- select(overview, -RankingProxy)
@@ -170,10 +171,10 @@ GetOverviewColumns <- function(college_data) {
 
 
 RenderInstitutionPages <- function(overview) {
-	institutions <- unique(overview$Name)
+	institutions <- unique(overview$ShortName)
 	#for (i in seq_along(institutions)) {
 	for (i in sequence(5)) {
-		rmarkdown::render(input="institution.Rmd", output_file=paste0( utils::URLencode(institutions[i]), ".html"), 
+		rmarkdown::render(input="institution.Rmd", output_file=paste0( "institutions/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
         params = list(
 			institution_name = institutions[i],
 			institution_table = subset(overview, overview$Name == institutions[i])
