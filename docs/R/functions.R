@@ -106,6 +106,12 @@ GetOverviewColumns <- function(college_data) {
 		overview[,Percent_of_undergrad_cols[i]] <- 0.01*(as.numeric(overview[,Percent_of_undergrad_cols[i]]))
 	}
 	
+	Full_time_faculty_cols <- which(grepl("Full-time instructional with faculty status", colnames(overview)))
+	AllFaculty <- as.numeric(overview[,"Grand total men (Full-time instructional with faculty status)"]) + as.numeric(overview[,"Grand total women (Full-time instructional with faculty status)"])
+	for (i in seq_along(Full_time_faculty_cols)) {
+		colnames(overview)[Full_time_faculty_cols[i]] <- gsub("Full-time instructional with faculty status", "Full-time faculty", colnames(overview)[Full_time_faculty_cols[i]])
+		overview[,Full_time_faculty_cols[i]] <- paste0(overview[,Full_time_faculty_cols[i]], " (", 100*round(as.numeric(overview[,Full_time_faculty_cols[i]])/AllFaculty,3), "%)")
+	}
 	
 	overview$Yield <- as.numeric(overview$Yield)/100
 	overview$Admission <- as.numeric(overview$Admission)/100

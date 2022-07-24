@@ -34,6 +34,8 @@ Location <- c("State", "Locale", "Walkability", "Distance (m) to transit")
 Safety <- c("Anti-LGBTQ+ state laws", "Abortion restrictions", "Covid vax (students)", "Covid vax (employees)", "Misconduct reports")
 AcademicResources <- c("Students per tenure-track professor", "Books/student")
 Undergrad_diversity <- colnames(overview)[grepl("undergrads", colnames(overview))]
+Faculty_diversity <- colnames(overview)[grepl("Full-time faculty", colnames(overview))]
+
 
 GetMatchingColumnsInOverview <- function(to_find) {
 	return(-1+match(to_find, colnames(overview)))	
@@ -79,9 +81,15 @@ DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions =
 		),
 		list(
 			extend= "colvisGroup",
-			text="Undergrad\ndiversity",
+			text="Undergrad diversity",
 			show=c(0, GetMatchingColumnsInOverview(Undergrad_diversity)), 
 			hide=GetNotMatchingColumnsInOverview(Undergrad_diversity)
+		),
+		list(
+			extend= "colvisGroup",
+			text="Faculty counts & percentage",
+			show=c(0, GetMatchingColumnsInOverview(Faculty_diversity)), 
+			hide=GetNotMatchingColumnsInOverview(Faculty_diversity)
 		),
 		list(extend = 'colvis', columns = -1+sequence(ncol(overview))),
 		list(extend= "colvisGroup",text="Show All",show=":hidden")
