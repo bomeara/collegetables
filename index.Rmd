@@ -30,7 +30,7 @@ tar_load(overview)
 
 Basic <- c("Name", "Sector", "Type", "Undergraduate enrollment")
 Admissions_and_outcomes <- c("Admission", "Yield", "First year retention", "Graduation")
-Location <- c("State", "Locale", "Walkability", "Distance (m) to transit")
+Location <- c("State", "Locale", "Walkability", "Minimum distance to mass transit (minutes walking)")
 Safety <- c("Anti-LGBTQ+ state laws", "Abortion restrictions", "Covid vax (students)", "Covid vax (employees)", "Misconduct reports")
 AcademicResources <- c("Students per tenure-track professor", "Books/student")
 Undergrad_diversity <- colnames(overview)[grepl("undergrads", colnames(overview))]

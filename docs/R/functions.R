@@ -99,7 +99,8 @@ GetOverviewColumns <- function(college_data) {
 	overview$NatWalkInd <- round(as.numeric(overview$NatWalkInd)/20,2)
 	
 	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Locale=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `Anti-LGBTQ+ state laws`=BannedCATravel, `Books/student`=NumberOfPhysicalBooksPerUndergrad, `Students per tenure-track professor`=StudentToTenureTrackRatio, Yield="Admissions yield - total", `Distance (m) to transit`=DistanceToTransit, Admission="Percent admitted - total", `First year retention`="Full-time retention rate  2019", "Graduation"="Graduation rate  total cohort", "Covid vax (students)"="AllStudentsVaccinatedAgainstCovid19", "Covid vax (employees)"="AllEmployeesVaccinatedAgainstCovid19", "Misconduct reports"="InMisconductDatabase")
-
+	
+	overview$`Minimum distance to mass transit (minutes walking)` <- round((as.numeric(overview$`Distance (m) to transit`)/1.34)/60) #using an estimate of walk speed of 1.34 m/s from https://www.healthline.com/health/exercise-fitness/average-walking-speed#average-speed-by-age
 	Percent_of_undergrad_cols <- which(grepl("Percent of undergraduate enrollment that are", colnames(overview)))
 	for (i in seq_along(Percent_of_undergrad_cols)) {
 		colnames(overview)[Percent_of_undergrad_cols[i]] <- gsub("two or more", "Two or more", gsub("women", "Women", paste0(gsub("Percent of undergraduate enrollment that are ", "", colnames(overview)[Percent_of_undergrad_cols[i]])," (undergrads)")))
