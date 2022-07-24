@@ -48,12 +48,8 @@ Filtering
 
 DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions = c('Buttons', 'FixedColumns', 'FixedHeader'), options = list(
     dom = 'Bfrtip',
-buttons = list(list(extend = 'colvis', columns = 1+sequence(ncol(overview)-2)), # can't hide the college name this way
-                   list(extend= "colvisGroup",text="Show All",show=":hidden"),
-				         list(
-        extend = 'columnToggle', 
-        text = 'Toggle columns'
-      ) # show all button
+buttons = list(list(extend = 'colvis', columns = -1+sequence(ncol(overview))),
+                   list(extend= "colvisGroup",text="Show All",show=":hidden") # show all button
                    ), # all 5 are hideable/showable by the button
 	fixedColumns = list(leftColumns=1),
 	pageLength = 200,
