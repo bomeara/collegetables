@@ -13,6 +13,35 @@ AggregateIPEDS <- function() {
 		}
 	}
 	raw_data <- select(raw_data, -'...253')
+
+	raw_data2 <- mutate_all(read_csv("data/ipeds_Data_7-24-2022---404.csv", col_types="c"), as.character)
+	traits <- mutate_all(read_csv("data/ipeds_Data_7-24-2022---404.csv", col_types="c"), as.character)
+	possible_colnames <- unique(traits$VariableName)
+	for (col_index in seq_along(possible_colnames)) {
+		if(!grepl("fips|abbreviation", possible_colnames[col_index], ignore.case=TRUE)) {
+			matching_col <- which(colnames(raw_data2) == possible_colnames[col_index])
+			trait_subset <- traits[traits$VariableName == possible_colnames[col_index],]
+			for (value_index in sequence(nrow(trait_subset))) {
+				ones_to_change <- which(as.character(pull(raw_data2, matching_col)) == as.character(trait_subset$Value[value_index]))
+				raw_data2[ones_to_change,matching_col] <- as.character(trait_subset$ValueLabel[value_index])
+			}
+		}
+	}
+	raw_data2 <- select(raw_data2, -'...242')
+	raw_data_joined <- full_join(raw_data, raw_data2, by="Institution Name") %>% dplyr::left_join(distinct(mutate_all(read_csv("data/Data_7-24-2022_NTT.csv", col_types="c"), as.character)), by="Institution Name") %>% dplyr::left_join(distinct(mutate_all(read_csv("data/Data_7-24-2022_tenured.csv", col_types="c"), as.character)), by="Institution Name") %>% dplyr::left_join(distinct(mutate_all(read_csv("data/Data_7-24-2022_TTnontenured.csv", col_types="c"), as.character)), by="Institution Name") %>%rename_at(
+		vars(ends_with(".x")),
+		~str_replace(., "\\..$","")
+		) %>% 
+		select_at(
+		vars(-ends_with(".y"))
+		)
+	raw_data <- raw_data_joined[!duplicated(raw_data_joined$`Institution Name`),]
+	raw_data$"Undergraduate enrollment (DRVEF2019_RV)" <- as.numeric(raw_data$"Undergraduate enrollment (DRVEF2019_RV)")
+	raw_data <- subset(raw_data, !is.na(raw_data$"Undergraduate enrollment (DRVEF2019_RV)"))
+	raw_data <- subset(raw_data, raw_data$"Undergraduate enrollment (DRVEF2019_RV)">0)
+	#raw_data <- raw_data_joined
+
+	
 	load("data/epa_walkability.rda")	
 	walkability$D4A[walkability$D4A == -99999] <- NA
 	walkability_aggregated <- walkability %>% group_by(CBSA_Name) %>% summarise(NatWalkInd=round(median(NatWalkInd),1), Population=sum(TotPop), HousingUnits = sum(CountHU, na.rm=TRUE), DistanceToTransit = round(min(D4A, na.rm=TRUE)))
@@ -139,3 +168,15 @@ GetOverviewColumns <- function(college_data) {
 	return(overview)
 }
 
+
+RenderInstitutionPages <- function(overview) {
+	institutions <- unique(overview$Name)
+	#for (i in seq_along(institutions)) {
+	for (i in sequence(5)) {
+		rmarkdown::render(input="institution.Rmd", output_file=paste0("docs/", utils::URLencode(institutions[i]), ".html"), 
+        params = list(
+			institution_name = institutions[i],
+			institution_table = subset(overview, overview$Name == institutions[i])
+        ))
+	}
+}
