@@ -18,3 +18,5 @@ knitr::opts_chunk$set(dev="png")
 
 * `r print(params$overview_table['Sector'])`
 * `r print(params$overview_table['Type'])`
+
+`r print(params$overview_table)`
