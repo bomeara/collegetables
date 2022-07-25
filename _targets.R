@@ -15,7 +15,7 @@ source("_packages.R")
 options(timeout=24*60*60) # let things download for at least 24 hours (important while on slow internet connection)
 options(download.file.method = "libcurl")
 
-
+tar_invalidate(pages)
 
 # End this file with a list of target objects.
 list(
