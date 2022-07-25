@@ -177,7 +177,7 @@ RenderInstitutionPages <- function(overview, degree_granting) {
 		rmarkdown::render(input="institution.Rmd", output_file=paste0( "institutions/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
         params = list(
 			institution_name = institutions[i],
-			overview_table = subset(overview, overview$Name == institutions[i]),
+			overview_table = subset(overview, overview$ShortName == institutions[i]),
 			raw_table = degree_granting
         ))
 	}
