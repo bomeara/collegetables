@@ -1,7 +1,6 @@
 ---
 output: 
   html_document:
-    theme: null
     includes:
       in_header: GA_Script.html
 params:
@@ -15,6 +14,7 @@ title: "`r paste0(params$institution_name)`"
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(dev="png")
 print("hay")
+print(params$overview_table)
 ```
 
 `r print("cat")`
