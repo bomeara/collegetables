@@ -11,10 +11,11 @@ title: "`r paste0(params$institution_name)`"
 
 ---
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 knitr::opts_chunk$set(dev="png")
-focal_raw <- params$raw_table
-focal_raw <- subset(focal_raw, "Institution Name"==params$institution_name)
+focal_raw <- as.data.frame(params$raw_table)
+focal_raw <- subset(focal_raw, focal_raw$"Institution Name"==params$institution_name)
+if
 
 ```
 
@@ -26,6 +27,10 @@ focal_raw <- subset(focal_raw, "Institution Name"==params$institution_name)
 * It is `r paste0(ifelse(params$overview_table['Historically Black College or University']=="Yes","", "not "), "an historically black college or university (HBCU)")`
 * Its undergraduate enrollment is `r format(as.numeric(params$overview_table["Undergraduate enrollment"]),big.mark=",", scientific=FALSE)`
 
+
+### Diversity among the faculty
+
+Two things to note here are diversity overall as well as the distribution tenure, tenure track, and non tenure track faculty. There are two main tracks in academia: faculty who are given short term contracts (and often a high teaching load and lower pay) and faculty who 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 instructor_levels <- gsub("Black or African American men ", "", colnames(focal_raw)[grepl("Black or African American men \\(Full", colnames(focal_raw))])
@@ -47,21 +52,38 @@ for (row_index in sequence(nrow(faculty_counts))) {
 	}	
 }
 faculty_counts[which(is.na(faculty_counts))] <- 0
-faculty_counts <- faculty_counts[,which(colSums(faculty_counts)>0)]
+#faculty_counts <- faculty_counts[,which(colSums(faculty_counts)>0)]
 colnames(faculty_counts) <- gsub('\\(Full-time instructional ', '', gsub('\\)', '', colnames(faculty_counts)))
 
 faculty_counts_summary <- as.data.frame(matrix(0, nrow=nrow(faculty_counts), ncol=6))
 rownames(faculty_counts_summary) <- rownames(faculty_counts)
 colnames(faculty_counts_summary) <- c("Tenured (count)", "Tenure-track (count)", "Non-tenure-track (count)", "Tenured (percent)", "Tenure-track (percent)", "Non-tenure-track (percent)")
-total_faculty <- sum(faculty_counts[c("Grand total men", "Grand total women"),])
+total_faculty <- sum(sum(faculty_counts[c("Grand total men", "Grand total women"),]))
 faculty_counts_summary[,4:6] <- as.character(faculty_counts_summary[,4:6])
 # tenured
 matching_cols <- which(grepl("tenured", colnames(faculty_counts)))
-if(length(matching_cols)>=1) {
-	faculty_counts_summary[,1] <- rowSums(faculty_counts[,matching_cols]))
-	faculty_counts_summary[,4] <- paste0(100*round(faculty_counts_summary[,1]/total_faculty,3), "%")
+for (row_index in sequence(nrow(faculty_counts_summary))) {
+  if(length(matching_cols)>=1) {
+  	faculty_counts_summary[row_index,1] <- sum(faculty_counts[row_index,matching_cols])
+  	faculty_counts_summary[row_index,4] <- paste0(100*round(faculty_counts_summary[row_index,1]/total_faculty,3), "%")
+  }
 }
-
+# tt
+matching_cols <- which(grepl("on-tenure", colnames(faculty_counts)))
+for (row_index in sequence(nrow(faculty_counts_summary))) {
+  if(length(matching_cols)>=1) {
+  	faculty_counts_summary[row_index,2] <- sum(faculty_counts[row_index,matching_cols])
+  	faculty_counts_summary[row_index,5] <- paste0(100*round(faculty_counts_summary[row_index,2]/total_faculty,3), "%")
+  }
+}
+# ntt
+matching_cols <- which(grepl("no tenure", colnames(faculty_counts)))
+for (row_index in sequence(nrow(faculty_counts_summary))) {
+  if(length(matching_cols)>=1) {
+  	faculty_counts_summary[row_index,3] <- sum(faculty_counts[row_index,matching_cols])
+  	faculty_counts_summary[row_index,6] <- paste0(100*round(faculty_counts_summary[row_index,3]/total_faculty,3), "%")
+  }
+}
 
 knitr::kable(faculty_counts_summary, row.names=TRUE)
 ```

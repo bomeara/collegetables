@@ -174,8 +174,8 @@ GetOverviewColumns <- function(college_data) {
 RenderInstitutionPages <- function(overview, degree_granting) {
 	institutions <- unique(overview$ShortName)
 	#for (i in seq_along(institutions)) {
-	for (i in sequence(5)) {
-		try({
+	for (i in sequence(10)) {
+	#	try({
 		print(institutions[i])
 		rmarkdown::render(input="institution.Rmd", output_file=paste0(  utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
         params = list(
@@ -183,7 +183,7 @@ RenderInstitutionPages <- function(overview, degree_granting) {
 			overview_table = subset(overview, overview$ShortName == institutions[i]),
 			raw_table = degree_granting
         ))
-		}, silent=TRUE)
+		#}, silent=TRUE)
 	}
 }
 

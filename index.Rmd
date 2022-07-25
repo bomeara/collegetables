@@ -23,7 +23,7 @@ Both the vaccination and misconduct information is based on linking the college 
 
 All the fields can be filtered on. For ones with a few options (Yes/No, States, Sector, Abortion, etc.) you can select from pre-computed selections; for numbers, you can filter by the upper and lower limits; for free text, you can search. 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 source("_packages.R")
 source("R/functions.R")
 tar_load(overview)
@@ -97,11 +97,12 @@ DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions =
 
     ), # all 5 are hideable/showable by the button
 	fixedColumns = list(leftColumns=1),
-	pageLength = 200,
+	pageLength = 100,
 	fixedHeader = TRUE,
 	columnDefs = list(
       list(targets = c(4:(ncol(overview)-1)), visible = FALSE)
     )
   )
 ) %>% formatPercentage(c("Yield", "Admission", "Graduation", "First year retention", "Walkability", (colnames(overview)[grepl("undergrads", colnames(overview))] )  ), 0)
+
 ```
