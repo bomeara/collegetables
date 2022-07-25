@@ -21,7 +21,7 @@ knitr::opts_chunk$set(dev="png")
 * `r params$overview_table['Sector']`
 * `r params$overview_table['Type']`
 * It is `r paste0(ifelse(params$overview_table['Historically Black College or University']=="Yes","", "not "), "an historically black college or university (HBCU)")`
-* Its undergraduate enrollment is `r params$overview_table["Undergraduate enrollment"]`
+* Its undergraduate enrollment is `r formatC(as.numeric(params$overview_table["Undergraduate enrollment"]),big.mark=",")`
 
 
 
