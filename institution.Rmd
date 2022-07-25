@@ -13,8 +13,8 @@ title: "`r paste0(params$institution_name)`"
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(dev="png")
-print(colnames(params$raw_table))
-#focal_raw <- subset(params$raw_table, `Institution Name`==params$institution_name)
+focal_raw <- params$raw_table
+focal_raw <- subset(focal_raw, "Institution Name"==params$institution_name)
 
 ```
 
