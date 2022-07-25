@@ -11,12 +11,10 @@ title: "`r paste0(params$institution_name)`"
 
 ---
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(dev="png")
 focal_raw <- as.data.frame(params$raw_table)
 focal_raw <- subset(focal_raw, focal_raw$"Institution Name"==params$institution_name)
-if
-
 ```
 
 ### General information
@@ -32,7 +30,7 @@ if
 
 Two things to note here are diversity overall as well as the distribution tenure, tenure track, and non tenure track faculty. There are two main tracks in academia: faculty who are given short term contracts (and often a high teaching load and lower pay) and faculty who 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=(nrow(focal_raw)==1)}
 instructor_levels <- gsub("Black or African American men ", "", colnames(focal_raw)[grepl("Black or African American men \\(Full", colnames(focal_raw))])
 instructor_groups <- unique(gsub(" \\(.*\\)", "", colnames(focal_raw)[grepl("Full-time instructional", colnames(focal_raw))]))
 
