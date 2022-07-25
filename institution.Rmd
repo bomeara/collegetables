@@ -14,9 +14,14 @@ title: "`r paste0(params$institution_name)`"
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(dev="png")
+print("hay")
 ```
+
+`r print("cat")`
+
 
 * `r print(params$overview_table['Sector'])`
 * `r print(params$overview_table['Type'])`
 
 `r print(paste0("class ", class(params$overview_table)))`
+
