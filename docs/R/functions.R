@@ -121,8 +121,8 @@ FilterForDegreeGranting <- function(college_data) {
 
 GetOverviewColumns <- function(college_data) {
 	overview <- as.data.frame(college_data %>% select("Institution Name", "Sector of institution", "CollegeType","Historically Black College or University", "Undergraduate enrollment","City location of institution","State abbreviation",  "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019",  "Graduation rate  total cohort",   "StudentToTenureTrackRatio", "Degree of urbanization (Urban-centric locale)", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "Abortion restrictions", "NumberOfPhysicalBooksPerUndergrad", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase",  "Percent of undergraduate enrollment that are women", "Percent of undergraduate enrollment that are American Indian or Alaska Native", "Percent of undergraduate enrollment that are American Indian or Alaska Native", "Percent of undergraduate enrollment that are American Indian or Alaska Native", "Percent of undergraduate enrollment that are American Indian or Alaska Native", "Percent of undergraduate enrollment that are Black or African American" , "Percent of undergraduate enrollment that are Hispanic/Latino" ,  "Percent of undergraduate enrollment that are White" ,  "Percent of undergraduate enrollment that are two or more races"  , "Percent of undergraduate enrollment that are Race/ethnicity unknown"  , "Percent of undergraduate enrollment that are Nonresident Alien" , "Grand total men (Full-time instructional with faculty status)", "Grand total women (Full-time instructional with faculty status)" , "American Indian or Alaska Native men (Full-time instructional with faculty status)" ,    "American Indian or Alaska Native women (Full-time instructional with faculty status)" , "Asian men (Full-time instructional with faculty status)"   ,"Asian women (Full-time instructional with faculty status)" ,"Black or African American men (Full-time instructional with faculty status)"  , "Black or African American women (Full-time instructional with faculty status)", "Hispanic or Latino men (Full-time instructional with faculty status)" ,"Hispanic or Latino women (Full-time instructional with faculty status)"  ,"Native Hawaiian or Other Pacific Islander men (Full-time instructional with faculty status)" ,"Native Hawaiian or Other Pacific Islander women (Full-time instructional with faculty status)"  , "White men (Full-time instructional with faculty status)" ,"White women (Full-time instructional with faculty status)"    ,   "Two or more races men (Full-time instructional with faculty status)"  ,"Two or more races women (Full-time instructional with faculty status)" ,"Race/ethnicity unknown men (Full-time instructional with faculty status)"      ,"Race/ethnicity unknown women (Full-time instructional with faculty status)"   ,"Nonresident alien men (Full-time instructional with faculty status)", "Nonresident alien women (Full-time instructional with faculty status)"  ))
-	overview$RankingProxy <- (100 - as.numeric(overview$"Percent admitted - total")) + as.numeric(overview$"Graduation rate  total cohort")
-	overview$RankingProxy <- as.numeric(overview$RankingProxy)
+	overview$RankingProxy <- (100 - as.numeric(overview$"Percent admitted - total")) + as.numeric(overview$"Graduation rate  total cohort") + (as.numeric(overview$`Undergraduate enrollment`))^(1/4)
+	overview$RankingProxy <- as.numeric(overview$RankingProxy) 
 	overview <- subset(overview, !is.na(overview$RankingProxy))
 	overview <- dplyr::distinct(overview[order(overview$RankingProxy, decreasing=TRUE),])
 	overview$NatWalkInd <- round(as.numeric(overview$NatWalkInd)/20,2)
@@ -161,6 +161,7 @@ GetOverviewColumns <- function(college_data) {
 	overview$`Undergraduate enrollment` <- as.numeric(overview$`Undergraduate enrollment`)
 	overview$ShortName <- overview$Name
 	overview$Name <- paste0(overview$Name, " (", overview$City, ", ", overview$State, ")")
+	overview$URL <- paste0(  utils::URLencode(gsub(" ", "", overview$ShortName)), ".html")
 
 	overview <- select(overview, -RankingProxy)
 	overview <- select(overview, -City)
@@ -174,11 +175,19 @@ RenderInstitutionPages <- function(overview, degree_granting) {
 	institutions <- unique(overview$ShortName)
 	#for (i in seq_along(institutions)) {
 	for (i in sequence(5)) {
-		rmarkdown::render(input="institution.Rmd", output_file=paste0( "institutions/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
+		try({
+		print(institutions[i])
+		rmarkdown::render(input="institution.Rmd", output_file=paste0(  utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
         params = list(
 			institution_name = institutions[i],
 			overview_table = subset(overview, overview$ShortName == institutions[i]),
 			raw_table = degree_granting
         ))
+		}, silent=TRUE)
 	}
+}
+
+FilterForTopAndSave <- function(overview) {
+	overview_top <- as.data.frame(overview)[c(1:1000),]
+	write.csv(overview_top, file="overview_top.csv")
 }

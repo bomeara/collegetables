@@ -13,7 +13,9 @@ title: "`r paste0(params$institution_name)`"
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(dev="png")
-focal_raw <- subset(params$raw_table, `Institution Name`==params$institution_name)
+print(colnames(params$raw_table))
+#focal_raw <- subset(params$raw_table, `Institution Name`==params$institution_name)
+
 ```
 
 ### General information
@@ -25,7 +27,7 @@ focal_raw <- subset(params$raw_table, `Institution Name`==params$institution_nam
 * Its undergraduate enrollment is `r format(as.numeric(params$overview_table["Undergraduate enrollment"]),big.mark=",", scientific=FALSE)`
 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 instructor_levels <- gsub("Black or African American men ", "", colnames(focal_raw)[grepl("Black or African American men \\(Full", colnames(focal_raw))])
 instructor_groups <- unique(gsub(" \\(.*\\)", "", colnames(focal_raw)[grepl("Full-time instructional", colnames(focal_raw))]))
 
