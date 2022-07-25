@@ -13,16 +13,18 @@ title: "`r paste0(params$institution_name)`"
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(dev="png")
-print("hay")
-print(params$overview_table)
 ```
-Hello
 
-`r "cat"`
+### General information
 
 
 * `r params$overview_table['Sector']`
 * `r params$overview_table['Type']`
+* It is `r paste0(ifelse(params$overview_table['Historically Black College or University']=="Yes","", "not "), "an historically black college or university (HBCU)")`
+* Its undergraduate enrollment is `r params$overview_table["Undergraduate enrollment"]`
 
-`r paste0("class ", class(params$overview_table))`
+
+
+
+
 
