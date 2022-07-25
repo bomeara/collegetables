@@ -13,6 +13,7 @@ title: "`r paste0(params$institution_name)`"
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(dev="png")
+focal_raw <- subset(params$raw_table, `Institution Name`==params$institution_name)
 ```
 
 ### General information
@@ -24,7 +25,44 @@ knitr::opts_chunk$set(dev="png")
 * Its undergraduate enrollment is `r format(as.numeric(params$overview_table["Undergraduate enrollment"]),big.mark=",", scientific=FALSE)`
 
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+instructor_levels <- gsub("Black or African American men ", "", colnames(focal_raw)[grepl("Black or African American men \\(Full", colnames(focal_raw))])
+instructor_groups <- unique(gsub(" \\(.*\\)", "", colnames(focal_raw)[grepl("Full-time instructional", colnames(focal_raw))]))
 
+get_level <- function(x) {
+	return(unname(gsub("\\)", "", strsplit(x, "  +")[[1]][2])))
+}
+professional_levels <- unique(sapply(instructor_levels, get_level))
+professional_levels <- professional_levels[!is.na(professional_levels)]
+combinations <- expand.grid(professional_levels = professional_levels, rank=c("(Full-time instructional not on tenure/no tenure system  ", "(Full-time instructional on-tenure track  ", "(Full-time instructional tenured  "))
+
+faculty_counts <- matrix(0, nrow=length(instructor_groups), ncol=nrow(combinations))
+rownames(faculty_counts) <- instructor_groups
+colnames(faculty_counts) <- paste0(combinations$rank, combinations$professional_levels, ")")
+for (row_index in sequence(nrow(faculty_counts))) {
+	for(col_index in sequence(ncol(faculty_counts))) {
+		try(faculty_counts[row_index, col_index] <- as.numeric(focal_raw[paste0(rownames(faculty_counts)[row_index], " ", colnames(faculty_counts)[col_index])]), silent=TRUE)
+	}	
+}
+faculty_counts[which(is.na(faculty_counts))] <- 0
+faculty_counts <- faculty_counts[,which(colSums(faculty_counts)>0)]
+colnames(faculty_counts) <- gsub('\\(Full-time instructional ', '', gsub('\\)', '', colnames(faculty_counts)))
+
+faculty_counts_summary <- as.data.frame(matrix(0, nrow=nrow(faculty_counts), ncol=6))
+rownames(faculty_counts_summary) <- rownames(faculty_counts)
+colnames(faculty_counts_summary) <- c("Tenured (count)", "Tenure-track (count)", "Non-tenure-track (count)", "Tenured (percent)", "Tenure-track (percent)", "Non-tenure-track (percent)")
+total_faculty <- sum(faculty_counts[c("Grand total men", "Grand total women"),])
+faculty_counts_summary[,4:6] <- as.character(faculty_counts_summary[,4:6])
+# tenured
+matching_cols <- which(grepl("tenured", colnames(faculty_counts)))
+if(length(matching_cols)>=1) {
+	faculty_counts_summary[,1] <- rowSums(faculty_counts[,matching_cols]))
+	faculty_counts_summary[,4] <- paste0(100*round(faculty_counts_summary[,1]/total_faculty,3), "%")
+}
+
+
+knitr::kable(faculty_counts_summary, row.names=TRUE)
+```
 
 
 
