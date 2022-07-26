@@ -86,5 +86,42 @@ for (row_index in sequence(nrow(faculty_counts_summary))) {
 knitr::kable(faculty_counts_summary, row.names=TRUE)
 ```
 
+### Diversity among the students
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=(nrow(focal_raw)==1)}
+student_demographics <- gsub(" \\(EF2019A_RV  Full-time students  Undergraduate total\\)", "", colnames(focal_raw)[grepl("(EF2019A_RV  Full-time students  Undergraduate total)", colnames(focal_raw))])
+
+
+student_types <- c("(EF2019A_RV  Full-time students  Undergraduate total)", "(EF2019A_RV  Full-time students  Graduate)")
+
+combinations <- expand.grid(student_demographics = student_demographics, rank=student_types)
+
+
+student_counts <- as.data.frame(matrix(0, nrow=length(student_demographics), ncol=length(student_types)))
+rownames(student_counts) <- student_demographics
+colnames(student_counts) <-student_types
+for (row_index in sequence(nrow(student_counts))) {
+	for(col_index in sequence(ncol(student_counts))) {
+		print(paste0(rownames(student_counts)[row_index], "  ", colnames(student_counts)[col_index]))
+		try(student_counts[row_index, col_index] <- as.numeric(focal_raw[paste0(rownames(student_counts)[row_index], " ", colnames(student_counts)[col_index])]), silent=TRUE)
+		if(is.na(student_counts[row_index, col_index])) {
+			student_counts[row_index, col_index] <- 0	
+		}
+	}	
+}
+
+total_undergrads <- student_counts[1,1] + student_counts[2,1]
+total_grads <- student_counts[2,1] + student_counts[2,2]
+colnames(student_counts) <- c("Undergrad (count)", "Grad student (count)")
+student_counts$`Undergrads (percent)` <- "0%"
+student_counts$`Grad students (percent)` <- "0%"
+for (i in sequence(nrow(student_counts))) {
+	student_counts[i,3] <- paste0(round(100*student_counts[i,1]/total_undergrads,1), '%')
+	student_counts[i,4] <- paste0(round(100*student_counts[i,2]/total_grads,1), '%')
+
+}
+
+knitr::kable(student_counts, row.names=TRUE)
+```
 
 
