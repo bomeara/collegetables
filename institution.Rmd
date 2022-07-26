@@ -102,7 +102,6 @@ rownames(student_counts) <- student_demographics
 colnames(student_counts) <-student_types
 for (row_index in sequence(nrow(student_counts))) {
 	for(col_index in sequence(ncol(student_counts))) {
-		print(paste0(rownames(student_counts)[row_index], "  ", colnames(student_counts)[col_index]))
 		try(student_counts[row_index, col_index] <- as.numeric(focal_raw[paste0(rownames(student_counts)[row_index], " ", colnames(student_counts)[col_index])]), silent=TRUE)
 		if(is.na(student_counts[row_index, col_index])) {
 			student_counts[row_index, col_index] <- 0	
