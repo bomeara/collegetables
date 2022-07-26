@@ -110,7 +110,7 @@ for (row_index in sequence(nrow(student_counts))) {
 }
 
 total_undergrads <- student_counts[1,1] + student_counts[2,1]
-total_grads <- student_counts[2,1] + student_counts[2,2]
+total_grads <- student_counts[1,2] + student_counts[2,2]
 colnames(student_counts) <- c("Undergrad (count)", "Grad student (count)")
 student_counts$`Undergrads (percent)` <- "0%"
 student_counts$`Grad students (percent)` <- "0%"
