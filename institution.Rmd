@@ -128,24 +128,28 @@ knitr::kable(student_counts, row.names=TRUE)
 First time degree seeking undergrads
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=(nrow(focal_raw)==1)}
-Students_by_state <- data.frame(fips=rep(NA,  length(state.name)), abbr=state.abb, Name=state.name, Undergrad_Count=rep(0.0, length(state.name)), Percent_of_18_yo_from_this_state_enrolled_here=rep(0.0, length(state.name)))
+Students_by_state <- data.frame(fips=rep(NA,  length(state.name)), abbr=state.abb, State=state.name, Undergrad_Count=rep(0.0, length(state.name)), Percent_of_18_yo_from_this_state_enrolled_here=rep(0.0, length(state.name)))
 
 state_pops <- GetPopulationByStateAtAge18()
 
 for (i in sequence(nrow(Students_by_state))) {
-	Students_by_state$Undergrad_Count[i] <- unname(unlist(focal_raw[paste0("Count of first-time undergrads from ", Students_by_state$Name[i])]))
-	Students_by_state$Percent_of_18_yo_from_this_state_enrolled_here[i] <- unname(unlist(focal_raw[paste0("Percentage of all 18 year olds in the focal state enrolling in this college from ", Students_by_state$Name[i])]))
+	Students_by_state$Undergrad_Count[i] <- unname(unlist(focal_raw[paste0("Count of first-time undergrads from ", Students_by_state$State[i])]))
+	Students_by_state$Percent_of_18_yo_from_this_state_enrolled_here[i] <- unname(unlist(focal_raw[paste0("Percentage of all 18 year olds in the focal state enrolling in this college from ", Students_by_state$State[i])]))
 	if(is.na(Students_by_state$Undergrad_Count[i])) {
 		Students_by_state$Undergrad_Count[i] <- 0
 		Students_by_state$Percent_of_18_yo_from_this_state_enrolled_here[i] <- 0
 	}
-	Students_by_state$fips[i] <- state_pops$State_FIPS[which(state_pops$State==Students_by_state$Name[i])]
+	Students_by_state$fips[i] <- state_pops$State_FIPS[which(state_pops$State==Students_by_state$State[i])]
 }
 count_data <- as.data.frame(select(Students_by_state, c("fips", "Undergrad_Count")))
 colnames(count_data) <- c("fips", "values")
 count_data$fips <- as.character(count_data$fips)
 count_data$values[is.na(count_data$values)] <- 0
 count_data[,2] <- as.numeric(count_data[,2])
+
+#knitr::kable(Students_by_state[, c('State','Undergrad_Count', 'Percent_of_18_yo_from_this_state_enrolled_here')], row.names=FALSE)
+
+knitr::kable(Students_by_state, row.names=FALSE)
 
 if(max(count_data$values)>0) {
 plot_usmap(data=count_data, regions = "states", color = "blue") + labs(title=paste0("Number of students from each state enrolled in ",params$institution_name)) +
