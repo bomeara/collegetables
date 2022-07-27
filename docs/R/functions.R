@@ -65,7 +65,26 @@ AggregateIPEDS <- function() {
 	# 		raw_data$CollegeType[i] <- paste0(raw_data$CollegeType[i], "; Land Grant Institution")
 	# 	}	
 	# }
+	undergrad_cols <- which(grepl("First-time degree/certificate-seeking undergraduate students", colnames(raw_data), ignore.case=TRUE)) 
+	colnames(raw_data)[undergrad_cols] <- paste0("Count of first-time undergrads from ", gsub("First-time degree/certificate-seeking undergraduate students \\(EF2019C_RV  ", "", gsub("\\)","",colnames(raw_data)[undergrad_cols])))
+	pops_by_state <- GetPopulationByStateAtAge18()
+	for (i in sequence(nrow(pops_by_state))) {
+		raw_data[, paste0("Percentage of all 18 year olds in the focal state enrolling in this college from ", pops_by_state$State[i])] <- 
+		100*as.numeric(pull(raw_data, paste0("Count of first-time undergrads from ", pops_by_state$State[i])))/as.numeric(pops_by_state$Population_age_18[i])
+	}
+	
+	
 	return(raw_data)
+}
+
+# From https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-detail.html
+GetPopulationByStateAtAge18 <- function() {
+	pops <- read.csv("data/sc-est2019-agesex-civ.csv")
+	pops <- subset(pops, SEX==0 & AGE==18) # all sexes. only age 18
+	pops <- select(pops, c("STATE", "NAME", "POPEST2019_CIV"))
+	colnames(pops) <- c("State_FIPS", "State", "Population_age_18")
+	pops <- subset(pops, State_FIPS>0)
+	return(pops)
 }
 
 CleanNames <- function(college_data) {
