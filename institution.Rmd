@@ -133,12 +133,12 @@ Students_by_state <- data.frame(fips=rep(NA,  length(state.name)), abbr=state.ab
 state_pops <- GetPopulationByStateAtAge18()
 
 for (i in sequence(nrow(Students_by_state))) {
-	Students_by_state$Undergrad_Count[i] <- unname(unlist(params$raw_table[paste0("Count of first-time undergrads from ", Students_by_state$Name[i])]))
-	Students_by_state$Percent_of_18_yo_from_this_state_enrolled_here[i] <- unname(unlist(params$raw_table[paste0("Percentage of all 18 year olds in the focal state enrolling in this college from ", Students_by_state$Name[i])]))
-	#if(is.na(Students_by_state$Undergrad_Count[i])) {
-	#	Students_by_state$Undergrad_Count[i] <- 0
-	#	Students_by_state$Percent_of_18_yo_from_this_state_enrolled_here[i] <- 0
-	#}
+	Students_by_state$Undergrad_Count[i] <- unname(unlist(focal_raw[paste0("Count of first-time undergrads from ", Students_by_state$Name[i])]))
+	Students_by_state$Percent_of_18_yo_from_this_state_enrolled_here[i] <- unname(unlist(focal_raw[paste0("Percentage of all 18 year olds in the focal state enrolling in this college from ", Students_by_state$Name[i])]))
+	if(is.na(Students_by_state$Undergrad_Count[i])) {
+		Students_by_state$Undergrad_Count[i] <- 0
+		Students_by_state$Percent_of_18_yo_from_this_state_enrolled_here[i] <- 0
+	}
 	Students_by_state$fips[i] <- state_pops$State_FIPS[which(state_pops$State==Students_by_state$Name[i])]
 }
 count_data <- as.data.frame(select(Students_by_state, c("fips", "Undergrad_Count")))
@@ -152,13 +152,13 @@ plot_usmap(data=count_data, regions = "states", color = "blue") + labs(title=pas
   scale_fill_continuous(low = "white", high = "blue", name = "Number of undergrads", label = scales::comma) +  theme(legend.position = "right")
 
 
-#pct_data <- select(Students_by_state, c("fips", "Percent_of_18_yo_from_this_state_enrolled_here"))
-#colnames(pct_data) <- c("fips", "values")
-#pct_data$fips <- as.character(pct_data$fips)
-#pct_data$values <- as.numeric(pct_data$values)
+pct_data <- select(Students_by_state, c("fips", "Percent_of_18_yo_from_this_state_enrolled_here"))
+colnames(pct_data) <- c("fips", "values")
+pct_data$fips <- as.character(pct_data$fips)
+pct_data$values <- as.numeric(pct_data$values)
 
-#plot_usmap(data=pct_data, regions = "states", color = "blue") + labs(title=paste0("Percentage of 18 year olds in each state enrolled in ",params$institution_name)) +
-#  scale_fill_continuous(low = "white", high = "blue", name = "Percentage (out of 100)", label = scales::comma) +  theme(legend.position = "right")
+plot_usmap(data=pct_data, regions = "states", color = "blue") + labs(title=paste0("Percentage of 18 year olds in each state enrolled in ",params$institution_name)) +
+  scale_fill_continuous(low = "white", high = "blue", name = "Percentage (out of 100)", label = scales::comma) +  theme(legend.position = "right")
 
 ```
 
