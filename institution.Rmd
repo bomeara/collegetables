@@ -146,7 +146,6 @@ colnames(count_data) <- c("fips", "values")
 count_data$fips <- as.character(count_data$fips)
 count_data$values[is.na(count_data$values)] <- 0
 count_data[,2] <- as.numeric(count_data[,2])
-print(Students_by_state)
 
 plot_usmap(data=count_data, regions = "states", color = "blue") + labs(title=paste0("Number of students from each state enrolled in ",params$institution_name)) +
   scale_fill_continuous(low = "white", high = "blue", name = "Number of undergrads", label = scales::comma) +  theme(legend.position = "right")
