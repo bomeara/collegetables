@@ -14,7 +14,7 @@ title: "`r paste0(params$institution_name)`"
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(dev="png")
 focal_raw <- as.data.frame(params$raw_table)
-focal_raw <- subset(focal_raw, focal_raw$"Institution Name"==params$institution_name)
+focal_raw <- subset(focal_raw, focal_raw$"Institution Name"==params$institution_name)[1,]
 ```
 
 ### General information
@@ -23,12 +23,22 @@ focal_raw <- subset(focal_raw, focal_raw$"Institution Name"==params$institution_
 * `r params$overview_table['Sector']`
 * `r params$overview_table['Type']`
 * It is `r paste0(ifelse(params$overview_table['Historically Black College or University']=="Yes","", "not "), "an historically black college or university (HBCU)")`
-* Its undergraduate enrollment is `r format(as.numeric(params$overview_table["Undergraduate enrollment"]),big.mark=",", scientific=FALSE)`
+* Its undergraduate enrollment is `r format(as.numeric(params$overview_table["Undergraduate enrollment"]),big.mark=",", scientific=FALSE)` (includes all undergrads; some of the numbers below are based on first time, full time, degree seeking students only).
+* It `r ifelse(focal_raw['AllStudentsVaccinatedAgainstCovid19']=="Yes", "required", "did not require")` students to be vaccinated against COVID-19.
+* It `r ifelse(focal_raw['AllEmployeesVaccinatedAgainstCovid19']=="Yes", "required", "did not require")` employees to be vaccinated against COVID-19.
 
+
+### Degrees awarded per year
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+degrees <- data.frame(Degree=c("Associate", "Bachelor", "Master", "Doctor"), Number=unname(unlist(c(focal_raw["Number of students receiving an Associate's degree (DRVC2020)" ], focal_raw["Number of students receiving a Bachelor's degree (DRVC2020)" ],focal_raw["Number of students receiving a Master's degree (DRVC2020)" ],focal_raw["Number of students receiving a Doctor's degree (DRVC2020)"]))))
+
+knitr::kable(degrees, row.names=FALSE)
+```
 
 ### Diversity among the faculty
 
-Two things to note here are diversity overall as well as the distribution tenure, tenure track, and non tenure track faculty. There are two main tracks in academia: faculty who are given short term contracts (and often a high teaching load and lower pay) and faculty who 
+Two things to note here are diversity overall as well as the distribution tenure, tenure track, and non tenure track faculty. There are two main tracks in academia: faculty who are given short term contracts (and often a high teaching load and lower pay) and faculty who are essentially on probation (for 3-6 years, typically) and then are given tenure or fired. For more about tenure, see [here](https://www.aaup.org/issues/tenure). Tenure is a way of protecting academic freedom (tenured faculty can be fired for misconduct or if a program is closed, but not for their research or speech); the fact that it is often more stable also helps ensure that faculty will be at an institution long term to serve as mentors, letter writers, etc. Having more non-tenure-track faculty can save money (they are often paid less, and teach more), reduce public dissent (they can be fired for taking a stand unpopular with their employer), and reduce research or other creative output, including mentoring in these areas (teaching loads are often higher, and research/creative output expectations lower, for faculty in non-tenure-track positions at large universities).
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=(nrow(focal_raw)==1)}
 instructor_levels <- gsub("Black or African American men ", "", colnames(focal_raw)[grepl("Black or African American men \\(Full", colnames(focal_raw))])
@@ -147,9 +157,16 @@ count_data$fips <- as.character(count_data$fips)
 count_data$values[is.na(count_data$values)] <- 0
 count_data[,2] <- as.numeric(count_data[,2])
 
-#knitr::kable(Students_by_state[, c('State','Undergrad_Count', 'Percent_of_18_yo_from_this_state_enrolled_here')], row.names=FALSE)
+pretty_table <- Students_by_state[, c('State','Undergrad_Count')]
+colnames(pretty_table) <- c("State", "Number of students")
+pretty_table$'Fraction of student body from each state' <- paste0('1/',round(sum(as.numeric(pretty_table$'Number of students'))/as.numeric(pretty_table$'Number of students')))
+pretty_table$'Fraction of 18 year olds from each state enrolled here' <- paste0('1/',round(100/Students_by_state$Percent_of_18_yo_from_this_state_enrolled_here))
 
-knitr::kable(Students_by_state, row.names=FALSE)
+
+
+knitr::kable(pretty_table, row.names=FALSE)
+
+#knitr::kable(Students_by_state, row.names=FALSE)
 
 if(max(count_data$values)>0) {
 plot_usmap(data=count_data, regions = "states", color = "blue") + labs(title=paste0("Number of students from each state enrolled in ",params$institution_name)) +
@@ -168,4 +185,6 @@ plot_usmap(data=pct_data, regions = "states", color = "blue") + labs(title=paste
   scale_fill_continuous(low = "white", high = "blue", name = "Percentage (out of 100)", label = scales::comma) +  theme(legend.position = "right")
 } 
 ```
+
+
 

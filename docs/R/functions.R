@@ -196,7 +196,7 @@ RenderInstitutionPages <- function(overview, degree_granting) {
 	for (i in sequence(10)) {
 	#	try({
 		print(institutions[i])
-		rmarkdown::render(input="institution.Rmd", output_file=paste0(  utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
+		rmarkdown::render(input="_institution.Rmd", output_file=paste0(  "docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
         params = list(
 			institution_name = institutions[i],
 			overview_table = subset(overview, overview$ShortName == institutions[i]),
