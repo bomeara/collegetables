@@ -13,8 +13,11 @@ title: "`r paste0(params$institution_name)`"
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(dev="png")
-focal_raw <- as.data.frame(params$raw_table)
-focal_raw <- subset(focal_raw, focal_raw$"Institution Name"==params$institution_name)[1,]
+raw_table_df <- as.data.frame(params$raw_table)
+focal_row_number <- which(raw_table_df$"Institution Name"==params$institution_name)
+nearby <- seq(from=max(1, focal_row_number-5), to=min(nrow(raw_table_df),focal_row_number+5), by=1)
+focal_raw <- subset(raw_table_df, raw_table_df$"Institution Name"==params$institution_name)[1,]
+focal_nearby <- raw_table_df[nearby,]
 ```
 
 ### General information
@@ -23,12 +26,26 @@ focal_raw <- subset(focal_raw, focal_raw$"Institution Name"==params$institution_
 * `r params$overview_table['Sector']`
 * `r params$overview_table['Type']`
 * It is `r paste0(ifelse(params$overview_table['Historically Black College or University']=="Yes","", "not "), "an historically black college or university (HBCU)")`
-* Its undergraduate enrollment is `r format(as.numeric(params$overview_table["Undergraduate enrollment"]),big.mark=",", scientific=FALSE)` (includes all undergrads; some of the numbers below are based on first time, full time, degree seeking students only).
-* It `r ifelse(focal_raw['AllStudentsVaccinatedAgainstCovid19']=="Yes", "required", "did not require")` students to be vaccinated against COVID-19.
-* It `r ifelse(focal_raw['AllEmployeesVaccinatedAgainstCovid19']=="Yes", "required", "did not require")` employees to be vaccinated against COVID-19.
+* Undergraduate enrollment is `r format(as.numeric(params$overview_table["Undergraduate enrollment"]),big.mark=",", scientific=FALSE)` (includes all undergrads; some of the numbers below are based on first time, full time, degree seeking students only).
+* `r ifelse(is.na(focal_raw['Mission statement (IC2019mission)']), paste0('See mission at ', focal_raw["Mission statement URL (if mission statement not provided) (IC2019mission)"]), paste0("Mission: ", focal_raw['Mission statement (IC2019mission)']))`
+* `r 100*params$overview_table['Admission']`% of applicants are admitted
+* `r 100*params$overview_table['Yield']`% of admitted applicants choose to enroll
+* `r 100*params$overview_table['First year retention']`% of students stay after their first year
+* `r 100*params$overview_table['Graduation']`% of students graduate
+* The student to all faculty ratio is `r paste0(focal_raw["Student-to-faculty ratio"], ":1")`
+* The student to tenured or tenure-track faculty ratio is `r paste0(round(as.numeric(params$overview_table["Students per tenure-track professor"])),":1")`
+* Students `r ifelse(focal_raw['AllStudentsVaccinatedAgainstCovid19']=="Yes", "are", "are not")` required to be vaccinated against COVID-19
+* Employees `r ifelse(focal_raw['AllEmployeesVaccinatedAgainstCovid19']=="Yes", "are", "are not")` required to be vaccinated against COVID-19
+* This college is located in a `r params$overview_table['Locale']`
+* `r ifelse(is.na(params$overview_table['Minimum distance to mass transit (minutes walking)']), "It is not near mass transit", paste0("The closest mass transit is a ", params$overview_table['Minimum distance to mass transit (minutes walking)'], " minute walk away"))`
+* For abortion access, as of July, 2022, the state this institution is in was ranked as having "`r gsub("\\d\\: ", "", tolower(params$overview_table['Abortion restrictions'][1,1]))`" by the [Guttmacher Institute](https://states.guttmacher.org/policies/), though this may change.
+* [California `r ifelse(params$overview_table["Anti-LGBTQ+ state laws" ]=="Yes", "considers", "does not consider")` this state to have anti-LGBTQ+ laws](https://oag.ca.gov/ab1887). `r ifelse(params$overview_table["Anti-LGBTQ+ state laws" ]=="Yes", "This means that California will not approve or require state-sponsored travel to this state.", "")`
 
+# Results {.tabset}
 
-### Degrees awarded per year
+## Tables
+
+### Degrees awarded each year
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 degrees <- data.frame(Degree=c("Associate", "Bachelor", "Master", "Doctor"), Number=unname(unlist(c(focal_raw["Number of students receiving an Associate's degree (DRVC2020)" ], focal_raw["Number of students receiving a Bachelor's degree (DRVC2020)" ],focal_raw["Number of students receiving a Master's degree (DRVC2020)" ],focal_raw["Number of students receiving a Doctor's degree (DRVC2020)"]))))
@@ -161,19 +178,19 @@ pretty_table <- Students_by_state[, c('State','Undergrad_Count')]
 colnames(pretty_table) <- c("State", "Number of students")
 pretty_table$'Fraction of student body from each state' <- paste0('1/',round(sum(as.numeric(pretty_table$'Number of students'))/as.numeric(pretty_table$'Number of students')))
 pretty_table$'Fraction of 18 year olds from each state enrolled here' <- paste0('1/',round(100/Students_by_state$Percent_of_18_yo_from_this_state_enrolled_here))
+```
 
+`r ifelse((max(count_data$values))==0, "**There are no available data on states of origin**", "")`
 
-
-knitr::kable(pretty_table, row.names=FALSE)
-
-#knitr::kable(Students_by_state, row.names=FALSE)
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=(nrow(focal_raw)==1)}
 
 if(max(count_data$values)>0) {
-plot_usmap(data=count_data, regions = "states", color = "blue") + labs(title=paste0("Number of students from each state enrolled in ",params$institution_name)) +
-  scale_fill_continuous(low = "white", high = "blue", name = "Number of undergrads", label = scales::comma) +  theme(legend.position = "right")
-} else {
-	print("No data")
-}
+
+  knitr::kable(pretty_table, row.names=FALSE)
+  
+  plot_usmap(data=count_data, regions = "states", color = "blue") + labs(title=paste0("Number of students from each state enrolled in ",params$institution_name)) +
+    scale_fill_continuous(low = "white", high = "blue", name = "Number of undergrads", label = scales::comma) +  theme(legend.position = "right")
+} 
 
 pct_data <- select(Students_by_state, c("fips", "Percent_of_18_yo_from_this_state_enrolled_here"))
 colnames(pct_data) <- c("fips", "values")
@@ -187,4 +204,36 @@ plot_usmap(data=pct_data, regions = "states", color = "blue") + labs(title=paste
 ```
 
 
+
+### Library resources
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+library_columns <- c("Number of physical books", "Number of physical media"  ,  "Number of physical serials" , "Number of digital/electronic books", "Number of digital/electronic databases", "Number of digital/electronic media", "Number of electronic serials" , "Total library collections (physical and electronic)" , "Total physical library circulations (books and media)", "Total digital/electronic circulations (books and media)", "Total library circulations (physical and digital/electronic)" , "Total interlibrary loans and documents provided to other libraries", "Total interlibrary loans and documents received" )                 
+library_table <- as.data.frame( t(focal_raw[library_columns]))
+colnames(library_table) <- "Number"
+library_table$Number <- as.numeric(library_table$Number )
+library_table$`Number per undergrad` <- ceiling(library_table$Number/as.numeric(params$overview_table["Undergraduate enrollment"]))
+library_table[5,2] <- library_table[5,1]
+library_table$Number <- format(as.numeric(library_table$Number),big.mark=",", scientific=FALSE)
+library_table$`Number per undergrad` <- format(as.numeric(library_table$`Number per undergrad`),big.mark=",", scientific=FALSE)
+
+knitr::kable(library_table)
+```
+
+## Figures
+
+
+### Student to faculty ratio compared to similar institutions:
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+df_to_plot <- focal_nearby[,c('Institution Name', "Student-to-faculty ratio", 'StudentToTenureTrackRatio')]
+colnames(df_to_plot) <- c("Institution", "StudentsToAllFaculty", "StudentsToTTFaculty")
+df_to_plot[,2] <- as.numeric(df_to_plot[,2])
+df_to_plot[,3] <- as.numeric(df_to_plot[,3])
+print(
+	ggplot(df_to_plot, aes(x=StudentsToAllFaculty, y=StudentsToTTFaculty, label=Institution)) +
+	geom_point() + geom_text_repel() + xlab("Students per instructor (lower is better)") + ylab("Students per tenure track instructor (lower is better)")
+	)
+```
 
