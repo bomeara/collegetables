@@ -15,7 +15,7 @@ AggregateIPEDS <- function() {
 	raw_data <- select(raw_data, -'...253')
 
 	raw_data2 <- mutate_all(read_csv("data/ipeds_Data_7-24-2022---404.csv", col_types="c"), as.character)
-	traits <- mutate_all(read_csv("data/ipeds_Data_7-24-2022---404.csv", col_types="c"), as.character)
+	traits <- mutate_all(read_csv("data/ipeds_ValueLabels_7-24-2022---404.csv", col_types="c"), as.character)
 	possible_colnames <- unique(traits$VariableName)
 	for (col_index in seq_along(possible_colnames)) {
 		if(!grepl("fips|abbreviation", possible_colnames[col_index], ignore.case=TRUE)) {
@@ -198,7 +198,7 @@ GetOverviewColumns <- function(college_data) {
 RenderInstitutionPages <- function(overview, degree_granting) {
 	institutions <- unique(overview$ShortName)
 	#for (i in seq_along(institutions)) {
-	for (i in sequence(50)) {
+	for (i in sequence(500)) {
 	#	try({
 		print(institutions[i])
 		rmarkdown::render(input="_institution.Rmd", output_file=paste0(  "docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 

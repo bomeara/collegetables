@@ -15,7 +15,7 @@ AggregateIPEDS <- function() {
 	raw_data <- select(raw_data, -'...253')
 
 	raw_data2 <- mutate_all(read_csv("data/ipeds_Data_7-24-2022---404.csv", col_types="c"), as.character)
-	traits <- mutate_all(read_csv("data/ipeds_Data_7-24-2022---404.csv", col_types="c"), as.character)
+	traits <- mutate_all(read_csv("data/ipeds_ValueLabels_7-24-2022---404.csv", col_types="c"), as.character)
 	possible_colnames <- unique(traits$VariableName)
 	for (col_index in seq_along(possible_colnames)) {
 		if(!grepl("fips|abbreviation", possible_colnames[col_index], ignore.case=TRUE)) {
@@ -134,6 +134,17 @@ AppendAbortion <- function(college_data) {
 	
 }
 
+AppendAAUPCensure <- function(college_data) {
+	aaup <- read.csv("data/aaup_censure_July2022.csv", header=TRUE)
+	college_data$AAUP_Censure <- "No"
+	for (i in sequence(nrow(aaup))) {
+		distances <- adist(aaup[i,1], college_data$"Institution Name")
+		matches <- which(distances == min(distances))
+		college_data$AAUP_Censure[matches] <- "Yes"
+	}	
+	return(college_data)
+}
+
 FilterForDegreeGranting <- function(college_data) {
 	return(subset(college_data, college_data$"Degree-granting status"=="Degree-granting"))	
 }
@@ -198,7 +209,7 @@ GetOverviewColumns <- function(college_data) {
 RenderInstitutionPages <- function(overview, degree_granting) {
 	institutions <- unique(overview$ShortName)
 	#for (i in seq_along(institutions)) {
-	for (i in sequence(50)) {
+	for (i in sequence(500)) {
 	#	try({
 		print(institutions[i])
 		rmarkdown::render(input="_institution.Rmd", output_file=paste0(  "docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 

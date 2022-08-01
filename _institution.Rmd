@@ -16,8 +16,15 @@ knitr::opts_chunk$set(dev="png")
 raw_table_df <- as.data.frame(params$raw_table)
 focal_row_number <- which(raw_table_df$"Institution Name"==params$institution_name)
 nearby <- seq(from=max(1, focal_row_number-5), to=min(nrow(raw_table_df),focal_row_number+5), by=1)
+nearby_athletics <- which(raw_table_df$"NCAA/NAIA conference number cross country/track"== raw_table_df$"NCAA/NAIA conference number cross country/track"[focal_row_number])
+if(length(nearby_athletics)<25) {
+	#nearby <- unique(c(nearby, nearby_athletics))
+	nearby <- nearby_athletics
+}
 focal_raw <- subset(raw_table_df, raw_table_df$"Institution Name"==params$institution_name)[1,]
 focal_nearby <- raw_table_df[nearby,]
+focal_nearby$Focal <- FALSE
+focal_nearby$Focal[which(focal_nearby$"Institution Name"==params$institution_name)] <- TRUE
 ```
 
 ### General information
@@ -25,7 +32,10 @@ focal_nearby <- raw_table_df[nearby,]
 
 * `r params$overview_table['Sector']`
 * `r params$overview_table['Type']`
-* It is `r paste0(ifelse(params$overview_table['Historically Black College or University']=="Yes","", "not "), "an historically black college or university (HBCU)")`
+`r paste0(ifelse(params$overview_table['Historically Black College or University']=="Yes", "* This is a historically black college or university (HBCU)", ""))`
+`r paste0(ifelse(focal_raw['Tribal college']=="Yes", "* This is a tribal college", ""))`
+`r ifelse(focal_raw['AAUP_Censure']=="Yes", '* **"Unsatisfactory conditions of academic freedom and tenure have been found to prevail at this institution"** according to the <a href="https://www.aaup.org/our-programs/academic-freedom/censure-list">AAUP</a>', "")`
+`r ifelse(params$overview_table["Anti-LGBTQ+ state laws" ]=="Yes", '* **California considers the state this institution is in to have one or more anti-LGBTQ+ laws.** See more <a href="https://oag.ca.gov/ab1887">here</a>', "")`
 * Undergraduate enrollment is `r format(as.numeric(params$overview_table["Undergraduate enrollment"]),big.mark=",", scientific=FALSE)` (includes all undergrads; some of the numbers below are based on first time, full time, degree seeking students only).
 * `r ifelse(is.na(focal_raw['Mission statement (IC2019mission)']), paste0('See mission at ', focal_raw["Mission statement URL (if mission statement not provided) (IC2019mission)"]), paste0("Mission: ", focal_raw['Mission statement (IC2019mission)']))`
 * `r 100*params$overview_table['Admission']`% of applicants are admitted
@@ -39,9 +49,9 @@ focal_nearby <- raw_table_df[nearby,]
 * This college is located in a `r params$overview_table['Locale']`
 * `r ifelse(is.na(params$overview_table['Minimum distance to mass transit (minutes walking)']), "It is not near mass transit", paste0("The closest mass transit is a ", params$overview_table['Minimum distance to mass transit (minutes walking)'], " minute walk away"))`
 * For abortion access, as of July, 2022, the state this institution is in was ranked as having "`r gsub("\\d\\: ", "", tolower(params$overview_table['Abortion restrictions'][1,1]))`" by the [Guttmacher Institute](https://states.guttmacher.org/policies/), though this may change.
-* [California `r ifelse(params$overview_table["Anti-LGBTQ+ state laws" ]=="Yes", "considers", "does not consider")` this state to have anti-LGBTQ+ laws](https://oag.ca.gov/ab1887). `r ifelse(params$overview_table["Anti-LGBTQ+ state laws" ]=="Yes", "This means that California will not approve or require state-sponsored travel to this state.", "")`
+* Athletic conference: `r focal_raw["NCAA/NAIA conference number cross country/track"]`
 
-# Results {.tabset}
+# Details {.tabset}
 
 ## Tables
 
@@ -188,8 +198,8 @@ if(max(count_data$values)>0) {
 
   knitr::kable(pretty_table, row.names=FALSE)
   
-  plot_usmap(data=count_data, regions = "states", color = "blue") + labs(title=paste0("Number of students from each state enrolled in ",params$institution_name)) +
-    scale_fill_continuous(low = "white", high = "blue", name = "Number of undergrads", label = scales::comma) +  theme(legend.position = "right")
+  #plot_usmap(data=count_data, regions = "states", color = "blue") + labs(title=paste0("Number of students from each #state enrolled in ",params$institution_name)) +
+  #  scale_fill_continuous(low = "white", high = "blue", name = "Number of undergrads", label = scales::comma) +  theme(legend.position = "right")
 } 
 
 pct_data <- select(Students_by_state, c("fips", "Percent_of_18_yo_from_this_state_enrolled_here"))
@@ -197,10 +207,7 @@ colnames(pct_data) <- c("fips", "values")
 pct_data$fips <- as.character(pct_data$fips)
 pct_data$values <- as.numeric(pct_data$values)
 
-if(max(pct_data$values)>0) {
-plot_usmap(data=pct_data, regions = "states", color = "blue") + labs(title=paste0("Percentage of 18 year olds in each state enrolled in ",params$institution_name)) +
-  scale_fill_continuous(low = "white", high = "blue", name = "Percentage (out of 100)", label = scales::comma) +  theme(legend.position = "right")
-} 
+
 ```
 
 
@@ -227,13 +234,30 @@ knitr::kable(library_table)
 ### Student to faculty ratio compared to similar institutions:
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-df_to_plot <- focal_nearby[,c('Institution Name', "Student-to-faculty ratio", 'StudentToTenureTrackRatio')]
-colnames(df_to_plot) <- c("Institution", "StudentsToAllFaculty", "StudentsToTTFaculty")
+df_to_plot <- focal_nearby[,c('Institution Name', "Student-to-faculty ratio", 'StudentToTenureTrackRatio', 'Focal')]
+colnames(df_to_plot) <- c("Institution", "StudentsToAllFaculty", "StudentsToTTFaculty", "Focal")
 df_to_plot[,2] <- as.numeric(df_to_plot[,2])
 df_to_plot[,3] <- as.numeric(df_to_plot[,3])
 print(
-	ggplot(df_to_plot, aes(x=StudentsToAllFaculty, y=StudentsToTTFaculty, label=Institution)) +
-	geom_point() + geom_text_repel() + xlab("Students per instructor (lower is better)") + ylab("Students per tenure track instructor (lower is better)")
+	ggplot(df_to_plot, aes(x=StudentsToAllFaculty, y=StudentsToTTFaculty, label=Institution, colour=Focal)) +
+	geom_point() + geom_text_repel() + xlab("Students per instructor (lower is better)") + ylab("Students per tenure track instructor (lower is better)") + theme_minimal() + scale_color_manual(labels = c("darkgray", "red"), values=c("darkgray", "red")) + theme(legend.position = "none")
 	)
 ```
 
+### Students from US
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=(nrow(focal_raw)==1)}
+
+if(max(count_data$values)>0) {
+
+  
+  plot_usmap(data=count_data, regions = "states", color = "black") + labs(title=paste0("Number of students from each state enrolled in ",params$institution_name)) +
+    scale_fill_continuous(low = "white", high = "red", name = "Number of undergrads", label = scales::comma) +  theme(legend.position = "right")
+} 
+
+
+if(max(pct_data$values)>0) {
+	plot_usmap(data=pct_data, regions = "states", color = "black") + labs(title=paste0("Percentage of 18 year olds in each state enrolled in ",params$institution_name)) +
+  	scale_fill_continuous(low = "white", high = "red", name = "Percentage (out of 100)", label = scales::comma) +  theme(legend.position = "right")
+} 
+```

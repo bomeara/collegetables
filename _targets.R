@@ -15,14 +15,16 @@ source("_packages.R")
 options(timeout=24*60*60) # let things download for at least 24 hours (important while on slow internet connection)
 options(download.file.method = "libcurl")
 
-tar_invalidate(pages)
+#tar_invalidate(pages)
+tar_invalidate(index)
 
 # End this file with a list of target objects.
 list(
-  tar_target(college_data, AppendAbortion(AppendMisconduct(AppendVaccination(AggregateIPEDS())))),
-  tar_target(save_raw_data, write.csv(college_data, "docs/college_data.csv")),
+  tar_target(college_data, AppendAAUPCensure(AppendAbortion(AppendMisconduct(AppendVaccination(AggregateIPEDS()))))),
+  #tar_target(save_raw_data, write.csv(college_data, "docs/college_data.csv")),
   tar_target(degree_granting , RoughRanking(FilterForDegreeGranting(college_data))),
   tar_target(overview, GetOverviewColumns(degree_granting)),
   tar_target(pages, RenderInstitutionPages(overview, degree_granting)),
-  tar_target(top,FilterForTopAndSave(overview))
+  tar_target(top,FilterForTopAndSave(overview)),
+  tar_render(index, "index.Rmd")
 )
