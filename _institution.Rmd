@@ -47,9 +47,9 @@ focal_nearby$Focal[which(focal_nearby$"Institution Name"==params$institution_nam
 * The student to tenured or tenure-track faculty ratio is `r paste0(round(as.numeric(params$overview_table["Students per tenure-track professor"])),":1")`
 * Students `r ifelse(focal_raw['AllStudentsVaccinatedAgainstCovid19']=="Yes", "are", "are not")` required to be vaccinated against COVID-19
 * Employees `r ifelse(focal_raw['AllEmployeesVaccinatedAgainstCovid19']=="Yes", "are", "are not")` required to be vaccinated against COVID-19
-* This college is located in a `r params$overview_table['Locale']`
+* This college is located in a `r tolower(paste0(rev(strsplit(as.character(params$overview_table['LocaleChar']), ': ')[[1]]), collapse=' '))`
 * `r ifelse(is.na(params$overview_table['Minimum distance to mass transit (minutes walking)']), "It is not near mass transit", paste0("The closest mass transit is a ", params$overview_table['Minimum distance to mass transit (minutes walking)'], " minute walk away"))`
-* As of July, 2022, the state this institution is in had abortion restrictions categorized as "`r gsub("\\d\\: ", "", tolower(params$overview_table['Abortion restrictions'][1,1]))`" by the [Guttmacher Institute](https://states.guttmacher.org/policies/), though this may change.
+* As of July, 2022, the state this institution is in had abortion restrictions categorized "`r gsub("\\d\\: ", "", tolower(params$overview_table['Abortion restrictions'][1,1]))`" by the [Guttmacher Institute](https://states.guttmacher.org/policies/), though this may change.
 * Athletic conference: `r focal_raw["NCAA/NAIA conference number cross country/track"]`
 
 # Details {.tabset}

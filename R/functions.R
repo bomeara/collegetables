@@ -150,7 +150,7 @@ FilterForDegreeGranting <- function(college_data) {
 }
 
 RoughRanking <- function(college_data) {
-	college_data$RankingProxy <- (100 - as.numeric(college_data$"Percent admitted - total")) + as.numeric(college_data$"Graduation rate  total cohort") + (as.numeric(college_data$`Undergraduate enrollment`))^(1/4)
+	college_data$RankingProxy <- (100 - as.numeric(college_data$"Percent admitted - total")) + as.numeric(college_data$"Graduation rate  total cohort") + (as.numeric(college_data$`Undergraduate enrollment`))^(1/2)
 	college_data$RankingProxy <- as.numeric(college_data$RankingProxy) 
 	college_data <- subset(college_data, !is.na(college_data$RankingProxy))
 	college_data <- dplyr::distinct(college_data[order(college_data$RankingProxy, decreasing=TRUE),])
@@ -165,6 +165,7 @@ GetOverviewColumns <- function(college_data) {
 	overview <- dplyr::rename(overview, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Locale=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `Anti-LGBTQ+ state laws`=BannedCATravel, `Books/student`=NumberOfPhysicalBooksPerUndergrad, `Students per tenure-track professor`=StudentToTenureTrackRatio, Yield="Admissions yield - total", `Distance (m) to transit`=DistanceToTransit, Admission="Percent admitted - total", `First year retention`="Full-time retention rate  2019", "Graduation"="Graduation rate  total cohort", "Covid vax (students)"="AllStudentsVaccinatedAgainstCovid19", "Covid vax (employees)"="AllEmployeesVaccinatedAgainstCovid19", "Misconduct reports"="InMisconductDatabase")
 	
 	overview$`Minimum distance to mass transit (minutes walking)` <- round((as.numeric(overview$`Distance (m) to transit`)/1.34)/60) #using an estimate of walk speed of 1.34 m/s from https://www.healthline.com/health/exercise-fitness/average-walking-speed#average-speed-by-age
+	overview$`Minimum distance to mass transit (minutes walking)`[is.infinite(overview$`Minimum distance to mass transit (minutes walking)`)] <- NA
 	Percent_of_undergrad_cols <- which(grepl("Percent of undergraduate enrollment that are", colnames(overview)))
 	for (i in seq_along(Percent_of_undergrad_cols)) {
 		colnames(overview)[Percent_of_undergrad_cols[i]] <- gsub("two or more", "Two or more", gsub("women", "Women", paste0(gsub("Percent of undergraduate enrollment that are ", "", colnames(overview)[Percent_of_undergrad_cols[i]])," (undergrads)")))
@@ -192,6 +193,7 @@ GetOverviewColumns <- function(college_data) {
 	overview$`Abortion restrictions` <- as.factor(overview$`Abortion restrictions`)
 	overview$Sector <- as.factor(overview$Sector)
 	overview$State <- as.factor(overview$State)
+	overview$LocaleChar <- as.character(overview$Locale)
 	overview$Locale <- as.factor(overview$Locale)
 	overview$`Undergraduate enrollment` <- as.numeric(overview$`Undergraduate enrollment`)
 	overview$ShortName <- overview$Name
@@ -206,10 +208,10 @@ GetOverviewColumns <- function(college_data) {
 }
 
 
-RenderInstitutionPages <- function(overview, degree_granting) {
+RenderInstitutionPages <- function(overview, degree_granting, maxcount=600) {
 	institutions <- unique(overview$ShortName)
 	#for (i in seq_along(institutions)) {
-	for (i in sequence(600)) {
+	for (i in sequence(maxcount)) {
 	#	try({
 		print(institutions[i])
 		rmarkdown::render(input="_institution.Rmd", output_file=paste0(  "docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
