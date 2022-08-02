@@ -5,9 +5,10 @@ output:
       in_header: GA_Script.html
 params:
   institution_name: "nothing"
+  institution_long_name: "nothing"
   overview_table: "nothing"
   raw_table: "nothing"
-title: "`r paste0(params$institution_name)`"
+title: "`r paste0(params$institution_long_name)`"
 
 ---
 
@@ -48,7 +49,7 @@ focal_nearby$Focal[which(focal_nearby$"Institution Name"==params$institution_nam
 * Employees `r ifelse(focal_raw['AllEmployeesVaccinatedAgainstCovid19']=="Yes", "are", "are not")` required to be vaccinated against COVID-19
 * This college is located in a `r params$overview_table['Locale']`
 * `r ifelse(is.na(params$overview_table['Minimum distance to mass transit (minutes walking)']), "It is not near mass transit", paste0("The closest mass transit is a ", params$overview_table['Minimum distance to mass transit (minutes walking)'], " minute walk away"))`
-* For abortion access, as of July, 2022, the state this institution is in was ranked as having "`r gsub("\\d\\: ", "", tolower(params$overview_table['Abortion restrictions'][1,1]))`" by the [Guttmacher Institute](https://states.guttmacher.org/policies/), though this may change.
+* As of July, 2022, the state this institution is in had abortion restrictions categorized as "`r gsub("\\d\\: ", "", tolower(params$overview_table['Abortion restrictions'][1,1]))`" by the [Guttmacher Institute](https://states.guttmacher.org/policies/), though this may change.
 * Athletic conference: `r focal_raw["NCAA/NAIA conference number cross country/track"]`
 
 # Details {.tabset}
@@ -187,7 +188,10 @@ count_data[,2] <- as.numeric(count_data[,2])
 pretty_table <- Students_by_state[, c('State','Undergrad_Count')]
 colnames(pretty_table) <- c("State", "Number of students")
 pretty_table$'Fraction of student body from each state' <- paste0('1/',round(sum(as.numeric(pretty_table$'Number of students'))/as.numeric(pretty_table$'Number of students')))
+pretty_table$'Fraction of student body from each state' <- gsub('1/Inf', '0', pretty_table$'Fraction of student body from each state')
 pretty_table$'Fraction of 18 year olds from each state enrolled here' <- paste0('1/',round(100/Students_by_state$Percent_of_18_yo_from_this_state_enrolled_here))
+pretty_table$'Fraction of 18 year olds from each state enrolled here' <- gsub('1/Inf', '0', pretty_table$'Fraction of 18 year olds from each state enrolled here')
+
 ```
 
 `r ifelse((max(count_data$values))==0, "**There are no available data on states of origin**", "")`
