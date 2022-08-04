@@ -23,9 +23,14 @@ list(
   tar_target(college_data, AppendAAUPCensure(AppendAbortion(AppendMisconduct(AppendVaccination(AggregateIPEDS()))))),
   tar_target(maxcount, 600),
   #tar_target(save_raw_data, write.csv(college_data, "docs/college_data.csv")),
+  tar_target(state_pops, GetPopulationByStateAtAge18()),
+  tar_target(students_by_state_by_institution, GetStudentsByStateByInstitution(degree_granting, state_pops)),
+  tar_target(student_demographics, GetStudentsDemographicsByInstitution(degree_granting)),
+  tar_target(faculty_counts, GetFacultyCountsByInstitution(degree_granting)),
   tar_target(degree_granting , RoughRanking(FilterForDegreeGranting(college_data))),
-  tar_target(overview, GetOverviewColumns(degree_granting)),
-  tar_target(pages, RenderInstitutionPages(overview, degree_granting, maxcount)),
+  tar_target(degree_granting_enhanced, EnhanceData(degree_granting, faculty_counts, student_demographics, students_by_state_by_institution ) ),
+  tar_target(overview, GetOverviewColumns(degree_granting_enhanced)),
+  tar_target(pages, RenderInstitutionPages(overview, degree_granting_enhanced, maxcount, students_by_state_by_institution, student_demographics, faculty_counts)),
   tar_target(top,FilterForTopAndSave(overview)),
   tar_render(index, "index.Rmd")
 )
