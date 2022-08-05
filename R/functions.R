@@ -156,7 +156,7 @@ FilterForDegreeGranting <- function(college_data) {
 }
 
 RoughRanking <- function(college_data) {
-	college_data$RankingProxy <- (100 - as.numeric(college_data$"Percent admitted - total")) + as.numeric(college_data$"Graduation rate  total cohort") + ((as.numeric(college_data$`Undergraduate enrollment`))^(1/2)) 
+	college_data$RankingProxy <- (100 - as.numeric(college_data$"Percent admitted - total")) + as.numeric(college_data$"Graduation rate  total cohort") + ((as.numeric(college_data$`Undergraduate enrollment`))^(1/4)) 
 	college_data$RankingProxy <- as.numeric(college_data$RankingProxy) 
 	college_data <- subset(college_data, !is.na(college_data$RankingProxy))
 	college_data <- dplyr::distinct(college_data[order(college_data$RankingProxy, decreasing=TRUE),])
@@ -261,23 +261,28 @@ GetOverviewColumns <- function(college_data) {
 
 
 RenderInstitutionPages <- function(overview, degree_granting, maxcount=600, students_by_state_by_institution, student_demographics, faculty_counts) {
-	institutions <- unique(overview$ShortName)
+	institutions <- unique(degree_granting$ShortName)
 	#for (i in seq_along(institutions)) {
 	for (i in sequence(maxcount)) {
 		#try({
 			print(institutions[i])
+			if(is.null(student_demographics[[institutions[i]]])) {
+				print("No data for " + institutions[i])
+				stop()
+			}
 			rmarkdown::render(
 				input="_institution.Rmd", 
 				output_file=paste0(  "docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
 				params = list(
 					institution_name = institutions[i],
-					institution_long_name = overview$Name[i],
+					institution_long_name = degree_granting$ShortName[i],
 					overview_table = subset(overview, overview$ShortName == institutions[i]),
 					raw_table = degree_granting,
-					students_by_state = students_by_state_by_institution[[institutions[i]]],
-					student_demographics = student_demographics[[institutions[i]]],
-					faculty_counts = faculty_counts[[institutions[i]]]
-				)
+					students_by_state_by_institution = students_by_state_by_institution,
+					student_demographics = student_demographics,
+					faculty_counts = faculty_counts
+				),
+				quiet=TRUE
 			)
 		#}, silent=TRUE)
 	}
