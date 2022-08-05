@@ -8,6 +8,8 @@ params:
   sumtab: "unknown"
 ---
 
+## STILL A DRAFT; DO NOT USE
+
 This is an aggregation of information on colleges that often isn't emphasized by other sites for comparing colleges. Some of the fields:
 
 * Percentage of students who are admitted, who decide to come (yield), who stay after their first year, and who graduate
