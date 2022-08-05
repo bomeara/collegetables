@@ -284,6 +284,20 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=600, stud
 				),
 				quiet=TRUE
 			)
+			# quarto::quarto_render(
+			# 	input="_institution.qmd", 
+			# 	output_file=paste0(  "docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
+			# 	execute_params = list(
+			# 		institution_name = institutions[i],
+			# 		institution_long_name = degree_granting$ShortName[i],
+			# 		overview_table = subset(overview, overview$ShortName == institutions[i]),
+			# 		raw_table = degree_granting,
+			# 		students_by_state_by_institution = students_by_state_by_institution,
+			# 		student_demographics = student_demographics,
+			# 		faculty_counts = faculty_counts
+			# 	),
+			# 	quiet=FALSE
+			# )
 		#}, silent=TRUE)
 	}
 }
@@ -443,3 +457,4 @@ GetFacultyCountsByInstitution <- function(college_data) {
 	names(results) <- unlist(college_data$`Institution Name`)
 	return(results)
 }
+
