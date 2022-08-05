@@ -15,3 +15,4 @@ tar_make()
 #system('git push')
 
 system("cp *html docs")
+system("cp CNAME docs/CNAME")

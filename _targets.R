@@ -32,5 +32,7 @@ list(
   tar_target(overview, GetOverviewColumns(degree_granting_enhanced)),
   tar_target(pages, RenderInstitutionPages(overview, degree_granting_enhanced, maxcount, students_by_state_by_institution, student_demographics, faculty_counts)),
   tar_target(top,FilterForTopAndSave(overview)),
-  tar_render(index, "index.Rmd")
+  tar_render(index, "index.Rmd"),
+  tar_render(about, "about.Rmd")
+
 )
