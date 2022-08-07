@@ -5,7 +5,7 @@ system("export PATH=$PATH:/usr/local/bin")
 library(targets)
 source("_packages.R")
 source("R/functions.R")
-#rmarkdown::render_site()
+rmarkdown::render_site()
 
 tar_make()
 

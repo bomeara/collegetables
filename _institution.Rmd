@@ -1,6 +1,7 @@
 ---
-output: 
+output:
   html_document:
+    self_contained: false
     includes:
       in_header: GA_Script.html
 params:
@@ -75,7 +76,9 @@ leaflet() %>%
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 degrees <- data.frame(Degree=c("Associate", "Bachelor", "Master", "Doctor"), Number=unname(unlist(c(focal_raw["Number of students receiving an Associate's degree (DRVC2020)" ], focal_raw["Number of students receiving a Bachelor's degree (DRVC2020)" ],focal_raw["Number of students receiving a Master's degree (DRVC2020)" ],focal_raw["Number of students receiving a Doctor's degree (DRVC2020)"]))))
 
-knitr::kable(degrees, row.names=FALSE)
+
+degrees %>% htmlTable::htmlTable(rnames=FALSE)
+
 ```
 
 ### Diversity among the faculty
@@ -83,7 +86,24 @@ knitr::kable(degrees, row.names=FALSE)
 Two things to note here are diversity overall as well as the distribution tenure, tenure track, and non tenure track faculty. There are two main tracks in academia: faculty who are given short term contracts (and often a high teaching load and lower pay) and faculty who are essentially on probation (for 3-6 years, typically) and then are given tenure or fired. For more about tenure, see [here](https://www.aaup.org/issues/tenure). Tenure is a way of protecting academic freedom (tenured faculty can be fired for misconduct or if a program is closed, but not for their research or speech); the fact that it is often more stable also helps ensure that faculty will be at an institution long term to serve as mentors, letter writers, etc. Having more non-tenure-track faculty can save money (they are often paid less, and teach more), reduce public dissent (they can be fired for taking a stand unpopular with their employer), and reduce research or other creative output, including mentoring in these areas (teaching loads are often higher, and research/creative output expectations lower, for faculty in non-tenure-track positions at large universities).
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=(nrow(focal_raw)==1)}
-knitr::kable(faculty_counts_focal, row.names=TRUE)
+faculty_counts_focal_streamlined <- data.frame(matrix("", nrow=nrow(faculty_counts_focal)/2, ncol=4))
+rownames(faculty_counts_focal_streamlined) <- gsub(" women", "", rownames(faculty_counts_focal)[which(grepl("women", rownames(faculty_counts_focal)))])
+faculty_counts_focal$TenureStreamCount <- as.numeric(faculty_counts_focal$`Tenured (count)`) + as.numeric(faculty_counts_focal$`Tenure-track (count)`)
+faculty_trimmed <- faculty_counts_focal %>% select('TenureStreamCount', 'Non-tenure-track (count)')
+for (faculty_row_index in sequence(nrow(faculty_counts_focal_streamlined))) {
+    faculty_counts_focal_streamlined[faculty_row_index, 1] <- faculty_trimmed[paste0(rownames(faculty_counts_focal_streamlined)[faculty_row_index], " women"), 1]
+    faculty_counts_focal_streamlined[faculty_row_index, 2] <- faculty_trimmed[paste0(rownames(faculty_counts_focal_streamlined)[faculty_row_index], " men"), 1]
+    faculty_counts_focal_streamlined[faculty_row_index, 3] <- faculty_trimmed[paste0(rownames(faculty_counts_focal_streamlined)[faculty_row_index], " women"), 2]
+    faculty_counts_focal_streamlined[faculty_row_index, 4] <- faculty_trimmed[paste0(rownames(faculty_counts_focal_streamlined)[faculty_row_index], " men"), 2]
+}
+colnames(faculty_counts_focal_streamlined) <- c("Women", "Men", "Women", "Men")
+faculty_counts_focal_streamlined <- rbind(faculty_counts_focal_streamlined, faculty_counts_focal_streamlined["Grand total",])[-1,]
+rownames(faculty_counts_focal_streamlined)[nrow(faculty_counts_focal_streamlined)] <- "Total"
+
+faculty_counts_focal_streamlined %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlTable::htmlTable(cgroup = c("Tenure Stream", "Non-Tenure Track"), n.cgroup = c(2,2), total=TRUE)
+
+#knitr::kable(faculty_counts_focal, row.names=TRUE)
+
 ```
 
 ### Diversity among the students
@@ -126,7 +146,7 @@ library_table <- as.data.frame( t(focal_raw[library_columns]))
 colnames(library_table) <- "Number"
 
 library_table$Number <- as.numeric(library_table$Number )
-library_table$`Number per students and faculty` <- ceiling(library_table$Number/as.numeric(unlist(focal_raw["Students plus Faculty"])))
+library_table$`Number per students and faculty` <- round(library_table$Number/as.numeric(unlist(focal_raw["Students plus Faculty"])),1)
 library_table[5,2] <- library_table[5,1]
 library_table$Number <- format(as.numeric(library_table$Number),big.mark=",", scientific=FALSE)
 library_table$`Number per students and faculty` <- format(as.numeric(library_table$`Number per students and faculty`),big.mark=",", scientific=FALSE)
@@ -180,12 +200,10 @@ fig %>% partial_bundle(local=FALSE)
 
 ### Students from US
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 
 count_data <- data.frame(fips=students_by_state$fips, values=as.numeric(students_by_state$`Number of students`))
 if(max(count_data$values)>0) {
-
-  
   plot_usmap(data=count_data, regions = "states", color = "black") + labs(title=paste0("Number of students from each state enrolled in ",params$institution_name)) +
     scale_fill_continuous(low = "white", high = "red", name = "Number of undergrads", label = scales::comma) +  theme(legend.position = "right")
 	
@@ -200,4 +218,52 @@ if(max(count_data$values)>0) {
 	plot_usmap(data=pct_data, regions = "states", color = "black") + labs(title=paste0("Percentage of 18 year olds in each state enrolled in ",params$institution_name)) +
   	scale_fill_continuous(low = "white", high = "red", name = "Percentage (out of 100)", label = scales::comma) +  theme(legend.position = "right")
 } 
+```
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+
+students_by_state$`Percentage of 18 year olds from each state enrolled here` <- 100*CharacterFractionToNumeric(students_by_state$`Fraction of 18 year olds from each state enrolled here`)
+
+students_by_state$`Number of students` <- as.numeric(students_by_state$`Number of students`)
+
+if(max(students_by_state$`Number of students`)>0) {
+ g <- list(
+  scope = 'usa',
+  projection = list(type = 'albers usa'),
+  lakecolor = toRGB('white')
+   )
+   
+   StudentNumbers <- as.numeric(students_by_state$`Number of students`)
+   names(StudentNumbers) <- students_by_state$State
+   plot_geo() %>%
+  add_trace(
+    z = ~StudentNumbers, text = state.name, span = I(0),
+    locations = state.abb, locationmode = 'USA-states'
+  ) %>%
+  layout(geo = g, title="Number of students from each state")
+  
+} 
+
+
+```
+
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+
+
+if(max(students_by_state$`Number of students`)>0) {
+ 
+    StudentPercentage <- students_by_state$`Percentage of 18 year olds from each state enrolled here`
+   names(StudentPercentage) <- students_by_state$State
+   plot_geo() %>%
+  add_trace(
+    z = ~StudentPercentage, text = state.name, span = I(0),
+    locations = state.abb, locationmode = 'USA-states'
+  ) %>%
+  layout(geo = g, title="Rough percentage of 18 year olds in each state attending this college")
+} 
+
+
 ```

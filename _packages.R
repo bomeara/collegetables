@@ -8,3 +8,6 @@ library(ggrepel)
 library(plotly)
 library(leaflet)
 library(rmarkdown)
+library(quarto)
+library(htmlTable)
+

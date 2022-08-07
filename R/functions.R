@@ -260,10 +260,10 @@ GetOverviewColumns <- function(college_data) {
 }
 
 
-RenderInstitutionPages <- function(overview, degree_granting, maxcount=600, students_by_state_by_institution, student_demographics, faculty_counts) {
+RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, students_by_state_by_institution, student_demographics, faculty_counts) {
 	institutions <- unique(degree_granting$ShortName)
 	#for (i in seq_along(institutions)) {
-	for (i in sequence(maxcount)) {
+	for (i in sequence(min(maxcount, length(institutions)))) {
 		#try({
 			print(institutions[i])
 			if(is.null(student_demographics[[institutions[i]]])) {
@@ -272,7 +272,7 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=600, stud
 			}
 			rmarkdown::render(
 				input="_institution.Rmd", 
-				output_file=paste0(  "docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
+				output_file="docs/institution.html", 
 				params = list(
 					institution_name = institutions[i],
 					institution_long_name = degree_granting$ShortName[i],
@@ -284,6 +284,10 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=600, stud
 				),
 				quiet=TRUE
 			)
+			Sys.sleep(1)
+			file.copy("docs/institution.html", paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"))
+			print(paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"))
+			Sys.sleep(1)
 			# quarto::quarto_render(
 			# 	input="_institution.qmd", 
 			# 	output_file=paste0(  "docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
