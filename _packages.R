@@ -10,4 +10,4 @@ library(leaflet)
 library(rmarkdown)
 library(quarto)
 library(htmlTable)
-
+library(ggbeeswarm)

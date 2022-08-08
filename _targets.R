@@ -17,11 +17,13 @@ options(download.file.method = "libcurl")
 
 tar_invalidate(pages)
 tar_invalidate(index)
+tar_invalidate(sparklines)
 
 # End this file with a list of target objects.
 list(
   tar_target(college_data, AppendAAUPCensure(AppendAbortion(AppendMisconduct(AppendVaccination(AggregateIPEDS()))))),
   tar_target(maxcount, 600),
+  tar_target(sparklines, RenderSparklines()),
   #tar_target(save_raw_data, write.csv(college_data, "docs/college_data.csv")),
   tar_target(state_pops, GetPopulationByStateAtAge18()),
   tar_target(students_by_state_by_institution, GetStudentsByStateByInstitution(degree_granting, state_pops)),
