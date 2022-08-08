@@ -259,8 +259,24 @@ GetOverviewColumns <- function(college_data) {
 	return(overview)
 }
 
+RenderSparklines <- function() {
+	dir.create("docs/images")
+	percentages <- seq(from=0, to=100, by=1)
+	for (pct_index in seq_along(percentages)) {
+		pct <- percentages[pct_index]
+		p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(pct, 100-pct), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", "red")) 
+		ggsave(
+  			plot = p,
+  			filename = paste0("docs/images/pct_bar_", pct, ".png"),
+  			bg = "transparent",
+			width = 40,
+			height= 5,
+			units = "px"
+		)
+	}	
+}
 
-RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, students_by_state_by_institution, student_demographics, faculty_counts) {
+RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, students_by_state_by_institution, student_demographics, faculty_counts) {	
 	institutions <- unique(degree_granting$ShortName)
 	#for (i in seq_along(institutions)) {
 	for (i in sequence(min(maxcount, length(institutions)))) {
@@ -285,6 +301,14 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 				quiet=TRUE
 			)
 			Sys.sleep(1)
+			system("sed -i '' 's/&gt;/>/g' docs/institution.html") # because htmlTable doesn't escape well; the '' is a requirement of OS X's version of sed, apparently
+			system("sed -i '' 's/&lt;/</g' docs/institution.html")
+			
+			#system("sed -i '' 's/‘/\x27/g' docs/institution.html")
+			#system("sed -i '' 's/’/\x27/g' docs/institution.html")
+			Sys.sleep(1)
+
+
 			file.copy("docs/institution.html", paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"))
 			print(paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"))
 			Sys.sleep(1)
