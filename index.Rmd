@@ -4,8 +4,6 @@ output:
   html_document:
     includes:
        in_header: GA_Script.html
-params:
-  sumtab: "unknown"
 ---
 
 ## STILL A DRAFT; DO NOT USE
@@ -19,13 +17,14 @@ source("_packages.R")
 source("R/functions.R")
 tar_load(overview)
 tar_load(maxcount)
-for (i in sequence(maxcount)) {
+tar_load(degree_granting_enhanced)
+for (i in sequence(min(maxcount, nrow(overview)))) {
 	overview$Name[i] <- paste0("<a href='https://collegetables.info/", utils::URLencode(gsub(" ", "", overview$ShortName[i])), ".html'>", overview$Name[i], "</a>")
 }
 Basic <- c("Name", "Sector", "Type", "Historically Black College or University", "Undergraduate enrollment")
 Admissions_and_outcomes <- c("Admission", "Yield", "First year retention", "Graduation")
 Location <- c("State", "Locale", "Walkability", "Minimum distance to mass transit (minutes walking)")
-Safety <- c("Anti-LGBTQ+ state laws", "Abortion restrictions", "Covid vax (students)", "Covid vax (employees)", "Misconduct reports")
+Safety <- c("Anti-LGBTQ+ state laws", "Abortion", "Covid vax (students)", "Covid vax (employees)", "Misconduct reports")
 AcademicResources <- c("Students per tenure-track professor", "Books/student")
 Undergrad_diversity <- colnames(overview)[grepl("undergrads", colnames(overview))]
 Faculty_diversity <- colnames(overview)[grepl("Full-time faculty", colnames(overview))]

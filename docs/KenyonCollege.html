@@ -40,13 +40,6 @@
 <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
 <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-<script src="institution_files/plotly-binding-4.10.0.9001/plotly.js"></script>
-<script src="institution_files/typedarray-0.1/typedarray.min.js"></script>
-<link href="institution_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="institution_files/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="institution_files/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="https://cdn.plot.ly/plotly-basic-2.11.1.min.js"></script>
-<script src="institution_files/plotly-main-2.11.1/plotly-latest.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHSZ84W9K5"></script>
 <script>
@@ -294,93 +287,450 @@ $(document).ready(function () {
 </div>
 
 
-<div id="general-information" class="section level3">
-<h3>General information</h3>
-<ul>
-<li><p>Private not-for-profit, 4-year or above</p></li>
-<li><p>Baccalaureate Colleges: Arts &amp; Sciences Focus</p></li>
-<li><p><strong>California considers the state this institution is in to
-have one or more anti-LGBTQ+ laws.</strong> See more
-<a href="https://oag.ca.gov/ab1887">here</a></p></li>
-<li><p>Undergraduate enrollment is 1,734 (includes all undergrads; some
-of the numbers below are based on first time, full time, degree seeking
-students only).</p></li>
-<li><p>See mission at <a
-href="https://www.kenyon.edu/directories/offices-services/registrar/course-catalog-2/administrative-matters/kenyon-college-its-mission-and-goals/"
-class="uri">https://www.kenyon.edu/directories/offices-services/registrar/course-catalog-2/administrative-matters/kenyon-college-its-mission-and-goals/</a></p></li>
-<li><p>34% of applicants are admitted</p></li>
-<li><p>21% of admitted applicants choose to enroll</p></li>
-<li><p>89% of students stay after their first year</p></li>
-<li><p>91% of students graduate</p></li>
-<li><p>The student to all faculty ratio is 8:1</p></li>
-<li><p>The student to tenured or tenure-track faculty ratio is
-11:1</p></li>
-<li><p>Students are required to be vaccinated against COVID-19</p></li>
-<li><p>Employees are not required to be vaccinated against
-COVID-19</p></li>
-<li><p>This college is located in a distant town</p></li>
-<li><p>It is not near mass transit</p></li>
-<li><p>As of July, 2022, the state this institution is in had abortion
-restrictions categorized “very restrictive” by the <a
-href="https://states.guttmacher.org/policies/">Guttmacher Institute</a>,
-though this may change.</p></li>
-<li><p>Athletic conference: North Coast Athletic Conference</p></li>
-</ul>
-<div id="htmlwidget-e52b08d44c3f4c294801" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e52b08d44c3f4c294801">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[40.374408,-82.397977,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Kenyon College",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[40.374408,-82.397977],16,[]],"limits":{"lat":[40.374408,40.374408],"lng":[-82.397977,-82.397977]}},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="details" class="section level1 tabset">
-<h1 class="tabset">Details</h1>
-<div id="tables" class="section level2">
-<h2>Tables</h2>
-<div id="degrees-awarded-each-year" class="section level3">
-<h3>Degrees awarded each year</h3>
+<div
+id="warning-california-considers-the-state-this-institution-is-in-to-have-one-or-more-anti-lgbtq-laws-as-of-july-31-2022.-see-more-here"
+class="section level2">
+<h2><strong>Warning: California considers the state this institution is
+in to have one or more anti-LGBTQ+ laws</strong> (as of July 31, 2022).
+See more <a href="https://oag.ca.gov/ab1887">here</a></h2>
+<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
+<thead>
+<tr>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey;">
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+  Kenyon College  
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+  North Coast Athletic Conference  
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+  Baccalaureate Colleges<br />Arts &amp; Sciences Focus  
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+  Private not-for-profit<br />4-year or above  
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+Admission
+</td>
+<td style="text-align: center;">
+0.34
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_1_1.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_1_2.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_1_3.png width=40 height=7>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Yield
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0.21
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_2_1.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_2_2.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_2_3.png width=40 height=7>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+First year retention
+</td>
+<td style="text-align: center;">
+0.89
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_3_1.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_3_2.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_3_3.png width=40 height=7>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Graduation
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0.91
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_4_1.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_4_2.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_4_3.png width=40 height=7>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Undergraduate enrollment
+</td>
+<td style="text-align: center;">
+1,734
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_5_1.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_5_2.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_5_3.png width=40 height=7>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Graduate enrollment
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_6_1.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_6_2.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_6_3.png width=40 height=7>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Associates degrees awarded
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_7_1.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_7_2.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_7_3.png width=40 height=7>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Bachelors degrees awarded
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+436
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_8_1.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_8_2.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_8_3.png width=40 height=7>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Masters degrees awarded
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_9_1.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_9_2.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_9_3.png width=40 height=7>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Doctorates awarded
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_10_1.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_10_2.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_10_3.png width=40 height=7>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Undergrads per instructor
+</td>
+<td style="text-align: center;">
+8.4
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_11_1.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_11_2.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_11_3.png width=40 height=7>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Undergrads per tenure-track professor
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+11.3
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_12_1.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_12_2.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_12_3.png width=40 height=7>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Number of physical books
+</td>
+<td style="text-align: center;">
+385,966
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_13_1.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_13_2.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_13_3.png width=40 height=7>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Number of physical media
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+47,201
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_14_1.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_14_2.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_14_3.png width=40 height=7>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Number of digital/electronic books
+</td>
+<td style="text-align: center;">
+1,615,552
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_15_1.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_15_2.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_15_3.png width=40 height=7>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Total library collections (physical and electronic)
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+2,399,798
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_16_1.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_16_2.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_16_3.png width=40 height=7>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Total library circulations (physical and digital/electronic)
+</td>
+<td style="text-align: center;">
+172,751
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_17_1.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_17_2.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_17_3.png width=40 height=7>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Average library loans (physical) per student or faculty member
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+7.5
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_18_1.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_18_2.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_18_3.png width=40 height=7>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Average library loans (physical + digital) per student or faculty member
+</td>
+<td style="text-align: center;">
+89
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_19_1.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_19_2.png width=40 height=7>
+</td>
+<td style="text-align: center;">
+<img src=images/KenyonCollege_19_3.png width=40 height=7>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Proportion of reps voting in favor of respect for right to contraception
+act
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0.3125
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_20_1.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_20_2.png width=40 height=7>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/KenyonCollege_20_3.png width=40 height=7>
+</td>
+</tr>
+<tr>
+<td style="border-bottom: 2px solid grey; text-align: left;">
+Proportion of reps voting in favor of respect for marriage act
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+0.5
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+<img src=images/KenyonCollege_21_1.png width=40 height=7>
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+<img src=images/KenyonCollege_21_2.png width=40 height=7>
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+<img src=images/KenyonCollege_21_3.png width=40 height=7>
+</td>
+</tr>
+</tbody>
+</table>
+<div id="other-information" class="section level3">
+<h3>Other information</h3>
 <table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
 <thead>
 <tr>
 <th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
-Degree
+Measure
 </th>
 <th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
-Number
+Value
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: center;">
-Associate
+Warning
 </td>
 <td style="text-align: center;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align: center;">
-Bachelor
-</td>
-<td style="text-align: center;">
-436
+<strong>California considers the state this institution is in to have
+one or more anti-LGBTQ+ laws.</strong> See more
+<a href="https://oag.ca.gov/ab1887">here</a>
 </td>
 </tr>
 <tr>
 <td style="text-align: center;">
-Master
+Employee covid vax
 </td>
 <td style="text-align: center;">
-0
+Not required
 </td>
 </tr>
 <tr>
 <td style="border-bottom: 2px solid grey; text-align: center;">
-Doctor
+Student covid vax
 </td>
 <td style="border-bottom: 2px solid grey; text-align: center;">
-0
+Required
 </td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li><strong>California considers the state this institution is in to
+have one or more anti-LGBTQ+ laws.</strong> See more
+<a href="https://oag.ca.gov/ab1887">here</a></li>
+<li>Students are required to be vaccinated against COVID-19</li>
+<li>Employees are not required to be vaccinated against COVID-19</li>
+<li>This college is located in a distant town: Gambier, OH</li>
+<li>It is not near mass transit</li>
+<li>As of August 8, 2022, abortion is functional ban in this state,
+though this may change.</li>
+<li>The ecology where this college is located is Southern Great Lakes
+forests, in the temperate broadleaf &amp; mixed forests biome.</li>
+<li>The gun law stringency of this state is D.</li>
+</ul>
+<div id="htmlwidget-95177217c383dc0dd97f" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-95177217c383dc0dd97f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[40.374408,-82.397977,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"Kenyon College",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[40.374408,-82.397977],16,[]],"limits":{"lat":[40.374408,40.374408],"lng":[-82.397977,-82.397977]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="diversity-among-the-faculty" class="section level3">
 <h3>Diversity among the faculty</h3>
@@ -406,13 +756,13 @@ for faculty in non-tenure-track positions at large universities).</p>
 <tr>
 <th style="border-top: 2px solid grey;">
 </th>
-<th colspan="2" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+<th colspan="3" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
 Tenure Stream
 </th>
 <th style="border-bottom: none; border-top: 2px solid grey;" colspan="1">
  
 </th>
-<th colspan="2" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+<th colspan="3" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
 Non-Tenure Track
 </th>
 </tr>
@@ -425,6 +775,9 @@ Women
 <th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
 Men
 </th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+%
+</th>
 <th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
  
 </th>
@@ -433,6 +786,9 @@ Women
 </th>
 <th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
 Men
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+%
 </th>
 </tr>
 </thead>
@@ -447,6 +803,9 @@ American Indian or Alaska Native
 <td style="text-align: center;">
 0
 </td>
+<td style="text-align: center;">
+<img src=images/pct_bar_1.png width=40 height=5>
+</td>
 <td style="text-align: center;" colspan="1">
  
 </td>
@@ -455,6 +814,9 @@ American Indian or Alaska Native
 </td>
 <td style="text-align: center;">
 0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -467,6 +829,9 @@ Asian
 <td style="background-color: #f7f7f7; text-align: center;">
 8
 </td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_8.png width=40 height=5>
+</td>
 <td style="text-align: center; background-color: #F7F7F7;" colspan="1">
  
 </td>
@@ -475,6 +840,9 @@ Asian
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
 0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_4.png width=40 height=5>
 </td>
 </tr>
 <tr>
@@ -487,6 +855,9 @@ Black or African American
 <td style="text-align: center;">
 7
 </td>
+<td style="text-align: center;">
+<img src=images/pct_bar_7.png width=40 height=5>
+</td>
 <td style="text-align: center;" colspan="1">
  
 </td>
@@ -495,6 +866,9 @@ Black or African American
 </td>
 <td style="text-align: center;">
 0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_2.png width=40 height=5>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -507,6 +881,9 @@ Hispanic or Latino
 <td style="background-color: #f7f7f7; text-align: center;">
 3
 </td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_5.png width=40 height=5>
+</td>
 <td style="text-align: center; background-color: #F7F7F7;" colspan="1">
  
 </td>
@@ -515,6 +892,9 @@ Hispanic or Latino
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
 2
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_10.png width=40 height=5>
 </td>
 </tr>
 <tr>
@@ -527,6 +907,9 @@ Native Hawaiian or Other Pacific Islander
 <td style="text-align: center;">
 0
 </td>
+<td style="text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
+</td>
 <td style="text-align: center;" colspan="1">
  
 </td>
@@ -535,6 +918,9 @@ Native Hawaiian or Other Pacific Islander
 </td>
 <td style="text-align: center;">
 0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -547,6 +933,9 @@ White
 <td style="background-color: #f7f7f7; text-align: center;">
 66
 </td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_71.png width=40 height=5>
+</td>
 <td style="text-align: center; background-color: #F7F7F7;" colspan="1">
  
 </td>
@@ -555,6 +944,9 @@ White
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
 12
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_48.png width=40 height=5>
 </td>
 </tr>
 <tr>
@@ -567,6 +959,9 @@ Two or more races
 <td style="text-align: center;">
 0
 </td>
+<td style="text-align: center;">
+<img src=images/pct_bar_1.png width=40 height=5>
+</td>
 <td style="text-align: center;" colspan="1">
  
 </td>
@@ -575,6 +970,9 @@ Two or more races
 </td>
 <td style="text-align: center;">
 0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -587,6 +985,9 @@ Race/ethnicity unknown
 <td style="background-color: #f7f7f7; text-align: center;">
 3
 </td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_6.png width=40 height=5>
+</td>
 <td style="text-align: center; background-color: #F7F7F7;" colspan="1">
  
 </td>
@@ -595,6 +996,9 @@ Race/ethnicity unknown
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
 5
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_23.png width=40 height=5>
 </td>
 </tr>
 <tr>
@@ -607,6 +1011,9 @@ Nonresident alien
 <td style="text-align: center;">
 0
 </td>
+<td style="text-align: center;">
+<img src=images/pct_bar_1.png width=40 height=5>
+</td>
 <td style="text-align: center;" colspan="1">
  
 </td>
@@ -615,6 +1022,9 @@ Nonresident alien
 </td>
 <td style="text-align: center;">
 1
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_13.png width=40 height=5>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -627,6 +1037,8 @@ Total
 <td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
 87
 </td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+</td>
 <td style="border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center; background-color: #F7F7F7;" colspan="1">
  
 </td>
@@ -636,604 +1048,316 @@ Total
 <td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
 20
 </td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="diversity-among-the-students" class="section level3">
 <h3>Diversity among the students</h3>
-<table>
-<colgroup>
-<col width="36%" />
-<col width="13%" />
-<col width="15%" />
-<col width="15%" />
-<col width="18%" />
-</colgroup>
+<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
 <thead>
-<tr class="header">
-<th align="left"></th>
-<th align="right">Undergrad (count)</th>
-<th align="right">Grad student (count)</th>
-<th align="left">Undergrads (percent)</th>
-<th align="left">Grad students (percent)</th>
+<tr>
+<th style="border-top: 2px solid grey;">
+</th>
+<th colspan="3" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Undergrads
+</th>
+<th style="border-bottom: none; border-top: 2px solid grey;" colspan="1">
+ 
+</th>
+<th colspan="3" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Grad students
+</th>
+</tr>
+<tr>
+<th style="border-bottom: 1px solid grey;">
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+Women
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+Men
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+%
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
+ 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+Women
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+Men
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+%
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Grand total men</td>
-<td align="right">787</td>
-<td align="right">0</td>
-<td align="left">45.4%</td>
-<td align="left">NaN%</td>
+<tr>
+<td style="text-align: left;">
+American Indian or Alaska Native
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
+</td>
 </tr>
-<tr class="even">
-<td align="left">Grand total women</td>
-<td align="right">947</td>
-<td align="right">0</td>
-<td align="left">54.6%</td>
-<td align="left">NaN%</td>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Asian
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+34
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+28
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_4.png width=40 height=5>
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
+</td>
 </tr>
-<tr class="odd">
-<td align="left">American Indian or Alaska Native men</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="left">0%</td>
-<td align="left">NaN%</td>
+<tr>
+<td style="text-align: left;">
+Black or African American
+</td>
+<td style="text-align: center;">
+33
+</td>
+<td style="text-align: center;">
+22
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_3.png width=40 height=5>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
+</td>
 </tr>
-<tr class="even">
-<td align="left">American Indian or Alaska Native women</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="left">0%</td>
-<td align="left">NaN%</td>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Hispanic
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+70
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+50
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_7.png width=40 height=5>
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Asian men</td>
-<td align="right">28</td>
-<td align="right">0</td>
-<td align="left">1.6%</td>
-<td align="left">NaN%</td>
+<tr>
+<td style="text-align: left;">
+Native Hawaiian or Other Pacific Islander
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
+</td>
 </tr>
-<tr class="even">
-<td align="left">Asian women</td>
-<td align="right">34</td>
-<td align="right">0</td>
-<td align="left">2%</td>
-<td align="left">NaN%</td>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+White
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+679
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+545
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_71.png width=40 height=5>
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Black or African American men</td>
-<td align="right">22</td>
-<td align="right">0</td>
-<td align="left">1.3%</td>
-<td align="left">NaN%</td>
+<tr>
+<td style="text-align: left;">
+Two or more races
+</td>
+<td style="text-align: center;">
+38
+</td>
+<td style="text-align: center;">
+44
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_5.png width=40 height=5>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
+</td>
 </tr>
-<tr class="even">
-<td align="left">Black or African American women</td>
-<td align="right">33</td>
-<td align="right">0</td>
-<td align="left">1.9%</td>
-<td align="left">NaN%</td>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Race/ethnicity unknown
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+17
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+13
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_2.png width=40 height=5>
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Hispanic men</td>
-<td align="right">50</td>
-<td align="right">0</td>
-<td align="left">2.9%</td>
-<td align="left">NaN%</td>
+<tr>
+<td style="text-align: left;">
+Nonresident alien
+</td>
+<td style="text-align: center;">
+76
+</td>
+<td style="text-align: center;">
+85
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_9.png width=40 height=5>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_0.png width=40 height=5>
+</td>
 </tr>
-<tr class="even">
-<td align="left">Hispanic women</td>
-<td align="right">70</td>
-<td align="right">0</td>
-<td align="left">4%</td>
-<td align="left">NaN%</td>
-</tr>
-<tr class="odd">
-<td align="left">Native Hawaiian or Other Pacific Islander men</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="left">0%</td>
-<td align="left">NaN%</td>
-</tr>
-<tr class="even">
-<td align="left">Native Hawaiian or Other Pacific Islander women</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="left">0%</td>
-<td align="left">NaN%</td>
-</tr>
-<tr class="odd">
-<td align="left">White men</td>
-<td align="right">545</td>
-<td align="right">0</td>
-<td align="left">31.4%</td>
-<td align="left">NaN%</td>
-</tr>
-<tr class="even">
-<td align="left">White women</td>
-<td align="right">679</td>
-<td align="right">0</td>
-<td align="left">39.2%</td>
-<td align="left">NaN%</td>
-</tr>
-<tr class="odd">
-<td align="left">Two or more races men</td>
-<td align="right">44</td>
-<td align="right">0</td>
-<td align="left">2.5%</td>
-<td align="left">NaN%</td>
-</tr>
-<tr class="even">
-<td align="left">Two or more races women</td>
-<td align="right">38</td>
-<td align="right">0</td>
-<td align="left">2.2%</td>
-<td align="left">NaN%</td>
-</tr>
-<tr class="odd">
-<td align="left">Race/ethnicity unknown men</td>
-<td align="right">13</td>
-<td align="right">0</td>
-<td align="left">0.7%</td>
-<td align="left">NaN%</td>
-</tr>
-<tr class="even">
-<td align="left">Race/ethnicity unknown women</td>
-<td align="right">17</td>
-<td align="right">0</td>
-<td align="left">1%</td>
-<td align="left">NaN%</td>
-</tr>
-<tr class="odd">
-<td align="left">Nonresident alien men</td>
-<td align="right">85</td>
-<td align="right">0</td>
-<td align="left">4.9%</td>
-<td align="left">NaN%</td>
-</tr>
-<tr class="even">
-<td align="left">Nonresident alien women</td>
-<td align="right">76</td>
-<td align="right">0</td>
-<td align="left">4.4%</td>
-<td align="left">NaN%</td>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: left;">
+Total
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+947
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+787
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+</td>
+<td style="border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div id="us-student-origins" class="section level3">
-<h3>US student origins</h3>
-<p>First time degree seeking undergrads</p>
-<table>
-<colgroup>
-<col width="11%" />
-<col width="14%" />
-<col width="31%" />
-<col width="42%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">State</th>
-<th align="left">Number of students</th>
-<th align="left">Fraction of student body from each state</th>
-<th align="left">Fraction of 18 year olds from each state enrolled
-here</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Alabama</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Alaska</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Arizona</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Arkansas</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">California</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Colorado</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Connecticut</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Delaware</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Florida</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Georgia</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Hawaii</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Idaho</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Illinois</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Indiana</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Iowa</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Kansas</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Kentucky</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Louisiana</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Maine</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Maryland</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Massachusetts</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Michigan</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Minnesota</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Mississippi</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Missouri</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Montana</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Nebraska</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Nevada</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">New Hampshire</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">New Jersey</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">New Mexico</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">New York</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">North Carolina</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">North Dakota</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Ohio</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Oklahoma</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Oregon</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Pennsylvania</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Rhode Island</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">South Carolina</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">South Dakota</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Tennessee</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Texas</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Utah</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Vermont</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Virginia</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Washington</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">West Virginia</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="odd">
-<td align="left">Wisconsin</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Wyoming</td>
-<td align="left">0</td>
-<td align="left">1/NaN</td>
-<td align="left">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="library-resources" class="section level3">
-<h3>Library resources</h3>
-<table>
-<colgroup>
-<col width="61%" />
-<col width="9%" />
-<col width="29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Number</th>
-<th align="left">Number per students and faculty</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Number of physical books</td>
-<td align="left">385,966</td>
-<td align="left">199.0</td>
-</tr>
-<tr class="even">
-<td align="left">Number of physical media</td>
-<td align="left">47,201</td>
-<td align="left">24.3</td>
-</tr>
-<tr class="odd">
-<td align="left">Number of physical serials</td>
-<td align="left">1,811</td>
-<td align="left">0.9</td>
-</tr>
-<tr class="even">
-<td align="left">Number of digital/electronic books</td>
-<td align="left">1,615,552</td>
-<td align="left">832.8</td>
-</tr>
-<tr class="odd">
-<td align="left">Number of digital/electronic databases</td>
-<td align="left">398</td>
-<td align="left">398.0</td>
-</tr>
-<tr class="even">
-<td align="left">Number of digital/electronic media</td>
-<td align="left">267,991</td>
-<td align="left">138.1</td>
-</tr>
-<tr class="odd">
-<td align="left">Number of electronic serials</td>
-<td align="left">80,879</td>
-<td align="left">41.7</td>
-</tr>
-<tr class="even">
-<td align="left">Total library collections (physical and
-electronic)</td>
-<td align="left">2,399,798</td>
-<td align="left">1,237.0</td>
-</tr>
-<tr class="odd">
-<td align="left">Total physical library circulations (books and
-media)</td>
-<td align="left">14,516</td>
-<td align="left">7.5</td>
-</tr>
-<tr class="even">
-<td align="left">Total digital/electronic circulations (books and
-media)</td>
-<td align="left">158,235</td>
-<td align="left">81.6</td>
-</tr>
-<tr class="odd">
-<td align="left">Total library circulations (physical and
-digital/electronic)</td>
-<td align="left">172,751</td>
-<td align="left">89.0</td>
-</tr>
-<tr class="even">
-<td align="left">Total interlibrary loans and documents provided to
-other libraries</td>
-<td align="left">1,225</td>
-<td align="left">0.6</td>
-</tr>
-<tr class="odd">
-<td align="left">Total interlibrary loans and documents received</td>
-<td align="left">1,197</td>
-<td align="left">0.6</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="figures" class="section level2">
-<h2>Figures</h2>
-<div id="student-to-faculty-ratio-compared-to-similar-institutions"
-class="section level3">
-<h3>Student to faculty ratio compared to similar institutions:</h3>
-<div id="htmlwidget-ef41ec96a075924078d1" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ef41ec96a075924078d1">{"x":{"data":[{"x":[9,9.2,10.4,8.8,11.3,9,11.6,12.9],"y":[12.2,12,13.7,10.7,14.3,11.1,12.4,14.3],"text":["StudentsToAllFaculty:  9.0<br />StudentsToTTFaculty: 12.2<br />Institution: Denison University (Granville, OH)<br />Focal: FALSE","StudentsToAllFaculty:  9.2<br />StudentsToTTFaculty: 12.0<br />Institution: Oberlin College (Oberlin, OH)<br />Focal: FALSE","StudentsToAllFaculty: 10.4<br />StudentsToTTFaculty: 13.7<br />Institution: The College of Wooster (Wooster, OH)<br />Focal: FALSE","StudentsToAllFaculty:  8.8<br />StudentsToTTFaculty: 10.7<br />Institution: DePauw University (Greencastle, IN)<br />Focal: FALSE","StudentsToAllFaculty: 11.3<br />StudentsToTTFaculty: 14.3<br />Institution: Allegheny College (Meadville, PA)<br />Focal: FALSE","StudentsToAllFaculty:  9.0<br />StudentsToTTFaculty: 11.1<br />Institution: Wabash College (Crawfordsville, IN)<br />Focal: FALSE","StudentsToAllFaculty: 11.6<br />StudentsToTTFaculty: 12.4<br />Institution: Ohio Wesleyan University (Delaware, OH)<br />Focal: FALSE","StudentsToAllFaculty: 12.9<br />StudentsToTTFaculty: 14.3<br />Institution: Wittenberg University (Springfield, OH)<br />Focal: FALSE"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(169,169,169,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(169,169,169,1)"}},"hoveron":"points","name":"FALSE","legendgroup":"FALSE","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[8.4],"y":[11.3],"text":"StudentsToAllFaculty:  8.4<br />StudentsToTTFaculty: 11.3<br />Institution: Kenyon College (Gambier, OH)<br />Focal:  TRUE","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","opacity":1,"size":5.66929133858268,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(255,0,0,1)"}},"hoveron":"points","name":"TRUE","legendgroup":"TRUE","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"name":"FALSE","legendgroup":"FALSE","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"name":"TRUE","legendgroup":"TRUE","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.2283105022831,"r":7.30593607305936,"b":40.1826484018265,"l":37.2602739726027},"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[8.175,13.125],"tickmode":"array","ticktext":["9","10","11","12","13"],"tickvals":[9,10,11,12,13],"categoryorder":"array","categoryarray":["9","10","11","12","13"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Students per instructor (lower is better)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[10.52,14.48],"tickmode":"array","ticktext":["11","12","13","14"],"tickvals":[11,12,13,14],"categoryorder":"array","categoryarray":["11","12","13","14"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.65296803652968,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Students per tenure track instructor (lower is better)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"ebcb8130b6a":{"x":{},"y":{},"label":{},"colour":{},"type":"scatter"},"ebcb1a52604a":{"x":{},"y":{},"label":{},"colour":{}}},"cur_data":"ebcb8130b6a","visdat":{"ebcb8130b6a":["function (y) ","x"],"ebcb1a52604a":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="admissions-to-graduation" class="section level3">
-<h3>Admissions to graduation</h3>
-<p>This is per year, based on the number of bachelor’s degrees awarded
-and graduation rate.</p>
-<div id="htmlwidget-9a090c7d43382d6b4ed6" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9a090c7d43382d6b4ed6">{"x":{"visdat":{"ebcb12afc38b":["function () ","plotlyVisDat"]},"cur_data":"ebcb12afc38b","attrs":{"ebcb12afc38b":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"funnel","y":["Applied","Admitted","Enrolled","Retained after year 1","Graduated"],"x":[6710,2282,479,426,436],"textinfo":"value+percent previous","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"categoryarray":["Applied","Admitted","Enrolled","Retained after year 1","Graduated"],"title":[],"type":"category","categoryorder":"array"},"xaxis":{"domain":[0,1],"automargin":true,"title":[]},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"type":"funnel","y":["Applied","Admitted","Enrolled","Retained after year 1","Graduated"],"x":[6710,2282,479,426,436],"textinfo":"value+percent previous","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-</div>
-<div id="students-from-us" class="section level3">
-<h3>Students from US</h3>
-</div>
 </div>
 </div>
 

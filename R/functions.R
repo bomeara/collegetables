@@ -79,7 +79,10 @@ AggregateIPEDS <- function() {
 			raw_data$`Mission statement URL (if mission statement not provided) (IC2019mission)`[i] <- paste0("http://", raw_data$`Mission statement URL (if mission statement not provided) (IC2019mission)`[i])
 		}
 	}
-	
+	raw_data$`Institution Name` <- gsub("The ", "", raw_data$`Institution Name`) # Sorry, THE Ohio State, but this will make it easier for people to search
+	raw_data <- rename(raw_data, latitude="Latitude location of institution", longitude="Longitude location of institution")
+	raw_data$latitude <- as.numeric(raw_data$latitude)
+	raw_data$longitude <- as.numeric(raw_data$longitude)
 	return(raw_data)
 }
 
@@ -134,10 +137,21 @@ AppendMisconduct <- function(college_data) {
 }
 
 AppendAbortion <- function(college_data) {
-	abortion <- read.csv("data/abortion.csv", header=TRUE)
-	colnames(abortion) <- gsub("\\.", " ", colnames(abortion))
-	return(left_join(college_data, abortion, by="State abbreviation"))
-	
+	#abortion <- read.csv("data/abortion.csv", header=TRUE)
+	#colnames(abortion) <- gsub("\\.", " ", colnames(abortion))
+	abortion <- read.csv("data/worldpopulationreview_abortion.csv")
+	abortion$`State abbreviation` <- state.abb[match(abortion$State,state.name)]
+	abortion_simple <- select(abortion, c("State abbreviation", "Status"))
+	colnames(abortion_simple)[2] <- "Abortion"
+	return(left_join(college_data, abortion_simple, by="State abbreviation"))
+}
+
+AppendGunLaws <- function(college_data) {
+	guns <- read.csv("data/gunlaws_giffords_scorecard.csv")
+	guns$`State abbreviation` <- state.abb[match(guns$State,state.name)]
+	guns_simple <- select(guns, c("State abbreviation", "grade2022"))
+	colnames(guns_simple)[2] <- "Gun law stringency"
+	return(left_join(college_data, guns_simple, by="State abbreviation"))
 }
 
 AppendAAUPCensure <- function(college_data) {
@@ -149,6 +163,39 @@ AppendAAUPCensure <- function(college_data) {
 		college_data$AAUP_Censure[matches] <- "Yes"
 	}	
 	return(college_data)
+}
+
+AggregateVotesByState <- function(voting_data) {
+	voting_data$VoteInFavor <- 0
+	voting_data$VoteInFavor[voting_data$Vote == "Yea"] <- 1
+	voting_data$VotesAgainst <- 0
+	voting_data$VotesAgainst[voting_data$Vote == "Nay"] <- 1
+	voting_aggregated <- voting_data %>% group_by(State) %>% summarise(
+		VotesInFavor = sum(VoteInFavor),
+		VotesAgainst = sum(VotesAgainst),
+		VoteCount = n()
+	)
+	voting_aggregated$ProportionVotesInFavor <- voting_aggregated$VotesInFavor / voting_aggregated$VoteCount
+	voting_aggregated$ProportionVotesInAgainst <- voting_aggregated$VotesAgainst / voting_aggregated$VoteCount
+	return(voting_aggregated)
+}
+
+AppendMarriageRespect <- function(college_data) {
+	marriage_defense <- read.csv("data/MarriageAct_HR8404_2022.csv", header=TRUE)
+	marriage_aggregated <- AggregateVotesByState(marriage_defense)
+	marriage_aggregated$`State abbreviation` <- state.abb[match(marriage_aggregated$State,state.name)]
+	marriage_aggregated_simple <- select(marriage_aggregated, c("State abbreviation", "ProportionVotesInFavor"))
+	colnames(marriage_aggregated_simple)[2] <- "Proportion of reps voting in favor of respect for marriage act"
+	return(left_join(college_data, marriage_aggregated_simple, by="State abbreviation"))
+}
+
+AppendContraceptiveSupport <- function(college_data) {
+	contraceptive_defense <- read.csv("data/ContraceptiveAct_HR8373_July2022.csv", header=TRUE)
+	contraceptive_aggregated <- AggregateVotesByState(contraceptive_defense)
+	contraceptive_aggregated$`State abbreviation` <- state.abb[match(contraceptive_aggregated$State,state.name)]
+	contraceptive_aggregated_simple <- select(contraceptive_aggregated, c("State abbreviation", "ProportionVotesInFavor"))
+	colnames(contraceptive_aggregated_simple)[2] <- "Proportion of reps voting in favor of respect for right to contraception act"
+	return(left_join(college_data, contraceptive_aggregated_simple, by="State abbreviation"))
 }
 
 FilterForDegreeGranting <- function(college_data) {
@@ -167,7 +214,7 @@ EnhanceData <- function(college_data, faculty_counts, student_demographics, stud
 	college_data_enhanced <- as.data.frame(college_data)
 
 	college_data_enhanced$NatWalkInd <- round(as.numeric(college_data_enhanced$NatWalkInd)/20,2)
-	
+	#college_data_enhanced <- dplyr::rename(college_data_enhanced,  `State full`="State")
 	college_data_enhanced <- dplyr::rename(college_data_enhanced, Name = `Institution Name`, Sector=`Sector of institution`, Type=CollegeType, Locale=`Degree of urbanization (Urban-centric locale)`, City="City location of institution", State="State abbreviation", Walkability=NatWalkInd, `Anti-LGBTQ+ state laws`=BannedCATravel, Yield="Admissions yield - total", `Distance (m) to transit`=DistanceToTransit, Admission="Percent admitted - total", `First year retention`="Full-time retention rate  2019", "Graduation"="Graduation rate  total cohort", "Covid vax (students)"="AllStudentsVaccinatedAgainstCovid19", "Covid vax (employees)"="AllEmployeesVaccinatedAgainstCovid19", "Misconduct reports"="InMisconductDatabase")
 	
 	college_data_enhanced$`Minimum distance to mass transit (minutes walking)` <- round((as.numeric(college_data_enhanced$`Distance (m) to transit`)/1.34)/60) #using an estimate of walk speed of 1.34 m/s from https://www.healthline.com/health/exercise-fitness/average-walking-speed#average-speed-by-age
@@ -185,7 +232,7 @@ EnhanceData <- function(college_data, faculty_counts, student_demographics, stud
 	college_data_enhanced$`Covid vax (students)` <- as.factor(college_data_enhanced$`Covid vax (students)`)
 	college_data_enhanced$`Covid vax (employees)` <- as.factor(college_data_enhanced$`Covid vax (employees)`)
 	college_data_enhanced$`Misconduct reports` <- as.factor(college_data_enhanced$`Misconduct reports`)
-	college_data_enhanced$`Abortion restrictions` <- as.factor(college_data_enhanced$`Abortion restrictions`)
+	college_data_enhanced$`Abortion` <- as.factor(college_data_enhanced$`Abortion`)
 	college_data_enhanced$Sector <- as.factor(college_data_enhanced$Sector)
 	college_data_enhanced$State <- as.factor(college_data_enhanced$State)
 	college_data_enhanced$LocaleChar <- as.character(college_data_enhanced$Locale)
@@ -278,9 +325,11 @@ RenderSparklines <- function() {
 
 RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, students_by_state_by_institution, student_demographics, faculty_counts) {	
 	institutions <- unique(degree_granting$ShortName)
+	failures <- c()
 	#for (i in seq_along(institutions)) {
 	for (i in sequence(min(maxcount, length(institutions)))) {
-		#try({
+		failed <- TRUE
+		try({
 			print(institutions[i])
 			if(is.null(student_demographics[[institutions[i]]])) {
 				print("No data for " + institutions[i])
@@ -310,7 +359,7 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 
 
 			file.copy("docs/institution.html", paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"))
-			print(paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"))
+			#print(paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"))
 			Sys.sleep(1)
 			# quarto::quarto_render(
 			# 	input="_institution.qmd", 
@@ -326,8 +375,13 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 			# 	),
 			# 	quiet=FALSE
 			# )
-		#}, silent=TRUE)
+			failed <- FALSE
+		}, silent=TRUE)
+		if(failed) {
+			failures <- c(failures, institutions[i])
+		}
 	}
+	return(failures)
 }
 
 FilterForTopAndSave <- function(overview) {
@@ -486,3 +540,33 @@ GetFacultyCountsByInstitution <- function(college_data) {
 	return(results)
 }
 
+
+### From my chapter2 package
+
+
+#' Use azizka/speciesgeocodeR/ and WWF data to encode locations for habitat and biome
+#'
+#' Uses info from http://omap.africanmarineatlas.org/BIOSPHERE/data/note_areas_sp/Ecoregions_Ecosystems/WWF_Ecoregions/WWFecoregions.htm to convert codes to more readable text
+#'
+#' @param locations Data.frame containing points (latitude and longitude, perhaps other data as columns)
+#' @return data.frame with columns for habitat and biome.
+#' @export
+#' @examples
+#' locations <- spocc_taxon_query("Myrmecocystus", limit=50)
+#' locations <- locality_clean(locations)
+#' locations <- locality_add_habitat_biome(locations)
+#' print(head(locations))
+AppendBiome <- function(locations) {
+  locations.spatial <- sp::SpatialPointsDataFrame(coords=locations[,c("longitude", "latitude")], data=locations)
+  wwf <- speciesgeocodeR::WWFload(tempdir())
+  mappedregions <- sp::over(locations.spatial, wwf)
+  realms <- data.frame(code=c("AA", "AN", "AT", "IM", "NA", "NT", "OC", "PA"), realm=c("Australasia", "Antarctic", "Afrotropics", "IndoMalay", "Nearctic", "Neotropics", "Oceania", "Palearctic"), stringsAsFactors=FALSE)
+  biomes <- c("Tropical & Subtropical Moist Broadleaf Forests", "Tropical & Subtropical Dry Broadleaf Forests", "Tropical & Subtropical Coniferous Forests", "Temperate Broadleaf & Mixed Forests", "Temperate Conifer Forests", "Boreal Forests/Taiga", "Tropical & Subtropical Grasslands, Savannas & Shrubland", "Temperate Grasslands, Savannas & Shrublands", "Flooded Grasslands & Savannas", "Montane Grasslands & Shrublands", "Tundra", "Mediterranean Forests, Woodlands & Scrub", "Deserts & Xeric Shrublands", "Mangroves")
+  locations$eco_name <- mappedregions$ECO_NAME
+  locations$biome <- biomes[mappedregions$BIOME]
+  locations$realm <- NA
+  for (i in sequence(nrow(locations))) {
+    locations$realm[i] <- realms$realm[which(realms$code==mappedregions$REALM)]
+  }
+  return(locations)
+}

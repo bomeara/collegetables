@@ -45,37 +45,10 @@ total_undergrads <- unlist(focal_raw['Undergraduate enrollment'])
 total_grads <- unlist(focal_raw['Graduate enrollment'])
 ```
 
-### General information
+`r ifelse(focal_raw['AAUP_Censure']=="Yes", '<h2 style="color:Red;"> **Warning: "Unsatisfactory conditions of academic freedom and tenure have been found to prevail at this institution"** according to the <a href="https://www.aaup.org/our-programs/academic-freedom/censure-list">AAUP</a> (as of July 31, 2022)</h2>', "")`
 
-* `r focal_raw['Sector']`
-* `r focal_raw['Type']`
-`r paste0(ifelse(focal_raw['Historically Black College or University']=="Yes", "* This is a historically black college or university (HBCU)", ""))`
-`r paste0(ifelse(focal_raw['Tribal college']=="Yes", "* This is a tribal college", ""))`
-`r ifelse(focal_raw['AAUP_Censure']=="Yes", '* **"Unsatisfactory conditions of academic freedom and tenure have been found to prevail at this institution"** according to the <a href="https://www.aaup.org/our-programs/academic-freedom/censure-list">AAUP</a>', "")`
-`r ifelse(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes", '* **California considers the state this institution is in to have one or more anti-LGBTQ+ laws.** See more <a href="https://oag.ca.gov/ab1887">here</a>', "")`
-* Undergraduate enrollment is `r format(focal_raw['Undergraduate enrollment'],big.mark=",", scientific=FALSE)` (includes all undergrads; some of the numbers below are based on first time, full time, degree seeking students only).
-* `r ifelse(is.na(focal_raw['Mission statement (IC2019mission)']), paste0('See mission at ', focal_raw["Mission statement URL (if mission statement not provided) (IC2019mission)"]), paste0("Mission: ", focal_raw['Mission statement (IC2019mission)']))`
-* `r 100*focal_raw['Admission']`% of applicants are admitted
-* `r 100*focal_raw['Yield']`% of admitted applicants choose to enroll
-* `r 100*focal_raw['First year retention']`% of students stay after their first year
-* `r 100*focal_raw['Graduation']`% of students graduate
-* The student to all faculty ratio is `r paste0(round(as.numeric(focal_raw["Undergrads per instructor"])),":1")`
-* The student to tenured or tenure-track faculty ratio is `r paste0(round(as.numeric(focal_raw["Undergrads per tenure-track professor"])),":1")`
-* Students `r ifelse(focal_raw['Covid vax (students)']=="Yes", "are", "are not")` required to be vaccinated against COVID-19
-* Employees `r ifelse(focal_raw['Covid vax (employees)']=="Yes", "are", "are not")` required to be vaccinated against COVID-19
-* This college is located in a `r tolower(paste0(rev(strsplit(as.character(focal_raw['LocaleChar']), ': ')[[1]]), collapse=' '))`
-* `r ifelse(is.na(focal_raw['Minimum distance to mass transit (minutes walking)']), "It is not near mass transit", paste0("The closest mass transit is a ", focal_raw['Minimum distance to mass transit (minutes walking)'], " minute walk away"))`
-* As of July, 2022, the state this institution is in had abortion restrictions categorized "`r gsub("\\d\\: ", "", tolower(focal_raw['Abortion restrictions'][1,1]))`" by the [Guttmacher Institute](https://states.guttmacher.org/policies/), though this may change.
-* Athletic conference: `r focal_raw["NCAA/NAIA conference number cross country/track"]`
+`r ifelse(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes", '<h2 style="color:Red;"> **Warning: California considers the state this institution is in to have one or more anti-LGBTQ+ laws** (as of July 31, 2022). See more <a href="https://oag.ca.gov/ab1887">here</a></h2>', "")`
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
-leaflet() %>%
-  addTiles() %>%  
-  setView(lng = as.numeric(focal_raw['Longitude location of institution']), lat = as.numeric(focal_raw['Latitude location of institution']), zoom = 16) %>% 
-  addMarkers(lng=as.numeric(focal_raw['Longitude location of institution']), lat=as.numeric(focal_raw['Latitude location of institution']), popup=params$institution_name)
-```
-
-Fields 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 fields_to_compare <- c(
@@ -96,7 +69,9 @@ fields_to_compare <- c(
 	"Total library collections (physical and electronic)",
 	"Total library circulations (physical and digital/electronic)",
 	"Average library loans (physical) per student or faculty member",
-	"Average library loans (physical + digital) per student or faculty member"
+	"Average library loans (physical + digital) per student or faculty member",
+	"Proportion of reps voting in favor of respect for right to contraception act",
+	"Proportion of reps voting in favor of respect for marriage act"
 	)
 comparison_df <- data.frame(matrix("", nrow=length(fields_to_compare), ncol=1+length(comparison_list)))
 rownames(comparison_df) <- fields_to_compare
@@ -115,7 +90,13 @@ for (field_index in seq_along(fields_to_compare)) {
 	for (list_index in sequence(length(comparison_list))) {
 		current_values <- as.numeric((comparison_list[[list_index]])[,focal_field])
 		current_values <- current_values[is.finite(current_values)]
-		p <- ggplot(data=data.frame(y='1', x=current_values), aes(x=x, fill=y)) + geom_density() + theme_void() + theme(legend.position="none") + scale_fill_manual(values=c("darkgray")) + geom_vline(xintercept=as.numeric(focal_raw[focal_field]), color="red", size=2)
+		#p <- ggplot(data=data.frame(y='1', x=current_values), aes(x=x, fill=y)) + geom_density() + theme_void() + theme(legend.position="none") + scale_fill_manual(values=c("darkgray")) + geom_vline(xintercept=as.numeric(focal_raw[focal_field]), color="red", size=2)
+
+		p <- ggplot(data=data.frame(x='1', y=current_values), aes(x=x, y=y, fill=x)) + geom_violin() + theme_void() + theme(legend.position="none") + scale_fill_manual(values=c("darkgray")) + geom_hline(yintercept=as.numeric(focal_raw[focal_field]), color="red", size=2) + coord_flip()
+		if(max(values_for_range)>1) {
+			p <- p+scale_y_continuous(trans='log10') # for ease of seeing
+		}
+
 		filename_png <- paste0("images/", utils::URLencode(gsub(" ", "", params$institution_name)), "_", field_index, "_", list_index, ".png")
         ggsave(
           plot = p,
@@ -155,8 +136,55 @@ comparison_df %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlT
 ```
 
 
+### Other information
 
-### Degrees awarded each year
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+state_summary <- data.frame(matrix(nrow=0, ncol=2))
+colnames(state_summary) <- c("Measure", "Value")
+if(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes") {
+	state_summary[nrow(state_summary)+1,] <- c('Warning', '**California considers the state this institution is in to have one or more anti-LGBTQ+ laws.** See more <a href="https://oag.ca.gov/ab1887">here</a>')
+}
+
+if(focal_raw['AAUP_Censure']=="Yes") {
+	state_summary[nrow(state_summary)+1,] <- c('Warning', '**"Unsatisfactory conditions of academic freedom and tenure have been found to prevail at this institution"** according to the <a href="https://www.aaup.org/our-programs/academic-freedom/censure-list">AAUP</a>')
+}
+
+if(focal_raw['Historically Black College or University']=="Yes") {
+	state_summary[nrow(state_summary)+1,] <- c('Historically Black College or University', "Yes")
+}
+if(focal_raw['Tribal college']=="Yes") {
+	state_summary[nrow(state_summary)+1,] <- c('Tribal College', "Yes")
+}
+
+
+state_summary[nrow(state_summary)+1,] <- c("Employee covid vax", ifelse(focal_raw['Covid vax (employees)']=="Yes", "Required", "Not required"))
+
+state_summary[nrow(state_summary)+1,] <- c("Student covid vax", ifelse(focal_raw['Covid vax (students)']=="Yes", "Required", "Not required"))
+
+state_summary %>% htmlTable::htmlTable(rnames=FALSE)
+```
+
+`r paste0(ifelse(focal_raw['Historically Black College or University']=="Yes", "* This is a historically black college or university (HBCU)", ""))`
+`r paste0(ifelse(focal_raw['Tribal college']=="Yes", "* This is a tribal college", ""))`
+
+`r ifelse(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes", '* **California considers the state this institution is in to have one or more anti-LGBTQ+ laws.** See more <a href="https://oag.ca.gov/ab1887">here</a>', "")`
+* Students `r ifelse(focal_raw['Covid vax (students)']=="Yes", "are", "are not")` required to be vaccinated against COVID-19
+* Employees `r ifelse(focal_raw['Covid vax (employees)']=="Yes", "are", "are not")` required to be vaccinated against COVID-19
+* This college is located in a `r tolower(paste0(rev(strsplit(as.character(focal_raw['LocaleChar']), ': ')[[1]]), collapse=' '))`: `r as.character(focal_raw['City'])`,  `r as.character(focal_raw['State'][1,1])`
+* `r ifelse(is.na(focal_raw['Minimum distance to mass transit (minutes walking)']), "It is not near mass transit", paste0("The closest mass transit is a ", focal_raw['Minimum distance to mass transit (minutes walking)'], " minute walk away"))`
+* As of August 8, 2022, abortion is `r tolower(focal_raw['Abortion'][1,1])` in this state, though this may change.
+* The ecology where this college is located is `r as.character(focal_raw['eco_name'][1,1])`, in the `r tolower(as.character(focal_raw['biome'][1,1]))` biome.
+* The gun law stringency of this state is `r focal_raw['Gun law stringency'][1,1]`.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+leaflet() %>%
+  addTiles() %>%  
+  setView(lng = as.numeric(focal_raw['longitude']), lat = as.numeric(focal_raw['latitude']), zoom = 16) %>% 
+  addMarkers(lng=as.numeric(focal_raw['longitude']), lat=as.numeric(focal_raw['latitude']), popup=params$institution_name)
+```
+
+
+
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 degrees <- data.frame(Degree=c("Associate", "Bachelor", "Master", "Doctor"), Number=unname(unlist(c(focal_raw["Number of students receiving an Associate's degree (DRVC2020)" ], focal_raw["Number of students receiving a Bachelor's degree (DRVC2020)" ],focal_raw["Number of students receiving a Master's degree (DRVC2020)" ],focal_raw["Number of students receiving a Doctor's degree (DRVC2020)"]))))
@@ -245,7 +273,6 @@ student_demographics_focal_streamlined %>% addHtmlTableStyle(col.rgroup = c("non
 
 
 
-### Students from US
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 
@@ -337,7 +364,6 @@ if(max(students_by_state$`Number of students`)>0) {
 
 
 
-### Library resources
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 
@@ -355,7 +381,6 @@ knitr::kable(library_table)
 ```
 
 
-### Student to faculty ratio compared to similar institutions:
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 df_to_plot <- focal_nearby[,c('Name', "Undergrads per instructor", 'Undergrads per tenure-track professor', 'Focal')]

@@ -21,8 +21,9 @@ tar_invalidate(sparklines)
 
 # End this file with a list of target objects.
 list(
-  tar_target(college_data, AppendAAUPCensure(AppendAbortion(AppendMisconduct(AppendVaccination(AggregateIPEDS()))))),
-  tar_target(maxcount, 600),
+  tar_target(college_data_ipeds, AggregateIPEDS()),
+  tar_target(college_data, AppendContraceptiveSupport(AppendMarriageRespect(AppendGunLaws(AppendBiome(AppendAAUPCensure(AppendAbortion(AppendMisconduct(AppendVaccination(college_data_ipeds))))))))),
+  tar_target(maxcount, 200),
   tar_target(sparklines, RenderSparklines()),
   #tar_target(save_raw_data, write.csv(college_data, "docs/college_data.csv")),
   tar_target(state_pops, GetPopulationByStateAtAge18()),
