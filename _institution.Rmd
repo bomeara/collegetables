@@ -45,14 +45,15 @@ total_undergrads <- unlist(focal_raw['Undergraduate enrollment'])
 total_grads <- unlist(focal_raw['Graduate enrollment'])
 ```
 
-`r ifelse(focal_raw['AAUP_Censure']=="Yes", '<h2 style="color:Red;"> **Warning: "Unsatisfactory conditions of academic freedom and tenure have been found to prevail at this institution"** according to the <a href="https://www.aaup.org/our-programs/academic-freedom/censure-list">AAUP</a> (as of July 31, 2022)</h2>', "")`
+`r ifelse(focal_raw['AAUP_Censure']=="Yes", '<h3 style="color:Red;">Warning</h3><p> **"Unsatisfactory conditions of academic freedom and tenure have been found to prevail at this institution"** according to the <a href="https://www.aaup.org/our-programs/academic-freedom/censure-list">AAUP</a> (as of July 31, 2022)</p>', "")`
 
-`r ifelse(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes", '<h2 style="color:Red;"> **Warning: California considers the state this institution is in to have one or more anti-LGBTQ+ laws** (as of July 31, 2022). See more <a href="https://oag.ca.gov/ab1887">here</a></h2>', "")`
+`r ifelse(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes", '<h3 style="color:Red;">Warning</h2><p />**California considers the state this institution is in to have one or more anti-LGBTQ+ laws** (as of July 31, 2022). It prohibits California-sponsored travel to this state as a safety measure. See more <a href="https://oag.ca.gov/ab1887">here</a></p>', "")`
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 fields_to_compare <- c(
-	"Admission", "Yield", 
+	"Admission", 
+	"Yield", 
 	"First year retention", 
 	"Graduation", 
 	"Undergraduate enrollment", 
@@ -69,9 +70,7 @@ fields_to_compare <- c(
 	"Total library collections (physical and electronic)",
 	"Total library circulations (physical and digital/electronic)",
 	"Average library loans (physical) per student or faculty member",
-	"Average library loans (physical + digital) per student or faculty member",
-	"Proportion of reps voting in favor of respect for right to contraception act",
-	"Proportion of reps voting in favor of respect for marriage act"
+	"Average library loans (physical + digital) per student or faculty member"
 	)
 comparison_df <- data.frame(matrix("", nrow=length(fields_to_compare), ncol=1+length(comparison_list)))
 rownames(comparison_df) <- fields_to_compare
@@ -126,6 +125,10 @@ for(row_index in sequence(nrow(comparison_df))) {
 	}, silent=TRUE)
 }
 
+#for(row_index in sequence(4)) {
+#	comparison_df[row_index,1] <- paste0(100*comparison_df[row_index,1],'%')
+#}
+
 # p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(6, 100-6), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", "red")) 
 #p <- ggplot(data=data.frame(y='1', x=as.numeric(comparison_list[[1]][,'Undergraduate enrollment'])), aes(x=x, fill=y)) + geom_density() + theme_void() + theme(legend.position="none") + scale_fill_manual(values=c("black"))
 
@@ -135,8 +138,25 @@ colnames(comparison_df) <- paste0('&nbsp;&nbsp;',colnames(comparison_df), '&nbsp
 comparison_df %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlTable::htmlTable(escape.html=TRUE)
 ```
 
+### Location
 
-### Other information
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+location_summary <- data.frame(matrix(nrow=0, ncol=2))
+colnames(location_summary) <- c("Measure", "Value")
+
+location_summary[nrow(location_summary)+1,] <- c("Location", paste0((paste0(rev(strsplit(as.character(focal_raw['LocaleChar']), ': ')[[1]]), collapse=' ')), ': ',as.character(focal_raw['City']), ', ', as.character(focal_raw['State'][1,1])))
+
+location_summary[nrow(location_summary)+1,] <- c("Mass transit", ifelse(is.na(focal_raw['Minimum distance to mass transit (minutes walking)']), "Not nearby", paste0(focal_raw['Minimum distance to mass transit (minutes walking)'], " minute walk away")))
+
+location_summary[nrow(location_summary)+1,] <- c("Local ecology", as.character(focal_raw['eco_name'][1,1]))
+
+location_summary[nrow(location_summary)+1,] <- c("Local biome", as.character(focal_raw['biome'][1,1]))
+
+location_summary %>% htmlTable::htmlTable(rnames=FALSE)
+```
+
+### Safety
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 state_summary <- data.frame(matrix(nrow=0, ncol=2))
@@ -145,36 +165,24 @@ if(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes") {
 	state_summary[nrow(state_summary)+1,] <- c('Warning', '**California considers the state this institution is in to have one or more anti-LGBTQ+ laws.** See more <a href="https://oag.ca.gov/ab1887">here</a>')
 }
 
-if(focal_raw['AAUP_Censure']=="Yes") {
-	state_summary[nrow(state_summary)+1,] <- c('Warning', '**"Unsatisfactory conditions of academic freedom and tenure have been found to prevail at this institution"** according to the <a href="https://www.aaup.org/our-programs/academic-freedom/censure-list">AAUP</a>')
-}
-
-if(focal_raw['Historically Black College or University']=="Yes") {
-	state_summary[nrow(state_summary)+1,] <- c('Historically Black College or University', "Yes")
-}
-if(focal_raw['Tribal college']=="Yes") {
-	state_summary[nrow(state_summary)+1,] <- c('Tribal College', "Yes")
-}
-
-
 state_summary[nrow(state_summary)+1,] <- c("Employee covid vax", ifelse(focal_raw['Covid vax (employees)']=="Yes", "Required", "Not required"))
 
 state_summary[nrow(state_summary)+1,] <- c("Student covid vax", ifelse(focal_raw['Covid vax (students)']=="Yes", "Required", "Not required"))
 
+state_summary[nrow(state_summary)+1,] <- c("Abortion", as.character(focal_raw['Abortion'][1,1]))
+
+state_summary[nrow(state_summary)+1,] <- c("Gun law stringency", as.character(focal_raw['Gun law stringency'][1,1]))
+
+
+state_summary[nrow(state_summary)+1,] <- c("State rep support for legal contraception", paste0(round(100*as.numeric(focal_raw["Proportion of reps voting in favor of respect for right to contraception act"])),'%'))
+state_summary[nrow(state_summary)+1,] <- c("State rep support for same-sex and interracial marriages", paste0(round(100*as.numeric(focal_raw["Proportion of reps voting in favor of respect for marriage act"])),'%'))
+
+
+
 state_summary %>% htmlTable::htmlTable(rnames=FALSE)
 ```
 
-`r paste0(ifelse(focal_raw['Historically Black College or University']=="Yes", "* This is a historically black college or university (HBCU)", ""))`
-`r paste0(ifelse(focal_raw['Tribal college']=="Yes", "* This is a tribal college", ""))`
-
-`r ifelse(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes", '* **California considers the state this institution is in to have one or more anti-LGBTQ+ laws.** See more <a href="https://oag.ca.gov/ab1887">here</a>', "")`
-* Students `r ifelse(focal_raw['Covid vax (students)']=="Yes", "are", "are not")` required to be vaccinated against COVID-19
-* Employees `r ifelse(focal_raw['Covid vax (employees)']=="Yes", "are", "are not")` required to be vaccinated against COVID-19
-* This college is located in a `r tolower(paste0(rev(strsplit(as.character(focal_raw['LocaleChar']), ': ')[[1]]), collapse=' '))`: `r as.character(focal_raw['City'])`,  `r as.character(focal_raw['State'][1,1])`
-* `r ifelse(is.na(focal_raw['Minimum distance to mass transit (minutes walking)']), "It is not near mass transit", paste0("The closest mass transit is a ", focal_raw['Minimum distance to mass transit (minutes walking)'], " minute walk away"))`
-* As of August 8, 2022, abortion is `r tolower(focal_raw['Abortion'][1,1])` in this state, though this may change.
-* The ecology where this college is located is `r as.character(focal_raw['eco_name'][1,1])`, in the `r tolower(as.character(focal_raw['biome'][1,1]))` biome.
-* The gun law stringency of this state is `r focal_raw['Gun law stringency'][1,1]`.
+### Map
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 leaflet() %>%
@@ -195,8 +203,6 @@ degrees %>% htmlTable::htmlTable(rnames=FALSE)
 ```
 
 ### Diversity among the faculty
-
-Two things to note here are diversity overall as well as the distribution tenure, tenure track, and non tenure track faculty. There are two main tracks in academia: faculty who are given short term contracts (and often a high teaching load and lower pay) and faculty who are essentially on probation (for 3-6 years, typically) and then are given tenure or fired. For more about tenure, see [here](https://www.aaup.org/issues/tenure). Tenure is a way of protecting academic freedom (tenured faculty can be fired for misconduct or if a program is closed, but not for their research or speech); the fact that it is often more stable also helps ensure that faculty will be at an institution long term to serve as mentors, letter writers, etc. Having more non-tenure-track faculty can save money (they are often paid less, and teach more), reduce public dissent (they can be fired for taking a stand unpopular with their employer), and reduce research or other creative output, including mentoring in these areas (teaching loads are often higher, and research/creative output expectations lower, for faculty in non-tenure-track positions at large universities).
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=(nrow(focal_raw)==1)}
 faculty_counts_focal_streamlined <- data.frame(matrix("", nrow=nrow(faculty_counts_focal)/2, ncol=6))
