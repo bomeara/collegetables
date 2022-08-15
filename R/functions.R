@@ -207,9 +207,9 @@ FilterForDegreeGranting <- function(college_data) {
 }
 
 RoughRanking <- function(college_data) {
-	admission <- as.numeric(college_data$"Admission")
+	admission <- 100*as.numeric(college_data$"Admission")
 	admission[which(is.na(admission)) ]<- 100
-	graduation <- as.numeric(college_data$"Graduation")
+	graduation <- 100*as.numeric(college_data$"Graduation")
 	graduation[which(is.na(graduation))] <- 0
 	enrollment <- as.numeric(college_data$`Undergraduate enrollment`)
 	enrollment[which(is.na(enrollment))] <- 0

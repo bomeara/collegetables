@@ -43,7 +43,7 @@ comparison_list <- list(
 	comparison_sector = subset(raw_table_df, raw_table_df$Sector==raw_table_df$Sector[focal_row_number])
 )
 
-focal_raw <- subset(raw_table_df, raw_table_df$"ShortName"==params$institution_name)[1,]
+focal_raw <- raw_table_df[focal_row_number,]
 
 total_undergrads <- unlist(focal_raw['Undergraduate enrollment'])
 total_grads <- unlist(focal_raw['Graduate enrollment'])
@@ -146,10 +146,10 @@ for (field_index in seq_along(fields_to_compare)) {
 			# comparison_df[field_index,list_index+1] <- median(as.numeric((comparison_list[[list_index]])[,focal_field]), na.rm=TRUE)
 			comparison_df[field_index,list_index+1] <- paste0("<img src=", filename_png, " width=40 height=7>")
 		} else {
-			percentile_rounded <- -1
+			percentile_rounded <- NaN
 			try(percentile_rounded <- round(100*((stats::ecdf(current_values))(focal_raw[focal_field])),0), silent=TRUE)
 			#comparison_df[field_index,list_index+1] <- paste0("<span style=color:", GetColorFromPercentile(percentile_rounded), ">", percentile_rounded, "</span>")
-			if(percentile_rounded > -1) {
+			if(is.finite(percentile_rounded)1) {
 				comparison_df[field_index,list_index+1] <-paste0("<img src=images/pct_bar_", percentile_rounded, ".png width=", params$spark_width, " height=", params$spark_height, ">")
 			} else {
 				comparison_df[field_index,list_index+1] <- '?'

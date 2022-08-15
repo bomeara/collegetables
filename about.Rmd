@@ -10,6 +10,8 @@ params:
 
 ### About
 
+This was done over a break in the summer while starting to take my kids on college visits; as I mention on the home page, while there are lots of "College Ranking" websites, they use some odd factors to rank (such as colleges ranking each other, standardized testing scores, how many students they reject, and more for [US News and World Report](https://www.usnews.com/education/best-colleges/articles/ranking-criteria-and-weights)) while omitting things like are faculty free to teach in their core areas and is the state safe for LGBTQ+ students. 
+
 This is an aggregation of information on colleges that often isn't emphasized by other sites for comparing colleges. Some of the fields:
 
 * Percentage of students who are admitted, who decide to come (yield), who stay after their first year, and who graduate

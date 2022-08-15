@@ -1,0 +1,89 @@
+---
+output:
+  html_document:
+    self_contained: false
+    includes:
+      in_header: GA_Script.html
+params:
+  raw_table: "nothing"
+  students_by_state_by_institution: "nothing"
+  focal_state_long: "nothing"
+  focal_state_abbr: "nothing"
+title: "`r paste0('Where do students from ', params$focal_state_long, ' go?')`"
+
+
+---
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(dev="png")
+source("_packages.R")
+source("R/functions.R")
+tar_load(state_pops)
+raw_table_df <- as.data.frame(params$raw_table)
+raw_table_df$Institution <- raw_table_df$ShortName
+students_by_state_list <- params$students_by_state_by_institution
+
+students_to_institution <- data.frame(Institution=names(students_by_state_by_institution), StudentsFromFocalState=rep(0, length(students_by_state_by_institution)), InstitutionListsStateData = rep(FALSE,length(students_by_state_by_institution)))
+for (institution_index in sequence(length(students_by_state_by_institution))) {
+	students_to_institution[institution_index, 'StudentsFromFocalState'] <- as.numeric((students_by_state_by_institution[[institution_index]])[which(students_by_state_by_institution[[institution_index]]$State==params$focal_state_long),'Number of students'])
+	students_to_institution[institution_index, 'InstitutionListsStateData'] <- ifelse(sum(as.numeric(students_by_state_by_institution[[institution_index]]$'Number of students'), na.rm=TRUE)==0, FALSE, TRUE)
+}
+students_to_institution <- students_to_institution[order(students_to_institution$Students, decreasing=TRUE),]
+
+students_to_institution <- base::merge(students_to_institution, raw_table_df, by="Institution")
+students_to_institution <- dplyr::select(students_to_institution, c(
+	"Institution",
+	"StudentsFromFocalState",
+	"City",
+	"State",
+	"Type",
+	"Undergraduate enrollment",
+	"InstitutionListsStateData",
+	"URL"
+))
+
+for (institution_index in sequence(nrow(students_to_institution))) {
+	students_to_institution$Institution[institution_index] <- paste0("<a href='https://collegetables.info/", students_to_institution$URL[institution_index], "'>", students_to_institution$Institution[institution_index], "</a>")
+}
+
+
+students_to_institution <- dplyr::select(students_to_institution, -"URL")
+
+institutions_with_no_data <- subset(students_to_institution, InstitutionListsStateData==FALSE)
+institutions_with_no_data <- dplyr::select(institutions_with_no_data, -"InstitutionListsStateData")
+students_to_institution <- dplyr::select(students_to_institution, -"InstitutionListsStateData")
+
+
+institutions_with_no_data_focal_state <- subset(institutions_with_no_data, State==params$focal_state_abbr)
+
+students_to_institution <- subset(students_to_institution, StudentsFromFocalState>0)
+
+Total18YearOlds <- (subset(state_pops, State==params$focal_state_long))$Population_age_18
+
+students_to_institution$'Percentage of state 18 y.o. going here' <- round(100*students_to_institution$StudentsFromFocalState/Total18YearOlds,4)
+colnames(students_to_institution) <- gsub("StudentsFromFocalState", "Students from this state", colnames(students_to_institution))
+students_to_institution <- students_to_institution[order(as.numeric(students_to_institution$"Students from this state"), decreasing=TRUE),]
+rownames(students_to_institution) <- NULL
+
+```
+
+Most universities list how many students come from each state, but not all do. This page has two tables: a list of all institutions that report having students from this state ordered by the number of students from the focal state, and a table of all other institutions in that state, ordered by overall undergraduate enrollment. It is likely that in state institutions pull many of their students from their home state, but this is hard to assess without them reporting the data.
+
+### Institutions with information on enrollment by state
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+students_to_institution %>% htmlTable::addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>%  htmlTable::addHtmlTableStyle(pos.caption = "bottom") %>% htmlTable::htmlTable(escape.html=FALSE, rnames=FALSE)
+```
+
+
+
+### In state institutions without information on enrollment by state
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+rownames(institutions_with_no_data_focal_state) <- NULL
+institutions_with_no_data_focal_state <- institutions_with_no_data_focal_state %>% dplyr::select(c("Institution", "City", "Type", "Undergraduate enrollment"))
+institutions_with_no_data_focal_state <- institutions_with_no_data_focal_state[order(as.numeric(institutions_with_no_data_focal_state$'Undergraduate enrollment'), decreasing=TRUE),]
+institutions_with_no_data_focal_state %>% htmlTable::addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>%  htmlTable::addHtmlTableStyle(pos.caption = "bottom") %>% htmlTable::htmlTable(escape.html=FALSE, rnames=FALSE)
+```
