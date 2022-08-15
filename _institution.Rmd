@@ -84,11 +84,6 @@ fields_to_compare <- c(
 	"Government grants and contracts as a percent of core revenues",
 	"Private gifts  grants  and contracts as a percent of core revenues",
 	
-	"Fraction of tenure track faculty who are women",
-	"Fraction of non-tenure track faculty who are women",
-	"Fraction of tenure track faculty who are BIPOC",
-	"Fraction of non-tenure track faculty who are BIPOC",
-	
 	"Liquor discipline per student (3 yr avg)",
 	"Liquor arrest per student (3 yr avg)",
 	"Drug discipline per student (3 yr avg)",
@@ -149,13 +144,12 @@ for (field_index in seq_along(fields_to_compare)) {
 			percentile_rounded <- NaN
 			try(percentile_rounded <- round(100*((stats::ecdf(current_values))(focal_raw[focal_field])),0), silent=TRUE)
 			#comparison_df[field_index,list_index+1] <- paste0("<span style=color:", GetColorFromPercentile(percentile_rounded), ">", percentile_rounded, "</span>")
-			if(is.finite(percentile_rounded)1) {
+			if(is.finite(percentile_rounded)) {
 				comparison_df[field_index,list_index+1] <-paste0("<img src=images/pct_bar_", percentile_rounded, ".png width=", params$spark_width, " height=", params$spark_height, ">")
 			} else {
-				comparison_df[field_index,list_index+1] <- '?'
+				comparison_df[field_index,list_index+1] <- ''
 			}
-			#if(grepl("Undergrads per", focal_field) | grepl("Admission", focal_field) ) { # we could reverse for admission. But rejecting many students who want to go there, and who would be successful there, is not great from a student perspective
-			if(grepl("Undergrads per", focal_field) | grepl("Reported|discipline|arrest", focal_field)) {
+			if(grepl("Undergrads per", focal_field) | grepl("Reported|discipline|arrest", focal_field) | grepl("Admission", focal_field)) {
 					comparison_df[field_index,list_index+1] <-paste0("<img src=images/pct_bar_rev_good_", percentile_rounded, ".png width=", params$spark_width, " height=", params$spark_height, ">")
 
 			}
@@ -177,7 +171,11 @@ for(row_index in sequence(nrow(comparison_df))) {
 }
 
 for(row_index in sequence(4)) {
-	comparison_df[row_index,1] <- paste0(100*as.numeric(comparison_df[row_index,1]),'%')
+	if(is.finite(as.numeric(comparison_df[row_index,1]))) {
+		comparison_df[row_index,1] <- paste0(100*as.numeric(comparison_df[row_index,1]),'%')
+	} else {
+		comparison_df[row_index,sequence(ncol(comparison_df))] <- ""
+	}
 }
 
 comparison_df['Endowment assets per FTE', 1] <- paste0('$', comparison_df['Endowment assets per FTE', 1])
@@ -193,23 +191,33 @@ for(row_index in sequence(nrow(comparison_df))) {
 
 for(row_index in sequence(nrow(comparison_df))) {
 	if(grepl("as a percent of core revenues", rownames(comparison_df)[row_index])) {
-		comparison_df[row_index,1] <- paste0(comparison_df[row_index,1], '%')
+		if(is.finite(as.numeric(comparison_df[row_index,1]))) {
+			comparison_df[row_index,1] <- paste0(comparison_df[row_index,1], '%')
+		} else {
+			comparison_df[row_index,1] <- ""
+		}
 		rownames(comparison_df)[row_index] <- gsub(' as a percent of core revenues', '', gsub("per student", "", rownames(comparison_df)[row_index]))
 	}
 }
 
-comparison_df['Fraction of tenure track faculty who are women',1] <- paste0(100*round(as.numeric(comparison_df['Fraction of tenure track faculty who are women',1])), '%')
-rownames(comparison_df) <- gsub('Fraction of tenure track faculty who are women', 'Tenure-track faculty who are women',  rownames(comparison_df))
+# To handle odd formatting in input data
+for(row_index in sequence(nrow(comparison_df))) {
+	if(grepl("as percent of core revenues", rownames(comparison_df)[row_index])) {
+		if(is.finite(as.numeric(comparison_df[row_index,1]))) {
+			comparison_df[row_index,1] <- paste0(comparison_df[row_index,1], '%')
+		} else {
+			comparison_df[row_index,1] <- ""
+		}
+		rownames(comparison_df)[row_index] <- gsub(' as percent of core revenues', '', gsub("per student", "", rownames(comparison_df)[row_index]))
+	}
+}
 
-comparison_df['Fraction of non-tenure track faculty who are women',1] <- paste0(100*round(as.numeric(comparison_df['Fraction of non-tenure track faculty who are women',1])), '%')
-rownames(comparison_df) <- gsub('Fraction of non-tenure track faculty who are women', 'Non-tenure-track faculty who are women',  rownames(comparison_df))
+rownames(comparison_df) <- gsub('Average library loans (physical) per student or faculty member', "Physical loans per student or faculty", rownames(comparison_df))
+rownames(comparison_df) <- gsub('Average library loans (physical + digital) per student or faculty member', "Physical or digital loans per student or faculty", rownames(comparison_df))
+rownames(comparison_df) <- gsub('Average net price-students awarded grant or scholarship aid', 'Avg net price for students with grants/scholarships', rownames(comparison_df))
 
 
-comparison_df['Fraction of tenure track faculty who are BIPOC',1] <- paste0(100*round(as.numeric(comparison_df['Fraction of tenure track faculty who are BIPOC',1])), '%')
-rownames(comparison_df) <- gsub('Fraction of tenure track faculty who are BIPOC', 'Tenure-track faculty who are Black, Indigenous, and/or people of color',  rownames(comparison_df))
 
-comparison_df['Fraction of non-tenure track faculty who are BIPOC',1] <- paste0(100*round(as.numeric(comparison_df['Fraction of non-tenure track faculty who are BIPOC',1])), '%')
-rownames(comparison_df) <- gsub('Fraction of non-tenure track faculty who are BIPOC', 'Non-tenure-track faculty who are Black, Indigenous, and/or people of color',  rownames(comparison_df))
 
 # p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(6, 100-6), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", "red")) 
 #p <- ggplot(data=data.frame(y='1', x=as.numeric(comparison_list[[1]][,'Undergraduate enrollment'])), aes(x=x, fill=y)) + geom_density() + theme_void() + theme(legend.position="none") + scale_fill_manual(values=c("black"))
@@ -217,7 +225,7 @@ rownames(comparison_df) <- gsub('Fraction of non-tenure track faculty who are BI
 
 
 colnames(comparison_df) <- paste0('&nbsp;&nbsp;',colnames(comparison_df), '&nbsp;&nbsp;')
-comparison_df %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>%  addHtmlTableStyle(pos.caption = "bottom")%>% htmlTable::htmlTable(escape.html=TRUE, cgroup=c("School", "Percentile vs."), n.cgroup=c(1, ncol(comparison_df)-1), rgroup=c("Basic metrics", "Degrees", "Instruction", "Cost", "Financial health", 'Sources of core revenues (%)', "Faculty diversity", "Misconduct on campus (per 10K students, 3yr avg)", "Library"), n.rgroup=c(6, 4, 2, 1, 2, 6, 4, 8, 6), caption='Metrics for this school and comparison with other schools in its athletic conference (if applicable), type of school, and sector of school. The bars show the percentile of this school versus others in the category: that is, what percentage of schools this school has a higher value for this metric. A "better" metric relative to others is more purple than orange; for ones where a lower number is better (undergrads per instructor), lower percentiles are purple. For misconduct, note that there is severe underreporting of many crimes on campuses, especially sexual violence. For resources to help you or others, try [RAINN](https://www.rainn.org/); if you wish to make a report to an institution, look for its "Title IX" office.')
+comparison_df %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>%  addHtmlTableStyle(pos.caption = "bottom")%>% htmlTable::htmlTable(escape.html=TRUE, cgroup=c("School", "Percentile vs."), n.cgroup=c(1, ncol(comparison_df)-1), rgroup=c("Basic metrics", "Degrees", "Instruction", "Cost", "Financial health", 'Sources of core revenues (%)', "Misconduct on campus (per 10K students, 3yr avg)", "Library"), n.rgroup=c(6, 4, 2, 1, 2, 6, 8, 6), caption='Metrics for this school and comparison with other schools in its athletic conference (if applicable), type of school, and sector of school. The bars show the percentile of this school versus others in the category: that is, what percentage of schools this school has a higher value for this metric. A "better" metric relative to others is more purple than orange; for ones where a lower number is better (undergrads per instructor), lower percentiles are purple. For misconduct, note that there is severe underreporting of many crimes on campuses, especially sexual violence. For resources to help you or others, try [RAINN](https://www.rainn.org/); if you wish to make a report to an institution, look for its "Title IX" office.')
 
  
 ```

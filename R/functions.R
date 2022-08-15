@@ -335,7 +335,6 @@ EnhanceData <- function(college_data, faculty_counts, student_demographics, stud
 }
 
 GetOverviewColumns <- function(college_data) {
-	#overview <- as.data.frame(college_data %>% select("Name", "Sector of institution", "CollegeType","Historically Black College or University", "Tribal college", "Undergraduate enrollment","City location of institution","State abbreviation",  "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019",  "Graduation rate  total cohort", "Degree of urbanization (Urban-centric locale)", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "Abortion restrictions", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase",  "RankingProxy" ))
 	college_data$`Average library loans (physical) per student or faculty member` <- round(as.numeric(college_data$`Total physical library circulations (books and media)`) / as.numeric(college_data$`Students plus Faculty`),1)
 	college_data$`Average library loans (physical + digital) per student or faculty member` <- round(as.numeric(college_data$`Total library circulations (physical and digital/electronic)`) / as.numeric(college_data$`Students plus Faculty`),1)
 
@@ -355,34 +354,11 @@ GetOverviewColumns <- function(college_data) {
 		"Graduation", 
 		"First year retention", 
 		"Walkability", 
-		"LocaleChar", 
-		"TTFaculty",
-		"NTTFaculty", 
 		"Undergrads per tenure-track professor", 
 		"Undergrads per instructor", 
-		"AAUP_Censure",  
-		"Tenure track fraction", 
-		"Fraction of tenure track faculty who are women", 
-		"Fraction of tenure track faculty who are men", 
-		"Fraction of non-tenure track faculty who are women", 
-		"Fraction of non-tenure track faculty who are men", 
-		"Fraction of tenure track faculty who are BIPOC", 
-		"Fraction of tenure track faculty who are white", 
-		"Fraction of non-tenure track faculty who are BIPOC", 
-		"Fraction of non-tenure track faculty who are white", 
-		"Fraction of undergrads who are women", 
-		"Fraction of undergrads who are men", 
-		"Fraction of undergrads who are BIPOC", 
-		"Fraction of undergrads who are white", 
 		"URL", 
 		"Tuition and fees as a percent of core revenues", 
-		"State appropriations as percent of core revenues", 
-		"Local appropriations as a percent of core revenues", 
-		"Government grants and contracts as a percent of core revenues",
-		"Private gifts  grants  and contracts as a percent of core revenues", 
-		"Investment return as a percent of core revenues", 
 		"Endowment assets per FTE", 
-		"Equity ratio", 
 		"Average net price-students awarded grant or scholarship aid", 
 		"Liquor discipline per student (3 yr avg)",
 		"Liquor arrest per student (3 yr avg)",
@@ -457,7 +433,7 @@ RenderSparklines <- function(spark_height=5, spark_width=40) {
 	}	
 }
 
-RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, students_by_state_by_institution, student_demographics, faculty_counts, institituion_rmd_change_tracking, spark_width, spark_height) {	
+RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, students_by_state_by_institution, student_demographics, faculty_counts, spark_width, spark_height) {	
 	institutions <- unique(degree_granting$ShortName)
 	failures <- c()
 	#for (i in seq_along(institutions)) {
