@@ -12,12 +12,16 @@ params:
   students_by_state_by_institution: "nothing"
   student_demographics: "nothing"
   faculty_counts: "nothing"
-title: "`r paste0(params$institution_long_name)`"
+  spark_width: 40
+  spark_height: 5
+title: "`r paste0(params$institution_name)`"
 
 ---
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(dev="png")
+source("_packages.R")
+source("R/functions.R")
 raw_table_df <- as.data.frame(params$raw_table)
 students_by_state <- params$students_by_state_by_institution[[params$institution_name]]
 student_demographics_focal <- params$student_demographics[[params$institution_name]]
@@ -47,8 +51,10 @@ total_grads <- unlist(focal_raw['Graduate enrollment'])
 
 `r ifelse(focal_raw['AAUP_Censure']=="Yes", '<h3 style="color:Red;">Warning</h3><p> **"Unsatisfactory conditions of academic freedom and tenure have been found to prevail at this institution"** according to the <a href="https://www.aaup.org/our-programs/academic-freedom/censure-list">AAUP</a> (as of July 31, 2022)</p>', "")`
 
-`r ifelse(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes", '<h3 style="color:Red;">Warning</h2><p />**California considers the state this institution is in to have one or more anti-LGBTQ+ laws** (as of July 31, 2022). It prohibits California-sponsored travel to this state as a safety measure. See more <a href="https://oag.ca.gov/ab1887">here</a></p>', "")`
+`r ifelse(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes", '<h3 style="color:Red;">Warning</h2><p />**California considers the state this institution is in to have one or more anti-LGBTQ+ laws** (as of July 31, 2022). It prohibits California-sponsored travel to this state as a safety measure. See more <a href="https://oag.ca.gov/ab1887">here</a>.</p>', "")`
 
+
+`r ifelse(focal_raw["Undergrads per tenure-track professor" ]>1000, '<h3 style="color:Red;">Warning</h2><p />**There are extremely few tenure-track faculty relative to the number of students.** For something like an art or music school where instruction is done nearly entirely by rotating artists or musicians, this may be fine; for other schools, it can indicate a <a href="https://www.aaup.org/issues/tenure">risk to academic freedom</a> and thus educational quality, as faculty members *may* be able to lose their positions because of their speech, publications, or research findings.', "")`
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 fields_to_compare <- c(
@@ -58,20 +64,48 @@ fields_to_compare <- c(
 	"Graduation", 
 	"Undergraduate enrollment", 
 	"Graduate enrollment", 
+	
 	"Associates degrees awarded", 
 	"Bachelors degrees awarded", 
 	"Masters degrees awarded", 
 	"Doctorates awarded",
+	
 	"Undergrads per instructor", 
 	"Undergrads per tenure-track professor",
+	
+	"Average net price-students awarded grant or scholarship aid",
+	
+	"Endowment assets per FTE",
+	"Equity ratio",
+	"Tuition and fees as a percent of core revenues",
+	"Investment return as a percent of core revenues",
+	"State appropriations as percent of core revenues",
+	"Local appropriations as a percent of core revenues",
+	"Government grants and contracts as a percent of core revenues",
+	"Private gifts  grants  and contracts as a percent of core revenues",
+	
+	"Fraction of tenure track faculty who are women",
+	"Fraction of non-tenure track faculty who are women",
+	"Fraction of tenure track faculty who are BIPOC",
+	"Fraction of non-tenure track faculty who are BIPOC",
+	
+	"Liquor discipline per student (3 yr avg)",
+	"Liquor arrest per student (3 yr avg)",
+	"Drug discipline per student (3 yr avg)",
+	"Drug arrest per student (3 yr avg)",
+	"Weapon discipline per student (3 yr avg)",
+	"Weapon arrest per student (3 yr avg)",
+	"Reported rape per student (3 yr avg)",
+	"Reported fondling per student (3 yr avg)",
+	
+	
 	"Number of physical books", 
 	"Number of physical media", 
 	"Number of digital/electronic books",
-	"Total library collections (physical and electronic)",
 	"Total library circulations (physical and digital/electronic)",
 	"Average library loans (physical) per student or faculty member",
 	"Average library loans (physical + digital) per student or faculty member"
-	)
+)
 comparison_df <- data.frame(matrix("", nrow=length(fields_to_compare), ncol=1+length(comparison_list)))
 rownames(comparison_df) <- fields_to_compare
 colnames(comparison_df) <- c(
@@ -89,26 +123,43 @@ for (field_index in seq_along(fields_to_compare)) {
 	for (list_index in sequence(length(comparison_list))) {
 		current_values <- as.numeric((comparison_list[[list_index]])[,focal_field])
 		current_values <- current_values[is.finite(current_values)]
-		#p <- ggplot(data=data.frame(y='1', x=current_values), aes(x=x, fill=y)) + geom_density() + theme_void() + theme(legend.position="none") + scale_fill_manual(values=c("darkgray")) + geom_vline(xintercept=as.numeric(focal_raw[focal_field]), color="red", size=2)
 
-		p <- ggplot(data=data.frame(x='1', y=current_values), aes(x=x, y=y, fill=x)) + geom_violin() + theme_void() + theme(legend.position="none") + scale_fill_manual(values=c("darkgray")) + geom_hline(yintercept=as.numeric(focal_raw[focal_field]), color="red", size=2) + coord_flip()
-		if(max(values_for_range)>1) {
-			p <- p+scale_y_continuous(trans='log10') # for ease of seeing
+		render_as_violins <- FALSE
+
+		if(render_as_violins) { # violin plots
+			p <- ggplot(data=data.frame(x='1', y=current_values), aes(x=x, y=y, fill=x)) + geom_violin() + theme_void() + theme(legend.position="none") + scale_fill_manual(values=c("darkgray")) + geom_hline(yintercept=as.numeric(focal_raw[focal_field]), color="red", size=2) + coord_flip()
+			if(max(values_for_range)>1) {
+				p <- p+scale_y_continuous(trans='log10') # for ease of seeing
+			}
+
+			filename_png <- paste0("images/", utils::URLencode(gsub(" ", "", params$institution_name)), "_", field_index, "_", list_index, ".png")
+			ggsave(
+			plot = p,
+			filename = paste0('docs/', filename_png),
+			bg = "transparent",
+			width = 200,
+			height= 35,
+			units = "px"
+			)
+
+			#comparison_df[3,3] <- paste0("<img src=", filename_png, " width=40 height=5>")
+			# comparison_df[field_index,list_index+1] <- median(as.numeric((comparison_list[[list_index]])[,focal_field]), na.rm=TRUE)
+			comparison_df[field_index,list_index+1] <- paste0("<img src=", filename_png, " width=40 height=7>")
+		} else {
+			percentile_rounded <- -1
+			try(percentile_rounded <- round(100*((stats::ecdf(current_values))(focal_raw[focal_field])),0), silent=TRUE)
+			#comparison_df[field_index,list_index+1] <- paste0("<span style=color:", GetColorFromPercentile(percentile_rounded), ">", percentile_rounded, "</span>")
+			if(percentile_rounded > -1) {
+				comparison_df[field_index,list_index+1] <-paste0("<img src=images/pct_bar_", percentile_rounded, ".png width=", params$spark_width, " height=", params$spark_height, ">")
+			} else {
+				comparison_df[field_index,list_index+1] <- '?'
+			}
+			#if(grepl("Undergrads per", focal_field) | grepl("Admission", focal_field) ) { # we could reverse for admission. But rejecting many students who want to go there, and who would be successful there, is not great from a student perspective
+			if(grepl("Undergrads per", focal_field) | grepl("Reported|discipline|arrest", focal_field)) {
+					comparison_df[field_index,list_index+1] <-paste0("<img src=images/pct_bar_rev_good_", percentile_rounded, ".png width=", params$spark_width, " height=", params$spark_height, ">")
+
+			}
 		}
-
-		filename_png <- paste0("images/", utils::URLencode(gsub(" ", "", params$institution_name)), "_", field_index, "_", list_index, ".png")
-        ggsave(
-          plot = p,
-          filename = paste0('docs/', filename_png),
-          bg = "transparent",
-          width = 200,
-          height= 35,
-          units = "px"
-        )
-
-		#comparison_df[3,3] <- paste0("<img src=", filename_png, " width=40 height=5>")
-		# comparison_df[field_index,list_index+1] <- median(as.numeric((comparison_list[[list_index]])[,focal_field]), na.rm=TRUE)
-		comparison_df[field_index,list_index+1] <- paste0("<img src=", filename_png, " width=40 height=7>")
 	}
 }
 if(colnames(comparison_df)[2]=="Not applicable") { # no athletics to compare with
@@ -125,9 +176,40 @@ for(row_index in sequence(nrow(comparison_df))) {
 	}, silent=TRUE)
 }
 
-#for(row_index in sequence(4)) {
-#	comparison_df[row_index,1] <- paste0(100*comparison_df[row_index,1],'%')
-#}
+for(row_index in sequence(4)) {
+	comparison_df[row_index,1] <- paste0(100*as.numeric(comparison_df[row_index,1]),'%')
+}
+
+comparison_df['Endowment assets per FTE', 1] <- paste0('$', comparison_df['Endowment assets per FTE', 1])
+comparison_df['Average net price-students awarded grant or scholarship aid', 1] <- paste0('$', comparison_df['Average net price-students awarded grant or scholarship aid', 1])
+
+
+for(row_index in sequence(nrow(comparison_df))) {
+	if(grepl("Reported|discipline|arrest", rownames(comparison_df)[row_index])) {
+		comparison_df[row_index,1] <- round(as.numeric(comparison_df[row_index,1])*10000,2)
+		rownames(comparison_df)[row_index] <- gsub(' \\(3 yr avg\\)', '', gsub("per student", "", rownames(comparison_df)[row_index]))
+	}
+}
+
+for(row_index in sequence(nrow(comparison_df))) {
+	if(grepl("as a percent of core revenues", rownames(comparison_df)[row_index])) {
+		comparison_df[row_index,1] <- paste0(comparison_df[row_index,1], '%')
+		rownames(comparison_df)[row_index] <- gsub(' as a percent of core revenues', '', gsub("per student", "", rownames(comparison_df)[row_index]))
+	}
+}
+
+comparison_df['Fraction of tenure track faculty who are women',1] <- paste0(100*round(as.numeric(comparison_df['Fraction of tenure track faculty who are women',1])), '%')
+rownames(comparison_df) <- gsub('Fraction of tenure track faculty who are women', 'Tenure-track faculty who are women',  rownames(comparison_df))
+
+comparison_df['Fraction of non-tenure track faculty who are women',1] <- paste0(100*round(as.numeric(comparison_df['Fraction of non-tenure track faculty who are women',1])), '%')
+rownames(comparison_df) <- gsub('Fraction of non-tenure track faculty who are women', 'Non-tenure-track faculty who are women',  rownames(comparison_df))
+
+
+comparison_df['Fraction of tenure track faculty who are BIPOC',1] <- paste0(100*round(as.numeric(comparison_df['Fraction of tenure track faculty who are BIPOC',1])), '%')
+rownames(comparison_df) <- gsub('Fraction of tenure track faculty who are BIPOC', 'Tenure-track faculty who are Black, Indigenous, and/or people of color',  rownames(comparison_df))
+
+comparison_df['Fraction of non-tenure track faculty who are BIPOC',1] <- paste0(100*round(as.numeric(comparison_df['Fraction of non-tenure track faculty who are BIPOC',1])), '%')
+rownames(comparison_df) <- gsub('Fraction of non-tenure track faculty who are BIPOC', 'Non-tenure-track faculty who are Black, Indigenous, and/or people of color',  rownames(comparison_df))
 
 # p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(6, 100-6), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", "red")) 
 #p <- ggplot(data=data.frame(y='1', x=as.numeric(comparison_list[[1]][,'Undergraduate enrollment'])), aes(x=x, fill=y)) + geom_density() + theme_void() + theme(legend.position="none") + scale_fill_manual(values=c("black"))
@@ -135,7 +217,9 @@ for(row_index in sequence(nrow(comparison_df))) {
 
 
 colnames(comparison_df) <- paste0('&nbsp;&nbsp;',colnames(comparison_df), '&nbsp;&nbsp;')
-comparison_df %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlTable::htmlTable(escape.html=TRUE)
+comparison_df %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>%  addHtmlTableStyle(pos.caption = "bottom")%>% htmlTable::htmlTable(escape.html=TRUE, cgroup=c("School", "Percentile vs."), n.cgroup=c(1, ncol(comparison_df)-1), rgroup=c("Basic metrics", "Degrees", "Instruction", "Cost", "Financial health", 'Sources of core revenues (%)', "Faculty diversity", "Misconduct on campus (per 10K students, 3yr avg)", "Library"), n.rgroup=c(6, 4, 2, 1, 2, 6, 4, 8, 6), caption='Metrics for this school and comparison with other schools in its athletic conference (if applicable), type of school, and sector of school. The bars show the percentile of this school versus others in the category: that is, what percentage of schools this school has a higher value for this metric. A "better" metric relative to others is more purple than orange; for ones where a lower number is better (undergrads per instructor), lower percentiles are purple. For misconduct, note that there is severe underreporting of many crimes on campuses, especially sexual violence. For resources to help you or others, try [RAINN](https://www.rainn.org/); if you wish to make a report to an institution, look for its "Title IX" office.')
+
+ 
 ```
 
 ### Location
@@ -145,15 +229,38 @@ comparison_df %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlT
 location_summary <- data.frame(matrix(nrow=0, ncol=2))
 colnames(location_summary) <- c("Measure", "Value")
 
-location_summary[nrow(location_summary)+1,] <- c("Location", paste0((paste0(rev(strsplit(as.character(focal_raw['LocaleChar']), ': ')[[1]]), collapse=' ')), ': ',as.character(focal_raw['City']), ', ', as.character(focal_raw['State'][1,1])))
+location_summary[nrow(location_summary)+1,] <- c("Type", paste0(paste0(rev(strsplit(as.character(focal_raw['LocaleChar']), ': ')[[1]]), collapse=' ')))
 
 location_summary[nrow(location_summary)+1,] <- c("Mass transit", ifelse(is.na(focal_raw['Minimum distance to mass transit (minutes walking)']), "Not nearby", paste0(focal_raw['Minimum distance to mass transit (minutes walking)'], " minute walk away")))
+
+location_summary[nrow(location_summary)+1,] <- c("Walkability", 
+	ifelse(
+		is.na(focal_raw['Walkability']), "No walkability score available", 
+		paste0(
+			100*as.numeric(focal_raw['Walkability'][1,1]), '%: ',
+			 cut(as.numeric(focal_raw['Walkability']), 
+				breaks=c(-Inf, 5.75/20, 10.5/20, 15.25/20, Inf),
+				labels=c('Least walkable', 'Below average', 'Above average', 'Most walkable'),
+			) 
+		)
+	)
+
+)
 
 location_summary[nrow(location_summary)+1,] <- c("Local ecology", as.character(focal_raw['eco_name'][1,1]))
 
 location_summary[nrow(location_summary)+1,] <- c("Local biome", as.character(focal_raw['biome'][1,1]))
 
-location_summary %>% htmlTable::htmlTable(rnames=FALSE)
+location_summary[nrow(location_summary)+1,] <- c("Annual precipitation", paste0(as.character(focal_raw['Annual precipitation (inches)'][1,1]), " inches"))
+
+try(location_summary[nrow(location_summary)+1,] <- c("Warmest month max temp", paste0(as.character(focal_raw['Warmest month max temp (F)'][1,1]), " ", "˚F")))
+
+try(location_summary[nrow(location_summary)+1,] <- c("Coldest month min temp", paste0(as.character(focal_raw['Coldest month min temp (F)'][1,1]), " ", "˚F")))
+
+location_to_print <- data.frame(Location=location_summary[,2])
+rownames(location_to_print) <- location_summary[,1]
+colnames(location_to_print) <- paste0(focal_raw['City'], ", ", as.character(focal_raw['State'][1,1]))
+location_to_print %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlTable::htmlTable()
 ```
 
 ### Safety
@@ -161,9 +268,17 @@ location_summary %>% htmlTable::htmlTable(rnames=FALSE)
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 state_summary <- data.frame(matrix(nrow=0, ncol=2))
 colnames(state_summary) <- c("Measure", "Value")
-if(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes") {
-	state_summary[nrow(state_summary)+1,] <- c('Warning', '**California considers the state this institution is in to have one or more anti-LGBTQ+ laws.** See more <a href="https://oag.ca.gov/ab1887">here</a>')
-}
+
+state_summary[nrow(state_summary)+1,] <- c(
+	"Reported misconduct", 
+	paste0(
+		'<a href=https://academic-sexual-misconduct-database.org/incidents?query=', 
+		utils::URLencode(params$institution_name), 
+		'>',
+		ifelse(focal_raw['Misconduct reports']=="Yes", "Apparently yes","Seemingly no"), 
+		'</a>'
+	)
+)
 
 state_summary[nrow(state_summary)+1,] <- c("Employee covid vax", ifelse(focal_raw['Covid vax (employees)']=="Yes", "Required", "Not required"))
 
@@ -179,7 +294,9 @@ state_summary[nrow(state_summary)+1,] <- c("State rep support for same-sex and i
 
 
 
-state_summary %>% htmlTable::htmlTable(rnames=FALSE)
+safety_to_print <- data.frame(Metrics=state_summary[,2])
+rownames(safety_to_print) <- state_summary[,1]
+safety_to_print %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlTable::htmlTable()
 ```
 
 ### Map
@@ -208,22 +325,28 @@ degrees %>% htmlTable::htmlTable(rnames=FALSE)
 faculty_counts_focal_streamlined <- data.frame(matrix("", nrow=nrow(faculty_counts_focal)/2, ncol=6))
 rownames(faculty_counts_focal_streamlined) <- gsub(" women", "", rownames(faculty_counts_focal)[which(grepl("women", rownames(faculty_counts_focal)))])
 faculty_counts_focal$TenureStreamCount <- as.numeric(faculty_counts_focal$`Tenured (count)`) + as.numeric(faculty_counts_focal$`Tenure-track (count)`)
-faculty_trimmed <- faculty_counts_focal %>% select('TenureStreamCount', 'Non-tenure-track (count)')
+faculty_trimmed <- faculty_counts_focal %>% dplyr::select('TenureStreamCount', 'Non-tenure-track (count)')
 for (faculty_row_index in sequence(nrow(faculty_counts_focal_streamlined))) {
     faculty_counts_focal_streamlined[faculty_row_index, 1] <- faculty_trimmed[paste0(rownames(faculty_counts_focal_streamlined)[faculty_row_index], " women"), 1]
     faculty_counts_focal_streamlined[faculty_row_index, 2] <- faculty_trimmed[paste0(rownames(faculty_counts_focal_streamlined)[faculty_row_index], " men"), 1]
 	faculty_counts_focal_streamlined[faculty_row_index, 3] <- round(100*(as.numeric(faculty_counts_focal_streamlined[faculty_row_index, 1])+as.numeric(faculty_counts_focal_streamlined[faculty_row_index, 2]))/(as.numeric(faculty_counts_focal_streamlined["Grand total", 1])+as.numeric(faculty_counts_focal_streamlined["Grand total", 2])))
 	percentage <- round(as.numeric(faculty_counts_focal_streamlined[faculty_row_index, 3]))
-	faculty_counts_focal_streamlined[faculty_row_index, 3] <- paste0("<img src=images/pct_bar_", percentage, ".png width=40 height=5>")
+	if(!is.finite(percentage)) {
+		percentage <- 0	
+	}
+	faculty_counts_focal_streamlined[faculty_row_index, 3] <- paste0("<img src=images/pct_bar_grayscale_", percentage, ".png width=", params$spark_width, " height=", params$spark_height,">")
 	
     faculty_counts_focal_streamlined[faculty_row_index, 4] <- faculty_trimmed[paste0(rownames(faculty_counts_focal_streamlined)[faculty_row_index], " women"), 2]
     faculty_counts_focal_streamlined[faculty_row_index, 5] <- faculty_trimmed[paste0(rownames(faculty_counts_focal_streamlined)[faculty_row_index], " men"), 2]
 	faculty_counts_focal_streamlined[faculty_row_index, 6] <- round(100*(as.numeric(faculty_counts_focal_streamlined[faculty_row_index, 4])+as.numeric(faculty_counts_focal_streamlined[faculty_row_index, 5]))/(as.numeric(faculty_counts_focal_streamlined["Grand total", 4])+as.numeric(faculty_counts_focal_streamlined["Grand total", 5])))
 	percentage <- round(as.numeric(faculty_counts_focal_streamlined[faculty_row_index, 6]))
-	faculty_counts_focal_streamlined[faculty_row_index, 6] <- paste0("<img src=images/pct_bar_", percentage, ".png width=40 height=5>")
+	if(!is.finite(percentage)) {
+		percentage <- 0	
+	}
+	faculty_counts_focal_streamlined[faculty_row_index, 6] <- paste0("<img src=images/pct_bar_grayscale_", percentage, ".png width=", params$spark_width, " height=", params$spark_height,">")
 	
 }
-colnames(faculty_counts_focal_streamlined) <- c("Women", "Men", "%", "Women", "Men", "%")
+colnames(faculty_counts_focal_streamlined) <- c("Women&nbsp;", "&nbsp;Men&nbsp;", "%", "&nbsp;Women&nbsp;", "&nbsp;Men&nbsp;", "%")
 faculty_counts_focal_streamlined <- rbind(faculty_counts_focal_streamlined, faculty_counts_focal_streamlined["Grand total",])[-1,]
 rownames(faculty_counts_focal_streamlined)[nrow(faculty_counts_focal_streamlined)] <- "Total"
 faculty_counts_focal_streamlined["Total", 3] <- ""
@@ -244,7 +367,7 @@ faculty_counts_focal_streamlined %>% addHtmlTableStyle(col.rgroup = c("none", "#
 # try(knitr::kable(student_demographics_focal, row.names=TRUE))
 student_demographics_focal_streamlined <- data.frame(matrix("", nrow=nrow(student_demographics_focal)/2, ncol=6))
 rownames(student_demographics_focal_streamlined) <- gsub(" women", "", rownames(student_demographics_focal)[which(grepl("women", rownames(student_demographics_focal)))])
-student_trimmed <- student_demographics_focal %>% select('Undergrad (count)', 'Grad student (count)')
+student_trimmed <- student_demographics_focal %>% dplyr::select('Undergrad (count)', 'Grad student (count)')
 for (student_row_index in sequence(nrow(student_demographics_focal_streamlined))) {
     student_demographics_focal_streamlined[student_row_index, 1] <- student_trimmed[paste0(rownames(student_demographics_focal_streamlined)[student_row_index], " women"), 1]
     student_demographics_focal_streamlined[student_row_index, 2] <- student_trimmed[paste0(rownames(student_demographics_focal_streamlined)[student_row_index], " men"), 1]
@@ -253,7 +376,7 @@ for (student_row_index in sequence(nrow(student_demographics_focal_streamlined))
 	if(!is.finite(percentage)) { 
 		percentage <- 0
 	}
-	student_demographics_focal_streamlined[student_row_index, 3] <- paste0("<img src=images/pct_bar_", percentage, ".png width=40 height=5>")
+	student_demographics_focal_streamlined[student_row_index, 3] <- paste0("<img src=images/pct_bar_grayscale_", percentage, ".png width=", params$spark_width, " height=", params$spark_height,">")
 	
     student_demographics_focal_streamlined[student_row_index, 4] <- student_trimmed[paste0(rownames(student_demographics_focal_streamlined)[student_row_index], " women"), 2]
     student_demographics_focal_streamlined[student_row_index, 5] <- student_trimmed[paste0(rownames(student_demographics_focal_streamlined)[student_row_index], " men"), 2]
@@ -262,10 +385,10 @@ for (student_row_index in sequence(nrow(student_demographics_focal_streamlined))
 	if(!is.finite(percentage)) { 
 		percentage <- 0
 	}
-	student_demographics_focal_streamlined[student_row_index, 6] <- paste0("<img src=images/pct_bar_", percentage, ".png width=40 height=5>")
+	student_demographics_focal_streamlined[student_row_index, 6] <- paste0("<img src=images/pct_bar_grayscale_", percentage, ".png width=", params$spark_width, " height=", params$spark_height,">")
 	
 }
-colnames(student_demographics_focal_streamlined) <- c("Women", "Men", "%", "Women", "Men", "%")
+colnames(student_demographics_focal_streamlined) <- c("Women&nbsp;", "&nbsp;Men&nbsp;", "%", "&nbsp;Women&nbsp;", "&nbsp;Men&nbsp;", "%")
 student_demographics_focal_streamlined <- rbind(student_demographics_focal_streamlined, student_demographics_focal_streamlined["Grand total",])[-1,]
 rownames(student_demographics_focal_streamlined)[nrow(student_demographics_focal_streamlined)] <- "Total"
 student_demographics_focal_streamlined["Total", 3] <- ""
@@ -360,7 +483,7 @@ if(max(students_by_state$`Number of students`)>0) {
 
 #} 
 
-# pct_data <- select(Students_by_state, c("fips", "Percent_of_18_yo_from_this_state_enrolled_here"))
+# pct_data <- dplyr::select(Students_by_state, c("fips", "Percent_of_18_yo_from_this_state_enrolled_here"))
 # colnames(pct_data) <- c("fips", "values")
 # pct_data$fips <- as.character(pct_data$fips)
 # pct_data$values <- as.numeric(pct_data$values)

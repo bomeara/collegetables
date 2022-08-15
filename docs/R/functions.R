@@ -12,7 +12,7 @@ AggregateIPEDS <- function() {
 			}
 		}
 	}
-	raw_data <- select(raw_data, -'...253')
+	raw_data <- dplyr::select(raw_data, -'...253')
 
 	raw_data2 <- mutate_all(read_csv("data/ipeds_Data_7-24-2022---404.csv", col_types="c"), as.character)
 	traits <- mutate_all(read_csv("data/ipeds_ValueLabels_7-24-2022---404.csv", col_types="c"), as.character)
@@ -27,14 +27,18 @@ AggregateIPEDS <- function() {
 			}
 		}
 	}
-	raw_data2 <- select(raw_data2, -'...242')
+	raw_data2 <- dplyr::select(raw_data2, -'...242')
 	raw_data_joined <- full_join(raw_data, raw_data2, by="Institution Name") %>% dplyr::left_join(distinct(mutate_all(read_csv("data/Data_7-24-2022_NTT.csv", col_types="c"), as.character)), by="Institution Name") %>% dplyr::left_join(distinct(mutate_all(read_csv("data/Data_7-24-2022_tenured.csv", col_types="c"), as.character)), by="Institution Name") %>% dplyr::left_join(distinct(mutate_all(read_csv("data/Data_7-24-2022_TTnontenured.csv", col_types="c"), as.character)), by="Institution Name") %>%rename_at(
 		vars(ends_with(".x")),
 		~str_replace(., "\\..$","")
 		) %>% 
-		select_at(
+		dplyr::select_at(
 		vars(-ends_with(".y"))
 		)
+	raw_data3 <- mutate_all(read_csv("data/ipeds_Data_8-14-2022_price_equity.csv", col_types="c"), as.character)
+	raw_data3 <- dplyr::select(raw_data3, -'Institution Name')
+	raw_data_joined <- full_join(raw_data_joined, raw_data3, by="UnitID")
+	
 	raw_data <- raw_data_joined[!duplicated(raw_data_joined$`Institution Name`),]
 	raw_data$`Institution Name` <- gsub('/', '_', raw_data$`Institution Name`)
 	raw_data$"Undergraduate enrollment (DRVEF2019_RV)" <- as.numeric(raw_data$"Undergraduate enrollment (DRVEF2019_RV)")
@@ -90,7 +94,7 @@ AggregateIPEDS <- function() {
 GetPopulationByStateAtAge18 <- function() {
 	pops <- read.csv("data/sc-est2019-agesex-civ.csv")
 	pops <- subset(pops, SEX==0 & AGE==18) # all sexes. only age 18
-	pops <- select(pops, c("STATE", "NAME", "POPEST2019_CIV"))
+	pops <- dplyr::select(pops, c("STATE", "NAME", "POPEST2019_CIV"))
 	colnames(pops) <- c("State_FIPS", "State", "Population_age_18")
 	pops <- subset(pops, State_FIPS>0)
 	return(pops)
@@ -141,7 +145,7 @@ AppendAbortion <- function(college_data) {
 	#colnames(abortion) <- gsub("\\.", " ", colnames(abortion))
 	abortion <- read.csv("data/worldpopulationreview_abortion.csv")
 	abortion$`State abbreviation` <- state.abb[match(abortion$State,state.name)]
-	abortion_simple <- select(abortion, c("State abbreviation", "Status"))
+	abortion_simple <- dplyr::select(abortion, c("State abbreviation", "Status"))
 	colnames(abortion_simple)[2] <- "Abortion"
 	return(left_join(college_data, abortion_simple, by="State abbreviation"))
 }
@@ -149,7 +153,7 @@ AppendAbortion <- function(college_data) {
 AppendGunLaws <- function(college_data) {
 	guns <- read.csv("data/gunlaws_giffords_scorecard.csv")
 	guns$`State abbreviation` <- state.abb[match(guns$State,state.name)]
-	guns_simple <- select(guns, c("State abbreviation", "grade2022"))
+	guns_simple <- dplyr::select(guns, c("State abbreviation", "grade2022"))
 	colnames(guns_simple)[2] <- "Gun law stringency"
 	return(left_join(college_data, guns_simple, by="State abbreviation"))
 }
@@ -184,7 +188,7 @@ AppendMarriageRespect <- function(college_data) {
 	marriage_defense <- read.csv("data/MarriageAct_HR8404_2022.csv", header=TRUE)
 	marriage_aggregated <- AggregateVotesByState(marriage_defense)
 	marriage_aggregated$`State abbreviation` <- state.abb[match(marriage_aggregated$State,state.name)]
-	marriage_aggregated_simple <- select(marriage_aggregated, c("State abbreviation", "ProportionVotesInFavor"))
+	marriage_aggregated_simple <- dplyr::select(marriage_aggregated, c("State abbreviation", "ProportionVotesInFavor"))
 	colnames(marriage_aggregated_simple)[2] <- "Proportion of reps voting in favor of respect for marriage act"
 	return(left_join(college_data, marriage_aggregated_simple, by="State abbreviation"))
 }
@@ -193,7 +197,7 @@ AppendContraceptiveSupport <- function(college_data) {
 	contraceptive_defense <- read.csv("data/ContraceptiveAct_HR8373_July2022.csv", header=TRUE)
 	contraceptive_aggregated <- AggregateVotesByState(contraceptive_defense)
 	contraceptive_aggregated$`State abbreviation` <- state.abb[match(contraceptive_aggregated$State,state.name)]
-	contraceptive_aggregated_simple <- select(contraceptive_aggregated, c("State abbreviation", "ProportionVotesInFavor"))
+	contraceptive_aggregated_simple <- dplyr::select(contraceptive_aggregated, c("State abbreviation", "ProportionVotesInFavor"))
 	colnames(contraceptive_aggregated_simple)[2] <- "Proportion of reps voting in favor of respect for right to contraception act"
 	return(left_join(college_data, contraceptive_aggregated_simple, by="State abbreviation"))
 }
@@ -203,7 +207,14 @@ FilterForDegreeGranting <- function(college_data) {
 }
 
 RoughRanking <- function(college_data) {
-	college_data$RankingProxy <- (100 - as.numeric(college_data$"Percent admitted - total")) + as.numeric(college_data$"Graduation rate  total cohort") + ((as.numeric(college_data$`Undergraduate enrollment`))^(1/4)) 
+	admission <- as.numeric(college_data$"Admission")
+	admission[which(is.na(admission)) ]<- 100
+	graduation <- as.numeric(college_data$"Graduation")
+	graduation[which(is.na(graduation))] <- 0
+	enrollment <- as.numeric(college_data$`Undergraduate enrollment`)
+	enrollment[which(is.na(enrollment))] <- 0
+	
+	college_data$RankingProxy <- (100 - admission) + graduation + (enrollment^(1/4)) 
 	college_data$RankingProxy <- as.numeric(college_data$RankingProxy) 
 	college_data <- subset(college_data, !is.na(college_data$RankingProxy))
 	college_data <- dplyr::distinct(college_data[order(college_data$RankingProxy, decreasing=TRUE),])
@@ -231,12 +242,12 @@ EnhanceData <- function(college_data, faculty_counts, student_demographics, stud
 	college_data_enhanced$`Distance (m) to transit` <- as.numeric(college_data_enhanced$`Distance (m) to transit`)
 	college_data_enhanced$`Covid vax (students)` <- as.factor(college_data_enhanced$`Covid vax (students)`)
 	college_data_enhanced$`Covid vax (employees)` <- as.factor(college_data_enhanced$`Covid vax (employees)`)
-	college_data_enhanced$`Misconduct reports` <- as.factor(college_data_enhanced$`Misconduct reports`)
-	college_data_enhanced$`Abortion` <- as.factor(college_data_enhanced$`Abortion`)
-	college_data_enhanced$Sector <- as.factor(college_data_enhanced$Sector)
-	college_data_enhanced$State <- as.factor(college_data_enhanced$State)
-	college_data_enhanced$LocaleChar <- as.character(college_data_enhanced$Locale)
-	college_data_enhanced$Locale <- as.factor(college_data_enhanced$Locale)
+	# college_data_enhanced$`Misconduct reports` <- as.factor(college_data_enhanced$`Misconduct reports`)
+	# college_data_enhanced$`Abortion` <- as.factor(college_data_enhanced$`Abortion`)
+	# college_data_enhanced$Sector <- as.factor(college_data_enhanced$Sector)
+	# college_data_enhanced$State <- as.factor(college_data_enhanced$State)
+    college_data_enhanced$LocaleChar <- as.character(college_data_enhanced$Locale)
+	# college_data_enhanced$Locale <- as.factor(college_data_enhanced$Locale)
 	college_data_enhanced$`Undergraduate enrollment` <- 0
 	college_data_enhanced$`Grad enrollment` <- 0
 	college_data_enhanced$`TTFaculty` <- 0
@@ -259,9 +270,33 @@ EnhanceData <- function(college_data, faculty_counts, student_demographics, stud
 	college_data_enhanced$`Fraction of undergrads who are men` <- 0
 	college_data_enhanced$`Fraction of undergrads who are BIPOC` <- 0
 	college_data_enhanced$`Fraction of undergrads who are white` <- 0
+	rowMeansAsNumeric <- function(x, ...) {
+		for (i in sequence(ncol(x))) {
+			x[,i] <- as.numeric(x[,i])
+		}
+		return(rowMeans(x, ...))
+	}
+	college_data_enhanced <- college_data_enhanced %>% dplyr::mutate(`Tuition and fees as a percent of core revenues` = dplyr::select(., starts_with("Tuition and fees as a percent of core revenues")) %>% rowMeansAsNumeric( na.rm = TRUE))
+	
+	college_data_enhanced <- college_data_enhanced %>% dplyr::mutate(`State appropriations as percent of core revenues` = dplyr::select(., starts_with("State appropriations as percent of core revenues")) %>% rowMeansAsNumeric( na.rm = TRUE))
 
+	college_data_enhanced <- college_data_enhanced %>% dplyr::mutate(`Local appropriations as a percent of core revenues` = dplyr::select(., starts_with("Local appropriations as a percent of core revenues")) %>% rowMeansAsNumeric( na.rm = TRUE))
+	
+	college_data_enhanced <- college_data_enhanced %>% dplyr::mutate(`Government grants and contracts as a percent of core revenues` = dplyr::select(., starts_with("Government grants and contracts as a percent of core revenues")) %>% rowMeansAsNumeric( na.rm = TRUE))
 
-	college_data_enhanced <- select(college_data_enhanced, -RankingProxy)
+	college_data_enhanced <- college_data_enhanced %>% dplyr::mutate(`Private gifts  grants  and contracts as a percent of core revenues` = dplyr::select(., starts_with("Private gifts  grants  and contracts as a percent of core revenues")) %>% rowMeansAsNumeric( na.rm = TRUE))
+
+	college_data_enhanced <- college_data_enhanced %>% dplyr::mutate(`Investment return as a percent of core revenues` = dplyr::select(., starts_with("Investment return as a percent of core revenues")) %>% rowMeansAsNumeric( na.rm = TRUE))
+
+					 
+	college_data_enhanced <- college_data_enhanced %>% dplyr::mutate(`Endowment assets per FTE` = dplyr::select(., starts_with("Endowment assets")) %>% rowMeansAsNumeric( na.rm = TRUE))
+	
+	college_data_enhanced <- college_data_enhanced %>% dplyr::mutate(`Average net price-students awarded grant or scholarship aid` = dplyr::select(., starts_with("Average net price-students awarded grant or scholarship aid")) %>% rowMeansAsNumeric( na.rm = TRUE))
+	
+	college_data_enhanced <- college_data_enhanced %>% dplyr::mutate(`Equity ratio` = dplyr::select(., starts_with("Equity ratio")) %>% rowMeansAsNumeric( na.rm = TRUE))
+
+		 
+	#college_data_enhanced <- dplyr::select(college_data_enhanced, -RankingProxy)
 	#college_data_enhanced <- select(college_data_enhanced, -City)
 	
 	for (i in sequence(nrow(college_data_enhanced))) {
@@ -295,35 +330,134 @@ EnhanceData <- function(college_data, faculty_counts, student_demographics, stud
 
 	}
 
-	
+	college_data_enhanced <- college_data_enhanced[!duplicated(college_data_enhanced$ShortName),]
 	return(college_data_enhanced)
 }
 
 GetOverviewColumns <- function(college_data) {
 	#overview <- as.data.frame(college_data %>% select("Name", "Sector of institution", "CollegeType","Historically Black College or University", "Tribal college", "Undergraduate enrollment","City location of institution","State abbreviation",  "Percent admitted - total", "Admissions yield - total", "Full-time retention rate  2019",  "Graduation rate  total cohort", "Degree of urbanization (Urban-centric locale)", "NatWalkInd", "DistanceToTransit", "BannedCATravel", "Abortion restrictions", "AllStudentsVaccinatedAgainstCovid19", "AllEmployeesVaccinatedAgainstCovid19", "InMisconductDatabase",  "RankingProxy" ))
+	college_data$`Average library loans (physical) per student or faculty member` <- round(as.numeric(college_data$`Total physical library circulations (books and media)`) / as.numeric(college_data$`Students plus Faculty`),1)
+	college_data$`Average library loans (physical + digital) per student or faculty member` <- round(as.numeric(college_data$`Total library circulations (physical and digital/electronic)`) / as.numeric(college_data$`Students plus Faculty`),1)
 
-	overview <- as.data.frame(college_data %>% select("Name", "City", "State", "Sector", "Level of institution", "Historically Black College or University", "Tribal college", "Undergraduate enrollment", "Grad enrollment", "Yield", "Admission", "Graduation", "First year retention", "Walkability", "LocaleChar", "TTFaculty", "NTTFaculty", "Undergrads per tenure-track professor", "Undergrads per instructor", "AAUP_Censure",  "Tenure track fraction", "Fraction of tenure track faculty who are women", "Fraction of tenure track faculty who are men", "Fraction of non-tenure track faculty who are women", "Fraction of non-tenure track faculty who are men", "Fraction of tenure track faculty who are BIPOC", "Fraction of tenure track faculty who are white", "Fraction of non-tenure track faculty who are BIPOC", "Fraction of non-tenure track faculty who are white", "Fraction of undergrads who are women", "Fraction of undergrads who are men", "Fraction of undergrads who are BIPOC", "Fraction of undergrads who are white", "URL" ))
+
+	overview <- as.data.frame(college_data %>% dplyr::select(
+		"Name", 
+		"City", 
+		"State", 
+		"Sector", 
+		"Level of institution", 
+		"Historically Black College or University", 
+		"Tribal college", 
+		"Undergraduate enrollment", 
+		"Grad enrollment", 
+		"Yield", 
+		"Admission", 
+		"Graduation", 
+		"First year retention", 
+		"Walkability", 
+		"LocaleChar", 
+		"TTFaculty",
+		"NTTFaculty", 
+		"Undergrads per tenure-track professor", 
+		"Undergrads per instructor", 
+		"AAUP_Censure",  
+		"Tenure track fraction", 
+		"Fraction of tenure track faculty who are women", 
+		"Fraction of tenure track faculty who are men", 
+		"Fraction of non-tenure track faculty who are women", 
+		"Fraction of non-tenure track faculty who are men", 
+		"Fraction of tenure track faculty who are BIPOC", 
+		"Fraction of tenure track faculty who are white", 
+		"Fraction of non-tenure track faculty who are BIPOC", 
+		"Fraction of non-tenure track faculty who are white", 
+		"Fraction of undergrads who are women", 
+		"Fraction of undergrads who are men", 
+		"Fraction of undergrads who are BIPOC", 
+		"Fraction of undergrads who are white", 
+		"URL", 
+		"Tuition and fees as a percent of core revenues", 
+		"State appropriations as percent of core revenues", 
+		"Local appropriations as a percent of core revenues", 
+		"Government grants and contracts as a percent of core revenues",
+		"Private gifts  grants  and contracts as a percent of core revenues", 
+		"Investment return as a percent of core revenues", 
+		"Endowment assets per FTE", 
+		"Equity ratio", 
+		"Average net price-students awarded grant or scholarship aid", 
+		"Liquor discipline per student (3 yr avg)",
+		"Liquor arrest per student (3 yr avg)",
+		"Drug discipline per student (3 yr avg)",
+		"Drug arrest per student (3 yr avg)",
+		"Weapon discipline per student (3 yr avg)",
+		"Weapon arrest per student (3 yr avg)",
+		"Reported rape per student (3 yr avg)",
+		"Reported fondling per student (3 yr avg)",
+		"Number of physical books", 
+		"Number of physical media", 
+		"Number of digital/electronic books",
+		"Total library circulations (physical and digital/electronic)",
+		"Average library loans (physical) per student or faculty member",
+		"Average library loans (physical + digital) per student or faculty member",
+		"Warmest month max temp (F)",
+		"Coldest month min temp (F)",
+		"Annual precipitation (inches)",
+		"biome",
+		"Covid vax (employees)",
+		"Covid vax (students)",
+		"Abortion",
+		"Gun law stringency",
+		"Proportion of reps voting in favor of respect for right to contraception act",
+		"Proportion of reps voting in favor of respect for marriage act"
+		
+		
+	))
 	return(overview)
 }
 
-RenderSparklines <- function() {
+RenderSparklines <- function(spark_height=5, spark_width=40) {
 	dir.create("docs/images")
 	percentages <- seq(from=0, to=100, by=1)
 	for (pct_index in seq_along(percentages)) {
 		pct <- percentages[pct_index]
-		p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(pct, 100-pct), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", "red")) 
+		p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(pct, 100-pct), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", GetColorFromPercentile(pct))) 
 		ggsave(
   			plot = p,
   			filename = paste0("docs/images/pct_bar_", pct, ".png"),
   			bg = "transparent",
-			width = 40,
-			height= 5,
+			width = spark_width,
+			height= spark_height,
+			units = "px"
+		)
+	}	
+	
+	for (pct_index in seq_along(percentages)) {
+		pct <- percentages[pct_index]
+		p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(pct, 100-pct), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", GetColorFromPercentile(pct, direction=1))) 
+		ggsave(
+  			plot = p,
+  			filename = paste0("docs/images/pct_bar_rev_good_", pct, ".png"),
+  			bg = "transparent",
+			width = spark_width,
+			height= spark_height,
+			units = "px"
+		)
+	}	
+	
+	for (pct_index in seq_along(percentages)) {
+		pct <- percentages[pct_index]
+		p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(pct, 100-pct), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", "black")) 
+		ggsave(
+  			plot = p,
+  			filename = paste0("docs/images/pct_bar_grayscale_", pct, ".png"),
+  			bg = "transparent",
+			width = spark_width,
+			height= spark_height,
 			units = "px"
 		)
 	}	
 }
 
-RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, students_by_state_by_institution, student_demographics, faculty_counts) {	
+RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, students_by_state_by_institution, student_demographics, faculty_counts, institituion_rmd_change_tracking, spark_width, spark_height) {	
 	institutions <- unique(degree_granting$ShortName)
 	failures <- c()
 	#for (i in seq_along(institutions)) {
@@ -345,7 +479,9 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 					raw_table = degree_granting,
 					students_by_state_by_institution = students_by_state_by_institution,
 					student_demographics = student_demographics,
-					faculty_counts = faculty_counts
+					faculty_counts = faculty_counts,
+					spark_width = spark_width,
+					spark_height = spark_height
 				),
 				quiet=TRUE
 			)
@@ -384,6 +520,60 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 	return(failures)
 }
 
+RenderStatePages <- function(degree_granting, students_by_state_by_institution, spark_width, spark_height, state_pops) {	
+	states <- unique(state_pops$State)
+	failures <- c()
+	#for (i in seq_along(institutions)) {
+	for (i in seq_along(states)) {
+		failed <- TRUE
+		try({
+			print(states[i])
+			rmarkdown::render(
+				input="_state.Rmd", 
+				output_file="docs/state.html", 
+				params = list(
+					raw_table = degree_granting,
+					students_by_state_by_institution = students_by_state_by_institution,
+					focal_state_long = states[i],
+  					focal_state_abbr = state.abb[match(states[i],state.name)]
+				),
+				quiet=TRUE
+			)
+			Sys.sleep(1)
+			system("sed -i '' 's/&gt;/>/g' docs/state.html") # because htmlTable doesn't escape well; the '' is a requirement of OS X's version of sed, apparently
+			system("sed -i '' 's/&lt;/</g' docs/state.html")
+			
+			#system("sed -i '' 's/‘/\x27/g' docs/institution.html")
+			#system("sed -i '' 's/’/\x27/g' docs/institution.html")
+			Sys.sleep(1)
+
+
+			file.copy("docs/state.html", paste0("docs/", utils::URLencode(gsub(" ", "", states[i])), ".html"))
+			#print(paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"))
+			Sys.sleep(1)
+			# quarto::quarto_render(
+			# 	input="_institution.qmd", 
+			# 	output_file=paste0(  "docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
+			# 	execute_params = list(
+			# 		institution_name = institutions[i],
+			# 		institution_long_name = degree_granting$ShortName[i],
+			# 		overview_table = subset(overview, overview$ShortName == institutions[i]),
+			# 		raw_table = degree_granting,
+			# 		students_by_state_by_institution = students_by_state_by_institution,
+			# 		student_demographics = student_demographics,
+			# 		faculty_counts = faculty_counts
+			# 	),
+			# 	quiet=FALSE
+			# )
+			failed <- FALSE
+		}, silent=TRUE)
+		if(failed) {
+			failures <- c(failures, states[i])
+		}
+	}
+	return(failures)
+}
+
 FilterForTopAndSave <- function(overview) {
 	overview_top <- as.data.frame(overview)[c(1:1000),]
 	write.csv(overview_top, file="overview_top.csv")
@@ -402,7 +592,7 @@ GetStudentsByState <- function(state_pops, focal_raw) {
 		}
 		Students_by_state$fips[i] <- state_pops$State_FIPS[which(state_pops$State==Students_by_state$State[i])]
 	}
-	count_data <- as.data.frame(select(Students_by_state, c("fips", "Undergrad_Count")))
+	count_data <- as.data.frame(dplyr::select(Students_by_state, c("fips", "Undergrad_Count")))
 	colnames(count_data) <- c("fips", "values")
 	count_data$fips <- as.character(count_data$fips)
 	count_data$values[is.na(count_data$values)] <- 0
@@ -569,4 +759,103 @@ AppendBiome <- function(locations) {
     locations$realm[i] <- realms$realm[which(realms$code==mappedregions$REALM)]
   }
   return(locations)
+}
+
+AppendBioclim <- function(college_data) {
+	college_data$`Annual precipitation (inches)` <- NA
+	college_data$`Coldest month min temp (F)` <- NA
+	college_data$`Warmest month max temp (F)` <- NA
+	for (row_index in sequence(nrow(college_data))) {
+		latitude <- as.numeric(college_data[row_index, 'latitude'])
+		longitude <- as.numeric(college_data[row_index, 'longitude'])
+		bioclim_slice <-terra::extract(raster::getData(name="worldclim", var="bio", res=0.5, download=TRUE, lat=latitude, lon=longitude, path=tempdir()), data.frame(lon=longitude, lat=latitude))
+		college_data$`Annual precipitation (inches)`[row_index] <- round(as.numeric(unname(bioclim_slice[1,12]))*0.0393701,1)
+		college_data$`Coldest month min temp (F)`[row_index] <- round(32+0.1*as.numeric(unname(bioclim_slice[1,6]))*(9/5),1)
+		college_data$`Warmest month max temp (F)`[row_index] <- round(32+0.1*as.numeric(unname(bioclim_slice[1,5]))*(9/5),1)
+		# if(row_index%%2==0) {
+		# 	cat("\r", row_index, " of ", nrow(college_data))
+		# }
+		cat("\r", row_index, " of ", nrow(college_data), ": ", paste0(college_data$`Institution Name`[row_index], " ", college_data$`State abbreviation`[row_index], ": ", college_data$`Annual precipitation (inches)`[row_index], " ", college_data$`Coldest month min temp (F)`[row_index], " ", college_data$`Warmest month max temp (F)`[row_index], "           "))
+
+	}
+	return(college_data)
+}
+
+AppendCrime <- function(college_data) {
+	crimelist <- list(
+		crimes = read.csv("data/oncampuscrime181920.csv"),
+		arrests = read.csv("data/oncampusarrest181920.csv"),
+		discipline =read.csv("data/oncampusdiscipline181920.csv")
+	)
+	for (i in sequence(length(crimelist))) {
+		crimelist[[i]]$UnitID <- substr(crimelist[[i]]$UNITID_P,1,6)	
+	}
+	crimelist[['crimes']] <- crimelist[['crimes']] %>% group_by(UnitID) %>% summarise(
+		RAPE18 = sum(RAPE18, na.rm=TRUE),
+		RAPE19 = sum(RAPE19, na.rm=TRUE),
+		RAPE20 = sum(RAPE20, na.rm=TRUE),
+		FONDL18 = sum(FONDL18, na.rm=TRUE),
+		FONDL19 = sum(FONDL19, na.rm=TRUE),
+		FONDL20 = sum(FONDL20, na.rm=TRUE)
+	)
+	crimelist[['crimes']] <- data.frame(UnitID=crimelist[['crimes']]$UnitID, OnCampusReportedRapes3yr = crimelist[['crimes']]$RAPE18 + crimelist[['crimes']]$RAPE19 + crimelist[['crimes']]$RAPE20, OnCampusReportedFondling3yr = crimelist[['crimes']]$FONDL18 + crimelist[['crimes']]$FONDL19 + crimelist[['crimes']]$FONDL20)
+	
+	crimelist[['arrests']] <- crimelist[['arrests']] %>% group_by(UnitID) %>% summarise(
+		WEAPON18 = sum(WEAPON18, na.rm=TRUE),
+		WEAPON19 = sum(WEAPON19, na.rm=TRUE),
+		WEAPON20 = sum(WEAPON20, na.rm=TRUE),
+		DRUG18 = sum(DRUG18, na.rm=TRUE),
+		DRUG19 = sum(DRUG19, na.rm=TRUE),
+		DRUG20 = sum(DRUG20, na.rm=TRUE),
+		LIQUOR18 = sum(LIQUOR18, na.rm=TRUE),
+		LIQUOR19 = sum(LIQUOR19, na.rm=TRUE),
+		LIQUOR20 = sum(LIQUOR20, na.rm=TRUE)
+	)
+	crimelist[['arrests']] <- data.frame(UnitID=crimelist[['arrests']]$UnitID, OnCampusReportedWeaponsArrests3yr = crimelist[['arrests']]$WEAPON18 + crimelist[['arrests']]$WEAPON19 + crimelist[['arrests']]$WEAPON20, OnCampusReportedDrugArrests3yr = crimelist[['arrests']]$DRUG18 + crimelist[['arrests']]$DRUG19 + crimelist[['arrests']]$DRUG20, OnCampusReportedLiquorArrests3yr = crimelist[['arrests']]$LIQUOR18 + crimelist[['arrests']]$LIQUOR19 + crimelist[['arrests']]$LIQUOR20)
+
+
+	crimelist[['discipline']] <- crimelist[['discipline']] %>% group_by(UnitID) %>% summarise(
+		WEAPON18 = sum(WEAPON18, na.rm=TRUE),
+		WEAPON19 = sum(WEAPON19, na.rm=TRUE),
+		WEAPON20 = sum(WEAPON20, na.rm=TRUE),
+		DRUG18 = sum(DRUG18, na.rm=TRUE),
+		DRUG19 = sum(DRUG19, na.rm=TRUE),
+		DRUG20 = sum(DRUG20, na.rm=TRUE),
+		LIQUOR18 = sum(LIQUOR18, na.rm=TRUE),
+		LIQUOR19 = sum(LIQUOR19, na.rm=TRUE),
+		LIQUOR20 = sum(LIQUOR20, na.rm=TRUE)
+	)
+	crimelist[['discipline']] <- data.frame(UnitID=crimelist[['discipline']]$UnitID, OnCampusReportedWeaponsDiscipline3yr = crimelist[['discipline']]$WEAPON18 + crimelist[['discipline']]$WEAPON19 + crimelist[['discipline']]$WEAPON20, OnCampusReportedDrugDiscipline3yr = crimelist[['discipline']]$DRUG18 + crimelist[['discipline']]$DRUG19 + crimelist[['discipline']]$DRUG20, OnCampusReportedLiquorDiscipline3yr = crimelist[['discipline']]$LIQUOR18 + crimelist[['discipline']]$LIQUOR19 + crimelist[['discipline']]$LIQUOR20)
+
+	merged_data1 <- base::merge(crimelist[['crimes']], crimelist[['arrests']], by="UnitID")
+	merged_data2 <- base::merge(merged_data1, crimelist[['discipline']], by="UnitID")
+	college_data <- base::merge(college_data, merged_data2, by="UnitID")
+	college_data$`Total undergrad plus grad students` <- as.numeric(college_data$`Undergraduate enrollment`) + as.numeric(college_data$`Grad enrollment`)
+	college_data$`Liquor discipline per student (3 yr avg)` <- (college_data$OnCampusReportedLiquorDiscipline3yr/college_data$`Total undergrad plus grad students`)/3
+	college_data$`Liquor arrest per student (3 yr avg)` <- (college_data$OnCampusReportedLiquorArrests3yr/college_data$`Total undergrad plus grad students`)/3
+	college_data$`Weapon discipline per student (3 yr avg)` <- (college_data$OnCampusReportedWeaponsDiscipline3yr/college_data$`Total undergrad plus grad students`)/3
+	college_data$`Weapon arrest per student (3 yr avg)` <- (college_data$OnCampusReportedWeaponsArrests3yr/college_data$`Total undergrad plus grad students`)/3
+	college_data$`Drug discipline per student (3 yr avg)` <- (college_data$OnCampusReportedDrugDiscipline3yr/college_data$`Total undergrad plus grad students`)/3
+	college_data$`Drug arrest per student (3 yr avg)` <- (college_data$OnCampusReportedDrugArrests3yr/college_data$`Total undergrad plus grad students`)/3
+	college_data$`Reported rape per student (3 yr avg)` <- (college_data$OnCampusReportedRapes3yr/college_data$`Total undergrad plus grad students`)/3
+	college_data$`Reported fondling per student (3 yr avg)` <- (college_data$OnCampusReportedFondling3yr/college_data$`Total undergrad plus grad students`)/3	
+	return(college_data)
+}
+
+GetColorFromPercentile <- function(x, direction=-1) {
+	x <- as.integer(round(x))
+	begin <- 0.1
+	end <- 1
+	if(direction==1) {
+		begin <- 0
+		end <- 0.9
+	}
+	colorchoice <- viridisLite::plasma(n=101, begin=begin, end=end, direction=direction)[x+1]
+	if(nchar(colorchoice)==9) {
+		colorchoice <- substr(colorchoice, 1, nchar(colorchoice)-2)
+	} else {
+		colorchoice <- "black"
+	}
+	
+	return(colorchoice)
 }

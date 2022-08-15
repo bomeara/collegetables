@@ -19,15 +19,29 @@ tar_load(overview)
 tar_load(maxcount)
 tar_load(degree_granting_enhanced)
 for (i in sequence(min(maxcount, nrow(overview)))) {
-	overview$Name[i] <- paste0("<a href='https://collegetables.info/", utils::URLencode(gsub(" ", "", overview$ShortName[i])), ".html'>", overview$Name[i], "</a>")
+	overview$Name[i] <- paste0("<a href='https://collegetables.info/", overview$URL[i], "'>", overview$Name[i], "</a>")
 }
-Basic <- c("Name", "Sector", "Type", "Historically Black College or University", "Undergraduate enrollment")
+overview$Locale <- overview$LocaleChar
+Basic <- c("Name", "Sector", "Level of institution", "Undergraduate enrollment", "Grad enrollment")
+
 Admissions_and_outcomes <- c("Admission", "Yield", "First year retention", "Graduation")
-Location <- c("State", "Locale", "Walkability", "Minimum distance to mass transit (minutes walking)")
-Safety <- c("Anti-LGBTQ+ state laws", "Abortion", "Covid vax (students)", "Covid vax (employees)", "Misconduct reports")
-AcademicResources <- c("Students per tenure-track professor", "Books/student")
+
+Location <- c("State", "Locale", "Warmest month max temp", "Coldest month min temp", "Annual precipitation", "biome")
+
+Safety <- c("Anti-LGBTQ+ state laws", "Abortion", "Covid vax (employees)", "Covid vax (students)", "Gun law stringency","Proportion of reps voting in favor of respect for right to contraception act", "Proportion of reps voting in favor of respect for marriage act")
+
+AcademicResources <- c("Undergrads per tenure-track professor", "Undergrads per instructor", "Average library loans (physical) per student or faculty member", "Number of physical books", "Number of digital/electronic books")
+
+Misconduct <- c("Liquor discipline per student (3 yr avg)", "Drug discipline per student (3 yr avg)", "Weapon arrest per student (3 yr avg)", "Reported rape per student (3 yr avg)", "Reported fondling per student (3 yr avg)")
+
 Undergrad_diversity <- colnames(overview)[grepl("undergrads", colnames(overview))]
+
 Faculty_diversity <- colnames(overview)[grepl("Full-time faculty", colnames(overview))]
+
+overview$State <- as.factor(overview$State)
+overview$Sector <- as.factor(overview$Sector)
+overview$`Level of institution` <- as.factor(overview$`Level of institution`)
+
 
 
 GetMatchingColumnsInOverview <- function(to_find) {
@@ -74,6 +88,12 @@ DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions =
 		),
 		list(
 			extend= "colvisGroup",
+			text="Misconduct",
+			show=c(0, GetMatchingColumnsInOverview(Misconduct)), 
+			hide=GetNotMatchingColumnsInOverview(Misconduct)
+		),
+		list(
+			extend= "colvisGroup",
 			text="Undergrad diversity",
 			show=c(0, GetMatchingColumnsInOverview(Undergrad_diversity)), 
 			hide=GetNotMatchingColumnsInOverview(Undergrad_diversity)
@@ -97,6 +117,6 @@ DT::datatable(overview, rownames=FALSE, filter="top", escape=FALSE, extensions =
       list(targets = c(4:(ncol(overview)-1)), visible = FALSE)
     )
   )
-) %>% formatPercentage(c("Yield", "Admission", "Graduation", "First year retention", "Walkability", (colnames(overview)[grepl("undergrads", colnames(overview))] )  ), 0)
+) %>% formatPercentage(c("Yield", "Admission", "Graduation", "First year retention"), 0)
 
 ```

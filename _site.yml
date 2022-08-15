@@ -6,5 +6,117 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "By State"
+      menu: 
+        - text: A-C
+          menu: 
+          - text: Alabama
+            href: Alabama.html
+          - text: Alaska
+            href: Alaska.html
+          - text: Arizona
+            href: Arizona.html
+          - text: Arkansas
+            href: Arkansas.html
+          - text: California
+            href: California.html
+          - text: Colorado
+            href: Colorado.html
+          - text: Connecticut
+            href: Connecticut.html
+        - text: D-K
+          menu:
+          - text: Delaware
+            href: Delaware.html
+          - text: Florida
+            href: Florida.html
+          - text: Georgia
+            href: Georgia.html
+          - text: Hawaii
+            href: Hawaii.html
+          - text: Idaho
+            href: Idaho.html
+          - text: Illinois
+            href: Illinois.html
+          - text: Indiana
+            href: Indiana.html
+          - text: Iowa
+            href: Iowa.html
+          - text: Kansas
+            href: Kansas.html
+          - text: Kentucky
+            href: Kentucky.html
+        - text: L-M
+          menu:
+          - text: Louisiana
+            href: Louisiana.html
+          - text: Maine
+            href: Maine.html
+          - text: Maryland
+            href: Maryland.html
+          - text: Massachusetts
+            href: Massachusetts.html
+          - text: Michigan
+            href: Michigan.html
+          - text: Minnesota
+            href: Minnesota.html
+          - text: Mississippi
+            href: Mississippi.html
+          - text: Missouri
+            href: Missouri.html
+          - text: Montana
+            href: Montana.html
+        - text: N-P
+          menu:
+          - text: Nebraska
+            href: Nebraska.html
+          - text: Nevada
+            href: Nevada.html
+          - text: New Hampshire
+            href: New Hampshire.html
+          - text: New Jersey
+            href: New Jersey.html
+          - text: New Mexico
+            href: New Mexico.html
+          - text: New York
+            href: New York.html
+          - text: North Carolina
+            href: North Carolina.html
+          - text: North Dakota
+            href: North Dakota.html
+          - text: Ohio
+            href: Ohio.html
+          - text: Oklahoma
+            href: Oklahoma.html
+          - text: Oregon
+            href: Oregon.html
+          - text: Pennsylvania
+            href: Pennsylvania.html
+        - text: R-Z
+          menu:         
+          - text: Rhode Island
+            href: Rhode Island.html
+          - text: South Carolina
+            href: South Carolina.html
+          - text: South Dakota
+            href: South Dakota.html
+          - text: Tennessee
+            href: Tennessee.html
+          - text: Texas
+            href: Texas.html
+          - text: Utah
+            href: Utah.html
+          - text: Vermont
+            href: Vermont.html
+          - text: Virginia
+            href: Virginia.html
+          - text: Washington
+            href: Washington.html
+          - text: West Virginia
+            href: West Virginia.html
+          - text: Wisconsin
+            href: Wisconsin.html
+          - text: Wyoming
+            href: Wyoming.html
 
 output_dir: "docs"
