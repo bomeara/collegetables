@@ -15,8 +15,9 @@ source("_packages.R")
 options(timeout=24*60*60) # let things download for at least 24 hours (important while on slow internet connection)
 options(download.file.method = "libcurl")
 
-tar_invalidate(pages)
+#tar_invalidate(pages)
 tar_invalidate(index)
+tar_invalidate(about)
 tar_invalidate(sparklines)
 tar_invalidate(state_pages)
 
