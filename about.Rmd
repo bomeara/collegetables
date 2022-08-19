@@ -19,7 +19,7 @@ There are two main types of pages on this site: one page for each institution (o
 
 The main sources for information:
 
-* [National Center for Education Statistics IPEDS](https://nces.ed.gov/ipeds/use-the-data): Source of much of the data on enrollment, composition of the student body and faculty, income sources, and more. 
+* [National Center for Education Statistics IPEDS](https://nces.ed.gov/ipeds/use-the-data): Source of much of the data on enrollment, composition of the student body and faculty, income sources, and more. Data come from mostly 2019-2020 (before the worst effects of the pandemic hit). Some data may change (reorganizing athletic conferences has become popular, for example).
 * Walkability comes from [US EPA data](https://www.epa.gov/smartgrowth/smart-location-mapping): I've rescaled it so that 76-100% is most walkable, 52-76% is above average walkable, 29-52% is below average walkable, and 0-29% is least walkable.
 * Anti-LGBTQ+ laws come from assessments made under [California bill 1887](https://oag.ca.gov/ab1887), as of July 31, 2022, which requires the California Attorney General to determine which states have laws that support discrimination against against lesbian, gay, bisexual, and transgender people and bans state-sponsored travel to those states. Note that this is a property of the state an institution is in, not any policies of the institution itself. 
 * Abortion restrictions come from assessments from [World Population in Review](https://worldpopulationreview.com/state-rankings/abortion-laws-by-state) as of Aug. 8, 2022. This may change quickly.
@@ -34,4 +34,4 @@ The main sources for information:
 * Map data comes from [OpenStreetMap](https://www.openstreetmap.org/).
 
 
-Made by [Brian O'Meara](https://www.brianomeara.info) working as an individual parent (not as part of any employment, grant, etc.). It is hosted at https://github.com/bomeara/collegetables and made using the R packages knitr, tidyverse, tarchetypes, DT, usmap, ggplot2, ggrepel, plotly, leaflet, rmarkdown, htmlTable, ggbeeswarm, speciesgeocodeR, raster, viridisLite, graphics, and stats. The page is open source, so you can give suggestions or even fork it; just make sure to cite the original data sources.
+Made by Brian O'Meara, working as an individual parent (not as part of any employment, grant, etc.). It is hosted at https://github.com/bomeara/collegetables and made using the R packages knitr, tidyverse, tarchetypes, DT, usmap, ggplot2, ggrepel, plotly, leaflet, rmarkdown, htmlTable, ggbeeswarm, speciesgeocodeR, raster, viridisLite, graphics, and stats. The page is open source, so you can give suggestions or even fork it; just make sure to cite the original data sources.

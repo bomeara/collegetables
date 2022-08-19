@@ -49,12 +49,12 @@ total_undergrads <- unlist(focal_raw['Undergraduate enrollment'])
 total_grads <- unlist(focal_raw['Graduate enrollment'])
 ```
 
-`r ifelse(focal_raw['AAUP_Censure']=="Yes", '<h3 style="color:Red;">Warning</h3><p> **"Unsatisfactory conditions of academic freedom and tenure have been found to prevail at this institution"** according to the <a href="https://www.aaup.org/our-programs/academic-freedom/censure-list">AAUP</a> (as of July 31, 2022)</p>', "")`
+`r ifelse(focal_raw['AAUP_Censure']=="Yes", '<h3 style="color:Red;">Note</h3><p> **"Unsatisfactory conditions of academic freedom and tenure have been found to prevail at this institution"** according to the <a href="https://www.aaup.org/our-programs/academic-freedom/censure-list">AAUP</a> (as of July 31, 2022)</p>', "")`
 
-`r ifelse(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes", '<h3 style="color:Red;">Warning</h2><p />**California considers the state this institution is in to have one or more anti-LGBTQ+ laws** (as of July 31, 2022). It prohibits California-sponsored travel to this state as a safety measure. See more <a href="https://oag.ca.gov/ab1887">here</a>.</p>', "")`
+`r ifelse(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes", '<h3 style="color:Red;">Note</h2><p />**California considers the state this institution is in to have one or more anti-LGBTQ+ laws** (as of July 31, 2022). It prohibits California-sponsored travel to this state as a safety measure. See more <a href="https://oag.ca.gov/ab1887">here</a>.</p>', "")`
 
 
-`r ifelse(focal_raw["Undergrads per tenure-track professor" ]>1000, '<h3 style="color:Red;">Warning</h2><p />**There are extremely few tenure-track faculty relative to the number of students.** For something like an art or music school where instruction is done nearly entirely by rotating artists or musicians, this may be fine; for other schools, it can indicate a <a href="https://www.aaup.org/issues/tenure">risk to academic freedom</a> and thus educational quality, as faculty members *may* be able to lose their positions because of their speech, publications, or research findings.', "")`
+`r ifelse(focal_raw["Undergrads per tenure-track professor" ]>1000, '<h3 style="color:Red;">Note</h2><p />**There are extremely few tenure-track faculty relative to the number of students.** For something like an art or music school where instruction is done nearly entirely by rotating artists or musicians, this may be fine; for other schools, it can indicate a <a href="https://www.aaup.org/issues/tenure">risk to academic freedom</a> and thus educational quality, as faculty members *may* be able to lose their positions because of their speech, publications, or research findings.', "")`
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 fields_to_compare <- c(
@@ -170,6 +170,15 @@ for(row_index in sequence(nrow(comparison_df))) {
 	}, silent=TRUE)
 }
 
+PrependDollar <- function(x) {
+	if(is.finite(as.numeric(gsub(',','',x)))) {
+		x <- paste0('$', x)	
+	} else {
+	    x <-''	
+	}
+	return(x)
+}
+
 for(row_index in sequence(4)) {
 	if(is.finite(as.numeric(comparison_df[row_index,1]))) {
 		comparison_df[row_index,1] <- paste0(100*as.numeric(comparison_df[row_index,1]),'%')
@@ -178,8 +187,9 @@ for(row_index in sequence(4)) {
 	}
 }
 
-comparison_df['Endowment assets per FTE', 1] <- paste0('$', comparison_df['Endowment assets per FTE', 1])
-comparison_df['Average net price-students awarded grant or scholarship aid', 1] <- paste0('$', comparison_df['Average net price-students awarded grant or scholarship aid', 1])
+comparison_df['Endowment assets per FTE',1] <- PrependDollar(comparison_df['Endowment assets per FTE',1])
+
+comparison_df['Average net price-students awarded grant or scholarship aid', 1] <- PrependDollar(comparison_df['Average net price-students awarded grant or scholarship aid', 1])
 
 
 for(row_index in sequence(nrow(comparison_df))) {
@@ -222,6 +232,12 @@ rownames(comparison_df) <- gsub('Average net price-students awarded grant or sch
 # p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(6, 100-6), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", "red")) 
 #p <- ggplot(data=data.frame(y='1', x=as.numeric(comparison_list[[1]][,'Undergraduate enrollment'])), aes(x=x, fill=y)) + geom_density() + theme_void() + theme(legend.position="none") + scale_fill_manual(values=c("black"))
 
+# clean up some of the weird small schools
+for (row_index in sequence(nrow(comparison_df))) {
+	if(grepl("NaN.png", comparison_df[row_index,2])) {
+		comparison_df[row_index,sequence(ncol(comparison_df))] <- ""
+	}
+}
 
 
 colnames(comparison_df) <- paste0('&nbsp;&nbsp;',colnames(comparison_df), '&nbsp;&nbsp;')
@@ -306,6 +322,10 @@ safety_to_print <- data.frame(Metrics=state_summary[,2])
 rownames(safety_to_print) <- state_summary[,1]
 safety_to_print %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlTable::htmlTable()
 ```
+
+
+
+
 
 ### Map
 
@@ -410,28 +430,6 @@ student_demographics_focal_streamlined %>% addHtmlTableStyle(col.rgroup = c("non
 
 
 
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-
-count_data <- data.frame(fips=students_by_state$fips, values=as.numeric(students_by_state$`Number of students`))
-if(max(count_data$values)>0) {
-  plot_usmap(data=count_data, regions = "states", color = "black") + labs(title=paste0("Number of students from each state enrolled in ",params$institution_name)) +
-    scale_fill_continuous(low = "white", high = "red", name = "Number of undergrads", label = scales::comma) +  theme(legend.position = "right")
-	
-	 plot_usmap(data=count_data, regions = "states", color = "black") + labs(title=paste0("Number of students from each state enrolled in ","test")) +
-    scale_fill_continuous(low = "white", high = "red", name = "Number of undergrads", label = scales::comma) +  theme(legend.position = "right")
-} 
-
-
-if(max(count_data$values)>0) {
-	pct_data <- data.frame(fips=students_by_state$fips, values=CharacterFractionToNumeric(students_by_state$`Fraction of 18 year olds from each state enrolled here`))
-
-	plot_usmap(data=pct_data, regions = "states", color = "black") + labs(title=paste0("Percentage of 18 year olds in each state enrolled in ",params$institution_name)) +
-  	scale_fill_continuous(low = "white", high = "red", name = "Percentage (out of 100)", label = scales::comma) +  theme(legend.position = "right")
-} 
-```
-
-
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 
 students_by_state$`Percentage of 18 year olds from each state enrolled here` <- 100*CharacterFractionToNumeric(students_by_state$`Fraction of 18 year olds from each state enrolled here`)
@@ -475,87 +473,34 @@ if(max(students_by_state$`Number of students`)>0) {
     z = ~StudentPercentage, text = state.name, span = I(0),
     locations = state.abb, locationmode = 'USA-states', colors = 'Purples'
   ) %>%  colorbar(title = "Percent") %>%
-  layout(geo = g, title="Rough percentage of 18 year olds in each state attending this college")
+  layout(geo = g, title="Rough percentage of potential students in each state attending this college")
 } 
 
 
 ```
 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 
-#if(max(count_data$values)>0) {
-  
-  #students_by_state[,-1] %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlTable::htmlTable()
- #try(knitr::kable(students_by_state[,-1], row.names=FALSE))
 
-#} 
 
-# pct_data <- dplyr::select(Students_by_state, c("fips", "Percent_of_18_yo_from_this_state_enrolled_here"))
-# colnames(pct_data) <- c("fips", "values")
-# pct_data$fips <- as.character(pct_data$fips)
-# pct_data$values <- as.numeric(pct_data$values)
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 
+horizontal_results <- as.data.frame(cbind(t(comparison_df[,1, drop=FALSE]), t(safety_to_print[,1, drop=FALSE]), t(location_to_print[,1, drop=FALSE])))
+rownames(horizontal_results) <- gsub('&nbsp;', '', rownames(horizontal_results))
+horizontal_results$`Athletic conference` <-  raw_table_df$"NCAA/NAIA conference number cross country/track"[focal_row_number]
+horizontal_results$'Institution type' <-  raw_table_df$"Type"[focal_row_number]
+horizontal_results$'Institution sector' <-  raw_table_df$"Sector"[focal_row_number]
+horizontal_results$'City' <- as.character(raw_table_df[focal_row_number, 'City'])
+horizontal_results$'State' <- as.character(focal_raw['State'][1,1])
+
+all_colleges <- data.frame()
+try(load(file="all_colleges.rda"), silent=TRUE)
+if(nrow(all_colleges)==0) {
+	all_colleges <- horizontal_results
+} else {
+	all_colleges <- rbind(all_colleges, horizontal_results)	
+}
+
+save(all_colleges, file="all_colleges.rda")
 
 ```
-
-
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-
-library_columns <- c("Number of physical books", "Number of physical media"  ,  "Number of physical serials" , "Number of digital/electronic books", "Number of digital/electronic databases", "Number of digital/electronic media", "Number of electronic serials" , "Total library collections (physical and electronic)" , "Total physical library circulations (books and media)", "Total digital/electronic circulations (books and media)", "Total library circulations (physical and digital/electronic)" , "Total interlibrary loans and documents provided to other libraries", "Total interlibrary loans and documents received" )                 
-library_table <- as.data.frame( t(focal_raw[library_columns]))
-colnames(library_table) <- "Number"
-
-library_table$Number <- as.numeric(library_table$Number )
-library_table$`Number per students and faculty` <- round(library_table$Number/as.numeric(unlist(focal_raw["Students plus Faculty"])),1)
-library_table[5,2] <- library_table[5,1]
-library_table$Number <- format(as.numeric(library_table$Number),big.mark=",", scientific=FALSE)
-library_table$`Number per students and faculty` <- format(as.numeric(library_table$`Number per students and faculty`),big.mark=",", scientific=FALSE)
-
-knitr::kable(library_table)
-```
-
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-df_to_plot <- focal_nearby[,c('Name', "Undergrads per instructor", 'Undergrads per tenure-track professor', 'Focal')]
-colnames(df_to_plot) <- c("Institution", "StudentsToAllFaculty", "StudentsToTTFaculty", "Focal")
-df_to_plot[,2] <- as.numeric(df_to_plot[,2])
-df_to_plot[,3] <- as.numeric(df_to_plot[,3])
-p <- (
-	ggplot(df_to_plot, aes(x=StudentsToAllFaculty, y=StudentsToTTFaculty, label=Institution, colour=Focal)) +
-	geom_point() + geom_text_repel() + xlab("Students per instructor (lower is better)") + ylab("Students per tenure track instructor (lower is better)") + theme_minimal() + scale_color_manual(labels = c("darkgray", "red"), values=c("darkgray", "red")) + theme(legend.position = "none")
-	)
-	
-ggplotly(p) 
-```
-
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-### Admissions to graduation
-
-# This is per year, based on the number of bachelor's degrees awarded and graduation rate.
-
-life_stages <- c("Applied", "Admitted", "Enrolled", "Retained after year 1", "Graduated")
-graduation <- as.numeric(focal_raw["Number of students receiving a Bachelor's degree (DRVC2020)" ])
-enrollment <- graduation/as.numeric(focal_raw['Graduation'])
-retained <- enrollment*focal_raw['First year retention'] # this is an approximation
-admitted<- enrollment/focal_raw['Yield']
-applied <- (enrollment/focal_raw['Yield'])/focal_raw['Admission']
-all_numbers <- round(unname(unlist(c(applied, admitted, enrollment, retained, graduation))))
-fig <- plot_ly() 
-fig <- fig %>%
-  add_trace(
-  type = "funnel",
-  y = life_stages,
-  x = all_numbers,
-  textinfo="value+percent previous") 
-fig <- fig %>%
-  layout(yaxis = list(categoryarray = life_stages))
-
-fig 
-```
-

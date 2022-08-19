@@ -1,0 +1,120 @@
+---
+title: Degrees awarded by institution types
+output:
+  html_document:
+    includes:
+       in_header: GA_Script.html
+---
+
+Note that this cannot show all of the over 3,000 institutions; ones that have fewer degrees of each type may be dropped. The area of each box is proportional to the number of degrees.
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+source("_packages.R")
+source("R/functions.R")
+
+all_colleges <- data.frame()
+
+try(load("all_colleges.rda"), silent=TRUE)
+
+
+if(nrow(all_colleges)>0) {
+
+	all_colleges$Name <- rownames(all_colleges)
+	
+	all_colleges_filtered <- all_colleges[, c("Name", "Institution type", "Associates degrees awarded", "Bachelors degrees awarded", "Masters degrees awarded", "Doctorates awarded")]
+	
+	for (col_index in sequence(ncol(all_colleges_filtered))) {
+		if(grepl("awarded", colnames(all_colleges_filtered)[col_index])) {
+			all_colleges_filtered[,col_index] <- as.numeric(gsub(',', '', all_colleges_filtered[,col_index]))
+			all_colleges_filtered[is.na(all_colleges_filtered[,col_index]),col_index] <- 0
+		}
+	}
+	institution_types <- all_colleges_filtered %>% dplyr::group_by(`Institution type`) %>% dplyr::summarise(Associates=sum(`Associates degrees awarded`), Bachelors=sum(`Bachelors degrees awarded`), Masters=sum(`Masters degrees awarded`), Doctorates=sum(`Doctorates awarded`))
+	institution_types$Parent <- ""
+	colnames(institution_types) <- gsub("Institution type", "Name", colnames(institution_types))
+	institution_types <- rbind(institution_types, data.frame(Name=all_colleges_filtered$Name, Associates=all_colleges_filtered$`Associates degrees awarded`, Bachelors=all_colleges_filtered$`Bachelors degrees awarded`, Masters=all_colleges_filtered$`Masters degrees awarded`, Doctorates=all_colleges_filtered$`Doctorates awarded`, Parent=all_colleges_filtered$`Institution type`))
+}
+```
+
+### Associates degrees
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+if(nrow(all_colleges)>0) {
+institution_types <- institution_types[order(institution_types$Associates, decreasing=TRUE),]
+
+fig <- plot_ly(
+    type='treemap',
+    branchvalues="total",
+    ids=institution_types$Name,
+    labels=institution_types$Name,
+    parents=institution_types$Parent,
+    values=institution_types$Associates,
+    domain=list(column=0),
+    maxdepth=2)
+	
+fig
+}
+```
+
+
+### Bachelor's degrees
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+if(nrow(all_colleges)>0) {
+institution_types <- institution_types[order(institution_types$Bachelors, decreasing=TRUE),]
+
+fig <- plot_ly(
+    type='treemap',
+    branchvalues="total",
+    ids=institution_types$Name,
+    labels=institution_types$Name,
+    parents=institution_types$Parent,
+    values=institution_types$Bachelors,
+    domain=list(column=0),
+    maxdepth=2)
+	
+fig
+}
+```
+
+
+### Masters' degrees
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+if(nrow(all_colleges)>0) {
+institution_types <- institution_types[order(institution_types$Masters, decreasing=TRUE),]
+
+fig <- plot_ly(
+    type='treemap',
+    branchvalues="total",
+    ids=institution_types$Name,
+    labels=institution_types$Name,
+    parents=institution_types$Parent,
+    values=institution_types$Masters,
+    domain=list(column=0),
+    maxdepth=2)
+	
+fig
+}
+```
+
+### Doctorates
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+if(nrow(all_colleges)>0) {
+institution_types <- institution_types[order(institution_types$Doctorates, decreasing=TRUE),]
+
+fig <- plot_ly(
+    type='treemap',
+    branchvalues="total",
+    ids=institution_types$Name,
+    labels=institution_types$Name,
+    parents=institution_types$Parent,
+    values=institution_types$Doctorates,
+    domain=list(column=0),
+    maxdepth=2)
+	
+fig
+}
+```

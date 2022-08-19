@@ -1,0 +1,118 @@
+---
+title: Degrees awarded by institution
+output:
+  html_document:
+    includes:
+       in_header: GA_Script.html
+---
+
+Note that this can only show a finite set of elements; smaller ones may be dropped.
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+source("_packages.R")
+source("R/functions.R")
+
+all_colleges <- data.frame()
+
+try(load("all_colleges.rda"), silent=TRUE)
+
+
+if(nrow(all_colleges)>0) {
+
+	all_colleges$Name <- rownames(all_colleges)
+	
+	all_colleges_filtered <- all_colleges[, c("Name", "Associates degrees awarded", "Bachelors degrees awarded", "Masters degrees awarded", "Doctorates awarded")]
+	
+	for (col_index in sequence(ncol(all_colleges_filtered))) {
+		if(grepl("awarded", colnames(all_colleges_filtered)[col_index])) {
+			all_colleges_filtered[,col_index] <- as.numeric(gsub(',', '', all_colleges_filtered[,col_index]))
+			all_colleges_filtered[is.na(all_colleges_filtered[,col_index]),col_index] <- 0
+		}
+	}
+	all_colleges_filtered$Parent <- ""
+	
+}
+```
+
+### Associates degrees
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+if(nrow(all_colleges)>0) {
+all_colleges_filtered <- all_colleges_filtered[order(all_colleges_filtered$'Associates degrees awarded', decreasing=TRUE),]
+
+fig <- plot_ly(
+    type='treemap',
+    ids=all_colleges_filtered$Name,
+    labels=all_colleges_filtered$Name,
+	parents=all_colleges_filtered$Parent,
+	domain=list(column=0),
+    values=all_colleges_filtered$'Associates degrees awarded',
+	maxdepth=2
+)
+	
+fig
+}
+```
+
+
+### Bachelor's degrees
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+if(nrow(all_colleges)>0) {
+all_colleges_filtered <- all_colleges_filtered[order(all_colleges_filtered$'Bachelors degrees awarded', decreasing=TRUE),]
+
+fig <- plot_ly(
+    type='treemap',
+    ids=all_colleges_filtered$Name,
+    labels=all_colleges_filtered$Name,
+	parents=all_colleges_filtered$Parent,
+	domain=list(column=0),
+    values=all_colleges_filtered$'Bachelors degrees awarded',
+	maxdepth=2
+)
+	
+fig
+}
+```
+
+
+### Masters' degrees
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+if(nrow(all_colleges)>0) {
+all_colleges_filtered <- all_colleges_filtered[order(all_colleges_filtered$'Masters degrees awarded', decreasing=TRUE),]
+
+fig <- plot_ly(
+    type='treemap',
+    ids=all_colleges_filtered$Name,
+    labels=all_colleges_filtered$Name,
+	parents=all_colleges_filtered$Parent,
+	domain=list(column=0),
+    values=all_colleges_filtered$'Masters degrees awarded',
+	maxdepth=2
+)
+	
+fig
+}
+```
+
+### Doctorates
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+if(nrow(all_colleges)>0) {
+all_colleges_filtered <- all_colleges_filtered[order(all_colleges_filtered$'Doctorates awarded', decreasing=TRUE),]
+
+fig <- plot_ly(
+    type='treemap',
+    ids=all_colleges_filtered$Name,
+    labels=all_colleges_filtered$Name,
+	parents=all_colleges_filtered$Parent,
+	domain=list(column=0),
+    values=all_colleges_filtered$'Doctorates awarded',
+	maxdepth=1
+)
+	
+fig
+}
+```

@@ -15,7 +15,7 @@ source("_packages.R")
 options(timeout=24*60*60) # let things download for at least 24 hours (important while on slow internet connection)
 options(download.file.method = "libcurl")
 
-#tar_invalidate(pages)
+tar_invalidate(pages)
 tar_invalidate(index)
 tar_invalidate(about)
 tar_invalidate(sparklines)
@@ -41,7 +41,8 @@ list(
   tar_target(pages, RenderInstitutionPages(overview, degree_granting_enhanced, maxcount, students_by_state_by_institution, student_demographics, faculty_counts, spark_width, spark_height)),
   tar_target(state_pages, RenderStatePages(degree_granting_enhanced, students_by_state_by_institution, spark_width, spark_height, state_pops)),
   tar_target(top,FilterForTopAndSave(overview)),
-  tar_render(index, "index.Rmd"),
+  #tar_render(index, "index.Rmd"),
+  tar_target(index, RenderIndexPageEtAl(pages)),
   tar_render(about, "about.Rmd")
 
 )

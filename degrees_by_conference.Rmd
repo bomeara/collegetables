@@ -1,0 +1,119 @@
+---
+title: Degrees awarded by athletic conferences
+output:
+  html_document:
+    includes:
+       in_header: GA_Script.html
+---
+
+Note that this cannot show all of the over 3,000 institutions; ones that have fewer degrees of each type may be dropped.
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+source("_packages.R")
+source("R/functions.R")
+
+all_colleges <- data.frame()
+
+try(load("all_colleges.rda"), silent=TRUE)
+
+
+if(nrow(all_colleges)>0) {
+
+	all_colleges$Name <- rownames(all_colleges)
+	
+	all_colleges_filtered <- all_colleges[, c("Name", "Athletic conference", "Associates degrees awarded", "Bachelors degrees awarded", "Masters degrees awarded", "Doctorates awarded")]
+	
+	for (col_index in sequence(ncol(all_colleges_filtered))) {
+		if(grepl("awarded", colnames(all_colleges_filtered)[col_index])) {
+			all_colleges_filtered[,col_index] <- as.numeric(gsub(',', '', all_colleges_filtered[,col_index]))
+			all_colleges_filtered[is.na(all_colleges_filtered[,col_index]),col_index] <- 0
+		}
+	}
+	conferences <- all_colleges_filtered %>% dplyr::group_by(`Athletic conference`) %>% dplyr::summarise(Associates=sum(`Associates degrees awarded`), Bachelors=sum(`Bachelors degrees awarded`), Masters=sum(`Masters degrees awarded`), Doctorates=sum(`Doctorates awarded`))
+	conferences$Parent <- ""
+	colnames(conferences) <- gsub("Athletic conference", "Name", colnames(conferences))
+	conferences <- rbind(conferences, data.frame(Name=all_colleges_filtered$Name, Associates=all_colleges_filtered$`Associates degrees awarded`, Bachelors=all_colleges_filtered$`Bachelors degrees awarded`, Masters=all_colleges_filtered$`Masters degrees awarded`, Doctorates=all_colleges_filtered$`Doctorates awarded`, Parent=all_colleges_filtered$`Athletic conference`))
+}
+```
+
+### Associates degrees
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+if(nrow(all_colleges)>0) {
+conferences <- conferences[order(conferences$Associates, decreasing=TRUE),]
+fig <- plot_ly(
+    type='treemap',
+    branchvalues="total",
+    ids=conferences$Name,
+    labels=conferences$Name,
+    parents=conferences$Parent,
+    values=conferences$Associates,
+    domain=list(column=0),
+    maxdepth=2)
+	
+fig
+}
+```
+
+
+### Bachelor's degrees
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+if(nrow(all_colleges)>0) {
+conferences <- conferences[order(conferences$Bachelors, decreasing=TRUE),]
+
+fig <- plot_ly(
+    type='treemap',
+    branchvalues="total",
+    ids=conferences$Name,
+    labels=conferences$Name,
+    parents=conferences$Parent,
+    values=conferences$Bachelors,
+    domain=list(column=0),
+    maxdepth=2)
+	
+fig
+}
+```
+
+
+### Masters' degrees
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+if(nrow(all_colleges)>0) {
+conferences <- conferences[order(conferences$Masters, decreasing=TRUE),]
+
+fig <- plot_ly(
+    type='treemap',
+    branchvalues="total",
+    ids=conferences$Name,
+    labels=conferences$Name,
+    parents=conferences$Parent,
+    values=conferences$Masters,
+    domain=list(column=0),
+    maxdepth=2)
+	
+fig
+}
+```
+
+### Doctorates
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+if(nrow(all_colleges)>0) {
+conferences <- conferences[order(conferences$Doctorates, decreasing=TRUE),]
+
+fig <- plot_ly(
+    type='treemap',
+    branchvalues="total",
+    ids=conferences$Name,
+    labels=conferences$Name,
+    parents=conferences$Parent,
+    values=conferences$Doctorates,
+    domain=list(column=0),
+    maxdepth=2)
+	
+fig
+}
+```

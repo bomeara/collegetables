@@ -7,7 +7,7 @@ source("R/functions.R")
 
 # Only render site if needing to do new pages
 
-# rmarkdown::render_site()
+rmarkdown::render_site()
 
 tar_make()
 

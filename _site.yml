@@ -118,5 +118,13 @@ navbar:
             href: Wisconsin.html
           - text: Wyoming
             href: Wyoming.html
+    - text: "Degrees"
+      menu: 
+        - text: Institutions
+          href: degrees_by_institution.html
+        - text: Athletic conference
+          href: degrees_by_conference.html
+        - text: Types of institutions
+          href: degrees_by_type.html
 
 output_dir: "docs"

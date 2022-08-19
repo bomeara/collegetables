@@ -436,6 +436,7 @@ RenderSparklines <- function(spark_height=5, spark_width=40) {
 RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, students_by_state_by_institution, student_demographics, faculty_counts, spark_width, spark_height) {	
 	institutions <- unique(degree_granting$ShortName)
 	failures <- c()
+	try(system("rm all_colleges.rda"), silent=TRUE)
 	#for (i in seq_along(institutions)) {
 	for (i in sequence(min(maxcount, length(institutions)))) {
 		failed <- TRUE
@@ -461,13 +462,13 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 				),
 				quiet=TRUE
 			)
-			Sys.sleep(1)
+			#Sys.sleep(1)
 			system("sed -i '' 's/&gt;/>/g' docs/institution.html") # because htmlTable doesn't escape well; the '' is a requirement of OS X's version of sed, apparently
 			system("sed -i '' 's/&lt;/</g' docs/institution.html")
 			
 			#system("sed -i '' 's/‘/\x27/g' docs/institution.html")
 			#system("sed -i '' 's/’/\x27/g' docs/institution.html")
-			Sys.sleep(1)
+			#Sys.sleep(1)
 
 
 			file.copy("docs/institution.html", paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"))
@@ -493,7 +494,8 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 			failures <- c(failures, institutions[i])
 		}
 	}
-	return(failures)
+	load("all_colleges.rda")
+	return(all_colleges)
 }
 
 RenderStatePages <- function(degree_granting, students_by_state_by_institution, spark_width, spark_height, state_pops) {	
@@ -548,6 +550,35 @@ RenderStatePages <- function(degree_granting, students_by_state_by_institution, 
 		}
 	}
 	return(failures)
+}
+
+# pages is there just so it will run this after the pages are run
+RenderIndexPageEtAl <- function(pages) {
+	system("rm docs/index.html")
+	system("rm docs/degrees_by*")
+	rmarkdown::render(
+				input="index.Rmd", 
+				output_file="docs/index.html", 
+				quiet=TRUE
+	)
+	
+	rmarkdown::render(
+				input="degrees_by_conference.Rmd", 
+				output_file="docs/degrees_by_conference.html", 
+				quiet=TRUE
+	)
+	
+	rmarkdown::render(
+				input="degrees_by_institution.Rmd", 
+				output_file="docs/degrees_by_institution.html", 
+				quiet=TRUE
+	)
+	
+	rmarkdown::render(
+				input="degrees_by_type.Rmd", 
+				output_file="docs/degrees_by_type.html", 
+				quiet=TRUE
+	)
 }
 
 FilterForTopAndSave <- function(overview) {
