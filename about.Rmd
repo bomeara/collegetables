@@ -10,7 +10,7 @@ output:
 
 This was done over a break in summer 2022 while starting to take my kids on college visits; as I mention on the home page, while there are lots of "College Ranking" websites, they use some odd factors to rank (such as colleges ranking each other, standardized testing scores, how many students they reject, and more for [US News and World Report](https://www.usnews.com/education/best-colleges/articles/ranking-criteria-and-weights)) while omitting things like tenure track faculty numbers, library resources, climate, and whether the state safe for LGBTQ+ students. 
 
-If you have feedback on the site (corrections, good data sources, etc.) please go [here](https://forms.gle/C9D7WXaMDVrTm3Z3A) (and thank you!).
+**If you have feedback on the site (corrections, good data sources, etc.) please go [here](https://forms.gle/C9D7WXaMDVrTm3Z3A) (and thank you!).**
 
 There are two main types of pages on this site: one page for each institution (over 3,000 of them) and one page for each state:
 
