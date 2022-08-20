@@ -8,7 +8,9 @@ output:
 
 ### About
 
-This was done over a break in summer 2022 while starting to take my kids on college visits; as I mention on the home page, while there are lots of "College Ranking" websites, they use some odd factors to rank (such as colleges ranking each other, standardized testing scores, how many students they reject, and more for [US News and World Report](https://www.usnews.com/education/best-colleges/articles/ranking-criteria-and-weights)) while omitting things like library resources, climate, and whether the state safe for LGBTQ+ students. A particularly startling omission in most sites is ignoring whether instructors are tenure track or non-tenure track. Both can be excellent, but tenure track are often better paid, have their positions more stably, and are less likely to be fired for the content of their research and teaching (they can still be fired for things like misconduct, but they can't (easily) be fired for studying, say, whether a major university donor's company's pollution is problematic). This site reports both the overall student to instructor ratio and student to tenured faculty member ratio.
+This was done over a break in summer 2022 while starting to take my kids on college visits; as I mention on the home page, while there are lots of "College Ranking" websites, they use some odd factors to rank (such as colleges ranking each other, standardized testing scores, how many students they reject, and more for [US News and World Report](https://www.usnews.com/education/best-colleges/articles/ranking-criteria-and-weights)) while omitting things like tenure track faculty numbers, library resources, climate, and whether the state safe for LGBTQ+ students. 
+
+If you have feedback on the site (corrections, good data sources, etc.) please go [here](https://forms.gle/C9D7WXaMDVrTm3Z3A) (and thank you!).
 
 There are two main types of pages on this site: one page for each institution (over 3,000 of them) and one page for each state:
 
