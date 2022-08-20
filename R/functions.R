@@ -52,7 +52,7 @@ AggregateIPEDS <- function() {
 	walkability_aggregated <- walkability %>% group_by(CBSA_Name) %>% summarise(NatWalkInd=round(median(NatWalkInd),1), Population=sum(TotPop), HousingUnits = sum(CountHU, na.rm=TRUE), DistanceToTransit = round(min(D4A, na.rm=TRUE)))
 	raw_data <- left_join(raw_data, walkability_aggregated, by=c("Core Based Statistical Area (CBSA) (HD2019)" = "CBSA_Name"))
 	rm(walkability)
-	banned_states <- c("AL", "AR", "FL", "ID", "IN", "IA", "KS", "KY", "MI", "MO", "NC", "ND", "OH", "OK", "SC", "SD", "TN", "TX", "UT", "WV")
+	banned_states <- c("AL", "AR", "FL", "ID", "IN", "IA", "KS", "KY", "MS", "MT", "NC", "ND", "OH", "OK", "SC", "SD", "TN", "TX", "UT", "WV")
 	raw_data$BannedCATravel <- "No"
 	raw_data$BannedCATravel[pull(raw_data, `State abbreviation (HD2019)`) %in% banned_states] <- "Yes"
 	raw_data <- CleanNames(raw_data)
