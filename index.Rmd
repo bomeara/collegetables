@@ -10,7 +10,7 @@ For deciding on which college to go to (as an undergraduate, graduate student, e
 
 You can search to filter by fields: only show ones in certain states (two letter abbreviation), certain athletic leagues, by college name, etc. To search for phrases, put them in quotes. **Click on buttons to show different tables of information** (and info in one table will be used to filter the other ones). Go to the [about](about.html) page for more about the sources of the data; an explanation of some of the categories themselves follows the table. **Click on a school name to get a page with much more detail about that school.**
 
-Since much of the data come from the US federal government, this website includes only US-based schools. The rest of the planet has excellent institutions that may be a better placement for some.
+Since much of the data come from the US federal government, this website includes only US-based schools. The rest of the planet has excellent institutions which may be a better placement for some.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 source("_packages.R")
@@ -79,7 +79,8 @@ AllFields <- c(Overview, Admissions_and_outcomes, Location, Safety, AcademicReso
 				list(
 					fixedColumns = list(leftColumns=1),
 					columnDefs = list(
- 						list(targets = c(7:(ncol(all_colleges_cleaned)-1)), visible = FALSE)
+ 						list(targets = c(7:(ncol(all_colleges_cleaned)-1)), visible = FALSE),
+						list(targets = "_all", className = 'dt-center')
  					),
 					dom = 'Bfrtip',
 					pageLength = 100,
