@@ -73,17 +73,17 @@ navbar:
           - text: Nevada
             href: Nevada.html
           - text: New Hampshire
-            href: New Hampshire.html
+            href: NewHampshire.html
           - text: New Jersey
-            href: New Jersey.html
+            href: NewJersey.html
           - text: New Mexico
-            href: New Mexico.html
+            href: NewMexico.html
           - text: New York
-            href: New York.html
+            href: NewYork.html
           - text: North Carolina
-            href: North Carolina.html
+            href: NorthCarolina.html
           - text: North Dakota
-            href: North Dakota.html
+            href: NorthDakota.html
           - text: Ohio
             href: Ohio.html
           - text: Oklahoma
@@ -95,11 +95,11 @@ navbar:
         - text: R-Z
           menu:         
           - text: Rhode Island
-            href: Rhode Island.html
+            href: RhodeIsland.html
           - text: South Carolina
-            href: South Carolina.html
+            href: SouthCarolina.html
           - text: South Dakota
-            href: South Dakota.html
+            href: SouthDakota.html
           - text: Tennessee
             href: Tennessee.html
           - text: Texas
@@ -113,7 +113,7 @@ navbar:
           - text: Washington
             href: Washington.html
           - text: West Virginia
-            href: West Virginia.html
+            href: WestVirginia.html
           - text: Wisconsin
             href: Wisconsin.html
           - text: Wyoming
