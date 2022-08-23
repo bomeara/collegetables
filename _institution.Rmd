@@ -152,8 +152,11 @@ for (field_index in seq_along(fields_to_compare)) {
 				comparison_df[field_index,list_index+1] <- ''
 			}
 			if(grepl("Undergrads per", focal_field) | grepl("Reported|discipline|arrest", focal_field) | grepl("Admission", focal_field)) {
+				if(is.finite(percentile_rounded)) {
 					comparison_df[field_index,list_index+1] <-paste0("<img src=images/pct_bar_rev_good_", percentile_rounded, ".png width=", params$spark_width, " height=", params$spark_height, ">")
-
+				} else {
+					comparison_df[field_index,list_index+1] <- ''
+				}
 			}
 		}
 	}
@@ -306,9 +309,25 @@ state_summary[nrow(state_summary)+1,] <- c(
 	)
 )
 
-state_summary[nrow(state_summary)+1,] <- c("Employee covid vax", ifelse(focal_raw['Covid vax (employees)']=="Yes", "Required", "Not required"))
 
-state_summary[nrow(state_summary)+1,] <- c("Student covid vax", ifelse(focal_raw['Covid vax (students)']=="Yes", "Required", "Not required"))
+state_summary[nrow(state_summary)+1,] <- c(
+	"Employee covid vax", 
+	paste0(
+		'<a href=https://www.chronicle.com/blogs/live-coronavirus-updates/heres-a-list-of-colleges-that-will-require-students-to-be-vaccinated-against-covid-19>',
+		ifelse(focal_raw['Covid vax (employees)']=="Yes", "Apparently yes","Seemingly no"), 
+		'</a>'
+	)
+)
+
+state_summary[nrow(state_summary)+1,] <- c(
+	"Student covid vax", 
+	paste0(
+		'<a href=https://www.chronicle.com/blogs/live-coronavirus-updates/heres-a-list-of-colleges-that-will-require-students-to-be-vaccinated-against-covid-19>',
+		ifelse(focal_raw['Covid vax (students)']=="Yes", "Apparently yes","Seemingly no"), 
+		'</a>'
+	)
+)
+
 
 state_summary[nrow(state_summary)+1,] <- c("Abortion", as.character(focal_raw['Abortion'][1,1]))
 
@@ -432,15 +451,24 @@ student_demographics_focal_streamlined %>% addHtmlTableStyle(col.rgroup = c("non
 
 ### Origin of the students
 
-The following maps are based on all the incoming undergraduate students first seeking a degree who come from the US (so, freshmen, not transfer students, not ones who started somewhere else and are starting over). Nearly all, but not all, colleges report this information. The data are from Fall 2019 so as to avoid any temporary changes due to covid. Remember that these are for freshmen: a student starting at a community college and transferring to a four year institution will appear on the community college data, not the four year institution's data.
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+
+
+students_by_state$`Number of students` <- as.numeric(students_by_state$`Number of students`)
+
+
+
+```
+
+`r ifelse(max(students_by_state$'Number of students')>0, "The following maps are based on all the incoming undergraduate students first seeking a degree who come from the US (so, freshmen, not transfer students, not ones who started somewhere else and are starting over). Nearly all, but not all, colleges report this information. The data are from Fall 2019 so as to avoid any temporary changes due to covid. Remember that these are for freshmen: a student starting at a community college and transferring to a four year institution will appear on the community college data, not the four year institution's data.", "This institution does not have student data listed by state of student origin.")`
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 
 students_by_state$`Percentage of 18 year olds from each state enrolled here` <- 100*CharacterFractionToNumeric(students_by_state$`Fraction of 18 year olds from each state enrolled here`)
 
-students_by_state$`Number of students` <- as.numeric(students_by_state$`Number of students`)
+
 
 # kable(students_by_state)
 
@@ -465,7 +493,7 @@ if(max(students_by_state$`Number of students`)>0) {
 
 ```
 
-This map is the number of students attending from each state attending as freshmen divided by the number of 18 year olds in each state, then converted to a percentage. Not all freshmen are 18 years old, of course: some people start earlier than this, some far later, but each can attend college for the first time only once. This is just a way to get an estimate of how much of each state's eligible population starts college at this school.
+`r ifelse(max(students_by_state$'Number of students')>0, "This map is the number of students attending from each state attending as freshmen divided by the number of 18 year olds in each state, then converted to a percentage. Not all freshmen are 18 years old, of course: some people start earlier than this, some far later, but each can attend college for the first time only once. This is just a way to get an estimate of how much of each state's eligible population starts college at this school.", "")`
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}

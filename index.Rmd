@@ -59,7 +59,7 @@ AllFields <- c(Overview, Admissions_and_outcomes, Location, Safety, AcademicReso
 	for (col_index in sequence(ncol(all_colleges_cleaned))) {
 			all_colleges_cleaned[,col_index] <- gsub('$NaN', '', all_colleges_cleaned[,col_index])
 	}
-
+	all_colleges_cleaned$State <- state.name[match(all_colleges_cleaned$State,state.abb)]
 	
 	
 	GetMatchingColumnsInOverview <- function(to_find) {

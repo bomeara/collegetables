@@ -35,9 +35,16 @@ AggregateIPEDS <- function() {
 		dplyr::select_at(
 		vars(-ends_with(".y"))
 		)
+		
 	raw_data3 <- mutate_all(read_csv("data/ipeds_Data_8-14-2022_price_equity.csv", col_types="c"), as.character)
 	raw_data3 <- dplyr::select(raw_data3, -'Institution Name')
 	raw_data_joined <- full_join(raw_data_joined, raw_data3, by="UnitID")
+	
+	# Getting data for transfer and student loans
+	raw_data4 <- mutate_all(read_csv("data/ipeds_Data_8-23-2022.csv", col_types="c"), as.character)
+	raw_data4 <- dplyr::select(raw_data4, -'Institution Name')
+	raw_data_joined <- full_join(raw_data_joined, raw_data4, by="UnitID")
+	
 	
 	raw_data <- raw_data_joined[!duplicated(raw_data_joined$`Institution Name`),]
 	raw_data$`Institution Name` <- gsub('/', '_', raw_data$`Institution Name`)
@@ -162,9 +169,10 @@ AppendAAUPCensure <- function(college_data) {
 	aaup <- read.csv("data/aaup_censure_July2022.csv", header=TRUE)
 	college_data$AAUP_Censure <- "No"
 	for (i in sequence(nrow(aaup))) {
-		distances <- adist(aaup[i,1], college_data$"Institution Name")
-		matches <- which(distances == min(distances))
-		college_data$AAUP_Censure[matches] <- "Yes"
+		matches <- which(college_data$"Institution Name"==aaup[i,1])
+		if(length(matches)>0) {
+			college_data$AAUP_Censure[matches] <- "Yes"
+		}
 	}	
 	return(college_data)
 }
@@ -255,6 +263,10 @@ EnhanceData <- function(college_data, faculty_counts, student_demographics, stud
 	college_data_enhanced$`Students plus Faculty` <- 0
 	college_data_enhanced$ShortName <- college_data_enhanced$Name
 	college_data_enhanced$Name <- paste0(college_data_enhanced$Name, " (", college_data_enhanced$City, ", ", college_data_enhanced$State, ")")
+	# name_collisions <- college_data_enhanced$ShortName[duplicated(college_data_enhanced$ShortName)]
+	# for(name in name_collisions) {
+	# 	college_data_enhanced$ShortName[college_data_enhanced$ShortName==name] <- college_data_enhanced$Name[college_data_enhanced$ShortName==name]
+	# }
 	college_data_enhanced$URL <- paste0(  utils::URLencode(gsub(" ", "", college_data_enhanced$ShortName)), ".html")
 	college_data_enhanced$`Tenure track fraction` <- 0
 	college_data_enhanced$`Fraction of tenure track faculty who are women` <- 0
@@ -330,7 +342,7 @@ EnhanceData <- function(college_data, faculty_counts, student_demographics, stud
 
 	}
 
-	college_data_enhanced <- college_data_enhanced[!duplicated(college_data_enhanced$ShortName),]
+	college_data_enhanced <- college_data_enhanced[!duplicated(college_data_enhanced$UnitID),]
 	return(college_data_enhanced)
 }
 
@@ -834,9 +846,9 @@ AppendCrime <- function(college_data) {
 	)
 	crimelist[['discipline']] <- data.frame(UnitID=crimelist[['discipline']]$UnitID, OnCampusReportedWeaponsDiscipline3yr = crimelist[['discipline']]$WEAPON18 + crimelist[['discipline']]$WEAPON19 + crimelist[['discipline']]$WEAPON20, OnCampusReportedDrugDiscipline3yr = crimelist[['discipline']]$DRUG18 + crimelist[['discipline']]$DRUG19 + crimelist[['discipline']]$DRUG20, OnCampusReportedLiquorDiscipline3yr = crimelist[['discipline']]$LIQUOR18 + crimelist[['discipline']]$LIQUOR19 + crimelist[['discipline']]$LIQUOR20)
 
-	merged_data1 <- base::merge(crimelist[['crimes']], crimelist[['arrests']], by="UnitID")
-	merged_data2 <- base::merge(merged_data1, crimelist[['discipline']], by="UnitID")
-	college_data <- base::merge(college_data, merged_data2, by="UnitID")
+	merged_data1 <- base::merge(crimelist[['crimes']], crimelist[['arrests']], by="UnitID", all.x=TRUE)
+	merged_data2 <- base::merge(merged_data1, crimelist[['discipline']], by="UnitID", all.x=TRUE)
+	college_data <- base::merge(college_data, merged_data2, by="UnitID", all.x=TRUE)
 	college_data$`Total undergrad plus grad students` <- as.numeric(college_data$`Undergraduate enrollment`) + as.numeric(college_data$`Grad enrollment`)
 	college_data$`Liquor discipline per student (3 yr avg)` <- (college_data$OnCampusReportedLiquorDiscipline3yr/college_data$`Total undergrad plus grad students`)/3
 	college_data$`Liquor arrest per student (3 yr avg)` <- (college_data$OnCampusReportedLiquorArrests3yr/college_data$`Total undergrad plus grad students`)/3
