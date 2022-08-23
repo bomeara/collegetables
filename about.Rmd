@@ -20,9 +20,10 @@ There are three main types of pages on this site: one page for each institution 
 
 ### Details of the metrics
 
-* **Acceptance**: Percentage of undergraduate applicants who are offered admission
-* **Yield**: Percentage of people who, upon receiving the offer of admission, choose to attend
-* **First year retention**: Percentage of undergraduates who re-enroll in their second year. This can indicate they adequately like the school and are receiving support they need to be successful
+* **Acceptance**: Percentage of undergraduate applicants who are offered admission.
+* **Yield**: Percentage of people who, upon receiving the offer of admission, choose to attend.
+* **First year retention**: Percentage of undergraduates who re-enroll in their second year. This can indicate they adequately like the school and are receiving support they need to be successful.
+* **Transfer**: Percentage of students who transfer out from their bachelors program.
 * **Graduation**: Percentage of undergraduates who graduate with a degree. Note that not all students enter an instiution with this intent: someone could take a welding class at a community college just to learn the skill without intending to get a degree in it. That said, higher graduation rate is typically a good thing.
 * **Undergrad enrollment**: The number of undergraduate students (typically those seeking an associates or bachelors degree).
 * **Graduate enrollment**: The number of students enrolled seeking a masters, PhD, or similar degree.

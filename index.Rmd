@@ -27,9 +27,9 @@ if(nrow(all_colleges)>0) {
 	for (college_index in sequence(nrow(all_colleges))) {
 		all_colleges$Name[college_index] <- paste0("<a href='https://collegetables.info/", utils::URLencode(gsub(" ", "", all_colleges$Name[college_index])),  ".html'>", all_colleges$Name[college_index], "</a>")
 	}
-	Overview <- c("Name", "Institution type", "Institution sector" , "Avg net price for students with grants/scholarships","Undergraduate enrollment",  "Graduate enrollment", "Athletic conference" )
+	Overview <- c("Name", "Institution type", "Institution sector" , "Avg net price for students with grants/scholarships", "Average federal loan", "Average non-federal loan", "Undergraduate enrollment",  "Graduate enrollment", "Athletic conference" )
 
-	Admissions_and_outcomes <- c("Admission", "Yield", "First year retention", "Graduation")
+	Admissions_and_outcomes <- c("Admission", "Yield", "First year retention", "Transfer", "Graduation")
 
 	Location <- c("City", "State", "Type", "Mass transit", "Walkability", "Local ecology", "Local biome", "Annual precipitation", "Warmest month max temp", "Coldest month min temp")
 

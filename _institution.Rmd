@@ -34,6 +34,11 @@ raw_table_df <- dplyr::rename(raw_table_df, `Associates degrees awarded`="Number
 raw_table_df$`Average library loans (physical + digital) per student or faculty member` <- round(as.numeric(raw_table_df$`Total library circulations (physical and digital/electronic)`) / as.numeric(raw_table_df$`Students plus Faculty`),1)
 raw_table_df$`Average library loans (physical) per student or faculty member` <- round(as.numeric(raw_table_df$`Total physical library circulations (books and media)`) / as.numeric(raw_table_df$`Students plus Faculty`),1)
 
+raw_table_df$Transfer <- as.numeric(raw_table_df$'Transfer-out rate - Bachelor cohort.x')
+raw_table_df$'Average federal loan' <- as.numeric(raw_table_df$'Average amount of federal student loans awarded to full-time first-time undergraduates (SFA1920)')
+raw_table_df$'Average non-federal loan' <- as.numeric(raw_table_df$'Average amount of other student loans awarded to full-time first-time undergraduates (SFA1920)')
+
+
 
 # Getting sets of colleges to compare this with
 
@@ -63,6 +68,7 @@ fields_to_compare <- c(
 	"Admission", 
 	"Yield", 
 	"First year retention", 
+	"Transfer",
 	"Graduation", 
 	"Undergraduate enrollment", 
 	"Graduate enrollment", 
@@ -76,6 +82,8 @@ fields_to_compare <- c(
 	"Undergrads per tenure-track professor",
 	
 	"Average net price-students awarded grant or scholarship aid",
+	"Average federal loan",
+	"Average non-federal loan",
 	
 	"Endowment assets per FTE",
 	"Equity ratio",
@@ -184,15 +192,19 @@ PrependDollar <- function(x) {
 	return(x)
 }
 
-for(row_index in sequence(4)) {
+for(row_index in sequence(5)) {
 	if(is.finite(as.numeric(comparison_df[row_index,1]))) {
-		comparison_df[row_index,1] <- paste0(100*as.numeric(comparison_df[row_index,1]),'%')
+		comparison_df[row_index,1] <- paste0(ifelse(rownames(comparison_df)[row_index]=="Transfer", 1, 100)*as.numeric(comparison_df[row_index,1]),'%')
 	} else {
 		comparison_df[row_index,sequence(ncol(comparison_df))] <- ""
 	}
 }
 
 comparison_df['Endowment assets per FTE',1] <- PrependDollar(comparison_df['Endowment assets per FTE',1])
+
+comparison_df['Average federal loan',1] <- PrependDollar(comparison_df['Average federal loan',1])
+comparison_df['Average non-federal loan',1] <- PrependDollar(comparison_df['Average non-federal loan',1])
+
 
 comparison_df['Average net price-students awarded grant or scholarship aid', 1] <- PrependDollar(comparison_df['Average net price-students awarded grant or scholarship aid', 1])
 
@@ -246,7 +258,7 @@ for (row_index in sequence(nrow(comparison_df))) {
 
 
 colnames(comparison_df) <- paste0('&nbsp;&nbsp;',colnames(comparison_df), '&nbsp;&nbsp;')
-comparison_df %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>%  addHtmlTableStyle(pos.caption = "bottom")%>% htmlTable::htmlTable(escape.html=TRUE, cgroup=c("School", "Percentile vs."), n.cgroup=c(1, ncol(comparison_df)-1), rgroup=c("Basic metrics", "Degrees", "Instruction", "Cost", "Financial health", 'Sources of core revenues (%)', "Misconduct on campus (per 10K students, 3yr avg)", "Library"), n.rgroup=c(6, 4, 2, 1, 2, 6, 8, 6), caption='Metrics for this school and comparison with other schools in its athletic conference (if applicable), type of school, and sector of school. The bars show the percentile of this school versus others in the category: that is, what percentage of schools this school has a higher value for this metric. A "better" metric relative to others is more purple than orange; for ones where a lower number is better (undergrads per instructor), lower percentiles are purple. For misconduct, note that there is severe underreporting of many crimes on campuses, especially sexual violence. For resources to help you or others, try [RAINN](https://www.rainn.org/); if you wish to make a report to an institution, look for its "Title IX" office.')
+comparison_df %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>%  addHtmlTableStyle(pos.caption = "bottom")%>% htmlTable::htmlTable(escape.html=TRUE, cgroup=c("School", "Percentile vs."), n.cgroup=c(1, ncol(comparison_df)-1), rgroup=c("Basic metrics", "Degrees", "Instruction", "Cost", "Financial health", 'Sources of core revenues (%)', "Misconduct on campus (per 10K students, 3yr avg)", "Library"), n.rgroup=c(7, 4, 2, 3, 2, 6, 8, 6), caption='Metrics for this school and comparison with other schools in its athletic conference (if applicable), type of school, and sector of school. The bars show the percentile of this school versus others in the category: that is, what percentage of schools this school has a higher value for this metric. A "better" metric relative to others is more purple than orange; for ones where a lower number is better (undergrads per instructor), lower percentiles are purple. For misconduct, note that there is severe underreporting of many crimes on campuses, especially sexual violence. For resources to help you or others, try [RAINN](https://www.rainn.org/); if you wish to make a report to an institution, look for its "Title IX" office.')
 
  
 ```
