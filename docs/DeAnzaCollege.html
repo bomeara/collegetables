@@ -13,7 +13,7 @@
 
 <title>De Anza College</title>
 
-<script src="institution_files/header-attrs-2.14/header-attrs.js"></script>
+<script src="institution_files/header-attrs-2.16/header-attrs.js"></script>
 <script src="institution_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="institution_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -166,11 +166,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -499,16 +503,16 @@ $(document).ready(function () {
 category this school has a higher number for the metric of interest: for
 example, a bar three-quarters of the way across means this school has a
 higher number than 75% of the other schools in that category. The more
-“purple” the better the school is relative to its peers, the more
-“yellow” the worse. On most measurements, higher is better (for example,
-the number of books per student); for some (like students per instructor
-or cost), lower is better and so lower percentiles will be more purple.
-See the <a href="about.html">about</a> page for more details on the data
-sources. I keep with the convention that a lower acceptance rate is
-better (the school is more “selective”), as this may be an honest signal
-of student demand, but one could argue that not being able to serve many
-students (and yet often charging them to apply) is actually not
-great.</p>
+“blue” the better the school is relative to its peers, the more “red”
+the worse. On most measurements, higher is better (for example, the
+number of books per student); for some (like students per instructor,
+cost, or revenue coming from tuition), lower is better and so lower
+percentiles will be more red. See the <a href="about.html">about</a>
+page for more details on the data sources. I keep with the convention
+that a lower acceptance rate is better (the school is more “selective”),
+as this may be an honest signal of student demand, but one could argue
+that not being able to serve many students (and yet often charging them
+to apply) is actually not great.</p>
 <table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
 <thead>
 <tr>
@@ -777,10 +781,10 @@ $7,685
  
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_38.png width=40 height=10>
+<img src=images/pct_bar_rev_good_38.png width=40 height=10>
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_55.png width=40 height=10>
+<img src=images/pct_bar_rev_good_55.png width=40 height=10>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -794,10 +798,10 @@ $4,846
  
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_35.png width=40 height=10>
+<img src=images/pct_bar_rev_good_35.png width=40 height=10>
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_63.png width=40 height=10>
+<img src=images/pct_bar_rev_good_63.png width=40 height=10>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -811,10 +815,10 @@ $26,913
  
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_100.png width=40 height=10>
+<img src=images/pct_bar_rev_good_100.png width=40 height=10>
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_100.png width=40 height=10>
+<img src=images/pct_bar_rev_good_100.png width=40 height=10>
 </td>
 </tr>
 <tr>
@@ -872,10 +876,10 @@ Sources of core revenues (%)
  
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_38.png width=40 height=10>
+<img src=images/pct_bar_rev_good_38.png width=40 height=10>
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_60.png width=40 height=10>
+<img src=images/pct_bar_rev_good_60.png width=40 height=10>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -906,10 +910,10 @@ Sources of core revenues (%)
  
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_8.png width=40 height=10>
+<img src=images/pct_bar_grayscale_8.png width=40 height=10>
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_8.png width=40 height=10>
+<img src=images/pct_bar_grayscale_8.png width=40 height=10>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -923,10 +927,10 @@ Sources of core revenues (%)
  
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_97.png width=40 height=10>
+<img src=images/pct_bar_grayscale_97.png width=40 height=10>
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_88.png width=40 height=10>
+<img src=images/pct_bar_grayscale_88.png width=40 height=10>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -940,10 +944,10 @@ Sources of core revenues (%)
  
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_89.png width=40 height=10>
+<img src=images/pct_bar_grayscale_89.png width=40 height=10>
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_85.png width=40 height=10>
+<img src=images/pct_bar_grayscale_85.png width=40 height=10>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -2011,7 +2015,7 @@ community college and transferring to a four year institution will
 appear on the community college data, not the four year institution’s
 data.</p>
 <div id="htmlwidget-61a6e682969cdc458bb1" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-61a6e682969cdc458bb1">{"x":{"visdat":{"ae11326f32e8":["function () ","plotlyVisDat"]},"cur_data":"ae11326f32e8","attrs":{"ae11326f32e8":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"z":{},"text":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"span":[0],"locations":["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"locationmode":"USA-states","colors":"Purples","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","scene":{"zaxis":{"title":"StudentNumbers"}},"geo":{"domain":{"x":[0,1],"y":[0,1]},"scope":"usa","projection":{"type":"albers usa"},"lakecolor":"rgba(255,255,255,1)"},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5},"title":""},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"colorbar":{"title":"Number of students","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"colorscale":[["0","rgba(252,251,253,1)"],["0.0416666666666667","rgba(248,246,250,1)"],["0.0833333333333333","rgba(243,242,248,1)"],["0.125","rgba(239,237,245,1)"],["0.166666666666667","rgba(232,231,242,1)"],["0.208333333333333","rgba(225,224,238,1)"],["0.25","rgba(218,218,235,1)"],["0.291666666666667","rgba(208,208,230,1)"],["0.333333333333333","rgba(198,199,225,1)"],["0.375","rgba(188,189,220,1)"],["0.416666666666667","rgba(178,177,213,1)"],["0.458333333333333","rgba(168,166,207,1)"],["0.5","rgba(158,154,200,1)"],["0.541666666666667","rgba(148,144,195,1)"],["0.583333333333333","rgba(138,135,191,1)"],["0.625","rgba(128,125,186,1)"],["0.666666666666667","rgba(121,110,178,1)"],["0.708333333333333","rgba(114,96,171,1)"],["0.75","rgba(106,81,163,1)"],["0.791666666666667","rgba(99,67,156,1)"],["0.833333333333333","rgba(92,54,150,1)"],["0.875","rgba(84,39,143,1)"],["0.916666666666667","rgba(77,28,137,1)"],["0.958333333333333","rgba(70,16,131,1)"],["1","rgba(63,0,125,1)"]],"showscale":true,"z":[0,0,0,0,2967,0,0,0,2,0,4,0,4,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0,1,0,0,0,0,2,2,0,1,0,0,0,0],"text":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"locations":["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"locationmode":"USA-states","type":"choropleth","marker":{"line":{"color":"rgba(31,119,180,1)","width":0}},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-61a6e682969cdc458bb1">{"x":{"visdat":{"10050f96f8e1":["function () ","plotlyVisDat"]},"cur_data":"10050f96f8e1","attrs":{"10050f96f8e1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"z":{},"text":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"span":[0],"locations":["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"locationmode":"USA-states","colors":"Purples","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","geo":{"domain":{"x":[0,1],"y":[0,1]},"scope":"usa","projection":{"type":"albers usa"},"lakecolor":"rgba(255,255,255,1)"},"title":"Number of enrolled students from each state","showlegend":false,"scene":{"zaxis":{"title":"StudentNumbers"}},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false,"displaylogo":false},"data":[{"colorbar":{"title":"StudentNumbers","ticklen":2},"colorscale":[["0","rgba(252,251,253,1)"],["0.0416666666666667","rgba(248,246,250,1)"],["0.0833333333333333","rgba(243,242,248,1)"],["0.125","rgba(239,237,245,1)"],["0.166666666666667","rgba(232,231,242,1)"],["0.208333333333333","rgba(225,224,238,1)"],["0.25","rgba(218,218,235,1)"],["0.291666666666667","rgba(208,208,230,1)"],["0.333333333333333","rgba(198,199,225,1)"],["0.375","rgba(188,189,220,1)"],["0.416666666666667","rgba(178,177,213,1)"],["0.458333333333333","rgba(168,166,207,1)"],["0.5","rgba(158,154,200,1)"],["0.541666666666667","rgba(148,144,195,1)"],["0.583333333333333","rgba(138,135,191,1)"],["0.625","rgba(128,125,186,1)"],["0.666666666666667","rgba(121,110,178,1)"],["0.708333333333333","rgba(114,96,171,1)"],["0.75","rgba(106,81,163,1)"],["0.791666666666667","rgba(99,67,156,1)"],["0.833333333333333","rgba(92,54,150,1)"],["0.875","rgba(84,39,143,1)"],["0.916666666666667","rgba(77,28,137,1)"],["0.958333333333333","rgba(70,16,131,1)"],["1","rgba(63,0,125,1)"]],"showscale":false,"z":[0,0,0,0,2967,0,0,0,2,0,4,0,4,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0,1,0,0,0,0,2,2,0,1,0,0,0,0],"text":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"locations":["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"locationmode":"USA-states","type":"choropleth","marker":{"line":{"color":"rgba(31,119,180,1)","width":0},"showscale":false},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 <p>This map is the number of students attending from each state
 attending as freshmen divided by the number of 18 year olds in each
 state, then converted to a percentage. Not all freshmen are 18 years
@@ -2020,7 +2024,7 @@ each can attend college for the first time only once. This is just a way
 to get an estimate of how much of each state’s eligible population
 starts college at this school.</p>
 <div id="htmlwidget-11c698c9d4e48c8d2ef3" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-11c698c9d4e48c8d2ef3">{"x":{"visdat":{"ae1140c9cbe7":["function () ","plotlyVisDat"]},"cur_data":"ae1140c9cbe7","attrs":{"ae1140c9cbe7":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"z":{},"text":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"span":[0],"locations":["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"locationmode":"USA-states","colors":"Purples","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","scene":{"zaxis":{"title":"StudentPercentage"}},"geo":{"domain":{"x":[0,1],"y":[0,1]},"scope":"usa","projection":{"type":"albers usa"},"lakecolor":"rgba(255,255,255,1)"},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5},"title":"Rough percentage of potential students in each state attending this college"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"colorbar":{"title":"Percent","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"colorscale":[["0","rgba(252,251,253,1)"],["0.0416666666666667","rgba(248,246,250,1)"],["0.0833333333333333","rgba(243,242,248,1)"],["0.125","rgba(239,237,245,1)"],["0.166666666666667","rgba(232,231,242,1)"],["0.208333333333333","rgba(225,224,238,1)"],["0.25","rgba(218,218,235,1)"],["0.291666666666667","rgba(208,208,230,1)"],["0.333333333333333","rgba(198,199,225,1)"],["0.375","rgba(188,189,220,1)"],["0.416666666666667","rgba(178,177,213,1)"],["0.458333333333333","rgba(168,166,207,1)"],["0.5","rgba(158,154,200,1)"],["0.541666666666667","rgba(148,144,195,1)"],["0.583333333333333","rgba(138,135,191,1)"],["0.625","rgba(128,125,186,1)"],["0.666666666666667","rgba(121,110,178,1)"],["0.708333333333333","rgba(114,96,171,1)"],["0.75","rgba(106,81,163,1)"],["0.791666666666667","rgba(99,67,156,1)"],["0.833333333333333","rgba(92,54,150,1)"],["0.875","rgba(84,39,143,1)"],["0.916666666666667","rgba(77,28,137,1)"],["0.958333333333333","rgba(70,16,131,1)"],["1","rgba(63,0,125,1)"]],"showscale":true,"z":[0,0,0,0,0.574712643678161,0,0,0,0.000826029852718877,0,0.0267094017094017,0,0.00250438266967193,0,0,0,0,0.00172366243794815,0,0,0,0,0,0,0,0,0,0,0,0,0,0.000408138277248332,0.00141272868545596,0,0,0,0,0.000600337389612962,0,0,0,0,0.000498365361613906,0.00404367165386171,0,0.000914168700692026,0,0,0,0],"text":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"locations":["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"locationmode":"USA-states","type":"choropleth","marker":{"line":{"color":"rgba(31,119,180,1)","width":0}},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-11c698c9d4e48c8d2ef3">{"x":{"visdat":{"100507fa63c82":["function () ","plotlyVisDat"]},"cur_data":"100507fa63c82","attrs":{"100507fa63c82":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"z":{},"text":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"span":[0],"locations":["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"locationmode":"USA-states","colors":"Purples","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","scene":{"zaxis":{"title":"StudentPercentage"}},"geo":{"domain":{"x":[0,1],"y":[0,1]},"scope":"usa","projection":{"type":"albers usa"},"lakecolor":"rgba(255,255,255,1)"},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5},"title":"Rough percentage of potential students in each state attending this college"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false,"displaylogo":false},"data":[{"colorbar":{"title":"Percent","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"colorscale":[["0","rgba(252,251,253,1)"],["0.0416666666666667","rgba(248,246,250,1)"],["0.0833333333333333","rgba(243,242,248,1)"],["0.125","rgba(239,237,245,1)"],["0.166666666666667","rgba(232,231,242,1)"],["0.208333333333333","rgba(225,224,238,1)"],["0.25","rgba(218,218,235,1)"],["0.291666666666667","rgba(208,208,230,1)"],["0.333333333333333","rgba(198,199,225,1)"],["0.375","rgba(188,189,220,1)"],["0.416666666666667","rgba(178,177,213,1)"],["0.458333333333333","rgba(168,166,207,1)"],["0.5","rgba(158,154,200,1)"],["0.541666666666667","rgba(148,144,195,1)"],["0.583333333333333","rgba(138,135,191,1)"],["0.625","rgba(128,125,186,1)"],["0.666666666666667","rgba(121,110,178,1)"],["0.708333333333333","rgba(114,96,171,1)"],["0.75","rgba(106,81,163,1)"],["0.791666666666667","rgba(99,67,156,1)"],["0.833333333333333","rgba(92,54,150,1)"],["0.875","rgba(84,39,143,1)"],["0.916666666666667","rgba(77,28,137,1)"],["0.958333333333333","rgba(70,16,131,1)"],["1","rgba(63,0,125,1)"]],"showscale":false,"z":[0,0,0,0,0.574712643678161,0,0,0,0.000826029852718877,0,0.0267094017094017,0,0.00250438266967193,0,0,0,0,0.00172366243794815,0,0,0,0,0,0,0,0,0,0,0,0,0,0.000408138277248332,0.00141272868545596,0,0,0,0,0.000600337389612962,0,0,0,0,0.000498365361613906,0.00404367165386171,0,0.000914168700692026,0,0,0,0],"text":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"locations":["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"locationmode":"USA-states","type":"choropleth","marker":{"line":{"color":"rgba(31,119,180,1)","width":0},"showscale":false},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 
 

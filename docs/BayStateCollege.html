@@ -13,7 +13,7 @@
 
 <title>Bay State College</title>
 
-<script src="institution_files/header-attrs-2.14/header-attrs.js"></script>
+<script src="institution_files/header-attrs-2.16/header-attrs.js"></script>
 <script src="institution_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="institution_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -160,11 +160,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -505,16 +509,16 @@ publications, or research findings.</p>
 category this school has a higher number for the metric of interest: for
 example, a bar three-quarters of the way across means this school has a
 higher number than 75% of the other schools in that category. The more
-“purple” the better the school is relative to its peers, the more
-“yellow” the worse. On most measurements, higher is better (for example,
-the number of books per student); for some (like students per instructor
-or cost), lower is better and so lower percentiles will be more purple.
-See the <a href="about.html">about</a> page for more details on the data
-sources. I keep with the convention that a lower acceptance rate is
-better (the school is more “selective”), as this may be an honest signal
-of student demand, but one could argue that not being able to serve many
-students (and yet often charging them to apply) is actually not
-great.</p>
+“blue” the better the school is relative to its peers, the more “red”
+the worse. On most measurements, higher is better (for example, the
+number of books per student); for some (like students per instructor,
+cost, or revenue coming from tuition), lower is better and so lower
+percentiles will be more red. See the <a href="about.html">about</a>
+page for more details on the data sources. I keep with the convention
+that a lower acceptance rate is better (the school is more “selective”),
+as this may be an honest signal of student demand, but one could argue
+that not being able to serve many students (and yet often charging them
+to apply) is actually not great.</p>
 <table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
 <thead>
 <tr>
@@ -797,10 +801,10 @@ $28,306
  
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_95.png width=40 height=10>
+<img src=images/pct_bar_rev_good_95.png width=40 height=10>
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_76.png width=40 height=10>
+<img src=images/pct_bar_rev_good_76.png width=40 height=10>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -814,10 +818,10 @@ $5,417
  
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_44.png width=40 height=10>
+<img src=images/pct_bar_rev_good_44.png width=40 height=10>
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_15.png width=40 height=10>
+<img src=images/pct_bar_rev_good_15.png width=40 height=10>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -831,10 +835,10 @@ $19,092
  
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_95.png width=40 height=10>
+<img src=images/pct_bar_rev_good_95.png width=40 height=10>
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_83.png width=40 height=10>
+<img src=images/pct_bar_rev_good_83.png width=40 height=10>
 </td>
 </tr>
 <tr>
@@ -889,10 +893,10 @@ Sources of core revenues (%)
  
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_100.png width=40 height=10>
+<img src=images/pct_bar_rev_good_100.png width=40 height=10>
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_100.png width=40 height=10>
+<img src=images/pct_bar_rev_good_100.png width=40 height=10>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">
@@ -951,10 +955,10 @@ Sources of core revenues (%)
  
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_25.png width=40 height=10>
+<img src=images/pct_bar_grayscale_25.png width=40 height=10>
 </td>
 <td style="background-color: #f7f7f7; text-align: center;">
-<img src=images/pct_bar_92.png width=40 height=10>
+<img src=images/pct_bar_grayscale_92.png width=40 height=10>
 </td>
 </tr>
 <tr style="background-color: #f7f7f7;">

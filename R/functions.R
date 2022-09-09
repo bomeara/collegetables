@@ -407,7 +407,7 @@ RenderSparklines <- function(spark_height=5, spark_width=40) {
 	percentages <- seq(from=0, to=100, by=1)
 	for (pct_index in seq_along(percentages)) {
 		pct <- percentages[pct_index]
-		p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(pct, 100-pct), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", GetColorFromPercentile(pct))) 
+		p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(pct, 100-pct), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", GetColorFromPercentile(pct))) + theme(panel.background=element_rect(colour=GetColorFromPercentile(pct)))
 		ggsave(
   			plot = p,
   			filename = paste0("docs/images/pct_bar_", pct, ".png"),
@@ -420,7 +420,7 @@ RenderSparklines <- function(spark_height=5, spark_width=40) {
 	
 	for (pct_index in seq_along(percentages)) {
 		pct <- percentages[pct_index]
-		p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(pct, 100-pct), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", GetColorFromPercentile(pct, direction=1))) 
+		p <- ggplot(data=data.frame(focal=c(TRUE, FALSE), percent=c(pct, 100-pct), x=c(1,1)), aes(fill=focal, y=percent, x=x)) + geom_bar(position="fill", stat="identity") +  theme_void() + theme(legend.position="none") + coord_flip() + scale_fill_manual(values=c("darkgray", GetColorFromPercentile(pct, direction=1)))  + theme(panel.background=element_rect(colour=GetColorFromPercentile(pct, direction=1)))
 		ggsave(
   			plot = p,
   			filename = paste0("docs/images/pct_bar_rev_good_", pct, ".png"),
@@ -862,6 +862,23 @@ AppendCrime <- function(college_data) {
 }
 
 GetColorFromPercentile <- function(x, direction=-1) {
+	x <- as.integer(round(x))
+	begin <- "red"
+	end <- "blue"
+	if(direction==1) {
+		begin <- "blue"
+		end <- "red"
+	}
+	colorVector <- colorRampPalette(c(begin, end))(101)
+	colorchoice <- colorVector[x+1]
+	if(nchar(colorchoice)!=7) {
+		colorchoice <- "black"
+	}
+	return(colorchoice)
+}
+
+
+GetColorFromPercentileYellowPurple <- function(x, direction=-1) {
 	x <- as.integer(round(x))
 	begin <- 0.1
 	end <- 1
