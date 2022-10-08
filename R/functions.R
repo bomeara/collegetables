@@ -1,3 +1,134 @@
+GetIPEDSDirectly <- function(years=c(2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011)) {
+  # Get IPEDS data directly from the IPEDS website
+  # Input: years to download
+  # Output: array with IPEDS data
+  # Replace 'zzzz' with the year
+  # Replace 'xxyy' with the last two digits of this year and the previous year: 1920 for 2019-20, 1819 for 2018-19, etc.
+  # Source: https://nces.ed.gov/ipeds/datacenter/DataFiles.aspx?year=2018&surveyNumber=-1 
+  # I am using the category and then the first relevant word or so of the description (but things like "gender" might actually be "gender, ethnicity, and age")
+  IPEDS_names <- c(
+	Institutional_directory = "HDzzzz",
+	Institutional_offerings = "ICzzzz",
+	Institutional_charges = "ICzzzz_AY",
+	Institutional_charges_vocational = "ICzzzz_PY",
+	Twelve_month_headcount = "EFFYzzzz", 
+	Twelve_month_instructional_activity = "EFIAzzzz",
+	Admissions = "ADMzzzz",
+	Enrollment_race = "EFzzzzA",
+	Enrollment_major = "EFzzzzCP",
+	Enrollment_age = "EFzzzzB",
+	Enrollment_residence = "EFzzzzC",
+	Enrollment_total = "EFzzzzD",
+	Enrollment_distance = "EFzzzzA_Dist",
+	Completions_program = "Czzzz_A",
+	Completions_race = "Czzzz_B",
+	Completions_age = "Czzzz_C",
+	Competions_distance = "CzzzzDEP",
+	Instructional_gender = "SALzzzz_IS",
+	Instructional_noninstructional = "SALzzzz_NIS",
+	Staff_category = "Szzzz_OC",
+	Staff_tenure_status = "Szzzz_SIS",
+	Staff_gender = "Szzzz_IS",
+	Staff_new = "Szzzz_NH",
+	Employees_position = "EAPzzzz",
+	Finance_GASB = "Fxxyy_F1A",
+	Finance_FASB = "Fxxyy_F2",
+	Finance_ForProfits = "Fxxyy_F3",
+	Student_aid = "SFAxxyy",
+	Student_military = "SFAVxxyy", 
+	Graduation_FourYears = "GRzzzz",
+	Graduation_TwoYears = "GRzzzz_L2",
+	Graduation_Pell = "GRzzzz_PELL_SSL",
+	Outcome_levels = "OMzzzz",
+	Academic_library = "ALzzzz"
+  )	
+  all_results <- list()
+  for (year_index in seq_along(years)) {
+	zzzz <- years[year_index]
+	xxyy <- paste0(-1+as.numeric(substr(zzzz, 3, 4)), substr(zzzz, 3, 4))
+	IPEDS_names_local <- IPEDS_names
+	IPEDS_names_local <- gsub("zzzz", zzzz, IPEDS_names_local)
+	IPEDS_names_local <- gsub("xxyy", xxyy, IPEDS_names_local)
+	focal_year_df <- data.frame()
+	for (IPEDS_index in seq_along(IPEDS_names_local)) {
+		try({
+			# Get the file with raw data
+			file_to_get <- paste0('https://nces.ed.gov/ipeds/datacenter/data/', IPEDS_names_local[IPEDS_index],'.zip')
+			temp <- tempfile()
+			download.file(file_to_get,temp)
+			unzip(temp, exdir = file.path(tempdir(), IPEDS_names_local[IPEDS_index]))
+			potential_files <- list.files(file.path(tempdir(), IPEDS_names_local[IPEDS_index]), pattern=".*csv", full.names = TRUE)
+			file_to_read <- potential_files[1]
+			if (length(potential_files) > 1) {
+				for (potential_file_index in seq_along(potential_files)) {
+					if (grepl("rv", potential_files[potential_file_index])) { # revised!
+						file_to_read <- potential_files[potential_file_index]
+					}
+				}
+			}
+			local_data <- readr::read_csv(file_to_read, col_types="c", col_names=TRUE)
+			unlink(temp)
+			
+			# Get the dictionary converting codes to meaning
+			dictionary_to_get <- paste0('https://nces.ed.gov/ipeds/datacenter/data/', IPEDS_names_local[IPEDS_index],'_Dict.zip')
+			temp2 <- tempfile()
+			
+			download.file(dictionary_to_get,temp2)
+			unzip(temp2, exdir = file.path(tempdir(), IPEDS_names_local[IPEDS_index]))
+			potential_files <- list.files(file.path(tempdir(), IPEDS_names_local[IPEDS_index]), pattern=".*xlsx", full.names = TRUE)
+			dictionary_to_read <- potential_files[1]
+			dictionary_frequencies <- NULL
+			dictionary_variables <- NULL
+			try({dictionary_frequencies <- readxl::read_xlsx(dictionary_to_read, sheet = "Frequencies")})
+			dictionary_variables <- readxl::read_xlsx(dictionary_to_read, sheet = "varlist")
+			unlink(temp2)
+			
+			# Ok, now we have the raw data and the dictionary. Let's convert the raw data to be more sensible
+			try({
+				unique_varnames_to_encode <- unique(dictionary_frequencies$varname)
+				for (varname_index in seq_along(unique_varnames_to_encode)) {
+					focal_freq <- subset(dictionary_frequencies, varname == unique_varnames_to_encode[varname_index])
+					local_data[, unique_varnames_to_encode[varname_index]] <- focal_freq$valuelabel[match(local_data[, unique_varnames_to_encode[varname_index]],focal_freq$codevalue)]
+				}
+			})
+			for (col_index in sequence(ncol(local_data))) {
+				matching <- match(colnames(local_data)[col_index],dictionary_variables$varname)
+				if(!is.na(matching)) {
+					colnames(local_data)[col_index] <- paste0(colnames(local_data)[col_index], " ", dictionary_variables$varTitle[matching])
+				}
+			}
+			if(IPEDS_index==1) {
+				focal_year_df <- local_data
+			} else {
+				if(max(table(local_data[,"UNITID Unique identification number of the institution"]))>1) {
+					# IPEDS is weird. Sometimes they have multiple rows for the same institution. So we split them up based on the factors used (the second column)
+					unique_second_elements <- unique(local_data[,2])
+					wider_local_data <- data.frame() 
+					for (unique_second_element_index in seq_along(unique_second_elements)) {
+						local_data_slice <- base::subset(local_data, local_data[,2] %in% unique_second_elements[unique_second_element_index])
+						local_data_slice <- local_data_slice[,-2]
+						colnames(local_data_slice)[2:ncol(local_data_slice)] <- paste0(colnames(local_data_slice)[2:ncol(local_data_slice)], " ", unique_second_elements[unique_second_element_index])
+						if(unique_second_element_index==1) {
+							wider_local_data <- local_data_slice
+						} else {
+							wider_local_data <- dplyr::full_join(wider_local_data, local_data_slice, by="UNITID Unique identification number of the institution")
+						}
+					}	
+				} else {
+					focal_year_df <- dplyr::full_join(focal_year_df, local_data, by = "UNITID Unique identification number of the institution")
+					print(IPEDS_index)
+					print(dim(focal_year_df))
+				}
+			}
+		})
+  	}
+	all_results[[year_index]] <- focal_year_df[,grepl(" ", colnames(focal_year_df))] #names that weren't in the dictionary are dropped
+	names(all_results)[year_index] <- years[year_index]
+  }
+  return(all_results)
+} 
+
+
 AggregateIPEDS <- function() {
 	raw_data <- mutate_all(read_csv("data/ipeds_Data_7-15-2022---124.csv", col_types="c"), as.character)
 	traits <- mutate_all(read_csv("data/ipeds_ValueLabels_7-15-2022---124.csv", col_types="c"), as.character)
