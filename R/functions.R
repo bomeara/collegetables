@@ -1,4 +1,4 @@
-GetIPEDSDirectly <- function(years=c(2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011)) {
+GetIPEDSDirectly <- function(years=c(2021, 2020, 2018, 2016, 2014, 2012)) {
   # Get IPEDS data directly from the IPEDS website
   # Input: years to download
   # Output: array with IPEDS data
@@ -19,11 +19,11 @@ GetIPEDSDirectly <- function(years=c(2020, 2019, 2018, 2017, 2016, 2015, 2014, 2
 	Enrollment_age = "EFzzzzB",
 	Enrollment_residence = "EFzzzzC",
 	Enrollment_total = "EFzzzzD",
-	Enrollment_distance = "EFzzzzA_Dist",
+	#Enrollment_distance = "EFzzzzA_Dist",
 	Completions_program = "Czzzz_A",
 	Completions_race = "Czzzz_B",
 	Completions_age = "Czzzz_C",
-	Competions_distance = "CzzzzDEP",
+	#Competions_distance = "CzzzzDEP",
 	Instructional_gender = "SALzzzz_IS",
 	Instructional_noninstructional = "SALzzzz_NIS",
 	Staff_category = "Szzzz_OC",
@@ -66,8 +66,10 @@ GetIPEDSDirectly <- function(years=c(2020, 2019, 2018, 2017, 2016, 2015, 2014, 2
 					}
 				}
 			}
-			local_data <- readr::read_csv(file_to_read, col_types="c", col_names=TRUE)
+			local_data <- as.data.frame(readr::read_csv(file_to_read, col_types="c", col_names=TRUE))
 			unlink(temp)
+			print(paste0("Read ", IPEDS_names_local[IPEDS_index], " for ", zzzz, ". Its size is:"))
+			print(dim(local_data))
 			
 			# Get the dictionary converting codes to meaning
 			dictionary_to_get <- paste0('https://nces.ed.gov/ipeds/datacenter/data/', IPEDS_names_local[IPEDS_index],'_Dict.zip')
@@ -88,7 +90,7 @@ GetIPEDSDirectly <- function(years=c(2020, 2019, 2018, 2017, 2016, 2015, 2014, 2
 				unique_varnames_to_encode <- unique(dictionary_frequencies$varname)
 				for (varname_index in seq_along(unique_varnames_to_encode)) {
 					focal_freq <- subset(dictionary_frequencies, varname == unique_varnames_to_encode[varname_index])
-					local_data[, unique_varnames_to_encode[varname_index]] <- focal_freq$valuelabel[match(local_data[, unique_varnames_to_encode[varname_index]],focal_freq$codevalue)]
+					local_data[, unique_varnames_to_encode[varname_index]] <- focal_freq$valuelabel[match(c(as.character(local_data[, unique_varnames_to_encode[varname_index]])),as.character(focal_freq$codevalue))]
 				}
 			})
 			for (col_index in sequence(ncol(local_data))) {
@@ -97,6 +99,9 @@ GetIPEDSDirectly <- function(years=c(2020, 2019, 2018, 2017, 2016, 2015, 2014, 2
 					colnames(local_data)[col_index] <- paste0(colnames(local_data)[col_index], " ", dictionary_variables$varTitle[matching])
 				}
 			}
+			local_data <- local_data[colSums(!is.na(local_data)) > 0]
+			local_data <- local_data[,grepl(" ", colnames(local_data))]
+
 			if(IPEDS_index==1) {
 				focal_year_df <- local_data
 			} else {
@@ -114,20 +119,45 @@ GetIPEDSDirectly <- function(years=c(2020, 2019, 2018, 2017, 2016, 2015, 2014, 2
 							wider_local_data <- dplyr::full_join(wider_local_data, local_data_slice, by="UNITID Unique identification number of the institution")
 						}
 					}	
+					focal_year_df <- dplyr::full_join(focal_year_df, wider_local_data, by = "UNITID Unique identification number of the institution")
+					print(paste("Doing wider join for", names(IPEDS_names_local)[IPEDS_index]))
+					print(IPEDS_index)
+					print(dim(focal_year_df))
 				} else {
 					focal_year_df <- dplyr::full_join(focal_year_df, local_data, by = "UNITID Unique identification number of the institution")
+					print(paste("Doing normal join for", names(IPEDS_names_local)[IPEDS_index]))
 					print(IPEDS_index)
 					print(dim(focal_year_df))
 				}
 			}
+			save(focal_year_df, file=paste0("~/Downloads/focal_year_df_", zzzz, ".RData"))
+
 		})
   	}
 	all_results[[year_index]] <- focal_year_df[,grepl(" ", colnames(focal_year_df))] #names that weren't in the dictionary are dropped
+	save(all_results, file = paste0("~/Downloads/IPEDS_all.RData"))
 	names(all_results)[year_index] <- years[year_index]
   }
   return(all_results)
 } 
 
+AggregateDirectIPEDS <- function(all_ipeds) {
+	ipeds_merged <- data.frame()
+	for (year_index in seq_along(all_ipeds)) {
+		if(year_index==1) {
+			ipeds_merged <- mutate_all(all_ipeds[[year_index]], as.character)
+			ipeds_merged$year <- names(all_ipeds)[year_index]
+		} else {
+			ipeds_local <- mutate_all(all_ipeds[[year_index]], as.character)
+			if(nrow(ipeds_local)>0) {
+				ipeds_local$year <- names(all_ipeds)[year_index]
+				ipeds_merged <- dplyr::bind_rows(ipeds_merged, ipeds_local)
+			}
+		}
+	}	
+	ipeds_merged <- ipeds_merged[colSums(!is.na(ipeds_merged)) > 0]
+	return(ipeds_merged)
+}
 
 AggregateIPEDS <- function() {
 	raw_data <- mutate_all(read_csv("data/ipeds_Data_7-15-2022---124.csv", col_types="c"), as.character)
