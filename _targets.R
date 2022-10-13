@@ -23,6 +23,7 @@ tar_invalidate(state_pages)
 
 # End this file with a list of target objects.
 list(
+  tar_target(ipeds_directly, AggregateDirectIPEDS(GetIPEDSDirectly())),
   tar_target(college_data_ipeds, AggregateIPEDS()),
   tar_target(college_data_prebioclim, AppendContraceptiveSupport(AppendMarriageRespect(AppendGunLaws(AppendBiome(AppendAAUPCensure(AppendAbortion(AppendMisconduct(AppendVaccination(FilterForDegreeGranting(college_data_ipeds)))))))))),
   tar_target(college_data, AppendBioclim(college_data_prebioclim)),
