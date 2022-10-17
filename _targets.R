@@ -15,15 +15,26 @@ source("_packages.R")
 options(timeout=24*60*60) # let things download for at least 24 hours (important while on slow internet connection)
 options(download.file.method = "libcurl")
 
-tar_invalidate(pages)
-tar_invalidate(index)
-tar_invalidate(about)
-tar_invalidate(sparklines)
-tar_invalidate(state_pages)
+# tar_invalidate(pages)
+# tar_invalidate(index)
+# tar_invalidate(about)
+# tar_invalidate(sparklines)
+# tar_invalidate(state_pages)
 
 # End this file with a list of target objects.
 list(
-  tar_target(ipeds_directly, AggregateDirectIPEDS(GetIPEDSDirectly())),
+ tar_target(ipeds_directly, GetIPEDSDirectlyTry2()),
+#  tar_target(ipeds_2021, GetIPEDSDirectly("2021")),
+#  tar_target(ipeds_2020, GetIPEDSDirectly("2020")),
+#  tar_target(ipeds_2019, GetIPEDSDirectly("2019")),
+#  tar_target(ipeds_2018, GetIPEDSDirectly("2018")),
+#  tar_target(ipeds_2017, GetIPEDSDirectly("2017")),
+#  tar_target(ipeds_2016, GetIPEDSDirectly("2016")),
+#  tar_target(ipeds_2015, GetIPEDSDirectly("2015")),
+#  tar_target(ipeds_2014, GetIPEDSDirectly("2014")),
+#  tar_target(ipeds_2013, GetIPEDSDirectly("2013")),
+#  tar_target(ipeds_directly_aggregated, c(ipeds_2021, ipeds_2020, ipeds_2019, ipeds_2018, ipeds_2017, ipeds_2016, ipeds_2015, ipeds_2014, ipeds_2013)),
+#  tar_target(ipeds_directly, AggregateDirectIPEDS(ipeds_directly_aggregated)),
   tar_target(college_data_ipeds, AggregateIPEDS()),
   tar_target(college_data_prebioclim, AppendContraceptiveSupport(AppendMarriageRespect(AppendGunLaws(AppendBiome(AppendAAUPCensure(AppendAbortion(AppendMisconduct(AppendVaccination(FilterForDegreeGranting(college_data_ipeds)))))))))),
   tar_target(college_data, AppendBioclim(college_data_prebioclim)),
