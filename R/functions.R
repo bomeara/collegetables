@@ -158,7 +158,7 @@ GetIPEDSDirectly <- function(years=c(2021, 2020, 2018, 2016, 2014, 2012), IPEDS_
   return(all_results)
 } 
 
-GetIPEDSDirectlyTry2 <- function(years=2021:2001, IPEDS_names = GetIPEDSNames()) {
+GetIPEDSDirectlyTry2 <- function(years=2021:2010, IPEDS_names = GetIPEDSNames()) {
 	print("Starting GetIPEDSDirectlyTry2")
 	finished_downloads <- c()
   # Get IPEDS data directly from the IPEDS website
@@ -277,11 +277,27 @@ GetIPEDSDirectlyTry2 <- function(years=2021:2001, IPEDS_names = GetIPEDSNames())
 			} 
 			#print(object.size(x=lapply(ls(), get)), units="Gb")
 			colnames(local_data)[-1] <- paste0(IPEDS_names[IPEDS_index], " ", colnames(local_data)[-1])
+			
+			# colnames(local_data) <- gsub(zzzz, "CurrentYear", colnames(local_data))
+			# colnames(local_data) <- gsub(as.numeric(zzzz)-1, "PreviousYear", colnames(local_data))
+			# colnames(local_data) <- gsub(as.numeric(zzzz)-2, "TwoYearsAgo", colnames(local_data))
+			
+			# LastYear_ThisYear <- paste0(as.numeric(zzzz)-1, '-', stringr::str_pad(-1+as.numeric(substr(zzzz, 3, 4)), 2, pad="0"))
+			
+			# colnames(local_data) <- gsub(LastYear_ThisYear, "LastYear_ThisYear", colnames(local_data))
+
+			# ThisYear_NextYear <- paste0(as.numeric(zzzz), '-', stringr::str_pad(1+as.numeric(substr(zzzz, 3, 4)), 2, pad="0"))
+
+
+			# colnames(local_data) <- gsub(ThisYear_NextYear, "ThisYear_NextYear", colnames(local_data))
+						
+			colnames(local_data)[grepl('IPEDS Year', colnames(local_data))] <- 'IPEDS Year'
+			
 			local_data <- mutate_all(local_data, as.character)
 			new_top_row <- local_data[1,]
 			new_top_row[1,] <- rep("z", ncol(new_top_row)) # so when we load things with arrow later it won't fail if there's a shorter initial row
 			print(object.size(local_data), units="Mb")
-			write.csv(rbind(new_top_row, local_data), paste0("data/IPEDS_", IPEDS_names[IPEDS_index], "_", dimension, "_", zzzz, ".csv"))
+			write.csv(rbind(new_top_row, local_data), paste0("data/IPEDS_", IPEDS_names[IPEDS_index], "_", dimension, "_", zzzz, ".csv"), row.names=FALSE)
 			finished_downloads <- append(finished_downloads, paste0("data/IPEDS_", IPEDS_names[IPEDS_index], "_", dimension, "_", zzzz, ".csv"))
 			rm(local_data)
 			
@@ -293,25 +309,109 @@ GetIPEDSDirectlyTry2 <- function(years=2021:2001, IPEDS_names = GetIPEDSNames())
   return(finished_downloads)
 } 
 
-AggregateDirectIPEDS <- function(all_ipeds) {
-	ipeds_merged <- data.frame()
-	for (year_index in seq_along(all_ipeds)) {
-		print(year_index)
-		if(year_index==1) {
-			ipeds_merged <- mutate_all(all_ipeds[[year_index]], as.character)
-			ipeds_merged$year <- names(all_ipeds)[year_index]
-		} else {
-			ipeds_local <- mutate_all(all_ipeds[[year_index]], as.character)
-			if(nrow(ipeds_local)>0) {
-				ipeds_local$year <- names(all_ipeds)[year_index]
-				ipeds_merged <- dplyr::bind_rows(ipeds_merged, ipeds_local)
-			}
+
+
+AggregateDirectIPEDSDirect <- function(ipeds_directly, IPEDS_names = GetIPEDSNames()) {
+	try(file.remove("data/db_IPEDS.sqlite"))
+	db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
+	ipeds_directly_normal <- ipeds_directly[grepl("normal", ipeds_directly)]
+	ipeds_directly_wide <- ipeds_directly[grepl("wide", ipeds_directly)]
+	working_files <- c()
+	for (ipeds_base_index in seq_along(IPEDS_names)) {
+		ipeds_directly_normal_base <- ipeds_directly_normal[grepl(paste0(IPEDS_names[ipeds_base_index], "_normal"), ipeds_directly_normal)]
+		ipeds_directly_wide_base <- ipeds_directly_wide[grepl(paste0(IPEDS_names[ipeds_base_index], "_wide"), ipeds_directly_wide)]
+		ipeds_all_base <- c(ipeds_directly_wide_base, ipeds_directly_normal_base)
+		local_df <- data.frame()
+		print(paste0(IPEDS_names[ipeds_base_index]))
+		
+		for (ipeds_directly_all_index in seq_along(ipeds_all_base)) {
+			try({
+				print(ipeds_all_base[ipeds_directly_all_index])
+				#local_data <- arrow::read_csv_arrow(ipeds_directly_normal[ipeds_directly_all_index],  col_names=TRUE)
+				local_data <- read.csv(ipeds_all_base[ipeds_directly_all_index], stringsAsFactors=FALSE)
+
+
+				if(ipeds_directly_all_index==1) {
+					local_df <- local_data
+				} else {
+
+					#local_df <- full_join(local_df, local_data)
+					local_df <- dplyr::bind_rows(local_df, local_data)
+				}
+				gc()
+				print(dim(local_df))
+				print(object.size(local_df), units="Mb")
+				#print(tail(colnames(local_df)))
+				#arrow::write_dataset(ipeds_merged, path="data", format="csv", existing_data_behavior="overwrite")
+				file_output <- paste0("data/MERGED_", names(IPEDS_names)[ipeds_base_index], ".csv")
+				write.csv(local_df, file=file_output, row.names=FALSE)
+				working_files <- c(working_files, file_output)
+			})
 		}
-	}	
-	#ipeds_merged <- ipeds_merged[colSums(!is.na(ipeds_merged)) > 0]
-	return(ipeds_merged)
+		if(nrow(local_df)>0) {
+			try({
+				dbWriteTable(db,  names(IPEDS_names)[ipeds_base_index], local_df, overwrite=TRUE)
+			})
+		}
+	}
+	dbDisconnect(db)
+	return(unique(working_files))
 }
 
+AggregateForOneInstitution <- function(institution_id, db) {
+	institutional_directory <- tbl(db, "Institutional_directory") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	
+	# Enrollment
+	
+	twelve_month_headcount <- tbl(db, "Twelve_month_headcount") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	
+	twelve_month_headcount_detail <- twelve_month_headcount %>% dplyr::filter(!is.na(`EFFYzzzz.EFFYALEV.Level.and.degree.certificate.seeking.status.of.student`)) %>% dplyr::filter(`EFFYzzzz.EFFYALEV.Level.and.degree.certificate.seeking.status.of.student` %in% c('All students total', 'All students, Undergraduate total', 'Full-time students, Undergraduate total' ))
+	
+	twelve_month_headcount_vague <- twelve_month_headcount %>% dplyr::filter(is.na(`EFFYzzzz.EFFYALEV.Level.and.degree.certificate.seeking.status.of.student`))
+	
+	twelve_month_headcount_merged <- dplyr::bind_rows(twelve_month_headcount_detail, twelve_month_headcount_vague)
+
+	last_col_to_include <- which(grepl("IPEDS.Year", colnames(twelve_month_headcount_merged)))
+	
+	twelve_month_headcount_merged <- twelve_month_headcount_merged[,1:last_col_to_include]
+	
+	colnames(twelve_month_headcount_merged) <- gsub("EFFYzzzz\\.[A-Z0-9]+\\.", "", colnames(twelve_month_headcount_merged))
+	
+	twelve_month_headcount_merged$`Original.level.of.study.on.survey.form`[which(twelve_month_headcount_merged$`Level.and.degree.certificate.seeking.status.of.student` == "Full-time students, Undergraduate total")] <- "Undergraduate Full-time"
+	 
+	twelve_month_headcount_merged <- twelve_month_headcount_merged %>% dplyr::select(-c(`Level.and.degree.certificate.seeking.status.of.student`, `Undergraduate.or.graduate.level.of.student`)) %>% dplyr::rename("Student.level" = `Original.level.of.study.on.survey.form` ) %>% dplyr::filter(!is.na(`Grand.total`))
+	
+	# People completing the programs, looking just at those not getting doctorates (but may include bachelor's, associates, and masters)
+	
+	completions_program_not_doctorates <- tbl(db, "Completions_program") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% dplyr::filter(`Czzzz_A.MAJORNUM.First.or.Second.Major`=='First major') %>% dplyr::filter(is.na(`Czzzz_A.AWLEVEL.Award.Level.code`=="<NA>")) %>% dplyr::select(c(`UNITID.Unique.identification.number.of.the.institution`,`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Czzzz_A.CTOTALT.Grand.total`, `IPEDS.Year`)) %>% dplyr::rename(Subject=`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Total.graduates`=`Czzzz_A.CTOTALT.Grand.total`) %>% dplyr::group_by(`UNITID.Unique.identification.number.of.the.institution`, Subject, IPEDS.Year) %>% dplyr::summarise(`Total.graduates`=sum(`Total.graduates`)) %>% dplyr::filter(!is.na(Subject)) %>% as.data.frame()
+	
+	# Admissions
+	
+	admissions <- tbl(db, "Admissions") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	
+	colnames(admissions) <- gsub("ADMzzzz\\.[A-Z0-9]+\\.", "", colnames(admissions))
+	admissions$Admission.percentage.total <- 100*as.numeric(admissions$`Admissions.total`)/as.numeric(admissions$`Applicants.total`)
+	admissions$Admission.percentage.women <- 100*as.numeric(admissions$`Admissions.women`)/as.numeric(admissions$`Applicants.women`)
+	admissions$Admission.percentage.men <- 100*as.numeric(admissions$`Admissions.men`)/as.numeric(admissions$`Applicants.men`)
+
+	admissions$Yield.percentage.total <- 100*as.numeric(admissions$`Enrolled.total`)/as.numeric(admissions$`Admissions.total`)
+	admissions$Yield.percentage.women <- 100*as.numeric(admissions$`Enrolled..women`)/as.numeric(admissions$`Admissions.women`) # yes, the .. in the column name is correct
+	admissions$Yield.percentage.men <- 100*as.numeric(admissions$`Enrolled..men`)/as.numeric(admissions$`Admissions.men`)
+
+
+	
+	
+
+}
+
+AggregateFromDB <- function(ipeds_direct_and_db) {
+	db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
+	#together <- inner_join(tbl(db, 'Institutional_directory'), tbl(db, 'Institutional_offerings'))
+	institution_ids <- unique(pull(tbl(db, 'Institutional_directory'), 'UNITID.Unique.identification.number.of.the.institution'))
+	for (institution_id in institution_ids) {
+		individual_result <- AggregateForOneInstitution(institution_id, db)
+	}
+}
 
 AggregateIPEDS <- function() {
 	raw_data <- mutate_all(read_csv("data/ipeds_Data_7-15-2022---124.csv", col_types="c"), as.character)
