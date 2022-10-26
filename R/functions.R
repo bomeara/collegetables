@@ -359,7 +359,20 @@ AggregateDirectIPEDSDirect <- function(ipeds_directly, IPEDS_names = GetIPEDSNam
 }
 
 AggregateForOneInstitution <- function(institution_id, db) {
+	
+	local_tables <- list()
+	
 	institutional_directory <- tbl(db, "Institutional_directory") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	
+	colnames(institutional_directory) <- gsub("HDzzzz\\.[A-Z0-9]+\\.", "", colnames(institutional_directory))
+
+	
+	institutional_directory$latest_year <- FALSE # flag for the latest year we have data for for this institution for this field
+	institutional_directory$latest_year[which.max(institutional_directory$`IPEDS.Year`)] <- TRUE
+	
+	local_tables[[length(local_tables)+1]] <- institutional_directory
+	names(local_tables)[length(local_tables)] <- "Institutional_directory"
+	
 	
 	# Enrollment
 	
@@ -381,9 +394,21 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	 
 	twelve_month_headcount_merged <- twelve_month_headcount_merged %>% dplyr::select(-c(`Level.and.degree.certificate.seeking.status.of.student`, `Undergraduate.or.graduate.level.of.student`)) %>% dplyr::rename("Student.level" = `Original.level.of.study.on.survey.form` ) %>% dplyr::filter(!is.na(`Grand.total`))
 	
-	# People completing the programs, looking just at those not getting doctorates (but may include bachelor's, associates, and masters)
+	twelve_month_headcount_merged$latest_year <- FALSE
+	twelve_month_headcount_merged$latest_year[which(twelve_month_headcount_merged$`IPEDS.Year` == max(twelve_month_headcount_merged$`IPEDS.Year`))] <- TRUE
 	
-	completions_program_not_doctorates <- tbl(db, "Completions_program") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% dplyr::filter(`Czzzz_A.MAJORNUM.First.or.Second.Major`=='First major') %>% dplyr::filter(is.na(`Czzzz_A.AWLEVEL.Award.Level.code`=="<NA>")) %>% dplyr::select(c(`UNITID.Unique.identification.number.of.the.institution`,`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Czzzz_A.CTOTALT.Grand.total`, `IPEDS.Year`)) %>% dplyr::rename(Subject=`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Total.graduates`=`Czzzz_A.CTOTALT.Grand.total`) %>% dplyr::group_by(`UNITID.Unique.identification.number.of.the.institution`, Subject, IPEDS.Year) %>% dplyr::summarise(`Total.graduates`=sum(`Total.graduates`)) %>% dplyr::filter(!is.na(Subject)) %>% as.data.frame()
+	local_tables[[length(local_tables)+1]] <- twelve_month_headcount_merged
+	names(local_tables)[length(local_tables)] <- "Twelve_month_headcount"
+	
+	# People completing the programs, looking at just first majors (which can include people getting doctorates, masters, bachelor's, associates, etc.)
+	
+	completions_program_first_major <- tbl(db, "Completions_program") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% dplyr::filter(`Czzzz_A.MAJORNUM.First.or.Second.Major`=='First major') %>% dplyr::select(c(`UNITID.Unique.identification.number.of.the.institution`,`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Czzzz_A.CTOTALT.Grand.total`, `IPEDS.Year`)) %>% dplyr::rename(Subject=`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Total.graduates`=`Czzzz_A.CTOTALT.Grand.total`) %>% dplyr::group_by(`UNITID.Unique.identification.number.of.the.institution`, Subject, IPEDS.Year) %>% dplyr::summarise(`Total.graduates`=sum(`Total.graduates`)) %>% dplyr::filter(!is.na(Subject)) %>% as.data.frame()
+	
+	completions_program_first_major$latest_year <- FALSE
+	completions_program_first_major$latest_year[which(completions_program_first_major$IPEDS.Year==max(completions_program_first_major$IPEDS.Year))] <- TRUE
+	
+	local_tables[[length(local_tables)+1]] <- completions_program_first_major
+	names(local_tables)[length(local_tables)] <- "Completions_program_first_major"
 	
 	# Admissions
 	
@@ -397,11 +422,176 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	admissions$Yield.percentage.total <- 100*as.numeric(admissions$`Enrolled.total`)/as.numeric(admissions$`Admissions.total`)
 	admissions$Yield.percentage.women <- 100*as.numeric(admissions$`Enrolled..women`)/as.numeric(admissions$`Admissions.women`) # yes, the .. in the column name is correct
 	admissions$Yield.percentage.men <- 100*as.numeric(admissions$`Enrolled..men`)/as.numeric(admissions$`Admissions.men`)
+	
+	admissions$latest_year <- FALSE
+	admissions$latest_year[which(admissions$`IPEDS.Year`==max(admissions$`IPEDS.Year`))] <- TRUE
+	
+	local_tables[[length(local_tables)+1]] <- admissions
+	names(local_tables)[length(local_tables)] <- "Admissions"
 
+	# Geographic source of students
+	
+	enrollment_residence <- tbl(db, "Enrollment_residence") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	
+	colnames(enrollment_residence) <- gsub("[A-z]+\\.[A-Z0-9]+\\.", "", colnames(enrollment_residence))
+	
+	enrollment_residence$latest_year <- FALSE
+	enrollment_residence$latest_year[which(enrollment_residence$`IPEDS.Year`==max(enrollment_residence$`IPEDS.Year`))] <- TRUE
+	
+	local_tables[[length(local_tables)+1]] <- enrollment_residence
+	names(local_tables)[length(local_tables)] <- "Enrollment_residence"	
+	
+	# Ages of students
+	
+	# note this is a way of getting full time and part time undergrads and grad students 
+	
+	enrollment_age <- tbl(db, "Enrollment_age") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% dplyr::filter(`EFzzzzB.LINE.Original.line.number.on.survey.form`!="Generated record not on survey form") %>% as.data.frame()
+	
+	colnames(enrollment_age) <- gsub("[A-z]+\\.[A-Z0-9]+\\.", "", colnames(enrollment_age))
 
+	enrollment_age$latest_year <- FALSE
+	enrollment_age$latest_year[which(enrollment_age$`IPEDS.Year`==max(enrollment_age$`IPEDS.Year`))] <- TRUE
+	
+	local_tables[[length(local_tables)+1]] <- enrollment_age
+	names(local_tables)[length(local_tables)] <- "Enrollment_age"
+	
+	# Race/ethnicity
+	
+	enrollment_race <- tbl(db, "Enrollment_race") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	
+	colnames(enrollment_race) <- gsub("[A-z]+\\.[A-Z0-9]+\\.", "", colnames(enrollment_race))
+
+	enrollment_race$latest_year <- FALSE
+	enrollment_race$latest_year[which(enrollment_race$`IPEDS.Year`==max(enrollment_race$`IPEDS.Year`))] <- TRUE
+	
+	local_tables[[length(local_tables)+1]] <- enrollment
+	names(local_tables)[length(local_tables)] <- "Enrollment_race"
 	
 	
+		
+	# Finances
+	
 
+	finance_fasb <- tbl(db, "Finance_FASB") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	colnames(finance_fasb) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(finance_fasb))
+
+		
+	finance_gasb <- tbl(db, "Finance_GASB") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	colnames(finance_gasb) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(finance_gasb))
+	
+	finance_forprofit <- tbl(db, "Finance_ForProfits") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	colnames(finance_nonprofit) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(finance_nonprofit))
+		
+	finance <- finance_fasb
+	if(nrow(finance_gasb)>0) { 
+		finance <- finance_gasb
+	}
+	if(nrow(finance_forprofit)>0) { 
+		finance <- finance_forprofit
+	}
+	
+	finance$latest_year <- FALSE
+	finance$latest_year[which(finance$`IPEDS.Year`==max(finance$`IPEDS.Year`))] <- TRUE
+	
+	local_tables[[length(local_tables)+1]] <- finance
+	names(local_tables)[length(local_tables)] <- "Finance"
+	
+	# Institutional offerings (info on room and board, freshmen required to live on campus, students with disabilities, etc.)
+	
+	institutional_offerings <- tbl(db, "Institutional_offerings") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	colnames(institutional_offerings) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(institutional_offerings))
+	
+	institutional_offerings$latest_year <- FALSE
+	institutional_offerings$latest_year[which(institutional_offerings$`IPEDS.Year`==max(institutional_offerings$`IPEDS.Year`))] <- TRUE
+	
+	local_tables[[length(local_tables)+1]] <- institutional_offerings
+	names(local_tables)[length(local_tables)] <- "Institutional_offerings"
+
+	# Student aid
+	
+	student_aid <- tbl(db, "Student_aid") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	
+	colnames(student_aid) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(student_aid))
+	
+	student_aid$latest_year <- FALSE
+	student_aid$latest_year[which(student_aid$`IPEDS.Year`==max(student_aid$`IPEDS.Year`))] <- TRUE
+	
+	local_tables[[length(local_tables)+1]] <- student_aid
+	names(local_tables)[length(local_tables)] <- "Student_aid"
+
+	
+	# Staff category: by occupation, gender, ethnicity, etc. Pruned to full time only
+	
+	staff_category <- tbl(db, "Staff_category") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% dplyr::filter(`Szzzz_OC.FTPT.Full.time.or.part.time.status`=="Full-time") %>% as.data.frame()
+	
+	colnames(staff_category) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(staff_category))
+	
+	staff_category$latest_year <- FALSE
+	staff_category$latest_year[which(staff_category$`IPEDS.Year`==max(staff_category$`IPEDS.Year`))] <- TRUE
+	
+	local_tables[[length(local_tables)+1]] <- staff_category
+	names(local_tables)[length(local_tables)] <- "Staff_category"
+
+	# Staff gender: instructional staff by demographics, tenure status, rank. # IMPORTANT TABLE, so RENAMING to 
+	# staff_tenure_demographics
+	
+	staff_tenure_demographics <- tbl(db, "Staff_gender") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	
+	colnames(staff_tenure_demographics) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(staff_tenure_demographics))
+	
+	staff_tenure_demographics$latest_year <- FALSE
+	staff_tenure_demographics$latest_year[which(staff_tenure_demographics$`IPEDS.Year`==max(staff_tenure_demographics$`IPEDS.Year`))] <- TRUE
+	
+	local_tables[[length(local_tables)+1]] <- staff_tenure_demographics
+	names(local_tables)[length(local_tables)] <- "Staff_tenure_demographics"
+	
+	# Useful for plotting: 
+	# staff_tenure_demographics[which(staff_tenure_demographics$`Faculty.and.tenure.status`=='With faculty status, tenured' & staff_tenure_demographics$`Academic.rank`=="All ranks"),]
+	
+	# Staff new: by occupation, gender, ethnicity, etc. Good to combine with staff_category to look at turnover year by year (number in year Y = number in year Y-1 + number hired in year Y - number left in year Y)
+	
+	staff_new <- tbl(db, "Staff_new") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	
+	colnames(staff_new) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(staff_new))
+	
+	staff_new$latest_year <- FALSE
+	staff_new$latest_year[which(staff_new$`IPEDS.Year`==max(staff_new$`IPEDS.Year`))] <- TRUE
+	
+	local_tables[[length(local_tables)+1]] <- staff_new
+	names(local_tables)[length(local_tables)] <- "Staff_new"
+
+	# Staff tenure status: redundant with other tables
+	
+	# Academic library
+	
+	academic_library <- tbl(db, "Academic_library") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
+	
+	colnames(academic_library) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(academic_library))
+	
+	academic_library$latest_year <- FALSE
+	academic_library$latest_year[which(academic_library$`IPEDS.Year`==max(academic_library$`IPEDS.Year`))] <- TRUE
+	
+	academic_library <- dplyr::select(academic_library, c(
+		`UNITID.Unique.identification.number.of.the.institution`,
+		`Number.of.physical.books`,
+		`Number.of.digital.electronic.books`,
+		`Number.of.physical.media`,
+		`Number.of.physical.serials`,
+		`Number.of.electronic.serials`,
+		`Total.physical.library.circulations..books.and.media.`,
+		`Total.digital.electronic.circulations..books.and.media.`,
+		`Total.expenditures..salaries.wages..benefits..materials.services..and.operations.maintenance.`,
+		`One.time.purchases.of.books..serial.backfiles..and.other.materials`,
+		`Ongoing.commitments.to.subscriptions`,
+		`IPEDS.Year`,
+		`latest_year`
+		)
+	)
+	
+	local_tables[[length(local_tables)+1]] <- academic_library
+	names(local_tables)[length(local_tables)] <- "Academic_library"
+	
+	return(local_tables)
 }
 
 AggregateFromDB <- function(ipeds_direct_and_db) {
