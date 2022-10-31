@@ -311,8 +311,10 @@ GetIPEDSDirectlyTry2 <- function(years=2021:2010, IPEDS_names = GetIPEDSNames())
 
 
 
-AggregateDirectIPEDSDirect <- function(ipeds_directly, IPEDS_names = GetIPEDSNames()) {
-	try(file.remove("data/db_IPEDS.sqlite"))
+AggregateDirectIPEDSDirect <- function(ipeds_directly, IPEDS_names = GetIPEDSNames(), remove=TRUE) {
+	if(remove) {
+		try(file.remove("data/db_IPEDS.sqlite"))
+	}
 	db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
 	ipeds_directly_normal <- ipeds_directly[grepl("normal", ipeds_directly)]
 	ipeds_directly_wide <- ipeds_directly[grepl("wide", ipeds_directly)]
@@ -358,8 +360,28 @@ AggregateDirectIPEDSDirect <- function(ipeds_directly, IPEDS_names = GetIPEDSNam
 	return(unique(working_files))
 }
 
+FixDuplicateColnames <- function(df) {
+	df_duplicated <- colnames(df)[duplicated(colnames(df))]
+	while(length(df_duplicated)>0) {
+		for (bad_col in df_duplicated) {
+			indices <- which(colnames(df)==bad_col)
+			if(length(indices)>1) {
+				for (i in sequence(nrow(df))) {
+					if(is.na(df[i,indices[1]])) {
+						df[i,indices[1]] <- df[i,indices[2]]
+					}
+				}
+				df <- df[,-indices[2]]
+			}
+		}
+		df_duplicated <- colnames(df)[duplicated(colnames(df))]	
+	}
+	return(df)
+}
+
 AggregateForOneInstitution <- function(institution_id, db) {
 	
+	institution_id <- as.character(institution_id)
 	local_tables <- list()
 	
 	institutional_directory <- tbl(db, "Institutional_directory") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
@@ -397,7 +419,9 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	twelve_month_headcount_merged$latest_year <- FALSE
 	twelve_month_headcount_merged$latest_year[which(twelve_month_headcount_merged$`IPEDS.Year` == max(twelve_month_headcount_merged$`IPEDS.Year`))] <- TRUE
 	
-	local_tables[[length(local_tables)+1]] <- twelve_month_headcount_merged
+	
+	
+	local_tables[[length(local_tables)+1]] <- twelve_month_headcount_merged %>% pivot_longer(cols=c(ends_with("men"), ends_with("total")))
 	names(local_tables)[length(local_tables)] <- "Twelve_month_headcount"
 	
 	# People completing the programs, looking at just first majors (which can include people getting doctorates, masters, bachelor's, associates, etc.)
@@ -464,7 +488,7 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	enrollment_race$latest_year <- FALSE
 	enrollment_race$latest_year[which(enrollment_race$`IPEDS.Year`==max(enrollment_race$`IPEDS.Year`))] <- TRUE
 	
-	local_tables[[length(local_tables)+1]] <- enrollment
+	local_tables[[length(local_tables)+1]] <- enrollment_race
 	names(local_tables)[length(local_tables)] <- "Enrollment_race"
 	
 	
@@ -480,7 +504,7 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	colnames(finance_gasb) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(finance_gasb))
 	
 	finance_forprofit <- tbl(db, "Finance_ForProfits") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
-	colnames(finance_nonprofit) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(finance_nonprofit))
+	colnames(finance_forprofit) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(finance_forprofit))
 		
 	finance <- finance_fasb
 	if(nrow(finance_gasb)>0) { 
@@ -492,6 +516,8 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	finance$latest_year <- FALSE
 	finance$latest_year[which(finance$`IPEDS.Year`==max(finance$`IPEDS.Year`))] <- TRUE
+	
+
 	
 	local_tables[[length(local_tables)+1]] <- finance
 	names(local_tables)[length(local_tables)] <- "Finance"
@@ -591,7 +617,54 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	local_tables[[length(local_tables)+1]] <- academic_library
 	names(local_tables)[length(local_tables)] <- "Academic_library"
 	
-	return(local_tables)
+	single_row_per_year_tables <- which(sapply(local_tables, function(x) !any(duplicated(x$`IPEDS.Year`))))
+	
+	joint <- FixDuplicateColnames(local_tables[[single_row_per_year_tables[1]]] %>% dplyr::select(-`latest_year`))
+	for (table_join_index in single_row_per_year_tables[-1]) {
+		joint <- dplyr::full_join(joint, dplyr::select(FixDuplicateColnames(local_tables[[table_join_index]]),-`latest_year`), by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+	}
+	
+	# all_years <- unique(unlist(sapply(local_tables, function(x) unique(x$`IPEDS.Year`))))
+	# wide_tables <- list()
+	
+	# for (table_index in sequence(length(local_tables))){
+	# 	if(max(table(local_tables[[table_index]]$`IPEDS.Year`))>1){
+	# 		local_data <- local_tables[[table_index]]
+	# 	}
+	# }
+	
+	# To make lookup easier, we'll add the various filters for institution binning to the tables
+	for (table_index in sequence(length(local_tables))){
+		if(names(local_tables)[table_index] != "Institutional_directory") {
+			local_tables[[table_index]]$Sector.of.institution <- institutional_directory$Sector.of.institution[which(institutional_directory$latest_year)]
+			local_tables[[table_index]]$Level.of.institution <- institutional_directory$Level.of.institution[which(institutional_directory$latest_year)]
+			local_tables[[table_index]]$Historically.Black.College.or.University <- institutional_directory$Historically.Black.College.or.University[which(institutional_directory$latest_year)]
+			local_tables[[table_index]]$Tribal.College <- institutional_directory$Tribal.College[which(institutional_directory$latest_year)]
+			local_tables[[table_index]]$State.abbreviation <- institutional_directory$State.abbreviation[which(institutional_directory$latest_year)]
+		}
+		if(names(local_tables)[table_index] != "Institutional_offerings") {
+			local_tables[[table_index]]$conference.number.cross.country.track <- institutional_offerings$conference.number.cross.country.track[which(institutional_offerings$latest_year)]
+		}
+
+		dbWriteTable(db,  paste0(names(local_tables)[table_index], "_cleaned"), local_tables[[table_index]], overwrite=FALSE)
+	}
+	
+	return(TRUE)
+}
+
+AggregateForAllInstitutions <- function(ipeds_direct_and_db){
+	db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
+	institutional_names <- tbl(db, "Institutional_directory")  %>% as.data.frame() 
+	institutions <- unique(institutional_names$`UNITID.Unique.identification.number.of.the.institution`)
+	rm(institutional_names)
+	institutions <- institutions[which(institutions!="z")] # remove the dummy row
+	
+	
+	for (institution_index in sequence(length(institutions))){
+		AggregateForInstitution(db, institutions[institution_index])
+	}
+	
+	dbDisconnect(db)
 }
 
 AggregateFromDB <- function(ipeds_direct_and_db) {
