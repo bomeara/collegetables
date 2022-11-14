@@ -351,9 +351,17 @@ AggregateDirectIPEDSDirect <- function(ipeds_directly, IPEDS_names = GetIPEDSNam
 			})
 		}
 		if(nrow(local_df)>0) {
+			print(paste0("Now trying to load into database ", names(IPEDS_names)[ipeds_base_index]))
+			if(ncol(local_df)>1000) {
+				print("Too many columns, dropping the most empty ones")
+				NA_counts <- sort(colSums(is.na(local_df)), decreasing=FALSE)
+				local_df <- local_df[,colSums(is.na(local_df))<=NA_counts[1000]]
+			}
 			try({
 				dbWriteTable(db,  names(IPEDS_names)[ipeds_base_index], local_df, overwrite=TRUE)
 			})
+		} else {
+			print(paste0("Failed to load into database ", names(IPEDS_names)[ipeds_base_index]))
 		}
 	}
 	dbDisconnect(db)
@@ -376,7 +384,17 @@ FixDuplicateColnames <- function(df) {
 		}
 		df_duplicated <- colnames(df)[duplicated(colnames(df))]	
 	}
-	return(df)
+	return(FixTooManyColumns(df))
+}
+
+FixTooManyColumns <- function(local_df) {
+	threshold <- 1000
+	while(ncol(local_df)>1000) {
+		NA_counts <- sort(colSums(is.na(local_df)), decreasing=FALSE)
+		local_df <- local_df[,colSums(is.na(local_df))<=NA_counts[threshold]]
+		threshold <- threshold - 1
+	}
+	return(local_df)	
 }
 
 AggregateForOneInstitution <- function(institution_id, db) {
@@ -387,10 +405,12 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	institutional_directory <- tbl(db, "Institutional_directory") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
 	
 	colnames(institutional_directory) <- gsub("HDzzzz\\.[A-Z0-9]+\\.", "", colnames(institutional_directory))
+	
+	print(paste0("Now working on ", institutional_directory[1,2]))
 
 	
-	institutional_directory$latest_year <- FALSE # flag for the latest year we have data for for this institution for this field
-	institutional_directory$latest_year[which.max(institutional_directory$`IPEDS.Year`)] <- TRUE
+	#institutional_directory$latest_year <- FALSE # flag for the latest year we have data for for this institution for this field
+	#institutional_directory$latest_year[which.max(institutional_directory$`IPEDS.Year`)] <- TRUE
 	
 	local_tables[[length(local_tables)+1]] <- institutional_directory
 	names(local_tables)[length(local_tables)] <- "Institutional_directory"
@@ -416,20 +436,20 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	 
 	twelve_month_headcount_merged <- twelve_month_headcount_merged %>% dplyr::select(-c(`Level.and.degree.certificate.seeking.status.of.student`, `Undergraduate.or.graduate.level.of.student`)) %>% dplyr::rename("Student.level" = `Original.level.of.study.on.survey.form` ) %>% dplyr::filter(!is.na(`Grand.total`))
 	
-	twelve_month_headcount_merged$latest_year <- FALSE
-	twelve_month_headcount_merged$latest_year[which(twelve_month_headcount_merged$`IPEDS.Year` == max(twelve_month_headcount_merged$`IPEDS.Year`))] <- TRUE
+	#twelve_month_headcount_merged$latest_year <- FALSE
+	#twelve_month_headcount_merged$latest_year[which(twelve_month_headcount_merged$`IPEDS.Year` == max(twelve_month_headcount_merged$`IPEDS.Year`))] <- TRUE
 	
 	
 	
-	local_tables[[length(local_tables)+1]] <- twelve_month_headcount_merged %>% pivot_longer(cols=c(ends_with("men"), ends_with("total")))
+	local_tables[[length(local_tables)+1]] <- twelve_month_headcount_merged # twelve_month_headcount_merged %>% pivot_longer(cols=c(ends_with("men"), ends_with("total")))
 	names(local_tables)[length(local_tables)] <- "Twelve_month_headcount"
 	
 	# People completing the programs, looking at just first majors (which can include people getting doctorates, masters, bachelor's, associates, etc.)
 	
-	completions_program_first_major <- tbl(db, "Completions_program") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% dplyr::filter(`Czzzz_A.MAJORNUM.First.or.Second.Major`=='First major') %>% dplyr::select(c(`UNITID.Unique.identification.number.of.the.institution`,`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Czzzz_A.CTOTALT.Grand.total`, `IPEDS.Year`)) %>% dplyr::rename(Subject=`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Total.graduates`=`Czzzz_A.CTOTALT.Grand.total`) %>% dplyr::group_by(`UNITID.Unique.identification.number.of.the.institution`, Subject, IPEDS.Year) %>% dplyr::summarise(`Total.graduates`=sum(`Total.graduates`)) %>% dplyr::filter(!is.na(Subject)) %>% as.data.frame()
+	 completions_program_first_major <- suppressMessages(tbl(db, "Completions_program") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% dplyr::filter(`Czzzz_A.MAJORNUM.First.or.Second.Major`=='First major') %>% dplyr::select(c(`UNITID.Unique.identification.number.of.the.institution`,`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Czzzz_A.CTOTALT.Grand.total`, `IPEDS.Year`)) %>% dplyr::rename(Subject=`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Total.graduates`=`Czzzz_A.CTOTALT.Grand.total`) %>% dplyr::group_by(`UNITID.Unique.identification.number.of.the.institution`, Subject, IPEDS.Year) %>% dplyr::summarise(`Total.graduates`=sum(`Total.graduates`)) %>% dplyr::filter(!is.na(Subject)) %>% as.data.frame())
 	
-	completions_program_first_major$latest_year <- FALSE
-	completions_program_first_major$latest_year[which(completions_program_first_major$IPEDS.Year==max(completions_program_first_major$IPEDS.Year))] <- TRUE
+	#completions_program_first_major$latest_year <- FALSE
+	#completions_program_first_major$latest_year[which(completions_program_first_major$IPEDS.Year==max(completions_program_first_major$IPEDS.Year))] <- TRUE
 	
 	local_tables[[length(local_tables)+1]] <- completions_program_first_major
 	names(local_tables)[length(local_tables)] <- "Completions_program_first_major"
@@ -447,8 +467,8 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	admissions$Yield.percentage.women <- 100*as.numeric(admissions$`Enrolled..women`)/as.numeric(admissions$`Admissions.women`) # yes, the .. in the column name is correct
 	admissions$Yield.percentage.men <- 100*as.numeric(admissions$`Enrolled..men`)/as.numeric(admissions$`Admissions.men`)
 	
-	admissions$latest_year <- FALSE
-	admissions$latest_year[which(admissions$`IPEDS.Year`==max(admissions$`IPEDS.Year`))] <- TRUE
+	#admissions$latest_year <- FALSE
+	#admissions$latest_year[which(admissions$`IPEDS.Year`==max(admissions$`IPEDS.Year`))] <- TRUE
 	
 	local_tables[[length(local_tables)+1]] <- admissions
 	names(local_tables)[length(local_tables)] <- "Admissions"
@@ -459,8 +479,8 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	colnames(enrollment_residence) <- gsub("[A-z]+\\.[A-Z0-9]+\\.", "", colnames(enrollment_residence))
 	
-	enrollment_residence$latest_year <- FALSE
-	enrollment_residence$latest_year[which(enrollment_residence$`IPEDS.Year`==max(enrollment_residence$`IPEDS.Year`))] <- TRUE
+	#enrollment_residence$latest_year <- FALSE
+	#enrollment_residence$latest_year[which(enrollment_residence$`IPEDS.Year`==max(enrollment_residence$`IPEDS.Year`))] <- TRUE
 	
 	local_tables[[length(local_tables)+1]] <- enrollment_residence
 	names(local_tables)[length(local_tables)] <- "Enrollment_residence"	
@@ -473,8 +493,8 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	colnames(enrollment_age) <- gsub("[A-z]+\\.[A-Z0-9]+\\.", "", colnames(enrollment_age))
 
-	enrollment_age$latest_year <- FALSE
-	enrollment_age$latest_year[which(enrollment_age$`IPEDS.Year`==max(enrollment_age$`IPEDS.Year`))] <- TRUE
+	#enrollment_age$latest_year <- FALSE
+	#enrollment_age$latest_year[which(enrollment_age$`IPEDS.Year`==max(enrollment_age$`IPEDS.Year`))] <- TRUE
 	
 	local_tables[[length(local_tables)+1]] <- enrollment_age
 	names(local_tables)[length(local_tables)] <- "Enrollment_age"
@@ -485,8 +505,8 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	colnames(enrollment_race) <- gsub("[A-z]+\\.[A-Z0-9]+\\.", "", colnames(enrollment_race))
 
-	enrollment_race$latest_year <- FALSE
-	enrollment_race$latest_year[which(enrollment_race$`IPEDS.Year`==max(enrollment_race$`IPEDS.Year`))] <- TRUE
+	#enrollment_race$latest_year <- FALSE
+	#enrollment_race$latest_year[which(enrollment_race$`IPEDS.Year`==max(enrollment_race$`IPEDS.Year`))] <- TRUE
 	
 	local_tables[[length(local_tables)+1]] <- enrollment_race
 	names(local_tables)[length(local_tables)] <- "Enrollment_race"
@@ -514,10 +534,10 @@ AggregateForOneInstitution <- function(institution_id, db) {
 		finance <- finance_forprofit
 	}
 	
-	finance$latest_year <- FALSE
-	finance$latest_year[which(finance$`IPEDS.Year`==max(finance$`IPEDS.Year`))] <- TRUE
+	#finance$latest_year <- FALSE
+	#finance$latest_year[which(finance$`IPEDS.Year`==max(finance$`IPEDS.Year`))] <- TRUE
 	
-
+	try(finance <- finance %>% select(-`Property..plant..and.equipment..net.of.accumulated.depreciation`), silent=TRUE)
 	
 	local_tables[[length(local_tables)+1]] <- finance
 	names(local_tables)[length(local_tables)] <- "Finance"
@@ -527,8 +547,8 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	institutional_offerings <- tbl(db, "Institutional_offerings") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
 	colnames(institutional_offerings) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(institutional_offerings))
 	
-	institutional_offerings$latest_year <- FALSE
-	institutional_offerings$latest_year[which(institutional_offerings$`IPEDS.Year`==max(institutional_offerings$`IPEDS.Year`))] <- TRUE
+	#institutional_offerings$latest_year <- FALSE
+	#institutional_offerings$latest_year[which(institutional_offerings$`IPEDS.Year`==max(institutional_offerings$`IPEDS.Year`))] <- TRUE
 	
 	local_tables[[length(local_tables)+1]] <- institutional_offerings
 	names(local_tables)[length(local_tables)] <- "Institutional_offerings"
@@ -539,8 +559,8 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	colnames(student_aid) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(student_aid))
 	
-	student_aid$latest_year <- FALSE
-	student_aid$latest_year[which(student_aid$`IPEDS.Year`==max(student_aid$`IPEDS.Year`))] <- TRUE
+	#student_aid$latest_year <- FALSE
+	#student_aid$latest_year[which(student_aid$`IPEDS.Year`==max(student_aid$`IPEDS.Year`))] <- TRUE
 	
 	local_tables[[length(local_tables)+1]] <- student_aid
 	names(local_tables)[length(local_tables)] <- "Student_aid"
@@ -552,8 +572,8 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	colnames(staff_category) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(staff_category))
 	
-	staff_category$latest_year <- FALSE
-	staff_category$latest_year[which(staff_category$`IPEDS.Year`==max(staff_category$`IPEDS.Year`))] <- TRUE
+	#staff_category$latest_year <- FALSE
+	#staff_category$latest_year[which(staff_category$`IPEDS.Year`==max(staff_category$`IPEDS.Year`))] <- TRUE
 	
 	local_tables[[length(local_tables)+1]] <- staff_category
 	names(local_tables)[length(local_tables)] <- "Staff_category"
@@ -565,8 +585,8 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	colnames(staff_tenure_demographics) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(staff_tenure_demographics))
 	
-	staff_tenure_demographics$latest_year <- FALSE
-	staff_tenure_demographics$latest_year[which(staff_tenure_demographics$`IPEDS.Year`==max(staff_tenure_demographics$`IPEDS.Year`))] <- TRUE
+	#staff_tenure_demographics$latest_year <- FALSE
+	#staff_tenure_demographics$latest_year[which(staff_tenure_demographics$`IPEDS.Year`==max(staff_tenure_demographics$`IPEDS.Year`))] <- TRUE
 	
 	local_tables[[length(local_tables)+1]] <- staff_tenure_demographics
 	names(local_tables)[length(local_tables)] <- "Staff_tenure_demographics"
@@ -580,8 +600,8 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	colnames(staff_new) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(staff_new))
 	
-	staff_new$latest_year <- FALSE
-	staff_new$latest_year[which(staff_new$`IPEDS.Year`==max(staff_new$`IPEDS.Year`))] <- TRUE
+	#staff_new$latest_year <- FALSE
+	#staff_new$latest_year[which(staff_new$`IPEDS.Year`==max(staff_new$`IPEDS.Year`))] <- TRUE
 	
 	local_tables[[length(local_tables)+1]] <- staff_new
 	names(local_tables)[length(local_tables)] <- "Staff_new"
@@ -594,8 +614,8 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	colnames(academic_library) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(academic_library))
 	
-	academic_library$latest_year <- FALSE
-	academic_library$latest_year[which(academic_library$`IPEDS.Year`==max(academic_library$`IPEDS.Year`))] <- TRUE
+	#academic_library$latest_year <- FALSE
+	#academic_library$latest_year[which(academic_library$`IPEDS.Year`==max(academic_library$`IPEDS.Year`))] <- TRUE
 	
 	academic_library <- dplyr::select(academic_library, c(
 		`UNITID.Unique.identification.number.of.the.institution`,
@@ -609,8 +629,7 @@ AggregateForOneInstitution <- function(institution_id, db) {
 		`Total.expenditures..salaries.wages..benefits..materials.services..and.operations.maintenance.`,
 		`One.time.purchases.of.books..serial.backfiles..and.other.materials`,
 		`Ongoing.commitments.to.subscriptions`,
-		`IPEDS.Year`,
-		`latest_year`
+		`IPEDS.Year`
 		)
 	)
 	
@@ -619,41 +638,56 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	single_row_per_year_tables <- which(sapply(local_tables, function(x) !any(duplicated(x$`IPEDS.Year`))))
 	
-	joint <- FixDuplicateColnames(local_tables[[single_row_per_year_tables[1]]] %>% dplyr::select(-`latest_year`))
+	joint <- FixDuplicateColnames(local_tables[[single_row_per_year_tables[1]]])
 	for (table_join_index in single_row_per_year_tables[-1]) {
-		joint <- dplyr::full_join(joint, dplyr::select(FixDuplicateColnames(local_tables[[table_join_index]]),-`latest_year`), by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+		joint <- suppressMessages(dplyr::full_join(joint, FixDuplicateColnames(local_tables[[table_join_index]])))
 	}
 	
-	# all_years <- unique(unlist(sapply(local_tables, function(x) unique(x$`IPEDS.Year`))))
-	# wide_tables <- list()
+	if("Joint_cleaned" %in% dbListTables(db)) {
+		original_table <- tbl(db, "Joint_cleaned") %>% as.data.frame()
+		joint <- suppressMessages(dplyr::full_join(FixDuplicateColnames(original_table), (joint)))
+	} 
 	
-	# for (table_index in sequence(length(local_tables))){
-	# 	if(max(table(local_tables[[table_index]]$`IPEDS.Year`))>1){
-	# 		local_data <- local_tables[[table_index]]
-	# 	}
-	# }
+	#dbWriteTable(db,  "Joint_cleaned", FixDuplicateColnames(joint), overwrite=TRUE, append=FALSE)
 	
 	# To make lookup easier, we'll add the various filters for institution binning to the tables
 	for (table_index in sequence(length(local_tables))){
 		if(names(local_tables)[table_index] != "Institutional_directory") {
-			local_tables[[table_index]]$Sector.of.institution <- institutional_directory$Sector.of.institution[which(institutional_directory$latest_year)]
-			local_tables[[table_index]]$Level.of.institution <- institutional_directory$Level.of.institution[which(institutional_directory$latest_year)]
-			local_tables[[table_index]]$Historically.Black.College.or.University <- institutional_directory$Historically.Black.College.or.University[which(institutional_directory$latest_year)]
-			local_tables[[table_index]]$Tribal.College <- institutional_directory$Tribal.College[which(institutional_directory$latest_year)]
-			local_tables[[table_index]]$State.abbreviation <- institutional_directory$State.abbreviation[which(institutional_directory$latest_year)]
+			try({
+				local_tables[[table_index]]$Sector.of.institution <- institutional_directory$Sector.of.institution[1]
+				local_tables[[table_index]]$Level.of.institution <- institutional_directory$Level.of.institution[1]
+				local_tables[[table_index]]$Historically.Black.College.or.University <- institutional_directory$Historically.Black.College.or.University[1]
+				local_tables[[table_index]]$Tribal.College <- institutional_directory$Tribal.College[1]
+				local_tables[[table_index]]$State.abbreviation <- institutional_directory$State.abbreviation[1]
+			}, silent=TRUE)
 		}
 		if(names(local_tables)[table_index] != "Institutional_offerings") {
-			local_tables[[table_index]]$conference.number.cross.country.track <- institutional_offerings$conference.number.cross.country.track[which(institutional_offerings$latest_year)]
+			try({
+				local_tables[[table_index]]$conference.number.cross.country.track <- institutional_offerings$conference.number.cross.country.track[1]
+			}, silent=TRUE)
 		}
+		
+		# if(paste0(names(local_tables)[table_index], "_cleaned") %in% dbListTables(db)) {
+		# 	original_table <- tbl(db, paste0(names(local_tables)[table_index], "_cleaned")) %>% as.data.frame()
 
-		dbWriteTable(db,  paste0(names(local_tables)[table_index], "_cleaned"), local_tables[[table_index]], overwrite=FALSE)
+		# 	new_table <- FixDuplicateColnames(suppressMessages(dplyr::full_join(FixDuplicateColnames(original_table), FixDuplicateColnames(local_tables[[table_index]]))))
+		# 	dbWriteTable(db,  paste0(names(local_tables)[table_index], "_cleaned"),new_table, overwrite=TRUE, append=FALSE)
+		# } else {
+		# 	local_tables[[table_index]] <- FixDuplicateColnames(local_tables[[table_index]])
+		# 	dbWriteTable(db,  paste0(names(local_tables)[table_index], "_cleaned"), local_tables[[table_index]], overwrite=TRUE, append=FALSE)
+		# }
 	}
 	
-	return(TRUE)
+	return(local_tables)
 }
 
 AggregateForAllInstitutions <- function(ipeds_direct_and_db){
 	db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
+	all_tables <- dbListTables(db) 
+	cleaned <- all_tables[grepl("_cleaned", all_tables)]
+	for (table_name in cleaned) {
+		dbRemoveTable(db, table_name)	
+	}
 	institutional_names <- tbl(db, "Institutional_directory")  %>% as.data.frame() 
 	institutions <- unique(institutional_names$`UNITID.Unique.identification.number.of.the.institution`)
 	rm(institutional_names)
@@ -661,7 +695,9 @@ AggregateForAllInstitutions <- function(ipeds_direct_and_db){
 	
 	
 	for (institution_index in sequence(length(institutions))){
-		AggregateForInstitution(db, institutions[institution_index])
+		cat("\r", institution_index, "/", length(institutions))
+		print(institutions[institution_index])
+		try({AggregateForOneInstitution(institutions[institution_index], db)})
 	}
 	
 	dbDisconnect(db)
@@ -1132,6 +1168,7 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 		failed <- TRUE
 		try({
 			print(institutions[i])
+			print(degree_granting$UnitID[i])
 			if(is.null(student_demographics[[institutions[i]]])) {
 				print("No data for " + institutions[i])
 				stop()
@@ -1142,6 +1179,7 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 				params = list(
 					institution_name = institutions[i],
 					institution_long_name = degree_granting$ShortName[i],
+					institution_id =  degree_granting$UnitID[i],
 					overview_table = subset(overview, overview$ShortName == institutions[i]),
 					raw_table = degree_granting,
 					students_by_state_by_institution = students_by_state_by_institution,

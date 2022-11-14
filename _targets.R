@@ -25,6 +25,7 @@ options(download.file.method = "libcurl")
 list(
  tar_target(ipeds_directly, GetIPEDSDirectlyTry2()),
  tar_target(ipeds_direct_and_db, AggregateDirectIPEDSDirect(ipeds_directly)),
+# tar_target(ipeds_direct_aggregate, AggregateForAllInstitutions(ipeds_direct_and_db)),
 #  tar_target(ipeds_2021, GetIPEDSDirectly("2021")),
 #  tar_target(ipeds_2020, GetIPEDSDirectly("2020")),
 #  tar_target(ipeds_2019, GetIPEDSDirectly("2019")),

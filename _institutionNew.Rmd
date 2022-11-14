@@ -5,7 +5,14 @@ output:
     includes:
       in_header: GA_Script.html
 params:
+  institution_name: "nothing"
+  institution_long_name: "nothing"
   institution_id: "nothing"
+  overview_table: "nothing"
+  raw_table: "nothing"
+  students_by_state_by_institution: "nothing"
+  student_demographics: "nothing"
+  faculty_counts: "nothing"
   spark_width: 40
   spark_height: 5
 title: "`r paste0(params$institution_name)`"
@@ -16,209 +23,55 @@ title: "`r paste0(params$institution_name)`"
 knitr::opts_chunk$set(dev="png")
 source("_packages.R")
 source("R/functions.R")
-db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
-local_tables <- AggregateForOneInstitution(params$institution_id, db)
+
+raw_table_df <- as.data.frame(params$raw_table)
+students_by_state <- params$students_by_state_by_institution[[params$institution_name]]
+student_demographics_focal <- params$student_demographics[[params$institution_name]]
+faculty_counts_focal <- params$faculty_counts[[params$institution_name]]
+focal_row_number <- which(raw_table_df$"ShortName"==params$institution_name)
+raw_table_df$FocalInstitution <- FALSE
+raw_table_df$FocalInstitution[focal_row_number] <- TRUE
+
+raw_table_df <- dplyr::rename(raw_table_df, `Associates degrees awarded`="Number of students receiving an Associate's degree (DRVC2020)", `Bachelors degrees awarded`="Number of students receiving a Bachelor's degree (DRVC2020)", `Masters degrees awarded`="Number of students receiving a Master's degree (DRVC2020)", `Doctorates awarded`="Number of students receiving a Doctor's degree (DRVC2020)")
+raw_table_df$`Average library loans (physical + digital) per student or faculty member` <- round(as.numeric(raw_table_df$`Total library circulations (physical and digital/electronic)`) / as.numeric(raw_table_df$`Students plus Faculty`),1)
+raw_table_df$`Average library loans (physical) per student or faculty member` <- round(as.numeric(raw_table_df$`Total physical library circulations (books and media)`) / as.numeric(raw_table_df$`Students plus Faculty`),1)
+
+raw_table_df$Transfer <- as.numeric(raw_table_df$'Transfer-out rate - Bachelor cohort.x')
+raw_table_df$'Average federal loan' <- as.numeric(raw_table_df$'Average amount of federal student loans awarded to full-time first-time undergraduates (SFA1920)')
+raw_table_df$'Average non-federal loan' <- as.numeric(raw_table_df$'Average amount of other student loans awarded to full-time first-time undergraduates (SFA1920)')
 
 
 
+# Getting sets of colleges to compare this with
+
+comparison_list <- list(
+	comparison_athletics = subset(raw_table_df, raw_table_df$"NCAA/NAIA conference number cross country/track"==raw_table_df$"NCAA/NAIA conference number cross country/track"[focal_row_number]),
+	comparison_type = subset(raw_table_df, raw_table_df$Type==raw_table_df$Type[focal_row_number]),
+	comparison_sector = subset(raw_table_df, raw_table_df$Sector==raw_table_df$Sector[focal_row_number])
+)
+
+focal_raw <- raw_table_df[focal_row_number,]
 
 total_undergrads <- unlist(focal_raw['Undergraduate enrollment'])
 total_grads <- unlist(focal_raw['Graduate enrollment'])
 
+
+
+
+
+db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
+local_tables <- AggregateForOneInstitution(params$institution_id, db)
+
+print(paste0("Institution id is ", params$institution_id))
+
+
+
 chief_admins <- last_name(local_tables$Institutional_directory$Name.of.chief.administrator)
+print(chief_admins)
 
 ```
 
 `r ifelse(length(unique(chief_admins))>3, paste0('<h3 style="color:Red;">Note</h3><p> **"There have been ', length(unique(chief_admins)),'" chief administrators (', tolower(local_tables$Institutional_directory$Title.of.chief.administrator[1]),') of this institution from ', min(as.numeric(local_tables$Institutional_directory$IPEDS.Year)), '-', max(as.numeric(local_tables$Institutional_directory$IPEDS.Year)), '** This could indicate a fair amount of turnover.</p>'), "")`
-
-
-### Enrollment
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
-twelve_month_filtered <- local_tables$Twelve_month_headcount %>% dplyr::filter(Student.level != 'Generated total')
-twelve_month_filtered$IPEDS.Year <- as.numeric(twelve_month_filtered$IPEDS.Year)
-twelve_month_filtered$Grand.total <- as.numeric(twelve_month_filtered$Grand.total)
-
-print(ggplot(twelve_month_filtered, aes(x=IPEDS.Year, y=Grand.total, group=Student.level, colour=Student.level)) + geom_line() + ylab("Number of students") + xlab("Year"))
-```
-
-
-### Admissions
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
-admissions <- local_tables$Admissions %>% mutate(Admission.percentage.total = as.numeric(Admission.percentage.total), Admission.percentage.women = as.numeric(Admission.percentage.women), Admission.percentage.men = as.numeric(Admission.percentage.men), IPEDS.Year = as.numeric(IPEDS.Year)) %>% pivot_longer(cols=starts_with("Admission.percentage."), names_to='Admission.percentage.', names_prefix='Admission.percentage.', values_to="Percentage")
-
-print(ggplot(admissions, aes(x=IPEDS.Year, y=Percentage, group=Admission.percentage., colour=Admission.percentage.)) + geom_line() + ylab("Percent of applicants admitted") + xlab("Year"))
-
-
-```
-
-### Yield
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
-yields <- local_tables$Admissions %>% mutate(Yield.percentage.total = as.numeric(Yield.percentage.total), Yield.percentage.women = as.numeric(Yield.percentage.women), Yield.percentage.men = as.numeric(Yield.percentage.men), IPEDS.Year = as.numeric(IPEDS.Year)) %>% pivot_longer(cols=starts_with("Yield.percentage."), names_to='Yield.percentage.', names_prefix='Yield.percentage.', values_to="Percentage")
-
-print(ggplot(yields, aes(x=IPEDS.Year, y=Percentage, group=Yield.percentage., colour=Yield.percentage.)) + geom_line() + ylab("Percent of admitted students choosing to enroll") + xlab("Year"))
-```
-
-### Enrollment demographics
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
-enrollment_demographics <- subset(local_tables$Enrollment_race, local_tables$Enrollment_race$Level.of.student..original.line.number.on.survey.form.=="Full-time degree-seeking undergraduates, total")
-categories <- unique(gsub(".women", "", colnames(enrollment_demographics)[grepl("women", colnames(enrollment_demographics))]))
-categories <- categories[!grepl("Grand", categories)]
-
-enrollment_demographics_long <- enrollment_demographics %>% pivot_longer(cols=ends_with("total"), names_to="Categories", values_to="Counts") %>% mutate(Counts=as.numeric(Counts), IPEDS.Year=as.numeric(IPEDS.Year))
-
-enrollment_demographics_long <- subset(enrollment_demographics_long, Categories!="Grand.total")
-enrollment_demographics_long$Categories <- gsub("\\.", " ", gsub(".total", "", enrollment_demographics_long$Categories))
-
-print(ggplot(enrollment_demographics_long, aes(x=IPEDS.Year, y=Counts, group=Categories, colour=Categories)) + geom_line() + ylab("Number of first time, full-time, degree-seeking undergrads") + xlab("Year"))
-
-print(ggplot(enrollment_demographics_long, aes(x=IPEDS.Year, y=Counts, group=Categories, colour=Categories)) + geom_line() + ylab("Number of first time, full-time, degree-seeking undergrads\n(log scale)") + xlab("Year") + scale_y_log10())
-
-enrollment_demographics_long_percentage <- enrollment_demographics_long %>% group_by(IPEDS.Year, Categories) %>% summarise(n=sum(Counts)) %>% mutate(Percentage=100*n/sum(n))
-
-print(ggplot(enrollment_demographics_long_percentage, aes(x=IPEDS.Year, y=Percentage, group=Categories, colour=Categories, fill=Categories)) + geom_area(alpha=0.8, colour="black") + ylab("Percentage of first time, full-time, degree-seeking undergrads") + xlab("Year"))
-```
-
-# Faculty
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
-tenure_stream_current <- local_tables$Staff_tenure_demographics %>% filter(Instructional.staff.category %in% c('Tenured total', 'On-Tenure track total')) %>% filter(Academic.rank=="All ranks") %>% group_by(IPEDS.Year) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) %>% mutate(IPEDS.Year = as.numeric(IPEDS.Year))
-tenure_stream_current$TenureStream <- "Tenure-stream"
-
-
-ntt_stream_current <- local_tables$Staff_tenure_demographics %>% filter(Instructional.staff.category=='Not on tenure track/No tenure system system total') %>% filter(Academic.rank=="All ranks") %>% group_by(IPEDS.Year) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) %>% mutate(IPEDS.Year = as.numeric(IPEDS.Year))
-ntt_stream_current$TenureStream <- "Contingent or not tenure-track"
-
-instructional_faculty_current <- rbind(tenure_stream_current, ntt_stream_current)
-
-print(ggplot(instructional_faculty_current, aes(x=IPEDS.Year, y=Grand.total, group=TenureStream, colour=TenureStream)) + geom_line() + ylab("Number of faculty") + xlab("Year"))
-
-tenure_stream_new <- local_tables$Staff_new %>% filter(Faculty.and.tenure.status %in% c('With faculty status, tenured', 'With faculty status, on tenure track')) %>% group_by(IPEDS.Year) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) %>% mutate(IPEDS.Year = as.numeric(IPEDS.Year))
-
-
-all_instructors_stream_new <- local_tables$Staff_new %>% filter(Faculty.and.tenure.status %in% c('With faculty status, total')) %>% group_by(IPEDS.Year) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) %>% mutate(IPEDS.Year = as.numeric(IPEDS.Year))
-
-ntt_stream_new <- all_instructors_stream_new
-
-all_colnames_but_year <- colnames(ntt_stream_new)[-1]
-
-for (focal_col_index in sequence(length(all_colnames_but_year))) {
-	for (focal_year_index in sequence(length(ntt_stream_new$IPEDS.Year))) {
-		ntt_stream_new[focal_year_index, focal_col_index+1] <- ntt_stream_new[focal_year_index, focal_col_index+1] - tenure_stream_new[which(tenure_stream_new$IPEDS.Year==ntt_stream_new$IPEDS.Year[focal_year_index]), all_colnames_but_year[focal_col_index]] # all this is because we don't want to assume years and columns are in the same order
-	}
-}
-
-
-tenure_stream_new$TenureStream <- "Tenure-stream"
-
-ntt_stream_new$TenureStream <- "Contingent or not tenure-track"
-
-instructional_faculty_new <- rbind(tenure_stream_new, ntt_stream_new)
-
-# Want to make sure it all lines up exactly
-
-
-try({
-	if(all(colnames(instructional_faculty_current)==colnames(instructional_faculty_new)) && all(instructional_faculty_current$IPEDS.Year == instructional_faculty_new$IPEDS.Year) && all(instructional_faculty_current$TenureStream == instructional_faculty_new$TenureStream)) {
-		instructional_faculty_persisting_from_previous_year <- instructional_faculty_current[,-ncol(instructional_faculty_current)] - instructional_faculty_new[,-ncol(instructional_faculty_new)]
-		instructional_faculty_persisting_from_previous_year$IPEDS.Year <- instructional_faculty_current$IPEDS.Year
-		instructional_faculty_persisting_from_previous_year$TenureStream <- instructional_faculty_current$TenureStream
-	}
-	instructional_faculty_retention <- instructional_faculty_persisting_from_previous_year
-	instructional_faculty_retention[,2:(ncol(instructional_faculty_retention)-1)] <- NA
-	instructional_faculty_retention <- subset(instructional_faculty_retention, IPEDS.Year > min(IPEDS.Year))
-	instructional_faculty_loss <- instructional_faculty_retention
-	for (row_index in sequence(nrow(instructional_faculty_retention))) {
-		for (col_index in 2:(ncol(instructional_faculty_retention)-1)) {
-			last_year <- subset(
-				instructional_faculty_current, 
-				instructional_faculty_current$IPEDS.Year==(instructional_faculty_retention$IPEDS.Year[row_index]-1) & instructional_faculty_current$TenureStream == instructional_faculty_retention$TenureStream[row_index])[which(colnames(instructional_faculty_current)==colnames(instructional_faculty_retention[col_index]))]
-			
-			this_year <- subset(
-				instructional_faculty_persisting_from_previous_year, 
-				instructional_faculty_persisting_from_previous_year$IPEDS.Year==(instructional_faculty_retention$IPEDS.Year[row_index]) & instructional_faculty_persisting_from_previous_year$TenureStream == instructional_faculty_retention$TenureStream[row_index])[which(colnames(instructional_faculty_persisting_from_previous_year)==colnames(instructional_faculty_retention[col_index]))]
-			
-			instructional_faculty_retention[row_index, col_index] <- unname(100*this_year/last_year)
-			instructional_faculty_loss[row_index, col_index] <- unname(last_year - this_year)
-
-		}
-	}
-}, silent=TRUE)
-
-# Keeping for now, but it seems some people get recategorized or something of the sort: the numbers in instructional_faculty_retention can sometimes be above 100
-
-```
-
-### Finances
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
-finances <- local_tables$Finance
-finances$Total.revenues.and.investment.return <- as.numeric(finances$Total.revenues.and.investment.return)
-finances$Total.expenses <- as.numeric(finances$Total.expenses)
-finances$Total.net.assets <- as.numeric(finances$Total.net.assets)
-finances$IPEDS.Year <- as.integer(finances$IPEDS.Year)
-finances$Net <- finances$Total.revenues.and.investment.return - finances$Total.expenses
-finances_plotting <- finances %>% dplyr::select('IPEDS.Year', 'Net', 'Total.net.assets')
-print(ggplot(finances_plotting, aes(x=IPEDS.Year, y=Net)) + geom_line() + ylab("Revenue minus expenses ($)") + xlab("Year"))
-print(ggplot(finances_plotting, aes(x=IPEDS.Year, y=Net)) + geom_link2(aes(colour = after_stat(ifelse(y > 0, "positive", "negative"))))) + scale_colour_manual(values=c("red", "black"))
-
-ylabel_text <- "Total net assets\n(Dollars)"
-finances_plotting$Total.net.assets_toplot <- finances_plotting$Total.net.assets
-if(min(finances_plotting$Total.net.assets)>1e6) {
-	ylabel_text <- "Total net assets\n(Millions of dollars)"
-	finances_plotting$Total.net.assets_toplot <- finances_plotting$Total.net.assets/1e6
-}
-if(min(finances_plotting$Total.net.assets)>1e9) {
-	ylabel_text <- "Total net assets\n(Billions of dollars)"
-	finances_plotting$Total.net.assets_toplot <- finances_plotting$Total.net.assets/1e9 
-}
-print(ggplot(finances_plotting, aes(x=IPEDS.Year, y=Total.net.assets_toplot)) + geom_line() + ylab(ylabel_text) + xlab("Year"))
-
-
-revenue <- finances %>% dplyr::select(IPEDS.Year, Tuition.and.fees...Total, Federal.appropriations...Total, State.appropriations...Total, Local.appropriations...Total, Federal.grants.and.contracts...Total, State.grants.and.contracts...Total, Local.grants.and.contracts...Total, Private.gifts...Total, Private.grants.and.contracts...Total, Contributions.from.affiliated.entities...Total, Investment.return...Total, Sales.and.services.of.educational.activities...Total, Hospital.revenue...Total, Independent.operations.revenue...Total, Other.revenue...Total) %>% mutate_all(as.numeric)
-
-colnames(revenue) <- gsub("...Total", "", colnames(revenue))
-revenue[is.na(revenue)] <- 0
-revenue$Government.appropriations <- revenue$Federal.appropriations + revenue$State.appropriations + revenue$Local.appropriations
-
-revenue$Government.grants.and.contracts <- revenue$Federal.grants.and.contracts + revenue$State.grants.and.contracts + revenue$Local.grants.and.contracts
-
-revenue <- revenue[,!(grepl("Federal|State|Local", colnames(revenue)))]
-revenue <- revenue[,colSums(revenue)>0] # to get rid of empty categories
-
-revenue_longer <- revenue %>% pivot_longer(cols=colnames(revenue)[-1])
-print(ggplot(revenue_longer, aes(x=IPEDS.Year, y=value, fill=name)) + geom_area())
-```
-
-### Map
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
-leaflet() %>%
-  addTiles() %>%  
-  setView(lng = as.numeric(local_tables$Institutional_directory$Longitude.location.of.institution[1]), lat = as.numeric(local_tables$Institutional_directory$Latitude.location.of.institution[1]), zoom = 16) %>% 
-  addMarkers(lng=as.numeric(local_tables$Institutional_directory$Longitude.location.of.institution[1]), lat=as.numeric(local_tables$Institutional_directory$Latitude.location.of.institution[1]), popup=local_tables$Institutional_directory$Institution..entity..name[1])
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Older page
-
-
-
 
 `r ifelse(focal_raw['AAUP_Censure']=="Yes", '<h3 style="color:Red;">Note</h3><p> **"Unsatisfactory conditions of academic freedom and tenure have been found to prevail at this institution"** according to the <a href="https://www.aaup.org/our-programs/academic-freedom/censure-list">AAUP</a> (as of July 31, 2022)</p>', "")`
 
@@ -532,19 +385,6 @@ safety_to_print %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htm
 
 
 
-
-### Map
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
-leaflet() %>%
-  addTiles() %>%  
-  setView(lng = as.numeric(focal_raw['longitude']), lat = as.numeric(focal_raw['latitude']), zoom = 16) %>% 
-  addMarkers(lng=as.numeric(focal_raw['longitude']), lat=as.numeric(focal_raw['latitude']), popup=params$institution_name)
-```
-
-
-
-
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 degrees <- data.frame(Degree=c("Associate", "Bachelor", "Master", "Doctor"), Number=unname(unlist(c(focal_raw["Number of students receiving an Associate's degree (DRVC2020)" ], focal_raw["Number of students receiving a Bachelor's degree (DRVC2020)" ],focal_raw["Number of students receiving a Master's degree (DRVC2020)" ],focal_raw["Number of students receiving a Doctor's degree (DRVC2020)"]))))
 
@@ -701,8 +541,6 @@ if(max(students_by_state$`Number of students`)>0) {
 
 
 
-
-
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 
 horizontal_results <- as.data.frame(cbind(t(comparison_df[,1, drop=FALSE]), t(safety_to_print[,1, drop=FALSE]), t(location_to_print[,1, drop=FALSE])))
@@ -724,3 +562,197 @@ if(nrow(all_colleges)==0) {
 save(all_colleges, file="all_colleges.rda")
 
 ```
+
+## Trends over time
+
+### Enrollment
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+twelve_month_filtered <- local_tables$Twelve_month_headcount %>% dplyr::filter(Student.level != 'Generated total')
+twelve_month_filtered$IPEDS.Year <- as.numeric(twelve_month_filtered$IPEDS.Year)
+twelve_month_filtered$Grand.total <- as.numeric(twelve_month_filtered$Grand.total)
+
+print(ggplot(twelve_month_filtered, aes(x=IPEDS.Year, y=Grand.total, group=Student.level, colour=Student.level)) + geom_line() + ylab("Number of students") + xlab("Year"))
+```
+
+
+### Admissions
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+admissions <- local_tables$Admissions %>% mutate(Admission.percentage.total = as.numeric(Admission.percentage.total), Admission.percentage.women = as.numeric(Admission.percentage.women), Admission.percentage.men = as.numeric(Admission.percentage.men), IPEDS.Year = as.numeric(IPEDS.Year)) %>% pivot_longer(cols=starts_with("Admission.percentage."), names_to='Admission.percentage.', names_prefix='Admission.percentage.', values_to="Percentage")
+
+print(ggplot(admissions, aes(x=IPEDS.Year, y=Percentage, group=Admission.percentage., colour=Admission.percentage.)) + geom_line() + ylab("Percent of applicants admitted") + xlab("Year"))
+
+
+```
+
+### Yield
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+yields <- local_tables$Admissions %>% mutate(Yield.percentage.total = as.numeric(Yield.percentage.total), Yield.percentage.women = as.numeric(Yield.percentage.women), Yield.percentage.men = as.numeric(Yield.percentage.men), IPEDS.Year = as.numeric(IPEDS.Year)) %>% pivot_longer(cols=starts_with("Yield.percentage."), names_to='Yield.percentage.', names_prefix='Yield.percentage.', values_to="Percentage")
+
+print(ggplot(yields, aes(x=IPEDS.Year, y=Percentage, group=Yield.percentage., colour=Yield.percentage.)) + geom_line() + ylab("Percent of admitted students choosing to enroll") + xlab("Year"))
+```
+
+### Enrollment demographics
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+enrollment_demographics <- subset(local_tables$Enrollment_race, local_tables$Enrollment_race$Level.of.student..original.line.number.on.survey.form.=="Full-time degree-seeking undergraduates, total")
+categories <- unique(gsub(".women", "", colnames(enrollment_demographics)[grepl("women", colnames(enrollment_demographics))]))
+categories <- categories[!grepl("Grand", categories)]
+
+enrollment_demographics_long <- enrollment_demographics %>% pivot_longer(cols=ends_with("total"), names_to="Categories", values_to="Counts") %>% mutate(Counts=as.numeric(Counts), IPEDS.Year=as.numeric(IPEDS.Year))
+
+enrollment_demographics_long <- subset(enrollment_demographics_long, Categories!="Grand.total")
+enrollment_demographics_long$Categories <- gsub("\\.", " ", gsub(".total", "", enrollment_demographics_long$Categories))
+
+#print(ggplot(enrollment_demographics_long, aes(x=IPEDS.Year, y=Counts, group=Categories, colour=Categories)) + geom_line() + ylab("Number of first time, full-time, degree-seeking undergrads") + xlab("Year"))
+
+#print(ggplot(enrollment_demographics_long, aes(x=IPEDS.Year, y=Counts, group=Categories, colour=Categories)) + geom_line() + ylab("Number of first time, full-time, degree-seeking undergrads\n(log scale)") + xlab("Year") + scale_y_log10())
+
+enrollment_demographics_long_percentage <- enrollment_demographics_long %>% group_by(IPEDS.Year, Categories) %>% summarise(n=sum(Counts)) %>% mutate(Percentage=100*n/sum(n))
+
+print(ggplot(enrollment_demographics_long_percentage, aes(x=IPEDS.Year, y=Percentage, group=Categories, colour=Categories, fill=Categories)) + geom_area(alpha=0.8, colour="black") + ylab("Percentage of first time, full-time, degree-seeking undergrads") + xlab("Year"))
+```
+
+# Faculty
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+tenure_stream_current <- local_tables$Staff_tenure_demographics %>% filter(Instructional.staff.category %in% c('Tenured total', 'On-Tenure track total')) %>% filter(Academic.rank=="All ranks") %>% group_by(IPEDS.Year) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) %>% mutate(IPEDS.Year = as.numeric(IPEDS.Year))
+tenure_stream_current$TenureStream <- "Tenure-stream"
+
+
+ntt_stream_current <- local_tables$Staff_tenure_demographics %>% filter(Instructional.staff.category=='Not on tenure track/No tenure system system total') %>% filter(Academic.rank=="All ranks") %>% group_by(IPEDS.Year) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) %>% mutate(IPEDS.Year = as.numeric(IPEDS.Year))
+ntt_stream_current$TenureStream <- "Contingent or not tenure-track"
+
+instructional_faculty_current <- rbind(tenure_stream_current, ntt_stream_current)
+
+print(ggplot(instructional_faculty_current, aes(x=IPEDS.Year, y=Grand.total, group=TenureStream, colour=TenureStream)) + geom_line() + ylab("Number of faculty") + xlab("Year"))
+
+tenure_stream_new <- local_tables$Staff_new %>% filter(Faculty.and.tenure.status %in% c('With faculty status, tenured', 'With faculty status, on tenure track')) %>% group_by(IPEDS.Year) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) %>% mutate(IPEDS.Year = as.numeric(IPEDS.Year))
+
+
+all_instructors_stream_new <- local_tables$Staff_new %>% filter(Faculty.and.tenure.status %in% c('With faculty status, total')) %>% group_by(IPEDS.Year) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) %>% mutate(IPEDS.Year = as.numeric(IPEDS.Year))
+
+ntt_stream_new <- all_instructors_stream_new
+
+all_colnames_but_year <- colnames(ntt_stream_new)[-1]
+
+for (focal_col_index in sequence(length(all_colnames_but_year))) {
+	for (focal_year_index in sequence(length(ntt_stream_new$IPEDS.Year))) {
+		ntt_stream_new[focal_year_index, focal_col_index+1] <- ntt_stream_new[focal_year_index, focal_col_index+1] - tenure_stream_new[which(tenure_stream_new$IPEDS.Year==ntt_stream_new$IPEDS.Year[focal_year_index]), all_colnames_but_year[focal_col_index]] # all this is because we don't want to assume years and columns are in the same order
+	}
+}
+
+
+tenure_stream_new$TenureStream <- "Tenure-stream"
+
+ntt_stream_new$TenureStream <- "Contingent or not tenure-track"
+
+instructional_faculty_new <- rbind(tenure_stream_new, ntt_stream_new)
+
+# Want to make sure it all lines up exactly
+
+
+try({
+	if(all(colnames(instructional_faculty_current)==colnames(instructional_faculty_new)) && all(instructional_faculty_current$IPEDS.Year == instructional_faculty_new$IPEDS.Year) && all(instructional_faculty_current$TenureStream == instructional_faculty_new$TenureStream)) {
+		instructional_faculty_persisting_from_previous_year <- instructional_faculty_current[,-ncol(instructional_faculty_current)] - instructional_faculty_new[,-ncol(instructional_faculty_new)]
+		instructional_faculty_persisting_from_previous_year$IPEDS.Year <- instructional_faculty_current$IPEDS.Year
+		instructional_faculty_persisting_from_previous_year$TenureStream <- instructional_faculty_current$TenureStream
+	}
+	instructional_faculty_retention <- instructional_faculty_persisting_from_previous_year
+	instructional_faculty_retention[,2:(ncol(instructional_faculty_retention)-1)] <- NA
+	instructional_faculty_retention <- subset(instructional_faculty_retention, IPEDS.Year > min(IPEDS.Year))
+	instructional_faculty_loss <- instructional_faculty_retention
+	for (row_index in sequence(nrow(instructional_faculty_retention))) {
+		for (col_index in 2:(ncol(instructional_faculty_retention)-1)) {
+			last_year <- subset(
+				instructional_faculty_current, 
+				instructional_faculty_current$IPEDS.Year==(instructional_faculty_retention$IPEDS.Year[row_index]-1) & instructional_faculty_current$TenureStream == instructional_faculty_retention$TenureStream[row_index])[which(colnames(instructional_faculty_current)==colnames(instructional_faculty_retention[col_index]))]
+			
+			this_year <- subset(
+				instructional_faculty_persisting_from_previous_year, 
+				instructional_faculty_persisting_from_previous_year$IPEDS.Year==(instructional_faculty_retention$IPEDS.Year[row_index]) & instructional_faculty_persisting_from_previous_year$TenureStream == instructional_faculty_retention$TenureStream[row_index])[which(colnames(instructional_faculty_persisting_from_previous_year)==colnames(instructional_faculty_retention[col_index]))]
+			
+			instructional_faculty_retention[row_index, col_index] <- unname(100*this_year/last_year)
+			instructional_faculty_loss[row_index, col_index] <- unname(last_year - this_year)
+
+		}
+	}
+}, silent=TRUE)
+
+# Keeping for now, but it seems some people get recategorized or something of the sort: the numbers in instructional_faculty_retention can sometimes be above 100
+
+```
+
+### Finances
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+finances <- local_tables$Finance
+finances$Total.revenues.and.investment.return <- as.numeric(finances$Total.revenues.and.investment.return)
+finances$Total.expenses <- as.numeric(finances$Total.expenses)
+finances$Total.net.assets <- as.numeric(finances$Total.net.assets)
+finances$IPEDS.Year <- as.integer(finances$IPEDS.Year)
+finances$RevenueMinusExpenses <- finances$Total.revenues.and.investment.return - finances$Total.expenses
+finances_plotting <- finances %>% dplyr::select('IPEDS.Year', 'RevenueMinusExpenses', 'Total.net.assets')
+
+finances_plotting$Year <- as.integer(finances_plotting$IPEDS.Year)
+
+ylabel_text <- "Revenue minus expenses\n(Dollars)"
+finances_plotting$RevenueMinusExpensesToPlot <- finances_plotting$RevenueMinusExpenses
+if(min(finances_plotting$RevenueMinusExpenses)>1e6) {
+	ylabel_text <- "Revenue minus expenses\n(Millions of dollars)"
+	finances_plotting$RevenueMinusExpensesToPlot <- finances_plotting$RevenueMinusExpenses/1e6
+}
+if(min(finances_plotting$Total.net.assets)>1e9) {
+	ylabel_text <- "Revenue minus expenses\n(Billions of dollars)"
+	finances_plotting$RevenueMinusExpensesToPlot <- finances_plotting$RevenueMinusExpenses/1e9 
+}
+
+
+print(ggplot(finances_plotting, aes(x=Year, y=RevenueMinusExpensesToPlot)) + geom_link2(aes(colour = after_stat(ifelse(y > 0, "positive", "negative")))) + scale_colour_manual(values=c("red", "black")) + ylab(ylabel_text) + xlab("Year") + theme(legend.position="none"))
+
+
+ylabel_text <- "Total net assets\n(Dollars)"
+finances_plotting$Total.net.assets_toplot <- finances_plotting$Total.net.assets
+if(min(finances_plotting$Total.net.assets)>1e6) {
+	ylabel_text <- "Total net assets\n(Millions of dollars)"
+	finances_plotting$Total.net.assets_toplot <- finances_plotting$Total.net.assets/1e6
+}
+if(min(finances_plotting$Total.net.assets)>1e9) {
+	ylabel_text <- "Total net assets\n(Billions of dollars)"
+	finances_plotting$Total.net.assets_toplot <- finances_plotting$Total.net.assets/1e9 
+}
+print(ggplot(finances_plotting, aes(x=IPEDS.Year, y=Total.net.assets_toplot)) + geom_line() + ylab(ylabel_text) + xlab("Year"))
+
+
+revenue <- finances %>% dplyr::select(IPEDS.Year, Tuition.and.fees...Total, Federal.appropriations...Total, State.appropriations...Total, Local.appropriations...Total, Federal.grants.and.contracts...Total, State.grants.and.contracts...Total, Local.grants.and.contracts...Total, Private.gifts...Total, Private.grants.and.contracts...Total, Contributions.from.affiliated.entities...Total, Investment.return...Total, Sales.and.services.of.educational.activities...Total, Hospital.revenue...Total, Independent.operations.revenue...Total, Other.revenue...Total) %>% mutate_all(as.numeric)
+
+colnames(revenue) <- gsub("...Total", "", colnames(revenue))
+revenue[is.na(revenue)] <- 0
+revenue$Government.appropriations <- revenue$Federal.appropriations + revenue$State.appropriations + revenue$Local.appropriations
+
+revenue$Government.grants.and.contracts <- revenue$Federal.grants.and.contracts + revenue$State.grants.and.contracts + revenue$Local.grants.and.contracts
+
+revenue <- revenue[,!(grepl("Federal|State|Local", colnames(revenue)))]
+revenue <- revenue[,colSums(revenue)>0] # to get rid of empty categories
+
+revenue_longer <- revenue %>% pivot_longer(cols=colnames(revenue)[-1])
+revenue_longer$Source <- gsub("\\.", " ", revenue_longer$name)
+p <- ggplot(revenue_longer, aes(x=IPEDS.Year, y=value, fill=Source)) + geom_area()
+#ggplotly(p)
+print(p)
+
+```
+
+### Map
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+leaflet() %>%
+  addTiles() %>%  
+  setView(lng = as.numeric(local_tables$Institutional_directory$Longitude.location.of.institution[1]), lat = as.numeric(local_tables$Institutional_directory$Latitude.location.of.institution[1]), zoom = 16) %>% 
+  addMarkers(lng=as.numeric(local_tables$Institutional_directory$Longitude.location.of.institution[1]), lat=as.numeric(local_tables$Institutional_directory$Latitude.location.of.institution[1]), popup=local_tables$Institutional_directory$Institution..entity..name[1])
+```
+
+
+
