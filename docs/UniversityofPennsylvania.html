@@ -1,0 +1,2217 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>University of Pennsylvania</title>
+
+<script src="institution_files/header-attrs-2.18/header-attrs.js"></script>
+<script src="institution_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="institution_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="institution_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="institution_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="institution_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="institution_files/navigation-1.1/tabsets.js"></script>
+<link href="institution_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="institution_files/highlightjs-9.12.0/highlight.js"></script>
+<script src="institution_files/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="institution_files/plotly-binding-4.10.1/plotly.js"></script>
+<script src="institution_files/typedarray-0.1/typedarray.min.js"></script>
+<link href="institution_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="institution_files/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="institution_files/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="institution_files/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+<link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+<script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EHSZ84W9K5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EHSZ84W9K5');
+</script>
+
+
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">College Tables</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    By State
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">A-C</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Alabama.html">Alabama</a>
+        </li>
+        <li>
+          <a href="Alaska.html">Alaska</a>
+        </li>
+        <li>
+          <a href="Arizona.html">Arizona</a>
+        </li>
+        <li>
+          <a href="Arkansas.html">Arkansas</a>
+        </li>
+        <li>
+          <a href="California.html">California</a>
+        </li>
+        <li>
+          <a href="Colorado.html">Colorado</a>
+        </li>
+        <li>
+          <a href="Connecticut.html">Connecticut</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">D-K</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Delaware.html">Delaware</a>
+        </li>
+        <li>
+          <a href="Florida.html">Florida</a>
+        </li>
+        <li>
+          <a href="Georgia.html">Georgia</a>
+        </li>
+        <li>
+          <a href="Hawaii.html">Hawaii</a>
+        </li>
+        <li>
+          <a href="Idaho.html">Idaho</a>
+        </li>
+        <li>
+          <a href="Illinois.html">Illinois</a>
+        </li>
+        <li>
+          <a href="Indiana.html">Indiana</a>
+        </li>
+        <li>
+          <a href="Iowa.html">Iowa</a>
+        </li>
+        <li>
+          <a href="Kansas.html">Kansas</a>
+        </li>
+        <li>
+          <a href="Kentucky.html">Kentucky</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">L-M</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Louisiana.html">Louisiana</a>
+        </li>
+        <li>
+          <a href="Maine.html">Maine</a>
+        </li>
+        <li>
+          <a href="Maryland.html">Maryland</a>
+        </li>
+        <li>
+          <a href="Massachusetts.html">Massachusetts</a>
+        </li>
+        <li>
+          <a href="Michigan.html">Michigan</a>
+        </li>
+        <li>
+          <a href="Minnesota.html">Minnesota</a>
+        </li>
+        <li>
+          <a href="Mississippi.html">Mississippi</a>
+        </li>
+        <li>
+          <a href="Missouri.html">Missouri</a>
+        </li>
+        <li>
+          <a href="Montana.html">Montana</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">N-P</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Nebraska.html">Nebraska</a>
+        </li>
+        <li>
+          <a href="Nevada.html">Nevada</a>
+        </li>
+        <li>
+          <a href="NewHampshire.html">New Hampshire</a>
+        </li>
+        <li>
+          <a href="NewJersey.html">New Jersey</a>
+        </li>
+        <li>
+          <a href="NewMexico.html">New Mexico</a>
+        </li>
+        <li>
+          <a href="NewYork.html">New York</a>
+        </li>
+        <li>
+          <a href="NorthCarolina.html">North Carolina</a>
+        </li>
+        <li>
+          <a href="NorthDakota.html">North Dakota</a>
+        </li>
+        <li>
+          <a href="Ohio.html">Ohio</a>
+        </li>
+        <li>
+          <a href="Oklahoma.html">Oklahoma</a>
+        </li>
+        <li>
+          <a href="Oregon.html">Oregon</a>
+        </li>
+        <li>
+          <a href="Pennsylvania.html">Pennsylvania</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">R-Z</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="RhodeIsland.html">Rhode Island</a>
+        </li>
+        <li>
+          <a href="SouthCarolina.html">South Carolina</a>
+        </li>
+        <li>
+          <a href="SouthDakota.html">South Dakota</a>
+        </li>
+        <li>
+          <a href="Tennessee.html">Tennessee</a>
+        </li>
+        <li>
+          <a href="Texas.html">Texas</a>
+        </li>
+        <li>
+          <a href="Utah.html">Utah</a>
+        </li>
+        <li>
+          <a href="Vermont.html">Vermont</a>
+        </li>
+        <li>
+          <a href="Virginia.html">Virginia</a>
+        </li>
+        <li>
+          <a href="Washington.html">Washington</a>
+        </li>
+        <li>
+          <a href="WestVirginia.html">West Virginia</a>
+        </li>
+        <li>
+          <a href="Wisconsin.html">Wisconsin</a>
+        </li>
+        <li>
+          <a href="Wyoming.html">Wyoming</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Degrees
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="degrees_by_institution.html">Institutions</a>
+    </li>
+    <li>
+      <a href="degrees_by_conference.html">Athletic conference</a>
+    </li>
+    <li>
+      <a href="degrees_by_type.html">Types of institutions</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">University of Pennsylvania</h1>
+
+</div>
+
+
+<pre><code>## [1] &quot;Now working on University of Pennsylvania&quot;</code></pre>
+<p>On the table below, the bars show what fraction of schools of each
+category this school has a higher number for the metric of interest: for
+example, a bar three-quarters of the way across means this school has a
+higher number than 75% of the other schools in that category. The more
+“blue” the better the school is relative to its peers, the more “red”
+the worse. On most measurements, higher is better (for example, the
+number of books per student); for some (like students per instructor,
+cost, or revenue coming from tuition), lower is better and so lower
+percentiles will be more red. See the <a href="about.html">about</a>
+page for more details on the data sources. I keep with the convention
+that a lower acceptance rate is better (the school is more “selective”),
+as this may be an honest signal of student demand, but one could argue
+that not being able to serve many students (and yet often charging them
+to apply) is actually not great.</p>
+<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
+<thead>
+<tr>
+<th style="border-top: 2px solid grey;">
+</th>
+<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+School
+</th>
+<th style="border-bottom: none; border-top: 2px solid grey;" colspan="1">
+ 
+</th>
+<th colspan="3" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Percentile vs.
+</th>
+</tr>
+<tr>
+<th style="border-bottom: 1px solid grey;">
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+  University of Pennsylvania  
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
+ 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+  Ivy Group  
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+  Doctoral Universities<br />Very High Research Activity   
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+  Private not-for-profit<br />4-year or above  
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="6" style="font-weight: 900;">
+Basic metrics
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Admission
+</td>
+<td style="text-align: center;">
+8%
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_78.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_9.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_2.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Yield
+</td>
+<td style="text-align: center;">
+70%
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_89.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_97.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_88.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  First year retention
+</td>
+<td style="text-align: center;">
+98%
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_78.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_95.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_96.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Transfer
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+</td>
+<td style="text-align: center;">
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Graduation
+</td>
+<td style="text-align: center;">
+96%
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_67.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_98.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_99.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Undergraduate enrollment
+</td>
+<td style="text-align: center;">
+10,448
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_89.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_25.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_98.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Graduate enrollment
+</td>
+<td style="text-align: center;">
+14,803
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_78.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_89.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_99.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td colspan="6" style="font-weight: 900; background-color: #f7f7f7;">
+Degrees
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Associates degrees awarded
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_89.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_78.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_58.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Bachelors degrees awarded
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+2,710
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_89.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_27.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_99.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Masters degrees awarded
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+4,175
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_78.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_91.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_99.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Doctorates awarded
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+1,274
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_78.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_89.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_100.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td colspan="6" style="font-weight: 900;">
+Instruction
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Undergrads per instructor
+</td>
+<td style="text-align: center;">
+4.8
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_44.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_16.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_8.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Undergrads per tenure-track professor
+</td>
+<td style="text-align: center;">
+6.2
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_44.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_11.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_3.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td colspan="6" style="font-weight: 900; background-color: #f7f7f7;">
+Cost
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Avg net price for students with grants/scholarships
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+$24,167
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_rev_good_56.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_rev_good_77.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_rev_good_60.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Average federal loan
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+$5,182
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_rev_good_89.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_rev_good_64.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_rev_good_27.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Average non-federal loan
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+$27,541
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_rev_good_89.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_rev_good_97.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_rev_good_97.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td colspan="6" style="font-weight: 900;">
+Financial health
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Endowment assets per FTE
+</td>
+<td style="text-align: center;">
+$582,750
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_56.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_93.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_97.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Equity ratio
+</td>
+<td style="text-align: center;">
+64
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_22.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_72.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_36.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td colspan="6" style="font-weight: 900; background-color: #f7f7f7;">
+Sources of core revenues (%)
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Tuition and fees
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+23%
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_rev_good_56.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_rev_good_30.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_rev_good_7.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Investment return
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+21%
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_44.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_90.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_93.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  State appropriations
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Local appropriations
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Government grants and contracts
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+16%
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_89.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_36.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_92.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Private gifts grants and contracts
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+</td>
+</tr>
+<tr>
+<td colspan="6" style="font-weight: 900;">
+Misconduct on campus (per 10K students, 3yr avg)
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Liquor discipline
+</td>
+<td style="text-align: center;">
+101.11
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_67.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_49.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_60.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Liquor arrest
+</td>
+<td style="text-align: center;">
+0.9
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_89.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_43.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_80.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Drug discipline
+</td>
+<td style="text-align: center;">
+28.23
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_78.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_59.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_57.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Drug arrest
+</td>
+<td style="text-align: center;">
+0.3
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_33.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_8.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_63.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Weapon discipline
+</td>
+<td style="text-align: center;">
+0.6
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_78.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_73.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_72.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Weapon arrest
+</td>
+<td style="text-align: center;">
+1.05
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_100.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_72.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_89.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Reported rape
+</td>
+<td style="text-align: center;">
+1.79
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_11.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_5.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_50.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+  Reported fondling
+</td>
+<td style="text-align: center;">
+1.49
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_22.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_16.png width=40 height=10>
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_rev_good_54.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td colspan="6" style="font-weight: 900; background-color: #f7f7f7;">
+Library
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Number of physical books
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+5,276,664
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_56.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_91.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_100.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Number of physical media
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+5,586,569
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_100.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_98.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_100.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Number of digital/electronic books
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+2,013,904
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_44.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_82.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_98.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Total library circulations (physical and digital/electronic)
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+1,105,071
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_33.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_47.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_97.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+  Average library loans (physical) per student or faculty member
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+6.2
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_11.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_76.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_68.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; text-align: left;">
+  Average library loans (physical + digital) per student or faculty
+member
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; text-align: center;">
+45.1
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; text-align: center;">
+<img src=images/pct_bar_33.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; text-align: center;">
+<img src=images/pct_bar_47.png width=40 height=10>
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; text-align: center;">
+<img src=images/pct_bar_71.png width=40 height=10>
+</td>
+</tr>
+</tbody>
+<tr>
+<td colspan="6" style="text-align: left;">
+Metrics for this school and comparison with other schools in its
+athletic conference (if applicable), type of school, and sector of
+school. The bars show the percentile of this school versus others in the
+category: that is, what percentage of schools this school has a higher
+value for this metric. A “better” metric relative to others is more
+purple than orange; for ones where a lower number is better (undergrads
+per instructor), lower percentiles are purple. For misconduct, note that
+there is severe underreporting of many crimes on campuses, especially
+sexual violence. For resources to help you or others, try <a
+href="https://www.rainn.org/">RAINN</a>; if you wish to make a report to
+an institution, look for its “Title IX” office.
+</td>
+</tr>
+</table>
+<div id="location" class="section level3">
+<h3>Location</h3>
+<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
+<thead>
+<tr>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey;">
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Philadelphia, PA
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+Type
+</td>
+<td style="text-align: center;">
+Large City
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Mass transit
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0 minute walk away
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Walkability
+</td>
+<td style="text-align: center;">
+66%: Above average
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Local ecology
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+Northeastern coastal forests
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Local biome
+</td>
+<td style="text-align: center;">
+Temperate Broadleaf &amp; Mixed Forests
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Annual precipitation
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+43.8 inches
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Warmest month max temp
+</td>
+<td style="text-align: center;">
+86.4 ˚F
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; text-align: left;">
+Coldest month min temp
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; text-align: center;">
+23.7 ˚F
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="safety" class="section level3">
+<h3>Safety</h3>
+<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
+<thead>
+<tr>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey;">
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Metrics
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+Reported misconduct
+</td>
+<td style="text-align: center;">
+<a href=https://academic-sexual-misconduct-database.org/incidents?query=University%20of%20Pennsylvania>Apparently
+yes</a>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Employee covid vax
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<a href=https://www.chronicle.com/blogs/live-coronavirus-updates/heres-a-list-of-colleges-that-will-require-students-to-be-vaccinated-against-covid-19>Apparently
+yes</a>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Student covid vax
+</td>
+<td style="text-align: center;">
+<a href=https://www.chronicle.com/blogs/live-coronavirus-updates/heres-a-list-of-colleges-that-will-require-students-to-be-vaccinated-against-covid-19>Apparently
+yes</a>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Abortion
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+Legal
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Gun law stringency
+</td>
+<td style="text-align: center;">
+B-
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+State rep support for legal contraception
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+56%
+</td>
+</tr>
+<tr>
+<td style="border-bottom: 2px solid grey; text-align: left;">
+State rep support for same-sex and interracial marriages
+</td>
+<td style="border-bottom: 2px solid grey; text-align: center;">
+67%
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="diversity-among-the-faculty" class="section level3">
+<h3>Diversity among the faculty</h3>
+<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
+<thead>
+<tr>
+<th style="border-top: 2px solid grey;">
+</th>
+<th colspan="3" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Tenure Stream
+</th>
+<th style="border-bottom: none; border-top: 2px solid grey;" colspan="1">
+ 
+</th>
+<th colspan="3" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Non-Tenure Track
+</th>
+</tr>
+<tr>
+<th style="border-bottom: 1px solid grey;">
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+Women 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+ Men 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+%
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
+ 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+ Women 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+ Men 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+American Indian or Alaska Native
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_0.png width=40 height=10>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_0.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Asian
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+77
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+166
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_14.png width=40 height=10>
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+50
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+23
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_14.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Black or African American
+</td>
+<td style="text-align: center;">
+32
+</td>
+<td style="text-align: center;">
+30
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_4.png width=40 height=10>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+11
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_3.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Hispanic or Latino
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+25
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+45
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_4.png width=40 height=10>
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+22
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+12
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_7.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Native Hawaiian or Other Pacific Islander
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_0.png width=40 height=10>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_0.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+White
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+373
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+860
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_73.png width=40 height=10>
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+192
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+141
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_66.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Two or more races
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+13
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_1.png width=40 height=10>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+2
+</td>
+<td style="text-align: center;">
+5
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_1.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Race/ethnicity unknown
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+0
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_0.png width=40 height=10>
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+6
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+4
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_2.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Nonresident alien
+</td>
+<td style="text-align: center;">
+17
+</td>
+<td style="text-align: center;">
+36
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_3.png width=40 height=10>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+17
+</td>
+<td style="text-align: center;">
+19
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_7.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: left;">
+Total
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+529
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+1150
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+</td>
+<td style="border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+300
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+208
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="diversity-among-the-students" class="section level3">
+<h3>Diversity among the students</h3>
+<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
+<thead>
+<tr>
+<th style="border-top: 2px solid grey;">
+</th>
+<th colspan="3" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Undergrads
+</th>
+<th style="border-bottom: none; border-top: 2px solid grey;" colspan="1">
+ 
+</th>
+<th colspan="3" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
+Grad students
+</th>
+</tr>
+<tr>
+<th style="border-bottom: 1px solid grey;">
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+Women 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+ Men 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+%
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
+ 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+ Women 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+ Men 
+</th>
+<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
+%
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+American Indian or Alaska Native
+</td>
+<td style="text-align: center;">
+6
+</td>
+<td style="text-align: center;">
+4
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_0.png width=40 height=10>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+6
+</td>
+<td style="text-align: center;">
+2
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_0.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Asian
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+1279
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+994
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_22.png width=40 height=10>
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+848
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+613
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_12.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Black or African American
+</td>
+<td style="text-align: center;">
+461
+</td>
+<td style="text-align: center;">
+322
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_7.png width=40 height=10>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+388
+</td>
+<td style="text-align: center;">
+241
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_5.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Hispanic
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+542
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+499
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_10.png width=40 height=10>
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+437
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+345
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_7.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Native Hawaiian or Other Pacific Islander
+</td>
+<td style="text-align: center;">
+2
+</td>
+<td style="text-align: center;">
+3
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_0.png width=40 height=10>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+1
+</td>
+<td style="text-align: center;">
+0
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_0.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+White
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+2038
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+1958
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_38.png width=40 height=10>
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+2508
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+2139
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_39.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Two or more races
+</td>
+<td style="text-align: center;">
+300
+</td>
+<td style="text-align: center;">
+208
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_5.png width=40 height=10>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+182
+</td>
+<td style="text-align: center;">
+114
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_2.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Race/ethnicity unknown
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+135
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+122
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_2.png width=40 height=10>
+</td>
+<td style="text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+115
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+123
+</td>
+<td style="background-color: #f7f7f7; text-align: center;">
+<img src=images/pct_bar_grayscale_2.png width=40 height=10>
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Nonresident alien
+</td>
+<td style="text-align: center;">
+806
+</td>
+<td style="text-align: center;">
+769
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_15.png width=40 height=10>
+</td>
+<td style="text-align: center;" colspan="1">
+ 
+</td>
+<td style="text-align: center;">
+1860
+</td>
+<td style="text-align: center;">
+1948
+</td>
+<td style="text-align: center;">
+<img src=images/pct_bar_grayscale_32.png width=40 height=10>
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: left;">
+Total
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+5569
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+4879
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+</td>
+<td style="border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center; background-color: #F7F7F7;" colspan="1">
+ 
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+6345
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+5525
+</td>
+<td style="background-color: #f7f7f7; border-bottom: 2px solid grey; border-top: 1px solid #BEBEBE; font-weight: 900; text-align: center;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="origin-of-the-students" class="section level3">
+<h3>Origin of the students</h3>
+<p>The following maps are based on all the incoming undergraduate
+students first seeking a degree who come from the US (so, freshmen, not
+transfer students, not ones who started somewhere else and are starting
+over). Nearly all, but not all, colleges report this information. The
+data are from Fall 2019 so as to avoid any temporary changes due to
+covid. Remember that these are for freshmen: a student starting at a
+community college and transferring to a four year institution will
+appear on the community college data, not the four year institution’s
+data.</p>
+<div id="htmlwidget-2c3502c35d77bec576c8" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2c3502c35d77bec576c8">{"x":{"visdat":{"3cfa21c1ea1":["function () ","plotlyVisDat"]},"cur_data":"3cfa21c1ea1","attrs":{"3cfa21c1ea1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"z":{},"text":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"span":[0],"locations":["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"locationmode":"USA-states","colors":"Purples","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","geo":{"domain":{"x":[0,1],"y":[0,1]},"scope":"usa","projection":{"type":"albers usa"},"lakecolor":"rgba(255,255,255,1)"},"title":"Number of enrolled students from each state","showlegend":false,"scene":{"zaxis":{"title":"StudentNumbers"}},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false,"displaylogo":false},"data":[{"colorbar":{"title":"StudentNumbers","ticklen":2},"colorscale":[["0","rgba(252,251,253,1)"],["0.0416666666666667","rgba(248,246,250,1)"],["0.0833333333333333","rgba(243,242,248,1)"],["0.125","rgba(239,237,245,1)"],["0.166666666666667","rgba(232,231,242,1)"],["0.208333333333333","rgba(225,224,238,1)"],["0.25","rgba(218,218,235,1)"],["0.291666666666667","rgba(208,208,230,1)"],["0.333333333333333","rgba(198,199,225,1)"],["0.375","rgba(188,189,220,1)"],["0.416666666666667","rgba(178,177,213,1)"],["0.458333333333333","rgba(168,166,207,1)"],["0.5","rgba(158,154,200,1)"],["0.541666666666667","rgba(148,144,195,1)"],["0.583333333333333","rgba(138,135,191,1)"],["0.625","rgba(128,125,186,1)"],["0.666666666666667","rgba(121,110,178,1)"],["0.708333333333333","rgba(114,96,171,1)"],["0.75","rgba(106,81,163,1)"],["0.791666666666667","rgba(99,67,156,1)"],["0.833333333333333","rgba(92,54,150,1)"],["0.875","rgba(84,39,143,1)"],["0.916666666666667","rgba(77,28,137,1)"],["0.958333333333333","rgba(70,16,131,1)"],["1","rgba(63,0,125,1)"]],"showscale":false,"z":[4,4,13,5,226,24,59,13,99,46,7,2,56,11,3,6,7,5,6,70,54,23,13,6,11,1,1,10,5,228,1,258,25,1,29,4,9,411,7,9,1,18,80,3,4,49,22,1,12,2],"text":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"locations":["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"locationmode":"USA-states","type":"choropleth","marker":{"line":{"color":"rgba(31,119,180,1)","width":0},"showscale":false},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p>This map is the number of students attending from each state
+attending as freshmen divided by the number of 18 year olds in each
+state, then converted to a percentage. Not all freshmen are 18 years
+old, of course: some people start earlier than this, some far later, but
+each can attend college for the first time only once. This is just a way
+to get an estimate of how much of each state’s eligible population
+starts college at this school.</p>
+<div id="htmlwidget-b2f7ac1395370da87210" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b2f7ac1395370da87210">{"x":{"visdat":{"3cfa6465b61":["function () ","plotlyVisDat"]},"cur_data":"3cfa6465b61","attrs":{"3cfa6465b61":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"z":{},"text":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"span":[0],"locations":["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"locationmode":"USA-states","colors":"Purples","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"mapType":"geo","scene":{"zaxis":{"title":"StudentPercentage"}},"geo":{"domain":{"x":[0,1],"y":[0,1]},"scope":"usa","projection":{"type":"albers usa"},"lakecolor":"rgba(255,255,255,1)"},"hovermode":"closest","showlegend":false,"legend":{"yanchor":"top","y":0.5},"title":"Rough percentage of potential students in each state attending this college"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"displayModeBar":false,"displaylogo":false},"data":[{"colorbar":{"title":"Percent","ticklen":2,"len":0.5,"lenmode":"fraction","y":1,"yanchor":"top"},"colorscale":[["0","rgba(252,251,253,1)"],["0.0416666666666667","rgba(248,246,250,1)"],["0.0833333333333333","rgba(243,242,248,1)"],["0.125","rgba(239,237,245,1)"],["0.166666666666667","rgba(232,231,242,1)"],["0.208333333333333","rgba(225,224,238,1)"],["0.25","rgba(218,218,235,1)"],["0.291666666666667","rgba(208,208,230,1)"],["0.333333333333333","rgba(198,199,225,1)"],["0.375","rgba(188,189,220,1)"],["0.416666666666667","rgba(178,177,213,1)"],["0.458333333333333","rgba(168,166,207,1)"],["0.5","rgba(158,154,200,1)"],["0.541666666666667","rgba(148,144,195,1)"],["0.583333333333333","rgba(138,135,191,1)"],["0.625","rgba(128,125,186,1)"],["0.666666666666667","rgba(121,110,178,1)"],["0.708333333333333","rgba(114,96,171,1)"],["0.75","rgba(106,81,163,1)"],["0.791666666666667","rgba(99,67,156,1)"],["0.833333333333333","rgba(92,54,150,1)"],["0.875","rgba(84,39,143,1)"],["0.916666666666667","rgba(77,28,137,1)"],["0.958333333333333","rgba(70,16,131,1)"],["1","rgba(63,0,125,1)"]],"showscale":false,"z":[0.00635566289564002,0.0469483568075117,0.0133031794598909,0.0128419160138693,0.043859649122807,0.0327332242225859,0.117508813160987,0.103412616339193,0.0408830744071954,0.0323415265200517,0.0467508181393174,0.00815527646387213,0.0350631136044881,0.0123808344682432,0.00716691750877947,0.0153327200245324,0.0122729504172803,0.00861846074291132,0.0373831775700935,0.0888888888888889,0.0552181115405853,0.0172980453208787,0.0183924958616884,0.0150353330326267,0.0148522204069508,0.00802375030089064,0.00389195921226746,0.0283205890682526,0.0288683602771363,0.208768267223382,0.00361519829362641,0.105263157894737,0.0176584849019954,0.0109938434476693,0.0191241155096577,0.00788332676389436,0.0182215743440233,0.246913580246914,0.0441891294741494,0.0145942790426153,0.00916842394792335,0.021491510853213,0.0199362041467305,0.00606575275991751,0.0434216239687364,0.0448028673835125,0.0247954376394743,0.00472567459004773,0.0159642401021711,0.0288018433179724],"text":["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"],"locations":["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"locationmode":"USA-states","type":"choropleth","marker":{"line":{"color":"rgba(31,119,180,1)","width":0},"showscale":false},"geo":"geo","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="trends-over-time" class="section level2">
+<h2>Trends over time</h2>
+<div id="enrollment" class="section level3">
+<h3>Enrollment</h3>
+<p><img src="institution_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+<div id="admissions" class="section level3">
+<h3>Admissions</h3>
+<p><img src="institution_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+</div>
+<div id="yield" class="section level3">
+<h3>Yield</h3>
+<p><img src="institution_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+</div>
+<div id="enrollment-demographics" class="section level3">
+<h3>Enrollment demographics</h3>
+<p><img src="institution_files/figure-html/unnamed-chunk-15-1.png" width="672" /><img src="institution_files/figure-html/unnamed-chunk-15-2.png" width="672" /><img src="institution_files/figure-html/unnamed-chunk-15-3.png" width="672" /></p>
+</div>
+</div>
+<div id="faculty" class="section level1">
+<h1>Faculty</h1>
+<p><img src="institution_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<div id="finances" class="section level3">
+<h3>Finances</h3>
+<p><img src="institution_files/figure-html/unnamed-chunk-17-1.png" width="672" /><img src="institution_files/figure-html/unnamed-chunk-17-2.png" width="672" /><img src="institution_files/figure-html/unnamed-chunk-17-3.png" width="672" /><img src="institution_files/figure-html/unnamed-chunk-17-4.png" width="672" /></p>
+<div id="htmlwidget-361bc0e91b0a0b84dacf" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-361bc0e91b0a0b84dacf">{"x":{"data":[{"x":[2010.991,2011,2011.009,2011.991,2012,2012.009,2012.991,2013,2013.009,2013.991,2014,2014.009,2014.991,2015,2015.009,2015.8438692332,2015.8528692332,2015.8618692332,2015.991,2016,2016.009,2016.0683794819,2016.0773794819,2016.0863794819,2016.991,2017,2017.009,2017.991,2018,2018.009,2018.991,2019,2019.009,2019.991,2020,2020.009,2020.009,2020,2019.991,2019.009,2019,2018.991,2018.009,2018,2017.991,2017.009,2017,2016.991,2016.0863794819,2016.0773794819,2016.0683794819,2016.009,2016,2015.991,2015.8618692332,2015.8528692332,2015.8438692332,2015.009,2015,2014.991,2014.009,2014,2013.991,2013.009,2013,2012.991,2012.009,2012,2011.991,2011.009,2011,2010.991,2010.991],"y":[0,6789339000,6781298975.99999,5904043024.00001,5896003000,5905139485.00002,6902031514.99998,6911168000,6918956393.00001,7768756606.99999,7776545000,7771723474.99999,7245641525.00001,7240820000,7257794603.00003,8832413913.06314,8849388516.06325,8874122910.06329,9229008605.99996,9253743000,9246885071.99999,9201638381.83107,9194780453.83106,9202677134.83095,9996399318.99999,10004296000,10018038964,11517549036,11531292000,11532053634,11615156366,11615918000,11613286904,11326205096,11323574000,0,0,11358718000,11361343462,11647810538,11650436000,11649666158,11565667842,11564898000,11551155036,10051644964,10037902000,10029999208,9235662786.49916,9227759994.49926,9234611811.49928,9279818182.99999,9286670000,9261922888.99996,8906854731.28981,8882107620.28977,8865120300.28966,7289321320.00003,7272334000,7277156452.00001,7803339547.99999,7808162000,7800372373.99999,6950437626.00001,6942648000,6933499355.99998,5935280644.00002,5926132000,5934227095.00001,6817491904.99999,6825587000,0,0],"text":"IPEDS.Year: 2020<br />value:   35144000<br />name: Government.appropriations","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(248,118,109,1)","hoveron":"points","name":"Government.appropriations","legendgroup":"Government.appropriations","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2010.991,2011,2011.009,2011.991,2012,2012.009,2012.991,2013,2013.009,2013.991,2014,2014.009,2014.991,2015,2015.009,2015.8438692332,2015.8528692332,2015.8618692332,2015.991,2016,2016.009,2016.0683794819,2016.0773794819,2016.0863794819,2016.991,2017,2017.009,2017.991,2018,2018.009,2018.991,2019,2019.009,2019.991,2020,2020.009,2020.009,2020,2019.991,2019.009,2019,2018.991,2018.009,2018,2017.991,2017.009,2017,2016.991,2016.0863794819,2016.0773794819,2016.0683794819,2016.009,2016,2015.991,2015.8618692332,2015.8528692332,2015.8438692332,2015.009,2015,2014.991,2014.009,2014,2013.991,2013.009,2013,2012.991,2012.009,2012,2011.991,2011.009,2011,2010.991,2010.991],"y":[0,5975585000,5967761110.99999,5114087889.00001,5106264000,5115550740.00002,6128837259.99998,6138124000,6146249920.00001,7032878079.99999,7041004000,7036327068.99999,6526021931.00001,6521345000,6538539968.00003,8133601051.23817,8150796019.23827,8175750778.23831,8533798240.99996,8558753000,8551715458.99999,8505283732.51087,8498246191.51086,8505963259.51075,9281631931.99999,9289349000,9302927525.00002,10784495475,10798074000,10798815645,10879737355,10880479000,10877672656,10571469344,10568663000,0,0,11323574000,11326205096,11613286904,11615918000,11615156366,11532053634,11531292000,11517549036,10018038964,10004296000,9996399318.99999,9202677134.83095,9194780453.83106,9201638381.83107,9246885071.99999,9253743000,9229008605.99996,8874122910.06329,8849388516.06325,8832413913.06314,7257794603.00003,7240820000,7245641525.00001,7771723474.99999,7776545000,7768756606.99999,6918956393.00001,6911168000,6902031514.99998,5905139485.00002,5896003000,5904043024.00001,6781298975.99999,6789339000,0,0],"text":"IPEDS.Year: 2020<br />value:  754911000<br />name: Government.grants.and.contracts","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(211,146,0,1)","hoveron":"points","name":"Government.grants.and.contracts","legendgroup":"Government.grants.and.contracts","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2010.991,2011,2011.009,2011.991,2012,2012.009,2012.991,2013,2013.009,2013.991,2014,2014.009,2014.991,2015,2015.009,2015.8438692332,2015.8528692332,2015.8618692332,2015.991,2016,2016.009,2016.0683794819,2016.0773794819,2016.0863794819,2016.991,2017,2017.009,2017.991,2018,2018.009,2018.991,2019,2019.009,2019.991,2020,2020.009,2020.009,2020,2019.991,2019.009,2019,2018.991,2018.009,2018,2017.991,2017.009,2017,2016.991,2016.0863794819,2016.0773794819,2016.0683794819,2016.009,2016,2015.991,2015.8618692332,2015.8528692332,2015.8438692332,2015.009,2015,2014.991,2014.009,2014,2013.991,2013.009,2013,2012.991,2012.009,2012,2011.991,2011.009,2011,2010.991,2010.991],"y":[0,2624455000,2614855464.99998,1567439535.00002,1557840000,1569478044.00002,2839317955.99998,2850956000,2855320100.00001,3331491899.99999,3335856000,3328124909.99999,2484577090.00001,2476846000,2482563772.00001,3012962874.80896,3018680646.80905,3032158209.80908,3225532436.99998,3239010000,3228524774.99998,3159346194.10406,3148860969.10404,3153130353.10393,3582260615.99999,3586530000,3595228167.00001,4544294832.99999,4552993000,4547550933.99999,3953761066.00001,3948319000,3946668058,3766531942,3764881000,0,0,10568663000,10571469344,10877672656,10880479000,10879737355,10798815645,10798074000,10784495475,9302927525.00002,9289349000,9281631931.99999,8505963259.51075,8498246191.51086,8505283732.51087,8551715458.99999,8558753000,8533798240.99996,8175750778.23831,8150796019.23827,8133601051.23817,6538539968.00003,6521345000,6526021931.00001,7036327068.99999,7041004000,7032878079.99999,6146249920.00001,6138124000,6128837259.99998,5115550740.00002,5106264000,5114087889.00001,5967761110.99999,5975585000,0,0],"text":"IPEDS.Year: 2020<br />value: 6803782000<br />name: Hospital.revenue","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(147,170,0,1)","hoveron":"points","name":"Hospital.revenue","legendgroup":"Hospital.revenue","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2010.991,2011,2011.009,2011.991,2012,2012.009,2012.991,2013,2013.009,2013.991,2014,2014.009,2014.991,2015,2015.009,2015.8438692332,2015.8528692332,2015.8618692332,2015.991,2016,2016.009,2016.0683794819,2016.0773794819,2016.0863794819,2016.991,2017,2017.009,2017.991,2018,2018.009,2018.991,2019,2019.009,2019.991,2020,2020.009,2020.009,2020,2019.991,2019.009,2019,2018.991,2018.009,2018,2017.991,2017.009,2017,2016.991,2016.0863794819,2016.0773794819,2016.0683794819,2016.009,2016,2015.991,2015.8618692332,2015.8528692332,2015.8438692332,2015.009,2015,2014.991,2014.009,2014,2013.991,2013.009,2013,2012.991,2012.009,2012,2011.991,2011.009,2011,2010.991,2010.991],"y":[0,2559648000,2550085472.99998,1506707527.00002,1497145000,1508758843.00002,2775958156.99998,2787572000,2791923032.00001,3266668967.99999,3271020000,3263220320.99999,2412188679.00001,2404389000,2410047669.00001,2934964185.55451,2940622854.5546,2954041314.55462,3146567539.99998,3159986000,3149509630.99998,3080389479.51425,3069913110.51423,3074191350.51412,3504211759.99999,3508490000,3517194062.00001,4466903937.99999,4475608000,4470168975.99999,3876711024.00001,3871272000,3869767110,3705566890,3704062000,0,0,3764881000,3766531942,3946668058,3948319000,3953761066.00001,4547550933.99999,4552993000,4544294832.99999,3595228167.00001,3586530000,3582260615.99999,3153130353.10393,3148860969.10404,3159346194.10406,3228524774.99998,3239010000,3225532436.99998,3032158209.80908,3018680646.80905,3012962874.80896,2482563772.00001,2476846000,2484577090.00001,3328124909.99999,3335856000,3331491899.99999,2855320100.00001,2850956000,2839317955.99998,1569478044.00002,1557840000,1567439535.00002,2614855464.99998,2624455000,0,0],"text":"IPEDS.Year: 2020<br />value:   60819000<br />name: Independent.operations.revenue","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,186,56,1)","hoveron":"points","name":"Independent.operations.revenue","legendgroup":"Independent.operations.revenue","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2010.991,2011,2011.009,2011.991,2012,2012.009,2012.991,2013,2013.009,2013.991,2014,2014.009,2014.991,2015,2015.009,2015.8438692332,2015.8528692332,2015.8618692332,2015.991,2016,2016.009,2016.0683794819,2016.0773794819,2016.0863794819,2016.991,2017,2017.009,2017.991,2018,2018.009,2018.991,2019,2019.009,2019.991,2020,2020.009,2020.009,2020,2019.991,2019.009,2019,2018.991,2018.009,2018,2017.991,2017.009,2017,2016.991,2016.0863794819,2016.0773794819,2016.0683794819,2016.009,2016,2015.991,2015.8618692332,2015.8528692332,2015.8438692332,2015.009,2015,2014.991,2014.009,2014,2013.991,2013.009,2013,2012.991,2012.009,2012,2011.991,2011.009,2011,2010.991,2010.991],"y":[0,1444993000,1444573051,1398751949,1398332000,1401282407,1723204593,1726155000,1726688637,1784914363,1785448000,1784400382,1670093618,1669046000,1682464460.00002,2927204394.55457,0,0,0,0,0,0,0,3059436741.51421,2006421369.00002,1995945000,2004175491.00001,2902213508.99999,2910444000,2910509583,2917665417,2917731000,2919813411,3147027589,3149110000,0,0,3704062000,3705566890,3869767110,3871272000,3876711024.00001,4470168975.99999,4475608000,4466903937.99999,3517194062.00001,3508490000,3504211759.99999,3074191350.51412,-0.000118017196655273,-14754609.0001419,-112101390.999976,-126856000,-119096208.999987,-7759791.00009227,-7.97510147094727e-05,2934964185.55451,2410047669.00001,2404389000,2412188679.00001,3263220320.99999,3271020000,3266668967.99999,2791923032.00001,2787572000,2775958156.99998,1508758843.00002,1497145000,1506707527.00002,2550085472.99998,2559648000,0,0],"text":"IPEDS.Year: 2020<br />value:  554952000<br />name: Investment.return","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,193,159,1)","hoveron":"points","name":"Investment.return","legendgroup":"Investment.return","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2010.991,2011,2011.009,2011.991,2012,2012.009,2012.991,2013,2013.009,2013.991,2014,2014.009,2014.991,2015,2015.009,2015.8438692332,2015.8528692332,2015.8618692332,2015.991,2016,2016.009,2016.0683794819,2016.0773794819,2016.0863794819,2016.991,2017,2017.009,2017.991,2018,2018.009,2018.991,2019,2019.009,2019.991,2020,2020.009,2020.009,2020,2019.991,2019.009,2019,2018.991,2018.009,2018,2017.991,2017.009,2017,2016.991,2016.0863794819,2016.0773794819,2016.0683794819,2016.009,2016,2015.991,2015.8618692332,2015.8528692332,2015.8438692332,2015.009,2015,2014.991,2014.009,2014,2013.991,2013.009,2013,2012.991,2012.009,2012,2011.991,2011.009,2011,2010.991,2010.991],"y":[0,947368000,947937880.000001,1010118120,1010688000,1013088408,1274999592,1277400000,1277265675,1262609325,1262475000,1263235599,1346225401,1346986000,1348190029,1459879669.88739,1461083698.88739,1462287727.88739,1479562971,1480767000,1481453556,1485983260.39696,1486669816.39696,1487356372.39696,1556364444,1557051000,1561376616.00001,2033349383.99999,2037675000,2039571282,2246476718,2248373000,2251513325,2594157674.99999,2597298000,0,0,3149110000,3147027589,2919813411,2917731000,2917665417,2910509583,2910444000,2902213508.99999,2004175491.00001,1995945000,2006421369.00002,3059436741.51421,3069913110.51423,3080389479.51425,3149509630.99998,3159986000,3146567539.99998,2954041314.55462,2940622854.5546,2927204394.55457,1682464460.00002,1669046000,1670093618,1784400382,1785448000,1784914363,1726688637,1726155000,1723204593,1401282407,1398332000,1398751949,1444573051,1444993000,0,0],"text":"IPEDS.Year: 2020<br />value:  551812000<br />name: Private.gifts","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(0,185,227,1)","hoveron":"points","name":"Private.gifts","legendgroup":"Private.gifts","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2010.991,2011,2011.009,2011.991,2012,2012.009,2012.991,2013,2013.009,2013.991,2014,2014.009,2014.991,2015,2015.009,2015.8438692332,2015.8528692332,2015.8618692332,2015.991,2016,2016.009,2016.0683794819,2016.0773794819,2016.0863794819,2016.991,2017,2017.009,2017.991,2018,2018.009,2018.991,2019,2019.009,2019.991,2020,2020.009,2020.009,2020,2019.991,2019.009,2019,2018.991,2018.009,2018,2017.991,2017.009,2017,2016.991,2016.0863794819,2016.0773794819,2016.0683794819,2016.009,2016,2015.991,2015.8618692332,2015.8528692332,2015.8438692332,2015.009,2015,2014.991,2014.009,2014,2013.991,2013.009,2013,2012.991,2012.009,2012,2011.991,2011.009,2011,2010.991,2010.991],"y":[0,947368000,947937880.000001,1010118120,1010688000,1013088408,1274999592,1277400000,1277265675,1262609325,1262475000,1263235599,1346225401,1346986000,1348190029,1459879669.88739,1461083698.88739,1462287727.88739,1479562971,1480767000,1481453556,1485983260.39696,1486669816.39696,1487356372.39696,1556364444,1557051000,1558830201,1752960799,1754740000,1756600606,1959613394,1961474000,1964320169,2274868831,2277715000,0,0,2597298000,2594157674.99999,2251513325,2248373000,2246476718,2039571282,2037675000,2033349383.99999,1561376616.00001,1557051000,1556364444,1487356372.39696,1486669816.39696,1485983260.39696,1481453556,1480767000,1479562971,1462287727.88739,1461083698.88739,1459879669.88739,1348190029,1346986000,1346225401,1263235599,1262475000,1262609325,1277265675,1277400000,1274999592,1013088408,1010688000,1010118120,947937880.000001,947368000,0,0],"text":"IPEDS.Year: 2020<br />value:  319583000<br />name: Private.grants.and.contracts","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(97,156,255,1)","hoveron":"points","name":"Private.grants.and.contracts","legendgroup":"Private.grants.and.contracts","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2010.991,2011,2011.009,2011.991,2012,2012.009,2012.991,2013,2013.009,2013.991,2014,2014.009,2014.991,2015,2015.009,2015.8438692332,2015.8528692332,2015.8618692332,2015.991,2016,2016.009,2016.0683794819,2016.0773794819,2016.0863794819,2016.991,2017,2017.009,2017.991,2018,2018.009,2018.991,2019,2019.009,2019.991,2020,2020.009,2020.009,2020,2019.991,2019.009,2019,2018.991,2018.009,2018,2017.991,2017.009,2017,2016.991,2016.0863794819,2016.0773794819,2016.0683794819,2016.009,2016,2015.991,2015.8618692332,2015.8528692332,2015.8438692332,2015.009,2015,2014.991,2014.009,2014,2013.991,2013.009,2013,2012.991,2012.009,2012,2011.991,2011.009,2011,2010.991,2010.991],"y":[0,747399000,747662268,776387732,776651000,776835437,796959563,797144000,797325269,817103731,817285000,817537252,845060748,845313000,845832867.000001,894057418.517617,894577285.517618,895097152.517619,902556132.999999,903076000,903389128,905455058.934127,905768186.934128,906081314.934128,937554872,937868000,938421572.000001,998822427.999999,999376000,999972988.000001,1065111012,1065708000,1066030902,1101263098,1101586000,0,0,2277715000,2274868831,1964320169,1961474000,1959613394,1756600606,1754740000,1752960799,1558830201,1557051000,1556364444,1487356372.39696,1486669816.39696,1485983260.39696,1481453556,1480767000,1479562971,1462287727.88739,1461083698.88739,1459879669.88739,1348190029,1346986000,1346225401,1263235599,1262475000,1262609325,1277265675,1277400000,1274999592,1013088408,1010688000,1010118120,947937880.000001,947368000,0,0],"text":"IPEDS.Year: 2020<br />value: 1176129000<br />name: Sales.and.services.of.educational.activities","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(219,114,251,1)","hoveron":"points","name":"Sales.and.services.of.educational.activities","legendgroup":"Sales.and.services.of.educational.activities","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2010.991,2011,2011.009,2011.991,2012,2012.009,2012.991,2013,2013.009,2013.991,2014,2014.009,2014.991,2015,2015.009,2015.8438692332,2015.8528692332,2015.8618692332,2015.991,2016,2016.009,2016.0683794819,2016.0773794819,2016.0863794819,2016.991,2017,2017.009,2017.991,2018,2018.009,2018.991,2019,2019.009,2019.991,2020,2020.009,2020.009,2020.009,2020,2019.991,2019.009,2019,2018.991,2018.009,2018,2017.991,2017.009,2017,2016.991,2016.0863794819,2016.0773794819,2016.0683794819,2016.009,2016,2015.991,2015.8618692332,2015.8528692332,2015.8438692332,2015.009,2015,2014.991,2014.009,2014,2013.991,2013.009,2013,2012.991,2012.009,2012,2011.991,2011.009,2011,2010.991,2010.991],"y":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1101586000,1101263098,1066030902,1065708000,1065111012,999972988.000001,999376000,998822427.999999,938421572.000001,937868000,937554872,906081314.934128,905768186.934128,905455058.934127,903389128,903076000,902556132.999999,895097152.517619,894577285.517618,894057418.517617,845832867.000001,845313000,845060748,817537252,817285000,817103731,797325269,797144000,796959563,776835437,776651000,776387732,747662268,747399000,0,0],"text":"IPEDS.Year: 2020<br />value: 1101586000<br />name: Tuition.and.fees","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(255,97,195,1)","hoveron":"points","name":"Tuition.and.fees","legendgroup":"Tuition.and.fees","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":26.2283105022831,"r":7.30593607305936,"b":40.1826484018265,"l":66.4840182648402},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2010.5401,2020.4599],"tickmode":"array","ticktext":["2012.5","2015.0","2017.5","2020.0"],"tickvals":[2012.5,2015,2017.5,2020],"categoryorder":"array","categoryarray":["2012.5","2015.0","2017.5","2020.0"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"IPEDS.Year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-715720600,12239300600],"tickmode":"array","ticktext":["0.0e+00","3.0e+09","6.0e+09","9.0e+09","1.2e+10"],"tickvals":[0,3000000000,6000000000,9000000000,12000000000],"categoryorder":"array","categoryarray":["0.0e+00","3.0e+09","6.0e+09","9.0e+09","1.2e+10"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"value","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"name","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"3cfa2398737c":{"x":{},"y":{},"fill":{},"type":"scatter"}},"cur_data":"3cfa2398737c","visdat":{"3cfa2398737c":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level3">
+<h3>Map</h3>
+<div id="htmlwidget-b9e6b78daeef6dca88cc" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b9e6b78daeef6dca88cc">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[39.950929,-75.19391,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"University of Pennsylvania",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[39.950929,-75.19391],16,[]],"limits":{"lat":[39.950929,39.950929],"lng":[-75.19391,-75.19391]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
