@@ -158,7 +158,7 @@ GetIPEDSDirectly <- function(years=c(2021, 2020, 2018, 2016, 2014, 2012), IPEDS_
   return(all_results)
 } 
 
-GetIPEDSDirectlyTry2 <- function(years=2021:2010, IPEDS_names = GetIPEDSNames()) {
+GetIPEDSDirectlyTry2 <- function(years=2021:2000, IPEDS_names = GetIPEDSNames()) {
 	print("Starting GetIPEDSDirectlyTry2")
 	finished_downloads <- c()
   # Get IPEDS data directly from the IPEDS website
@@ -309,7 +309,369 @@ GetIPEDSDirectlyTry2 <- function(years=2021:2010, IPEDS_names = GetIPEDSNames())
   return(finished_downloads)
 } 
 
+# Idea here is one table to rule them all with all the info we want to compare between schools. 
+CreateComparisonTables <- function(ipeds_direct_and_db) {
+	db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
+	comparison_table <- tbl(db, "Institutional_directory") %>% dplyr::select(c(
+		"UNITID.Unique.identification.number.of.the.institution",
+		"HDzzzz.INSTNM.Institution..entity..name",
+		"HDzzzz.IALIAS.Institution.name.alias",
+		"HDzzzz.ADDR.Street.address.or.post.office.box",
+		"HDzzzz.CITY.City.location.of.institution",
+		"HDzzzz.STABBR.State.abbreviation",
+		"HDzzzz.ZIP.ZIP.code",
+		"HDzzzz.FIPS.FIPS.state.code",
+		"HDzzzz.OBEREG.Bureau.of.Economic.Analysis..BEA..regions",
+		"HDzzzz.CHFNM.Name.of.chief.administrator",
+		"HDzzzz.CHFTITLE.Title.of.chief.administrator",
+		"HDzzzz.OPEID.Office.of.Postsecondary.Education..OPE..ID.Number",
+		"HDzzzz.OPEFLAG.OPE.Title.IV.eligibility.indicator.code",
+		"HDzzzz.WEBADDR.Institution.s.internet.website.address",
+		"HDzzzz.ADMINURL.Admissions.office.web.address",
+		"HDzzzz.FAIDURL.Financial.aid.office.web.address",
+		"HDzzzz.APPLURL.Online.application.web.address",
+		"HDzzzz.NPRICURL.Net.price.calculator.web.address",
+		"HDzzzz.VETURL.Veterans.and.Military.Servicemembers.tuition.policies.web.address",
+		"HDzzzz.ATHURL.Student.Right.to.Know.student.athlete.graduation.rate.web.address",
+		"HDzzzz.DISAURL.Disability.Services.Web.Address",
+		"HDzzzz.SECTOR.Sector.of.institution",
+		"HDzzzz.ICLEVEL.Level.of.institution",
+		"HDzzzz.CONTROL.Control.of.institution",
+		"HDzzzz.HLOFFER.Highest.level.of.offering",
+		"HDzzzz.UGOFFER.Undergraduate.offering",
+		"HDzzzz.GROFFER.Graduate.offering",
+		"HDzzzz.HDEGOFR1.Highest.degree.offered",
+		"HDzzzz.DEGGRANT.Degree.granting.status",
+		"HDzzzz.HBCU.Historically.Black.College.or.University",
+		"HDzzzz.HOSPITAL.Institution.has.hospital",
+		"HDzzzz.MEDICAL.Institution.grants.a.medical.degree",
+		"HDzzzz.TRIBAL.Tribal.college",
+		"HDzzzz.LOCALE.Degree.of.urbanization..Urban.centric.locale.",
+		"HDzzzz.OPENPUBL.Institution.open.to.the.general.public",
+		"HDzzzz.ACT.Status.of.institution",
+		"HDzzzz.NEWID.UNITID.for.merged.schools",
+		"HDzzzz.DEATHYR.Year.institution.was.deleted.from.IPEDS",
+		"HDzzzz.CLOSEDAT.Date.institution.closed",
+		"HDzzzz.CYACTIVE.Institution.is.active.in.current.year",
+		"HDzzzz.INSTCAT.Institutional.category",
+		"HDzzzz.C21BASIC.Carnegie.Classification.2021..Basic",
+		"HDzzzz.C21IPUG.Carnegie.Classification.2021..Undergraduate.Instructional.Program",
+		"HDzzzz.C21IPGRD.Carnegie.Classification.2021..Graduate.Instructional.Program",
+		"HDzzzz.C21UGPRF.Carnegie.Classification.2021..Undergraduate.Profile",
+		"HDzzzz.C21ENPRF.Carnegie.Classification.2021..Enrollment.Profile",
+		"HDzzzz.C21SZSET.Carnegie.Classification.2021..Size.and.Setting",
+		"HDzzzz.LANDGRNT.Land.Grant.Institution",
+		"HDzzzz.INSTSIZE.Institution.size.category",
+		"HDzzzz.F1SYSTYP.Multi.institution.or.multi.campus.organization",
+		"HDzzzz.F1SYSNAM.Name.of.multi.institution.or.multi.campus.organization",
+		"HDzzzz.F1SYSCOD.Identification.number.of.multi.institution.or.multi.campus.organization",
+		"HDzzzz.CBSA.Core.Based.Statistical.Area..CBSA.",
+		"HDzzzz.CBSATYPE.CBSA.Type.Metropolitan.or.Micropolitan",
+		"HDzzzz.CSA.Combined.Statistical.Area..CSA.",
+		"HDzzzz.NECTA.New.England.City.and.Town.Area..NECTA.",
+		"HDzzzz.COUNTYCD.Fips.County.code",
+		"HDzzzz.COUNTYNM.County.name",
+		"HDzzzz.LONGITUD.Longitude.location.of.institution",
+		"HDzzzz.LATITUDE.Latitude.location.of.institution",
+		"HDzzzz.DFRCGID.Data.Feedback.Report.comparison.group.created.by.NCES",
+		"HDzzzz.DFRCUSCG.Data.Feedback.Report...Institution.submitted.a.custom.comparison.group",
+		"IPEDS.Year",
+		"HDzzzz.DFRCGID.Data.Feedback.Report.comparison.group.category.created.by.NCES",
+		"HDzzzz.OBEREG.Geographic.region",
+		"HDzzzz.F1SYSTYP.System..Governing.Board.or.Corporate.Structure",
+		"HDzzzz.F1SYSNAM.Name.of.system..governing.board.or.corporate.entity.",
+		"HDzzzz.TENURSYS.Does.institution.have.a.tenure.system",
+		"HDzzzz.DFRCGID.Data.Feedback.Report.comparison.group.category",
+		"HDzzzz.APPLURL.Online.application.web.addres",
+		"HDzzzz.FPOFFER.First.professional.offering",
+		"HDzzzz.HDEGOFFR.Highest.degree.offered",
+		"HDzzzz.CCBASIC.Carnegie.Classification.2005..Basic",
+		"HDzzzz.CCIPUG.Carnegie.Classification.2005..Undergraduate.Instructional.Program",
+		"HDzzzz.CCIPGRAD.Carnegie.Classification.2005..Graduate.Instructional.Program",
+		"HDzzzz.CCUGPROF.Carnegie.Classification.2005..Undergraduate.Profile",
+		"HDzzzz.CCENRPRF.Carnegie.Classification.2005..Enrollment.Profile",
+		"HDzzzz.CCSIZSET.Carnegie.Classification.2005..Size.and.Setting",
+		"HDzzzz.LOCALE.Degree.of.urbanization"
+)) %>% as.data.frame() 
+	
+	enrollment_undergrad <- tbl(db, "Enrollment_age") %>% dplyr::filter(EFzzzzB.LSTUDY.Level.of.student=="Undergraduate" & EFzzzzB.LINE.Original.line.number.on.survey.form=="Undergraduate, total") %>% dplyr::select(c(
+		"UNITID.Unique.identification.number.of.the.institution",
+		"IPEDS.Year",
+		"EFzzzzB.EFAGE05.Full.time.total",
+		"EFzzzzB.EFAGE06.Part.time.total"
+	)) %>% dplyr::rename(c(
+		Undergrad.full.time = "EFzzzzB.EFAGE05.Full.time.total",
+		Undergrad.part.time = "EFzzzzB.EFAGE06.Part.time.total"
+	)) %>% as.data.frame()  #  EFzzzzB.EFAGE05.Full.time.total for full time undergraduates
 
+
+	enrollment_grad <- tbl(db, "Enrollment_age") %>% dplyr::filter(EFzzzzB.LSTUDY.Level.of.student=="Graduate" & EFzzzzB.EFBAGE.Age.category=='All age categories total') %>% dplyr::select(c(
+		"UNITID.Unique.identification.number.of.the.institution",
+		"IPEDS.Year",
+		"EFzzzzB.EFAGE05.Full.time.total",
+		"EFzzzzB.EFAGE06.Part.time.total"
+	)) %>% dplyr::rename(c(
+		GradStudent.full.time = "EFzzzzB.EFAGE05.Full.time.total",
+		GradStudent.part.time = "EFzzzzB.EFAGE06.Part.time.total"
+	)) %>% as.data.frame() 
+	
+	comparison_table <- dplyr::left_join(comparison_table, enrollment_undergrad, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+	comparison_table <- dplyr::left_join(comparison_table, enrollment_grad, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+	
+	admissions <- tbl(db, "Admissions") %>% as.data.frame()
+	
+	comparison_table <- dplyr::left_join(comparison_table, admissions, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+	
+	enrollment_residence <- tbl(db, "Enrollment_residence") %>% dplyr::select(c(
+		"UNITID.Unique.identification.number.of.the.institution",
+		"EFzzzzC.EFCSTATE.State.of.residence.when.student.was.first.admitted",
+		"EFzzzzC.EFRES01.First.time.degree.certificate.seeking.undergraduate.students",
+		"IPEDS.Year"
+	)) %>% dplyr::filter(`EFzzzzC.EFCSTATE.State.of.residence.when.student.was.first.admitted` != 'All first-time degree/certificate seeking undergraduates, total') %>% dplyr::filter(`EFzzzzC.EFCSTATE.State.of.residence.when.student.was.first.admitted` != 'z') %>% as.data.frame()
+	
+	enrollment_residence_wider <- enrollment_residence %>% pivot_wider(id_cols=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"), names_from='EFzzzzC.EFCSTATE.State.of.residence.when.student.was.first.admitted', values_from='EFzzzzC.EFRES01.First.time.degree.certificate.seeking.undergraduate.students') %>% as.data.frame()
+	enrollment_residence_wider[is.na(enrollment_residence_wider)] <- 0
+	colnames(enrollment_residence_wider)[-c(1:2)] <- paste0("First year students from ", colnames(enrollment_residence_wider)[-c(1:2)])
+	
+	comparison_table <- dplyr::left_join(comparison_table, enrollment_residence_wider, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+
+	# finance
+	
+	
+
+	finance_fasb <- tbl(db, "Finance_FASB") %>% as.data.frame() 
+	colnames(finance_fasb) <- gsub("^[A-z0-9_]+\\.[A-Z0-9]+\\.", "", colnames(finance_fasb))
+	finance_fasb <- finance_fasb %>% FixDuplicateColnames() %>% dplyr::select(c(
+		"UNITID.Unique.identification.number.of.the.institution",
+		"IPEDS.Year",
+		"Total.assets",
+		"Long.term.investments",
+		"Total.liabilities",
+		"Total.revenues.and.investment.return",
+		"Total.expenses",
+		"Pell.grants",
+		"Tuition.and.fees...Total",
+		"Federal.appropriations...Total",
+		"State.appropriations...Total",
+		"Local.appropriations...Total",
+		"Federal.grants.and.contracts...Total",
+		"State.grants.and.contracts...Total",
+		"Local.grants.and.contracts...Total",
+		"Private.gifts...Total",
+		"Private.grants.and.contracts...Total",
+		"Instruction.Total.amount",
+		"Instruction.Salaries.and.wages",
+		"Research.Total.amount",
+		"Research.Salaries.and.wages",
+		"Public.service.Total.amount",
+		"Public.service.Salaries.and.wages",
+		"Academic.support.Total.amount",
+		"Academic.support.Salaries.and.wages",
+		"Student.service.Total.amount",
+		"Student.service.Salaries.and.wages",
+		"Institutional.support.Total.amount",
+		"Institutional.support.Salaries.and.wages",
+		"Auxiliary.enterprises.Total.amount",
+		"Auxiliary.enterprises.Salaries.and.wages",
+		"Net.grant.aid.to.students.Total.amount",
+		"Total.expenses.Total.amount"
+	)) %>% dplyr::rename(c(
+		"Tuition.and.fees"="Tuition.and.fees...Total",
+		"Federal.appropriations"="Federal.appropriations...Total",
+		"State.appropriations"="State.appropriations...Total",
+		"Local.government.appropriations"="Local.appropriations...Total",
+		"Federal.grants.and.contracts"="Federal.grants.and.contracts...Total",
+		"State.grants.and.contracts"="State.grants.and.contracts...Total",
+		"Local.grants.and.contracts"="Local.grants.and.contracts...Total"
+	))
+	for(col_index in 3:ncol(finance_fasb)){
+		finance_fasb[,col_index] <- as.numeric(finance_fasb[,col_index])
+	}
+	finance_fasb$`Private.gifts..grants..and.contracts` <- as.numeric(finance_fasb$`Private.gifts...Total`) + as.numeric(finance_fasb$`Private.grants.and.contracts...Total`)
+	
+	finance_gasb <- tbl(db, "Finance_GASB") %>% as.data.frame()
+	colnames(finance_gasb) <- gsub("^[A-z0-9_]+\\.[A-Z0-9]+\\.", "", colnames(finance_gasb))
+	finance_gasb <- finance_gasb %>% FixDuplicateColnames() %>% dplyr::select(c(
+		"UNITID.Unique.identification.number.of.the.institution",
+		"IPEDS.Year",
+		"Total.assets",
+		"Total.revenues.and.other.additions",
+		"Total.expenses.and.other.deductions",
+		"Pell.grants..federal.",
+		"Tuition.and.fees..after.deducting.discounts.and.allowances",
+		"Federal.appropriations",
+		"State.appropriations",
+		"Local.appropriations..education.district.taxes..and.similar.support",
+		"Federal.operating.grants.and.contracts",
+		"State.operating.grants.and.contracts",
+		"Local.private.operating.grants.and.contracts",
+		"Federal.nonoperating.grants",
+		"State.nonoperating.grants",
+		"Local.nonoperating.grants",
+		"Gifts..including.contributions.from.affiliated.organizations",
+		"Private.operating.grants.and.contracts",
+		"Total.all.revenues.and.other.additions",
+		"Instruction...Current.year.total",
+		"Instruction...Salaries.and.wages",
+		"Research...Current.year.total",
+		"Research...Salaries.and.wages",
+		"Public.service...Current.year.total",
+		"Public.service...Salaries.and.wages",
+		"Academic.support...Current.year.total",
+		"Academic.support...Salaries.and.wages",
+		"Student.services...Current.year.total",
+		"Student.services...Salaries.and.wages",
+		"Institutional.support...Current.year.total",
+		"Institutional.support...Salaries.and.wages",
+		"Auxiliary.enterprises....Current.year.total",
+		"Auxiliary.enterprises....Salaries.and.wages",
+		"Scholarships.and.fellowships.expenses....Current.year.total",
+		"Total.expenses.and.deductions...Current.year.total"
+	)) %>% dplyr::rename(c(
+		"Total.expenses"="Total.expenses.and.other.deductions",
+		"Pell.grants"="Pell.grants..federal.",
+		"Tuition.and.fees"="Tuition.and.fees..after.deducting.discounts.and.allowances",
+		"Local.government.appropriations"="Local.appropriations..education.district.taxes..and.similar.support",
+		"Total.revenues.and.investment.return"="Total.all.revenues.and.other.additions",
+		"Instruction.Total.amount"="Instruction...Current.year.total",
+		"Instruction.Salaries.and.wages"="Instruction...Salaries.and.wages",
+		"Research.Total.amount"="Research...Current.year.total",
+		"Research.Salaries.and.wages"="Research...Salaries.and.wages",
+		"Public.service.Total.amount"="Public.service...Current.year.total",
+		"Public.service.Salaries.and.wages"="Public.service...Salaries.and.wages",
+		"Academic.support.Total.amount"="Academic.support...Current.year.total",
+		"Academic.support.Salaries.and.wages"="Academic.support...Salaries.and.wages",
+		"Student.service.Total.amount"="Student.services...Current.year.total",
+		"Student.service.Salaries.and.wages"="Student.services...Salaries.and.wages",
+		"Institutional.support.Total.amount"="Institutional.support...Current.year.total",
+		"Institutional.support.Salaries.and.wages"="Institutional.support...Salaries.and.wages",
+		"Auxiliary.enterprises.Total.amount"="Auxiliary.enterprises....Current.year.total",
+		"Auxiliary.enterprises.Salaries.and.wages"="Auxiliary.enterprises....Salaries.and.wages",
+		"Net.grant.aid.to.students.Total.amount"="Scholarships.and.fellowships.expenses....Current.year.total",
+		"Total.expenses.Total.amount"="Total.expenses.and.deductions...Current.year.total"
+	))
+	for(col_index in 3:ncol(finance_gasb)){
+		finance_gasb[,col_index] <- as.numeric(finance_gasb[,col_index])
+	}
+	finance_gasb$"Federal.grants.and.contracts" <- finance_gasb$"Federal.operating.grants.and.contracts" + finance_gasb$"Federal.nonoperating.grants"
+	finance_gasb$"State.grants.and.contracts" <- finance_gasb$"State.operating.grants.and.contracts" + finance_gasb$"State.nonoperating.grants"
+	finance_gasb$"Local.government.and.contracts" <- finance_gasb$"Local.private.operating.grants.and.contracts" + finance_gasb$"Local.nonoperating.grants"
+	finance_gasb$"Private.grants.and.contracts" <- finance_gasb$"Private.operating.grants.and.contracts" + finance_gasb$"Gifts..including.contributions.from.affiliated.organizations"
+	
+	finance_forprofit <- tbl(db, "Finance_ForProfits") %>% as.data.frame()
+	colnames(finance_forprofit) <- gsub("^[A-z0-9_]+\\.[A-Z0-9]+\\.", "", colnames(finance_forprofit))
+	finance_forprofit <- finance_forprofit %>% FixDuplicateColnames() %>% dplyr::select(c(
+		"UNITID.Unique.identification.number.of.the.institution",
+		"IPEDS.Year",
+		"Total.assets",
+		"Long.term.investments",
+		"Total.liabilities",
+		"Total.revenues.and.investment.return",
+		"Total.expenses",
+		"Pell.grants",
+		"Tuition.and.fees",
+		"Federal.appropriations",
+		"State.appropriations",
+		"Local.government.appropriations",
+		"Federal.grants.and.contracts",
+		"State.grants.and.contracts",
+		"Local.government.and.contracts",
+		"Private.gifts..grants..and.contracts",
+		"Instruction.Total.amount",
+		"Instruction.Salaries.and.wages",
+		"Research.Total.amount",
+		"Research.Salaries.and.wages",
+		"Public.service.Total.amount",
+		"Public.service.Salaries.and.wages",
+		"Academic.support.Total.amount",
+		"Academic.support.Salaries.and.wages",
+		"Student.service.Total.amount",
+		"Student.service.Salaries.and.wages",
+		"Institutional.support.Total.amount",
+		"Institutional.support.Salaries.and.wages",
+		"Auxiliary.enterprises.Total.amount",
+		"Auxiliary.enterprises.Salaries.and.wages",
+		"Net.grant.aid.to.students.Total.amount",
+		"Total.expenses.Total.amount"
+	))
+	for(col_index in 3:ncol(finance_forprofit)){
+		finance_forprofit[,col_index] <- as.numeric(finance_forprofit[,col_index])
+	}
+	
+	
+	finance <- dplyr::bind_rows(FixDuplicateColnames(finance_fasb), FixDuplicateColnames(finance_gasb), FixDuplicateColnames(finance_forprofit))
+	
+	comparison_table <- dplyr::left_join(comparison_table, finance, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+
+	student_aid_core <- tbl(db, "Student_aid") %>% dplyr::select(c(
+		"UNITID.Unique.identification.number.of.the.institution",
+		"IPEDS.Year",
+		"SFAxxyy.ANYAIDP.Percent.of.full.time.first.time.undergraduates.awarded.any.financial.aid",
+		"SFAxxyy.AIDFSIP.Percent.of.full.time.first.time.undergraduates.awarded.any.loans.to.students.or.grant.aid..from.federal.state.local.government.or.the.institution",
+		"SFAxxyy.AGRNT_P.Percent.of.full.time.first.time.undergraduates.awarded.federal..state..local.or.institutional.grant.aid",
+		"SFAxxyy.AGRNT_A.Average.amount.of.federal..state..local.or.institutional.grant.aid.awarded",
+		"SFAxxyy.FGRNT_P.Percent.of.full.time.first.time.undergraduates.awarded.federal.grant.aid",
+		"SFAxxyy.FGRNT_A.Average.amount.of.federal.grant.aid.awarded.to.full.time.first.time.undergraduates",
+		"SFAxxyy.PGRNT_P.Percent.of.full.time.first.time.undergraduates.awarded.Pell.grants",
+		"SFAxxyy.PGRNT_A.Average.amount.of.Pell.grant.aid.awarded.to.full.time.first.time.undergraduates",
+		"SFAxxyy.OFGRT_P.Percent.of.full.time.first.time.undergraduates.awarded.other.federal.grant.aid",
+		"SFAxxyy.OFGRT_A.Average.amount.of.other.federal.grant.aid.awarded.to.full.time.first.time.undergraduates",
+		"SFAxxyy.SGRNT_P.Percent.of.full.time.first.time.undergraduates.awarded.state.local.grant.aid",
+		"SFAxxyy.SGRNT_A.Average.amount.of.state.local.grant.aid.awarded.to.full.time.first.time.undergraduates",
+		"SFAxxyy.IGRNT_P.Percent.of.full.time.first.time.undergraduates.awarded.institutional.grant.aid",
+		"SFAxxyy.IGRNT_A.Average.amount.of.institutional.grant.aid.awarded.to.full.time.first.time.undergraduates",
+		"SFAxxyy.LOAN_P.Percent.of.full.time.first.time.undergraduates.awarded.student.loans",
+		"SFAxxyy.LOAN_A.Average.amount.of.student.loans.awarded.to.full.time.first.time.undergraduates",
+		"SFAxxyy.FLOAN_P.Percent.of.full.time.first.time.undergraduates.awarded.federal.student.loans",
+		"SFAxxyy.FLOAN_A.Average.amount.of.federal.student.loans.awarded.to.full.time.first.time.undergraduates",
+		"SFAxxyy.OLOAN_P.Percent.of.full.time.first.time.undergraduates.awarded.other.student.loans",
+		"SFAxxyy.OLOAN_T.Total.amount.of.other.student.loans.awarded.to.full.time.first.time.undergraduates",
+		"SFAxxyy.OLOAN_A.Average.amount.of.other.student.loans.awarded.to.full.time.first.time.undergraduates"
+		)) %>% as.data.frame()
+
+	for(col_index in 3:ncol(student_aid_core)){
+		student_aid_core[,col_index] <- as.numeric(student_aid_core[,col_index])
+	}
+	
+	comparison_table <- dplyr::left_join(comparison_table, student_aid_core, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+	
+	student_aid_messy_years <- tbl(db, "Student_aid") %>% dplyr::select(c(
+		"UNITID.Unique.identification.number.of.the.institution",
+		contains("Average.net.price.students.awarded.grant.or.scholarship.aid")
+		)) %>% as.data.frame()
+	colnames(student_aid_messy_years) <-  gsub("\\.[0-9]+$", "", gsub("Average.net.price.students.awarded.grant.or.scholarship.aid..", "", gsub("^[A-z]+\\.[A-Z0-9]+\\.", "", colnames(student_aid_messy_years))))
+	student_aid_messy_pivoted <- student_aid_messy_years %>% tidyr::pivot_longer(cols = -UNITID.Unique.identification.number.of.the.institution, names_to = "IPEDS.Year", values_to = "Average.net.price.students.awarded.grant.or.scholarship.aid")
+	student_aid_messy_pivoted <- student_aid_messy_pivoted %>% filter(!is.na(Average.net.price.students.awarded.grant.or.scholarship.aid)) %>% filter(UNITID.Unique.identification.number.of.the.institution!="z")
+	student_aid_messy_pivoted$Average.net.price.students.awarded.grant.or.scholarship.aid <- as.numeric(student_aid_messy_pivoted$Average.net.price.students.awarded.grant.or.scholarship.aid)
+	student_aid_messy_pivoted <- student_aid_messy_pivoted %>% group_by(UNITID.Unique.identification.number.of.the.institution, IPEDS.Year) %>% summarise(Average.net.price.students.awarded.grant.or.scholarship.aid = mean(Average.net.price.students.awarded.grant.or.scholarship.aid))
+	student_aid_messy_pivoted <- student_aid_messy_pivoted %>% group_by(UNITID.Unique.identification.number.of.the.institution, IPEDS.Year) %>% summarise(Average.net.price.students.awarded.grant.or.scholarship.aid = mean(Average.net.price.students.awarded.grant.or.scholarship.aid))
+	
+	comparison_table <- dplyr::left_join(comparison_table, student_aid_messy_pivoted, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+	
+	academic_library <- tbl(db, "Academic_library") %>% as.data.frame()
+	
+	comparison_table <- dplyr::left_join(comparison_table, academic_library, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+
+
+
+	# Wrapup steps
+	
+	colnames(comparison_table) <- gsub("  ", " ", gsub('\\.', ' ', gsub("^[A-z]+\\.[A-Z0-9]+\\.", "", colnames(comparison_table))))
+
+
+	
+	comparison_table$`Admission percentage total` <- 100*as.numeric(comparison_table$`Admissions total`)/as.numeric(comparison_table$`Applicants total`)
+	comparison_table$`Admission percentage women` <- 100*as.numeric(comparison_table$`Admissions women`)/as.numeric(comparison_table$`Applicants women`)
+	comparison_table$`Admission percentage men` <- 100*as.numeric(comparison_table$`Admissions men`)/as.numeric(comparison_table$`Applicants men`)
+
+	comparison_table$`Yield percentage total` <- 100*as.numeric(comparison_table$`Enrolled total`)/as.numeric(comparison_table$`Admissions total`)
+	comparison_table$`Yield percentage women` <- 100*as.numeric(comparison_table$`Enrolled women`)/as.numeric(comparison_table$`Admissions women`) 
+	comparison_table$`Yield percentage men` <- 100*as.numeric(comparison_table$`Enrolled men`)/as.numeric(comparison_table$`Admissions men`)
+	
+	comparison_table <- subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution` != "z") #kill the placeholder
+	dbDisconnect(db)
+	return(comparison_table)
+}
 
 AggregateDirectIPEDSDirect <- function(ipeds_directly, IPEDS_names = GetIPEDSNames(), remove=TRUE) {
 	if(remove) {
@@ -369,6 +731,7 @@ AggregateDirectIPEDSDirect <- function(ipeds_directly, IPEDS_names = GetIPEDSNam
 }
 
 FixDuplicateColnames <- function(df) {
+	colnames(df) <- gsub(colnames(df), pattern="\\.[0-9]+$", replacement="")
 	df_duplicated <- colnames(df)[duplicated(colnames(df))]
 	while(length(df_duplicated)>0) {
 		for (bad_col in df_duplicated) {
@@ -612,7 +975,7 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	academic_library <- tbl(db, "Academic_library") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% as.data.frame()
 	
-	colnames(academic_library) <- gsub("[A-z_0-9]+\\.[A-Z0-9]+\\.", "", colnames(academic_library))
+	colnames(academic_library) <- gsub("[A-z_0-9]+\\.[A-Z0-9_]+\\.", "", colnames(academic_library))
 	
 	#academic_library$latest_year <- FALSE
 	#academic_library$latest_year[which(academic_library$`IPEDS.Year`==max(academic_library$`IPEDS.Year`))] <- TRUE
@@ -1162,7 +1525,7 @@ RenderSparklines <- function(spark_height=5, spark_width=40) {
 RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, students_by_state_by_institution, student_demographics, faculty_counts, spark_width, spark_height) {	
 	institutions <- unique(degree_granting$ShortName)
 	failures <- c()
-	try(system("rm all_colleges.rda"), silent=TRUE)
+	try(system("rm docs/all_colleges.rda"), silent=TRUE)
 	#for (i in seq_along(institutions)) {
 	for (i in sequence(min(maxcount, length(institutions)))) {
 		failed <- TRUE
@@ -1222,7 +1585,7 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 			failures <- c(failures, institutions[i])
 		}
 	}
-	load("all_colleges.rda")
+	load("docs/all_colleges.rda")
 	return(all_colleges)
 }
 
