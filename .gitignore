@@ -43,3 +43,4 @@ vignettes/*.pdf
 _targets
 db_IPEDS.sqlite
 run.Rout
+IPEDS*.csv

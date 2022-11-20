@@ -38,7 +38,7 @@ GetIPEDSNames <- function() {
   return(IPEDS_names)
 }
 
-GetIPEDSDirectly <- function(years=c(2021, 2020, 2018, 2016, 2014, 2012), IPEDS_names = GetIPEDSNames()) {
+GetIPEDSDirectlyFailedAttempt <- function(years=c(2021, 2020, 2018, 2016, 2014, 2012), IPEDS_names = GetIPEDSNames()) {
   # Get IPEDS data directly from the IPEDS website
   # Input: years to download
   # Output: array with IPEDS data
@@ -158,7 +158,7 @@ GetIPEDSDirectly <- function(years=c(2021, 2020, 2018, 2016, 2014, 2012), IPEDS_
   return(all_results)
 } 
 
-GetIPEDSDirectlyTry2 <- function(years=2021:2000, IPEDS_names = GetIPEDSNames()) {
+GetIPEDSDirectly <- function(years=2021:2000, IPEDS_names = GetIPEDSNames()) {
 	print("Starting GetIPEDSDirectlyTry2")
 	finished_downloads <- c()
   # Get IPEDS data directly from the IPEDS website
@@ -652,6 +652,24 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 	
 	comparison_table <- dplyr::left_join(comparison_table, academic_library, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
 
+	# Instructional staff
+
+	staff_tenure_demographics <- tbl(db, "Staff_gender") %>% as.data.frame()
+	colnames(staff_tenure_demographics) <- gsub("^[A-z]+\\.[A-Z0-9]+\\.", "", colnames(staff_tenure_demographics))
+	
+
+
+	tenure_stream_current <- staff_tenure_demographics %>% filter(Instructional.staff.category %in% c('Tenured total', 'On-Tenure track total')) %>% filter(Academic.rank=="All ranks") %>% group_by(IPEDS.Year, UNITID.Unique.identification.number.of.the.institution) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) 
+	
+	colnames(tenure_stream_current)[-c(1,2)] <- paste0("Tenure-stream.", colnames(tenure_stream_current)[-c(1,2)])
+
+	comparison_table <- dplyr::left_join(comparison_table, tenure_stream_current, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+
+	ntt_stream_current <- staff_tenure_demographics %>% filter(Instructional.staff.category=='Not on tenure track/No tenure system system total') %>% filter(Academic.rank=="All ranks") %>% group_by(IPEDS.Year, UNITID.Unique.identification.number.of.the.institution) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) 
+	
+	colnames(ntt_stream_current)[-c(1,2)] <- paste0("NTT-stream.", colnames(ntt_stream_current)[-c(1,2)])
+	
+	comparison_table <- dplyr::left_join(comparison_table, ntt_stream_current, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
 
 
 	# Wrapup steps
@@ -1585,7 +1603,8 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 			failures <- c(failures, institutions[i])
 		}
 	}
-	load("docs/all_colleges.rda")
+	try(load("docs/all_colleges.rda"))
+	try(load("all_colleges.rda"))
 	return(all_colleges)
 }
 

@@ -270,6 +270,30 @@ comparison_df %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>%  addH
  
 ```
 
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+
+horizontal_results <- as.data.frame(cbind(t(comparison_df[,1, drop=FALSE]), t(safety_to_print[,1, drop=FALSE]), t(location_to_print[,1, drop=FALSE])))
+rownames(horizontal_results) <- gsub('&nbsp;', '', rownames(horizontal_results))
+horizontal_results$`Athletic conference` <-  raw_table_df$"NCAA/NAIA conference number cross country/track"[focal_row_number]
+horizontal_results$'Institution type' <-  raw_table_df$"Type"[focal_row_number]
+horizontal_results$'Institution sector' <-  raw_table_df$"Sector"[focal_row_number]
+horizontal_results$'City' <- as.character(raw_table_df[focal_row_number, 'City'])
+horizontal_results$'State' <- as.character(focal_raw['State'][1,1])
+
+all_colleges <- data.frame()
+try(load(file="all_colleges.rda"), silent=TRUE)
+if(nrow(all_colleges)==0) {
+	all_colleges <- horizontal_results
+} else {
+	all_colleges <- rbind(all_colleges, horizontal_results)	
+}
+
+save(all_colleges, file="all_colleges.rda")
+
+```
+
 ### Location
 
 
@@ -535,26 +559,3 @@ if(max(students_by_state$`Number of students`)>0) {
 
 
 
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
-
-horizontal_results <- as.data.frame(cbind(t(comparison_df[,1, drop=FALSE]), t(safety_to_print[,1, drop=FALSE]), t(location_to_print[,1, drop=FALSE])))
-rownames(horizontal_results) <- gsub('&nbsp;', '', rownames(horizontal_results))
-horizontal_results$`Athletic conference` <-  raw_table_df$"NCAA/NAIA conference number cross country/track"[focal_row_number]
-horizontal_results$'Institution type' <-  raw_table_df$"Type"[focal_row_number]
-horizontal_results$'Institution sector' <-  raw_table_df$"Sector"[focal_row_number]
-horizontal_results$'City' <- as.character(raw_table_df[focal_row_number, 'City'])
-horizontal_results$'State' <- as.character(focal_raw['State'][1,1])
-
-all_colleges <- data.frame()
-try(load(file="all_colleges.rda"), silent=TRUE)
-if(nrow(all_colleges)==0) {
-	all_colleges <- horizontal_results
-} else {
-	all_colleges <- rbind(all_colleges, horizontal_results)	
-}
-
-save(all_colleges, file="all_colleges.rda")
-
-```
