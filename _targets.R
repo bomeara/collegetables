@@ -15,16 +15,17 @@ source("_packages.R")
 options(timeout=24*60*60) # let things download for at least 24 hours (important while on slow internet connection)
 options(download.file.method = "libcurl")
 
-# tar_invalidate(pages)
-# tar_invalidate(index)
-# tar_invalidate(about)
-# tar_invalidate(sparklines)
-# tar_invalidate(state_pages)
+tar_invalidate(pages)
+tar_invalidate(index)
+tar_invalidate(about)
+tar_invalidate(sparklines)
+tar_invalidate(state_pages)
 
 # End this file with a list of target objects.
 list(
  tar_target(ipeds_directly, GetIPEDSDirectlyTry2()),
  tar_target(ipeds_direct_and_db, AggregateDirectIPEDSDirect(ipeds_directly)),
+ tar_target(comparison_table, CreateComparisonTables(ipeds_direct_and_db)),
 # tar_target(ipeds_direct_aggregate, AggregateForAllInstitutions(ipeds_direct_and_db)),
 #  tar_target(ipeds_2021, GetIPEDSDirectly("2021")),
 #  tar_target(ipeds_2020, GetIPEDSDirectly("2020")),
