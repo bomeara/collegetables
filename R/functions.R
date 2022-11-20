@@ -769,7 +769,7 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	colnames(institutional_directory) <- gsub("HDzzzz\\.[A-Z0-9]+\\.", "", colnames(institutional_directory))
 	
-	print(paste0("Now working on ", institutional_directory[1,2]))
+	#print(paste0("Now working on ", institutional_directory[1,2]))
 
 	
 	#institutional_directory$latest_year <- FALSE # flag for the latest year we have data for for this institution for this field
