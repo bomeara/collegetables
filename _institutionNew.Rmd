@@ -8,11 +8,7 @@ params:
   institution_name: "nothing"
   institution_long_name: "nothing"
   institution_id: "nothing"
-  overview_table: "nothing"
-  raw_table: "nothing"
-  students_by_state_by_institution: "nothing"
-  student_demographics: "nothing"
-  faculty_counts: "nothing"
+  comparison_table: "nothing"
   spark_width: 40
   spark_height: 5
 title: "`r paste0(params$institution_name)`"
@@ -24,111 +20,58 @@ knitr::opts_chunk$set(dev="png")
 source("_packages.R")
 source("R/functions.R")
 
-raw_table_df <- as.data.frame(params$raw_table)
-students_by_state <- params$students_by_state_by_institution[[params$institution_name]]
-student_demographics_focal <- params$student_demographics[[params$institution_name]]
-faculty_counts_focal <- params$faculty_counts[[params$institution_name]]
-focal_row_number <- which(raw_table_df$"ShortName"==params$institution_name)
-raw_table_df$FocalInstitution <- FALSE
-raw_table_df$FocalInstitution[focal_row_number] <- TRUE
+GetFirstNonNA <- function(x) {
+	return(x[!is.na(x)][1])	
+}
 
-raw_table_df <- dplyr::rename(raw_table_df, `Associates degrees awarded`="Number of students receiving an Associate's degree (DRVC2020)", `Bachelors degrees awarded`="Number of students receiving a Bachelor's degree (DRVC2020)", `Masters degrees awarded`="Number of students receiving a Master's degree (DRVC2020)", `Doctorates awarded`="Number of students receiving a Doctor's degree (DRVC2020)")
-raw_table_df$`Average library loans (physical + digital) per student or faculty member` <- round(as.numeric(raw_table_df$`Total library circulations (physical and digital/electronic)`) / as.numeric(raw_table_df$`Students plus Faculty`),1)
-raw_table_df$`Average library loans (physical) per student or faculty member` <- round(as.numeric(raw_table_df$`Total physical library circulations (books and media)`) / as.numeric(raw_table_df$`Students plus Faculty`),1)
+#`UNITID Unique identification number of the institution`
 
-raw_table_df$Transfer <- as.numeric(raw_table_df$'Transfer-out rate - Bachelor cohort.x')
-raw_table_df$'Average federal loan' <- as.numeric(raw_table_df$'Average amount of federal student loans awarded to full-time first-time undergraduates (SFA1920)')
-raw_table_df$'Average non-federal loan' <- as.numeric(raw_table_df$'Average amount of other student loans awarded to full-time first-time undergraduates (SFA1920)')
+focal_conference <- GetFirstNonNA((subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution`==params$institution_id))$`NCAA NAIA conference number cross country track`)
 
+focal_classification <- GetFirstNonNA((subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution`==params$institution_id))$`Carnegie Classification 2021 Basic`)
 
+conference_UNITID <- unique(subset(comparison_table, comparison_table$`NCAA NAIA conference number cross country track`==focal_conference)$`UNITID Unique identification number of the institution`)
+conference_UNITID <- conference_UNITID[conference_UNITID!=params$institution_id]
 
-# Getting sets of colleges to compare this with
+classification_UNITID <- unique(subset(comparison_table, comparison_table$`Carnegie Classification 2021 Basic`==focal_classification)$`UNITID Unique identification number of the institution`)
+classification_UNITID <- classification_UNITID[classification_UNITID!=params$institution_id]
 
-comparison_list <- list(
-	comparison_athletics = subset(raw_table_df, raw_table_df$"NCAA/NAIA conference number cross country/track"==raw_table_df$"NCAA/NAIA conference number cross country/track"[focal_row_number]),
-	comparison_type = subset(raw_table_df, raw_table_df$Type==raw_table_df$Type[focal_row_number]),
-	comparison_sector = subset(raw_table_df, raw_table_df$Sector==raw_table_df$Sector[focal_row_number])
-)
+focal_conference <- subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution` %in% conference_UNITID)
+focal_conference$Comparison = "Conference"
 
-focal_raw <- raw_table_df[focal_row_number,]
+focal_classification <- subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution` %in% classification_UNITID)
+focal_classification$Comparison = "Classification"
 
-total_undergrads <- unlist(focal_raw['Undergraduate enrollment'])
-total_grads <- unlist(focal_raw['Graduate enrollment'])
+focal_focal <- subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution`==params$institution_id)
+focal_focal$Comparison = "Focal"
+
+focal_table <- dplyr::bind_rows(focal_focal, focal_conference, focal_classification)
+focal_table$`IPEDS Year` <- as.numeric(focal_table$`IPEDS Year`)
+focal_table <- focal_table[order(focal_table$`IPEDS Year`, decreasing=TRUE),]
 
 
-
-
-
-db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
-local_tables <- AggregateForOneInstitution(params$institution_id, db)
-
-print(paste0("Institution id is ", params$institution_id))
-
-
-
-chief_admins <- last_name(local_tables$Institutional_directory$Name.of.chief.administrator)
-print(chief_admins)
+#chief_admins <- humaniformat::last_name(focal_focal$`Name of chief administrator`)
 
 ```
 
-`r ifelse(length(unique(chief_admins))>3, paste0('<h3 style="color:Red;">Note</h3><p> **"There have been ', length(unique(chief_admins)),'" chief administrators (', tolower(local_tables$Institutional_directory$Title.of.chief.administrator[1]),') of this institution from ', min(as.numeric(local_tables$Institutional_directory$IPEDS.Year)), '-', max(as.numeric(local_tables$Institutional_directory$IPEDS.Year)), '** This could indicate a fair amount of turnover.</p>'), "")`
-
-`r ifelse(focal_raw['AAUP_Censure']=="Yes", '<h3 style="color:Red;">Note</h3><p> **"Unsatisfactory conditions of academic freedom and tenure have been found to prevail at this institution"** according to the <a href="https://www.aaup.org/our-programs/academic-freedom/censure-list">AAUP</a> (as of July 31, 2022)</p>', "")`
-
-`r ifelse(focal_raw["Anti-LGBTQ+ state laws" ]=="Yes", '<h3 style="color:Red;">Note</h2><p />**California considers the state this institution is in to have one or more anti-LGBTQ+ laws** (as of July 31, 2022). It prohibits California-sponsored travel to this state as a safety measure. See more <a href="https://oag.ca.gov/ab1887">here</a>.</p>', "")`
-
-
-`r ifelse(focal_raw["Undergrads per tenure-track professor" ]>1000, '<h3 style="color:Red;">Note</h2><p />**There are extremely few tenure-track faculty relative to the number of students.** For something like an art or music school where instruction is done nearly entirely by rotating artists or musicians, this may be fine; for other schools, it can indicate a <a href="https://www.aaup.org/issues/tenure">risk to academic freedom</a> and thus educational quality, as faculty members *may* be able to lose their positions because of their speech, publications, or research findings.', "")`
 
 On the table below, the bars show what fraction of schools of each category this school has a higher number for the metric of interest: for example, a bar three-quarters of the way across means this school has a higher number than 75% of the other schools in that category. The more "blue" the better the school is relative to its peers, the more "red" the worse. On most measurements, higher is better (for example, the number of books per student); for some (like students per instructor, cost, or revenue coming from tuition), lower is better and so lower percentiles will be more red. See the [about](about.html) page for more details on the data sources. I keep with the convention that a lower acceptance rate is better (the school is more "selective"), as this may be an honest signal of student demand, but one could argue that not being able to serve many students (and yet often charging them to apply) is actually not great.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 fields_to_compare <- c(
-	"Admission", 
-	"Yield", 
-	"First year retention", 
-	"Transfer",
-	"Graduation", 
-	"Undergraduate enrollment", 
-	"Graduate enrollment", 
-	
-	"Associates degrees awarded", 
-	"Bachelors degrees awarded", 
-	"Masters degrees awarded", 
-	"Doctorates awarded",
-	
-	"Undergrads per instructor", 
-	"Undergrads per tenure-track professor",
-	
-	"Average net price-students awarded grant or scholarship aid",
-	"Average federal loan",
-	"Average non-federal loan",
-	
-	"Endowment assets per FTE",
-	"Equity ratio",
-	"Tuition and fees as a percent of core revenues",
-	"Investment return as a percent of core revenues",
-	"State appropriations as percent of core revenues",
-	"Local appropriations as a percent of core revenues",
-	"Government grants and contracts as a percent of core revenues",
-	"Private gifts  grants  and contracts as a percent of core revenues",
-	
-	"Liquor discipline per student (3 yr avg)",
-	"Liquor arrest per student (3 yr avg)",
-	"Drug discipline per student (3 yr avg)",
-	"Drug arrest per student (3 yr avg)",
-	"Weapon discipline per student (3 yr avg)",
-	"Weapon arrest per student (3 yr avg)",
-	"Reported rape per student (3 yr avg)",
-	"Reported fondling per student (3 yr avg)",
-	
-	
-	"Number of physical books", 
-	"Number of physical media", 
-	"Number of digital/electronic books",
-	"Total library circulations (physical and digital/electronic)",
-	"Average library loans (physical) per student or faculty member",
-	"Average library loans (physical + digital) per student or faculty member"
+	"Total revenues and investment return",
+	"Total expenses",
+	"Total assets",
+	"Undergrad full time",
+	"GradStudent full time",
+	"Admission percentage total",
+	"Yield percentage total",
+	"Total dormitory capacity",
+	"Average net price students awarded grant or scholarship aid",
+	"Percent of full time first time undergraduates awarded federal grant aid",
+	"Percent of full time first time undergraduates awarded any financial aid",
+	"Percent of full time first time undergraduates awarded Pell grants",
+	"IPEDS Year"
 )
 comparison_df <- data.frame(matrix("", nrow=length(fields_to_compare), ncol=1+length(comparison_list)))
 rownames(comparison_df) <- fields_to_compare

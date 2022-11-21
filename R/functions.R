@@ -639,7 +639,10 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 		"UNITID.Unique.identification.number.of.the.institution",
 		contains("Average.net.price.students.awarded.grant.or.scholarship.aid")
 		)) %>% as.data.frame()
-	colnames(student_aid_messy_years) <-  gsub("\\.[0-9]+$", "", gsub("Average.net.price.students.awarded.grant.or.scholarship.aid..", "", gsub("^[A-z]+\\.[A-Z0-9]+\\.", "", colnames(student_aid_messy_years))))
+	
+	colnames(student_aid_messy_years) <-  gsub("\\.[0-9]+$", "", gsub("Average.net.price.students.awarded.grant.or.scholarship.aid..", "", gsub("^[A-z]+\\.[A-Z0-9_]+\\.", "", colnames(student_aid_messy_years))))
+	
+	
 	student_aid_messy_pivoted <- student_aid_messy_years %>% tidyr::pivot_longer(cols = -UNITID.Unique.identification.number.of.the.institution, names_to = "IPEDS.Year", values_to = "Average.net.price.students.awarded.grant.or.scholarship.aid")
 	student_aid_messy_pivoted <- student_aid_messy_pivoted %>% filter(!is.na(Average.net.price.students.awarded.grant.or.scholarship.aid)) %>% filter(UNITID.Unique.identification.number.of.the.institution!="z")
 	student_aid_messy_pivoted$Average.net.price.students.awarded.grant.or.scholarship.aid <- as.numeric(student_aid_messy_pivoted$Average.net.price.students.awarded.grant.or.scholarship.aid)
@@ -672,11 +675,21 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 	comparison_table <- dplyr::left_join(comparison_table, ntt_stream_current, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
 
 
+	# Institutional offerings
+	
+	institutional_offerings <- tbl(db, "Institutional_offerings") %>% dplyr::select(!contains("Enrolled")) %>% dplyr::select(!contains("Admissions")) %>% dplyr::select(!contains("Applicants")) %>% as.data.frame() %>% FixDuplicateColnames()
+	
+	comparison_table <- dplyr::left_join(comparison_table, institutional_offerings, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+
+
+
 	# Wrapup steps
 	
-	colnames(comparison_table) <- gsub("  ", " ", gsub('\\.', ' ', gsub("^[A-z]+\\.[A-Z0-9]+\\.", "", colnames(comparison_table))))
+	
+	
+	colnames(comparison_table) <- gsub("  ", " ", gsub('\\.', ' ', gsub("^[A-z]+\\.[A-Z0-9_]+\\.", "", colnames(comparison_table))))
 
-
+	
 	
 	comparison_table$`Admission percentage total` <- 100*as.numeric(comparison_table$`Admissions total`)/as.numeric(comparison_table$`Applicants total`)
 	comparison_table$`Admission percentage women` <- 100*as.numeric(comparison_table$`Admissions women`)/as.numeric(comparison_table$`Applicants women`)
@@ -687,6 +700,41 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 	comparison_table$`Yield percentage men` <- 100*as.numeric(comparison_table$`Enrolled men`)/as.numeric(comparison_table$`Admissions men`)
 	
 	comparison_table <- subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution` != "z") #kill the placeholder
+	
+	comparison_table$`Percent of revenue from tuition and fees` <- 100 * as.numeric(comparison_table$`Tuition and fees`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	
+	comparison_table$`Percent of revenue from federal appropriations` <- 100 * as.numeric(comparison_table$`Federal appropriations`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	
+	comparison_table$`Percent of revenue from state appropriations` <- 100 * as.numeric(comparison_table$`State appropriations`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	
+	comparison_table$`Percent of revenue from local appropriations` <- 100 * as.numeric(comparison_table$`Local appropriations`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	
+	comparison_table$`Percent of revenue from federal grants and contracts` <- 100 * as.numeric(comparison_table$`Federal grants and contracts`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	
+	comparison_table$`Percent of revenue from state grants and contracts` <- 100 * as.numeric(comparison_table$`State grants and contracts`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	
+	comparison_table$`Percent of revenue from local grants and contracts` <- 100 * as.numeric(comparison_table$`Local grants and contracts`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	
+	comparison_table$`Percent of revenue from private gifts grants and contracts` <- 100 * as.numeric(comparison_table$`Private gifts grants and contracts`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	
+	comparison_table$`Revenue minus expenses` <- as.numeric(comparison_table$`Total revenue from tuition and fees`)-as.numeric(comparison_table$`Total expenses`)
+	
+	comparison_table$`Full time undergrad enrollment divided by dorm capacity` <- as.numeric(comparison_table$`Undergrad full time`)/as.numeric(comparison_table$`Total dormitory capacity`)
+	
+	comparison_table$`Total instructors` <- as.numeric(comparison_table$`NTT-stream Grand total`)+as.numeric(comparison_table$`Tenure-stream Grand total`)
+	
+	comparison_table$`Full time undergrad enrollment divided by total instructors` <- as.numeric(comparison_table$`Undergrad full time`)/as.numeric(comparison_table$`Total instructors`)
+	
+	comparison_table$`Full time undergrad enrollment divided by tenure stream faculty` <- as.numeric(comparison_table$`Undergrad full time`) / as.numeric(comparison_table$`Tenure-stream Grand total`)
+		
+	comparison$table$`Physical library circulations per students and faculty` <- as.numeric(comparison_table$`Total physical library circulations books and media `)/(as.numeric(comparison_table$`Undergrad full time`)+as.numeric(comparison_table$`Undergrad part time`)+as.numeric(comparison_table$`GradStudent full time`)+as.numeric(comparison_table$`GradStudent part time`)+as.numeric(comparison_table$`Total instructors`))
+	
+	comparison$table$`Digital library circulations per students and faculty` <- as.numeric(comparison_table$`Total digital electronic circulations books and media `)/(as.numeric(comparison_table$`Undergrad full time`)+as.numeric(comparison_table$`Undergrad part time`)+as.numeric(comparison_table$`GradStudent full time`)+as.numeric(comparison_table$`GradStudent part time`)+as.numeric(comparison_table$`Total instructors`))
+	
+	
+	dbWriteTable(db,  "comparison_table", comparison_table, overwrite=TRUE)
+
+	
 	dbDisconnect(db)
 	return(comparison_table)
 }
