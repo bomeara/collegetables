@@ -1,3 +1,12 @@
+as.numeric.na0 <- function(x) {
+	 x <- suppressWarnings(as.numeric(x))
+	#  if(any(is.na(x))) {
+	# 	warning(paste0("In as.numeric(x): 0 introduced by coercion"))	
+	#  }
+	 x[is.na(x)] <- 0
+	 return(x)	
+}
+
 GetIPEDSNames <- function() {
 	IPEDS_names <- c(
 		Institutional_directory = "HDzzzz",
@@ -158,7 +167,7 @@ GetIPEDSDirectlyFailedAttempt <- function(years=c(2021, 2020, 2018, 2016, 2014, 
   return(all_results)
 } 
 
-GetIPEDSDirectly <- function(years=2021:2000, IPEDS_names = GetIPEDSNames()) {
+GetIPEDSDirectly <- function(years=2021:2014, IPEDS_names = GetIPEDSNames()) {
 	print("Starting GetIPEDSDirectlyTry2")
 	finished_downloads <- c()
   # Get IPEDS data directly from the IPEDS website
@@ -377,22 +386,8 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 		"HDzzzz.DFRCUSCG.Data.Feedback.Report...Institution.submitted.a.custom.comparison.group",
 		"IPEDS.Year",
 		"HDzzzz.DFRCGID.Data.Feedback.Report.comparison.group.category.created.by.NCES",
-		"HDzzzz.OBEREG.Geographic.region",
-		"HDzzzz.F1SYSTYP.System..Governing.Board.or.Corporate.Structure",
-		"HDzzzz.F1SYSNAM.Name.of.system..governing.board.or.corporate.entity.",
-		"HDzzzz.TENURSYS.Does.institution.have.a.tenure.system",
-		"HDzzzz.DFRCGID.Data.Feedback.Report.comparison.group.category",
-		"HDzzzz.APPLURL.Online.application.web.addres",
-		"HDzzzz.FPOFFER.First.professional.offering",
-		"HDzzzz.HDEGOFFR.Highest.degree.offered",
-		"HDzzzz.CCBASIC.Carnegie.Classification.2005..Basic",
-		"HDzzzz.CCIPUG.Carnegie.Classification.2005..Undergraduate.Instructional.Program",
-		"HDzzzz.CCIPGRAD.Carnegie.Classification.2005..Graduate.Instructional.Program",
-		"HDzzzz.CCUGPROF.Carnegie.Classification.2005..Undergraduate.Profile",
-		"HDzzzz.CCENRPRF.Carnegie.Classification.2005..Enrollment.Profile",
-		"HDzzzz.CCSIZSET.Carnegie.Classification.2005..Size.and.Setting",
-		"HDzzzz.LOCALE.Degree.of.urbanization"
-)) %>% as.data.frame() 
+		"HDzzzz.OBEREG.Geographic.region"
+	)) %>% as.data.frame() 
 	
 	enrollment_undergrad <- tbl(db, "Enrollment_age") %>% dplyr::filter(EFzzzzB.LSTUDY.Level.of.student=="Undergraduate" & EFzzzzB.LINE.Original.line.number.on.survey.form=="Undergraduate, total") %>% dplyr::select(c(
 		"UNITID.Unique.identification.number.of.the.institution",
@@ -685,11 +680,10 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 
 	# Wrapup steps
 	
-	
-	
 	colnames(comparison_table) <- gsub("  ", " ", gsub('\\.', ' ', gsub("^[A-z]+\\.[A-Z0-9_]+\\.", "", colnames(comparison_table))))
 
-	
+	comparison_table <- subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution` != "z") #kill the placeholder
+
 	
 	comparison_table$`Admission percentage total` <- 100*as.numeric(comparison_table$`Admissions total`)/as.numeric(comparison_table$`Applicants total`)
 	comparison_table$`Admission percentage women` <- 100*as.numeric(comparison_table$`Admissions women`)/as.numeric(comparison_table$`Applicants women`)
@@ -699,25 +693,29 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 	comparison_table$`Yield percentage women` <- 100*as.numeric(comparison_table$`Enrolled women`)/as.numeric(comparison_table$`Admissions women`) 
 	comparison_table$`Yield percentage men` <- 100*as.numeric(comparison_table$`Enrolled men`)/as.numeric(comparison_table$`Admissions men`)
 	
-	comparison_table <- subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution` != "z") #kill the placeholder
+
 	
-	comparison_table$`Percent of revenue from tuition and fees` <- 100 * as.numeric(comparison_table$`Tuition and fees`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	comparison_table$`Percent of revenue from tuition and fees` <- 100 * as.numeric(comparison_table$`Tuition and fees`)/as.numeric(comparison_table$`Total revenues and investment return`)
 	
-	comparison_table$`Percent of revenue from federal appropriations` <- 100 * as.numeric(comparison_table$`Federal appropriations`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	comparison_table$`Percent of revenue from federal appropriations` <- 100 * as.numeric(comparison_table$`Federal appropriations`)/as.numeric(comparison_table$`Total revenues and investment return`)
 	
-	comparison_table$`Percent of revenue from state appropriations` <- 100 * as.numeric(comparison_table$`State appropriations`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	comparison_table$`Percent of revenue from state appropriations` <- 100 * as.numeric(comparison_table$`State appropriations`)/as.numeric(comparison_table$`Total revenues and investment return`)
 	
-	comparison_table$`Percent of revenue from local appropriations` <- 100 * as.numeric(comparison_table$`Local appropriations`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	comparison_table$`Percent of revenue from local appropriations` <- 100 * as.numeric(comparison_table$`Local government appropriations`)/as.numeric(comparison_table$`Total revenues and investment return`)
 	
-	comparison_table$`Percent of revenue from federal grants and contracts` <- 100 * as.numeric(comparison_table$`Federal grants and contracts`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	comparison_table$`Percent of revenue from government appropriations` <- comparison_table$`Percent of revenue from federal appropriations` + comparison_table$`Percent of revenue from state appropriations` + comparison_table$`Percent of revenue from local appropriations`
 	
-	comparison_table$`Percent of revenue from state grants and contracts` <- 100 * as.numeric(comparison_table$`State grants and contracts`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	comparison_table$`Percent of revenue from federal grants and contracts` <- 100 * as.numeric(comparison_table$`Federal grants and contracts`)/as.numeric(comparison_table$`Total revenues and investment return`)
 	
-	comparison_table$`Percent of revenue from local grants and contracts` <- 100 * as.numeric(comparison_table$`Local grants and contracts`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	comparison_table$`Percent of revenue from state grants and contracts` <- 100 * as.numeric(comparison_table$`State grants and contracts`)/as.numeric(comparison_table$`Total revenues and investment return`)
 	
-	comparison_table$`Percent of revenue from private gifts grants and contracts` <- 100 * as.numeric(comparison_table$`Private gifts grants and contracts`)/as.numeric(comparison_table$`Total revenue from tuition and fees`)
+	comparison_table$`Percent of revenue from local grants and contracts` <- 100 * as.numeric(comparison_table$`Local grants and contracts`)/as.numeric(comparison_table$`Total revenues and investment return`)
 	
-	comparison_table$`Revenue minus expenses` <- as.numeric(comparison_table$`Total revenue from tuition and fees`)-as.numeric(comparison_table$`Total expenses`)
+	comparison_table$`Percent of revenue from government grants and contracts` <- comparison_table$`Percent of revenue from federal grants and contracts` + comparison_table$`Percent of revenue from state grants and contracts` + comparison_table$`Percent of revenue from local grants and contracts`
+	
+	comparison_table$`Percent of revenue from private gifts grants and contracts` <- 100 * as.numeric(comparison_table$`Private gifts grants and contracts`)/as.numeric(comparison_table$`Total revenues and investment return`)
+	
+	comparison_table$`Revenue minus expenses` <- as.numeric(comparison_table$`Total revenues and investment return`)-as.numeric(comparison_table$`Total expenses`)
 	
 	comparison_table$`Full time undergrad enrollment divided by dorm capacity` <- as.numeric(comparison_table$`Undergrad full time`)/as.numeric(comparison_table$`Total dormitory capacity`)
 	
@@ -727,9 +725,9 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 	
 	comparison_table$`Full time undergrad enrollment divided by tenure stream faculty` <- as.numeric(comparison_table$`Undergrad full time`) / as.numeric(comparison_table$`Tenure-stream Grand total`)
 		
-	comparison$table$`Physical library circulations per students and faculty` <- as.numeric(comparison_table$`Total physical library circulations books and media `)/(as.numeric(comparison_table$`Undergrad full time`)+as.numeric(comparison_table$`Undergrad part time`)+as.numeric(comparison_table$`GradStudent full time`)+as.numeric(comparison_table$`GradStudent part time`)+as.numeric(comparison_table$`Total instructors`))
+	comparison_table$`Physical library circulations per students and faculty` <- as.numeric(comparison_table$`Total physical library circulations books and media `)/(as.numeric(comparison_table$`Undergrad full time`)+as.numeric(comparison_table$`Undergrad part time`)+as.numeric(comparison_table$`GradStudent full time`)+as.numeric(comparison_table$`GradStudent part time`)+as.numeric(comparison_table$`Total instructors`))
 	
-	comparison$table$`Digital library circulations per students and faculty` <- as.numeric(comparison_table$`Total digital electronic circulations books and media `)/(as.numeric(comparison_table$`Undergrad full time`)+as.numeric(comparison_table$`Undergrad part time`)+as.numeric(comparison_table$`GradStudent full time`)+as.numeric(comparison_table$`GradStudent part time`)+as.numeric(comparison_table$`Total instructors`))
+	comparison_table$`Digital library circulations per students and faculty` <- as.numeric(comparison_table$`Total digital electronic circulations books and media `)/(as.numeric(comparison_table$`Undergrad full time`)+as.numeric(comparison_table$`Undergrad part time`)+as.numeric(comparison_table$`GradStudent full time`)+as.numeric(comparison_table$`GradStudent part time`)+as.numeric(comparison_table$`Total instructors`))
 	
 	
 	dbWriteTable(db,  "comparison_table", comparison_table, overwrite=TRUE)
@@ -1654,6 +1652,74 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 	try(load("docs/all_colleges.rda"))
 	try(load("all_colleges.rda"))
 	return(all_colleges)
+}
+
+RenderInstitutionPagesNew <- function(comparison_table, spark_width, spark_height, maxcount=40) {
+	
+	institution_ids <- unique(comparison_table$`UNITID Unique identification number of the institution`)
+
+	# just for debugging	
+	rejection_ranking <- comparison_table[order(comparison_table$`Admission percentage total`, decreasing=FALSE),] # this is just to render the ones crushing the most dreams first for debugging
+	rejection_ranking <- subset(rejection_ranking, rejection_ranking$`Admission percentage total` > 0 & rejection_ranking$`Total instructors`>100) #don't look at the schools taking no students
+	institution_ids <- unique(rejection_ranking$`UNITID Unique identification number of the institution`)
+	
+	
+
+	
+	failures <- c()
+	#for (i in seq_along(institutions)) {
+	for (i in sequence(min(maxcount, length(institution_ids)))) {
+		failed <- TRUE
+		try({
+			institution_id <- institution_ids[i]
+			institution_name <- rownames(t(t(sort(table(comparison_table$`Institution entity name`[comparison_table$`UNITID Unique identification number of the institution` == institution_id]), decreasing=TRUE))))[1] # sometimes the name changes a bit; take the most common one			
+			print(institution_name)
+			rmarkdown::render(
+				input="_institutionNew.Rmd", 
+				output_file="docs/institution.html", 
+				params = list(
+					institution_name = institution_name,
+					institution_long_name = institution_name,
+					institution_id =  institution_id,
+					comparison_table = comparison_table,
+					spark_width = spark_width,
+					spark_height = spark_height
+				),
+				quiet=TRUE
+			)
+			#Sys.sleep(1)
+			system("sed -i '' 's/&gt;/>/g' docs/institution.html") # because htmlTable doesn't escape well; the '' is a requirement of OS X's version of sed, apparently
+			system("sed -i '' 's/&lt;/</g' docs/institution.html")
+			
+			#system("sed -i '' 's/‘/\x27/g' docs/institution.html")
+			#system("sed -i '' 's/’/\x27/g' docs/institution.html")
+			#Sys.sleep(1)
+
+
+			file.copy("docs/institution.html", paste0("docs/new_", utils::URLencode(gsub(" ", "", institution_name)), ".html"))
+			print(paste0("docs/new_", utils::URLencode(gsub(" ", "", institution_name)), ".html"))
+			Sys.sleep(1)
+			# quarto::quarto_render(
+			# 	input="_institution.qmd", 
+			# 	output_file=paste0(  "docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
+			# 	execute_params = list(
+			# 		institution_name = institutions[i],
+			# 		institution_long_name = degree_granting$ShortName[i],
+			# 		overview_table = subset(overview, overview$ShortName == institutions[i]),
+			# 		raw_table = degree_granting,
+			# 		students_by_state_by_institution = students_by_state_by_institution,
+			# 		student_demographics = student_demographics,
+			# 		faculty_counts = faculty_counts
+			# 	),
+			# 	quiet=FALSE
+			# )
+			failed <- FALSE
+		}, silent=TRUE)
+		if(failed) {
+			failures <- c(failures, comparison_table$`Institution entity name`[i])
+		}
+	}
+	return(failures)
 }
 
 RenderStatePages <- function(degree_granting, students_by_state_by_institution, spark_width, spark_height, state_pops) {	
