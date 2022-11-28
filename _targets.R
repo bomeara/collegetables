@@ -15,17 +15,23 @@ source("_packages.R")
 options(timeout=24*60*60) # let things download for at least 24 hours (important while on slow internet connection)
 options(download.file.method = "libcurl")
 
-tar_invalidate(pages)
-tar_invalidate(index)
-tar_invalidate(about)
-tar_invalidate(sparklines)
-tar_invalidate(state_pages)
+#tar_invalidate(pages)
+#tar_invalidate(index)
+#tar_invalidate(about)
+#tar_invalidate(sparklines)
+#tar_invalidate(state_pages)
+tar_invalidate(pages_new)
 
 # End this file with a list of target objects.
 list(
+ tar_target(maxcount, Inf),
+ tar_target(spark_height, 100),
+ tar_target(spark_width, 300),
  tar_target(ipeds_directly, GetIPEDSDirectly()),
  tar_target(ipeds_direct_and_db, AggregateDirectIPEDSDirect(ipeds_directly)),
  tar_target(comparison_table, CreateComparisonTables(ipeds_direct_and_db)),
+ tar_target(pages_new, RenderInstitutionPagesNew(comparison_table, spark_width, spark_height, maxcount=maxcount)),
+
 # tar_target(ipeds_direct_aggregate, AggregateForAllInstitutions(ipeds_direct_and_db)),
 #  tar_target(ipeds_2021, GetIPEDSDirectly("2021")),
 #  tar_target(ipeds_2020, GetIPEDSDirectly("2020")),
@@ -41,9 +47,6 @@ list(
   tar_target(college_data_ipeds, AggregateIPEDS()),
   tar_target(college_data_prebioclim, AppendContraceptiveSupport(AppendMarriageRespect(AppendGunLaws(AppendBiome(AppendAAUPCensure(AppendAbortion(AppendMisconduct(AppendVaccination(FilterForDegreeGranting(college_data_ipeds)))))))))),
   tar_target(college_data, AppendBioclim(college_data_prebioclim)),
-  tar_target(maxcount, Inf),
-  tar_target(spark_height, 10),
-  tar_target(spark_width, 40),
   tar_target(sparklines, RenderSparklines(spark_height=spark_height, spark_width=spark_width)),
   #tar_target(save_raw_data, write.csv(college_data, "docs/college_data.csv")),
   tar_target(state_pops, GetPopulationByStateAtAge18()),
