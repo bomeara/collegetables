@@ -167,8 +167,8 @@ GetIPEDSDirectlyFailedAttempt <- function(years=c(2021, 2020, 2018, 2016, 2014, 
   return(all_results)
 } 
 
-GetIPEDSDirectly <- function(years=2021:2014, IPEDS_names = GetIPEDSNames()) {
-	print("Starting GetIPEDSDirectlyTry2")
+GetIPEDSDirectly <- function(years=2022:2014, IPEDS_names = GetIPEDSNames()) {
+	print("Starting GetIPEDSDirectly")
 	finished_downloads <- c()
   # Get IPEDS data directly from the IPEDS website
   # Input: years to download
@@ -230,8 +230,8 @@ GetIPEDSDirectly <- function(years=2021:2014, IPEDS_names = GetIPEDSNames()) {
 			dictionary_to_read <- potential_files[1]
 			dictionary_frequencies <- NULL
 			dictionary_variables <- NULL
-			try({dictionary_frequencies <- readxl::read_excel(dictionary_to_read, sheet = "Frequencies")})
-			dictionary_variables <- readxl::read_excel(dictionary_to_read, sheet = "varlist")
+			try({dictionary_frequencies <- readxl::read_excel(dictionary_to_read, sheet = "Frequencies", col_types="text")})
+			dictionary_variables <- readxl::read_excel(dictionary_to_read, sheet = "varlist", col_types="text")
 			unlink(temp2)
 			
 			# Ok, now we have the raw data and the dictionary. Let's convert the raw data to be more sensible
@@ -240,7 +240,17 @@ GetIPEDSDirectly <- function(years=2021:2014, IPEDS_names = GetIPEDSNames()) {
 				unique_varnames_to_encode <- unique(dictionary_frequencies$varname)
 				for (varname_index in seq_along(unique_varnames_to_encode)) {
 					focal_freq <- subset(dictionary_frequencies, varname == unique_varnames_to_encode[varname_index])
-					local_data[, unique_varnames_to_encode[varname_index]] <- focal_freq$valuelabel[match(c(as.character(local_data[, unique_varnames_to_encode[varname_index]])),as.character(focal_freq$codevalue))]
+					potential_varnames <- unique(local_data[, unique_varnames_to_encode[varname_index]])
+					potential_varnames_numeric <- suppressWarnings(na.omit(as.numeric(potential_varnames)))
+					# this is to handle matching when the dictionary has a leading 0
+					if(length(potential_varnames_numeric) == length(potential_varnames)) {
+						# Ok, we can convert this to numeric
+						local_data[, unique_varnames_to_encode[varname_index]] <- focal_freq$valuelabel[match(c(as.numeric(local_data[, unique_varnames_to_encode[varname_index]])),as.numeric(focal_freq$codevalue))]
+					} else {
+						local_data[, unique_varnames_to_encode[varname_index]] <- focal_freq$valuelabel[match(c(as.character(local_data[, unique_varnames_to_encode[varname_index]])),as.character(focal_freq$codevalue))]
+					}
+					print(paste("For column ", unique_varnames_to_encode[varname_index], " we have ", length(potential_varnames), " unique values."))
+					print(unique(local_data[, unique_varnames_to_encode[varname_index]]))
 				}
 			})
 			for (col_index in sequence(ncol(local_data))) {
@@ -1657,7 +1667,10 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 RenderInstitutionPagesNew <- function(comparison_table, spark_width, spark_height, maxcount=40) {
 	
 	institution_ids <- unique(comparison_table$`UNITID Unique identification number of the institution`)
-
+	dead_institutions <- subset(comparison_table, comparison_table$`Status of institution`%in% c('Closed in current year (active has data)', 'Combined with other institution ', 'Delete out of business'))
+	institution_ids <- setdiff(institution_ids, dead_institutions$`UNITID Unique identification number of the institution`)
+	comparison_table <- subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution` %in% institution_ids) # remove dead institutions so we don't compare with them
+	
 	# just for debugging	
 	rejection_ranking <- comparison_table[order(comparison_table$`Admission percentage total`, decreasing=FALSE),] # this is just to render the ones crushing the most dreams first for debugging
 	rejection_ranking <- subset(rejection_ranking, rejection_ranking$`Admission percentage total` > 0 & rejection_ranking$`Total instructors`>100) #don't look at the schools taking no students
@@ -1674,6 +1687,21 @@ RenderInstitutionPagesNew <- function(comparison_table, spark_width, spark_heigh
 			institution_id <- institution_ids[i]
 			institution_name <- rownames(t(t(sort(table(comparison_table$`Institution entity name`[comparison_table$`UNITID Unique identification number of the institution` == institution_id]), decreasing=TRUE))))[1] # sometimes the name changes a bit; take the most common one			
 			print(institution_name)
+			
+			# quarto::quarto_render(
+			# 	input="_institutionNew.Rmd", 
+			# 	output_file="quarto_institution.html", 
+			# 	execute_params = list(
+			# 		institution_name = institution_name,
+			# 		institution_long_name = institution_name,
+			# 		institution_id =  institution_id,
+			# 		comparison_table = comparison_table,
+			# 		spark_width = spark_width,
+			# 		spark_height = spark_height
+			# 	),
+			# 	quiet=FALSE
+			# )
+			
 			rmarkdown::render(
 				input="_institutionNew.Rmd", 
 				output_file="docs/institution.html", 
@@ -1687,12 +1715,10 @@ RenderInstitutionPagesNew <- function(comparison_table, spark_width, spark_heigh
 				),
 				quiet=TRUE
 			)
-			#Sys.sleep(1)
+			Sys.sleep(1)
 			system("sed -i '' 's/&gt;/>/g' docs/institution.html") # because htmlTable doesn't escape well; the '' is a requirement of OS X's version of sed, apparently
 			system("sed -i '' 's/&lt;/</g' docs/institution.html")
 			
-			#system("sed -i '' 's/‘/\x27/g' docs/institution.html")
-			#system("sed -i '' 's/’/\x27/g' docs/institution.html")
 			#Sys.sleep(1)
 
 
@@ -2106,4 +2132,39 @@ GetColorFromPercentileYellowPurple <- function(x, direction=-1) {
 	}
 	
 	return(colorchoice)
+}
+
+PrependHttpsIfNeeded <- function(url) {
+	if(substr(url, 1, 4)!="http") {
+		url <- paste0("https://", url)
+	}
+	return(url)	
+}
+
+FirstNaOmit <- function(x) {
+	return(dplyr::first(na.omit(x)))	
+}
+
+
+
+
+formatMe <- function(x, digits=0, prefix="") {
+
+	x_sign <- sign(x)
+	x <- abs(x)
+	suffix <- ""
+	if(x>1e12) {
+		x <- x/1e12
+		suffix <- " T"
+	} else if(x>1e9) {
+		x <- x/1e9
+		suffix <- " B"
+	} else if(x>1e6) {
+		x <- x/1e6
+		suffix <- " M"
+	} 
+	if(x < 10 && digits==0) {
+		digits <- digits + 1	
+	}
+	return(paste0(ifelse(x_sign<0, "-", ""), prefix, format(round(as.numeric(x), digits), nsmall=digits, big.mark=","), suffix))
 }
