@@ -1,6 +1,7 @@
 ---
 output:
-  html_document:
+  rmdformats::downcute:
+    downcute_theme: "chaos"
     self_contained: false
     includes:
       in_header: GA_Script.html
@@ -15,22 +16,18 @@ title: "`r paste0(params$institution_name)`"
 
 ---
 
-Testing
-
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 knitr::opts_chunk$set(dev="png")
 source("_packages.R")
 source("R/functions.R")
 
-GetFirstNonNA <- function(x) {
-	return(x[!is.na(x)][1])	
-}
+
 
 #`UNITID Unique identification number of the institution`
 
-focal_conference <- GetFirstNonNA((subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution`==params$institution_id))$`NCAA NAIA conference number cross country track`)
+focal_conference <- FirstNaOmit((subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution`==params$institution_id))$`NCAA NAIA conference number cross country track`)
 
-focal_classification <- GetFirstNonNA((subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution`==params$institution_id))$`Carnegie Classification 2021 Basic`)
+focal_classification <- FirstNaOmit((subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution`==params$institution_id))$`Carnegie Classification 2021 Basic`)
 
 conference_UNITID <- unique(subset(comparison_table, comparison_table$`NCAA NAIA conference number cross country track`==focal_conference)$`UNITID Unique identification number of the institution`)
 conference_UNITID <- conference_UNITID[conference_UNITID!=params$institution_id]
@@ -54,660 +51,274 @@ focal_table <- dplyr::bind_rows(focal_focal, focal_conference, focal_classificat
 focal_table$`IPEDS Year` <- as.numeric(focal_table$`IPEDS Year`)
 focal_table <- focal_table[order(focal_table$`IPEDS Year`, decreasing=TRUE),]
 
+most_current_info <- apply(focal_focal, 2, FirstNaOmit)
+
 
 #chief_admins <- humaniformat::last_name(focal_focal$`Name of chief administrator`)
 
 ```
 
 
-On the table below, the bars show what fraction of schools of each category this school has a higher number for the metric of interest: for example, a bar three-quarters of the way across means this school has a higher number than 75% of the other schools in that category. The more "blue" the better the school is relative to its peers, the more "red" the worse. On most measurements, higher is better (for example, the number of books per student); for some (like students per instructor, cost, or revenue coming from tuition), lower is better and so lower percentiles will be more red. See the [about](about.html) page for more details on the data sources. I keep with the convention that a lower acceptance rate is better (the school is more "selective"), as this may be an honest signal of student demand, but one could argue that not being able to serve many students (and yet often charging them to apply) is actually not great.
-
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 comparison_conversions <- read.csv("data/ConversionToSummaryCharts.csv")
-#fields_to_compare <- c(
-#	"Total revenues and investment return",
-#	"Total expenses",
-#	"Total assets",
-#	"Undergrad full time",
-#	"GradStudent full time",
-#	"Admission percentage total",
-#	"Yield percentage total",
-#	"Total dormitory capacity",
-#	"Average net price students awarded grant or scholarship aid",
-#	"Percent of full time first time undergraduates awarded federal grant aid",
-#	"Percent of full time first time undergraduates awarded any financial aid",
-#	"Percent of full time first time undergraduates awarded Pell grants",
-#	"Percent of revenue from tuition and fees",
-#	"Percent of revenue from government appropriations",
-#	"Percent of revenue from government grants and contracts",
-#	"Percent of revenue from private gifts grants and contracts",
-#	"Revenue minus expenses",
-#	"Full time undergrad enrollment divided by dorm capacity",
-#	"Total instructors",
-#	"NTT-stream Grand total",
-#	"Tenure-stream Grand total",
-#	"Full time undergrad enrollment divided by total instructors",
-#	"Full time undergrad enrollment divided by tenure stream faculty",
-#	"Physical library circulations per students and faculty",
-#	"Digital library circulations per students and faculty"
-#)
 ```
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 comparison_vector <- c("Conference", "Classification")
 headings <- unique(comparison_conversions$Category)
-comparison_df <- data.frame(matrix("", nrow=nrow(comparison_conversions), ncol=1+length(comparison_vector)))
-colnames(comparison_df) <- c(params$institution_name, focal_conference_name, focal_classification_name)
+comparison_df <- data.frame(matrix("", nrow=nrow(comparison_conversions), ncol=4+length(comparison_vector)))
+colnames(comparison_df) <- c(params$institution_name, "Change", "Over time", focal_conference_name, focal_classification_name, "Heading")
 rownames(comparison_df) <- comparison_conversions$Rename
 for(row_index in sequence(nrow(comparison_conversions))) {
-	#print(paste0("## ", heading))
-	focal_field <- comparison_conversions$ColumnName[row_index]
-	values_for_range <- as.numeric(focal_table[,focal_field])
-	values_for_range <- values_for_range[is.finite(values_for_range)]
-	focal_field_range <- range(values_for_range, na.rm=TRUE)
-	focal_table[,focal_field] <- as.numeric(focal_table[,focal_field])
-	table_to_plot <- focal_table[,colnames(focal_table) %in% c('UNITID Unique identification number of the institution', 'IPEDS Year','Comparison', focal_field, "Institution entity name")]
-	colnames(table_to_plot)[grepl("IPEDS Year", colnames(table_to_plot))] <- "Year"
-	table_to_plot <- table_to_plot[!is.na(table_to_plot[,focal_field]),]
-	max_year <- 2022
-	min_year <- 2000
-	for(col_index in sequence(1+length(comparison_vector))) {
-		if(col_index==1) { # just data for the college
-			table_focal <- subset(table_to_plot, table_to_plot$Comparison=="Focal")
-			table_focal <- table_to_plot[order(table_to_plot$Year, decreasing=TRUE),]
-			max_year <- max(table_focal$Year)
-			min_year <- min(table_focal$Year)
-			most_recent_value <- head(table_focal[focal_field],1)
-			if(comparison_conversions$Units[row_index]=="Dollars") {
-				most_recent_value <- paste0("$", most_recent_value)	
-			} else if(comparison_conversions$Units[row_index]=="Percent") {
-				most_recent_value <- paste0(round(most_recent_value,1), '%')
-			} else {
-				most_recent_value <- round(most_recent_value,1)
-			}
-			most_recent_value <- paste0(most_recent_value, " (", max_year, ")")
-			comparison_df[row_index,1] <- most_recent_value
-			table_to_plot <- subset(table_to_plot, Year>=min_year & Year <= max_year)
-		}
-		else {
-			focal_field_by_comparison <- subset(table_to_plot, table_to_plot$Comparison==comparison_vector[-1+col_index])
-			
-			p <- ggplot(data=table_to_plot, aes(x=`Year`, y=.data[[focal_field]], group=`UNITID Unique identification number of the institution`)) + 
-				geom_quantile(data=focal_field_by_comparison, aes(x=`Year`, y=.data[[focal_field]]), inherit.aes=FALSE, quantiles = c(0.05, 0.25, 0.5, 0.75, 0.95), method = "rqss", lambda = 0.1, col="darkgray", linetype = "dashed") + 
-				geom_line(data=subset(table_to_plot, Comparison=="Focal"), color="red") +
-				ylab("") + xlab("") + 
-				theme(axis.text.x=element_blank(), axis.ticks.x=element_blank(), axis.text.y=element_blank(), axis.ticks.y=element_blank()) +
-				xlim(min_year, max_year) + 
-				theme_minimal()
+	try({
+		focal_field <- comparison_conversions$ColumnName[row_index]
+		values_for_range <- as.numeric(focal_table[,focal_field])
+		values_for_range <- values_for_range[is.finite(values_for_range)]
+		focal_field_range <- range(values_for_range, na.rm=TRUE)
+		focal_table[,focal_field] <- as.numeric(focal_table[,focal_field])
+		table_to_plot <- focal_table[,colnames(focal_table) %in% c('UNITID Unique identification number of the institution', 'IPEDS Year','Comparison', focal_field, "Institution entity name")]
+		colnames(table_to_plot)[grepl("IPEDS Year", colnames(table_to_plot))] <- "Year"
+		table_to_plot <- table_to_plot[!is.na(table_to_plot[,focal_field]),]
+		table_to_plot <- table_to_plot[order(table_to_plot$Year, decreasing=TRUE),]
+		max_year <- Inf
+		min_year <- 0
+		table_to_plot_focal_only <- subset(table_to_plot, table_to_plot$Comparison=="Focal")
+		comparison_df$Heading[row_index] <- comparison_conversions$Category[row_index]
+		max_year <- max(table_to_plot_focal_only$Year)
+		min_year <- min(table_to_plot_focal_only$Year)
+		table_to_plot <- subset(table_to_plot, Year<=max_year & Year>=min_year)
+		
+		
+		
+		# Plot the focal measure
+		suppressWarnings(suppressMessages({ # ggplot needs to talk way less
+		
 				
-			if(comparison_conversions$LogY[row_index]) {
-				p <- p + scale_y_log10()
-			}
+		plotting_data <- table_to_plot_focal_only
+		colnames(plotting_data)[which(colnames(plotting_data)==focal_field)] <- "Number"
+		plotting_data <- subset(plotting_data, !is.na(plotting_data$Number))
+		plotting_data$NumberText <- paste0(sapply(plotting_data$Number, formatMe, digits=0))
+		oldest <- plotting_data %>% slice(which.max(Year))
+		youngest <- plotting_data %>% slice(which.min(Year))
+		
+		p <- ggplot(data=plotting_data, aes(x=Year, y=Number)) + 
+				geom_link2(aes(colour = after_stat(ifelse(y > 0, "darkgray", "red")))) +
+				scale_colour_manual(values=c("darkgray", "red")) +  geom_point(color="darkgray") +
+				geom_text(data = youngest, aes(label = NumberText), vjust = "inward", hjust = "inward") +
+			    geom_text(data = oldest, aes(label = NumberText), vjust = "inward", hjust = "inward") +
+			  theme(axis.title=element_blank(),
+				axis.text.y = element_blank(), 
+				axis.ticks = element_blank(),
+				strip.text = element_blank()) +
+				theme(legend.position="none") 	
+				
+				#ylab("") + xlab("") + 
+				#theme_minimal() + 
+				#theme(axis.text.x=element_blank(), axis.ticks.x=element_blank()) +
+				#scale_y_continuous(n.breaks=3) +
+				#xlim(min_year, max_year) + 
+				#theme(legend.position="none") 				
+		#if(comparison_conversions$LogY[row_index]) {
+			#p <- p + scale_y_continuous(trans = "log1p", limits=c(min(table_to_plot_focal_only[,focal_field], na.rm=TRUE), max(table_to_plot_focal_only[,focal_field], na.rm=TRUE)), breaks=round(c(min(table_to_plot_focal_only[,focal_field], na.rm=TRUE), max(table_to_plot_focal_only[,focal_field], na.rm=TRUE)),1))
+		#	p <- p + scale_y_continuous(trans = "log1p")
+
+		#} else {
+			#p <- p + scale_y_continuous(limits=c(min(table_to_plot_focal_only[,focal_field], na.rm=TRUE), max(table_to_plot_focal_only[,focal_field], na.rm=TRUE)), breaks=round(c(min(table_to_plot_focal_only[,focal_field], na.rm=TRUE), max(table_to_plot_focal_only[,focal_field], na.rm=TRUE)),1))
+		#	p <- p + scale_y_continuous()
+		#}
+		
+		
+		}))
+		
+		filename_png <- paste0("images/", utils::URLencode(gsub(" ", "", params$institution_name)), "_", row_index, ".png")
+
+		suppressWarnings(suppressMessages({
+			ggsave(
+			plot = p,
+			filename = paste0('docs/', filename_png),
+			bg = "white",
+			width = params$spark_width*2.5,
+			height= params$spark_height*2.5,
+			units = "px"
+			)
+		}))
+
+		comparison_df$Change[row_index] <- paste0("<img src=", filename_png, " width=", spark_width, " height=", spark_height, ">")
+		
+		most_recent_value <- head(table_to_plot_focal_only[focal_field],1)
+		original_most_recent_value <- most_recent_value
+		if(comparison_conversions$Units[row_index]=="Dollars") {
+			most_recent_value <- formatMe(most_recent_value, prefix="$")
+		} else if(comparison_conversions$Units[row_index]=="Percent") {
+			most_recent_value <- paste0(formatMe(most_recent_value), '%')
+		} else {
+			most_recent_value <- formatMe(most_recent_value)
+		}
+		most_recent_value <- paste0(most_recent_value, " (", max_year, ")")
+		comparison_df[row_index,1] <- most_recent_value
 			
-			filename_png <- paste0("images/", utils::URLencode(gsub(" ", "", params$institution_name)), "_", row_index, "_", col_index, ".png")
-			#print(p)
-			#try({
+		linear_fit_data <- table_to_plot_focal_only
+		colnames(linear_fit_data)[which(colnames(linear_fit_data)==focal_field)] <- "Dependent"
+		try({
+		fit <- stats::lm(Dependent ~ Year, data=linear_fit_data)
+		if(summary(fit)$coefficients[2,4]<0.05) { # a significant trend; not correcting for multiple comparisons, just getting an heuristic on changes over time
+			change_symbol <- '↑'
+			if(sign(summary(fit)$coefficients[2,1])<0) {
+				change_symbol <- '↓'
+			}
+			slope <- summary(fit)$coefficients[2,1] 
+			if(comparison_conversions$Units[row_index]=="Dollars") {
+				slope <- paste0(ifelse(sign(slope)<0, "-", ""), '$', formatMe(abs(slope),0))
+			} else if (comparison_conversions$Units[row_index]=="Percent") {
+				slope <- paste0(abs(formatMe(slope,2)), '%')
+			} else {
+				slope <- formatMe(slope,0)
+			}
+
+			comparison_df$`Over time`[row_index] <- paste0(change_symbol, "<br />",  slope, ' per year')
+		}
+		}, silent=TRUE)
+		
+		
+		# now for the stars
+		star_symbol <- '⭐'
+		if(comparison_conversions$Better[row_index]!="None") {
+			for (grouping_index in sequence(length(comparison_vector))) {
+				table_to_plot_comparison_only <- subset(table_to_plot, table_to_plot$Comparison==comparison_vector[grouping_index])
+				comparison_values <- table_to_plot_comparison_only[which(table_to_plot_comparison_only$Year==max_year), focal_field]
+				quantile_score <- stats::ecdf(comparison_values)(original_most_recent_value)
+				if(comparison_conversions$Better[row_index]=="Lower") {
+					quantile_score <- 1-quantile_score
+				}
+				star_string <- paste0(rep(star_symbol, max(1, ceiling(10*quantile_score/2))), collapse="") # there's always at least one star
+				comparison_df[row_index, grouping_index+3] <- paste0(star_string, "<br />Better (", tolower(comparison_conversions$Better[row_index]), ") than ", round(100*quantile_score), '%')
+			}
+		}
+		
+	}, silent=TRUE)
+}
+
+comparison_df <- subset(comparison_df, nchar(comparison_df[,1])>0)
+
+```
+
+
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+
+# all categories based on how the US federal government bins people.
+ethnicities <- c("American Indian or Alaska Native", "Asian", "Black or African American", "Hispanic or Latino", "Native Hawaiian or Other Pacific Islander", "White", "Two or more races", "Race ethnicity unknown", "Nonresident alien")
+faculty_ranks <- c("Tenure-stream", "NTT-stream")
+genders <- c("women", "men") 
+
+faculty_ethnicity <- data.frame(matrix("", nrow=length(ethnicities), ncol=3))
+rownames(faculty_ethnicity) <- ethnicities
+colnames(faculty_ethnicity) <- c(params$institution_name, "Tenure track", "Non-tenure track")
+for (rank_index in sequence(length(faculty_ranks))) {
+	for (category_index in sequence(length(ethnicities))) {
+		try({
+			category_name <- paste0(faculty_ranks[rank_index], " ", ethnicities[category_index])
+			ethnicity_df <- focal_focal[,colnames(focal_focal) %in% c('IPEDS Year', category_name, paste0(faculty_ranks[rank_index], " Grand total"))] 
+			ethnicity_df$Year <- as.numeric(ethnicity_df$`IPEDS Year`)
+			ethnicity_df$Percentage <- 100*ethnicity_df[,category_name]/ethnicity_df[,paste0(faculty_ranks[rank_index], " Grand total")]
+			ethnicity_df <- subset(ethnicity_df, !is.na(ethnicity_df$Percentage))
+			ethnicity_df$PercentageText <- paste0(sapply(ethnicity_df$Percentage, formatMe, digits=1),'%')
+			oldest <- ethnicity_df %>% slice(which.max(Year))
+			youngest <- ethnicity_df %>% slice(which.min(Year))
+			p <- ggplot(ethnicity_df, aes(x=Year, y=Percentage)) + geom_line(color="gray") + geom_point(color="gray") +
+			  geom_text(data = youngest, aes(label = PercentageText), vjust = "inward", hjust = "inward") +
+			    geom_text(data = oldest, aes(label = PercentageText), vjust = "inward", hjust = "inward") +
+			  theme(axis.title=element_blank(),
+				axis.text.y = element_blank(), 
+				axis.ticks = element_blank(),
+				strip.text = element_blank())
+			
+			filename_png <- paste0("images/", utils::URLencode(gsub(" ", "", params$institution_name)), "_faculty_", category_index, "_", rank_index, ".png")
+			
 			suppressWarnings(suppressMessages({
 				ggsave(
 				plot = p,
 				filename = paste0('docs/', filename_png),
 				bg = "transparent",
-				width = params$spark_width*40,
-				height= params$spark_height*40,
+				width = params$spark_width*2.5,
+				height= params$spark_height*2.5,
 				units = "px"
 				)
 			}))
-			#})
-
-			comparison_df[row_index,col_index] <- paste0("<img src=", filename_png, " width=600 height=150>")
-
-		}
-
-	}
-
-	
-	
-	#comparison_df %>% knitr::kable()
-	
-	#all_tables <- rbind(all_tables, comparison_df)
-		
-	#print(htmlTable::htmlTable(comparison_df, escape.html=FALSE))
-	#print(comparison_df)
-	#print("<br /><br />")
-}
-
-```
-
-```{r, echo=TRUE, message=TRUE, warning=TRUE, eval=TRUE}
-	comparison_df %>% knitr::kable()
-```
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-
-comparison_list <- c("Conference", "Classification")
-
-comparison_df <- data.frame(matrix("", nrow=length(fields_to_compare), ncol=1))
-rownames(comparison_df) <- fields_to_compare
-colnames(comparison_df) <-  as.character(focal_classification_name)
-for (field_index in seq_along(fields_to_compare)) {
-	focal_field <- fields_to_compare[field_index]
-	values_for_range <- as.numeric(focal_table[,focal_field])
-	values_for_range <- values_for_range[is.finite(values_for_range)]
-	focal_field_range <- range(values_for_range, na.rm=TRUE)
-	focal_table[,focal_field] <- as.numeric(focal_table[,focal_field])
-	table_to_plot <- focal_table[,colnames(focal_table) %in% c('UNITID Unique identification number of the institution', 'IPEDS Year','Comparison', focal_field, "Institution entity name")]
-	colnames(table_to_plot)[grepl("IPEDS Year", colnames(table_to_plot))] <- "Year"
-	table_to_plot <- table_to_plot[!is.na(table_to_plot[,focal_field]),]
-
-	table_to_plot <- table_to_plot %>% mutate(label = if_else(Year == max(Year), as.character(`Institution entity name`), NA_character_)) 
-	table_to_plot$label[duplicated(table_to_plot$label)] <- NA_character_
-	table_to_plot$label <- gsub("The ", "", gsub("University", "U.", gsub("University of", "U. of", table_to_plot$label)))
-	#table_to_plot <- subset(table_to_plot, table_to_plot$Comparison %in% c("Focal", comparison_list[list_index]))	
-	focal_field_by_focal <- subset(table_to_plot, table_to_plot$Comparison=="Focal")
-	focal_field_by_conference <- subset(table_to_plot, table_to_plot$Comparison=="Conference")
-	focal_field_by_classification <- subset(table_to_plot, table_to_plot$Comparison=="Classification")
-	
-	p <- ggplot(data=table_to_plot, aes(x=`Year`, y=.data[[focal_field]], group=`UNITID Unique identification number of the institution`)) + 
-			#stat_summary(data=focal_field_by_classification, inherit.aes=FALSE, aes(x=`Year`, y=.data[[focal_field]]), geom="ribbon", fun.min = function(x) quantile(x, 0.25), fun.max = function(x) quantile(x, 0.75), fill="thistle2") + 
-			#stat_summary(data=focal_field_by_classification, inherit.aes=FALSE, aes(x=`Year`, y=.data[[focal_field]]), geom="line", fun=median, color="purple") + 
-			geom_line(data=focal_field_by_conference, color=rgb(0,0,0,.2)) + 
-			geom_line(data=subset(table_to_plot, Comparison=="Focal"), color="red") +
-			geom_text_repel(data=focal_field_by_conference, aes(label = label),nudge_x = 1, na.rm = TRUE) +
-			geom_label_repel(data=focal_field_by_focal, aes(label = label),nudge_x = 1, na.rm = TRUE, color="red") + 
-			theme_minimal()
 			
-			#geom_quantile(data=focal_field_by_classification, aes(x=`Year`, y=.data[[focal_field]]), inherit.aes=FALSE, quantiles = c(0.05, 0.95), method = "rqss", lambda = 0.1, col="purple", linetype = "dashed") + 
-			#geom_quantile(data=focal_field_by_classification, aes(x=`Year`, y=.data[[focal_field]]), inherit.aes=FALSE, quantiles = c(0.5), method = "rqss", lambda = 0.1, col="purple") + 
-			geom_line(data=subset(table_to_plot, Comparison=="Focal"), color="red")
-	
-	
-	filename_png <- paste0("images/", utils::URLencode(gsub(" ", "", params$institution_name)), "_", field_index, ".png")
-	suppressWarnings(suppressMessages({
-		ggsave(
-		plot = p,
-		filename = paste0('docs/', filename_png),
-		bg = "transparent",
-		width = 1000*3,
-		height= 600*3,
-		units = "px"
-		)
-	}))
-
-	
-	comparison_df[field_index,1] <- paste0("<img src=", filename_png, " width=1000 height=600>")
-	
-}
-rownames(comparison_df) <- NULL
-
-
-comparison_df %>% htmlTable::htmlTable(rnames=FALSE)
-
-
-```
-
-### Location
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-location_summary <- data.frame(matrix(nrow=0, ncol=2))
-colnames(location_summary) <- c("Measure", "Value")
-
-location_summary[nrow(location_summary)+1,] <- c("Type", paste0(paste0(rev(strsplit(as.character(focal_raw['LocaleChar']), ': ')[[1]]), collapse=' ')))
-
-location_summary[nrow(location_summary)+1,] <- c("Mass transit", ifelse(is.na(focal_raw['Minimum distance to mass transit (minutes walking)']), "Not nearby", paste0(focal_raw['Minimum distance to mass transit (minutes walking)'], " minute walk away")))
-
-location_summary[nrow(location_summary)+1,] <- c("Walkability", 
-	ifelse(
-		is.na(focal_raw['Walkability']), "No walkability score available", 
-		paste0(
-			100*as.numeric(focal_raw['Walkability'][1,1]), '%: ',
-			 cut(as.numeric(focal_raw['Walkability']), 
-				breaks=c(-Inf, 5.75/20, 10.5/20, 15.25/20, Inf),
-				labels=c('Least walkable', 'Below average', 'Above average', 'Most walkable'),
-			) 
-		)
-	)
-
-)
-
-location_summary[nrow(location_summary)+1,] <- c("Local ecology", as.character(focal_raw['eco_name'][1,1]))
-
-location_summary[nrow(location_summary)+1,] <- c("Local biome", as.character(focal_raw['biome'][1,1]))
-
-location_summary[nrow(location_summary)+1,] <- c("Annual precipitation", paste0(as.character(focal_raw['Annual precipitation (inches)'][1,1]), " inches"))
-
-try(location_summary[nrow(location_summary)+1,] <- c("Warmest month max temp", paste0(as.character(focal_raw['Warmest month max temp (F)'][1,1]), " ", "˚F")))
-
-try(location_summary[nrow(location_summary)+1,] <- c("Coldest month min temp", paste0(as.character(focal_raw['Coldest month min temp (F)'][1,1]), " ", "˚F")))
-
-location_to_print <- data.frame(Location=location_summary[,2])
-rownames(location_to_print) <- location_summary[,1]
-colnames(location_to_print) <- paste0(focal_raw['City'], ", ", as.character(focal_raw['State'][1,1]))
-location_to_print %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlTable::htmlTable()
-```
-
-### Safety
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-state_summary <- data.frame(matrix(nrow=0, ncol=2))
-colnames(state_summary) <- c("Measure", "Value")
-
-state_summary[nrow(state_summary)+1,] <- c(
-	"Reported misconduct", 
-	paste0(
-		'<a href=https://academic-sexual-misconduct-database.org/incidents?query=', 
-		utils::URLencode(params$institution_name), 
-		'>',
-		ifelse(focal_raw['Misconduct reports']=="Yes", "Apparently yes","Seemingly no"), 
-		'</a>'
-	)
-)
-
-
-state_summary[nrow(state_summary)+1,] <- c(
-	"Employee covid vax", 
-	paste0(
-		'<a href=https://www.chronicle.com/blogs/live-coronavirus-updates/heres-a-list-of-colleges-that-will-require-students-to-be-vaccinated-against-covid-19>',
-		ifelse(focal_raw['Covid vax (employees)']=="Yes", "Apparently yes","Seemingly no"), 
-		'</a>'
-	)
-)
-
-state_summary[nrow(state_summary)+1,] <- c(
-	"Student covid vax", 
-	paste0(
-		'<a href=https://www.chronicle.com/blogs/live-coronavirus-updates/heres-a-list-of-colleges-that-will-require-students-to-be-vaccinated-against-covid-19>',
-		ifelse(focal_raw['Covid vax (students)']=="Yes", "Apparently yes","Seemingly no"), 
-		'</a>'
-	)
-)
-
-
-state_summary[nrow(state_summary)+1,] <- c("Abortion", as.character(focal_raw['Abortion'][1,1]))
-
-state_summary[nrow(state_summary)+1,] <- c("Gun law stringency", as.character(focal_raw['Gun law stringency'][1,1]))
-
-
-state_summary[nrow(state_summary)+1,] <- c("State rep support for legal contraception", paste0(round(100*as.numeric(focal_raw["Proportion of reps voting in favor of respect for right to contraception act"])),'%'))
-state_summary[nrow(state_summary)+1,] <- c("State rep support for same-sex and interracial marriages", paste0(round(100*as.numeric(focal_raw["Proportion of reps voting in favor of respect for marriage act"])),'%'))
-
-
-
-safety_to_print <- data.frame(Metrics=state_summary[,2])
-rownames(safety_to_print) <- state_summary[,1]
-safety_to_print %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlTable::htmlTable()
-```
-
-
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-degrees <- data.frame(Degree=c("Associate", "Bachelor", "Master", "Doctor"), Number=unname(unlist(c(focal_raw["Number of students receiving an Associate's degree (DRVC2020)" ], focal_raw["Number of students receiving a Bachelor's degree (DRVC2020)" ],focal_raw["Number of students receiving a Master's degree (DRVC2020)" ],focal_raw["Number of students receiving a Doctor's degree (DRVC2020)"]))))
-
-
-degrees %>% htmlTable::htmlTable(rnames=FALSE)
-
-```
-
-### Diversity among the faculty
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-faculty_counts_focal_streamlined <- data.frame(matrix("", nrow=nrow(faculty_counts_focal)/2, ncol=6))
-rownames(faculty_counts_focal_streamlined) <- gsub(" women", "", rownames(faculty_counts_focal)[which(grepl("women", rownames(faculty_counts_focal)))])
-faculty_counts_focal$TenureStreamCount <- as.numeric(faculty_counts_focal$`Tenured (count)`) + as.numeric(faculty_counts_focal$`Tenure-track (count)`)
-faculty_trimmed <- faculty_counts_focal %>% dplyr::select('TenureStreamCount', 'Non-tenure-track (count)')
-for (faculty_row_index in sequence(nrow(faculty_counts_focal_streamlined))) {
-    faculty_counts_focal_streamlined[faculty_row_index, 1] <- faculty_trimmed[paste0(rownames(faculty_counts_focal_streamlined)[faculty_row_index], " women"), 1]
-    faculty_counts_focal_streamlined[faculty_row_index, 2] <- faculty_trimmed[paste0(rownames(faculty_counts_focal_streamlined)[faculty_row_index], " men"), 1]
-	faculty_counts_focal_streamlined[faculty_row_index, 3] <- round(100*(as.numeric(faculty_counts_focal_streamlined[faculty_row_index, 1])+as.numeric(faculty_counts_focal_streamlined[faculty_row_index, 2]))/(as.numeric(faculty_counts_focal_streamlined["Grand total", 1])+as.numeric(faculty_counts_focal_streamlined["Grand total", 2])))
-	percentage <- round(as.numeric(faculty_counts_focal_streamlined[faculty_row_index, 3]))
-	if(!is.finite(percentage)) {
-		percentage <- 0	
-	}
-	faculty_counts_focal_streamlined[faculty_row_index, 3] <- paste0("<img src=images/pct_bar_grayscale_", percentage, ".png width=", params$spark_width, " height=", params$spark_height,">")
-	
-    faculty_counts_focal_streamlined[faculty_row_index, 4] <- faculty_trimmed[paste0(rownames(faculty_counts_focal_streamlined)[faculty_row_index], " women"), 2]
-    faculty_counts_focal_streamlined[faculty_row_index, 5] <- faculty_trimmed[paste0(rownames(faculty_counts_focal_streamlined)[faculty_row_index], " men"), 2]
-	faculty_counts_focal_streamlined[faculty_row_index, 6] <- round(100*(as.numeric(faculty_counts_focal_streamlined[faculty_row_index, 4])+as.numeric(faculty_counts_focal_streamlined[faculty_row_index, 5]))/(as.numeric(faculty_counts_focal_streamlined["Grand total", 4])+as.numeric(faculty_counts_focal_streamlined["Grand total", 5])))
-	percentage <- round(as.numeric(faculty_counts_focal_streamlined[faculty_row_index, 6]))
-	if(!is.finite(percentage)) {
-		percentage <- 0	
-	}
-	faculty_counts_focal_streamlined[faculty_row_index, 6] <- paste0("<img src=images/pct_bar_grayscale_", percentage, ".png width=", params$spark_width, " height=", params$spark_height,">")
-	
-}
-colnames(faculty_counts_focal_streamlined) <- c("Women&nbsp;", "&nbsp;Men&nbsp;", "%", "&nbsp;Women&nbsp;", "&nbsp;Men&nbsp;", "%")
-faculty_counts_focal_streamlined <- rbind(faculty_counts_focal_streamlined, faculty_counts_focal_streamlined["Grand total",])[-1,]
-rownames(faculty_counts_focal_streamlined)[nrow(faculty_counts_focal_streamlined)] <- "Total"
-faculty_counts_focal_streamlined["Total", 3] <- ""
-faculty_counts_focal_streamlined["Total", 6] <- ""
-
-
-
-faculty_counts_focal_streamlined %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlTable::htmlTable(cgroup = c("Tenure Stream", "Non-Tenure Track"), n.cgroup = c(3,3), total=TRUE, escape.html=TRUE)
-
-#knitr::kable(faculty_counts_focal, row.names=TRUE)
-
-```
-
-### Diversity among the students
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-
-# try(knitr::kable(student_demographics_focal, row.names=TRUE))
-student_demographics_focal_streamlined <- data.frame(matrix("", nrow=nrow(student_demographics_focal)/2, ncol=6))
-rownames(student_demographics_focal_streamlined) <- gsub(" women", "", rownames(student_demographics_focal)[which(grepl("women", rownames(student_demographics_focal)))])
-student_trimmed <- student_demographics_focal %>% dplyr::select('Undergrad (count)', 'Grad student (count)')
-for (student_row_index in sequence(nrow(student_demographics_focal_streamlined))) {
-    student_demographics_focal_streamlined[student_row_index, 1] <- student_trimmed[paste0(rownames(student_demographics_focal_streamlined)[student_row_index], " women"), 1]
-    student_demographics_focal_streamlined[student_row_index, 2] <- student_trimmed[paste0(rownames(student_demographics_focal_streamlined)[student_row_index], " men"), 1]
-	student_demographics_focal_streamlined[student_row_index, 3] <- round(100*(as.numeric(student_demographics_focal_streamlined[student_row_index, 1])+as.numeric(student_demographics_focal_streamlined[student_row_index, 2]))/(as.numeric(student_demographics_focal_streamlined["Grand total", 1])+as.numeric(student_demographics_focal_streamlined["Grand total", 2])))
-	percentage <- round(as.numeric(student_demographics_focal_streamlined[student_row_index, 3]))
-	if(!is.finite(percentage)) { 
-		percentage <- 0
-	}
-	student_demographics_focal_streamlined[student_row_index, 3] <- paste0("<img src=images/pct_bar_grayscale_", percentage, ".png width=", params$spark_width, " height=", params$spark_height,">")
-	
-    student_demographics_focal_streamlined[student_row_index, 4] <- student_trimmed[paste0(rownames(student_demographics_focal_streamlined)[student_row_index], " women"), 2]
-    student_demographics_focal_streamlined[student_row_index, 5] <- student_trimmed[paste0(rownames(student_demographics_focal_streamlined)[student_row_index], " men"), 2]
-	student_demographics_focal_streamlined[student_row_index, 6] <- round(100*(as.numeric(student_demographics_focal_streamlined[student_row_index, 4])+as.numeric(student_demographics_focal_streamlined[student_row_index, 5]))/(as.numeric(student_demographics_focal_streamlined["Grand total", 4])+as.numeric(student_demographics_focal_streamlined["Grand total", 5])))
-	percentage <- round(as.numeric(student_demographics_focal_streamlined[student_row_index, 6]))
-	if(!is.finite(percentage)) { 
-		percentage <- 0
-	}
-	student_demographics_focal_streamlined[student_row_index, 6] <- paste0("<img src=images/pct_bar_grayscale_", percentage, ".png width=", params$spark_width, " height=", params$spark_height,">")
-	
-}
-colnames(student_demographics_focal_streamlined) <- c("Women&nbsp;", "&nbsp;Men&nbsp;", "%", "&nbsp;Women&nbsp;", "&nbsp;Men&nbsp;", "%")
-student_demographics_focal_streamlined <- rbind(student_demographics_focal_streamlined, student_demographics_focal_streamlined["Grand total",])[-1,]
-rownames(student_demographics_focal_streamlined)[nrow(student_demographics_focal_streamlined)] <- "Total"
-student_demographics_focal_streamlined["Total", 3] <- ""
-student_demographics_focal_streamlined["Total", 6] <- ""
-
-
-
-student_demographics_focal_streamlined %>% addHtmlTableStyle(col.rgroup = c("none", "#F7F7F7")) %>% htmlTable::htmlTable(cgroup = c("Undergrads", "Grad students"), n.cgroup = c(3,3), total=TRUE, escape.html=TRUE)
-
-```
-
-### Origin of the students
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-
-
-students_by_state$`Number of students` <- as.numeric(students_by_state$`Number of students`)
-
-
-
-```
-
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-
-students_by_state$`Percentage of 18 year olds from each state enrolled here` <- 100*CharacterFractionToNumeric(students_by_state$`Fraction of 18 year olds from each state enrolled here`)
-
-
-
-# kable(students_by_state)
-
-if(max(students_by_state$`Number of students`)>0) {
- g <- list(
-  scope = 'usa',
-  projection = list(type = 'albers usa'),
-  lakecolor = toRGB('white')
-   )
-   
-   StudentNumbers <- as.numeric(students_by_state$`Number of students`)
-   names(StudentNumbers) <- students_by_state$State
-   plot_geo() %>%
-  add_trace(
-    z = ~StudentNumbers, text = state.name, span = I(0),
-    locations = state.abb, locationmode = 'USA-states', colors = 'Purples'
-  ) %>%  layout(geo = g, title="Number of enrolled students from each state", showlegend=FALSE) %>% config(displayModeBar = FALSE) %>% config(displaylogo = FALSE) %>% hide_colorbar()
-  
-} 
-
-
-```
-
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-
-
-if(max(students_by_state$`Number of students`)>0) {
- 
-    StudentPercentage <- students_by_state$`Percentage of 18 year olds from each state enrolled here`
-   names(StudentPercentage) <- students_by_state$State
-   plot_geo() %>%
-  add_trace(
-    z = ~StudentPercentage, text = state.name, span = I(0),
-    locations = state.abb, locationmode = 'USA-states', colors = 'Purples'
-  ) %>%  colorbar(title = "Percent") %>%
-  layout(geo = g, title="Rough percentage of potential students in each state attending this college", showlegend=FALSE) %>% config(displayModeBar = FALSE) %>% config(displaylogo = FALSE) %>% hide_colorbar()
-  
-} 
-
-
-```
-
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-
-horizontal_results <- as.data.frame(cbind(t(comparison_df[,1, drop=FALSE]), t(safety_to_print[,1, drop=FALSE]), t(location_to_print[,1, drop=FALSE])))
-rownames(horizontal_results) <- gsub('&nbsp;', '', rownames(horizontal_results))
-horizontal_results$`Athletic conference` <-  raw_table_df$"NCAA/NAIA conference number cross country/track"[focal_row_number]
-horizontal_results$'Institution type' <-  raw_table_df$"Type"[focal_row_number]
-horizontal_results$'Institution sector' <-  raw_table_df$"Sector"[focal_row_number]
-horizontal_results$'City' <- as.character(raw_table_df[focal_row_number, 'City'])
-horizontal_results$'State' <- as.character(focal_raw['State'][1,1])
-
-all_colleges <- data.frame()
-try(load(file="all_colleges.rda"), silent=TRUE)
-if(nrow(all_colleges)==0) {
-	all_colleges <- horizontal_results
-} else {
-	all_colleges <- rbind(all_colleges, horizontal_results)	
-}
-
-save(all_colleges, file="all_colleges.rda")
-
-```
-
-## Trends over time
-
-### Enrollment
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-twelve_month_filtered <- local_tables$Twelve_month_headcount %>% dplyr::filter(Student.level != 'Generated total')
-twelve_month_filtered$IPEDS.Year <- as.numeric(twelve_month_filtered$IPEDS.Year)
-twelve_month_filtered$Grand.total <- as.numeric(twelve_month_filtered$Grand.total)
-
-print(ggplot(twelve_month_filtered, aes(x=IPEDS.Year, y=Grand.total, group=Student.level, colour=Student.level)) + geom_line() + ylab("Number of students") + xlab("Year"))
-```
-
-
-### Admissions
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-admissions <- local_tables$Admissions %>% mutate(Admission.percentage.total = as.numeric(Admission.percentage.total), Admission.percentage.women = as.numeric(Admission.percentage.women), Admission.percentage.men = as.numeric(Admission.percentage.men), IPEDS.Year = as.numeric(IPEDS.Year)) %>% pivot_longer(cols=starts_with("Admission.percentage."), names_to='Admission.percentage.', names_prefix='Admission.percentage.', values_to="Percentage")
-
-print(ggplot(admissions, aes(x=IPEDS.Year, y=Percentage, group=Admission.percentage., colour=Admission.percentage.)) + geom_line() + ylab("Percent of applicants admitted") + xlab("Year"))
-
-
-```
-
-### Yield
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-yields <- local_tables$Admissions %>% mutate(Yield.percentage.total = as.numeric(Yield.percentage.total), Yield.percentage.women = as.numeric(Yield.percentage.women), Yield.percentage.men = as.numeric(Yield.percentage.men), IPEDS.Year = as.numeric(IPEDS.Year)) %>% pivot_longer(cols=starts_with("Yield.percentage."), names_to='Yield.percentage.', names_prefix='Yield.percentage.', values_to="Percentage")
-
-print(ggplot(yields, aes(x=IPEDS.Year, y=Percentage, group=Yield.percentage., colour=Yield.percentage.)) + geom_line() + ylab("Percent of admitted students choosing to enroll") + xlab("Year"))
-```
-
-### Enrollment demographics
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-enrollment_demographics <- subset(local_tables$Enrollment_race, local_tables$Enrollment_race$Level.of.student..original.line.number.on.survey.form.=="Full-time degree-seeking undergraduates, total")
-categories <- unique(gsub(".women", "", colnames(enrollment_demographics)[grepl("women", colnames(enrollment_demographics))]))
-categories <- categories[!grepl("Grand", categories)]
-
-enrollment_demographics_long <- enrollment_demographics %>% pivot_longer(cols=ends_with("total"), names_to="Categories", values_to="Counts") %>% mutate(Counts=as.numeric(Counts), IPEDS.Year=as.numeric(IPEDS.Year))
-
-enrollment_demographics_long <- subset(enrollment_demographics_long, Categories!="Grand.total")
-enrollment_demographics_long$Categories <- gsub("\\.", " ", gsub(".total", "", enrollment_demographics_long$Categories))
-
-#print(ggplot(enrollment_demographics_long, aes(x=IPEDS.Year, y=Counts, group=Categories, colour=Categories)) + geom_line() + ylab("Number of first time, full-time, degree-seeking undergrads") + xlab("Year"))
-
-#print(ggplot(enrollment_demographics_long, aes(x=IPEDS.Year, y=Counts, group=Categories, colour=Categories)) + geom_line() + ylab("Number of first time, full-time, degree-seeking undergrads\n(log scale)") + xlab("Year") + scale_y_log10())
-
-enrollment_demographics_long_percentage <- enrollment_demographics_long %>% group_by(IPEDS.Year, Categories) %>% summarise(n=sum(Counts)) %>% mutate(Percentage=100*n/sum(n))
-
-print(ggplot(enrollment_demographics_long_percentage, aes(x=IPEDS.Year, y=Percentage, group=Categories, colour=Categories, fill=Categories)) + geom_area(alpha=0.8, colour="black") + ylab("Percentage of first time, full-time, degree-seeking undergrads") + xlab("Year"))
-```
-
-# Faculty
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-tenure_stream_current <- local_tables$Staff_tenure_demographics %>% filter(Instructional.staff.category %in% c('Tenured total', 'On-Tenure track total')) %>% filter(Academic.rank=="All ranks") %>% group_by(IPEDS.Year) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) %>% mutate(IPEDS.Year = as.numeric(IPEDS.Year))
-tenure_stream_current$TenureStream <- "Tenure-stream"
-
-
-ntt_stream_current <- local_tables$Staff_tenure_demographics %>% filter(Instructional.staff.category=='Not on tenure track/No tenure system system total') %>% filter(Academic.rank=="All ranks") %>% group_by(IPEDS.Year) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) %>% mutate(IPEDS.Year = as.numeric(IPEDS.Year))
-ntt_stream_current$TenureStream <- "Contingent or not tenure-track"
-
-instructional_faculty_current <- rbind(tenure_stream_current, ntt_stream_current)
-
-print(ggplot(instructional_faculty_current, aes(x=IPEDS.Year, y=Grand.total, group=TenureStream, colour=TenureStream)) + geom_line() + ylab("Number of faculty") + xlab("Year"))
-
-tenure_stream_new <- local_tables$Staff_new %>% filter(Faculty.and.tenure.status %in% c('With faculty status, tenured', 'With faculty status, on tenure track')) %>% group_by(IPEDS.Year) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) %>% mutate(IPEDS.Year = as.numeric(IPEDS.Year))
-
-
-all_instructors_stream_new <- local_tables$Staff_new %>% filter(Faculty.and.tenure.status %in% c('With faculty status, total')) %>% group_by(IPEDS.Year) %>% summarise(Grand.total = sum(as.numeric(Grand.total)), Grand.total.women = sum(as.numeric(Grand.total.women)), Grand.total.men=sum(as.numeric(Grand.total.men)), American.Indian.or.Alaska.Native=sum(as.numeric(American.Indian.or.Alaska.Native.total)), Asian=sum(as.numeric(Asian.total)), Black.or.African.American=sum(as.numeric(Black.or.African.American.total)), Hispanic.or.Latino=sum(as.numeric(Hispanic.or.Latino.total)), Native.Hawaiian.or.Other.Pacific.Islander=sum(as.numeric(Native.Hawaiian.or.Other.Pacific.Islander.total)), White=sum(as.numeric(White.total)), Two.or.more.races=sum(as.numeric(Two.or.more.races.total)), Race.ethnicity.unknown=sum(as.numeric(Race.ethnicity.unknown.total)), Nonresident.alien=sum(as.numeric(Nonresident.alien.total))) %>% mutate(IPEDS.Year = as.numeric(IPEDS.Year))
-
-ntt_stream_new <- all_instructors_stream_new
-
-all_colnames_but_year <- colnames(ntt_stream_new)[-1]
-
-for (focal_col_index in sequence(length(all_colnames_but_year))) {
-	for (focal_year_index in sequence(length(ntt_stream_new$IPEDS.Year))) {
-		ntt_stream_new[focal_year_index, focal_col_index+1] <- ntt_stream_new[focal_year_index, focal_col_index+1] - tenure_stream_new[which(tenure_stream_new$IPEDS.Year==ntt_stream_new$IPEDS.Year[focal_year_index]), all_colnames_but_year[focal_col_index]] # all this is because we don't want to assume years and columns are in the same order
-	}
-}
-
-
-tenure_stream_new$TenureStream <- "Tenure-stream"
-
-ntt_stream_new$TenureStream <- "Contingent or not tenure-track"
-
-instructional_faculty_new <- rbind(tenure_stream_new, ntt_stream_new)
-
-# Want to make sure it all lines up exactly
-
-
-try({
-	if(all(colnames(instructional_faculty_current)==colnames(instructional_faculty_new)) && all(instructional_faculty_current$IPEDS.Year == instructional_faculty_new$IPEDS.Year) && all(instructional_faculty_current$TenureStream == instructional_faculty_new$TenureStream)) {
-		instructional_faculty_persisting_from_previous_year <- instructional_faculty_current[,-ncol(instructional_faculty_current)] - instructional_faculty_new[,-ncol(instructional_faculty_new)]
-		instructional_faculty_persisting_from_previous_year$IPEDS.Year <- instructional_faculty_current$IPEDS.Year
-		instructional_faculty_persisting_from_previous_year$TenureStream <- instructional_faculty_current$TenureStream
-	}
-	instructional_faculty_retention <- instructional_faculty_persisting_from_previous_year
-	instructional_faculty_retention[,2:(ncol(instructional_faculty_retention)-1)] <- NA
-	instructional_faculty_retention <- subset(instructional_faculty_retention, IPEDS.Year > min(IPEDS.Year))
-	instructional_faculty_loss <- instructional_faculty_retention
-	for (row_index in sequence(nrow(instructional_faculty_retention))) {
-		for (col_index in 2:(ncol(instructional_faculty_retention)-1)) {
-			last_year <- subset(
-				instructional_faculty_current, 
-				instructional_faculty_current$IPEDS.Year==(instructional_faculty_retention$IPEDS.Year[row_index]-1) & instructional_faculty_current$TenureStream == instructional_faculty_retention$TenureStream[row_index])[which(colnames(instructional_faculty_current)==colnames(instructional_faculty_retention[col_index]))]
 			
-			this_year <- subset(
-				instructional_faculty_persisting_from_previous_year, 
-				instructional_faculty_persisting_from_previous_year$IPEDS.Year==(instructional_faculty_retention$IPEDS.Year[row_index]) & instructional_faculty_persisting_from_previous_year$TenureStream == instructional_faculty_retention$TenureStream[row_index])[which(colnames(instructional_faculty_persisting_from_previous_year)==colnames(instructional_faculty_retention[col_index]))]
-			
-			instructional_faculty_retention[row_index, col_index] <- unname(100*this_year/last_year)
-			instructional_faculty_loss[row_index, col_index] <- unname(last_year - this_year)
 
-		}
+			faculty_ethnicity[category_index, rank_index+1] <- paste0("<img src=", filename_png, " width=400 height=100>")
+		})
 	}
-}, silent=TRUE)
+}
 
-# Keeping for now, but it seems some people get recategorized or something of the sort: the numbers in instructional_faculty_retention can sometimes be above 100
+
 
 ```
 
-### Finances
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-finances <- local_tables$Finance
-finances$Total.revenues.and.investment.return <- as.numeric(finances$Total.revenues.and.investment.return)
-finances$Total.expenses <- as.numeric(finances$Total.expenses)
-finances$Total.net.assets <- as.numeric(finances$Total.net.assets)
-finances$IPEDS.Year <- as.integer(finances$IPEDS.Year)
-finances$RevenueMinusExpenses <- finances$Total.revenues.and.investment.return - finances$Total.expenses
-finances_plotting <- finances %>% dplyr::select('IPEDS.Year', 'RevenueMinusExpenses', 'Total.net.assets')
-
-finances_plotting$Year <- as.integer(finances_plotting$IPEDS.Year)
-
-ylabel_text <- "Revenue minus expenses\n(Dollars)"
-finances_plotting$RevenueMinusExpensesToPlot <- finances_plotting$RevenueMinusExpenses
-if(min(finances_plotting$RevenueMinusExpenses)>1e6) {
-	ylabel_text <- "Revenue minus expenses\n(Millions of dollars)"
-	finances_plotting$RevenueMinusExpensesToPlot <- finances_plotting$RevenueMinusExpenses/1e6
-}
-if(min(finances_plotting$Total.net.assets)>1e9) {
-	ylabel_text <- "Revenue minus expenses\n(Billions of dollars)"
-	finances_plotting$RevenueMinusExpensesToPlot <- finances_plotting$RevenueMinusExpenses/1e9 
-}
+<a href='`r PrependHttpsIfNeeded(most_current_info['Institution s internet website address'])`'>`r most_current_info['Institution entity name']`</a> is located in `r most_current_info['City location of institution']`, `r most_current_info['State abbreviation']`. It is a `r tolower(most_current_info['Sector of institution'])` institution. Carnegie classifies it overall as being among "`r most_current_info['Carnegie Classification 2021 Basic']`" institutions, with its undergraduate program "`r most_current_info['Carnegie Classification 2021 Undergraduate Instructional Program']`" and graduate program "`r most_current_info['Carnegie Classification 2021 Graduate Instructional Program']`". 
 
 
-print(ggplot(finances_plotting, aes(x=Year, y=RevenueMinusExpensesToPlot)) + geom_link2(aes(colour = after_stat(ifelse(y > 0, "positive", "negative")))) + scale_colour_manual(values=c("red", "black")) + ylab(ylabel_text) + xlab("Year") + theme(legend.position="none"))
+# Enrollment
 
 
-ylabel_text <- "Total net assets\n(Dollars)"
-finances_plotting$Total.net.assets_toplot <- finances_plotting$Total.net.assets
-if(min(finances_plotting$Total.net.assets)>1e6) {
-	ylabel_text <- "Total net assets\n(Millions of dollars)"
-	finances_plotting$Total.net.assets_toplot <- finances_plotting$Total.net.assets/1e6
-}
-if(min(finances_plotting$Total.net.assets)>1e9) {
-	ylabel_text <- "Total net assets\n(Billions of dollars)"
-	finances_plotting$Total.net.assets_toplot <- finances_plotting$Total.net.assets/1e9 
-}
-print(ggplot(finances_plotting, aes(x=IPEDS.Year, y=Total.net.assets_toplot)) + geom_line() + ylab(ylabel_text) + xlab("Year"))
-
-
-revenue <- finances %>% dplyr::select(IPEDS.Year, Tuition.and.fees...Total, Federal.appropriations...Total, State.appropriations...Total, Local.appropriations...Total, Federal.grants.and.contracts...Total, State.grants.and.contracts...Total, Local.grants.and.contracts...Total, Private.gifts...Total, Private.grants.and.contracts...Total, Contributions.from.affiliated.entities...Total, Investment.return...Total, Sales.and.services.of.educational.activities...Total, Hospital.revenue...Total, Independent.operations.revenue...Total, Other.revenue...Total) %>% mutate_all(as.numeric)
-
-colnames(revenue) <- gsub("...Total", "", colnames(revenue))
-revenue[is.na(revenue)] <- 0
-revenue$Government.appropriations <- revenue$Federal.appropriations + revenue$State.appropriations + revenue$Local.appropriations
-
-revenue$Government.grants.and.contracts <- revenue$Federal.grants.and.contracts + revenue$State.grants.and.contracts + revenue$Local.grants.and.contracts
-
-revenue <- revenue[,!(grepl("Federal|State|Local", colnames(revenue)))]
-revenue <- revenue[,colSums(revenue)>0] # to get rid of empty categories
-
-revenue_longer <- revenue %>% pivot_longer(cols=colnames(revenue)[-1])
-revenue_longer$Source <- gsub("\\.", " ", revenue_longer$name)
-p <- ggplot(revenue_longer, aes(x=IPEDS.Year, y=value, fill=Source)) + geom_area()
-#ggplotly(p)
-print(p)
-
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+	pretty_table <- comparison_df[which(comparison_df$Heading == "Enrollment"),]
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
 ```
 
-### Map
+# Student financing
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
-leaflet() %>%
-  addTiles() %>%  
-  setView(lng = as.numeric(local_tables$Institutional_directory$Longitude.location.of.institution[1]), lat = as.numeric(local_tables$Institutional_directory$Latitude.location.of.institution[1]), zoom = 16) %>% 
-  addMarkers(lng=as.numeric(local_tables$Institutional_directory$Longitude.location.of.institution[1]), lat=as.numeric(local_tables$Institutional_directory$Latitude.location.of.institution[1]), popup=local_tables$Institutional_directory$Institution..entity..name[1])
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+	pretty_table <- comparison_df[which(comparison_df$Heading == "Student financing"),]
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
 ```
 
+# Teaching
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+	pretty_table <- comparison_df[which(comparison_df$Heading == "Teaching"),]
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
+```
+
+# Institution finances
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+	pretty_table <- comparison_df[which(comparison_df$Heading == "Institution finances"),]
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
+```
+
+# Library facilities
 
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+	pretty_table <- comparison_df[which(comparison_df$Heading == "Library facilities"),]
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
+```
+
+# SAT scores
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+	pretty_table <- comparison_df[which(comparison_df$Heading == "SAT scores"),]
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
+```
+
+# ACT scores
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+	pretty_table <- comparison_df[which(comparison_df$Heading == "ACT scores"),]
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
+```
+
+# Faculty ethnicity/race
+
+This uses categories from the US federal data.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+	faculty_ethnicity %>% knitr::kable(align="c")
+```
