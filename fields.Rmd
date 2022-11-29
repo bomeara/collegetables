@@ -1,0 +1,42 @@
+---
+title: Fields
+output:
+  html_document:
+    theme: darkly
+    highlight: espresso
+    self_contained: false
+    includes:
+      in_header: GA_Script.html
+---
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+source("_packages.R")
+source("R/functions.R")
+tar_load(fields_and_majors)
+tar_load(CIPS_codes)
+db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
+field_data <- tbl(db, fields_and_majors[1]) %>% as.data.frame()
+dbDisconnect(db)
+```
+
+This has fields grouped. It's one giant page so that it is easy to search (using your browser's find function) for an area of interest: "history" might appear in multiple places, for example. Clicking on a degree name within a table will link to a page for that degree and field combination.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, results='asis'}
+for (cips_index in sequence(nrow(CIPS_codes))) {
+#for (cips_index in sequence(10)) {
+
+	focal_data <- field_data %>% dplyr::filter(Field==CIPS_codes$CIPTitle[cips_index]) 
+	if(nrow(focal_data)>0) {		
+		focal_data$Degree <- paste0("<a href='majors_", utils::URLencode(gsub(" ", "", focal_data$Degree)), "_", utils::URLencode( gsub('/', "_",gsub(",", "_", gsub(" ", "", focal_data$Field)))) ,".html'>", focal_data$Degree, "</a>")
+
+		cat(paste0("### ", CIPS_codes$CIPTitle[cips_index]))
+		cat("\n\n")
+		cat(CIPS_codes$CIPDefinition[cips_index])
+		cat("\n\n")
+		cat(focal_data %>% dplyr::select(-Field) %>% knitr::kable(escape=FALSE) %>%  kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed")))
+		cat("\n\n\n\n")
+	}
+}
+
+```

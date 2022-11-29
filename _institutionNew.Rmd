@@ -1,7 +1,8 @@
 ---
 output:
-  rmdformats::downcute:
-    downcute_theme: "chaos"
+  html_document:
+    theme: darkly
+    highlight: espresso
     self_contained: false
     includes:
       in_header: GA_Script.html
@@ -268,7 +269,7 @@ for (rank_index in sequence(length(faculty_ranks))) {
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 	pretty_table <- comparison_df[which(comparison_df$Heading == "Enrollment"),]
-	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c") %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
 # Student financing
@@ -276,21 +277,21 @@ for (rank_index in sequence(length(faculty_ranks))) {
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 	pretty_table <- comparison_df[which(comparison_df$Heading == "Student financing"),]
-	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c") %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
 # Teaching
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 	pretty_table <- comparison_df[which(comparison_df$Heading == "Teaching"),]
-	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c") %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
 # Institution finances
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 	pretty_table <- comparison_df[which(comparison_df$Heading == "Institution finances"),]
-	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c") %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
 # Library facilities
@@ -298,21 +299,21 @@ for (rank_index in sequence(length(faculty_ranks))) {
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 	pretty_table <- comparison_df[which(comparison_df$Heading == "Library facilities"),]
-	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c") %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
 # SAT scores
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 	pretty_table <- comparison_df[which(comparison_df$Heading == "SAT scores"),]
-	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c") %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
 # ACT scores
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
 	pretty_table <- comparison_df[which(comparison_df$Heading == "ACT scores"),]
-	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c")
+	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c") %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
 # Faculty ethnicity/race
@@ -320,5 +321,5 @@ for (rank_index in sequence(length(faculty_ranks))) {
 This uses categories from the US federal data.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
-	faculty_ethnicity %>% knitr::kable(align="c")
+	faculty_ethnicity %>% knitr::kable(align="c") %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```

@@ -883,7 +883,7 @@ AggregateForOneInstitution <- function(institution_id, db) {
 	
 	# People completing the programs, looking at just first majors (which can include people getting doctorates, masters, bachelor's, associates, etc.)
 	
-	 completions_program_first_major <- suppressMessages(tbl(db, "Completions_program") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% dplyr::filter(`Czzzz_A.MAJORNUM.First.or.Second.Major`=='First major') %>% dplyr::select(c(`UNITID.Unique.identification.number.of.the.institution`,`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Czzzz_A.CTOTALT.Grand.total`, `IPEDS.Year`)) %>% dplyr::rename(Subject=`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Total.graduates`=`Czzzz_A.CTOTALT.Grand.total`) %>% dplyr::group_by(`UNITID.Unique.identification.number.of.the.institution`, Subject, IPEDS.Year) %>% dplyr::summarise(`Total.graduates`=sum(`Total.graduates`)) %>% dplyr::filter(!is.na(Subject)) %>% as.data.frame())
+	 completions_program_first_major <- suppressMessages(tbl(db, "Completions_program") %>% dplyr::filter(`UNITID.Unique.identification.number.of.the.institution`==institution_id) %>% dplyr::filter(`Czzzz_A.MAJORNUM.First.or.Second.Major`=='First major') %>% dplyr::select(c(`UNITID.Unique.identification.number.of.the.institution`,`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Czzzz_A.CTOTALT.Grand.total`, `IPEDS.Year`)) %>% dplyr::rename(Subject=`Czzzz_A.CIPCODE.CIP.Code....2020.Classification`, `Total.graduates`=`Czzzz_A.CTOTALT.Grand.total`) %>% dplyr::filter(!is.na(Subject)) %>% as.data.frame())
 	
 	#completions_program_first_major$latest_year <- FALSE
 	#completions_program_first_major$latest_year[which(completions_program_first_major$IPEDS.Year==max(completions_program_first_major$IPEDS.Year))] <- TRUE
@@ -1636,7 +1636,7 @@ RenderInstitutionPages <- function(overview, degree_granting, maxcount=30, stude
 			#Sys.sleep(1)
 
 
-			file.copy("docs/institution.html", paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"))
+			file.copy("docs/institution.html", paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), overwrite=TRUE)
 			#print(paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"))
 			Sys.sleep(1)
 			# quarto::quarto_render(
@@ -1689,7 +1689,7 @@ RenderInstitutionPagesNew <- function(comparison_table, spark_width, spark_heigh
 			print(institution_name)
 			
 			# quarto::quarto_render(
-			# 	input="_institutionNew.Rmd", 
+			# 	input="_institutionNew.qmd", 
 			# 	output_file="quarto_institution.html", 
 			# 	execute_params = list(
 			# 		institution_name = institution_name,
@@ -1722,7 +1722,7 @@ RenderInstitutionPagesNew <- function(comparison_table, spark_width, spark_heigh
 			#Sys.sleep(1)
 
 
-			file.copy("docs/institution.html", paste0("docs/new_", utils::URLencode(gsub(" ", "", institution_name)), ".html"))
+			file.copy("docs/institution.html", paste0("docs/new_", utils::URLencode(gsub(" ", "", institution_name)), ".html"), overwrite=TRUE)
 			print(paste0("docs/new_", utils::URLencode(gsub(" ", "", institution_name)), ".html"))
 			Sys.sleep(1)
 			# quarto::quarto_render(
@@ -1747,6 +1747,106 @@ RenderInstitutionPagesNew <- function(comparison_table, spark_width, spark_heigh
 	}
 	return(failures)
 }
+
+
+RenderMajorsPages <- function(fields_and_majors, CIPS_codes) {
+	db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
+	field_data <- tbl(db, fields_and_majors[1]) %>% as.data.frame()
+	completions_with_percentage <- tbl(db, fields_and_majors[2]) %>% as.data.frame()
+	dbDisconnect(db)
+	
+	for (row_index in sequence(nrow(field_data))) {
+		rmarkdown::render(
+				input="_majors.Rmd", 
+				output_file="docs/majors.html", 
+				params = list(
+					degree = field_data$Degree[row_index],
+					field = field_data$Field[row_index],
+					filtered_table = completions_with_percentage %>% dplyr::filter(Degree==field_data$Degree[row_index]) %>% dplyr::filter(Field==field_data$Field[row_index]) %>% dplyr::select(-Degree) %>% dplyr::select(-Field),
+					definition = CIPS_codes$CIPDefinition[CIPS_codes$CIPTitle == field_data$Field[row_index]]
+				),
+				quiet=TRUE
+			)
+			Sys.sleep(1)
+			system("sed -i '' 's/&gt;/>/g' docs/majors.html") # because htmlTable doesn't escape well; the '' is a requirement of OS X's version of sed, apparently
+			system("sed -i '' 's/&lt;/</g' docs/majors.html")
+			
+			#Sys.sleep(1)
+
+
+			file.copy("docs/majors.html", paste0("docs/majors_", utils::URLencode(gsub(" ", "", field_data$Degree[row_index])), "_", utils::URLencode(gsub('/', "_",gsub(",", "_", gsub(" ", "", field_data$Field[row_index])))) ,".html"), overwrite=TRUE)
+			Sys.sleep(1)
+	}
+	
+	failures <- c()
+	#for (i in seq_along(institutions)) {
+	for (i in sequence(min(maxcount, length(institution_ids)))) {
+		failed <- TRUE
+		try({
+			institution_id <- institution_ids[i]
+			institution_name <- rownames(t(t(sort(table(comparison_table$`Institution entity name`[comparison_table$`UNITID Unique identification number of the institution` == institution_id]), decreasing=TRUE))))[1] # sometimes the name changes a bit; take the most common one			
+			print(institution_name)
+			
+			# quarto::quarto_render(
+			# 	input="_institutionNew.qmd", 
+			# 	output_file="quarto_institution.html", 
+			# 	execute_params = list(
+			# 		institution_name = institution_name,
+			# 		institution_long_name = institution_name,
+			# 		institution_id =  institution_id,
+			# 		comparison_table = comparison_table,
+			# 		spark_width = spark_width,
+			# 		spark_height = spark_height
+			# 	),
+			# 	quiet=FALSE
+			# )
+			
+			rmarkdown::render(
+				input="_institutionNew.Rmd", 
+				output_file="docs/institution.html", 
+				params = list(
+					institution_name = institution_name,
+					institution_long_name = institution_name,
+					institution_id =  institution_id,
+					comparison_table = comparison_table,
+					spark_width = spark_width,
+					spark_height = spark_height
+				),
+				quiet=TRUE
+			)
+			Sys.sleep(1)
+			system("sed -i '' 's/&gt;/>/g' docs/institution.html") # because htmlTable doesn't escape well; the '' is a requirement of OS X's version of sed, apparently
+			system("sed -i '' 's/&lt;/</g' docs/institution.html")
+			
+			#Sys.sleep(1)
+
+
+			file.copy("docs/institution.html", paste0("docs/new_", utils::URLencode(gsub(" ", "", institution_name)), ".html"), overwrite=TRUE)
+			print(paste0("docs/new_", utils::URLencode(gsub(" ", "", institution_name)), ".html"))
+			Sys.sleep(1)
+			# quarto::quarto_render(
+			# 	input="_institution.qmd", 
+			# 	output_file=paste0(  "docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
+			# 	execute_params = list(
+			# 		institution_name = institutions[i],
+			# 		institution_long_name = degree_granting$ShortName[i],
+			# 		overview_table = subset(overview, overview$ShortName == institutions[i]),
+			# 		raw_table = degree_granting,
+			# 		students_by_state_by_institution = students_by_state_by_institution,
+			# 		student_demographics = student_demographics,
+			# 		faculty_counts = faculty_counts
+			# 	),
+			# 	quiet=FALSE
+			# )
+			failed <- FALSE
+		}, silent=TRUE)
+		if(failed) {
+			failures <- c(failures, comparison_table$`Institution entity name`[i])
+		}
+	}
+	return(failures)
+}
+
 
 RenderStatePages <- function(degree_granting, students_by_state_by_institution, spark_width, spark_height, state_pops) {	
 	states <- unique(state_pops$State)
@@ -1776,7 +1876,7 @@ RenderStatePages <- function(degree_granting, students_by_state_by_institution, 
 			Sys.sleep(1)
 
 
-			file.copy("docs/state.html", paste0("docs/", utils::URLencode(gsub(" ", "", states[i])), ".html"))
+			file.copy("docs/state.html", paste0("docs/", utils::URLencode(gsub(" ", "", states[i])), ".html"), overwrite=TRUE)
 			#print(paste0("docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"))
 			Sys.sleep(1)
 			# quarto::quarto_render(
@@ -2167,4 +2267,100 @@ formatMe <- function(x, digits=0, prefix="") {
 		digits <- digits + 1	
 	}
 	return(paste0(ifelse(x_sign<0, "-", ""), prefix, format(round(as.numeric(x), digits), nsmall=digits, big.mark=","), suffix))
+}
+
+
+GetFieldsAndMajors <- function(comparison_table, ipeds_direct_and_db) {
+	db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
+
+	completions_program <- tbl(db, "Completions_program") %>% as.data.frame()
+	colnames(completions_program) <- gsub("  ", " ", gsub('\\.', ' ', gsub("^[A-z]+\\.[A-Z0-9_]+\\.", "", colnames(completions_program))))
+	completions_program <- subset(completions_program, completions_program$`UNITID Unique identification number of the institution` != "z") #kill the placeholder
+	completions_program$`IPEDS Year` <- as.numeric(completions_program$`IPEDS Year`)
+
+	completions_program <- completions_program %>% dplyr::filter(`IPEDS Year`==max(completions_program$`IPEDS Year`)) %>% dplyr::filter(`First or Second Major`=="First major")
+
+	comparison_table$`IPEDS Year` <- as.numeric(comparison_table$`IPEDS Year`)
+	
+	comparison_table <- comparison_table %>% dplyr::filter(`IPEDS Year`==max(comparison_table$`IPEDS Year`))
+	comparison_table <- comparison_table %>% dplyr::select(-c("IPEDS Year"))
+
+	completions_first_major <- dplyr::left_join(completions_program, comparison_table)
+	completions_simple <- completions_first_major %>% dplyr::select(c(
+		"CIP Code  2020 Classification",
+		"Grand total",
+		"Award Level code",
+		"Institution entity name",
+		"State abbreviation",
+		"UNITID Unique identification number of the institution",
+		"Admission percentage total"
+		)) %>%
+		dplyr::rename(c(
+			Field="CIP Code  2020 Classification",
+			Completions="Grand total",
+			Degree="Award Level code",
+			Institution="Institution entity name",
+			State="State abbreviation",
+			UNITID="UNITID Unique identification number of the institution",
+			AdmissionRate = "Admission percentage total"
+		))
+		
+	completions_simple <- completions_simple %>% dplyr::filter(Field!="Grand total")
+
+	completions_simple$RejectionRate <- 100-as.numeric(completions_simple$AdmissionRate) # Since people want to see "selective" institutions first
+
+	completions_simple$Degree[grepl("Doctor", completions_simple$Degree)] <- "Doctorate"
+
+	completions_simple$Degree[grepl("Certificate", completions_simple$Degree, ignore.case=TRUE)] <- "Certificate"
+	
+	completions_simple$Degree[grepl("Associate", completions_simple$Degree, ignore.case=TRUE)] <- "Associates"
+	
+	completions_simple$Degree[grepl("Bachelor", completions_simple$Degree, ignore.case=TRUE)] <- "Bachelors"
+	
+	completions_simple$Degree[grepl("Master", completions_simple$Degree, ignore.case=TRUE)] <- "Masters"
+	
+
+	completions_simple$Completions <- as.numeric(completions_simple$Completions)
+
+	
+
+	completions_with_percentage <- completions_simple %>% dplyr::filter(Completions > 0) %>% dplyr::group_by(UNITID,Degree) %>% mutate(AllDegrees = sum(Completions)) %>% mutate('Percent at Institution' = round(100*Completions/AllDegrees,3)) %>% dplyr::filter(Completions > 0) %>% ungroup() %>% dplyr::group_by(Field,Degree) %>% mutate(AllByField = sum(Completions)) %>% mutate('Percent in Field' = round(100*Completions/AllByField,3)) %>% ungroup()
+
+
+	completions_with_percentage$Institution <-  paste0("<a href='https://collegetables.info/", utils::URLencode(gsub(" ", "", completions_with_percentage$UNITID)),  ".html'>", completions_with_percentage$Institution, "</a>")
+
+	completions_with_percentage <- completions_with_percentage %>% dplyr::select(c(
+		Field,
+		Institution,
+		Completions,
+		`Percent at Institution`,
+		`Percent in Field`,
+		Degree,
+		RejectionRate
+	)) 
+
+	completions_with_percentage <- completions_with_percentage[order(completions_with_percentage$RejectionRate,completions_with_percentage$`Percent at Institution`, decreasing=TRUE),] %>% dplyr::select(-RejectionRate)
+	
+	field_data <- completions_simple %>% dplyr::group_by(Field,Degree) %>% dplyr::summarise('Schools offering' = n(), 'Degrees completed' = sum(Completions))
+
+	
+	dbWriteTable(db,  "Field_data", field_data, overwrite=TRUE)
+	dbWriteTable(db, "Completions_with_percentage", completions_with_percentage, overwrite=TRUE)
+	dbDisconnect(db)
+	return(c('Field_data', 'Completions_with_percentage')) # just which tables they are
+}
+
+# From https://nces.ed.gov/ipeds/cipcode/resources.aspx?y=56. These are the explanations for what a field has, i.e.: 
+# 01.0301	
+#Agricultural Production Operations, General.	
+# A program that focuses on the general planning, economics, and use of facilities, natural resources, equipment, labor, and capital to produce plant and animal products, and that may prepare individuals for work in farming, ranching, and agribusiness.
+
+# These are revised every 10 years; the 2020 version is the most recent. Since the only way to download it is javascript, I just have a saved csv
+GetCIPCodesExplanations <- function() {
+	cip <- read.csv("data/CIPCode2020.csv", stringsAsFactors=FALSE)
+	cip <- cip %>% dplyr::select(c("CIPTitle", "CIPDefinition"))
+	cip <- cip[!grepl('Instructional content ', cip$CIPDefinition),] # eliminates cruft
+	cip <- cip[!duplicated(cip$CIPTitle),] # remove duplicates
+	cip$CIPTitle <- gsub("\\.$", "", cip$CIPTitle) # remove trailing period
+	return(cip)
 }

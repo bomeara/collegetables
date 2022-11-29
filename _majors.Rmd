@@ -1,0 +1,36 @@
+---
+output:
+  html_document:
+    theme: darkly
+    highlight: espresso
+    self_contained: false
+    includes:
+      in_header: GA_Script.html
+params:
+  degree: "nothing"
+  field: "nothing"
+  filtered_table: "nothing"
+  definition: "nothing"
+title: "`r paste0(params$degree, ': ', params$field)`"
+---
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+source("_packages.R")
+source("R/functions.R")
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, results='asis'}
+cat(params$definition)
+```
+
+
+This shows the number of graduates in the most recent year available by field. You can click on a column name to sort by it; you may also search for schools See the [Fields](fields.html) page for data on the fields available and how many schools and students offer each.
+
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, results='asis'}
+#DT::datatable(params$filtered_table,  rownames=FALSE, escape=FALSE, extensions = c('FixedColumns', 'FixedHeader'))
+filtered_table <- (params$filtered_table)[order(params$filtered_table$`Percent in Field`, decreasing=TRUE),]
+kable(FixedHeader, escape=FALSE) %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
