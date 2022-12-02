@@ -167,7 +167,7 @@ GetIPEDSDirectlyFailedAttempt <- function(years=c(2021, 2020, 2018, 2016, 2014, 
   return(all_results)
 } 
 
-GetIPEDSDirectly <- function(years=2022:2014, IPEDS_names = GetIPEDSNames()) {
+GetIPEDSDirectly <- function(years=2022:2010, IPEDS_names = GetIPEDSNames()) {
 	print("Starting GetIPEDSDirectly")
 	finished_downloads <- c()
   # Get IPEDS data directly from the IPEDS website
@@ -230,8 +230,14 @@ GetIPEDSDirectly <- function(years=2022:2014, IPEDS_names = GetIPEDSNames()) {
 			dictionary_to_read <- potential_files[1]
 			dictionary_frequencies <- NULL
 			dictionary_variables <- NULL
-			try({dictionary_frequencies <- readxl::read_excel(dictionary_to_read, sheet = "Frequencies", col_types="text")})
-			dictionary_variables <- readxl::read_excel(dictionary_to_read, sheet = "varlist", col_types="text")
+			try({dictionary_frequencies <- readxl::read_excel(dictionary_to_read, sheet = "Frequencies", col_types="text")}, silent=TRUE)
+			if(is.null(dictionary_frequencies)) {
+				try({dictionary_frequencies <- readxl::read_excel(dictionary_to_read, sheet = "frequencies", col_types="text")}, silent=TRUE)
+			}
+			try({dictionary_variables <- readxl::read_excel(dictionary_to_read, sheet = "varlist", col_types="text")}, silent=TRUE)
+			if(is.null(dictionary_variables)) {
+				try({dictionary_variables <- readxl::read_excel(dictionary_to_read, sheet = "Varlist", col_types="text")}, silent=TRUE)
+			}
 			unlink(temp2)
 			
 			# Ok, now we have the raw data and the dictionary. Let's convert the raw data to be more sensible
@@ -685,7 +691,37 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 	institutional_offerings <- tbl(db, "Institutional_offerings") %>% dplyr::select(!contains("Enrolled")) %>% dplyr::select(!contains("Admissions")) %>% dplyr::select(!contains("Applicants")) %>% as.data.frame() %>% FixDuplicateColnames()
 	
 	comparison_table <- dplyr::left_join(comparison_table, institutional_offerings, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+	
+	
+	# Student demographics freshmen
+	
+	enrollment_race_fulltime_freshmen <- tbl(db, "Enrollment_race") %>% dplyr::filter(EFzzzzA.EFALEVEL.Level.of.student=="Full-time students, Undergraduate, Degree/certificate-seeking, First-time") %>% dplyr::select(!contains("Level")) %>% dplyr::select(!contains("Attendance")) %>% as.data.frame()
+	
+	colnames(enrollment_race_fulltime_freshmen)[grepl("EFzzzz", colnames(enrollment_race_fulltime_freshmen))] <- paste0("FirstYearFullTimeDegreeSeekingUndergrads.", colnames(enrollment_race_fulltime_freshmen)[grepl("EFzzzz", colnames(enrollment_race_fulltime_freshmen))])
+	
+	colnames(enrollment_race_fulltime_freshmen) <- gsub("EF[A-z]+\\.[A-Z0-9_]+\\.", "", colnames(enrollment_race_fulltime_freshmen))
 
+	comparison_table <- dplyr::left_join(comparison_table, enrollment_race_fulltime_freshmen, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+	
+	# Student demographics all undergrads. Includes non degree seeking students, part time students, etc.
+
+	enrollment_race_undergrads <- tbl(db, "Enrollment_race") %>% dplyr::filter(EFzzzzA.EFALEVEL.Level.of.student=="All students, Undergraduate total") %>% dplyr::select(!contains("Level")) %>% dplyr::select(!contains("Attendance")) %>% as.data.frame()
+	
+	colnames(enrollment_race_undergrads)[grepl("EFzzzz", colnames(enrollment_race_undergrads))] <- paste0("AllUndergrads.", colnames(enrollment_race_undergrads)[grepl("EFzzzz", colnames(enrollment_race_undergrads))])
+	
+	colnames(enrollment_race_undergrads) <- gsub("EF[A-z]+\\.[A-Z0-9_]+\\.", "", colnames(enrollment_race_undergrads))
+	
+	comparison_table <- dplyr::left_join(comparison_table, enrollment_race_undergrads, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+
+	# Student demographics all grad students. Includes non degree seeking students, part time students, etc.
+
+	enrollment_race_grad_students <- tbl(db, "Enrollment_race") %>% dplyr::filter(EFzzzzA.EFALEVEL.Level.of.student=="All students, Graduate") %>% dplyr::select(!contains("Level")) %>% dplyr::select(!contains("Attendance")) %>% as.data.frame()
+	
+	colnames(enrollment_race_grad_students)[grepl("EFzzzz", colnames(enrollment_race_grad_students))] <- paste0("AllGradStudents.", colnames(enrollment_race_grad_students)[grepl("EFzzzz", colnames(enrollment_race_grad_students))])
+	
+	colnames(enrollment_race_grad_students) <- gsub("EF[A-z]+\\.[A-Z0-9_]+\\.", "", colnames(enrollment_race_grad_students))
+	
+	comparison_table <- dplyr::left_join(comparison_table, enrollment_race_grad_students, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
 
 
 	# Wrapup steps
@@ -693,6 +729,8 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 	colnames(comparison_table) <- gsub("  ", " ", gsub('\\.', ' ', gsub("^[A-z]+\\.[A-Z0-9_]+\\.", "", colnames(comparison_table))))
 
 	comparison_table <- subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution` != "z") #kill the placeholder
+	
+	comparison_table <- comparison_table %>% rename(State = "State abbreviation")  #since it's no longer an abbreviation
 
 	
 	comparison_table$`Admission percentage total` <- 100*as.numeric(comparison_table$`Admissions total`)/as.numeric(comparison_table$`Applicants total`)
@@ -1308,12 +1346,26 @@ AppendAbortion <- function(college_data) {
 	return(left_join(college_data, abortion_simple, by="State abbreviation"))
 }
 
-AppendGunLaws <- function(college_data) {
+AppendCATravelBan <- function(comparison_table) {
+	banned_states <- state.name[match(c("AL", "AR", "FL", "ID", "IN", "IA", "KS", "KY", "MS", "MT", "NC", "ND", "OH", "OK", "SC", "SD", "TN", "TX", "UT", "WV"),state.abb)]
+	ban_table <- data.frame(State=state.name, California.Travel.Ban=FALSE)
+	ban_table$California.Travel.Ban[match(banned_states, ban_table$State)] <- TRUE
+	ban_table <- ban_table %>% dplyr::rename(`California Travel Ban` = 'California.Travel.Ban')
+	return(left_join(comparison_table, ban_table, by="State"))
+}
+
+AppendGunLawsOld <- function(college_data) {
 	guns <- read.csv("data/gunlaws_giffords_scorecard.csv")
 	guns$`State abbreviation` <- state.abb[match(guns$State,state.name)]
 	guns_simple <- dplyr::select(guns, c("State abbreviation", "grade2022"))
 	colnames(guns_simple)[2] <- "Gun law stringency"
 	return(left_join(college_data, guns_simple, by="State abbreviation"))
+}
+
+AppendGunLaws <- function(comparison_table) {
+	guns <- read.csv("data/gunlaws_giffords_scorecard.csv")
+	guns <- dplyr::select(guns, c("State", "grade2022")) %>% dplyr::rename("Gun Law Stringency"="grade2022")
+	return(left_join(comparison_table, guns, by="State"))
 }
 
 AppendAAUPCensure <- function(college_data) {
@@ -1343,7 +1395,7 @@ AggregateVotesByState <- function(voting_data) {
 	return(voting_aggregated)
 }
 
-AppendMarriageRespect <- function(college_data) {
+AppendMarriageRespectOld <- function(college_data) {
 	marriage_defense <- read.csv("data/MarriageAct_HR8404_2022.csv", header=TRUE)
 	marriage_aggregated <- AggregateVotesByState(marriage_defense)
 	marriage_aggregated$`State abbreviation` <- state.abb[match(marriage_aggregated$State,state.name)]
@@ -1352,7 +1404,20 @@ AppendMarriageRespect <- function(college_data) {
 	return(left_join(college_data, marriage_aggregated_simple, by="State abbreviation"))
 }
 
-AppendContraceptiveSupport <- function(college_data) {
+AppendMarriageRespect <- function(comparison_table) {
+	marriage_defense <- read.csv("data/MarriageAct_HR8404_2022.csv", header=TRUE)
+	marriage_aggregated <- AggregateVotesByState(marriage_defense) %>%
+	dplyr::select(c("State", "ProportionVotesInFavor")) %>% dplyr::rename("Proportion of reps voting in favor of respect for marriage act" = "ProportionVotesInFavor" )
+	return(left_join(comparison_table, marriage_aggregated, by="State"))
+}
+
+AppendContraceptiveSupport <- function(comparison_table) {
+	contraceptive_defense <- read.csv("data/ContraceptiveAct_HR8373_July2022.csv", header=TRUE)
+	contraceptive_aggregated <- AggregateVotesByState(contraceptive_defense) %>% dplyr::select(c("State", "ProportionVotesInFavor")) %>% dplyr::rename("Proportion of reps voting in favor of respect for right to contraception act" = "ProportionVotesInFavor" )
+	return(left_join(comparison_table, contraceptive_aggregated, by="State"))
+}
+
+AppendContraceptiveSupportOld <- function(college_data) {
 	contraceptive_defense <- read.csv("data/ContraceptiveAct_HR8373_July2022.csv", header=TRUE)
 	contraceptive_aggregated <- AggregateVotesByState(contraceptive_defense)
 	contraceptive_aggregated$`State abbreviation` <- state.abb[match(contraceptive_aggregated$State,state.name)]
@@ -2363,4 +2428,42 @@ GetCIPCodesExplanations <- function() {
 	cip <- cip[!duplicated(cip$CIPTitle),] # remove duplicates
 	cip$CIPTitle <- gsub("\\.$", "", cip$CIPTitle) # remove trailing period
 	return(cip)
+}
+
+SummarizeDemographicsForPlotting <- function(subsection) {
+	genders <- c("women", "men") #this is too narrow, but it reflects the only available ones in federal data
+	gender_df <- data.frame()
+	for (i in seq_along(genders)) {
+		cols_to_get <- c("Grand total", colnames(subsection)[grepl(paste0(" ", genders[i]), colnames(subsection))])[-2]
+		focal <- apply(subsection[,cols_to_get], 2, as.numeric)
+		focal_percent <- 100*focal/focal[,1]
+		focal_percent <- as.data.frame(focal_percent[,-1])
+		focal_percent$Gender <- genders[i]
+		focal_percent$Year <- subsection$Year
+		colnames(focal_percent) <- gsub(paste0(" ", genders[i]), "", colnames(focal_percent))
+		if(i==1) {
+			gender_df <- focal_percent
+		} else {
+			gender_df <- rbind(gender_df, focal_percent)
+		}
+	}
+
+
+	gender_df_tall <- tidyr::pivot_longer(gender_df, cols=colnames(gender_df)[!(colnames(gender_df) %in% c("Year", "Gender"))], names_to="Group", values_to="Percent")
+
+	gender_df_tall$Group <- gsub("\\.", " ", gender_df_tall$Group)
+	#gender_df_tall <- subset(gender_df_tall, gender_df_tall$Group != "White")
+	gender_df_tall$Group <- gsub("American Indian or Alaska Native", "Native American", gender_df_tall$Group)
+	gender_df_tall$Group <- gsub("Black or African American", "Black", gender_df_tall$Group)
+	gender_df_tall$Group <- gsub("Native Hawaiian or Other Pacific Islander", "Pacific Islander", gender_df_tall$Group)
+	gender_df_tall$Group <- gsub("Two or more races", "2+ races", gender_df_tall$Group)
+	gender_df_tall$Group <- gsub("Race ethnicity unknown", "Unknown", gender_df_tall$Group)
+	gender_df_tall$Group <- gsub( "Nonresident alien", "International", gender_df_tall$Group)
+
+
+
+	gender_df_tall$Year <- as.integer(gender_df_tall$Year)
+	#ggplot(gender_df_tall, aes(x=Year, y=Percent, group=Group)) + facet_grid(Group ~ Gender, scales="free", labeller = labeller(groupwrap = label_wrap_gen(10))) + geom_line() + theme_linedraw() + ylab("Percent of undergrads") + ylim(c(0, NA))
+	#ggsave("~/Downloads/subsection.jpg", width=6, height=10)
+	return(gender_df_tall)
 }
