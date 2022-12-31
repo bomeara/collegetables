@@ -1,0 +1,162 @@
+---
+title: College Tables
+output:
+  rmdformats::downcute:
+    self_contained: false
+    includes:
+      in_header: GA_Script.html
+params:
+  index_table: "nothing"
+---
+
+For deciding on which college to go to (as an undergraduate, graduate student, employee such as faculty member, or other) there are a lot of resources (especially for potential undergraduate students). For example, https://collegescorecard.ed.gov is created by the federal government and has great info on things like costs and expected income; there are various sites that use a secret sauce to rank colleges (what do guidance counselors think about them, how often is research from the college cited, etc.). However, as a parent, these all felt somewhat lacking: a focus on income after graduation seems sensible, for example, but a college that sends more of its students to high paying jobs on Wall Street isn't necessarily a better one than a college whose students make less money working on humanitarian issues. There are data that most sites ignore: are the libraries well-stocked and well-used; how much of a drinking culture does campus have; do faculty have academic freedom to do research and teach; how diverse are the faculty; how has the college valued safety during the covid pandemic? And issues of the environment a college is in matter: are there limits on the healthcare students can receive, is the state for or against LGBTQ+ rights, what's the weather like, is there mass transit available, and so forth. This site attempts to gather all this. It has one massive table below, but then you can go to a page on each college to get visualizations and more tables.
+
+You can search to filter by fields: only show ones in certain states (two letter abbreviation), certain athletic leagues, by college name, etc. To search for phrases, put them in quotes. **Click on buttons to show different tables of information** (and info in one table will be used to filter the other ones). Go to the [about](about.html) page for more about the sources of the data; an explanation of some of the categories themselves follows the table. **Click on a school name to get a page with much more detail about that school.**
+
+Since much of the data come from the US federal government, this website includes only US-based schools. The rest of the planet has excellent institutions which may be a better placement for some.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+source("_packages.R")
+source("R/functions.R")
+
+all_colleges <- params$index_table
+
+
+if(nrow(all_colleges)>0) {
+
+	#all_colleges$Name <- rownames(all_colleges)
+	all_colleges <- subset(all_colleges, all_colleges$Active=="Yes")
+
+	for (college_index in sequence(nrow(all_colleges))) {
+		all_colleges$Institution[college_index] <- paste0("<a href='https://collegetables.info/", utils::URLencode(gsub(" ", "", all_colleges$UNITID[college_index])),  ".html'>", all_colleges$Institution[college_index], "</a>")
+	}
+	
+	all_colleges <- all_colleges %>% dplyr::select(-UNITID)
+	
+	index_conversions <- read.csv("data/ConversionToIndexTable.csv")
+
+	Overview <- index_conversions$Rename[index_conversions$Category=="Overview"]
+
+	Finances <- index_conversions$Rename[index_conversions$Category=="Finances"]
+	
+	Location <- index_conversions$Rename[index_conversions$Category=="Location"]
+	
+	Admissions <- index_conversions$Rename[index_conversions$Category=="Admissions"]
+	
+	Outcomes <- index_conversions$Rename[index_conversions$Category=="Outcomes"]
+	
+	Resources <- index_conversions$Rename[index_conversions$Category=="Resources"]
+	
+	Student_life <- index_conversions$Rename[index_conversions$Category=="Student life"]
+	
+	Freshmen_demographics <- index_conversions$Rename[index_conversions$Category=="Freshmen demographics"]
+	
+	Safety <- index_conversions$Rename[index_conversions$Category=="Safety"]
+	
+	Revenue_sources <- index_conversions$Rename[index_conversions$Category=="Revenue sources"]
+
+	# for (col_index in sequence(ncol(all_colleges))) {
+	# 		all_colleges[,col_index] <- gsub('$NaN', '', all_colleges[,col_index])
+	# }
+	#all_colleges$State <- state.name[match(all_colleges$State,state.abb)]
+	
+	
+	GetMatchingColumnsInOverview <- function(to_find) {
+		return(c(match(to_find, colnames(all_colleges)))	)
+	}
+
+	GetNotMatchingColumnsInOverview <- function(to_find) {
+		unmatched <- setdiff(colnames(all_colleges), unique(c(to_find)))
+		return(match(unmatched, colnames(all_colleges)))	
+	}
+	rownames(all_colleges) <- all_colleges$Institution
+	datatable_output <- DT::datatable(
+		all_colleges, 
+		rownames=TRUE, 
+		escape=FALSE, 
+		extensions = c('Buttons'),
+		options=list(
+			dom = 'Bfrtip',
+			pageLength = 100,
+			columnDefs = list(
+						list(targets = "_all", className = 'dt-center')
+						),
+			buttons = list(
+				list(
+					extend= "colvisGroup", 
+					text="Overview", 
+					show=c(GetMatchingColumnsInOverview(Overview)),
+					hide=GetNotMatchingColumnsInOverview(Overview)
+				),
+				list(
+					extend= "colvisGroup",
+					text="Admissions",
+					show=c(GetMatchingColumnsInOverview(Admissions)), 
+					hide=GetNotMatchingColumnsInOverview(Admissions)
+				),
+				list(
+					extend= "colvisGroup",
+					text="Location",
+					show=c(GetMatchingColumnsInOverview(Location)), 
+					hide=GetNotMatchingColumnsInOverview(Location)
+				),
+				list(
+					extend= "colvisGroup",
+					text="Outcomes",
+					show=c(GetMatchingColumnsInOverview(Outcomes)), 
+					hide=GetNotMatchingColumnsInOverview(Outcomes)
+				),
+				list(
+					extend= "colvisGroup",
+					text="Resources",
+					show=c(GetMatchingColumnsInOverview(Resources)), 
+					hide=GetNotMatchingColumnsInOverview(Resources)
+				),
+				list(
+					extend= "colvisGroup",
+					text="Student life",
+					show=c(GetMatchingColumnsInOverview(Student_life)), 
+					hide=GetNotMatchingColumnsInOverview(Student_life)
+				),
+				list(
+					extend= "colvisGroup",
+					text="Freshmen demographics",
+					show=c(GetMatchingColumnsInOverview(Freshmen_demographics)), 
+					hide=GetNotMatchingColumnsInOverview(Freshmen_demographics)
+				),
+				list(
+					extend= "colvisGroup",
+					text="Safety",
+					show=c(GetMatchingColumnsInOverview(Safety)), 
+					hide=GetNotMatchingColumnsInOverview(Safety)
+				),
+				list(
+					extend= "colvisGroup",
+					text="Finances",
+					show=c(GetMatchingColumnsInOverview(Finances)), 
+					hide=GetNotMatchingColumnsInOverview(Finances)
+				),
+				list(
+					extend= "colvisGroup",
+					text="Revenue sources",
+					show=c(GetMatchingColumnsInOverview(Revenue_sources)), 
+					hide=GetNotMatchingColumnsInOverview(Revenue_sources)
+				)
+			)
+		)
+	) 
+	for (focal_row in sequence(nrow(index_conversions))) {
+		if(index_conversions$Type[focal_row]=="Percent") {
+			datatable_output <- DT::formatStyle(datatable_output, columns=index_conversions$Rename[focal_row], color=DT::styleInterval(seq(from=10, to=90, by=10), viridisLite::plasma(n=10, begin=0, end=.7)), target="cell") %>% DT::formatRound(columns=index_conversions$Rename[focal_row], digits=0)
+		}
+		if(index_conversions$Type[focal_row]=="Money") {
+			datatable_output <- DT::formatCurrency(datatable_output, columns=index_conversions$Rename[focal_row], digits=0)
+
+		}
+		if(index_conversions$Type[focal_row]=="Number") {
+			datatable_output <- DT::formatRound(datatable_output, columns=index_conversions$Rename[focal_row], digits=0)
+		}
+	}
+	datatable_output
+}
+```
