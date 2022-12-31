@@ -1,0 +1,73 @@
+﻿ColumnName,Rename,Category,LogY,Units,Better
+Undergrad full time,Undergrads (full time),Enrollment,FALSE,,None
+Undergrad part time,Undergrads (part time),Enrollment,FALSE,,None
+GradStudent full time,Grad students (full time),Enrollment,FALSE,,None
+GradStudent part time,Grad students (part time),Enrollment,FALSE,,None
+Admission percentage total,Admission rate (undergrads),Enrollment,FALSE,Percent,None
+Yield percentage total,Yield rate (undergrads),Enrollment,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Grand total,Graduation rate (bachelors in 6 years),Enrollment,FALSE,Percent,Higher
+Graduation Rate Transfer out of bachelors Grand total,Transfer out rate (bachelors),Enrollment,FALSE,Percent,Lower
+Average net price students awarded grant or scholarship aid,Average net price (for students awarded aid),Student financing,FALSE,Dollars,Lower
+Percent of full time first time undergraduates awarded federal grant aid,Undergrads getting federal aid,Student financing,FALSE,Percent,Higher
+Percent of full time first time undergraduates awarded any financial aid,Undergrads getting any aid,Student financing,FALSE,Percent,Higher
+Percent of full time first time undergraduates awarded Pell grants,Undergrads getting Pell grants,Student financing,FALSE,Percent,Higher
+Full time undergrad enrollment divided by dorm capacity,Undergrads per dorm bed,Student conditions,FALSE,,Lower
+Total dormitory capacity,Dorm capacity,Student conditions,FALSE,,None
+Full time undergrad enrollment divided by total instructors,Undergrads per instructor,Teaching,FALSE,,Lower
+Full time undergrad enrollment divided by tenure stream faculty,Undergrads per tenure track instructor,Teaching,FALSE,,Lower
+Total instructors,Total instructors,Teaching,FALSE,,None
+NTT-stream Grand total,Non-tenure track instructors,Teaching,FALSE,,None
+Tenure-stream Grand total,Tenure track instructors,Teaching,FALSE,,None
+Revenue minus expenses,Revenue minus expenses,Institution finances,FALSE,Dollars,Higher
+Total revenues and investment return,Revenue,Institution finances,FALSE,Dollars,None
+Total expenses,Expenses,Institution finances,FALSE,Dollars,None
+Total assets,Assets,Institution finances,FALSE,Dollars,Higher
+Percent of revenue from tuition and fees,Revenue from tution and fees,Institution finances,FALSE,Percent,Lower
+Percent of revenue from government appropriations,Revenue from govt appropriations,Institution finances,FALSE,Percent,None
+Percent of revenue from government grants and contracts,Revenue from govt grants and contracts,Institution finances,FALSE,Percent,None
+Percent of revenue from private gifts grants and contracts,Revenue from private sources,Institution finances,FALSE,Percent,None
+Number of physical books,Number of physical books,Library facilities,FALSE,,Higher
+Physical library circulations per students and faculty,Physical library circulations per students and faculty,Library facilities,FALSE,,Higher
+Digital library circulations per students and faculty,Digital library circulations per students and faculty,Library facilities,FALSE,,Higher
+Percent of first time degree certificate seeking students submitting SAT scores,Applicants submitting SAT,SAT scores,FALSE,Percent,None
+SAT Evidence Based Reading and Writing 25th percentile score,SAT Evidence Based Reading and Writing 25th percentile score,SAT scores,FALSE,,None
+SAT Evidence Based Reading and Writing 75th percentile score,SAT Evidence Based Reading and Writing 75th percentile score,SAT scores,FALSE,,None
+SAT Math 25th percentile score,SAT Math 25th percentile score,SAT scores,FALSE,,None
+SAT Math 75th percentile score,SAT Math 75th percentile score,SAT scores,FALSE,,None
+Percent of first time degree certificate seeking students submitting ACT scores,Applicants submitting ACT,ACT scores,FALSE,Percent,None
+ACT Composite 25th percentile score,ACT Composite 25th percentile score,ACT scores,FALSE,,None
+ACT Composite 75th percentile score,ACT Composite 75th percentile score,ACT scores,FALSE,,None
+ACT English 25th percentile score,ACT English 25th percentile score,ACT scores,FALSE,,None
+ACT English 75th percentile score,ACT English 75th percentile score,ACT scores,FALSE,,None
+ACT Math 25th percentile score,ACT Math 25th percentile score,ACT scores,FALSE,,None
+ACT Math 75th percentile score,ACT Math 75th percentile score,ACT scores,FALSE,,None
+Graduation Rate Bachelors in within 150 percent of normal time Grand total,Total,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Total men,Men,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Total women,Women,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time American Indian or Alaska Native men,American Indian or Alaska Native men,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time American Indian or Alaska Native women,American Indian or Alaska Native women,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Asian men,Asian men,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Asian women,Asian women,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Black or African American men,Black or African American men,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Black or African American women,Black or African American women,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Hispanic men,Hispanic men,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Hispanic women,Hispanic women,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Native Hawaiian or Other Pacific Islander men,Native Hawaiian or other Pacific Islander men,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Native Hawaiian or Other Pacific Islander women,Native Hawaiian or other Pacific Islander women,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time White men,White men,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time White women,White women,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Two or more races men,Two or more races men,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Two or more races women,Two or more races women,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Nonresident alien men,Nonresident alien men,Graduation,FALSE,Percent,Higher
+Graduation Rate Bachelors in within 150 percent of normal time Nonresident alien women,Nonresident alien women,Graduation,FALSE,Percent,Higher
+Tenure-stream Grand total,Total (TT),Tenure stream faculty,FALSE,,None
+Tenure-stream Grand total women,Women (TT),Tenure stream faculty,FALSE,,None
+Tenure-stream Grand total men,Men (TT),Tenure stream faculty,FALSE,,None
+Tenure-stream American Indian or Alaska Native,American Indian or Alaska Native (TT),Tenure stream faculty,FALSE,,None
+Tenure-stream Asian,Asian (TT),Tenure stream faculty,FALSE,,None
+Tenure-stream Black or African American,Black or African American (TT),Tenure stream faculty,FALSE,,None
+Tenure-stream Hispanic or Latino,Hispanic or Latino (TT),Tenure stream faculty,FALSE,,None
+Tenure-stream Native Hawaiian or Other Pacific Islander,Native Hawaiian or other Pacific Islander (TT),Tenure stream faculty,FALSE,,None
+Tenure-stream White,White (TT),Tenure stream faculty,FALSE,,None
+Tenure-stream Two or more races,Two or more races (TT),Tenure stream faculty,FALSE,,None
+Tenure-stream Nonresident alien,Nonresident alien (TT),Tenure stream faculty,FALSE,,None
