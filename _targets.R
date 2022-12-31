@@ -16,43 +16,27 @@ options(timeout=24*60*60) # let things download for at least 24 hours (important
 options(download.file.method = "libcurl")
 
 #tar_invalidate(pages)
-#tar_invalidate(index)
+tar_invalidate(index_et_al)
 #tar_invalidate(about)
 #tar_invalidate(sparklines)
 #tar_invalidate(state_pages)
-tar_invalidate(pages_new)
+#tar_invalidate(pages_new)
 
 # End this file with a list of target objects.
 list(
  tar_target(maxcount, Inf),
- tar_target(spark_height, 80),
- tar_target(spark_width, 200),
  tar_target(ipeds_directly, GetIPEDSDirectly()),
  tar_target(ipeds_direct_and_db, AggregateDirectIPEDSDirect(ipeds_directly)),
  tar_target(comparison_table_core, CreateComparisonTables(ipeds_direct_and_db)),
- tar_target(comparison_table, AppendCATravelBan(AppendGunLaws(AppendMarriageRespect(AppendContraceptiveSupport(comparison_table_core))))),
- tar_target(fields_and_majors, GetFieldsAndMajors(comparison_table, ipeds_direct_and_db)),
- tar_target(pages_new, RenderInstitutionPagesNew(comparison_table, spark_width, spark_height, maxcount=maxcount)),
+ tar_target(comparison_table, AppendBiome(AppendAAUPCensure(AppendAbortion(AppendVaccination(AppendCATravelBan(AppendGunLaws(AppendMarriageRespect(AppendContraceptiveSupport(comparison_table_core))))))))),
+ tar_target(index_table, CreateIndexTable(comparison_table)),
+ tar_target(weatherspark, GetWeathersparkLinks()),
+ tar_target(fields_and_majors, GetFieldsAndMajors(comparison_table, ipeds_direct_and_db, CIPS_codes)),
+ tar_target(pages_new, RenderInstitutionPagesNew(comparison_table, fields_and_majors, maxcount=maxcount, CIPS_codes, weatherspark)),
  tar_target(CIPS_codes, GetCIPCodesExplanations()),
- tar_target(majors, RenderMajorsPages(fields_and_majors, CIPS_codes)),
- tar_render(fields, "fields.Rmd"),
- tar_render(about, "about.Rmd")
+ #tar_target(majors, RenderMajorsPages(fields_and_majors, CIPS_codes)),
+ tar_render(fields, "_fields.Rmd", output_file = "fields.html"),
+ tar_render(about, "_about.Rmd", output_file = "about.html"),
+ tar_target(index_et_al, RenderIndexPageEtAl(pages_new, index_table))
 
 )
-
-# old stuff no longer used
-#  tar_target(college_data_ipeds, AggregateIPEDS()),
-#   tar_target(college_data_prebioclim, AppendContraceptiveSupport(AppendMarriageRespect(AppendGunLaws(AppendBiome(AppendAAUPCensure(AppendAbortion(AppendMisconduct(AppendVaccination(FilterForDegreeGranting(college_data_ipeds)))))))))),
-#   tar_target(college_data, AppendBioclim(college_data_prebioclim)),
-#   tar_target(sparklines, RenderSparklines(spark_height=spark_height, spark_width=spark_width)),
-#   tar_target(state_pops, GetPopulationByStateAtAge18()),
-#   tar_target(students_by_state_by_institution, GetStudentsByStateByInstitution(degree_granting, state_pops)),
-#   tar_target(student_demographics, GetStudentsDemographicsByInstitution(degree_granting)),
-#   tar_target(faculty_counts, GetFacultyCountsByInstitution(degree_granting)),
-#   tar_target(degree_granting , FilterForDegreeGranting(college_data)),
-#   tar_target(degree_granting_enhanced, RoughRanking(AppendCrime(EnhanceData(degree_granting, faculty_counts, student_demographics, students_by_state_by_institution )) )),
-#   tar_target(overview, GetOverviewColumns(degree_granting_enhanced)),
-#   tar_target(pages, RenderInstitutionPages(overview, degree_granting_enhanced, maxcount, students_by_state_by_institution, student_demographics, faculty_counts, spark_width, spark_height)),
-#   tar_target(state_pages, RenderStatePages(degree_granting_enhanced, students_by_state_by_institution, spark_width, spark_height, state_pops)),
-#   tar_target(top,FilterForTopAndSave(overview)),
-#   tar_target(index, RenderIndexPageEtAl(pages)),
