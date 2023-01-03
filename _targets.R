@@ -16,7 +16,7 @@ options(timeout=24*60*60) # let things download for at least 24 hours (important
 options(download.file.method = "libcurl")
 
 #tar_invalidate(pages)
-tar_invalidate(index_et_al)
+#tar_invalidate(index_et_al)
 #tar_invalidate(about)
 #tar_invalidate(sparklines)
 #tar_invalidate(state_pages)
@@ -32,11 +32,11 @@ list(
  tar_target(index_table, CreateIndexTable(comparison_table)),
  tar_target(weatherspark, GetWeathersparkLinks()),
  tar_target(fields_and_majors, GetFieldsAndMajors(comparison_table, ipeds_direct_and_db, CIPS_codes)),
- tar_target(pages_new, RenderInstitutionPagesNew(comparison_table, fields_and_majors, maxcount=maxcount, CIPS_codes, weatherspark)),
+ tar_target(pages_new, RenderInstitutionPagesNew(comparison_table, fields_and_majors, maxcount=maxcount, CIPS_codes=CIPS_codes, weatherspark=weatherspark, yml=yml)),
  tar_target(CIPS_codes, GetCIPCodesExplanations()),
- #tar_target(majors, RenderMajorsPages(fields_and_majors, CIPS_codes)),
- tar_render(fields, "_fields.Rmd", output_file = "fields.html"),
- tar_render(about, "_about.Rmd", output_file = "about.html"),
- tar_target(index_et_al, RenderIndexPageEtAl(pages_new, index_table))
+ tar_target(yml, CreateYMLForSite(CIPS_codes)),
+ tar_target(field_pages, RenderFieldPages(CIPS_codes, fields_and_majors, yml)),
+ tar_target(majors, RenderMajorsPages(fields_and_majors, CIPS_codes, yml, maxcount)),
+ tar_target(index_et_al, RenderIndexPageEtAl(pages_new, index_table, yml))
 
 )
