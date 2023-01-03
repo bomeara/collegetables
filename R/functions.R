@@ -1188,7 +1188,7 @@ EnhanceData <- function(college_data, faculty_counts, student_demographics, stud
 	# for(name in name_collisions) {
 	# 	college_data_enhanced$ShortName[college_data_enhanced$ShortName==name] <- college_data_enhanced$Name[college_data_enhanced$ShortName==name]
 	# }
-	college_data_enhanced$URL <- paste0(  utils::URLencode(gsub(" ", "", college_data_enhanced$ShortName)), ".html")
+	college_data_enhanced$URL <- paste0(  utils::URLencode(gsub(" ", "", college_data_enhanced$ShortName), reserved=TRUE), ".html")
 	college_data_enhanced$`Tenure track fraction` <- 0
 	college_data_enhanced$`Fraction of tenure track faculty who are women` <- 0
 	college_data_enhanced$`Fraction of tenure track faculty who are men` <- 0
@@ -1366,16 +1366,16 @@ RenderSparklines <- function(spark_height=5, spark_width=40) {
 	}	
 }
 
-RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxcount=40, CIPS_codes, weatherspark) {
+RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxcount=40, CIPS_codes, weatherspark, yml) {
 	
 	institution_ids <- unique(comparison_table$`UNITID Unique identification number of the institution`)
 	dead_institutions <- subset(comparison_table, comparison_table$`Status of institution`%in% c('Closed in current year (active has data)', 'Combined with other institution ', 'Delete out of business'))
 	institution_ids <- setdiff(institution_ids, dead_institutions$`UNITID Unique identification number of the institution`)
 	comparison_table <- subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution` %in% institution_ids) # remove dead institutions so we don't compare with them
 	
-	# just for debugging	
-	rejection_ranking <- comparison_table[order(comparison_table$`Admission percentage total`, decreasing=FALSE),] # this is just to render the ones crushing the most dreams first for debugging
-	rejection_ranking <- subset(rejection_ranking, rejection_ranking$`Admission percentage total` > 0 & rejection_ranking$`Total instructors`>100) #don't look at the schools taking no students
+	# prioritize the "selective" schools	
+	comparison_table$pseudoranking <- (100-as.numeric(comparison_table$`Admission percentage total`))*sqrt(as.numeric(comparison_table$`Total instructors`))
+	rejection_ranking <- comparison_table[order(comparison_table$pseudoranking, decreasing=TRUE),] 
 	institution_ids <- unique(rejection_ranking$`UNITID Unique identification number of the institution`)
 	
 	
@@ -1403,7 +1403,7 @@ RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxco
 				),
 				quiet=TRUE
 			)
-			Sys.sleep(1)
+			#Sys.sleep(1)
 			system("sed -i '' 's/&gt;/>/g' docs/institution.html") # because htmlTable doesn't escape well; the '' is a requirement of OS X's version of sed, apparently
 			system("sed -i '' 's/&lt;/</g' docs/institution.html")
 			
@@ -1412,7 +1412,7 @@ RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxco
 
 			file.copy("docs/institution.html", paste0("docs/", utils::URLencode(gsub(" ", "", institution_id)), ".html"), overwrite=TRUE)
 			print(paste0("docs/", utils::URLencode(gsub(" ", "", institution_id)), ".html"))
-			Sys.sleep(1)
+			#Sys.sleep(1)
 			failed <- FALSE
 		}, silent=TRUE)
 		if(failed) {
@@ -1423,7 +1423,7 @@ RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxco
 }
 
 
-RenderMajorsPages <- function(fields_and_majors, CIPS_codes) {
+RenderMajorsPages <- function(fields_and_majors, CIPS_codes, yml, maxcount) {
 	db <- dbConnect(RSQLite::SQLite(), "data/db_IPEDS.sqlite")
 	field_data <- tbl(db, fields_and_majors[1]) %>% as.data.frame()
 	completions_with_percentage <- tbl(db, fields_and_majors[2]) %>% as.data.frame()
@@ -1441,7 +1441,7 @@ RenderMajorsPages <- function(fields_and_majors, CIPS_codes) {
 				),
 				quiet=TRUE
 			)
-			Sys.sleep(1)
+			#Sys.sleep(1)
 			system("sed -i '' 's/&gt;/>/g' docs/majors.html") # because htmlTable doesn't escape well; the '' is a requirement of OS X's version of sed, apparently
 			system("sed -i '' 's/&lt;/</g' docs/majors.html")
 			
@@ -1450,76 +1450,8 @@ RenderMajorsPages <- function(fields_and_majors, CIPS_codes) {
 			#encode_field <- utils::URLencode(gsub('-', '_', gsub(')', '_', gsub('(', '_', gsub("\\.", "_", gsub("'", "", gsub('/', "_",gsub(",", "_", gsub(" ", "", )))))))))
 			
 			file.copy("docs/majors.html", paste0("docs/majors_", utils::URLencode(gsub(" ", "", field_data$Degree[row_index])), "_", EncodeField(field_data$Field[row_index]) ,".html"), overwrite=TRUE)
-			Sys.sleep(1)
-	}
-	
-	failures <- c()
-	#for (i in seq_along(institutions)) {
-	for (i in sequence(min(maxcount, length(institution_ids)))) {
-		failed <- TRUE
-		try({
-			institution_id <- institution_ids[i]
-			institution_name <- rownames(t(t(sort(table(comparison_table$`Institution entity name`[comparison_table$`UNITID Unique identification number of the institution` == institution_id]), decreasing=TRUE))))[1] # sometimes the name changes a bit; take the most common one			
-			print(institution_name)
-			
-			# quarto::quarto_render(
-			# 	input="_institutionNew.qmd", 
-			# 	output_file="quarto_institution.html", 
-			# 	execute_params = list(
-			# 		institution_name = institution_name,
-			# 		institution_long_name = institution_name,
-			# 		institution_id =  institution_id,
-			# 		comparison_table = comparison_table,
-			# 		spark_width = spark_width,
-			# 		spark_height = spark_height
-			# 	),
-			# 	quiet=FALSE
-			# )
-			
-			rmarkdown::render(
-				input="_institutionNew.Rmd", 
-				output_file="docs/institution.html", 
-				params = list(
-					institution_name = institution_name,
-					institution_long_name = institution_name,
-					institution_id =  institution_id,
-					comparison_table = comparison_table,
-					spark_width = spark_width,
-					spark_height = spark_height
-				),
-				quiet=TRUE
-			)
-			Sys.sleep(1)
-			system("sed -i '' 's/&gt;/>/g' docs/institution.html") # because htmlTable doesn't escape well; the '' is a requirement of OS X's version of sed, apparently
-			system("sed -i '' 's/&lt;/</g' docs/institution.html")
-			
 			#Sys.sleep(1)
-
-
-			file.copy("docs/institution.html", paste0("docs/new_", utils::URLencode(gsub(" ", "", institution_name)), ".html"), overwrite=TRUE)
-			print(paste0("docs/new_", utils::URLencode(gsub(" ", "", institution_name)), ".html"))
-			Sys.sleep(1)
-			# quarto::quarto_render(
-			# 	input="_institution.qmd", 
-			# 	output_file=paste0(  "docs/", utils::URLencode(gsub(" ", "", institutions[i])), ".html"), 
-			# 	execute_params = list(
-			# 		institution_name = institutions[i],
-			# 		institution_long_name = degree_granting$ShortName[i],
-			# 		overview_table = subset(overview, overview$ShortName == institutions[i]),
-			# 		raw_table = degree_granting,
-			# 		students_by_state_by_institution = students_by_state_by_institution,
-			# 		student_demographics = student_demographics,
-			# 		faculty_counts = faculty_counts
-			# 	),
-			# 	quiet=FALSE
-			# )
-			failed <- FALSE
-		}, silent=TRUE)
-		if(failed) {
-			failures <- c(failures, comparison_table$`Institution entity name`[i])
-		}
 	}
-	return(failures)
 }
 
 EncodeField <- function(x) {
@@ -1581,7 +1513,7 @@ RenderStatePages <- function(degree_granting, students_by_state_by_institution, 
 }
 
 # pages is there just so it will run this after the pages are run
-RenderIndexPageEtAl <- function(pages, index_table) {
+RenderIndexPageEtAl <- function(pages, index_table, yml) {
 	system("rm docs/index.html")
 	system("rm docs/degrees_by*")
 	rmarkdown::render(
@@ -1593,23 +1525,34 @@ RenderIndexPageEtAl <- function(pages, index_table) {
 				quiet=TRUE
 	)
 	
+	# rmarkdown::render(
+	# 			input="degrees_by_conference.Rmd", 
+	# 			output_file="docs/degrees_by_conference.html", 
+	# 			quiet=TRUE
+	# )
+	
+	# rmarkdown::render(
+	# 			input="degrees_by_institution.Rmd", 
+	# 			output_file="docs/degrees_by_institution.html", 
+	# 			quiet=TRUE
+	# )
+	
+	# rmarkdown::render(
+	# 			input="degrees_by_type.Rmd", 
+	# 			output_file="docs/degrees_by_type.html", 
+	# 			quiet=TRUE
+	# )
 	rmarkdown::render(
-				input="degrees_by_conference.Rmd", 
-				output_file="docs/degrees_by_conference.html", 
-				quiet=TRUE
+		input="_about.Rmd", 
+		output_file="docs/about.html", 
+		quiet=TRUE
 	)
 	
 	rmarkdown::render(
-				input="degrees_by_institution.Rmd", 
-				output_file="docs/degrees_by_institution.html", 
-				quiet=TRUE
-	)
-	
-	rmarkdown::render(
-				input="degrees_by_type.Rmd", 
-				output_file="docs/degrees_by_type.html", 
-				quiet=TRUE
-	)
+		input="_fields_overview.Rmd", 
+		output_file="docs/fields_overview.html", 
+		quiet=TRUE
+	)	
 }
 
 FilterForTopAndSave <- function(overview) {
@@ -2056,6 +1999,7 @@ GetCIPCodesExplanations <- function() {
 	cip$CIPFamilyName <- stringr::str_to_title(cip$CIPFamilyName)
 	cip <- cip[!grepl('Instructional content ', cip$CIPDefinition),] # eliminates cruft
 	#cip <- cip[!duplicated(cip$CIPTitle),] # remove duplicates
+	cip <- cip[!grepl("Reserved", cip$CIPFamilyName),] # remove reserved codes
 	return(cip)
 }
 
@@ -2227,4 +2171,64 @@ CreateIndexTable <- function(comparison_table) {
 	index_table_summary[is.na(index_table_summary)] <- ""
 	index_table_summary[index_table_summary=="Not applicable"] <- ""
 	return(index_table_summary)
+}
+
+URLEncodeTotal <- function(x) {
+	return(utils::URLencode(gsub('&', ' ', gsub('/', ' ', x)), reserved=TRUE))
+}
+
+RenderFieldPages <- function(CIPS_codes, fields_and_majors, yml) {
+	CIP_headers <- CIPS_codes[!duplicated(CIPS_codes$CIPFamily),]
+	CIP_content <- CIPS_codes[duplicated(CIPS_codes$CIPFamily),]
+	for (header_index in sequence(nrow(CIP_headers))) {
+		CIP_code <- CIP_headers$CIPFamily[header_index]
+		rmarkdown::render(
+			input="_fields.Rmd", 
+			output_file="docs/field.html",
+			params = list(
+				field_name = CIP_headers$CIPFamilyName[header_index],
+				cips_headers = subset(CIP_headers, CIP_headers$CIPFamily==CIP_code),
+				cips_content = subset(CIP_content, CIP_content$CIPFamily==CIP_code)
+			),
+			quiet=TRUE
+		)
+		#Sys.sleep(1)
+		system("sed -i '' 's/&gt;/>/g' docs/field.html") # because htmlTable doesn't escape well; the '' is a requirement of OS X's version of sed, apparently
+		system("sed -i '' 's/&lt;/</g' docs/field.html")
+			
+
+
+		file.copy("docs/field.html", paste0("docs/", URLEncodeTotal(CIP_headers$CIPFamilyName[header_index]), ".html"), overwrite=TRUE)
+	}
+}
+
+CreateYMLForSite <- function(CIPS_codes) {
+	file.copy("CNAME", "docs/CNAME", overwrite=TRUE)
+	file.copy("GA_Script.html", "docs/GA_Script.html", overwrite=TRUE)
+	yml <- 'name: "College Tables"
+navbar:
+  title: "College Tables"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Fields"
+      href: fields_overview.html'
+	
+	# yml <- paste0(yml, '    - text: "Fields"
+    #   menu: '
+	# CIP_headers <- CIPS_codes[!duplicated(CIPS_codes$CIPFamily),]
+
+	# for (CIP_index in sequence(nrow(CIP_headers))) {
+	# 	yml <- paste0(yml, '
+    #     - text: "', CIP_headers$CIPFamilyName[CIP_index], '"
+    #       href: "', URLEncodeTotal(CIP_headers$CIPFamilyName[CIP_index]), '.html"', collapse="")
+	# }
+	yml <- paste0(yml, '	
+output_dir: "docs"
+', collapse="")
+	write(yml, "_site.yml")
+	file.copy("_site.yml", "docs/_site.yml", overwrite=TRUE)	
+	return(TRUE)
 }
