@@ -1,8 +1,6 @@
 ---
 output:
-  html_document:
-    theme: darkly
-    highlight: espresso
+  rmdformats::downcute:
     self_contained: false
     includes:
       in_header: GA_Script.html
@@ -30,7 +28,9 @@ This shows the number of graduates in the most recent year available by field. Y
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, results='asis'}
-#DT::datatable(params$filtered_table,  rownames=FALSE, escape=FALSE, extensions = c('FixedColumns', 'FixedHeader'))
-filtered_table <- (params$filtered_table)[order(params$filtered_table$`Percent in Field`, decreasing=TRUE),]
-kable(FixedHeader, escape=FALSE) %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+filtered_table <- params$filtered_table
+filtered_table$`Percent in Field` <- as.numeric(filtered_table$`Percent in Field`)
+DT::datatable(filtered_table %>% dplyr::select(-UNITID) %>% dplyr::arrange(desc(`Percent in Field`)),  rownames=FALSE, escape=FALSE, extensions = c('FixedColumns', 'FixedHeader'), options=list(pageLength = 1000))
+#filtered_table <- (params$filtered_table)[order(params$filtered_table$`Percent in Field`, decreasing=TRUE),]
+#kable(filtered_table, escape=FALSE) %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```

@@ -172,10 +172,6 @@ dbDisconnect(db)
 
 ```{r}
 comparison_conversions <- read.csv("data/ConversionToSummaryCharts.csv")
-```
-
-```{r}
-
 comparison_vector <- c("Conference", "Classification")
 headings <- unique(comparison_conversions$Category)
 comparison_df <- data.frame(matrix("", nrow=nrow(comparison_conversions), ncol=4+length(comparison_vector)))
@@ -390,12 +386,14 @@ try({
 <a href='`r PrependHttpsIfNeeded(most_current_info['Institution s internet website address'])`'>`r most_current_info['Institution entity name']`</a> is located in `r most_current_info['City location of institution']`, `r most_current_info['State']`. It is a `r tolower(most_current_info['Sector of institution'])` institution.
 
 ```{r, results='asis'}
-wikipedia_summary <- GetWikipediaSummaryFirstParagraph(most_current_info['Institution entity name'])
-if(!is.null(wikipedia_summary)) {
-	cat("*From [Wikipedia](https://en.wikipedia.org/wiki/", utils::URLencode(most_current_info['Institution entity name']), ")*: ")
-	cat(wikipedia_summary)
-	cat("\n\n")
-}
+try({
+	wikipedia_summary <- GetWikipediaSummaryFirstParagraph(most_current_info['Institution entity name'])
+	if(!is.null(wikipedia_summary)) {
+		cat("*From [Wikipedia](https://en.wikipedia.org/wiki/", utils::URLencode(most_current_info['Institution entity name']), ")*: ")
+		cat(wikipedia_summary)
+		cat("\n\n")
+	}
+}, silent=TRUE)
 ```
 
 ```{r, results='asis'}
@@ -420,12 +418,13 @@ if(length(notes)>0) {
 `r ifelse(!is.na(most_current_info['Graduation Rate Bachelors in within 150 percent of normal time Grand total']), paste0('* **Graduation rate (within 6 years) for students seeking a Bachelors**: ', round(as.numeric(most_current_info['Graduation Rate Bachelors in within 150 percent of normal time Grand total']),1), '% (this is what is usually reported as "graduation rate")\n'), "")`
 `r ifelse(!is.na(most_current_info['Graduation Rate Bachelors in 4 years or less Grand total']), paste0('* **Graduation rate (within 4 years) for students seeking a Bachelors**: ', round(as.numeric(most_current_info['Graduation Rate Bachelors in 4 years or less Grand total']),1), '%\n'), "")`
 `r ifelse(!is.na(most_current_info['Graduation Rate Transfer out of bachelors Grand total']), paste0('* **Percent of students seeking a Bachelors who transfer out of this institution**: ', round(as.numeric(most_current_info['Graduation Rate Transfer out of bachelors Grand total']),1), '%\n'), "")`
-* **Student to tenure-stream faculty ratio**: `r most_current_info['Full time undergrad enrollment divided by tenure stream faculty']` (undergrads to tenure-stream faculty)
-* **Student to faculty ratio**: `r most_current_info['Full time undergrad enrollment divided by total instructors']` (undergrads to all faculty)
+* **Student to tenure-stream faculty ratio**: `r round(as.numeric(most_current_info['Full time undergrad enrollment divided by tenure stream faculty']),1)` (undergrads to tenure-stream faculty)
+* **Student to faculty ratio**: `r round(as.numeric(most_current_info['Full time undergrad enrollment divided by total instructors']),1)` (undergrads to all faculty)
 * **Degrees offered**: `r most_current_info['Degrees offered']`
 * **Schedule**: `r most_current_info['Calendar system']`
 * **Institution provides on campus housing**: `r most_current_info['Institution provide on campus housing']`
 `r ifelse(is.finite(as.numeric(most_current_info['Full time undergrad enrollment divided by dorm capacity'])), ifelse(as.numeric(most_current_info['Full time undergrad enrollment divided by dorm capacity'])>0, paste0("* **Dorm capacity**: There are enough dorm beds for ", round(100*as.numeric(most_current_info['Full time undergrad enrollment divided by dorm capacity']),1), "% of the full time undergrads"), ""), "")`
+* **Freshmen required to live on campus**: `r most_current_info['Full time first time degree certificate seeking students required to live on campus']`
 * **Meal plan**: `r most_current_info['Institution provides board or meal plan']`
 * **Covid vaccination requirement for students**: `r ifelse(most_current_info['AllStudentsVaccinatedAgainstCovid19']=="Yes", "At some point during the pandemic (this may have changed), this institution required students to be vaccinated against covid", "This institution was never reported as requiring covid vaccination for students")`
 * **Covid vaccination requirement for faculty/staff**: `r ifelse(most_current_info['AllEmployeesVaccinatedAgainstCovid19']=="Yes", "At some point during the pandemic (this may have changed), this institution required faculty and/or staff to be vaccinated against covid", "This institution was never reported as requiring covid vaccination for faculty and/or staff")`
@@ -591,24 +590,36 @@ Non-tenure track faculty are not eligible for tenure. Some are hired one semeste
 
 ```{r, eval=TRUE}
 	try({
-	degree_types <- c("Certificate", "Associates", "Bachelors", "Masters", "Doctorate")
-	
-	#majors %>% arrange(Degree) %>% dplyr::select(-Degree) %>% knitr::kable(align="c") %>% #kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>% #kableExtra::pack_rows(index = table(majors$Degree))
-
-	#for (degree_type in degree_types) {
-	#	focal_degree <- subset(majors, Degree=degree_type)
-	#	if(nrow(focal_degree)>0) {
-		#	print("\n## ", degree_type, "\n\n")
-		#	focal_degree %>% knitr::kable(align="c") %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-	#	}	
-	#}
-	
 	majors$Field <- paste0('<a href="', paste0("majors_", utils::URLencode(gsub(" ", "", majors$Degree)), "_", EncodeField(majors$Field) ,".html"), '">', majors$Field, "</a>")
-	
-	
-	DT::datatable(as.matrix(majors)) %>% DT::formatStyle(columns = names(data))
 	}, silent=TRUE)
-
 ```
 
+## Bachelors
 
+```{r, eval=TRUE}
+	DT::datatable(subset(majors, Degree=="Bachelors"), rownames=FALSE)
+```
+
+## Masters
+
+```{r, eval=TRUE}
+	DT::datatable(subset(majors, Degree=="Masters"), rownames=FALSE)
+```
+
+## Doctorate
+
+```{r, eval=TRUE}
+	DT::datatable(subset(majors, Degree=="Doctorate"), rownames=FALSE)
+```
+
+## Certificate
+
+```{r, eval=TRUE}
+	DT::datatable(subset(majors, Degree=="Certificate"), rownames=FALSE)
+```
+
+## Associates
+
+```{r, eval=TRUE}
+	DT::datatable(subset(majors, Degree=="Associates"), rownames=FALSE)
+```

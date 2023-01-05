@@ -44,3 +44,8 @@ _targets
 db_IPEDS.sqlite
 run.Rout
 IPEDS*.csv
+MERGED*.csv
+OPE_CSS/*.csv
+OPE_CSS
+.vscode
+

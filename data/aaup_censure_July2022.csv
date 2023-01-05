@@ -1,111 +1,111 @@
-﻿Institution,Higher level
-Frank Phillips College,
-Concordia Seminary,
-Murray State University,
-Nichols College,
-American International College,
-Talladega College,
-Pontifical Catholic University of Puerto Rico-Arecibo,Pontifical Catholic University of Puerto Rico
-Pontifical Catholic University of Puerto Rico-Mayaguez,Pontifical Catholic University of Puerto Rico
-Pontifical Catholic University of Puerto Rico-Ponce,Pontifical Catholic University of Puerto Rico
-Husson University,
-Hillsdale College,
-Southeastern Baptist Theological Seminary,
-Catholic University of America,
-Dean College,
-Baltimore City Community College,
-Loma Linda University,
-North Greenville University,
-Savannah College of Art and Design,
-University of Bridgeport,
-Benedict College,
-Bennington College,
-Alaska Pacific University,
-National Park College,
-Saint Meinrad School of Theology,
-Minneapolis College of Art and Design,
-Brigham Young University-Provo,
-University of the District of Columbia,
-Lawrence Technological University,
-Johnson & Wales University-Charlotte,Johnson & Wales University
-Johnson & Wales University-Denver,Johnson & Wales University
-Johnson & Wales University-North Miami,Johnson & Wales University
-Johnson & Wales University-Online,Johnson & Wales University
-Johnson & Wales University-Providence,Johnson & Wales University
-Albertus Magnus College,
-Charleston Southern University,
-University of Dubuque,
-Meharry Medical College,
-University of the Cumberlands,
-Virginia State University,
-Cedarville University,
-Nicholls State University,
-North Idaho College,
-Clark Atlanta University,
-University of Texas Medical Branch at Galveston,
-Bethune-Cookman University,
-Louisiana State University and Agricultural & Mechanical College,
-Northwestern State University of Louisiana,
-Southeastern Louisiana University,
-National Louis University,
-Southern University and A & M College,
-Northeastern Illinois University,
-University of Texas MD Anderson Cancer Center,
-University of Southern Maine,
-Felician University,"Listed as Felician College, but name change"
-College of Saint Rose,
-University of Missouri-Columbia,
-Community College of Aurora,
-Spalding University,
-Nunez Community College,
-Pacific Lutheran University,
-Linfield University-McMinnville Campus,Linfield University
-Linfield University-Online and Continuing Education,Linfield University
-Linfield University-School of Nursing,Linfield University
-Abraham Baldwin Agricultural College,University System of Georgia
-Albany State University,University System of Georgia
-Atlanta Metropolitan State College,University System of Georgia
-Augusta University,University System of Georgia
-Clayton  State University,University System of Georgia
-College of Coastal Georgia,University System of Georgia
-Dalton State College,University System of Georgia
-East Georgia State College,University System of Georgia
-Fort Valley State University,University System of Georgia
-Georgia Highlands College,University System of Georgia
-Georgia Institute of Technology-Main Campus,University System of Georgia
-Georgia Southern University,University System of Georgia
-Georgia Southwestern State University,University System of Georgia
-Georgia State University,University System of Georgia
-Gordon State College,University System of Georgia
-Kennesaw State University,University System of Georgia
-Middle Georgia State University,University System of Georgia
-Savannah State University,University System of Georgia
-South Georgia State College,University System of Georgia
-University of Georgia,University System of Georgia
-University of North Georgia,University System of Georgia
-University of West Georgia,University System of Georgia
-Valdosta State University,University System of Georgia
-State University of New York at New Paltz,State University of New York
-SUNY at Albany,State University of New York
-SUNY at Fredonia,State University of New York
-SUNY at Purchase College,State University of New York
-SUNY Brockport,State University of New York
-SUNY Buffalo State,State University of New York
-SUNY College at Geneseo,State University of New York
-SUNY College at Old Westbury,State University of New York
-SUNY College at Oswego,State University of New York
-SUNY College at Plattsburgh,State University of New York
-SUNY College at Potsdam,State University of New York
-SUNY College of Agriculture and Technology at Cobleskill,State University of New York
-SUNY College of Environmental Science and Forestry,State University of New York
-SUNY College of Technology at Alfred,State University of New York
-SUNY College of Technology at Canton,State University of New York
-SUNY College of Technology at Delhi,State University of New York
-SUNY Cortland,State University of New York
-SUNY Maritime College,State University of New York
-SUNY Morrisville,State University of New York
-SUNY Oneonta,State University of New York
-SUNY Polytechnic Institute,State University of New York
-Binghamton University,State University of New York
-Farmingdale State College,State University of New York
-University at Buffalo,State University of New York
+﻿Institution,Higher level,UNITID
+Frank Phillips College,,224891
+Concordia Seminary,,177092
+Murray State University,,207236
+Nichols College,,167260
+American International College,,164447
+Talladega College,,102298
+Pontifical Catholic University of Puerto Rico-Arecibo,Pontifical Catholic University of Puerto Rico,241395
+Pontifical Catholic University of Puerto Rico-Mayaguez,Pontifical Catholic University of Puerto Rico,243586
+Pontifical Catholic University of Puerto Rico-Ponce,Pontifical Catholic University of Puerto Rico,241410
+Husson University,,487524
+Hillsdale College,,170286
+Southeastern Baptist Theological Seminary,,157748
+Catholic University of America,,
+Dean College,,
+Baltimore City Community College,,
+Loma Linda University,,
+North Greenville University,,
+Savannah College of Art and Design,,
+University of Bridgeport,,
+Benedict College,,
+Bennington College,,
+Alaska Pacific University,,
+National Park College,,
+Saint Meinrad School of Theology,,
+Minneapolis College of Art and Design,,
+Brigham Young University-Provo,,
+University of the District of Columbia,,
+Lawrence Technological University,,
+Johnson & Wales University-Charlotte,Johnson & Wales University,
+Johnson & Wales University-Denver,Johnson & Wales University,
+Johnson & Wales University-North Miami,Johnson & Wales University,
+Johnson & Wales University-Online,Johnson & Wales University,
+Johnson & Wales University-Providence,Johnson & Wales University,
+Albertus Magnus College,,
+Charleston Southern University,,
+University of Dubuque,,
+Meharry Medical College,,
+University of the Cumberlands,,
+Virginia State University,,
+Cedarville University,,
+Nicholls State University,,
+North Idaho College,,
+Clark Atlanta University,,
+University of Texas Medical Branch at Galveston,,
+Bethune-Cookman University,,
+Louisiana State University and Agricultural & Mechanical College,,
+Northwestern State University of Louisiana,,
+Southeastern Louisiana University,,
+National Louis University,,
+Southern University and A & M College,,
+Northeastern Illinois University,,
+University of Texas MD Anderson Cancer Center,,
+University of Southern Maine,,
+Felician University,"Listed as Felician College, but name change",
+College of Saint Rose,,
+University of Missouri-Columbia,,
+Community College of Aurora,,
+Spalding University,,
+Nunez Community College,,
+Pacific Lutheran University,,
+Linfield University-McMinnville Campus,Linfield University,
+Linfield University-Online and Continuing Education,Linfield University,
+Linfield University-School of Nursing,Linfield University,
+Abraham Baldwin Agricultural College,University System of Georgia,
+Albany State University,University System of Georgia,
+Atlanta Metropolitan State College,University System of Georgia,
+Augusta University,University System of Georgia,
+Clayton  State University,University System of Georgia,
+College of Coastal Georgia,University System of Georgia,
+Dalton State College,University System of Georgia,
+East Georgia State College,University System of Georgia,
+Fort Valley State University,University System of Georgia,
+Georgia Highlands College,University System of Georgia,
+Georgia Institute of Technology-Main Campus,University System of Georgia,
+Georgia Southern University,University System of Georgia,
+Georgia Southwestern State University,University System of Georgia,
+Georgia State University,University System of Georgia,
+Gordon State College,University System of Georgia,
+Kennesaw State University,University System of Georgia,
+Middle Georgia State University,University System of Georgia,
+Savannah State University,University System of Georgia,
+South Georgia State College,University System of Georgia,
+University of Georgia,University System of Georgia,
+University of North Georgia,University System of Georgia,
+University of West Georgia,University System of Georgia,
+Valdosta State University,University System of Georgia,
+State University of New York at New Paltz,State University of New York,
+SUNY at Albany,State University of New York,
+SUNY at Fredonia,State University of New York,
+SUNY at Purchase College,State University of New York,
+SUNY Brockport,State University of New York,
+SUNY Buffalo State,State University of New York,
+SUNY College at Geneseo,State University of New York,
+SUNY College at Old Westbury,State University of New York,
+SUNY College at Oswego,State University of New York,
+SUNY College at Plattsburgh,State University of New York,
+SUNY College at Potsdam,State University of New York,
+SUNY College of Agriculture and Technology at Cobleskill,State University of New York,
+SUNY College of Environmental Science and Forestry,State University of New York,
+SUNY College of Technology at Alfred,State University of New York,
+SUNY College of Technology at Canton,State University of New York,
+SUNY College of Technology at Delhi,State University of New York,
+SUNY Cortland,State University of New York,
+SUNY Maritime College,State University of New York,
+SUNY Morrisville,State University of New York,
+SUNY Oneonta,State University of New York,
+SUNY Polytechnic Institute,State University of New York,
+Binghamton University,State University of New York,
+Farmingdale State College,State University of New York,
+University at Buffalo,State University of New York,

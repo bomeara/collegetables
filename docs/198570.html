@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+
+    
+    
+    <title>Gaston College</title>
+
+        <script src="institution_files/header-attrs-2.19/header-attrs.js"></script>
+        <script src="institution_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="institution_files/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="institution_files/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+        <script src="institution_files/navigation-1.1/tabsets.js"></script>
+        <link href="institution_files/downcute-0.1/downcute.css" rel="stylesheet" />
+        <link href="institution_files/downcute-0.1/downcute_fonts_embed.css" rel="stylesheet" />
+        <script src="institution_files/downcute-0.1/downcute_styles.js"></script>
+        <script src="institution_files/downcute-0.1/downcute.js"></script>
+        <script src="institution_files/prism-1.22/prism.js"></script>
+        <script src="institution_files/htmlwidgets-1.6.0/htmlwidgets.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+        <script src="institution_files/datatables-binding-0.26/datatables.js"></script>
+        <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+        <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
+        <link href="institution_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+        <script src="institution_files/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-Q67PXWY3L5');
+        </script>
+    
+    
+    
+    
+    <!-- tabsets -->
+    <script>
+      $(document).ready(function () {
+	  window.buildTabsets("toc");
+      });
+      $(document).ready(function () {
+	  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+	      $(this).parent().toggleClass('nav-tabs-open')
+	  });
+      });
+    </script>
+
+    <!-- code folding -->
+    
+    <!-- code download -->
+    
+    <!-- tabsets dropdown -->
+
+    <style type="text/css">
+      .tabset-dropdown > .nav-tabs {
+	  display: inline-table;
+	  max-height: 500px;
+	  min-height: 44px;
+	  overflow-y: auto;
+	  background: white;
+	  border: 1px solid #ddd;
+	  border-radius: 4px;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+	  content: "&#xe258;";
+	  border: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active {
+	  display: block;
+      }
+
+      .tabset-dropdown > .nav-tabs > li.active a {
+  	  padding: 0 15px !important;
+      }
+
+      .tabset-dropdown > .nav-tabs > li > a,
+      .tabset-dropdown > .nav-tabs > li > a:focus,
+      .tabset-dropdown > .nav-tabs > li > a:hover {
+	  border: none;
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: transparent;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+	  display: block;
+	  float: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li {
+	  display: none;
+	  margin-left: 0 !important;
+      }
+    </style>
+    
+</head>
+
+<body class="preload">
+
+   	
+               <!-- downcute start -->   
+   <div id="docute" class="Root theme-default">
+     <div class="Page layout-narrow">
+      <div class="Wrap">
+        <div class="Sidebar">
+          <div class="SidebarItems" id="toc">
+            <ul>
+            <li><a href="#notes" id="toc-notes">Notes</a></li>
+            <li><a href="#overview-of-institution"
+            id="toc-overview-of-institution">Overview of
+            institution</a></li>
+            <li><a href="#overview-of-location"
+            id="toc-overview-of-location">Overview of location</a>
+            <ul>
+            <li><a href="#map" id="toc-map">Map</a></li>
+            </ul></li>
+            <li><a href="#enrollment"
+            id="toc-enrollment">Enrollment</a></li>
+            <li><a href="#student-financing"
+            id="toc-student-financing">Student financing</a></li>
+            <li><a href="#teaching" id="toc-teaching">Teaching</a></li>
+            <li><a href="#institution-finances"
+            id="toc-institution-finances">Institution finances</a></li>
+            <li><a href="#graduation-rates"
+            id="toc-graduation-rates">Graduation rates</a></li>
+            <li><a href="#freshmen-demographics"
+            id="toc-freshmen-demographics">Freshmen
+            demographics</a></li>
+            <li><a href="#tenure-track-faculty"
+            id="toc-tenure-track-faculty">Tenure track faculty</a></li>
+            <li><a href="#non-tenure-track-faculty"
+            id="toc-non-tenure-track-faculty">Non-tenure track
+            faculty</a></li>
+            <li><a href="#library-facilities"
+            id="toc-library-facilities">Library facilities</a></li>
+            <li><a href="#sat-scores" id="toc-sat-scores">SAT
+            scores</a></li>
+            <li><a href="#act-scores" id="toc-act-scores">ACT
+            scores</a></li>
+            <li><a href="#degrees-by-major"
+            id="toc-degrees-by-major">Degrees by major</a>
+            <ul>
+            <li><a href="#bachelors"
+            id="toc-bachelors">Bachelors</a></li>
+            <li><a href="#masters" id="toc-masters">Masters</a></li>
+            <li><a href="#doctorate"
+            id="toc-doctorate">Doctorate</a></li>
+            <li><a href="#certificate"
+            id="toc-certificate">Certificate</a></li>
+            <li><a href="#associates"
+            id="toc-associates">Associates</a></li>
+            </ul></li>
+            </ul>
+          </div>
+          <div data-position="sidebar:post-end" class="InjectedComponents"><div class="dark-theme-toggler"><div class="toggle "><div class="toggle-track"><div class="toggle-track-check"><img  src="data:image/png;base64,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" role="presentation" style="pointer-events: none;" width="16" height="16"></div> <div class="toggle-track-x"><img src="data:image/png;base64,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" role="presentation" style="pointer-events: none;" width="16" height="16"></div></div> <div class="toggle-thumb"></div></div> <input type="checkbox" aria-label="Switch between Dark and Default theme" class="toggler-screen-reader-only"></div></div>
+        </div>
+        <div class="Main">
+          <div class="Content" id="content"> 
+   
+   
+      
+      <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">College Tables</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a href="about.html">About</a>
+      </li>
+      <li>
+        <a href="fields_overview.html">Fields</a>
+      </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container -->
+      </div><!--/.navbar -->
+        
+      <h1 class="title">Gaston College</h1>
+      
+      <p class="authors">
+              
+
+   
+      
+   
+<!-- Don't indent these lines or it will mess pre blocks indentation --> 
+<div class="page-content has-page-title">
+<style type="text/css">
+img {
+  max-width: 100%;
+}
+</style>
+<p><a href='https://www.gaston.edu/'>Gaston College</a> is located in
+Dallas, North Carolina. It is a public, 2-year institution.</p>
+<p><em>From <a
+href="https://en.wikipedia.org/wiki/%20Gaston%20College">Wikipedia</a></em>:
+Gaston College is a community college in Dallas, North Carolina. Serving
+Gaston County and Lincoln County, Gaston College enrolls over 5,000
+students each term in curriculum programs and about 16,000 students in
+continuing education programs. As part of the statewide North Carolina
+Community College System, Gaston College is accredited by the Southern
+Association of Colleges and Schools to award Associate Degrees..</p>
+<div id="notes" class="section level1">
+<h1>Notes</h1>
+<p>These are items that bear looking into more closely: some may be
+problems, some may be neutral, some may even be good. For example, a
+decline in enrollment is often problematic, but it may reflect a school
+specializing (i.e., focusing on just nursing rather than nursing and
+business).</p>
+<ul>
+<li><p>California considers the state this institution is in to have one
+or more anti-LGBTQ+ laws. It prohibits California-sponsored travel to
+this state as a safety measure. See more
+<a href='https://oag.ca.gov/ab1887'>here</a></p></li>
+<li><p>From 2011 to 2021, full time undergraduate enrollment dropped
+from 2342 to 1173, a decline of 49.9%</p></li>
+</ul>
+</div>
+<div id="overview-of-institution" class="section level1">
+<h1>Overview of institution</h1>
+<ul>
+<li><p><strong>Institution kind</strong>: Associate’s Colleges: Mixed
+Transfer/Career &amp; Technical-High Traditional</p></li>
+<li><p><strong>Undergrad program</strong>: Associate’s Colleges: Mixed
+Transfer/Career &amp; Technical</p></li>
+<li><p><strong>Graduate program</strong>: Not classified (Exclusively
+Undergraduate)</p></li>
+<li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
+two-year (see more details below)</p></li>
+<li><p><strong>Average net price for undergrads on financial
+aid</strong>: $ 9,094 (This is 70% the cost of Harvard)</p></li>
+<li><p><strong>Size and setting</strong>: Two-year, medium</p></li>
+<li><p><strong>Student to tenure-stream faculty ratio</strong>: NA
+(undergrads to tenure-stream faculty)</p></li>
+<li><p><strong>Student to faculty ratio</strong>: NA (undergrads to all
+faculty)</p></li>
+<li><p><strong>Degrees offered</strong>: Certificate of less than 1
+year, Certificate of at least 12 weeks but less than 1 year, Certificate
+of at least 1 year but less than 2 years, Associate’s degree</p></li>
+<li><p><strong>Schedule</strong>: Semester</p></li>
+<li><p><strong>Institution provides on campus housing</strong>:
+No</p></li>
+<li><p><strong>Freshmen required to live on campus</strong>: No</p></li>
+<li><p><strong>Meal plan</strong>: No</p></li>
+<li><p><strong>Covid vaccination requirement for students</strong>: This
+institution was never reported as requiring covid vaccination for
+students</p></li>
+<li><p><strong>Covid vaccination requirement for faculty/staff</strong>:
+This institution was never reported as requiring covid vaccination for
+faculty and/or staff</p></li>
+<li><p><strong>Advanced placement (AP) credits used</strong>:
+Yes</p></li>
+<li><p><strong>Disabilities</strong>: 3 percent or less of undergrads
+are registered as having disabilities.</p></li>
+</ul>
+</div>
+<div id="overview-of-location" class="section level1">
+<h1>Overview of location</h1>
+<ul>
+<li><strong>Abortion in this state</strong>: Legal</li>
+<li><strong>Gun law stringency</strong>: C- (higher grade = <a
+href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
+stringent</a>)</li>
+<li><strong>State rep support for contraception</strong>: 38.5% of US
+reps from this state voted in favor of legal protections for
+contraception.</li>
+<li><strong>State rep support for recognizing same-sex and interracial
+marriage</strong>: 38.5% of US reps from this state voted in favor of
+requiring states to recognize same-sex and interracial marriages
+performed in other states.</li>
+<li><strong>Ecological region</strong>: Southeastern mixed forests</li>
+<li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
+<li><strong>Climate</strong>: See overview at <a
+href="https:/weatherspark.com/y/17919/Average-Weather-in-Dallas-North-Carolina-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
+<li><strong>Urbanization</strong>: NA</li>
+</ul>
+<div id="map" class="section level2">
+<h2>Map</h2>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1e4dcab324c2a27d7841" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-1e4dcab324c2a27d7841">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[35.312048,-81.18852,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[35.312048,-81.18852],16,[]],"limits":{"lat":[35.312048,35.312048],"lng":[-81.18852,-81.18852]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="enrollment" class="section level1">
+<h1>Enrollment</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Gaston College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+<th style="text-align:center;">
+Trend
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Undergrads (full time)
+</td>
+<td style="text-align:center;">
+1,173 (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_1.png alt=‘Line plot from 2,342 to
+1,173 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+↓<br />-115 per year
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads (part time)
+</td>
+<td style="text-align:center;">
+3,780 (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_2.png alt=‘Line plot from 4,122 to
+3,780 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="student-financing" class="section level1">
+<h1>Student financing</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Gaston College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+<th style="text-align:center;">
+Schools not in an athletic conference
+</th>
+<th style="text-align:center;">
+Associate’s Colleges: Mixed Transfer/Career &amp; Technical-High
+Traditional
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Average net price (for students awarded aid)
+</td>
+<td style="text-align:center;">
+$9,094 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_9.png alt=‘Line plot from 9,948 to
+9,094 from 2011 to 2020’ >
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 73%
+</td>
+<td style="text-align:center;">
+✪✪<br />Better (lower) than 26%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads getting federal aid
+</td>
+<td style="text-align:center;">
+48% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_10.png alt=‘Line plot from 62 to 48
+from 2014 to 2021’ >
+</td>
+<td style="text-align:center;">
+✪✪<br />Better (higher) than 23%
+</td>
+<td style="text-align:center;">
+✪<br />Better (higher) than 16%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads getting any aid
+</td>
+<td style="text-align:center;">
+50% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_11.png alt=‘Line plot from 72 to 50
+from 2014 to 2021’ >
+</td>
+<td style="text-align:center;">
+✪<br />Better (higher) than 7%
+</td>
+<td style="text-align:center;">
+✪<br />Better (higher) than 1%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads getting Pell grants
+</td>
+<td style="text-align:center;">
+33% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_12.png alt=‘Line plot from 62 to 33
+from 2014 to 2021’ >
+</td>
+<td style="text-align:center;">
+✪<br />Better (higher) than 15%
+</td>
+<td style="text-align:center;">
+✪<br />Better (higher) than 11%
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="teaching" class="section level1">
+<h1>Teaching</h1>
+</div>
+<div id="institution-finances" class="section level1">
+<h1>Institution finances</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Gaston College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+<th style="text-align:center;">
+Trend
+</th>
+<th style="text-align:center;">
+Schools not in an athletic conference
+</th>
+<th style="text-align:center;">
+Associate’s Colleges: Mixed Transfer/Career &amp; Technical-High
+Traditional
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Revenue minus expenses
+</td>
+<td style="text-align:center;">
+$10 M (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_20.png alt=‘Line plot from 4.6 M to 10
+M from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (higher) than 80%
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (higher) than 80%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Revenue
+</td>
+<td style="text-align:center;">
+$64 M (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_21.png alt=‘Line plot from 60 M to 64 M
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Expenses
+</td>
+<td style="text-align:center;">
+$54 M (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_22.png alt=‘Line plot from 56 M to 54 M
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Assets
+</td>
+<td style="text-align:center;">
+$103 M (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_23.png alt=‘Line plot from 76 M to 103
+M from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+↑<br />$2.4 M per year
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (higher) than 70%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (higher) than 59%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+7.9% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_24.png alt=‘Line plot from 9.5 to 7.9
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 88%
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 77%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Revenue from govt appropriations
+</td>
+<td style="text-align:center;">
+49% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_25.png alt=‘Line plot from 46 to 49
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="graduation-rates" class="section level1">
+<h1>Graduation rates</h1>
+<p>Graduation rates for bachelor’s degrees within 150% of normal time (6
+years for a 4-year degree). Note that this uses US federal demographic
+data: it only has two genders and a specified set of ethnicities and
+races.</p>
+</div>
+<div id="freshmen-demographics" class="section level1">
+<h1>Freshmen demographics</h1>
+<p>Demographic data for first time degree-seeking students. Note that
+this uses US federal demographic data: it only has two genders and a
+specified set of ethnicities and races.</p>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Gaston College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Men (percent freshmen)
+</td>
+<td style="text-align:center;">
+52% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_84.png alt=‘Line plot from 45 to 52
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Women (percent freshmen)
+</td>
+<td style="text-align:center;">
+48% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_85.png alt=‘Line plot from 55 to 48
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+American Indian or Alaska Native men (percent freshmen)
+</td>
+<td style="text-align:center;">
+0.5% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_86.png alt=‘Line plot from 0.4 to 0.5
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+American Indian or Alaska Native women (percent freshmen)
+</td>
+<td style="text-align:center;">
+0.0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_87.png alt=‘Line plot from 0.4 to 0.0
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asian men (percent freshmen)
+</td>
+<td style="text-align:center;">
+0.9% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_88.png alt=‘Line plot from 0.4 to 0.9
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asian women (percent freshmen)
+</td>
+<td style="text-align:center;">
+0.5% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_89.png alt=‘Line plot from 1.4 to 0.5
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Black or African American men (percent freshmen)
+</td>
+<td style="text-align:center;">
+6.4% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_90.png alt=‘Line plot from 3.9 to 6.4
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Black or African American women (percent freshmen)
+</td>
+<td style="text-align:center;">
+5.5% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_91.png alt=‘Line plot from 5.3 to 5.5
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hispanic men (percent freshmen)
+</td>
+<td style="text-align:center;">
+5.5% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_92.png alt=‘Line plot from 2.8 to 5.5
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hispanic women (percent freshmen)
+</td>
+<td style="text-align:center;">
+5.9% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_93.png alt=‘Line plot from 1.8 to 5.9
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Native Hawaiian or Other Pacific Islander men (percent freshmen)
+</td>
+<td style="text-align:center;">
+0.0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_94.png alt=‘Line plot from 0.0 to 0.0
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Native Hawaiian or Other Pacific Islander women (percent freshmen)
+</td>
+<td style="text-align:center;">
+0.0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_95.png alt=‘Line plot from 0.0 to 0.0
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+White men (percent freshmen)
+</td>
+<td style="text-align:center;">
+31% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_96.png alt=‘Line plot from 33 to 31
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+White women (percent freshmen)
+</td>
+<td style="text-align:center;">
+32% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_97.png alt=‘Line plot from 42 to 32
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Two or more races men (percent freshmen)
+</td>
+<td style="text-align:center;">
+0.0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_98.png alt=‘Line plot from 0.0 to 0.0
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Two or more races women (percent freshmen)
+</td>
+<td style="text-align:center;">
+0.0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_99.png alt=‘Line plot from 0.0 to 0.0
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Race ethnicity unknown men (percent freshmen)
+</td>
+<td style="text-align:center;">
+5.0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_100.png alt=‘Line plot from 3.9 to 5.0
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Race ethnicity unknown women (percent freshmen)
+</td>
+<td style="text-align:center;">
+2.7% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_101.png alt=‘Line plot from 4.7 to 2.7
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nonresident alien men (percent freshmen)
+</td>
+<td style="text-align:center;">
+2.3% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_102.png alt=‘Line plot from 0.0 to 2.3
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nonresident alien women (percent freshmen)
+</td>
+<td style="text-align:center;">
+1.8% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_103.png alt=‘Line plot from 0.0 to 1.8
+from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tenure-track-faculty" class="section level1">
+<h1>Tenure track faculty</h1>
+<p>Tenure track faculty are those who are eligible for tenure. This
+includes both tenure stream and non-tenure stream faculty. Once faculty
+get tenure, they are (generally) protected from being fired for
+intellectual reasons, helping to ensure their freedom in teaching and
+research. They can still lose their positions for misconduct, financial
+problems, or other reasons. Note that this chart uses US federal
+demographic data: it only has two genders and a specified set of
+ethnicities and races.</p>
+</div>
+<div id="non-tenure-track-faculty" class="section level1">
+<h1>Non-tenure track faculty</h1>
+<p>Non-tenure track faculty are not eligible for tenure. Some are hired
+one semester at a time, some have multi-year contracts. They typically
+have a higher teaching load than tenure track faculty, leaving less time
+for research or other creative endeavors. They are also easier to fire
+than tenured faculty. Sometimes they are external experts (a noted
+musician, a former senator) who are hired to teach some classes without
+the expected permanence of a tenure-track position. Note that this chart
+uses US federal demographic data: it only has two genders and a
+specified set of ethnicities and races.</p>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Gaston College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+<th style="text-align:center;">
+Trend
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Total (non-tenure-track count)
+</td>
+<td style="text-align:center;">
+142 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_73.png alt=‘Line plot from 162 to 142
+from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+↓<br />-3.3 per year
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Women (non-tenure-track count)
+</td>
+<td style="text-align:center;">
+94 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_74.png alt=‘Line plot from 108 to 94
+from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+↓<br />-2.2 per year
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Men (non-tenure-track count)
+</td>
+<td style="text-align:center;">
+48 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_75.png alt=‘Line plot from 54 to 48
+from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+↓<br />-1.1 per year
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+American Indian or Alaska Native (non-tenure-track count)
+</td>
+<td style="text-align:center;">
+0.0 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_76.png alt=‘Line plot from 0.0 to 0.0
+from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Asian (non-tenure-track count)
+</td>
+<td style="text-align:center;">
+1.0 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_77.png alt=‘Line plot from 1.0 to 1.0
+from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Black or African American (non-tenure-track count)
+</td>
+<td style="text-align:center;">
+7.0 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_78.png alt=‘Line plot from 9.0 to 7.0
+from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hispanic or Latino (non-tenure-track count)
+</td>
+<td style="text-align:center;">
+1.0 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_79.png alt=‘Line plot from 1.0 to 1.0
+from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Native Hawaiian or other Pacific Islander (non-tenure-track count)
+</td>
+<td style="text-align:center;">
+1.0 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_80.png alt=‘Line plot from 0.0 to 1.0
+from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+White (non-tenure-track count)
+</td>
+<td style="text-align:center;">
+132 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_81.png alt=‘Line plot from 147 to 132
+from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+↓<br />-2.9 per year
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Two or more races (non-tenure-track count)
+</td>
+<td style="text-align:center;">
+0.0 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_82.png alt=‘Line plot from 0.0 to 0.0
+from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nonresident alien (non-tenure-track count)
+</td>
+<td style="text-align:center;">
+0.0 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/GastonCollege_83.png alt=‘Line plot from 0.0 to 0.0
+from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="library-facilities" class="section level1">
+<h1>Library facilities</h1>
+</div>
+<div id="sat-scores" class="section level1">
+<h1>SAT scores</h1>
+</div>
+<div id="act-scores" class="section level1">
+<h1>ACT scores</h1>
+</div>
+<div id="degrees-by-major" class="section level1">
+<h1>Degrees by major</h1>
+<div id="bachelors" class="section level2">
+<h2>Bachelors</h2>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-856b4d1205ca1b5af955" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-856b4d1205ca1b5af955">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="masters" class="section level2">
+<h2>Masters</h2>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fe80bdd53e4d6f0ff799" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fe80bdd53e4d6f0ff799">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="doctorate" class="section level2">
+<h2>Doctorate</h2>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-06fb252b23fbec8d6a6b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-06fb252b23fbec8d6a6b">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="certificate" class="section level2">
+<h2>Certificate</h2>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4454ccd64a0ec325eff3" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-4454ccd64a0ec325eff3">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Certificate_Biotechnology.html\">Biotechnology</a>","<a href=\"majors_Certificate_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Certificate_OfficeManagementandSupervision.html\">Office Management and Supervision</a>","<a href=\"majors_Certificate_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>","<a href=\"majors_Certificate_MedicalOfficeManagement_Administration.html\">Medical Office Management/Administration</a>","<a href=\"majors_Certificate_WeldingTechnology_Welder.html\">Welding Technology/Welder</a>","<a href=\"majors_Certificate_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Certificate_Electrician.html\">Electrician</a>","<a href=\"majors_Certificate_LicensedPractical_VocationalNurseTraining.html\">Licensed Practical/Vocational Nurse Training</a>","<a href=\"majors_Certificate_AccountingandFinance.html\">Accounting and Finance</a>","<a href=\"majors_Certificate_InformationTechnology.html\">Information Technology</a>","<a href=\"majors_Certificate_Heating_AirConditioning_VentilationandRefrigerationMaintenanceTechnology_Technician.html\">Heating, Air Conditioning, Ventilation and Refrigeration Maintenance Technology/Technician</a>","<a href=\"majors_Certificate_RadioandTelevisionBroadcastingTechnology_Technician.html\">Radio and Television Broadcasting Technology/Technician</a>","<a href=\"majors_Certificate_Automobile_AutomotiveMechanicsTechnology_Technician.html\">Automobile/Automotive Mechanics Technology/Technician</a>","<a href=\"majors_Certificate_MachineShopTechnology_Assistant.html\">Machine Shop Technology/Assistant</a>","<a href=\"majors_Certificate_ChildDevelopment.html\">Child Development</a>","<a href=\"majors_Certificate_Aesthetician_EstheticianandSkinCareSpecialist.html\">Aesthetician/Esthetician and Skin Care Specialist</a>","<a href=\"majors_Certificate_PhlebotomyTechnician_Phlebotomist.html\">Phlebotomy Technician/Phlebotomist</a>","<a href=\"majors_Certificate_Electrical_Electronic_andCommunicationsEngineeringTechnology_Technician.html\">Electrical, Electronic, and Communications Engineering Technology/Technician</a>","<a href=\"majors_Certificate_MentalandSocialHealthServicesandAlliedProfessions_Other.html\">Mental and Social Health Services and Allied Professions, Other</a>","<a href=\"majors_Certificate_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Certificate_Sports_Kinesiology_andPhysicalEducation_Fitness_Other.html\">Sports, Kinesiology, and Physical Education/Fitness, Other</a>","<a href=\"majors_Certificate_Medical_ClinicalAssistant.html\">Medical/Clinical Assistant</a>","<a href=\"majors_Certificate_ElectromechanicalTechnologies_Technicians_Other.html\">Electromechanical Technologies/Technicians, Other</a>","<a href=\"majors_Certificate_CriminalJustice_PoliceScience.html\">Criminal Justice/Police Science</a>","<a href=\"majors_Certificate_CivilEngineeringTechnologies_Technicians.html\">Civil Engineering Technologies/Technicians</a>","<a href=\"majors_Certificate_WeldingTechnology_Welder.html\">Welding Technology/Welder</a>","<a href=\"majors_Certificate_Electromechanical_ElectromechanicalEngineeringTechnology_Technician.html\">Electromechanical/Electromechanical Engineering Technology/Technician</a>","<a href=\"majors_Certificate_DietitianAssistant.html\">Dietitian Assistant</a>","<a href=\"majors_Certificate_MassageTherapy_TherapeuticMassage.html\">Massage Therapy/Therapeutic Massage</a>","<a href=\"majors_Certificate_IndustrialProductionTechnologies_Technicians_Other.html\">Industrial Production Technologies/Technicians, Other</a>","<a href=\"majors_Certificate_Logistics_Materials_andSupplyChainManagement.html\">Logistics, Materials, and Supply Chain Management</a>","<a href=\"majors_Certificate_FirePreventionandSafetyTechnology_Technician.html\">Fire Prevention and Safety Technology/Technician</a>","<a href=\"majors_Certificate_Heating_AirConditioning_VentilationandRefrigerationMaintenanceTechnology_Technician.html\">Heating, Air Conditioning, Ventilation and Refrigeration Maintenance Technology/Technician</a>","<a href=\"majors_Certificate_MedicalOfficeManagement_Administration.html\">Medical Office Management/Administration</a>","<a href=\"majors_Certificate_MassageTherapy_TherapeuticMassage.html\">Massage Therapy/Therapeutic Massage</a>","<a href=\"majors_Certificate_Mechanical_MechanicalEngineeringTechnology_Technician.html\">Mechanical/Mechanical Engineering Technology/Technician</a>","<a href=\"majors_Certificate_NursingAssistant_AideandPatientCareAssistant_Aide.html\">Nursing Assistant/Aide and Patient Care Assistant/Aide</a>","<a href=\"majors_Certificate_Biotechnology.html\">Biotechnology</a>","<a href=\"majors_Certificate_Cosmetology_Cosmetologist_General.html\">Cosmetology/Cosmetologist, General</a>","<a href=\"majors_Certificate_ElectromechanicalTechnologies_Technicians_Other.html\">Electromechanical Technologies/Technicians, Other</a>","<a href=\"majors_Certificate_Crisis_Emergency_DisasterManagement.html\">Crisis/Emergency/Disaster Management</a>","<a href=\"majors_Certificate_Electrician.html\">Electrician</a>","<a href=\"majors_Certificate_RadioandTelevisionBroadcastingTechnology_Technician.html\">Radio and Television Broadcasting Technology/Technician</a>","<a href=\"majors_Certificate_MachineShopTechnology_Assistant.html\">Machine Shop Technology/Assistant</a>","<a href=\"majors_Certificate_Accounting.html\">Accounting</a>","<a href=\"majors_Certificate_AccountingandFinance.html\">Accounting and Finance</a>"],[414,369,213,132,125,107,89,74,57,54,53,49,46,36,32,27,26,23,18,17,16,14,14,14,13,13,12,12,10,9,9,8,8,6,6,6,6,4,4,3,2,2,2,2,1,1,1,1],[19.167,17.083,9.861,6.111,5.787,4.954,4.12,3.426,2.639,2.5,2.454,2.269,2.13,1.667,1.481,1.25,1.204,1.065,0.833,0.787,0.741,0.648,0.648,0.648,0.602,0.602,0.556,0.556,0.463,0.417,0.417,0.37,0.37,0.278,0.278,0.278,0.278,0.185,0.185,0.139,0.093,0.093,0.093,0.093,0.046,0.046,0.046,0.046],[8.668,30.172,0.552,5.805,3.197,4.829,0.225,0.955,0.336,0.125,3.017,0.708,0.26,8.654,0.147,1.589,1.36,0.073,0.237,0.725,1.319,0.321,4.605,0.028,0.935,0.112,5.825,0.03,0.707,2.473,0.089,0.902,0.463,0.291,0.034,0.271,0.06,1.036,0.012,0.245,0.004,0.144,0.412,0.012,0.24,0.059,0.031,0.057],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="associates" class="section level2">
+<h2>Associates</h2>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fb37331ad19d6ff17cf9" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fb37331ad19d6ff17cf9">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Associates_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Associates_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Associates_LiberalArtsandSciences_GeneralStudiesandHumanities_Other.html\">Liberal Arts and Sciences, General Studies and Humanities, Other</a>","<a href=\"majors_Associates_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>","<a href=\"majors_Associates_MedicalOfficeManagement_Administration.html\">Medical Office Management/Administration</a>","<a href=\"majors_Associates_Veterinary_AnimalHealthTechnology_TechnicianandVeterinaryAssistant.html\">Veterinary/Animal Health Technology/Technician and Veterinary Assistant</a>","<a href=\"majors_Associates_InformationTechnology.html\">Information Technology</a>","<a href=\"majors_Associates_EmergencyMedicalTechnology_Technician_EMTParamedic_.html\">Emergency Medical Technology/Technician (EMT Paramedic)</a>","<a href=\"majors_Associates_Medical_ClinicalAssistant.html\">Medical/Clinical Assistant</a>","<a href=\"majors_Associates_Cosmetology_Cosmetologist_General.html\">Cosmetology/Cosmetologist, General</a>","<a href=\"majors_Associates_Pre_Engineering.html\">Pre-Engineering</a>","<a href=\"majors_Associates_MentalandSocialHealthServicesandAlliedProfessions_Other.html\">Mental and Social Health Services and Allied Professions, Other</a>","<a href=\"majors_Associates_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Associates_RadioandTelevisionBroadcastingTechnology_Technician.html\">Radio and Television Broadcasting Technology/Technician</a>","<a href=\"majors_Associates_CivilEngineeringTechnologies_Technicians.html\">Civil Engineering Technologies/Technicians</a>","<a href=\"majors_Associates_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Associates_FirePreventionandSafetyTechnology_Technician.html\">Fire Prevention and Safety Technology/Technician</a>","<a href=\"majors_Associates_Electrician.html\">Electrician</a>","<a href=\"majors_Associates_Electrical_Electronic_andCommunicationsEngineeringTechnology_Technician.html\">Electrical, Electronic, and Communications Engineering Technology/Technician</a>","<a href=\"majors_Associates_OfficeManagementandSupervision.html\">Office Management and Supervision</a>","<a href=\"majors_Associates_Electromechanical_ElectromechanicalEngineeringTechnology_Technician.html\">Electromechanical/Electromechanical Engineering Technology/Technician</a>","<a href=\"majors_Associates_ElectromechanicalTechnologies_Technicians_Other.html\">Electromechanical Technologies/Technicians, Other</a>","<a href=\"majors_Associates_Mechanical_MechanicalEngineeringTechnology_Technician.html\">Mechanical/Mechanical Engineering Technology/Technician</a>","<a href=\"majors_Associates_Crisis_Emergency_DisasterManagement.html\">Crisis/Emergency/Disaster Management</a>","<a href=\"majors_Associates_Automobile_AutomotiveMechanicsTechnology_Technician.html\">Automobile/Automotive Mechanics Technology/Technician</a>","<a href=\"majors_Associates_SubstanceAbuse_AddictionCounseling.html\">Substance Abuse/Addiction Counseling</a>","<a href=\"majors_Associates_Logistics_Materials_andSupplyChainManagement.html\">Logistics, Materials, and Supply Chain Management</a>","<a href=\"majors_Associates_IndustrialProductionTechnologies_Technicians_Other.html\">Industrial Production Technologies/Technicians, Other</a>","<a href=\"majors_Associates_ComputerEngineeringTechnology_Technician.html\">Computer Engineering Technology/Technician</a>","<a href=\"majors_Associates_Sports_Kinesiology_andPhysicalEducation_Fitness_Other.html\">Sports, Kinesiology, and Physical Education/Fitness, Other</a>","<a href=\"majors_Associates_DietitianAssistant.html\">Dietitian Assistant</a>","<a href=\"majors_Associates_MassageTherapy_TherapeuticMassage.html\">Massage Therapy/Therapeutic Massage</a>","<a href=\"majors_Associates_Accounting.html\">Accounting</a>","<a href=\"majors_Associates_MachineShopTechnology_Assistant.html\">Machine Shop Technology/Assistant</a>","<a href=\"majors_Associates_Pre_NursingStudies.html\">Pre-Nursing Studies</a>","<a href=\"majors_Associates_InformationScience_Studies.html\">Information Science/Studies</a>","<a href=\"majors_Associates_GeneralStudies.html\">General Studies</a>","<a href=\"majors_Associates_AccountingandFinance.html\">Accounting and Finance</a>","<a href=\"majors_Associates_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>"],[352,71,39,27,25,25,23,22,16,13,10,10,10,9,8,8,8,7,7,6,5,4,4,4,4,4,4,4,3,3,3,3,3,3,2,2,1,1,1,1],[46.623,9.404,5.166,3.576,3.311,3.311,3.046,2.914,2.119,1.722,1.325,1.325,1.325,1.192,1.06,1.06,1.06,0.927,0.927,0.795,0.662,0.53,0.53,0.53,0.53,0.53,0.53,0.53,0.397,0.397,0.397,0.397,0.397,0.397,0.265,0.265,0.132,0.132,0.132,0.132],[0.134,0.084,0.065,0.146,0.318,1.871,0.521,0.413,0.444,0.204,1.131,0.516,1.232,0.12,1.37,1.163,0.154,0.389,0.268,0.22,0.404,0.406,0.663,0.329,2.614,0.056,0.29,0.484,0.503,0.706,3.614,11.538,0.602,0.073,0.901,0.143,0.101,0.001,0.283,0.12],["Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
+
+   
+   
+              </div>
+  </div>
+  </div>
+  </div>
+   
+      
+
+  <script>
+    $(document).ready(function () {
+
+		// add bootstrap table styles to pandoc tables
+	$('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+		
+ 		
+	    });
+  </script>
+
+
+
+    <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+	document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+  
+</body>
+</html>

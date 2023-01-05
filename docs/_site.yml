@@ -1,0 +1,12 @@
+name: "College Tables"
+navbar:
+  title: "College Tables"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Fields"
+      href: fields_overview.html	
+output_dir: "docs"
+
