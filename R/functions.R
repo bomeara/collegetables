@@ -2174,7 +2174,7 @@ CreateIndexTable <- function(comparison_table) {
 }
 
 URLEncodeTotal <- function(x) {
-	return(utils::URLencode(gsub('&', ' ', gsub('/', ' ', x)), reserved=TRUE))
+	return(utils::URLencode(gsub(' ', '_', gsub('&', '_', gsub('/', '_', x))), reserved=TRUE))
 }
 
 RenderFieldPages <- function(CIPS_codes, fields_and_majors, yml) {

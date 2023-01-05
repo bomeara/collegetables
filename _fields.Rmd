@@ -34,7 +34,7 @@ for (cips_index in sequence(nrow(cips_content))) {
 
 	focal_data <- field_data %>% dplyr::filter(Field==cips_content$CIPTitle[cips_index]) 
 	if(nrow(focal_data)>0) {		
-		focal_data$Degree <- paste0("<a href='majors_", utils::URLencode(gsub(" ", "", focal_data$Degree)), "_", utils::URLencode( gsub('/', "_",gsub(",", "_", gsub(" ", "", focal_data$Field)))) ,".html'>", focal_data$Degree, "</a>")
+		focal_data$Degree <- paste0("<a href='majors_", URLEncodeTotal(gsub(" ", "", focal_data$Degree)), "_", URLEncodeTotal( gsub('/', "_",gsub(",", "_", gsub(" ", "", focal_data$Field)))) ,".html'>", focal_data$Degree, "</a>")
 
 		cat(paste0("## ", cips_content$CIPTitle[cips_index]))
 		cat("\n\n")
