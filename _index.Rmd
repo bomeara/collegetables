@@ -21,17 +21,178 @@ source("R/functions.R")
 
 all_colleges <- params$index_table
 
-
 if(nrow(all_colleges)>0) {
 
 	#all_colleges$Name <- rownames(all_colleges)
 	all_colleges <- subset(all_colleges, all_colleges$Active=="Yes")
 
-	for (college_index in sequence(nrow(all_colleges))) {
-		all_colleges$Institution[college_index] <- paste0("<a href='", utils::URLencode(gsub(" ", "", all_colleges$UNITID[college_index])),  ".html'>", all_colleges$Institution[college_index], "</a>")
-	}
+	# for (college_index in sequence(nrow(all_colleges))) {
+	# 	all_colleges$Institution[college_index] <- paste0("<a href='", utils::URLencode(gsub(" ", "", all_colleges$UNITID[college_index])),  ".html'>", all_colleges$Institution[college_index], "</a>")
+	# }
 	
-	all_colleges <- all_colleges %>% dplyr::select(-UNITID)
+	#all_colleges <- all_colleges %>% dplyr::select(-UNITID) %>% dplyr::select(-`IPEDS Year`)
+}
+
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
+
+all_colleges$netprice <- as.numeric(all_colleges$`Average net price for students with financial aid`)
+
+all_colleges <- SharedData$new(all_colleges)
+
+crosstalk::filter_select("inst", "Institution", all_colleges, ~Institution)
+
+crosstalk::filter_select("State", "State", all_colleges, ~State)
+
+crosstalk::filter_select("athleticconference", "Athletic conference", all_colleges, ~`Athletic conference`)
+
+crosstalk::filter_slider("price", "Average net price", all_colleges, "netprice", min = 0, step = 1000)
+
+crosstalk::filter_checkbox("CAban", "California travel ban", all_colleges, ~`California travel ban`)
+
+crosstalk::filter_checkbox("HCBU", "HBCU", all_colleges, ~`HBCU`)
+
+
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
+
+index_conversions <- read.csv("data/ConversionToIndexTable.csv")
+
+category_orderings <- c('Overview', "Location", "Admissions", "Finances", "Academics", "Student Life", "Safety", "Freshmen demographics")
+
+for (focal_category in category_orderings) {
+	focal_columns <- index_conversions$Rename[index_conversions$Category==focal_category] 
+	focal_columns <- paste0("Reactable.toggleHideColumn('college-list', '", focal_columns, "')")
+	htmltools::tags$script(paste0("function toggle", tolower(gsub(" ", "_", focal_category)), "() {\n", focal_columns, "\n}", collapse = "; "))
+}
+
+
+htmltools::tags$script("
+	function togglemany() {
+  Reactable.toggleHideColumn('college-list', 'HBCU')
+  Reactable.toggleHideColumn('college-list', 'California travel ban')
+  Reactable.toggleHideColumn('college-list', 'Athletic conference')
+  }
+")
+
+htmltools::tags$script("
+	function toggle_admissions() {
+  Reactable.toggleHideColumn('college-list', 'Admission percentage total')
+  Reactable.toggleHideColumn('college-list', 'Yield percentage total')
+  Reactable.toggleHideColumn('college-list', 'SAT 25th percentile')
+  Reactable.toggleHideColumn('college-list', 'SAT 75th percentile')
+  Reactable.toggleHideColumn('college-list', 'ACT 25th percentile')
+  Reactable.toggleHideColumn('college-list', 'ACT 75th percentile')
+  }
+")
+
+htmltools::tags$script("
+	function toggle_student_finances() {
+ 	 Reactable.toggleHideColumn('college-list', 'Average net price for students with financial aid')
+	Reactable.toggleHideColumn('college-list', 'Percent of undergrads with financial aid')
+	Reactable.toggleHideColumn('college-list', 'Percent of undergrads with Pell grants')
+	Reactable.toggleHideColumn('college-list', 'Students can get federal financial aid')
+  }
+")
+
+htmltools::tags$script("
+	function toggle_freshmen_demo() {
+	Reactable.toggleHideColumn('college-list', 'Female')
+	Reactable.toggleHideColumn('college-list', 'Male ')
+	Reactable.toggleHideColumn('college-list', 'American Indian or Alaskan Native')
+	Reactable.toggleHideColumn('college-list', 'Asian')
+	Reactable.toggleHideColumn('college-list', 'Black or African American')
+	Reactable.toggleHideColumn('college-list', 'Hispanic')
+	Reactable.toggleHideColumn('college-list', 'Nonresident alien percentage')
+	Reactable.toggleHideColumn('college-list', 'Pacific Islander')
+	Reactable.toggleHideColumn('college-list', 'White')  }
+	Reactable.toggleHideColumn('college-list', 'Two or more races')
+")
+
+htmltools::tags$script("
+	function toggle_graduation_demo() {
+	Reactable.toggleHideColumn('college-list', 'Graduation rate in four years')
+	Reactable.toggleHideColumn('college-list', 'Graduation rate in six years')
+	Reactable.toggleHideColumn('college-list', 'Graduation rate women')
+	Reactable.toggleHideColumn('college-list', 'Graduation rate men')
+	Reactable.toggleHideColumn('college-list', 'Graduation rate American Indian or Alaska Native')
+	Reactable.toggleHideColumn('college-list', 'Graduation rate Asian')
+	Reactable.toggleHideColumn('college-list', 'Graduation rate Black or African American')
+	Reactable.toggleHideColumn('college-list', 'Graduation rate Hispanic')
+	Reactable.toggleHideColumn('college-list', 'Graduation rate Nonresident alien')
+	Reactable.toggleHideColumn('college-list', 'Graduation rate Pacific Islander')
+	Reactable.toggleHideColumn('college-list', 'Graduation rate White')
+	Reactable.toggleHideColumn('college-list', 'Graduation rate Two or more races')
+
+")
+```	
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
+
+
+
+options(reactable.theme = reactableTheme(
+  stripedColor = "gray"
+))
+
+
+tagList(tags$button(
+	"Admissions",
+	onclick = "toggle_admissions()"
+))
+
+tagList(tags$button(
+	"Student finances",
+	onclick = "toggle_student_finances()"
+))
+
+tagList(tags$button(
+	"Freshmen demographics",
+	onclick = "toggle_freshmen_demo()"
+))
+
+tagList(tags$button(
+	"Graduation rates",
+	onclick = "toggle_graduation_demo()"
+))
+
+reactable(
+  all_colleges,
+  filterable = TRUE,
+  columns = list(
+    Institution = colDef(html = TRUE, show=TRUE, sticky="left", cell = JS('
+    function(cellInfo) {
+      // Render as a link
+      const url = `${cellInfo.row["UNITID"]}.html`
+      return `<a href="${url}" target="_blank">${cellInfo.value}</a>`
+    }
+  ')), 
+  City = colDef(show=TRUE),
+  State = colDef(show=TRUE)
+  ),
+  # Or use data list filter as the default for all factor columns
+  defaultColDef = colDef(
+	filterInput = dataListFilter("college-list"),
+	show = FALSE
+  ),
+  selection = "multiple",
+  onClick = "select",
+  defaultPageSize = 5,
+  elementId = "college-list",
+  striped = TRUE
+)
+
+
+
+
+```
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
+
+if(nrow(all_colleges)>0) {
 	
 	index_conversions <- read.csv("data/ConversionToIndexTable.csv")
 
@@ -70,11 +231,12 @@ if(nrow(all_colleges)>0) {
 		return(match(unmatched, colnames(all_colleges)))	
 	}
 	rownames(all_colleges) <- all_colleges$Institution
+	all_colleges <- 
 	datatable_output <- DT::datatable(
 		all_colleges, 
 		rownames=TRUE, 
 		escape=FALSE, 
-		extensions = c('Buttons'),
+		extensions = c('Buttons', 'SearchPanes', 'Select'),
 		options=list(
 			dom = 'Bfrtip',
 			pageLength = 100,
@@ -83,6 +245,7 @@ if(nrow(all_colleges)>0) {
 						list(targets = "_all", className = 'dt-center', visible = FALSE)
 						),
 			buttons = list(
+				"searchPanes",
 				list(
 					extend= "colvisGroup", 
 					text="Overview", 
@@ -143,7 +306,9 @@ if(nrow(all_colleges)>0) {
 					show=c(GetMatchingColumnsInOverview(Revenue_sources)), 
 					hide=GetNotMatchingColumnsInOverview(Revenue_sources)
 				)
-			)
+			),
+			language = list(searchPanes = list(collapse = "Filter Rows"))
+
 		)
 	) 
 	for (focal_row in sequence(nrow(index_conversions))) {
