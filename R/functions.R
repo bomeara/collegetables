@@ -1515,7 +1515,11 @@ RenderStatePages <- function(degree_granting, students_by_state_by_institution, 
 # pages is there just so it will run this after the pages are run
 RenderIndexPageEtAl <- function(pages, index_table, yml) {
 	system("rm docs/index.html")
-	system("rm docs/degrees_by*")
+	#system("rm docs/degrees_by*")
+	index_table$pseudoranking <- (100-as.numeric(index_table$`Admission percentage total`))+ 1/as.numeric(index_table$`Student to faculty ratio`)
+	index_table$pseudoranking[is.na(index_table$pseudoranking)] <- 0
+	index_table <- index_table[order(index_table$pseudoranking, decreasing=TRUE),]
+
 	rmarkdown::render(
 				input="_index.Rmd", 
 				output_file="docs/index.html", 
@@ -2231,4 +2235,25 @@ output_dir: "docs"
 	write(yml, "_site.yml")
 	file.copy("_site.yml", "docs/_site.yml", overwrite=TRUE)	
 	return(TRUE)
+}
+
+# From https://glin.github.io/reactable/articles/custom-filtering.html
+
+dataListFilter <- function(tableId, style = "width: 100%; height: 28px;") {
+  function(values, name) {
+    dataListId <- sprintf("%s-%s-list", tableId, name)
+    tagList(
+      tags$input(
+        type = "text",
+        list = dataListId,
+        oninput = sprintf("Reactable.setFilter('%s', '%s', event.target.value || undefined)", tableId, name),
+        "aria-label" = sprintf("Filter %s", name),
+        style = style
+      ),
+      tags$datalist(
+        id = dataListId,
+        lapply(unique(values), function(value) tags$option(value = value))
+      )
+    )
+  }
 }
