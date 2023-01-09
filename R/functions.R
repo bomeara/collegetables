@@ -2157,6 +2157,17 @@ CreateIndexTable <- function(comparison_table) {
 	index_table_summary$`Students can get federal financial aid`[index_table_summary$`Students can get federal financial aid` %in% c("Branch campus of a main campus that participates in Title IV", "New participants (became eligible during spring collection)", "New participants (became eligible during winter collection)", "Participates in Title IV federal financial aid programs")] <- "Yes"
 	index_table_summary$`Students can get federal financial aid`[index_table_summary$`Students can get federal financial aid` %in% c("Deferment only - limited participation", "Not currently participating in Title IV, does not have OPE ID number", "Not currently participating in Title IV, has an OPE ID number", "Stopped participating during the survey year")] <- "No"
 	index_table_summary$`California travel ban` <- ifelse(index_table_summary$`California travel ban`==TRUE, "Yes", "No")
+	index_table_summary$`California travel ban`[nchar(index_table_summary$`California travel ban`)<1] <- "No"
+	index_table_summary$`Category` <- gsub(' \n', "", index_table_summary$`Category`)
+	index_table_summary$`Category`[nchar(index_table_summary$`Category`)<1] <- "Unknown"
+
+	index_table_summary$`Overall type` <- "Not accredited or non-degree granting"
+	index_table_summary$`Overall type`[grepl("Four", index_table_summary$`Size and setting`)] <- "Four-year"
+	index_table_summary$`Overall type`[grepl("Two", index_table_summary$`Size and setting`)] <- "Two-year"
+	index_table_summary$`Overall type`[grepl("graduate", index_table_summary$`Size and setting`)] <- "Graduate/Professional"
+
+	index_table_summary$`Full-time undergrad enrollment trend`[nchar(index_table_summary$`Full-time undergrad enrollment trend`)<2] <- "Unknown or not applicable"
+
 	
 	# now format
 	for (focal_row in sequence(nrow(index_conversions))) {
