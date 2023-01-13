@@ -2193,7 +2193,7 @@ CreateIndexTable <- function(comparison_table) {
 	#index_table_summary[is.na(index_table_summary)] <- ""
 	index_table_summary[index_table_summary=="Not applicable"] <- ""
 	
-	index_table_summary$pseudoranking <- (100-as.numeric.na0(index_table_summary$`Admission percentage total`)) + as.numeric.na0(index_table_summary$`Grad rate in six years`) + as.numeric.na0(index_table_summary$`Yield percentage total`) + log1p(as.numeric.na0(index_table_summary$`Undergrad full time`))
+	index_table_summary$pseudoranking <- (100-as.numeric.na0(index_table_summary$`Admission percentage total`)) + as.numeric.na0(index_table_summary$`Grad rate in six years`) + as.numeric.na0(index_table_summary$`Yield percentage total`) + log1p(as.numeric.na0(index_table_summary$`Undergrad full time`)) + log1p(as.numeric.na0(index_table_summary$`Tenure-stream faculty`))
 	index_table_summary$pseudoranking[is.na(index_table_summary$pseudoranking)] <- 0
 	index_table_summary <- index_table_summary[order(index_table_summary$pseudoranking, decreasing=TRUE),]
 	
@@ -2201,7 +2201,7 @@ CreateIndexTable <- function(comparison_table) {
 }
 
 URLEncodeTotal <- function(x) {
-	return(utils::URLencode(gsub(' ', '_', gsub('&', '_', gsub('/', '_', x))), reserved=TRUE))
+	return(utils::URLencode(gsub('-', '_', gsub(',', '_', gsub(' ', '_', gsub('&', '_', gsub('/', '_', x))))), reserved=TRUE))
 }
 
 RenderFieldPages <- function(CIPS_codes, fields_and_majors, yml) {
