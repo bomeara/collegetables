@@ -1,6 +1,6 @@
 ---
 output:
-  rmdformats::downcute:
+  rmdformats::readthedown:
     self_contained: false
     includes:
       in_header: GA_Script.html

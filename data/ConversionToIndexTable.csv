@@ -1,92 +1,92 @@
-﻿ColumnName,Rename,Category,Type
-UNITID Unique identification number of the institution,UNITID,UNITID,Text
-Institution entity name,Institution,Institution,Text
-Admission percentage total,Admission percentage total,Admissions,Percent
-Yield percentage total,Yield percentage total,Admissions,Percent
-Admission percentage women,Admission percentage women,Admissions,Percent
-Yield percentage women,Yield percentage women,Admissions,Percent
-Admission percentage men,Admission percentage men,Admissions,Percent
-Yield percentage men,Yield percentage men,Admissions,Percent
-SAT Evidence Based Reading and Writing 25th percentile score,SAT Verbal 25th percentile,Admissions,Number
-SAT Evidence Based Reading and Writing 75th percentile score,SAT Verbal 75th percentile,Admissions,Number
-SAT Math 25th percentile score,SAT Math 25th percentile,Admissions,Number
-SAT Math 75th percentile score,SAT Math 75th percentile,Admissions,Number
-ACT Composite 25th percentile score,ACT Composite 25th percentile,Admissions,Number
-ACT Composite 75th percentile score,ACT Composite 75th percentile,Admissions,Number
-ACT English 25th percentile score,ACT English 25th percentile,Admissions,Number
-ACT English 75th percentile score,ACT English 75th percentile,Admissions,Number
-ACT Math 25th percentile score,ACT Math 25th percentile,Admissions,Number
-ACT Math 75th percentile score,ACT Math 75th percentile,Admissions,Number
-Average net price students awarded grant or scholarship aid,Average net price for students with financial aid,Finances,Money
-Percent of full time first time undergraduates awarded any financial aid,Percent of undergrads with financial aid,Finances,Percent
-Percent of full time first time undergraduates awarded Pell grants,Percent of undergrads with Pell grants,Finances,Percent
-OPE Title IV eligibility indicator code,Students can get federal financial aid,Finances,Text
-FirstYearFullTimeDegreeSeekingUndergrads Grand total women percent,Female,Freshmen demographics,Percent
-FirstYearFullTimeDegreeSeekingUndergrads Grand total men percent,Male ,Freshmen demographics,Percent
-FirstYearFullTimeDegreeSeekingUndergrads American Indian or Alaska Native total percent,American Indian or Alaskan Native,Freshmen demographics,Percent
-FirstYearFullTimeDegreeSeekingUndergrads Asian total percent,Asian,Freshmen demographics,Percent
-FirstYearFullTimeDegreeSeekingUndergrads Black or African American total percent,Black or African American,Freshmen demographics,Percent
-FirstYearFullTimeDegreeSeekingUndergrads Hispanic total percent,Hispanic,Freshmen demographics,Percent
-FirstYearFullTimeDegreeSeekingUndergrads Native Hawaiian or Other Pacific Islander total percent,Pacific Islander,Freshmen demographics,Percent
-FirstYearFullTimeDegreeSeekingUndergrads White total percent,White,Freshmen demographics,Percent
-FirstYearFullTimeDegreeSeekingUndergrads Two or more races total percent,Two or more races,Freshmen demographics,Percent
-FirstYearFullTimeDegreeSeekingUndergrads Nonresident alien total percent,Nonresident alien percentage,Freshmen demographics,Percent
-Longitude location of institution,Longitude,Hidden,Text
-Latitude location of institution,Latitude,Hidden,Text
-IPEDS Year,IPEDS Year,Hidden,Text
-Degree of urbanization Urban centric locale ,Urbanization,Location,Text
-eco_name,Ecological region,Location,Text
-biome,Biome,Location,Text
-realm,Realm,Location,Text
-Graduation Rate Bachelors in within 150 percent of normal time Grand total,Graduation rate in six years,Outcomes,Percent
-Graduation Rate Bachelors in 4 years or less Grand total,Graduation rate in four years,Outcomes,Percent
-Graduation Rate Transfer out of bachelors Grand total,Transfer out rate,Outcomes,Percent
-Graduation Rate Bachelors in within 150 percent of normal time Total women,Graduation rate women,Outcomes,Percent
-Graduation Rate Bachelors in within 150 percent of normal time Total men,Graduation rate men,Outcomes,Percent
-Graduation Rate Bachelors in within 150 percent of normal time American Indian or Alaska Native total,Graduation rate American Indian or Alaska Native,Outcomes,Percent
-Graduation Rate Bachelors in within 150 percent of normal time Asian total,Graduation rate Asian,Outcomes,Percent
-Graduation Rate Bachelors in within 150 percent of normal time Black or African American total,Graduation rate Black or African American,Outcomes,Percent
-Graduation Rate Bachelors in within 150 percent of normal time Hispanic total,Graduation rate Hispanic,Outcomes,Percent
-Graduation Rate Bachelors in within 150 percent of normal time Native Hawaiian or Other Pacific Islander total,Graduation rate Pacific Islander,Outcomes,Percent
-Graduation Rate Bachelors in within 150 percent of normal time White total,Graduation rate White,Outcomes,Percent
-Graduation Rate Bachelors in within 150 percent of normal time Two or more races total,Graduation rate Two or more races,Outcomes,Percent
-Graduation Rate Bachelors in within 150 percent of normal time Nonresident alien total,Graduation rate Nonresident alien,Outcomes,Percent
-City location of institution,City,Overview,Text
-State,State,Overview,Text
-Carnegie Classification 2021 Basic,Classification,Overview,Text
-Carnegie Classification 2021 Size and Setting,Size and setting,Overview,Text
-Sector of institution,Sector,Hidden,Text
-Level of institution,Level,Hidden,Text
-Highest degree offered,Highest degree,Hidden,Text
-Historically Black College or University,HBCU,Overview,Text
-Tribal college,Tribal College,Overview,Text
-Undergrad full time,Undergrad full time,Student life,Number
-Full-time undergrad enrollment trend,Full-time undergrad enrollment trend,Overview,Text
-GradStudent full time,Grad full time,Student life,Number
-Institution is active in current year,Active,Hidden,Text
-Institutional category,Category,Hidden,Text
-Carnegie Classification 2021 Undergraduate Profile,Undergrad profile,Hidden,Text
-Carnegie Classification 2021 Enrollment Profile,Enrollment profile,Hidden,Text
-Full time undergrad enrollment divided by tenure stream faculty,Student to tenure track faculty ratio,Resources,Number
-Full time undergrad enrollment divided by total instructors,Student to faculty ratio,Resources,Number
-Revenue minus expenses,Revenue minus expenses,Resources,Money
-Tenure-stream Grand total,Tenure-stream faculty,Resources,Number
-NTT-stream Grand total,Non-tenure stream faculty,Resources,Number
-AAUP_Censure,Censured by AAUP,Resources,Text
-Percent of revenue from tuition and fees,Percent of revenue from tuition and fees,Revenue sources,Percent
-Percent of revenue from government appropriations,Percent of revenue from government appropriations,Revenue sources,Percent
-Percent of revenue from government grants and contracts,Percent of revenue from government grants and contracts,Revenue sources,Percent
-Percent of revenue from private gifts grants and contracts,Percent of revenue from private gifts grants and contracts,Revenue sources,Percent
-Physical library circulations per students and faculty,Physical library circulations per students and faculty,Resources ,Number
-Digital library circulations per students and faculty,Digital library circulations per students and faculty,Resources ,Number
-California Travel Ban,California travel ban,Safety,Text
-Abortion,Abortion availability,Safety,Text
-Gun Law Stringency,Gun law stringency,Safety,Text
-AllStudentsVaccinatedAgainstCovid19,Student covid vaccination,Safety,Text
-AllEmployeesVaccinatedAgainstCovid19,Employee covid vaccination,Safety,Text
-Proportion of reps voting in favor of respect for right to contraception act,State rep support for contraception,Safety,Percent
-Proportion of reps voting in favor of respect for marriage act,State support for interracial and same-sex marriage,Safety,Percent
-Disability percentage,Percent of undergrads registered with disabilities,Student life,Text
-Full time first time degree certificate seeking students required to live on campus,Freshmen required to live on campus,Student life,Text
-Institution provide on campus housing,On campus housing available,Student life,Text
-NCAA NAIA conference number cross country track,Athletic conference,Student life,Text
+﻿ColumnName,Rename,Category,Type,
+ACT Composite 25th percentile score,ACT Composite 25th percentile,Admissions,Number,"Reactable.toggleHideColumn('college-list', 'ACT Composite 25th percentile')"
+ACT Composite 75th percentile score,ACT Composite 75th percentile,Admissions,Number,"Reactable.toggleHideColumn('college-list', 'ACT Composite 75th percentile')"
+ACT English 25th percentile score,ACT English 25th percentile,Admissions,Number,"Reactable.toggleHideColumn('college-list', 'ACT English 25th percentile')"
+ACT English 75th percentile score,ACT English 75th percentile,Admissions,Number,"Reactable.toggleHideColumn('college-list', 'ACT English 75th percentile')"
+ACT Math 25th percentile score,ACT Math 25th percentile,Admissions,Number,"Reactable.toggleHideColumn('college-list', 'ACT Math 25th percentile')"
+ACT Math 75th percentile score,ACT Math 75th percentile,Admissions,Number,"Reactable.toggleHideColumn('college-list', 'ACT Math 75th percentile')"
+Admission percentage men,Admission percentage men,Admissions,Percent,"Reactable.toggleHideColumn('college-list', 'Admission percentage men')"
+Admission percentage total,Admission percentage total,Admissions,Percent,"Reactable.toggleHideColumn('college-list', 'Admission percentage total')"
+Admission percentage women,Admission percentage women,Admissions,Percent,"Reactable.toggleHideColumn('college-list', 'Admission percentage women')"
+SAT Math 25th percentile score,SAT Math 25th percentile,Admissions,Number,"Reactable.toggleHideColumn('college-list', 'SAT Math 25th percentile')"
+SAT Math 75th percentile score,SAT Math 75th percentile,Admissions,Number,"Reactable.toggleHideColumn('college-list', 'SAT Math 75th percentile')"
+SAT Evidence Based Reading and Writing 25th percentile score,SAT Verbal 25th percentile,Admissions,Number,"Reactable.toggleHideColumn('college-list', 'SAT Verbal 25th percentile')"
+SAT Evidence Based Reading and Writing 75th percentile score,SAT Verbal 75th percentile,Admissions,Number,"Reactable.toggleHideColumn('college-list', 'SAT Verbal 75th percentile')"
+Yield percentage men,Yield percentage men,Admissions,Percent,"Reactable.toggleHideColumn('college-list', 'Yield percentage men')"
+Yield percentage total,Yield percentage total,Admissions,Percent,"Reactable.toggleHideColumn('college-list', 'Yield percentage total')"
+Yield percentage women,Yield percentage women,Admissions,Percent,"Reactable.toggleHideColumn('college-list', 'Yield percentage women')"
+Average net price students awarded grant or scholarship aid,Average net price for students with financial aid,Finances,Money,"Reactable.toggleHideColumn('college-list', 'Average net price for students with financial aid')"
+Percent of full time first time undergraduates awarded any financial aid,Percent of undergrads with financial aid,Finances,Percent,"Reactable.toggleHideColumn('college-list', 'Percent of undergrads with financial aid')"
+Percent of full time first time undergraduates awarded Pell grants,Percent of undergrads with Pell grants,Finances,Percent,"Reactable.toggleHideColumn('college-list', 'Percent of undergrads with Pell grants')"
+OPE Title IV eligibility indicator code,Students can get federal financial aid,Finances,Text,"Reactable.toggleHideColumn('college-list', 'Students can get federal financial aid')"
+FirstYearFullTimeDegreeSeekingUndergrads American Indian or Alaska Native total percent,Freshmen % American Indian or Alaskan Native,Freshmen demographics,Percent,"Reactable.toggleHideColumn('college-list', 'Freshmen % American Indian or Alaskan Native')"
+FirstYearFullTimeDegreeSeekingUndergrads Asian total percent,Freshmen % Asian,Freshmen demographics,Percent,"Reactable.toggleHideColumn('college-list', 'Freshmen % Asian')"
+FirstYearFullTimeDegreeSeekingUndergrads Black or African American total percent,Freshmen % Black or African American,Freshmen demographics,Percent,"Reactable.toggleHideColumn('college-list', 'Freshmen % Black or African American')"
+FirstYearFullTimeDegreeSeekingUndergrads Grand total women percent,Freshmen % Female,Freshmen demographics,Percent,"Reactable.toggleHideColumn('college-list', 'Freshmen % Female')"
+FirstYearFullTimeDegreeSeekingUndergrads Hispanic total percent,Freshmen % Hispanic,Freshmen demographics,Percent,"Reactable.toggleHideColumn('college-list', 'Freshmen % Hispanic')"
+FirstYearFullTimeDegreeSeekingUndergrads Grand total men percent,Freshmen % Male ,Freshmen demographics,Percent,"Reactable.toggleHideColumn('college-list', 'Freshmen % Male ')"
+FirstYearFullTimeDegreeSeekingUndergrads Nonresident alien total percent,Freshmen % Nonresident alien percentage,Freshmen demographics,Percent,"Reactable.toggleHideColumn('college-list', 'Freshmen % Nonresident alien percentage')"
+FirstYearFullTimeDegreeSeekingUndergrads Native Hawaiian or Other Pacific Islander total percent,Freshmen % Pacific Islander,Freshmen demographics,Percent,"Reactable.toggleHideColumn('college-list', 'Freshmen % Pacific Islander')"
+FirstYearFullTimeDegreeSeekingUndergrads Two or more races total percent,Freshmen % Two or more races,Freshmen demographics,Percent,"Reactable.toggleHideColumn('college-list', 'Freshmen % Two or more races')"
+FirstYearFullTimeDegreeSeekingUndergrads White total percent,Freshmen % White,Freshmen demographics,Percent,"Reactable.toggleHideColumn('college-list', 'Freshmen % White')"
+Institution is active in current year,Active,Hidden,Text,"Reactable.toggleHideColumn('college-list', 'Active')"
+Institutional category,Category,Hidden,Text,"Reactable.toggleHideColumn('college-list', 'Category')"
+Carnegie Classification 2021 Enrollment Profile,Enrollment profile,Hidden,Text,"Reactable.toggleHideColumn('college-list', 'Enrollment profile')"
+Highest degree offered,Highest degree,Hidden,Text,"Reactable.toggleHideColumn('college-list', 'Highest degree')"
+IPEDS Year,IPEDS Year,Hidden,Text,"Reactable.toggleHideColumn('college-list', 'IPEDS Year')"
+Latitude location of institution,Latitude,Hidden,Text,"Reactable.toggleHideColumn('college-list', 'Latitude')"
+Level of institution,Level,Hidden,Text,"Reactable.toggleHideColumn('college-list', 'Level')"
+Longitude location of institution,Longitude,Hidden,Text,"Reactable.toggleHideColumn('college-list', 'Longitude')"
+Sector of institution,Sector,Hidden,Text,"Reactable.toggleHideColumn('college-list', 'Sector')"
+Carnegie Classification 2021 Undergraduate Profile,Undergrad profile,Hidden,Text,"Reactable.toggleHideColumn('college-list', 'Undergrad profile')"
+Institution entity name,Institution,Institution,Text,"Reactable.toggleHideColumn('college-list', 'Institution')"
+biome,Biome,Location,Text,"Reactable.toggleHideColumn('college-list', 'Biome')"
+eco_name,Ecological region,Location,Text,"Reactable.toggleHideColumn('college-list', 'Ecological region')"
+realm,Realm,Location,Text,"Reactable.toggleHideColumn('college-list', 'Realm')"
+Degree of urbanization Urban centric locale ,Urbanization,Location,Text,"Reactable.toggleHideColumn('college-list', 'Urbanization')"
+Graduation Rate Bachelors in within 150 percent of normal time American Indian or Alaska Native total,Grad rate American Indian or Alaska Native,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Grad rate American Indian or Alaska Native')"
+Graduation Rate Bachelors in within 150 percent of normal time Asian total,Grad rate Asian,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Grad rate Asian')"
+Graduation Rate Bachelors in within 150 percent of normal time Black or African American total,Grad rate Black or African American,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Grad rate Black or African American')"
+Graduation Rate Bachelors in within 150 percent of normal time Hispanic total,Grad rate Hispanic,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Grad rate Hispanic')"
+Graduation Rate Bachelors in 4 years or less Grand total,Grad rate in four years,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Grad rate in four years')"
+Graduation Rate Bachelors in within 150 percent of normal time Grand total,Grad rate in six years,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Grad rate in six years')"
+Graduation Rate Bachelors in within 150 percent of normal time Total men,Grad rate Men,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Grad rate Men')"
+Graduation Rate Bachelors in within 150 percent of normal time Nonresident alien total,Grad rate Nonresident alien,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Grad rate Nonresident alien')"
+Graduation Rate Bachelors in within 150 percent of normal time Native Hawaiian or Other Pacific Islander total,Grad rate Pacific Islander,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Grad rate Pacific Islander')"
+Graduation Rate Bachelors in within 150 percent of normal time Two or more races total,Grad rate Two or more races,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Grad rate Two or more races')"
+Graduation Rate Bachelors in within 150 percent of normal time White total,Grad rate White,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Grad rate White')"
+Graduation Rate Bachelors in within 150 percent of normal time Total women,Grad rate Women,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Grad rate Women')"
+Graduation Rate Transfer out of bachelors Grand total,Transfer out rate,Outcomes,Percent,"Reactable.toggleHideColumn('college-list', 'Transfer out rate')"
+City location of institution,City,Overview,Text,"Reactable.toggleHideColumn('college-list', 'City')"
+Carnegie Classification 2021 Basic,Classification,Overview,Text,"Reactable.toggleHideColumn('college-list', 'Classification')"
+Full-time undergrad enrollment trend,Full-time undergrad enrollment trend,Overview,Text,"Reactable.toggleHideColumn('college-list', 'Full-time undergrad enrollment trend')"
+Historically Black College or University,HBCU,Overview,Text,"Reactable.toggleHideColumn('college-list', 'HBCU')"
+Carnegie Classification 2021 Size and Setting,Size and setting,Overview,Text,"Reactable.toggleHideColumn('college-list', 'Size and setting')"
+State,State,Overview,Text,"Reactable.toggleHideColumn('college-list', 'State')"
+Tribal college,Tribal College,Overview,Text,"Reactable.toggleHideColumn('college-list', 'Tribal College')"
+AAUP_Censure,Censured by AAUP,Resources,Text,"Reactable.toggleHideColumn('college-list', 'Censured by AAUP')"
+NTT-stream Grand total,Non-tenure stream faculty,Resources,Number,"Reactable.toggleHideColumn('college-list', 'Non-tenure stream faculty')"
+Revenue minus expenses,Revenue minus expenses,Resources,Money,"Reactable.toggleHideColumn('college-list', 'Revenue minus expenses')"
+Full time undergrad enrollment divided by total instructors,Student to faculty ratio,Resources,Number,"Reactable.toggleHideColumn('college-list', 'Student to faculty ratio')"
+Full time undergrad enrollment divided by tenure stream faculty,Student to tenure track faculty ratio,Resources,Number,"Reactable.toggleHideColumn('college-list', 'Student to tenure track faculty ratio')"
+Tenure-stream Grand total,Tenure-stream faculty,Resources,Number,"Reactable.toggleHideColumn('college-list', 'Tenure-stream faculty')"
+Digital library circulations per students and faculty,Digital library circulations per students and faculty,Resources ,Number,"Reactable.toggleHideColumn('college-list', 'Digital library circulations per students and faculty')"
+Physical library circulations per students and faculty,Physical library circulations per students and faculty,Resources ,Number,"Reactable.toggleHideColumn('college-list', 'Physical library circulations per students and faculty')"
+Percent of revenue from government appropriations,Percent of revenue from government appropriations,Revenue sources,Percent,"Reactable.toggleHideColumn('college-list', 'Percent of revenue from government appropriations')"
+Percent of revenue from government grants and contracts,Percent of revenue from government grants and contracts,Revenue sources,Percent,"Reactable.toggleHideColumn('college-list', 'Percent of revenue from government grants and contracts')"
+Percent of revenue from private gifts grants and contracts,Percent of revenue from private gifts grants and contracts,Revenue sources,Percent,"Reactable.toggleHideColumn('college-list', 'Percent of revenue from private gifts grants and contracts')"
+Percent of revenue from tuition and fees,Percent of revenue from tuition and fees,Revenue sources,Percent,"Reactable.toggleHideColumn('college-list', 'Percent of revenue from tuition and fees')"
+Abortion,Abortion availability,Safety,Text,"Reactable.toggleHideColumn('college-list', 'Abortion availability')"
+California Travel Ban,California travel ban,Safety,Text,"Reactable.toggleHideColumn('college-list', 'California travel ban')"
+AllEmployeesVaccinatedAgainstCovid19,Employee covid vaccination,Safety,Text,"Reactable.toggleHideColumn('college-list', 'Employee covid vaccination')"
+Gun Law Stringency,Gun law stringency,Safety,Text,"Reactable.toggleHideColumn('college-list', 'Gun law stringency')"
+Proportion of reps voting in favor of respect for right to contraception act,State rep support for contraception,Safety,Percent,"Reactable.toggleHideColumn('college-list', 'State rep support for contraception')"
+Proportion of reps voting in favor of respect for marriage act,State support for interracial and same-sex marriage,Safety,Percent,"Reactable.toggleHideColumn('college-list', 'State support for interracial and same-sex marriage')"
+AllStudentsVaccinatedAgainstCovid19,Student covid vaccination,Safety,Text,"Reactable.toggleHideColumn('college-list', 'Student covid vaccination')"
+NCAA NAIA conference number cross country track,Athletic conference,Student life,Text,"Reactable.toggleHideColumn('college-list', 'Athletic conference')"
+Full time first time degree certificate seeking students required to live on campus,Freshmen required to live on campus,Student life,Text,"Reactable.toggleHideColumn('college-list', 'Freshmen required to live on campus')"
+GradStudent full time,Grad full time,Student life,Number,"Reactable.toggleHideColumn('college-list', 'Grad full time')"
+Institution provide on campus housing,On campus housing available,Student life,Text,"Reactable.toggleHideColumn('college-list', 'On campus housing available')"
+Disability percentage,Percent of undergrads registered with disabilities,Student life,Text,"Reactable.toggleHideColumn('college-list', 'Percent of undergrads registered with disabilities')"
+Undergrad full time,Undergrad full time,Student life,Number,"Reactable.toggleHideColumn('college-list', 'Undergrad full time')"
+UNITID Unique identification number of the institution,UNITID,UNITID,Text,"Reactable.toggleHideColumn('college-list', 'UNITID')"

@@ -1,6 +1,6 @@
 ---
 output:
-  rmdformats::downcute:
+  rmdformats::readthedown:
     self_contained: false
     includes:
       in_header: GA_Script.html
@@ -85,7 +85,7 @@ try({
 ```{r}
 try({
 	if(most_current_info['California Travel Ban'] == "TRUE") {
-		notes <- append(notes, "California considers the state this institution is in to have one or more anti-LGBTQ+ laws. It prohibits California-sponsored travel to this state as a safety measure. See more <a href='https://oag.ca.gov/ab1887'>here</a>")
+		notes <- append(notes, "California considers the state this institution is in to have one or more anti-LGBTQ+ laws. It prohibits California-sponsored travel to this state as a safety measure. See more <a href='https://oag.ca.gov/ab1887'>here</a>.")
 	}
 }, silent=TRUE)
 ```
@@ -119,7 +119,7 @@ try({
 chief_admins <- humaniformat::last_name(focal_focal$`Name of chief administrator`)[1:6]
 
 try({
-	if(length(chief_admins)/length(unique(chief_admins))<4 && length(chief_admins)>2 && length(unique(chief_admins))>2) {
+	if(length(chief_admins)/length(unique(chief_admins))<4 && length(chief_admins)>3 && length(unique(chief_admins))>3) {
 		admin_vector <- c()
 		for (admin in unique(chief_admins)) {
 			years <- focal_focal$`IPEDS Year`[which(chief_admins==admin)]
@@ -390,7 +390,7 @@ try({
 	wikipedia_summary <- GetWikipediaSummaryFirstParagraph(most_current_info['Institution entity name'])
 	if(!is.null(wikipedia_summary)) {
 		cat("*From [Wikipedia](https://en.wikipedia.org/wiki/", utils::URLencode(most_current_info['Institution entity name']), ")*: ")
-		cat(wikipedia_summary)
+		cat(gsub("\\.\\.", '.', wikipedia_summary))
 		cat("\n\n")
 	}
 }, silent=TRUE)
@@ -466,6 +466,7 @@ leaflet() %>%
 
 # Student financing
 
+At many universities, almost no students pay the listed tuition and fees ("sticker price"): instead, their financial aid package lowers this dramatically, but how much students pay can vary substantially based on family income and other factors. The tuition below is the average across many students receiving aid: your family may be asked to pay less or more than this. 
 
 ```{r, eval=TRUE}
 	try({
@@ -485,6 +486,17 @@ leaflet() %>%
 
 	pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c") %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 	}, silent=TRUE)
+```
+
+# Student details
+
+```{r, eval=TRUE}
+	try({
+		pretty_table <- comparison_df[which(comparison_df$Heading == "Student conditions"),]
+		pretty_table <- pretty_table[,which((apply(pretty_table, 2, as.character) %>% apply(2, nchar) %>% apply(2, max, na.rm=TRUE))>0)]
+		pretty_table %>% dplyr::select(-c(Heading)) %>% knitr::kable(align="c") %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+	}, silent=TRUE)
+
 ```
 
 # Institution finances
@@ -527,7 +539,7 @@ Demographic data for first time degree-seeking students. Note that this uses US 
 
 # Tenure track faculty
 
-Tenure track faculty are those who are eligible for tenure. This includes both tenure stream and non-tenure stream faculty. Once faculty get tenure, they are (generally) protected from being fired for intellectual reasons, helping to ensure their freedom in teaching and research. They can still lose their positions for misconduct, financial problems, or other reasons. Note that this chart uses US federal demographic data: it only has two genders and a specified set of ethnicities and races.
+Tenure track faculty are those who are eligible for tenure. This includes both pre-tenure and tenured faculty. Once faculty get tenure, they are (generally) protected from being fired for intellectual reasons, helping to ensure their freedom in teaching and research. They can still lose their positions for misconduct, financial problems, not fulfilling their duties, or other reasons. Note that this chart uses US federal demographic data: it only has two genders and a specified set of ethnicities and races.
 
 ```{r, eval=TRUE}
 	try({

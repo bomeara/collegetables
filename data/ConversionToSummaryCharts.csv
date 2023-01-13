@@ -102,3 +102,4 @@ FirstYearFullTimeDegreeSeekingUndergrads Race ethnicity unknown men percent,Race
 FirstYearFullTimeDegreeSeekingUndergrads Race ethnicity unknown women percent,Race ethnicity unknown women (percent freshmen),Freshmen,FALSE,Percent,None
 FirstYearFullTimeDegreeSeekingUndergrads Nonresident alien men percent,Nonresident alien men (percent freshmen),Freshmen,FALSE,Percent,None
 FirstYearFullTimeDegreeSeekingUndergrads Nonresident alien women percent,Nonresident alien women (percent freshmen),Freshmen,FALSE,Percent,None
+Disability percentage numeric,Percent of undergrads with registered disabilities (≤3 is rounded up to 3),Student conditions,FALSE,Percent,None

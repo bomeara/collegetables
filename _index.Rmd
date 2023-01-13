@@ -1,7 +1,7 @@
 ---
 title: College Tables
 output:
-  rmdformats::downcute:
+  rmdformats::readthedown:
     self_contained: false
     includes:
       in_header: GA_Script.html
@@ -9,7 +9,7 @@ params:
   index_table: "nothing"
 ---
 
-For deciding on which college to go to (as an undergraduate, graduate student, employee such as faculty member, or other) there are a lot of resources (especially for potential undergraduate students). For example, https://collegescorecard.ed.gov is created by the federal government and has great info on things like costs and expected income; there are various sites that use a secret sauce to rank colleges (what do guidance counselors think about them, how often is research from the college cited, etc.). However, as a parent, these all felt somewhat lacking: a focus on income after graduation seems sensible, for example, but a college that sends more of its students to high paying jobs on Wall Street isn't necessarily a better one than a college whose students make less money working on humanitarian issues. There are data that most sites ignore: are the libraries well-stocked and well-used; how much of a drinking culture does campus have; do faculty have academic freedom to do research and teach; how diverse are the faculty; how has the college valued safety during the covid pandemic? And issues of the environment a college is in matter: are there limits on the healthcare students can receive, is the state for or against LGBTQ+ rights, what's the weather like, is there mass transit available, and so forth. This site attempts to gather all this. It has one massive table below, but then you can go to a page on each college to get visualizations and more tables.
+This has info on several thousand colleges and universities in the US.
 
 You can search to filter by various columns: only show ones in certain states (two letter abbreviation), certain athletic leagues, by college name, etc. To search for phrases, put them in quotes. **Click on buttons to show different tables of information** (and info in one table will be used to filter the other ones). Go to the [about](about.html) page for more about the sources of the data. **Click on a school name to get a page with much more detail about that school.** To look at info by field, go to the [fields](fields_overview.html) page.
 
@@ -35,7 +35,7 @@ if(nrow(all_colleges)>0) {
 
 ```
 
-To filter for individual schools, start typing any part of the school's name in the institution box. After clicking one, you can keep typing and add more to the list.
+To filter for individual schools, start typing any part of the school's name in the institution box. After clicking one, you can keep typing and add more to the list. Below the table are more filtering options.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
 
@@ -52,37 +52,8 @@ all_colleges$percentfreshmenpacificislander <- as.numeric(all_colleges$`Freshmen
 all_colleges <- SharedData$new(all_colleges)
 
 crosstalk::filter_select("inst", "Institution", all_colleges, ~Institution)
-
-crosstalk::filter_select("State", "State", all_colleges, ~State)
-
-crosstalk::filter_select("athleticconference", "Athletic conference", all_colleges, ~`Athletic conference`)
-
-crosstalk::filter_slider("price", "Average net price", all_colleges, "netprice", min = 0, step = 1000)
-
-crosstalk::filter_slider("percentwomen", "Percent of women in freshman class", all_colleges, "percentfreshmenwomen")
-
-crosstalk::filter_slider("percentwhite", "Percent of white students in freshman class", all_colleges, "percentfreshmenwhite")
-
-crosstalk::filter_slider("percentblack", "Percent of black students in freshman class", all_colleges, "percentfreshmenblack")
-
-crosstalk::filter_slider("percentasian", "Percent of Asian students in freshman class", all_colleges, "percentfreshmenasian")
-
-crosstalk::filter_slider("percentamericanindian", "Percent of American Indian students in freshman class", all_colleges, "percentfreshmenamericanindian")
-
-crosstalk::filter_slider("percentpacificislander", "Percent of Pacific Islander students in freshman class", all_colleges, "percentfreshmenpacificislander")
-
-crosstalk::filter_checkbox("CAban", "California travel ban", all_colleges, ~`California travel ban`)
-
-crosstalk::filter_checkbox("HCBU", "HBCU", all_colleges, ~`HBCU`)
-
-crosstalk::filter_checkbox("Category", "Institution category", all_colleges, ~`Category`)
-
-crosstalk::filter_checkbox("type", "Institution type", all_colleges, ~`Overall type`)
-
-crosstalk::filter_checkbox("enrollment", "Full-time undergrad enrollment trend", all_colleges, ~`Full-time undergrad enrollment trend`)
-
-
 ```
+
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
 
@@ -313,16 +284,50 @@ reactable(
   ),
   selection = "multiple",
   onClick = "select",
-  defaultPageSize = 5,
+  defaultPageSize = 20,
   elementId = "college-list",
   striped = TRUE
 )
 
+```
 
+
+
+# More filters
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
+
+
+crosstalk::filter_select("State", "State", all_colleges, ~State)
+
+crosstalk::filter_select("athleticconference", "Athletic conference", all_colleges, ~`Athletic conference`)
+
+crosstalk::filter_slider("price", "Average net price", all_colleges, "netprice", min = 0, step = 1000)
+
+crosstalk::filter_slider("percentwomen", "Percent of women in freshman class", all_colleges, "percentfreshmenwomen")
+
+crosstalk::filter_slider("percentwhite", "Percent of white students in freshman class", all_colleges, "percentfreshmenwhite")
+
+crosstalk::filter_slider("percentblack", "Percent of black students in freshman class", all_colleges, "percentfreshmenblack")
+
+crosstalk::filter_slider("percentasian", "Percent of Asian students in freshman class", all_colleges, "percentfreshmenasian")
+
+crosstalk::filter_slider("percentamericanindian", "Percent of American Indian students in freshman class", all_colleges, "percentfreshmenamericanindian")
+
+crosstalk::filter_slider("percentpacificislander", "Percent of Pacific Islander students in freshman class", all_colleges, "percentfreshmenpacificislander")
+
+crosstalk::filter_checkbox("CAban", "California travel ban", all_colleges, ~`California travel ban`)
+
+crosstalk::filter_checkbox("HCBU", "HBCU", all_colleges, ~`HBCU`)
+
+crosstalk::filter_checkbox("Category", "Institution category", all_colleges, ~`Category`)
+
+crosstalk::filter_checkbox("type", "Institution type", all_colleges, ~`Overall type`)
+
+crosstalk::filter_checkbox("enrollment", "Full-time undergrad enrollment trend", all_colleges, ~`Full-time undergrad enrollment trend`)
 
 
 ```
-
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=FALSE}
 

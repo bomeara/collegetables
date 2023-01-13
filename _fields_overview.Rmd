@@ -1,0 +1,31 @@
+---
+output:
+  rmdformats::readthedown:
+    self_contained: false
+    includes:
+      in_header: GA_Script.html
+title: "Fields of study"
+
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+source("_packages.R")
+source("R/functions.R")
+tar_load(CIPS_codes)
+CIP_headers <- CIPS_codes[!duplicated(CIPS_codes$CIPFamily),]
+CIP_content <- CIPS_codes[duplicated(CIPS_codes$CIPFamily),]
+```
+
+There are `r nrow(CIP_content)` different fields of study, organized into `r nrow(CIP_headers)` broader fields. The following table lists the broader fields and their definitions; you can click on each one to go to a page describing the fields within each.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, results='asis'}
+for (cips_index in sequence(nrow(CIP_headers))) {
+#for (cips_index in sequence(10)) {
+
+	cat(paste0("## ", CIP_headers$CIPFamilyName[cips_index]))
+	cat("\n\n")
+	cat("<a href='", paste0(URLEncodeTotal(CIP_headers$CIPFamilyName[cips_index]), ".html"),"'>More detail on subfields</a>\n\n")
+	cat(CIP_headers$CIPDefinition[cips_index])
+	cat("\n\n")	
+}
+```

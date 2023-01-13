@@ -1,9 +1,10 @@
 ---
 title: About
 output:
-  html_document:
+  rmdformats::readthedown:
+    self_contained: false
     includes:
-       in_header: GA_Script.html
+      in_header: GA_Script.html
 ---
 
 ### About

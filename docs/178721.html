@@ -15,12 +15,10 @@
         <link href="institution_files/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
         <script src="institution_files/bootstrap-3.3.7/js/bootstrap.min.js"></script>
         <script src="institution_files/navigation-1.1/tabsets.js"></script>
-        <link href="institution_files/downcute-0.1/downcute.css" rel="stylesheet" />
-        <link href="institution_files/downcute-0.1/downcute_fonts_embed.css" rel="stylesheet" />
-        <script src="institution_files/downcute-0.1/downcute_styles.js"></script>
-        <script src="institution_files/downcute-0.1/downcute.js"></script>
-        <script src="institution_files/prism-1.22/prism.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.0/htmlwidgets.js"></script>
+        <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
+        <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
+        <script src="institution_files/readthedown-0.1/readthedown.js"></script>
+        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
         <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
         <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
         <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
@@ -35,8 +33,8 @@
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
-        <link href="institution_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-        <script src="institution_files/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+        <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
+        <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -133,64 +131,12 @@
 <body class="preload">
 
    	
-               <!-- downcute start -->   
-   <div id="docute" class="Root theme-default">
-     <div class="Page layout-narrow">
-      <div class="Wrap">
-        <div class="Sidebar">
-          <div class="SidebarItems" id="toc">
-            <ul>
-            <li><a href="#overview-of-institution"
-            id="toc-overview-of-institution">Overview of
-            institution</a></li>
-            <li><a href="#overview-of-location"
-            id="toc-overview-of-location">Overview of location</a>
-            <ul>
-            <li><a href="#map" id="toc-map">Map</a></li>
-            </ul></li>
-            <li><a href="#enrollment"
-            id="toc-enrollment">Enrollment</a></li>
-            <li><a href="#student-financing"
-            id="toc-student-financing">Student financing</a></li>
-            <li><a href="#teaching" id="toc-teaching">Teaching</a></li>
-            <li><a href="#institution-finances"
-            id="toc-institution-finances">Institution finances</a></li>
-            <li><a href="#graduation-rates"
-            id="toc-graduation-rates">Graduation rates</a></li>
-            <li><a href="#freshmen-demographics"
-            id="toc-freshmen-demographics">Freshmen
-            demographics</a></li>
-            <li><a href="#tenure-track-faculty"
-            id="toc-tenure-track-faculty">Tenure track faculty</a></li>
-            <li><a href="#non-tenure-track-faculty"
-            id="toc-non-tenure-track-faculty">Non-tenure track
-            faculty</a></li>
-            <li><a href="#library-facilities"
-            id="toc-library-facilities">Library facilities</a></li>
-            <li><a href="#sat-scores" id="toc-sat-scores">SAT
-            scores</a></li>
-            <li><a href="#act-scores" id="toc-act-scores">ACT
-            scores</a></li>
-            <li><a href="#degrees-by-major"
-            id="toc-degrees-by-major">Degrees by major</a>
-            <ul>
-            <li><a href="#bachelors"
-            id="toc-bachelors">Bachelors</a></li>
-            <li><a href="#masters" id="toc-masters">Masters</a></li>
-            <li><a href="#doctorate"
-            id="toc-doctorate">Doctorate</a></li>
-            <li><a href="#certificate"
-            id="toc-certificate">Certificate</a></li>
-            <li><a href="#associates"
-            id="toc-associates">Associates</a></li>
-            </ul></li>
-            </ul>
-          </div>
-          <div data-position="sidebar:post-end" class="InjectedComponents"><div class="dark-theme-toggler"><div class="toggle "><div class="toggle-track"><div class="toggle-track-check"><img  src="data:image/png;base64,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" role="presentation" style="pointer-events: none;" width="16" height="16"></div> <div class="toggle-track-x"><img src="data:image/png;base64,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" role="presentation" style="pointer-events: none;" width="16" height="16"></div></div> <div class="toggle-thumb"></div></div> <input type="checkbox" aria-label="Switch between Dark and Default theme" class="toggler-screen-reader-only"></div></div>
-        </div>
-        <div class="Main">
-          <div class="Content" id="content"> 
-   
+         <!-- readthedown start -->   
+   <div id="content" data-toggle="wy-nav-shift">
+     <nav id="nav-top" role="navigation" aria-label="top navigation">
+       <a role="button" href="#" data-toggle="wy-nav-top"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+     </nav>
+         
    
       
       <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -224,14 +170,61 @@
         
       <h1 class="title">Park University</h1>
       
-      <p class="authors">
-              
+         <!-- readthedown authors -->
+   <div id="sidebar">
+    <h2><a href="#content">Park University</a></h2>
+    <div id="toc">
+      <ul>
+      <li><a href="#overview-of-institution"
+      id="toc-overview-of-institution">Overview of institution</a></li>
+      <li><a href="#overview-of-location"
+      id="toc-overview-of-location">Overview of location</a>
+      <ul>
+      <li><a href="#map" id="toc-map">Map</a></li>
+      </ul></li>
+      <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
+      <li><a href="#student-financing"
+      id="toc-student-financing">Student financing</a></li>
+      <li><a href="#teaching" id="toc-teaching">Teaching</a></li>
+      <li><a href="#student-details" id="toc-student-details">Student
+      details</a></li>
+      <li><a href="#institution-finances"
+      id="toc-institution-finances">Institution finances</a></li>
+      <li><a href="#graduation-rates"
+      id="toc-graduation-rates">Graduation rates</a></li>
+      <li><a href="#freshmen-demographics"
+      id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#tenure-track-faculty"
+      id="toc-tenure-track-faculty">Tenure track faculty</a></li>
+      <li><a href="#non-tenure-track-faculty"
+      id="toc-non-tenure-track-faculty">Non-tenure track
+      faculty</a></li>
+      <li><a href="#library-facilities"
+      id="toc-library-facilities">Library facilities</a></li>
+      <li><a href="#sat-scores" id="toc-sat-scores">SAT scores</a></li>
+      <li><a href="#act-scores" id="toc-act-scores">ACT scores</a></li>
+      <li><a href="#degrees-by-major" id="toc-degrees-by-major">Degrees
+      by major</a>
+      <ul>
+      <li><a href="#bachelors" id="toc-bachelors">Bachelors</a></li>
+      <li><a href="#masters" id="toc-masters">Masters</a></li>
+      <li><a href="#doctorate" id="toc-doctorate">Doctorate</a></li>
+      <li><a href="#certificate"
+      id="toc-certificate">Certificate</a></li>
+      <li><a href="#associates" id="toc-associates">Associates</a></li>
+      </ul></li>
+      </ul>
+    </div>
+    <div id="postamble" data-toggle="wy-nav-shift" class="status">
+                </div>
+   </div>
+     
 
    
       
    
 <!-- Don't indent these lines or it will mess pre blocks indentation --> 
-<div class="page-content has-page-title">
+<div id="main">
 <style type="text/css">
 img {
   max-width: 100%;
@@ -244,7 +237,7 @@ institution.</p>
 href="https://en.wikipedia.org/wiki/%20Park%20University">Wikipedia</a></em>:
 Park University is a private university in Parkville, Missouri. It was
 founded in 1875. In the fall of 2017, Park had an enrollment of 11,457
-students..</p>
+students.</p>
 <div id="overview-of-institution" class="section level1">
 <h1>Overview of institution</h1>
 <ul>
@@ -268,10 +261,10 @@ Bachelors</strong>: 26.6% (this is what is usually reported as
 Bachelors</strong>: 10.1%</p></li>
 <li><p><strong>Percent of students seeking a Bachelors who transfer out
 of this institution</strong>: 35.3%</p></li>
-<li><p><strong>Student to tenure-stream faculty ratio</strong>: 46.45679
+<li><p><strong>Student to tenure-stream faculty ratio</strong>: 46.5
 (undergrads to tenure-stream faculty)</p></li>
-<li><p><strong>Student to faculty ratio</strong>: 33.598214 (undergrads
-to all faculty)</p></li>
+<li><p><strong>Student to faculty ratio</strong>: 33.6 (undergrads to
+all faculty)</p></li>
 <li><p><strong>Degrees offered</strong>: Certificate of less than 1
 year, Certificate of at least 12 weeks but less than 1 year, Certificate
 of at least 1 year but less than 2 years, Associate’s degree, Bachelor’s
@@ -321,8 +314,8 @@ href="https:/weatherspark.com/y/9856/Average-Weather-in-Parkville-Missouri-Unite
 </ul>
 <div id="map" class="section level2">
 <h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9983244a7742dec1f558" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-9983244a7742dec1f558">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[39.189256,-94.679041,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[39.189256,-94.679041],16,[]],"limits":{"lat":[39.189256,39.189256],"lng":[-94.679041,-94.679041]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1f310bc43b5531cdd481" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-1f310bc43b5531cdd481">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[39.189256,-94.679041,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[39.189256,-94.679041],16,[]],"limits":{"lat":[39.189256,39.189256],"lng":[-94.679041,-94.679041]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="enrollment" class="section level1">
@@ -510,6 +503,12 @@ from 2018 to 2021’ >
 </div>
 <div id="student-financing" class="section level1">
 <h1>Student financing</h1>
+<p>At many universities, almost no students pay the listed tuition and
+fees (“sticker price”): instead, their financial aid package lowers this
+dramatically, but how much students pay can vary substantially based on
+family income and other factors. The tuition below is the average across
+many students receiving aid: your family may be asked to pay less or
+more than this.</p>
 <table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -654,7 +653,7 @@ from 2013 to 2020’ >
 ✪<br />Better (lower) than 0%
 </td>
 <td style="text-align:center;">
-✪<br />Better (lower) than 3%
+✪<br />Better (lower) than 6%
 </td>
 </tr>
 <tr>
@@ -717,6 +716,92 @@ Tenure track instructors
 <td style="text-align:center;">
 <img src=images/ParkUniversity_19.png alt=‘Line plot from 84 to 81
 from 2012 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="student-details" class="section level1">
+<h1>Student details</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Park University
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+<th style="text-align:center;">
+Trend
+</th>
+<th style="text-align:center;">
+Heart of America Athletic Conference
+</th>
+<th style="text-align:center;">
+Master’s Colleges &amp; Universities: Larger Programs
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Undergrads per dorm bed
+</td>
+<td style="text-align:center;">
+8.4 (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/ParkUniversity_13.png alt=‘Line plot from 2.9 to 8.4
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+↑<br />0.7 per year
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 0%
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 6%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dorm capacity
+</td>
+<td style="text-align:center;">
+396 (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/ParkUniversity_14.png alt=‘Line plot from 484 to 396
+from 2010 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Percent of undergrads with registered disabilities (≤3 is rounded up to
+3)
+</td>
+<td style="text-align:center;">
+3.0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/ParkUniversity_104.png alt=‘Line plot from 3.0 to 3.0
+from 2010 to 2021’ >
+</td>
+<td style="text-align:center;">
 </td>
 <td style="text-align:center;">
 </td>
@@ -1543,12 +1628,12 @@ from 2010 to 2021’ >
 <div id="tenure-track-faculty" class="section level1">
 <h1>Tenure track faculty</h1>
 <p>Tenure track faculty are those who are eligible for tenure. This
-includes both tenure stream and non-tenure stream faculty. Once faculty
-get tenure, they are (generally) protected from being fired for
-intellectual reasons, helping to ensure their freedom in teaching and
-research. They can still lose their positions for misconduct, financial
-problems, or other reasons. Note that this chart uses US federal
-demographic data: it only has two genders and a specified set of
+includes both pre-tenure and tenured faculty. Once faculty get tenure,
+they are (generally) protected from being fired for intellectual
+reasons, helping to ensure their freedom in teaching and research. They
+can still lose their positions for misconduct, financial problems, not
+fulfilling their duties, or other reasons. Note that this chart uses US
+federal demographic data: it only has two genders and a specified set of
 ethnicities and races.</p>
 <table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -1997,7 +2082,7 @@ from 2015 to 2020’ >
 <td style="text-align:center;">
 </td>
 <td style="text-align:center;">
-✪✪✪✪✪<br />Better (higher) than 83%
+✪✪✪✪✪<br />Better (higher) than 88%
 </td>
 <td style="text-align:center;">
 ✪✪✪✪<br />Better (higher) than 71%
@@ -2016,47 +2101,41 @@ from 2015 to 2020’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-225ea54817acdf2748e8" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-225ea54817acdf2748e8">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_SocialPsychology.html\">Social Psychology</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Bachelors_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_General.html\">Multi-/Interdisciplinary Studies, General</a>","<a href=\"majors_Bachelors_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Bachelors_Logistics_Materials_andSupplyChainManagement.html\">Logistics, Materials, and Supply Chain Management</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Geography.html\">Geography</a>","<a href=\"majors_Bachelors_ManagementInformationSystems_General.html\">Management Information Systems, General</a>","<a href=\"majors_Bachelors_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_InformationTechnology.html\">Information Technology</a>","<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_FinanceandFinancialManagementServices_Other.html\">Finance and Financial Management Services, Other</a>","<a href=\"majors_Bachelors_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Bachelors_GraphicDesign.html\">Graphic Design</a>","<a href=\"majors_Bachelors_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Bachelors_AccountingandBusiness_Management.html\">Accounting and Business/Management</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Sports_Kinesiology_andPhysicalEducation_Fitness_General.html\">Sports, Kinesiology, and Physical Education/Fitness, General</a>","<a href=\"majors_Bachelors_SocialWork.html\">Social Work</a>","<a href=\"majors_Bachelors_ConstructionManagement_General.html\">Construction Management, General</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_InteriorDesign.html\">Interior Design</a>","<a href=\"majors_Bachelors_OrganizationalCommunication_General.html\">Organizational Communication, General</a>","<a href=\"majors_Bachelors_JuniorHigh_Intermediate_MiddleSchoolEducationandTeaching.html\">Junior High/Intermediate/Middle School Education and Teaching</a>","<a href=\"majors_Bachelors_SecondaryEducationandTeaching.html\">Secondary Education and Teaching</a>","<a href=\"majors_Bachelors_TeacherEducation_MultipleLevels.html\">Teacher Education, Multiple Levels</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_DigitalCommunicationandMedia_Multimedia.html\">Digital Communication and Media/Multimedia</a>","<a href=\"majors_Bachelors_MilitaryHistory.html\">Military History</a>","<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_MusicPerformance_General.html\">Music Performance, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_Engineering_Other.html\">Engineering, Other</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_FinancialPlanningandServices.html\">Financial Planning and Services</a>"],[499,223,152,144,96,55,50,49,43,35,34,32,30,22,20,16,14,13,13,13,12,11,11,11,11,10,9,6,6,6,6,6,6,5,4,3,3,3,3,2,2,1,1,1,1],[29.474,13.172,8.978,8.506,5.67,3.249,2.953,2.894,2.54,2.067,2.008,1.89,1.772,1.299,1.181,0.945,0.827,0.768,0.768,0.768,0.709,0.65,0.65,0.65,0.65,0.591,0.532,0.354,0.354,0.354,0.354,0.354,0.354,0.295,0.236,0.177,0.177,0.177,0.177,0.118,0.118,0.059,0.059,0.059,0.059],[0.349,30.013,0.603,1.027,1.38,0.735,0.355,0.748,0.039,1.117,0.419,1.077,0.063,0.172,0.013,0.02,10.072,0.095,0.253,0.032,1.796,0.038,0.109,0.051,0.398,0.033,0.304,0.414,0.275,0.196,0.326,0.023,0.065,0.083,4.124,0.01,0.054,0.008,0.077,0.015,0.009,0.12,0.006,0.005,0.147],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-134b44cea4e3dcb6aa63" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-134b44cea4e3dcb6aa63">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_SocialPsychology.html\">Social Psychology</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Bachelors_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_General.html\">Multi-/Interdisciplinary Studies, General</a>","<a href=\"majors_Bachelors_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Bachelors_Logistics_Materials_andSupplyChainManagement.html\">Logistics, Materials, and Supply Chain Management</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Geography.html\">Geography</a>","<a href=\"majors_Bachelors_ManagementInformationSystems_General.html\">Management Information Systems, General</a>","<a href=\"majors_Bachelors_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_InformationTechnology.html\">Information Technology</a>","<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_FinanceandFinancialManagementServices_Other.html\">Finance and Financial Management Services, Other</a>","<a href=\"majors_Bachelors_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Bachelors_GraphicDesign.html\">Graphic Design</a>","<a href=\"majors_Bachelors_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Bachelors_AccountingandBusiness_Management.html\">Accounting and Business/Management</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Sports_Kinesiology_andPhysicalEducation_Fitness_General.html\">Sports, Kinesiology, and Physical Education/Fitness, General</a>","<a href=\"majors_Bachelors_SocialWork.html\">Social Work</a>","<a href=\"majors_Bachelors_ConstructionManagement_General.html\">Construction Management, General</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_InteriorDesign.html\">Interior Design</a>","<a href=\"majors_Bachelors_OrganizationalCommunication_General.html\">Organizational Communication, General</a>","<a href=\"majors_Bachelors_JuniorHigh_Intermediate_MiddleSchoolEducationandTeaching.html\">Junior High/Intermediate/Middle School Education and Teaching</a>","<a href=\"majors_Bachelors_SecondaryEducationandTeaching.html\">Secondary Education and Teaching</a>","<a href=\"majors_Bachelors_TeacherEducation_MultipleLevels.html\">Teacher Education, Multiple Levels</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_DigitalCommunicationandMedia_Multimedia.html\">Digital Communication and Media/Multimedia</a>","<a href=\"majors_Bachelors_MilitaryHistory.html\">Military History</a>","<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_MusicPerformance_General.html\">Music Performance, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_Engineering_Other.html\">Engineering, Other</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_FinancialPlanningandServices.html\">Financial Planning and Services</a>"],[499,223,152,144,96,55,50,49,43,35,34,32,30,22,20,16,14,13,13,13,12,11,11,11,11,10,9,6,6,6,6,6,6,5,4,3,3,3,3,2,2,1,1,1,1],[29.474,13.172,8.978,8.506,5.67,3.249,2.953,2.894,2.54,2.067,2.008,1.89,1.772,1.299,1.181,0.945,0.827,0.768,0.768,0.768,0.709,0.65,0.65,0.65,0.65,0.591,0.532,0.354,0.354,0.354,0.354,0.354,0.354,0.295,0.236,0.177,0.177,0.177,0.177,0.118,0.118,0.059,0.059,0.059,0.059],[0.349,30.013,0.603,1.027,1.38,0.735,0.355,0.748,0.039,1.117,0.419,1.077,0.063,0.172,0.013,0.02,10.072,0.095,0.253,0.032,1.796,0.038,0.109,0.051,0.398,0.033,0.304,0.414,0.275,0.196,0.326,0.023,0.065,0.083,4.124,0.01,0.054,0.008,0.077,0.015,0.009,0.12,0.006,0.005,0.147],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5295fb8af3c03e55daf8" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-5295fb8af3c03e55daf8">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_HealthInformation_MedicalRecordsAdministration_Administrator.html\">Health Information/Medical Records Administration/Administrator</a>","<a href=\"majors_Masters_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Masters_InformationTechnology.html\">Information Technology</a>","<a href=\"majors_Masters_SocialWork.html\">Social Work</a>","<a href=\"majors_Masters_OrganizationalCommunication_General.html\">Organizational Communication, General</a>","<a href=\"majors_Masters_ReadingTeacherEducation.html\">Reading Teacher Education</a>","<a href=\"majors_Masters_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Masters_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Masters_AdultandContinuingEducationandTeaching.html\">Adult and Continuing Education and Teaching</a>","<a href=\"majors_Masters_UrbanEducationandLeadership.html\">Urban Education and Leadership</a>","<a href=\"majors_Masters_MusicPerformance_General.html\">Music Performance, General</a>"],[297,91,40,36,28,26,25,20,15,14,2,1],[49.916,15.294,6.723,6.05,4.706,4.37,4.202,3.361,2.521,2.353,0.336,0.168],[0.282,15.826,0.326,0.608,0.087,7.365,0.453,0.294,0.075,1.75,0.38,0.048],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e662c889106cbe0112df" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e662c889106cbe0112df">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_HealthInformation_MedicalRecordsAdministration_Administrator.html\">Health Information/Medical Records Administration/Administrator</a>","<a href=\"majors_Masters_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Masters_InformationTechnology.html\">Information Technology</a>","<a href=\"majors_Masters_SocialWork.html\">Social Work</a>","<a href=\"majors_Masters_OrganizationalCommunication_General.html\">Organizational Communication, General</a>","<a href=\"majors_Masters_ReadingTeacherEducation.html\">Reading Teacher Education</a>","<a href=\"majors_Masters_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Masters_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Masters_AdultandContinuingEducationandTeaching.html\">Adult and Continuing Education and Teaching</a>","<a href=\"majors_Masters_UrbanEducationandLeadership.html\">Urban Education and Leadership</a>","<a href=\"majors_Masters_MusicPerformance_General.html\">Music Performance, General</a>"],[297,91,40,36,28,26,25,20,15,14,2,1],[49.916,15.294,6.723,6.05,4.706,4.37,4.202,3.361,2.521,2.353,0.336,0.168],[0.282,15.826,0.326,0.608,0.087,7.365,0.453,0.294,0.075,1.75,0.38,0.048],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7c5e2c644672788f1085" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-7c5e2c644672788f1085">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5813977d76cddb9ed15c" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5813977d76cddb9ed15c">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6e9dc78afcad8cf0a5bf" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6e9dc78afcad8cf0a5bf">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_TerrorismandCounterterrorismOperations.html\">Terrorism and Counterterrorism Operations</a>","<a href=\"majors_Certificate_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>","<a href=\"majors_Certificate_HumanResourcesDevelopment.html\">Human Resources Development</a>","<a href=\"majors_Certificate_ProjectManagement.html\">Project Management</a>","<a href=\"majors_Certificate_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Certificate_AppliedPsychology.html\">Applied Psychology</a>","<a href=\"majors_Certificate_Intercultural_MulticulturalandDiversityStudies.html\">Intercultural/Multicultural and Diversity Studies</a>","<a href=\"majors_Certificate_GeographicInformationScienceandCartography.html\">Geographic Information Science and Cartography</a>","<a href=\"majors_Certificate_Crisis_Emergency_DisasterManagement.html\">Crisis/Emergency/Disaster Management</a>","<a href=\"majors_Certificate_CommunityOrganizationandAdvocacy.html\">Community Organization and Advocacy</a>","<a href=\"majors_Certificate_BusinessAnalytics.html\">Business Analytics</a>","<a href=\"majors_Certificate_ProjectManagement.html\">Project Management</a>","<a href=\"majors_Certificate_FinanceandFinancialManagementServices_Other.html\">Finance and Financial Management Services, Other</a>","<a href=\"majors_Certificate_ComputerSystemsNetworkingandTelecommunications.html\">Computer Systems Networking and Telecommunications</a>","<a href=\"majors_Certificate_MusicPerformance_General.html\">Music Performance, General</a>","<a href=\"majors_Certificate_Entrepreneurship_EntrepreneurialStudies.html\">Entrepreneurship/Entrepreneurial Studies</a>","<a href=\"majors_Certificate_IndustrialandOrganizationalPsychology.html\">Industrial and Organizational Psychology</a>","<a href=\"majors_Certificate_HomelandSecurity.html\">Homeland Security</a>","<a href=\"majors_Certificate_RemoteAircraftPilot.html\">Remote Aircraft Pilot</a>","<a href=\"majors_Certificate_HealthServicesAdministration.html\">Health Services Administration</a>","<a href=\"majors_Certificate_AccountingandBusiness_Management.html\">Accounting and Business/Management</a>","<a href=\"majors_Certificate_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Certificate_MilitaryHistory.html\">Military History</a>","<a href=\"majors_Certificate_InternationalandInterculturalCommunication.html\">International and Intercultural Communication</a>","<a href=\"majors_Certificate_InternationalPolicyAnalysis.html\">International Policy Analysis</a>","<a href=\"majors_Certificate_Music_General.html\">Music, General</a>","<a href=\"majors_Certificate_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Certificate_OperationsManagementandSupervision.html\">Operations Management and Supervision</a>","<a href=\"majors_Certificate_BusinessAdministration_ManagementandOperations_Other.html\">Business Administration, Management and Operations, Other</a>"],[37,23,23,15,11,8,7,7,5,5,4,4,4,3,3,3,2,2,2,2,2,2,2,1,1,1,1,1,1],[20.33,12.637,12.637,8.242,6.044,4.396,3.846,3.846,2.747,2.747,2.198,2.198,2.198,1.648,1.648,1.648,1.099,1.099,1.099,1.099,1.099,1.099,1.099,0.549,0.549,0.549,0.549,0.549,0.549],[30.328,0.47,5.386,0.848,0.136,9.524,3.241,0.407,1.031,2.439,3.175,0.226,4.494,0.032,0.711,0.073,1.613,0.313,22.222,1.212,0.56,0.092,11.765,1.923,4.348,0.61,0.071,0.036,0.09],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-df90aaa314742c991b71" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-df90aaa314742c991b71">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_TerrorismandCounterterrorismOperations.html\">Terrorism and Counterterrorism Operations</a>","<a href=\"majors_Certificate_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>","<a href=\"majors_Certificate_HumanResourcesDevelopment.html\">Human Resources Development</a>","<a href=\"majors_Certificate_ProjectManagement.html\">Project Management</a>","<a href=\"majors_Certificate_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Certificate_AppliedPsychology.html\">Applied Psychology</a>","<a href=\"majors_Certificate_Intercultural_MulticulturalandDiversityStudies.html\">Intercultural/Multicultural and Diversity Studies</a>","<a href=\"majors_Certificate_GeographicInformationScienceandCartography.html\">Geographic Information Science and Cartography</a>","<a href=\"majors_Certificate_Crisis_Emergency_DisasterManagement.html\">Crisis/Emergency/Disaster Management</a>","<a href=\"majors_Certificate_CommunityOrganizationandAdvocacy.html\">Community Organization and Advocacy</a>","<a href=\"majors_Certificate_BusinessAnalytics.html\">Business Analytics</a>","<a href=\"majors_Certificate_ProjectManagement.html\">Project Management</a>","<a href=\"majors_Certificate_FinanceandFinancialManagementServices_Other.html\">Finance and Financial Management Services, Other</a>","<a href=\"majors_Certificate_ComputerSystemsNetworkingandTelecommunications.html\">Computer Systems Networking and Telecommunications</a>","<a href=\"majors_Certificate_MusicPerformance_General.html\">Music Performance, General</a>","<a href=\"majors_Certificate_Entrepreneurship_EntrepreneurialStudies.html\">Entrepreneurship/Entrepreneurial Studies</a>","<a href=\"majors_Certificate_IndustrialandOrganizationalPsychology.html\">Industrial and Organizational Psychology</a>","<a href=\"majors_Certificate_HomelandSecurity.html\">Homeland Security</a>","<a href=\"majors_Certificate_RemoteAircraftPilot.html\">Remote Aircraft Pilot</a>","<a href=\"majors_Certificate_HealthServicesAdministration.html\">Health Services Administration</a>","<a href=\"majors_Certificate_AccountingandBusiness_Management.html\">Accounting and Business/Management</a>","<a href=\"majors_Certificate_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Certificate_MilitaryHistory.html\">Military History</a>","<a href=\"majors_Certificate_InternationalandInterculturalCommunication.html\">International and Intercultural Communication</a>","<a href=\"majors_Certificate_InternationalPolicyAnalysis.html\">International Policy Analysis</a>","<a href=\"majors_Certificate_Music_General.html\">Music, General</a>","<a href=\"majors_Certificate_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Certificate_OperationsManagementandSupervision.html\">Operations Management and Supervision</a>","<a href=\"majors_Certificate_BusinessAdministration_ManagementandOperations_Other.html\">Business Administration, Management and Operations, Other</a>"],[37,23,23,15,11,8,7,7,5,5,4,4,4,3,3,3,2,2,2,2,2,2,2,1,1,1,1,1,1],[20.33,12.637,12.637,8.242,6.044,4.396,3.846,3.846,2.747,2.747,2.198,2.198,2.198,1.648,1.648,1.648,1.099,1.099,1.099,1.099,1.099,1.099,1.099,0.549,0.549,0.549,0.549,0.549,0.549],[30.328,0.47,5.386,0.848,0.136,9.524,3.241,0.407,1.031,2.439,3.175,0.226,4.494,0.032,0.711,0.073,1.613,0.313,22.222,1.212,0.56,0.092,11.765,1.923,4.348,0.61,0.071,0.036,0.09],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0b66dd8f03e325c20a67" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-0b66dd8f03e325c20a67">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Associates_SocialPsychology.html\">Social Psychology</a>","<a href=\"majors_Associates_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Associates_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Associates_Logistics_Materials_andSupplyChainManagement.html\">Logistics, Materials, and Supply Chain Management</a>","<a href=\"majors_Associates_Accounting.html\">Accounting</a>","<a href=\"majors_Associates_ConstructionManagement_General.html\">Construction Management, General</a>"],[86,34,34,25,12,12,4],[41.546,16.425,16.425,12.077,5.797,5.797,1.932],[0.144,100,0.279,0.45,1.451,0.291,0.952],["Associates","Associates","Associates","Associates","Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-325211567f39bb44a2f8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-325211567f39bb44a2f8">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Associates_SocialPsychology.html\">Social Psychology</a>","<a href=\"majors_Associates_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Associates_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Associates_Logistics_Materials_andSupplyChainManagement.html\">Logistics, Materials, and Supply Chain Management</a>","<a href=\"majors_Associates_Accounting.html\">Accounting</a>","<a href=\"majors_Associates_ConstructionManagement_General.html\">Construction Management, General</a>"],[86,34,34,25,12,12,4],[41.546,16.425,16.425,12.077,5.797,5.797,1.932],[0.144,100,0.279,0.45,1.451,0.291,0.952],["Associates","Associates","Associates","Associates","Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
 
    
    
-              </div>
-  </div>
-  </div>
-  </div>
-   
+            
       
 
   <script>
     $(document).ready(function () {
 
-		// add bootstrap table styles to pandoc tables
-	$('tr.header').parent('thead').parent('table').addClass('table table-condensed');
-		
+			
  		
 	    });
   </script>

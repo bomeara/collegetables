@@ -707,7 +707,8 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 	
 	comparison_table$`Full time undergrad enrollment divided by dorm capacity` <- as.numeric(comparison_table$`Undergrad full time`)/as.numeric(comparison_table$`Total dormitory capacity`)
 	
-	comparison_table$`Total instructors` <- as.numeric(comparison_table$`NTT-stream Grand total`)+as.numeric(comparison_table$`Tenure-stream Grand total`)
+	comparison_table$`Total instructors` <- ifelse(is.na(as.numeric(comparison_table$`NTT-stream Grand total`)),0, as.numeric(comparison_table$`NTT-stream Grand total`) ) + ifelse(is.na(as.numeric(comparison_table$`Tenure-stream Grand total`)),0, as.numeric(comparison_table$`Tenure-stream Grand total`) ) # So if it has no tenure stream faculty and 500 NTT, we don't add NA + 500 and get NA
+	comparison_table$`Total instructors`[comparison_table$`Total instructors`==0] <- NA # If no data, make it NA
 	
 	comparison_table$`Full time undergrad enrollment divided by total instructors` <- as.numeric(comparison_table$`Undergrad full time`)/as.numeric(comparison_table$`Total instructors`)
 	
@@ -720,6 +721,14 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 	comparison_table$`Disability percentage` <- NA
 	comparison_table$`Disability percentage`[comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`=="3 percent or less" & !is.na(comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`)] <- "≤3"
 	comparison_table$`Disability percentage`[comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`=="More than 3 percent" & !is.na(comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`)] <- comparison_table$`Percent of undergraduates who are formally registered as students with disabilities when percentage is more than 3 percent`[comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`=="More than 3 percent" & !is.na(comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`)]
+	
+	comparison_table$`Disability percentage numeric` <- NA
+		
+	comparison_table$`Disability percentage numeric`[comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`=="3 percent or less" & !is.na(comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`)] <- 3
+
+	comparison_table$`Disability percentage numeric`[comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`=="More than 3 percent" & !is.na(comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`)] <- comparison_table$`Percent of undergraduates who are formally registered as students with disabilities when percentage is more than 3 percent`[comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`=="More than 3 percent" & !is.na(comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`)]
+
+	
 	
 	dbWriteTable(db,  "comparison_table", comparison_table, overwrite=TRUE)
 
@@ -1373,7 +1382,7 @@ RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxco
 	institution_ids <- setdiff(institution_ids, dead_institutions$`UNITID Unique identification number of the institution`)
 	comparison_table <- subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution` %in% institution_ids) # remove dead institutions so we don't compare with them
 	
-	# prioritize the "selective" schools	
+	# prioritize the "selective" schools to render first
 	comparison_table$pseudoranking <- (100-as.numeric(comparison_table$`Admission percentage total`))*sqrt(as.numeric(comparison_table$`Total instructors`))
 	rejection_ranking <- comparison_table[order(comparison_table$pseudoranking, decreasing=TRUE),] 
 	institution_ids <- unique(rejection_ranking$`UNITID Unique identification number of the institution`)
