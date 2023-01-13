@@ -228,7 +228,7 @@ tagList(tags$button(
 
 reactable(
   all_colleges,
-  filterable = TRUE,
+  filterable = FALSE,
   columns = list(
     Institution = colDef(html = TRUE, show=TRUE, sticky="left", cell = JS('
     function(cellInfo) {
@@ -277,9 +277,7 @@ reactable(
 `Yield percentage total`= colDef(format = colFormat(suffix = ' %'), show = FALSE),
 `Yield percentage women`= colDef(format = colFormat(suffix = ' %'), show = FALSE)
   ),
-  # Or use data list filter as the default for all factor columns
   defaultColDef = colDef(
-	filterInput = dataListFilter("college-list"),
 	show = FALSE
   ),
   selection = "multiple",

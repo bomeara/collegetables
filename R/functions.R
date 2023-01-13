@@ -1525,9 +1525,7 @@ RenderStatePages <- function(degree_granting, students_by_state_by_institution, 
 RenderIndexPageEtAl <- function(pages, index_table, yml) {
 	system("rm docs/index.html")
 	#system("rm docs/degrees_by*")
-	index_table$pseudoranking <- (100-as.numeric(index_table$`Admission percentage total`))+ 1/as.numeric(index_table$`Student to faculty ratio`)
-	index_table$pseudoranking[is.na(index_table$pseudoranking)] <- 0
-	index_table <- index_table[order(index_table$pseudoranking, decreasing=TRUE),]
+
 
 	rmarkdown::render(
 				input="_index.Rmd", 
@@ -2192,8 +2190,13 @@ CreateIndexTable <- function(comparison_table) {
 		}
 	}
 	
-	index_table_summary[is.na(index_table_summary)] <- ""
+	#index_table_summary[is.na(index_table_summary)] <- ""
 	index_table_summary[index_table_summary=="Not applicable"] <- ""
+	
+	index_table_summary$pseudoranking <- (100-as.numeric.na0(index_table_summary$`Admission percentage total`)) + as.numeric.na0(index_table_summary$`Grad rate in six years`) + as.numeric.na0(index_table_summary$`Yield percentage total`) + log1p(as.numeric.na0(index_table_summary$`Undergrad full time`))
+	index_table_summary$pseudoranking[is.na(index_table_summary$pseudoranking)] <- 0
+	index_table_summary <- index_table_summary[order(index_table_summary$pseudoranking, decreasing=TRUE),]
+	
 	return(index_table_summary)
 }
 
