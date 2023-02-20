@@ -9,36 +9,13 @@ params:
   index_table: "nothing"
 ---
 
-This has info on several thousand colleges and universities in the US.
-
-You can search to filter by various columns: only show ones in certain states (two letter abbreviation), certain athletic leagues, by college name, etc. To search for phrases, put them in quotes. **Click on buttons to show different tables of information** (and info in one table will be used to filter the other ones). Go to the [about](about.html) page for more about the sources of the data. **Click on a school name to get a page with much more detail about that school.** To look at info by field, go to the [fields](fields_overview.html) page.
-
-Since much of the data come from the US federal government, this website includes only US-based schools. The rest of the planet has excellent institutions which may be a better placement for some.
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
-source("_packages.R")
-source("R/functions.R")
-
-all_colleges <- params$index_table
-
-if(nrow(all_colleges)>0) {
-
-	#all_colleges$Name <- rownames(all_colleges)
-	all_colleges <- subset(all_colleges, all_colleges$Active=="Yes")
-
-	# for (college_index in sequence(nrow(all_colleges))) {
-	# 	all_colleges$Institution[college_index] <- paste0("<a href='", utils::URLencode(gsub(" ", "", all_colleges$UNITID[college_index])),  ".html'>", all_colleges$Institution[college_index], "</a>")
-	# }
-	
-	#all_colleges <- all_colleges %>% dplyr::select(-UNITID) %>% dplyr::select(-`IPEDS Year`)
-}
-
-```
-
-To filter for individual schools, start typing any part of the school's name in the institution box. After clicking one, you can keep typing and add more to the list. Below the table are more filtering options.
+This has info on several thousand colleges and universities in the US. To filter for individual schools, start typing any part of the school's name in the institution box. After clicking one, you can keep typing and add more to the list. Below the table are more filtering options.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
-
+source("_packages.R")
+source("R/functions.R")
+all_colleges <- index_table
+all_colleges <- subset(all_colleges, all_colleges$Active=="Yes")
 all_colleges$netprice <- as.numeric(all_colleges$`Average net price for students with financial aid`)
 all_colleges$percentfreshmenwomen <- as.numeric(all_colleges$`Freshmen % Female`)
 all_colleges$percentfreshmenwhite <- as.numeric(all_colleges$`Freshmen % White`)
@@ -48,11 +25,17 @@ all_colleges$percentfreshmenamericanindian <- as.numeric(all_colleges$`Freshmen 
 all_colleges$percentfreshmenhispanic <- as.numeric(all_colleges$`Freshmen % Hispanic`)
 all_colleges$percentfreshmenpacificislander <- as.numeric(all_colleges$`Freshmen % Pacific Islander`)
 
-
 all_colleges <- SharedData$new(all_colleges)
 
 crosstalk::filter_select("inst", "Institution", all_colleges, ~Institution)
 ```
+
+You can search to filter by various columns: only show ones in certain states (two letter abbreviation), certain athletic leagues, by college name, etc. To search for phrases, put them in quotes. **Click on buttons to show different tables of information** (and info in one table will be used to filter the other ones). Go to the [about](about.html) page for more about the sources of the data. **Click on a school name to get a page with much more detail about that school.** To look at info by field, go to the [fields](fields_overview.html) page.
+
+Since much of the data come from the US federal government, this website includes only US-based schools. The rest of the planet has excellent institutions which may be a better placement for some.
+
+
+
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
@@ -297,6 +280,12 @@ reactable(
 
 
 crosstalk::filter_select("State", "State", all_colleges, ~State)
+
+```	
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
+
+
 
 crosstalk::filter_select("athleticconference", "Athletic conference", all_colleges, ~`Athletic conference`)
 

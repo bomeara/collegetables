@@ -423,11 +423,11 @@ if(length(notes)>0) {
 * **Degrees offered**: `r most_current_info['Degrees offered']`
 * **Schedule**: `r most_current_info['Calendar system']`
 * **Institution provides on campus housing**: `r most_current_info['Institution provide on campus housing']`
-`r ifelse(is.finite(as.numeric(most_current_info['Full time undergrad enrollment divided by dorm capacity'])), ifelse(as.numeric(most_current_info['Full time undergrad enrollment divided by dorm capacity'])>0, paste0("* **Dorm capacity**: There are enough dorm beds for ", round(100*as.numeric(most_current_info['Full time undergrad enrollment divided by dorm capacity']),1), "% of the full time undergrads"), ""), "")`
+`r ifelse(is.finite(as.numeric(most_current_info['Total dormitory capacity'])), ifelse(as.numeric(most_current_info['Total dormitory capacity'])>0, paste0("* **Dorm capacity**: There are enough dorm beds for ", as.numeric(most_current_info['Total dormitory capacity']), " students"), ""), "")`
 * **Freshmen required to live on campus**: `r most_current_info['Full time first time degree certificate seeking students required to live on campus']`
 * **Meal plan**: `r most_current_info['Institution provides board or meal plan']`
-* **Covid vaccination requirement for students**: `r ifelse(most_current_info['AllStudentsVaccinatedAgainstCovid19']=="Yes", "At some point during the pandemic (this may have changed), this institution required students to be vaccinated against covid", "This institution was never reported as requiring covid vaccination for students")`
-* **Covid vaccination requirement for faculty/staff**: `r ifelse(most_current_info['AllEmployeesVaccinatedAgainstCovid19']=="Yes", "At some point during the pandemic (this may have changed), this institution required faculty and/or staff to be vaccinated against covid", "This institution was never reported as requiring covid vaccination for faculty and/or staff")`
+* **Covid vaccination requirement for students**: `r ifelse(most_current_info['AllStudentsVaccinatedAgainstCovid19']=="Yes", "At some point during the pandemic (this may have changed), this institution required students to be vaccinated against covid", "This institution was never reported as requiring covid vaccination for students")` (based on info from [here](https://www.chronicle.com/blogs/live-coronavirus-updates/heres-a-list-of-colleges-that-will-require-students-to-be-vaccinated-against-covid-19))
+* **Covid vaccination requirement for faculty/staff**: `r ifelse(most_current_info['AllEmployeesVaccinatedAgainstCovid19']=="Yes", "At some point during the pandemic (this may have changed), this institution required faculty and/or staff to be vaccinated against covid", "This institution was never reported as requiring covid vaccination for faculty and/or staff")` (based on info from [here](https://www.chronicle.com/blogs/live-coronavirus-updates/heres-a-list-of-colleges-that-will-require-students-to-be-vaccinated-against-covid-19))
 * **Advanced placement (AP) credits used**: `r most_current_info['Advanced placement AP credits']`
 
 `r ifelse(most_current_info['Percent indicator of undergraduates formally registered as students with disabilities']=="More than 3 percent", paste0("* **Disabilities**: ", most_current_info['Percent of undergraduates who are formally registered as students with disabilities when percentage is more than 3 percent'], " percent of undergrads are registered as having disabilities.\n"), paste0("* **Disabilities**: ", most_current_info['Percent indicator of undergraduates formally registered as students with disabilities'], " of undergrads are registered as having disabilities.\n"))`
@@ -435,14 +435,13 @@ if(length(notes)>0) {
 
 # Overview of location
 
-* **Abortion in this state**: `r most_current_info['Abortion']`
+* **Abortion in this state**: `r most_current_info['Abortion']` (based on https://states.guttmacher.org/policies/)
 * **Gun law stringency**: `r most_current_info['Gun Law Stringency']` (higher grade = [more stringent](https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state))
-* **State rep support for contraception**: `r round(100*as.numeric(most_current_info['Proportion of reps voting in favor of respect for right to contraception act']),1)`% of US reps from this state voted in favor of legal protections for contraception.
-* **State rep support for recognizing same-sex and interracial marriage**: `r round(100*as.numeric(most_current_info['Proportion of reps voting in favor of respect for marriage act']),1)`% of US reps from this state voted in favor of requiring states to recognize same-sex and interracial marriages performed in other states.
+* **State rep support for contraception**: `r round(100*as.numeric(most_current_info['Proportion of reps voting in favor of respect for right to contraception act']),1)`% of US reps from this state [voted in favor](https://www.congress.gov/bill/117th-congress/house-bill/8373) of legal protections for contraception.
+* **State rep support for recognizing same-sex and interracial marriage**: `r round(100*as.numeric(most_current_info['Proportion of reps voting in favor of respect for marriage act']),1)`% of US reps from this state [voted in favor](https://www.congress.gov/bill/117th-congress/house-bill/8404) of requiring states to recognize same-sex and interracial marriages performed in other states
 * **Ecological region**: `r most_current_info['eco_name']`
 * **Biome**: `r most_current_info['biome']`
 * **Climate**: See overview at [WeatherSpark.com](`r GetClosestWeatherspark(most_current_info, weatherspark)`).
-* **Urbanization**: `r most_current_info['Degree of urbanization Urban centric locale']`
 
 ## Map
 
@@ -513,7 +512,7 @@ At many universities, almost no students pay the listed tuition and fees ("stick
 
 # Graduation rates
 
-Graduation rates for bachelor's degrees within 150% of normal time (6 years for a 4-year degree). Note that this uses US federal demographic data: it only has two genders and a specified set of ethnicities and races.
+Graduation rates for bachelor's degrees within 150% of normal time (6 years for a 4-year degree). Note that this uses US federal demographic data: it only has two genders and a specified set of ethnicities and races. For groups with small numbers, the graduation rate may be highly variable year to year (do all three people in this group graduate this year or just two of three, for example).
 
 ```{r, eval=TRUE}
 	try({

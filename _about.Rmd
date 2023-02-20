@@ -7,9 +7,9 @@ output:
       in_header: GA_Script.html
 ---
 
-### About
+## About
 
-This was done over a break in summer 2022 while starting to take my kids on college visits, then updated over winter break 2022-3; as I mention on the home page, while there are lots of "College Ranking" websites, they use some odd factors to rank (such as college administrators ranking each other, standardized testing scores, how many students they reject, and more for [US News and World Report](https://www.usnews.com/education/best-colleges/articles/ranking-criteria-and-weights)) while omitting things like tenure track faculty numbers, library resources, climate, and whether the state safe for LGBTQ+ students. The US federal data have information on lots of schools: I chose to present info on all the schools that are still open rather than filter for the schools just of interest to my family (my kids are not going to seminary for a Masters degree or to a school for funeral service directors any time soon, but this might be of interest to students, staff, or faculty considering those schools, so I am including them). Some schools, especially smaller ones (some have just a few dozen students) do not include all information and so these school pages might be sparse.
+This was done over a break in summer 2022 while starting to take my kids on college visits, then updated over winter break 2022-3 and tweaked to update with new data; as I mention on the home page, while there are lots of "College Ranking" websites, they use some odd factors to rank (such as college administrators ranking each other, standardized testing scores, how many students they reject, and more for [US News and World Report](https://www.usnews.com/education/best-colleges/articles/ranking-criteria-and-weights)) while omitting things like tenure track faculty numbers, library resources, climate, and whether the state safe for LGBTQ+ students. The US federal data have information on lots of schools: I chose to present info on all the schools that are still open rather than filter for the schools just of interest to my family (my kids are not going to seminary for a Masters degree or to a school for funeral service directors any time soon, but this might be of interest to students, staff, or faculty considering those schools, so I am including them). Some schools, especially smaller ones (some have just a few dozen students) do not include all information and so these school pages might be sparse.
 
 **If you have feedback on the site (corrections, good data sources, etc.) please go [here](https://forms.gle/C9D7WXaMDVrTm3Z3A) (and thank you!).**
 
@@ -18,7 +18,7 @@ There are two main types of pages on this site: one page for each institution (o
 * The institutions have their individual data as well as comparisons with "similar" schools, where similar is based on athletic conference (for example, small liberal arts schools in Western Massachusetts), the type of the school (i.e., is it a research intensive doctoral institution). For metrics where one direction is better (lower cost is good; more faculty is good) there is a ranking versus schools in the comparison group. There are also line plots showing trends over time. If a trend is "significant" (i.e., it is not likely to be due to random chance, as assessed by fitting a linear model (and not correcting for multiple comparisons)) then there is a column indicating the slope of the trend.
 * The degrees pages show degrees awarded in different fields in the most recent year available. There are many, many specific majors, so the main groups are listed at [fields_overview.html] and you can then drill down into the subfields. 
 
-### Details of the metrics
+## Details of the metrics
 
 * **Acceptance**: Percentage of undergraduate applicants who are offered admission.
 * **Yield**: Percentage of people who, upon receiving the offer of admission, choose to attend.
@@ -60,7 +60,7 @@ There are two main types of pages on this site: one page for each institution (o
 
 * **Notes**: Individual institution pages may display a note at the top of the page triggered by various conditions. They contain explanatory notes when they appear, but so far include: 1) institutions in states where [California has decided there discriminatory laws](https://oag.ca.gov/ab1887) and so bans state-sponsored travel; 2) institutions whose administrations are currently [censured by the American Association of University Professors](https://www.aaup.org/issues/academic-freedom/whatiscensure); 3) institutions that have over a thousand students for every tenure-track faculty member (usually this means there are zero tenure-track faculty).
  
-### Main sources for information
+## Main sources for information
 
 * [National Center for Education Statistics IPEDS](https://nces.ed.gov/ipeds/use-the-data): Source of much of the data on enrollment, composition of the student body and faculty, income sources, and more. Data come from mostly 2019-2020 (before the worst effects of the pandemic hit). Some data may have changed rapidly (reorganizing athletic conferences has become popular, for example).
 * Walkability comes from [US EPA data](https://www.epa.gov/smartgrowth/smart-location-mapping): I've rescaled it so that 76-100% is most walkable, 52-76% is above average walkable, 29-52% is below average walkable, and 0-29% is least walkable.

@@ -1396,9 +1396,8 @@ RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxco
 		failed <- TRUE
 		try({
 			institution_id <- institution_ids[i]
-			institution_name <- rownames(t(t(sort(table(comparison_table$`Institution entity name`[comparison_table$`UNITID Unique identification number of the institution` == institution_id]), decreasing=TRUE))))[1] # sometimes the name changes a bit; take the most common one			
-			print(institution_name)
-			print(institution_id)
+			institution_name <- rownames(t(t(sort(table(comparison_table$`Institution entity name`[comparison_table$`UNITID Unique identification number of the institution` == institution_id]), decreasing=TRUE))))[1] # sometimes the name changes a bit; take the most common one		
+			print(paste0("Rendering ", institution_name, " (", i, " of ", length(institution_ids), ")"))
 			
 			rmarkdown::render(
 				input="_institution.Rmd", 
@@ -1533,7 +1532,7 @@ RenderIndexPageEtAl <- function(pages, index_table, yml) {
 				params = list(
 					index_table = index_table
 				),
-				quiet=TRUE
+				quiet=FALSE
 	)
 	
 	# rmarkdown::render(
@@ -1556,13 +1555,13 @@ RenderIndexPageEtAl <- function(pages, index_table, yml) {
 	rmarkdown::render(
 		input="_about.Rmd", 
 		output_file="docs/about.html", 
-		quiet=TRUE
+		quiet=FALSE
 	)
 	
 	rmarkdown::render(
 		input="_fields_overview.Rmd", 
 		output_file="docs/fields_overview.html", 
-		quiet=TRUE
+		quiet=FALSE
 	)	
 }
 

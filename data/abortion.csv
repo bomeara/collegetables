@@ -1,25 +1,25 @@
 ﻿State abbreviation,Abortion restrictions
 AL,7: Most restrictive
 AK,3: Protective
-AZ,5: Restrictive
+AZ,6: Very restrictive
 AR,7: Most restrictive
-CA,3: Protective
+CA,2: Very protective
 CO,3: Protective
-CT,4: Some restrictions/protections
+CT,3: Protective
 DE,4: Some restrictions/protections
 FL,5: Restrictive
-GA,5: Restrictive
-HI,4: Some restrictions/protections
-ID,5: Restrictive
+GA,6: Very restrictive
+HI,3: Protective
+ID,7: Most restrictive
 IL,3: Protective
 IN,5: Restrictive
 IA,5: Restrictive
 KS,5: Restrictive
-KY,6: Very restrictive
-LA,5: Restrictive
+KY,7: Most restrictive
+LA,7: Most restrictive
 ME,3: Protective
 MD,3: Protective
-MA,4: Some restrictions/protections
+MA,3: Protective
 MI,4: Some restrictions/protections
 MN,4: Some restrictions/protections
 MS,7: Most restrictive
@@ -28,24 +28,24 @@ MT,4: Some restrictions/protections
 NE,5: Restrictive
 NV,4: Some restrictions/protections
 NH,4: Some restrictions/protections
-NJ,3: Protective
-NM,3: Protective
-NY,3: Protective
-NC,4: Some restrictions/protections
+NJ,2: Very protective
+NM,2: Very protective
+NY,2: Very protective
+NC,5: Restrictive
 ND,5: Restrictive
-OH,6: Very restrictive
+OH,5: Restrictive
 OK,7: Most restrictive
 OR,1: Most protective
 PA,5: Restrictive
 RI,4: Some restrictions/protections
-SC,6: Very restrictive
+SC,5: Restrictive
 SD,7: Most restrictive
-TN,6: Very restrictive
+TN,7: Most restrictive
 TX,7: Most restrictive
 UT,5: Restrictive
-VT,3: Protective
+VT,2: Very protective
 VA,4: Some restrictions/protections
 WA,3: Protective
-WV,5: Restrictive
+WV,7: Most restrictive
 WI,5: Restrictive
 WY,4: Some restrictions/protections
