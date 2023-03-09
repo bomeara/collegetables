@@ -1532,7 +1532,7 @@ RenderIndexPageEtAl <- function(pages, index_table, yml) {
 				params = list(
 					index_table = index_table
 				),
-				quiet=FALSE
+				quiet=TRUE
 	)
 	
 	# rmarkdown::render(
