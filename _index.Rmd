@@ -14,6 +14,11 @@ This has info on several thousand colleges and universities in the US. To filter
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
 source("_packages.R")
 source("R/functions.R")
+index_table$PopupLabel <- paste0("<a href='", index_table$UNITID, ".html'>", index_table$Institution, "</a>")
+index_table$Longitude <- as.numeric(index_table$Longitude)
+index_table$Latitude <- as.numeric(index_table$Latitude)
+index_table$Category[nchar(index_table$Category)<2] <- "Not reported"
+index_table$Category[is.na(index_table$Category)] <- "Not reported"
 all_colleges <- index_table
 all_colleges <- subset(all_colleges, all_colleges$Active=="Yes")
 all_colleges$netprice <- as.numeric(all_colleges$`Average net price for students with financial aid`)
@@ -24,6 +29,10 @@ all_colleges$percentfreshmenasian <- as.numeric(all_colleges$`Freshmen % Asian`)
 all_colleges$percentfreshmenamericanindian <- as.numeric(all_colleges$`Freshmen % American Indian or Alaskan Native`)
 all_colleges$percentfreshmenhispanic <- as.numeric(all_colleges$`Freshmen % Hispanic`)
 all_colleges$percentfreshmenpacificislander <- as.numeric(all_colleges$`Freshmen % Pacific Islander`)
+all_colleges$percentcontraceptivesupport <- as.numeric(all_colleges$`State rep support for contraception`)
+all_colleges$interracialsamesexmarriage <- as.numeric(all_colleges$`State support for interracial and same-sex marriage`)
+all_colleges$gradratesixyear <- as.numeric(all_colleges$`Grad rate in six years`)
+
 
 all_colleges <- SharedData$new(all_colleges)
 
@@ -185,7 +194,7 @@ tagList(tags$button(
 ))
 
 tagList(tags$button(
-	"Student finances",
+	"Student life",
 	onclick = "toggle_student_life()"
 ))
 
@@ -272,24 +281,70 @@ reactable(
 
 ```
 
+# Map
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE}
+leaflet(all_colleges) %>%
+  addTiles() %>%  
+  setView(lng = -110, lat = 48, zoom = 3) %>%
+  addCircleMarkers(data = all_colleges, lng = ~Longitude, lat = ~Latitude, popup = ~PopupLabel, radius=3, fillOpacity=0.5)
+
+  #addMarkers(data = all_colleges, lng = ~Longitude, lat = ~Latitude, popup = ~PopupLabel, clusterOptions = markerClusterOptions())
+```
 
 # More filters
+
+
+## Location
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
 
 
 crosstalk::filter_select("State", "State", all_colleges, ~State)
 
+crosstalk::filter_select("City", "City", all_colleges, ~City)
+
+crosstalk::filter_checkbox("CAban", "California travel ban", all_colleges, ~`California travel ban`)
+
+crosstalk::filter_checkbox("AbortionAvail", "Abortion availability", all_colleges, ~`Abortion availability`)
+
+crosstalk::filter_slider("contraceptionsupport", "State rep support for contraception", all_colleges, "percentcontraceptivesupport")
+
+crosstalk::filter_slider("interracialsamesex", "State rep support for interracial and same-sex marriage", all_colleges, "interracialsamesexmarriage")
+
+crosstalk::filter_select("biome", "Biome", all_colleges, ~`Biome`)
 ```	
 
+## College traits
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
-
-
 
 crosstalk::filter_select("athleticconference", "Athletic conference", all_colleges, ~`Athletic conference`)
 
 crosstalk::filter_slider("price", "Average net price", all_colleges, "netprice", min = 0, step = 1000)
+
+crosstalk::filter_slider("gradratesixyearslider", "Graduation rate (six years)", all_colleges, "gradratesixyear")
+
+crosstalk::filter_checkbox("HCBU", "HBCU", all_colleges, ~`HBCU`)
+
+crosstalk::filter_checkbox("Tribal", "Tribal College", all_colleges, ~`Tribal College`)
+
+crosstalk::filter_checkbox("Category", "Institution category", all_colleges, ~`Category`)
+
+crosstalk::filter_checkbox("SizeSetting", "Size and setting", all_colleges, ~`Size and setting`)
+
+crosstalk::filter_checkbox("EnrollmentProfile", "Enrollment profile", all_colleges, ~`Enrollment profile`)
+
+crosstalk::filter_checkbox("type", "Institution type", all_colleges, ~`Overall type`)
+
+crosstalk::filter_checkbox("enrollment", "Full-time undergrad enrollment trend", all_colleges, ~`Full-time undergrad enrollment trend`)
+
+```	
+
+## Freshmen demographics
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, eval=TRUE, asis=TRUE}
+
 
 crosstalk::filter_slider("percentwomen", "Percent of women in freshman class", all_colleges, "percentfreshmenwomen")
 
@@ -302,17 +357,6 @@ crosstalk::filter_slider("percentasian", "Percent of Asian students in freshman 
 crosstalk::filter_slider("percentamericanindian", "Percent of American Indian students in freshman class", all_colleges, "percentfreshmenamericanindian")
 
 crosstalk::filter_slider("percentpacificislander", "Percent of Pacific Islander students in freshman class", all_colleges, "percentfreshmenpacificislander")
-
-crosstalk::filter_checkbox("CAban", "California travel ban", all_colleges, ~`California travel ban`)
-
-crosstalk::filter_checkbox("HCBU", "HBCU", all_colleges, ~`HBCU`)
-
-crosstalk::filter_checkbox("Category", "Institution category", all_colleges, ~`Category`)
-
-crosstalk::filter_checkbox("type", "Institution type", all_colleges, ~`Overall type`)
-
-crosstalk::filter_checkbox("enrollment", "Full-time undergrad enrollment trend", all_colleges, ~`Full-time undergrad enrollment trend`)
-
 
 ```
 
