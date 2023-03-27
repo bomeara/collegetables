@@ -528,6 +528,25 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 		student_aid_core[,col_index] <- as.numeric(student_aid_core[,col_index])
 	}
 	
+	# Get net price info
+	
+	net_price_raw <- read.csv("data/IPEDS_SFAxxyy_normal_2021.csv") %>% dplyr::select(contains(c(
+		"UNITID",
+		"NPIS422",
+		"NPT421"
+	))) %>% as.data.frame()
+	
+	# SINCE THIS GETS MISSED WITH THE AGGREGATION, LOAD IT IN MANUALLY
+	
+	net_price_raw[is.na(net_price_raw[,2]),2] <- net_price_raw[is.na(net_price_raw[,2]),3] #usually only one is filled in
+	net_price_raw <- net_price_raw[,c(1,2)]
+	colnames(net_price_raw) <- c("UNITID.Unique.identification.number.of.the.institution", "Average.net.price.for.30K.to.48K.family.income")
+	
+	net_price_raw$IPEDS.Year <- "2021"
+	
+	comparison_table <- dplyr::left_join(comparison_table, net_price_raw, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
+
+	
 	comparison_table <- dplyr::left_join(comparison_table, student_aid_core, by=c("UNITID.Unique.identification.number.of.the.institution", "IPEDS.Year"))
 	
 	student_aid_messy_years <- tbl(db, "Student_aid") %>% dplyr::select(c(
@@ -728,7 +747,17 @@ CreateComparisonTables <- function(ipeds_direct_and_db) {
 
 	comparison_table$`Disability percentage numeric`[comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`=="More than 3 percent" & !is.na(comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`)] <- comparison_table$`Percent of undergraduates who are formally registered as students with disabilities when percentage is more than 3 percent`[comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`=="More than 3 percent" & !is.na(comparison_table$`Percent indicator of undergraduates formally registered as students with disabilities`)]
 
-	
+	comparison_table$`Percent first year students from in state` <- NA
+	comparison_table$`First year students from anywhere` <- as.numeric.na0(comparison_table$`First year students from Foreign countries`) + as.numeric.na0(comparison_table$`First year students from US total`) + as.numeric.na0(comparison_table$`First year students from Residence not reported`)
+	comparison_table$`Percent first year students from US` <- round(100*as.numeric.na0(comparison_table$`First year students from US total`)/	comparison_table$`First year students from anywhere`,1)
+	comparison_table$`Percent first year students from Foreign countries` <- round(100*as.numeric.na0(comparison_table$`First year students from Foreign countries`)/	comparison_table$`First year students from anywhere`,1)
+	comparison_table$`Percent first year students residence not reported` <- round(100*as.numeric.na0(comparison_table$`First year students from Residence not reported`)/comparison_table$`First year students from anywhere`,1)
+
+
+	for(row_index in sequence(nrow(comparison_table))) {
+		state_column <- which(colnames(comparison_table)==paste0("First year students from ", comparison_table$`State`[row_index]))
+		comparison_table$`Percent first year students from in state`[row_index] <- round(100*as.numeric(comparison_table[row_index, state_column])/comparison_table$`First year students from anywhere`[row_index],1)
+	}
 	
 	dbWriteTable(db,  "comparison_table", comparison_table, overwrite=TRUE)
 
@@ -1022,23 +1051,31 @@ AppendMisconduct <- function(college_data) {
 	return(college_data)
 }
 
-AppendAbortionOld <- function(college_data) {
-	#abortion <- read.csv("data/abortion.csv", header=TRUE)
-	#colnames(abortion) <- gsub("\\.", " ", colnames(abortion))
-	abortion <- read.csv("data/worldpopulationreview_abortion.csv")
-	abortion$`State abbreviation` <- state.abb[match(abortion$State,state.name)]
-	abortion_simple <- dplyr::select(abortion, c("State abbreviation", "Status"))
-	colnames(abortion_simple)[2] <- "Abortion"
-	return(left_join(college_data, abortion_simple, by="State abbreviation"))
-}
-
-AppendAbortion <- function(comparison_table) {
+AppendAbortionWorldPopulationReview <- function(comparison_table) {
 	print("Appending abortion data")
 	#abortion <- read.csv("data/abortion.csv", header=TRUE)
 	#colnames(abortion) <- gsub("\\.", " ", colnames(abortion))
 	abortion <- read.csv("data/worldpopulationreview_abortion.csv")
 	#abortion$`State abbreviation` <- state.abb[match(abortion$State,state.name)]
 	abortion_simple <- dplyr::select(abortion, c("State", "Status"))
+	colnames(abortion_simple)[2] <- "Abortion"
+	return(left_join(comparison_table, abortion_simple, by="State"))
+}
+
+AppendTransRisk <- function(comparison_table) {
+	print("Appending trans risk data")
+	transrisk <- read.csv("data/translaws.csv")
+	transrisk$`State` <- state.name[match(transrisk$`State.abbreviation`,state.abb)]
+	transrisk_simple <- dplyr::select(transrisk, c("State", "AntiTrans"))
+	colnames(transrisk_simple)[2] <- "Trans Risk"
+	return(left_join(comparison_table, transrisk_simple, by="State"))
+}
+
+AppendAbortion <- function(comparison_table) {
+	print("Appending abortion data")
+	abortion <- read.csv("data/abortion.csv")
+	abortion$`State` <- state.name[match(abortion$`State.abbreviation`,state.abb)]
+	abortion_simple <- dplyr::select(abortion, c("State", "Restrictions"))
 	colnames(abortion_simple)[2] <- "Abortion"
 	return(left_join(comparison_table, abortion_simple, by="State"))
 }
@@ -1235,6 +1272,9 @@ EnhanceData <- function(college_data, faculty_counts, student_demographics, stud
 	
 	college_data_enhanced <- college_data_enhanced %>% dplyr::mutate(`Average net price-students awarded grant or scholarship aid` = dplyr::select(., starts_with("Average net price-students awarded grant or scholarship aid")) %>% rowMeansAsNumeric( na.rm = TRUE))
 	
+	college_data_enhanced <- college_data_enhanced %>% dplyr::mutate(`Average net price for 30K to 48K family income` = dplyr::select(., starts_with("Average net price for 30K to 48K family income")) %>% rowMeansAsNumeric( na.rm = TRUE))
+
+	
 	college_data_enhanced <- college_data_enhanced %>% dplyr::mutate(`Equity ratio` = dplyr::select(., starts_with("Equity ratio")) %>% rowMeansAsNumeric( na.rm = TRUE))
 
 		 
@@ -1302,6 +1342,7 @@ GetOverviewColumns <- function(college_data) {
 		"Tuition and fees as a percent of core revenues", 
 		"Endowment assets per FTE", 
 		"Average net price-students awarded grant or scholarship aid", 
+		"Average net price for 30K to 48K family income",
 		"Liquor discipline per student (3 yr avg)",
 		"Liquor arrest per student (3 yr avg)",
 		"Drug discipline per student (3 yr avg)",
@@ -1375,7 +1416,7 @@ RenderSparklines <- function(spark_height=5, spark_width=40) {
 	}	
 }
 
-RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxcount=40, CIPS_codes, weatherspark, yml) {
+RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxcount=40, CIPS_codes, weatherspark, yml, index_table) {
 	
 	institution_ids <- unique(comparison_table$`UNITID Unique identification number of the institution`)
 	dead_institutions <- subset(comparison_table, comparison_table$`Status of institution`%in% c('Closed in current year (active has data)', 'Combined with other institution ', 'Delete out of business'))
@@ -1383,7 +1424,11 @@ RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxco
 	comparison_table <- subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution` %in% institution_ids) # remove dead institutions so we don't compare with them
 	
 	# prioritize the "selective" schools to render first
-	comparison_table$pseudoranking <- (100-as.numeric(comparison_table$`Admission percentage total`))*sqrt(as.numeric(comparison_table$`Total instructors`))
+	
+	comparison_table$pseudoranking <- (100 - as.numeric.na0(comparison_table$`Admission percentage total`)) + as.numeric.na0(comparison_table$`Yield percentage total`) + as.numeric.na0(comparison_table$`Undergrad full time`) + as.numeric.na0(comparison_table$`Tenure-stream Grand total`)
+	comparison_table$pseudoranking[is.na(comparison_table$pseudoranking)] <- 0
+	comparison_table <- comparison_table[order(comparison_table$pseudoranking, decreasing=TRUE),]
+
 	rejection_ranking <- comparison_table[order(comparison_table$pseudoranking, decreasing=TRUE),] 
 	institution_ids <- unique(rejection_ranking$`UNITID Unique identification number of the institution`)
 	
@@ -1397,7 +1442,7 @@ RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxco
 		try({
 			institution_id <- institution_ids[i]
 			institution_name <- rownames(t(t(sort(table(comparison_table$`Institution entity name`[comparison_table$`UNITID Unique identification number of the institution` == institution_id]), decreasing=TRUE))))[1] # sometimes the name changes a bit; take the most common one		
-			print(paste0("Rendering ", institution_name, " (", i, " of ", length(institution_ids), ")"))
+			print(paste0("Rendering ", institution_name, " (", i, " of ", length(institution_ids), ") with id ", institution_id))
 			
 			rmarkdown::render(
 				input="_institution.Rmd", 
@@ -1407,7 +1452,8 @@ RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxco
 					institution_long_name = institution_name,
 					institution_id =  institution_id,
 					comparison_table = comparison_table,
-					weatherspark=weatherspark
+					weatherspark=weatherspark,
+					index_table=index_table
 				),
 				quiet=TRUE
 			)
@@ -1893,7 +1939,7 @@ formatMe <- function(x, digits=0, prefix="") {
 		x <- x/1e6
 		suffix <- " M"
 	} 
-	if(x < 10 && digits==0) {
+	if(x < 10 && digits==0 && round(x)!=x) {
 		digits <- digits + 1	
 	}
 	return(paste0(ifelse(x_sign<0, "-", ""), prefix, format(round(as.numeric(x), digits), nsmall=digits, big.mark=","), suffix))
@@ -2108,6 +2154,12 @@ GetClosestWeatherspark <- function(most_current_info, weatherspark) {
 	return(paste0('https://weatherspark.com/countries/US/', state.abb[match(most_current_info['State'],state.name)], '#Figures-Temperature'))
 }
 
+ReorderComparisonTable <- function(comparison_table) {
+	comparison_table <- comparison_table[order(as.numeric(comparison_table$`IPEDS Year`), decreasing=TRUE),]
+	return(comparison_table)
+}
+
+
 CreateIndexTable <- function(comparison_table) {
 	index_conversions <- read.csv("data/ConversionToIndexTable.csv")
 	index_conversions <- index_conversions[index_conversions$ColumnName!="Full-time undergrad enrollment trend",] # since that doesn't exist yet
@@ -2125,6 +2177,9 @@ CreateIndexTable <- function(comparison_table) {
 	index_table_summary <- data.frame(matrix(NA, nrow=length(unique(index_table$UNITID)), ncol=ncol(index_table)))
 	colnames(index_table_summary) <- colnames(index_table)
 	enrollment_slopes <- rep("", length(unique(index_table$UNITID)))
+	revenue_slopes <- rep("", length(unique(index_table$UNITID)))
+	assets_slopes <- rep("", length(unique(index_table$UNITID)))
+
 	unique_UNITIDs <- unique(index_table$UNITID)
 	
 	# for debugging: 
@@ -2152,12 +2207,60 @@ CreateIndexTable <- function(comparison_table) {
 				}
 			}
 		})
+		
+		revenue_data <- subset(index_table, index_table$UNITID==UNITID_number) %>% dplyr::select('Revenue', 'IPEDS Year') %>% dplyr::rename('Year'='IPEDS Year') %>% dplyr::mutate(Revenue=as.numeric(Revenue)) %>% dplyr::mutate(Year=as.numeric(Year)) %>% dplyr::filter(!is.na(Revenue)) %>% dplyr::filter(!is.na(Year))
+		try({
+			if(nrow(revenue_data)>1) {
+				fit <- stats::lm(Revenue ~ Year, data=revenue_data)
+				if(summary(fit)$coefficients[2,4]<0.05) {
+					slope <- round(summary(fit)$coefficients[2,1],0)
+					change <- c('Increasing', 'gaining')
+					if(sign(summary(fit)$coefficients[2,1])<0) {
+						change <- c('Decreasing', "losing")
+					}
+					#CI <- round(unname(confint(fit)[2,]),0)
+					#enrollment_slopes[UNITID_index] <- paste0(change[1], " (", change[2]," ", abs(slope), " full-time undergrads per year)")
+					revenue_slopes[UNITID_index] <- change[1]
+				} else {
+					revenue_slopes[UNITID_index] <- 'Approximately stable'	
+				}
+			}
+		})
+		
+				
+		assets_data <- subset(index_table, index_table$UNITID==UNITID_number) %>% dplyr::select('Assets', 'IPEDS Year') %>% dplyr::rename('Year'='IPEDS Year') %>% dplyr::mutate(Assets=as.numeric(Assets)) %>% dplyr::mutate(Year=as.numeric(Year)) %>% dplyr::filter(!is.na(Assets)) %>% dplyr::filter(!is.na(Year))
+		try({
+			if(nrow(assets_data)>1) {
+				fit <- stats::lm(Assets ~ Year, data=assets_data)
+				if(summary(fit)$coefficients[2,4]<0.05) {
+					slope <- round(summary(fit)$coefficients[2,1],0)
+					change <- c('Increasing', 'gaining')
+					if(sign(summary(fit)$coefficients[2,1])<0) {
+						change <- c('Decreasing', "losing")
+					}
+					#CI <- round(unname(confint(fit)[2,]),0)
+					#enrollment_slopes[UNITID_index] <- paste0(change[1], " (", change[2]," ", abs(slope), " full-time undergrads per year)")
+					assets_slopes[UNITID_index] <- change[1]
+				} else {
+					assets_slopes[UNITID_index] <- 'Approximately stable'	
+				}
+			}
+		})
+		
+		
 		cat("  ", UNITID_index, "\r")
 	}
 	
 	index_table_summary <- cbind(index_table_summary, enrollment_slopes)
-	
 	colnames(index_table_summary)[ncol(index_table_summary)] <- 'Full-time undergrad enrollment trend'
+
+
+	index_table_summary <- cbind(index_table_summary, revenue_slopes)
+	colnames(index_table_summary)[ncol(index_table_summary)] <- 'Revenues trend'
+
+	index_table_summary <- cbind(index_table_summary, assets_slopes)
+	colnames(index_table_summary)[ncol(index_table_summary)] <- 'Assets trend'
+	
 	index_table_summary$`State rep support for contraception` <- 100*as.numeric(index_table_summary$`State rep support for contraception`)
 	index_table_summary$`State support for interracial and same-sex marriage` <- 100*as.numeric(index_table_summary$`State support for interracial and same-sex marriage`)
 	index_table_summary$`Students can get federal financial aid`[index_table_summary$`Students can get federal financial aid` %in% c("Branch campus of a main campus that participates in Title IV", "New participants (became eligible during spring collection)", "New participants (became eligible during winter collection)", "Participates in Title IV federal financial aid programs")] <- "Yes"
@@ -2192,7 +2295,8 @@ CreateIndexTable <- function(comparison_table) {
 	#index_table_summary[is.na(index_table_summary)] <- ""
 	index_table_summary[index_table_summary=="Not applicable"] <- ""
 	
-	index_table_summary$pseudoranking <- (100-as.numeric.na0(index_table_summary$`Admission percentage total`)) + as.numeric.na0(index_table_summary$`Grad rate in six years`) + as.numeric.na0(index_table_summary$`Yield percentage total`) + log1p(as.numeric.na0(index_table_summary$`Undergrad full time`)) + log1p(as.numeric.na0(index_table_summary$`Tenure-stream faculty`))
+	index_table_summary$pseudoranking <- (100 - as.numeric.na0(index_table_summary$`Admission percentage total`)) + as.numeric.na0(index_table_summary$`Grad rate in six years`) + as.numeric.na0(index_table_summary$`Yield percentage total`) + 10*log1p(as.numeric.na0(index_table_summary$`Undergrad full time`)) + 10*log1p(as.numeric.na0(index_table_summary$`Tenure-stream faculty`))
+	
 	index_table_summary$pseudoranking[is.na(index_table_summary$pseudoranking)] <- 0
 	index_table_summary <- index_table_summary[order(index_table_summary$pseudoranking, decreasing=TRUE),]
 	
@@ -2279,3 +2383,4 @@ dataListFilter <- function(tableId, style = "width: 100%; height: 28px;") {
     )
   }
 }
+
