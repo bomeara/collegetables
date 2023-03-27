@@ -308,6 +308,9 @@ crosstalk::filter_checkbox("CAban", "California travel ban", all_colleges, ~`Cal
 
 crosstalk::filter_checkbox("AbortionAvail", "Abortion availability", all_colleges, ~`Abortion availability`)
 
+crosstalk::filter_checkbox("TransSafety", "Anti-trans legislative risk", all_colleges, ~`Anti-trans legislative risk`)
+
+
 crosstalk::filter_slider("contraceptionsupport", "State rep support for contraception", all_colleges, "percentcontraceptivesupport")
 
 crosstalk::filter_slider("interracialsamesex", "State rep support for interracial and same-sex marriage", all_colleges, "interracialsamesexmarriage")
