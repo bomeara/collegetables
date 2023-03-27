@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -268,10 +270,20 @@ Undergraduate)</p></li>
 <li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
 four-year (see more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 21,254 (1.5 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $21,254 (1.4 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $15,605.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://npc.collegeboard.org/student/app/hanover'>here</a> to
+see what your family may be asked to pay. It can be MUCH lower than the
+average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, small, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 64.8% of first year
+students come from Indiana</p></li>
+<li><p><strong>In US percentage</strong>: 98.5% of first year students
+come from the US</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 63.5% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -308,9 +320,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Restrictive (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: D- (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -323,17 +336,29 @@ marriage</strong>: 22.2% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: High risk (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Southern Great Lakes
 forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/15190/Average-Weather-in-Hanover-Indiana-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1261716fbe24c9f4fb4e" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-1261716fbe24c9f4fb4e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[38.715642,-85.460051,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[38.715642,-85.460051],16,[]],"limits":{"lat":[38.715642,38.715642],"lng":[-85.460051,-85.460051]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6336e0668b5b31ec2f4d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6336e0668b5b31ec2f4d">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"150756.html\">Hanover College</a>","<a href=\"150066.html\">Anderson University</a>","<a href=\"151777.html\">Manchester University</a>","<a href=\"204200.html\">Mount Saint Joseph University</a>","<a href=\"157818.html\">Transylvania University</a>","<a href=\"201371.html\">Bluffton University</a>","<a href=\"150455.html\">Earlham College</a>","<a href=\"150604.html\">Franklin College</a>","<a href=\"202514.html\">Defiance College</a>","<a href=\"152318.html\">Rose-Hulman Institute of Technology</a>","<a href=\"212656.html\">Geneva College</a>","<a href=\"213011.html\">Immaculata University</a>","<a href=\"154101.html\">Northwestern College</a>","<a href=\"213668.html\">Lycoming College</a>","<a href=\"236452.html\">Saint Martin's University</a>","<a href=\"239080.html\">Marian University</a>","<a href=\"100937.html\">Birmingham-Southern College</a>","<a href=\"162760.html\">Hood College</a>","<a href=\"218539.html\">Presbyterian College</a>","<a href=\"220710.html\">Maryville College</a>","<a href=\"153108.html\">Central College</a>","<a href=\"168786.html\">Aquinas College</a>","<a href=\"203845.html\">Marietta College</a>","<a href=\"231581.html\">Bridgewater College</a>","<a href=\"217961.html\">Converse University</a>","<a href=\"216807.html\">Westminster College</a>","<a href=\"167394.html\">College of Our Lady of the Elms</a>","<a href=\"156213.html\">Asbury University</a>","<a href=\"101693.html\">University of Mobile</a>","<a href=\"174251.html\">University of Minnesota-Morris</a>","<a href=\"215798.html\">Saint Vincent College</a>","<a href=\"216694.html\">Waynesburg University</a>","<a href=\"194958.html\">Roberts Wesleyan College</a>","<a href=\"184773.html\">Georgian Court University</a>","<a href=\"181020.html\">Doane University</a>","<a href=\"153825.html\">Loras College</a>","<a href=\"219259.html\">Northern State University</a>","<a href=\"170639.html\">Lake Superior State University</a>","<a href=\"204909.html\">Ohio Wesleyan University</a>","<a href=\"162654.html\">Goucher College</a>","<a href=\"154688.html\">Baker University</a>","<a href=\"179964.html\">William Woods University</a>","<a href=\"145691.html\">Illinois College</a>","<a href=\"154013.html\">Mount Mercy University</a>","<a href=\"147244.html\">Millikin University</a>","<a href=\"154350.html\">Simpson College</a>","<a href=\"237969.html\">West Virginia Wesleyan College</a>","<a href=\"125727.html\">Westmont College</a>","<a href=\"168591.html\">Alma College</a>","<a href=\"180106.html\">Carroll College</a>","<a href=\"191676.html\">Houghton College</a>","<a href=\"211352.html\">Cabrini University</a>","<a href=\"147341.html\">Monmouth College</a>","<a href=\"213251.html\">Juniata College</a>","<a href=\"125763.html\">Whittier College</a>","<a href=\"211468.html\">Cedar Crest College</a>","<a href=\"216667.html\">Washington &amp; Jefferson College</a>","<a href=\"170532.html\">Kalamazoo College</a>","<a href=\"102234.html\">Spring Hill College</a>","<a href=\"198215.html\">Catawba College</a>","<a href=\"107512.html\">Ouachita Baptist University</a>","<a href=\"138600.html\">Agnes Scott College</a>","<a href=\"220215.html\">Freed-Hardeman University</a>","<a href=\"153162.html\">Cornell College</a>","<a href=\"167288.html\">Massachusetts College of Liberal Arts</a>","<a href=\"107080.html\">Hendrix College</a>","<a href=\"154527.html\">Wartburg College</a>","<a href=\"150941.html\">Huntington University</a>","<a href=\"195243.html\">St. Thomas Aquinas College</a>","<a href=\"209065.html\">Linfield University-McMinnville Campus</a>","<a href=\"164216.html\">Washington College</a>","<a href=\"239628.html\">Ripon College</a>","<a href=\"203085.html\">Heidelberg University</a>","<a href=\"262129.html\">New College of Florida</a>","<a href=\"231420.html\">Averett University</a>","<a href=\"153144.html\">Coe College</a>","<a href=\"147679.html\">North Park University</a>","<a href=\"199412.html\">Queens University of Charlotte</a>","<a href=\"203775.html\">Malone University</a>","<a href=\"154004.html\">Morningside University</a>","<a href=\"219091.html\">Dakota Wesleyan University</a>","<a href=\"156745.html\">Georgetown College</a>","<a href=\"215947.html\">Seton Hill University</a>","<a href=\"238333.html\">Beloit College</a>","<a href=\"181446.html\">Nebraska Wesleyan University</a>","<a href=\"147013.html\">McKendree University</a>","<a href=\"142294.html\">The College of Idaho</a>","<a href=\"219806.html\">Carson-Newman University</a>","<a href=\"172334.html\">Spring Arbor University</a>","<a href=\"168546.html\">Albion College</a>","<a href=\"207403.html\">Oklahoma Baptist University</a>","<a href=\"197197.html\">Wagner College</a>","<a href=\"155335.html\">Newman University</a>","<a href=\"148405.html\">Rockford University</a>","<a href=\"212197.html\">Elizabethtown College</a>","<a href=\"237385.html\">Glenville State University</a>","<a href=\"142461.html\">Northwest Nazarene University</a>","<a href=\"177214.html\">Drury University</a>","<a href=\"234173.html\">Virginia Wesleyan University</a>","<a href=\"150145.html\">Bethel University</a>"],[73,62,76,63,92,75,69,95,62,77,79,80,83,75,72,76,66,77,71,68,75,89,83,75,82,82,68,77,64,76,73,75,87,80,77,72,80,73,74,82,99,68,75,81,75,91,84,79,69,84,79,80,66,74,82,69,84,80,72,56,74,70,88,81,91,68,83,79,89,85,70,80,86,74,48,73,67,69,78,74,76,75,74,67,82,78,56,79,60,69,56,82,72,67,79,69,88,65,86,98],[15,12,13,19,19,19,15,17,10,18,20,18,28,15,18,27,15,13,16,20,21,17,18,16,15,15,17,30,22,15,24,19,18,17,17,20,34,21,14,12,35,13,9,21,18,24,20,18,16,22,26,12,11,16,12,20,12,14,14,21,25,27,37,16,13,19,12,29,18,17,13,12,17,13,14,8,17,12,18,15,21,23,18,13,20,20,15,17,22,10,21,16,30,18,22,43,11,25,19,23],[63,63,55,53,73,53,73,61,51,87,71,69,71,67,61,56,70,66,59,56,66,60,51,62,57,73,68,65,51,58,73,67,64,58,59,68,56,54,64,59,62,55,64,60,55,69,54,73,63,67,65,52,55,76,64,64,76,76,56,60,66,75,65,64,58,73,70,69,56,67,75,62,57,66,42,64,61,64,60,54,55,56,67,73,66,56,56,57,64,64,54,72,63,32,75,46,62,60,47,64],[23,39,40,49,19,26,6,26,35,35,39,61,30,11,56,47,28,30,32,23,21,38,23,21,36,20,59,30,42,12,28,35,70,57,34,36,13,22,12,22,46,47,22,44,40,28,25,31,25,31,25,47,18,30,36,43,27,19,30,25,25,19,30,25,17,11,33,41,43,46,39,21,25,1,46,31,40,33,46,37,36,25,45,28,44,47,17,45,58,17,26,55,57,50,36,19,45,27,17,46],[14,14,12,19,13,18,11,16,16,11,23,14,13,14,16,26,14,12,11,16,13,15,15,17,10,17,21,16,17,14,19,21,13,16,17,13,16,18,12,16,19,11,21,21,16,16,17,15,19,15,19,23,13,14,16,22,14,15,17,19,17,14,16,14,11,12,21,15,23,13,12,14,27,7,17,15,20,17,20,20,17,14,20,14,19,20,19,16,12,14,19,21,11,14,16,21,13,16,14,20],[15605,17325,15241,13972,19267,20032,15864,13344,24176,27109,17135,22823,22469,12949,19743,18635,18870,18234,19152,15426,18512,16735,15092,18579,30531,15852,21731,18887,20348,3397,17606,15013,20469,17250,19878,19374,15992,8770,21323,21710,18141,20331,12647,17384,16102,15511,18075,24298,18565,19380,20548,17862,14440,15816,21666,21135,22695,17846,24536,17408,16902,17463,15534,17628,13643,10861,17063,19251,19352,22457,19748,17767,18842,6580,21265,15019,16166,22706,13526,20160,20139,16410,19326,16197,22970,16722,17486,16764,18596,12732,17911,24365,14970,20076,17622,12893,18633,14146,19765,14454],[996,1063,966,1013,960,700,657,867,497,2058,996,1000,979,1081,1249,993,1041,1162,930,963,1079,1059,1105,1416,781,1064,885,1127,1045,1140,1365,1132,1017,1202,959,1185,1136,1406,1333,1033,979,608,1069,1013,1693,1073,970,1233,1308,1067,807,1235,750,1222,1276,792,1138,1233,948,1044,1551,1050,1378,1038,759,1101,1473,895,1037,1241,1015,794,1015,615,979,1346,1699,1347,796,1160,619,1225,1526,978,1606,1257,1104,1566,933,1500,1332,1514,832,899,1537,995,1042,1318,1108,1021],[79,22,275,248,null,54,40,61,14,15,76,196,87,null,63,33,15,154,231,null,null,55,91,33,125,21,100,20,62,null,84,117,432,138,396,81,57,0,null,67,66,103,0,116,62,4,65,13,13,22,14,76,null,8,33,134,0,null,23,64,48,15,107,6,64,9,1,208,81,11,0,null,70,27,51,0,113,124,67,42,65,1,277,null,23,174,14,173,1301,null,26,127,383,67,71,null,569,22,20,38],["Indiana","Indiana","Indiana","Ohio","Kentucky","Ohio","Indiana","Indiana","Ohio","Indiana","Pennsylvania","Pennsylvania","Iowa","Pennsylvania","Washington","Wisconsin","Alabama","Maryland","South Carolina","Tennessee","Iowa","Michigan","Ohio","Virginia","South Carolina","Pennsylvania","Massachusetts","Kentucky","Alabama","Minnesota","Pennsylvania","Pennsylvania","New York","New Jersey","Nebraska","Iowa","South Dakota","Michigan","Ohio","Maryland","Kansas","Missouri","Illinois","Iowa","Illinois","Iowa","West Virginia","California","Michigan","Montana","New York","Pennsylvania","Illinois","Pennsylvania","California","Pennsylvania","Pennsylvania","Michigan","Alabama","North Carolina","Arkansas","Georgia","Tennessee","Iowa","Massachusetts","Arkansas","Iowa","Indiana","New York","Oregon","Maryland","Wisconsin","Ohio","Florida","Virginia","Iowa","Illinois","North Carolina","Ohio","Iowa","South Dakota","Kentucky","Pennsylvania","Wisconsin","Nebraska","Illinois","Idaho","Tennessee","Michigan","Michigan","Oklahoma","New York","Kansas","Illinois","Pennsylvania","West Virginia","Idaho","Missouri","Virginia","Indiana"],["Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Increasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Increasing","Increasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Increasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Increasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a781da8adf0615235ab1" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a781da8adf0615235ab1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[38.715642,-85.460051,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[38.715642,-85.460051],16,[]],"limits":{"lat":[38.715642,38.715642],"lng":[-85.460051,-85.460051]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -378,11 +403,11 @@ from 2011 to 2021’ >
 Undergrads (part time)
 </td>
 <td style="text-align:center;">
-8.0 (2021)
+8 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_2.png alt=‘Line plot from 7.0 to 8.0
-from 2011 to 2021’ >
+<img src=images/HanoverCollege_2.png alt=‘Line plot from 7 to 8 from
+2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -410,11 +435,11 @@ from 2021 to 2021’ >
 Grad students (part time)
 </td>
 <td style="text-align:center;">
-0.0 (2021)
+0 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_4.png alt=‘Line plot from 0.0 to 0.0
-from 2021 to 2021’ >
+<img src=images/HanoverCollege_4.png alt=‘Line plot from 0 to 0 from
+2021 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -607,33 +632,13 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-12 (2019)
-</td>
-<td style="text-align:center;">
-<img src=images/HanoverCollege_14.png alt=‘Line plot from 12 to 12
-from 2013 to 2019’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 20%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 42%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 14 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_15.png alt=‘Line plot from 12 to 14
+<img src=images/HanoverCollege_14.png alt=‘Line plot from 12 to 14
 from 2013 to 2019’ >
 </td>
 <td style="text-align:center;">
@@ -643,6 +648,26 @@ from 2013 to 2019’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (lower) than 46%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
+</td>
+<td style="text-align:center;">
+12 (2019)
+</td>
+<td style="text-align:center;">
+<img src=images/HanoverCollege_15.png alt=‘Line plot from 12 to 12
+from 2013 to 2019’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 20%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 42%
 </td>
 </tr>
 <tr>
@@ -665,16 +690,17 @@ from 2013 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-10 (2020)
+79 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_17.png alt=‘Line plot from 2.0 to 10
+<img src=images/HanoverCollege_17.png alt=‘Line plot from 95 to 79
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
+↓<br />-2.6 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -683,17 +709,16 @@ from 2013 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-79 (2020)
+10 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_18.png alt=‘Line plot from 95 to 79
+<img src=images/HanoverCollege_18.png alt=‘Line plot from 2 to 10
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
-↓<br />-2.6 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -740,7 +765,7 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 21% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_103.png alt=‘Line plot from 3.0 to 21
+<img src=images/HanoverCollege_100.png alt=‘Line plot from 3 to 21
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -774,13 +799,33 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+23% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/HanoverCollege_19.png alt=‘Line plot from 22 to 23
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 80%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 42%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $40 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_19.png alt=‘Line plot from 18 M to 40
+<img src=images/HanoverCollege_20.png alt=‘Line plot from 18 M to 40
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -800,7 +845,7 @@ Revenue
 $80 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_20.png alt=‘Line plot from 50 M to 80
+<img src=images/HanoverCollege_21.png alt=‘Line plot from 50 M to 80
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -818,7 +863,7 @@ Expenses
 $39 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_21.png alt=‘Line plot from 32 M to 39
+<img src=images/HanoverCollege_22.png alt=‘Line plot from 32 M to 39
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -837,7 +882,7 @@ Assets
 $272 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_22.png alt=‘Line plot from 214 M to
+<img src=images/HanoverCollege_23.png alt=‘Line plot from 214 M to
 272 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -847,80 +892,6 @@ $272 M (2021)
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 46%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-23% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/HanoverCollege_23.png alt=‘Line plot from 22 to 23
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 80%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 42%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/HanoverCollege_24.png alt=‘Line plot from 0.0 to 0.0
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/HanoverCollege_25.png alt=‘Line plot from 0.0 to 0.0
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-5.1% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/HanoverCollege_26.png alt=‘Line plot from 5.7 to 5.1
-from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -962,7 +933,7 @@ Total
 63% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_42.png alt=‘Line plot from 66 to 63
+<img src=images/HanoverCollege_39.png alt=‘Line plot from 66 to 63
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -980,7 +951,7 @@ Men
 56% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_43.png alt=‘Line plot from 61 to 56
+<img src=images/HanoverCollege_40.png alt=‘Line plot from 61 to 56
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -998,7 +969,7 @@ Women
 70% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_44.png alt=‘Line plot from 71 to 70
+<img src=images/HanoverCollege_41.png alt=‘Line plot from 71 to 70
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1016,7 +987,7 @@ American Indian or Alaska Native men
 100% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_45.png alt=‘Line plot from 100 to 100
+<img src=images/HanoverCollege_42.png alt=‘Line plot from 100 to 100
 from 2011 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1031,10 +1002,10 @@ from 2011 to 2020’ >
 American Indian or Alaska Native women
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_46.png alt=‘Line plot from 50 to 0.0
+<img src=images/HanoverCollege_43.png alt=‘Line plot from 50 to 0
 from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1049,10 +1020,10 @@ from 2012 to 2021’ >
 Asian men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_47.png alt=‘Line plot from 67 to 0.0
+<img src=images/HanoverCollege_44.png alt=‘Line plot from 67 to 0
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1070,7 +1041,7 @@ Asian women
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_48.png alt=‘Line plot from 56 to 33
+<img src=images/HanoverCollege_45.png alt=‘Line plot from 56 to 33
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1088,7 +1059,7 @@ Black or African American men
 75% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_49.png alt=‘Line plot from 50 to 75
+<img src=images/HanoverCollege_46.png alt=‘Line plot from 50 to 75
 from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1106,7 +1077,7 @@ Black or African American women
 67% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_50.png alt=‘Line plot from 100 to 67
+<img src=images/HanoverCollege_47.png alt=‘Line plot from 100 to 67
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1121,11 +1092,11 @@ from 2011 to 2021’ >
 Hispanic men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_51.png alt=‘Line plot from 0.0 to 0.0
-from 2011 to 2021’ >
+<img src=images/HanoverCollege_48.png alt=‘Line plot from 0 to 0 from
+2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 22%
@@ -1142,7 +1113,7 @@ Hispanic women
 67% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_52.png alt=‘Line plot from 100 to 67
+<img src=images/HanoverCollege_49.png alt=‘Line plot from 100 to 67
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1157,11 +1128,11 @@ from 2011 to 2021’ >
 Native Hawaiian or other Pacific Islander men
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_53.png alt=‘Line plot from 0.0 to 0.0
-from 2014 to 2017’ >
+<img src=images/HanoverCollege_50.png alt=‘Line plot from 0 to 0 from
+2014 to 2017’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1173,11 +1144,11 @@ from 2014 to 2017’ >
 Native Hawaiian or other Pacific Islander women
 </td>
 <td style="text-align:center;">
-0.0% (2014)
+0% (2014)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_54.png alt=‘Line plot from 0.0 to 0.0
-from 2014 to 2014’ >
+<img src=images/HanoverCollege_51.png alt=‘Line plot from 0 to 0 from
+2014 to 2014’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 0%
@@ -1194,7 +1165,7 @@ White men
 57% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_55.png alt=‘Line plot from 67 to 57
+<img src=images/HanoverCollege_52.png alt=‘Line plot from 67 to 57
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1212,7 +1183,7 @@ White women
 71% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_56.png alt=‘Line plot from 72 to 71
+<img src=images/HanoverCollege_53.png alt=‘Line plot from 72 to 71
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1230,7 +1201,7 @@ Two or more races men
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_57.png alt=‘Line plot from 100 to 33
+<img src=images/HanoverCollege_54.png alt=‘Line plot from 100 to 33
 from 2013 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1248,7 +1219,7 @@ Two or more races women
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_58.png alt=‘Line plot from 100 to 50
+<img src=images/HanoverCollege_55.png alt=‘Line plot from 100 to 50
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1266,7 +1237,7 @@ Nonresident alien men
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_59.png alt=‘Line plot from 80 to 33
+<img src=images/HanoverCollege_56.png alt=‘Line plot from 80 to 33
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1284,7 +1255,7 @@ Nonresident alien women
 25% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_60.png alt=‘Line plot from 100 to 25
+<img src=images/HanoverCollege_57.png alt=‘Line plot from 100 to 25
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1324,7 +1295,7 @@ Men (percent freshmen)
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_83.png alt=‘Line plot from 49 to 50
+<img src=images/HanoverCollege_80.png alt=‘Line plot from 49 to 50
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1336,7 +1307,7 @@ Women (percent freshmen)
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_84.png alt=‘Line plot from 51 to 50
+<img src=images/HanoverCollege_81.png alt=‘Line plot from 51 to 50
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1348,7 +1319,7 @@ American Indian or Alaska Native men (percent freshmen)
 0.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_85.png alt=‘Line plot from 0.0 to 0.7
+<img src=images/HanoverCollege_82.png alt=‘Line plot from 0 to 0.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1357,10 +1328,10 @@ from 2010 to 2021’ >
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_86.png alt=‘Line plot from 0.6 to 0.0
+<img src=images/HanoverCollege_83.png alt=‘Line plot from 0.6 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1369,11 +1340,11 @@ from 2010 to 2021’ >
 Asian men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_87.png alt=‘Line plot from 0.0 to 0.0
-from 2010 to 2021’ >
+<img src=images/HanoverCollege_84.png alt=‘Line plot from 0 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1384,7 +1355,7 @@ Asian women (percent freshmen)
 0.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_88.png alt=‘Line plot from 0.0 to 0.4
+<img src=images/HanoverCollege_85.png alt=‘Line plot from 0 to 0.4
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1396,7 +1367,7 @@ Black or African American men (percent freshmen)
 4.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_89.png alt=‘Line plot from 3.4 to 4.0
+<img src=images/HanoverCollege_86.png alt=‘Line plot from 3.4 to 4.0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1408,7 +1379,7 @@ Black or African American women (percent freshmen)
 1.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_90.png alt=‘Line plot from 3.1 to 1.1
+<img src=images/HanoverCollege_87.png alt=‘Line plot from 3.1 to 1.1
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1420,7 +1391,7 @@ Hispanic men (percent freshmen)
 1.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_91.png alt=‘Line plot from 1.6 to 1.1
+<img src=images/HanoverCollege_88.png alt=‘Line plot from 1.6 to 1.1
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1432,7 +1403,7 @@ Hispanic women (percent freshmen)
 1.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_92.png alt=‘Line plot from 0.9 to 1.1
+<img src=images/HanoverCollege_89.png alt=‘Line plot from 0.9 to 1.1
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1441,11 +1412,11 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_93.png alt=‘Line plot from 0.0 to 0.0
-from 2010 to 2021’ >
+<img src=images/HanoverCollege_90.png alt=‘Line plot from 0 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1453,11 +1424,11 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_94.png alt=‘Line plot from 0.0 to 0.0
-from 2010 to 2021’ >
+<img src=images/HanoverCollege_91.png alt=‘Line plot from 0 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1468,7 +1439,7 @@ White men (percent freshmen)
 37% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_95.png alt=‘Line plot from 40 to 37
+<img src=images/HanoverCollege_92.png alt=‘Line plot from 40 to 37
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1480,7 +1451,7 @@ White women (percent freshmen)
 41% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_96.png alt=‘Line plot from 43 to 41
+<img src=images/HanoverCollege_93.png alt=‘Line plot from 43 to 41
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1492,7 +1463,7 @@ Two or more races men (percent freshmen)
 4.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_97.png alt=‘Line plot from 0.9 to 4.0
+<img src=images/HanoverCollege_94.png alt=‘Line plot from 0.9 to 4.0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1504,7 +1475,7 @@ Two or more races women (percent freshmen)
 4.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_98.png alt=‘Line plot from 1.2 to 4.3
+<img src=images/HanoverCollege_95.png alt=‘Line plot from 1.2 to 4.3
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1516,7 +1487,7 @@ Race ethnicity unknown men (percent freshmen)
 0.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_99.png alt=‘Line plot from 1.2 to 0.7
+<img src=images/HanoverCollege_96.png alt=‘Line plot from 1.2 to 0.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1525,10 +1496,10 @@ from 2010 to 2021’ >
 Race ethnicity unknown women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_100.png alt=‘Line plot from 1.2 to 0.0
+<img src=images/HanoverCollege_97.png alt=‘Line plot from 1.2 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1540,7 +1511,7 @@ Nonresident alien men (percent freshmen)
 3.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_101.png alt=‘Line plot from 1.6 to 3.3
+<img src=images/HanoverCollege_98.png alt=‘Line plot from 1.6 to 3.3
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1552,8 +1523,63 @@ Nonresident alien women (percent freshmen)
 2.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_102.png alt=‘Line plot from 0.9 to 2.2
+<img src=images/HanoverCollege_99.png alt=‘Line plot from 0.9 to 2.2
 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Hanover College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+65% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/HanoverCollege_101.png alt=‘Line plot from 59 to 65
+from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+98% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/HanoverCollege_102.png alt=‘Line plot from 97 to 98
+from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/HanoverCollege_103.png alt=‘Line plot from 0 to 0
+from 2010 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1594,7 +1620,7 @@ Total (tenure-track count)
 79 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_61.png alt=‘Line plot from 95 to 79
+<img src=images/HanoverCollege_58.png alt=‘Line plot from 95 to 79
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1609,7 +1635,7 @@ Women (tenure-track count)
 31 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_62.png alt=‘Line plot from 36 to 31
+<img src=images/HanoverCollege_59.png alt=‘Line plot from 36 to 31
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1624,7 +1650,7 @@ Men (tenure-track count)
 48 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_63.png alt=‘Line plot from 59 to 48
+<img src=images/HanoverCollege_60.png alt=‘Line plot from 59 to 48
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1636,11 +1662,11 @@ from 2013 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_64.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_61.png alt=‘Line plot from 0 to 0 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1650,11 +1676,11 @@ from 2013 to 2020’ >
 Asian (tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_65.png alt=‘Line plot from 5.0 to 3.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_62.png alt=‘Line plot from 5 to 3 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.4 per year
@@ -1665,11 +1691,11 @@ from 2013 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_66.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_63.png alt=‘Line plot from 0 to 0 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1679,11 +1705,11 @@ from 2013 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-4.0 (2020)
+4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_67.png alt=‘Line plot from 5.0 to 4.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_64.png alt=‘Line plot from 5 to 4 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.2 per year
@@ -1694,11 +1720,11 @@ from 2013 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_68.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_65.png alt=‘Line plot from 0 to 0 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1711,7 +1737,7 @@ White (tenure-track count)
 69 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_69.png alt=‘Line plot from 81 to 69
+<img src=images/HanoverCollege_66.png alt=‘Line plot from 81 to 69
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1723,11 +1749,11 @@ from 2013 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_70.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_67.png alt=‘Line plot from 0 to 0 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1737,11 +1763,11 @@ from 2013 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_71.png alt=‘Line plot from 2.0 to 0.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_68.png alt=‘Line plot from 2 to 0 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1785,7 +1811,7 @@ Total (non-tenure-track count)
 10 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_72.png alt=‘Line plot from 2.0 to 10
+<img src=images/HanoverCollege_69.png alt=‘Line plot from 2 to 10
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1796,11 +1822,11 @@ from 2013 to 2020’ >
 Women (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_73.png alt=‘Line plot from 1.0 to 3.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_70.png alt=‘Line plot from 1 to 3 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1810,11 +1836,11 @@ from 2013 to 2020’ >
 Men (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-7.0 (2020)
+7 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_74.png alt=‘Line plot from 1.0 to 7.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_71.png alt=‘Line plot from 1 to 7 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.8 per year
@@ -1825,11 +1851,11 @@ from 2013 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_75.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_72.png alt=‘Line plot from 0 to 0 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1839,11 +1865,11 @@ from 2013 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_76.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_73.png alt=‘Line plot from 0 to 0 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1853,11 +1879,11 @@ from 2013 to 2020’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_77.png alt=‘Line plot from 1.0 to 0.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_74.png alt=‘Line plot from 1 to 0 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1867,11 +1893,11 @@ from 2013 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_78.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_75.png alt=‘Line plot from 0 to 0 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1881,11 +1907,11 @@ from 2013 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_79.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_76.png alt=‘Line plot from 0 to 0 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1898,7 +1924,7 @@ White (non-tenure-track count)
 10 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_80.png alt=‘Line plot from 1.0 to 10
+<img src=images/HanoverCollege_77.png alt=‘Line plot from 1 to 10
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1909,11 +1935,11 @@ from 2013 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_81.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_78.png alt=‘Line plot from 0 to 0 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1923,11 +1949,11 @@ from 2013 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_82.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2020’ >
+<img src=images/HanoverCollege_79.png alt=‘Line plot from 0 to 0 from
+2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1965,7 +1991,7 @@ Applicants submitting SAT
 18% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_30.png alt=‘Line plot from 57 to 18
+<img src=images/HanoverCollege_27.png alt=‘Line plot from 57 to 18
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1979,7 +2005,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 570 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_31.png alt=‘Line plot from 540 to 570
+<img src=images/HanoverCollege_28.png alt=‘Line plot from 540 to 570
 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1993,7 +2019,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 660 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_32.png alt=‘Line plot from 640 to 660
+<img src=images/HanoverCollege_29.png alt=‘Line plot from 640 to 660
 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2007,7 +2033,7 @@ SAT Math 25th percentile score
 540 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_33.png alt=‘Line plot from 470 to 540
+<img src=images/HanoverCollege_30.png alt=‘Line plot from 470 to 540
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2022,7 +2048,7 @@ SAT Math 75th percentile score
 650 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_34.png alt=‘Line plot from 580 to 650
+<img src=images/HanoverCollege_31.png alt=‘Line plot from 580 to 650
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2056,7 +2082,7 @@ Applicants submitting ACT
 26% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_35.png alt=‘Line plot from 41 to 26
+<img src=images/HanoverCollege_32.png alt=‘Line plot from 41 to 26
 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2068,7 +2094,7 @@ ACT Composite 25th percentile score
 25 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_36.png alt=‘Line plot from 23 to 25
+<img src=images/HanoverCollege_33.png alt=‘Line plot from 23 to 25
 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2080,7 +2106,7 @@ ACT Composite 75th percentile score
 30 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_37.png alt=‘Line plot from 28 to 30
+<img src=images/HanoverCollege_34.png alt=‘Line plot from 28 to 30
 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2092,7 +2118,7 @@ ACT English 25th percentile score
 24 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_38.png alt=‘Line plot from 22 to 24
+<img src=images/HanoverCollege_35.png alt=‘Line plot from 22 to 24
 from 2015 to 2021’ >
 </td>
 </tr>
@@ -2104,7 +2130,7 @@ ACT English 75th percentile score
 29 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_39.png alt=‘Line plot from 28 to 29
+<img src=images/HanoverCollege_36.png alt=‘Line plot from 28 to 29
 from 2015 to 2021’ >
 </td>
 </tr>
@@ -2116,7 +2142,7 @@ ACT Math 25th percentile score
 25 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_40.png alt=‘Line plot from 21 to 25
+<img src=images/HanoverCollege_37.png alt=‘Line plot from 21 to 25
 from 2015 to 2021’ >
 </td>
 </tr>
@@ -2128,7 +2154,7 @@ ACT Math 75th percentile score
 29 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/HanoverCollege_41.png alt=‘Line plot from 27 to 29
+<img src=images/HanoverCollege_38.png alt=‘Line plot from 27 to 29
 from 2015 to 2021’ >
 </td>
 </tr>
@@ -2139,28 +2165,28 @@ from 2015 to 2021’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b4104a9dacc51d8e46d1" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b4104a9dacc51d8e46d1">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_ExerciseScienceandKinesiology.html\">Exercise Science and Kinesiology</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Bachelors_Engineering_General.html\">Engineering, General</a>","<a href=\"majors_Bachelors_International_GlobalizationStudies.html\">International/Globalization Studies</a>","<a href=\"majors_Bachelors_Sports_Kinesiology_andPhysicalEducation_Fitness_General.html\">Sports, Kinesiology, and Physical Education/Fitness, General</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_Ethnic_CulturalMinority_Gender_andGroupStudies_Other.html\">Ethnic, Cultural Minority, Gender, and Group Studies, Other</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Theology_TheologicalStudies.html\">Theology/Theological Studies</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_EngineeringScience.html\">Engineering Science</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Literature_Other.html\">Literature, Other</a>"],[32,20,20,16,15,14,11,10,8,8,8,8,8,6,6,4,4,3,3,3,2,2,2,2,1,1,1],[14.679,9.174,9.174,7.339,6.881,6.422,5.046,4.587,3.67,3.67,3.67,3.67,3.67,2.752,2.752,1.835,1.835,1.376,1.376,1.376,0.917,0.917,0.917,0.917,0.459,0.459,0.459],[0.103,0.025,0.074,0.015,0.052,0.149,0.036,0.047,0.108,0.021,0.06,0.021,0.036,0.023,0.025,0.165,0.074,0.03,0.073,0.039,0.256,0.011,0.172,0.022,0.187,0.018,16.667],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bf8349ff8bd006fb1776" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bf8349ff8bd006fb1776">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_ExerciseScienceandKinesiology.html\">Exercise Science and Kinesiology</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Bachelors_Engineering_General.html\">Engineering, General</a>","<a href=\"majors_Bachelors_International_GlobalizationStudies.html\">International/Globalization Studies</a>","<a href=\"majors_Bachelors_Sports_Kinesiology_andPhysicalEducation_Fitness_General.html\">Sports, Kinesiology, and Physical Education/Fitness, General</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_Ethnic_CulturalMinority_Gender_andGroupStudies_Other.html\">Ethnic, Cultural Minority, Gender, and Group Studies, Other</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Theology_TheologicalStudies.html\">Theology/Theological Studies</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_EngineeringScience.html\">Engineering Science</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Literature_Other.html\">Literature, Other</a>"],[32,20,20,16,15,14,11,10,8,8,8,8,8,6,6,4,4,3,3,3,2,2,2,2,1,1,1],[14.679,9.174,9.174,7.339,6.881,6.422,5.046,4.587,3.67,3.67,3.67,3.67,3.67,2.752,2.752,1.835,1.835,1.376,1.376,1.376,0.917,0.917,0.917,0.917,0.459,0.459,0.459],[0.103,0.025,0.074,0.015,0.052,0.149,0.036,0.047,0.108,0.021,0.06,0.021,0.036,0.023,0.025,0.165,0.074,0.03,0.073,0.039,0.256,0.011,0.172,0.022,0.187,0.018,16.667],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f16bb87bd95d26199371" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f16bb87bd95d26199371">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-059a08c63f5a63ea4078" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-059a08c63f5a63ea4078">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-10b177bae01ce5155f27" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-10b177bae01ce5155f27">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5c377c76e8761b853d91" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5c377c76e8761b853d91">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-92b1ae05ca398cb09664" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-92b1ae05ca398cb09664">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5a5490bd5e42288c5f01" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5a5490bd5e42288c5f01">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7168d64b49136eb17911" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-7168d64b49136eb17911">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4cf09919322edeada60c" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-4cf09919322edeada60c">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

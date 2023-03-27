@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -265,9 +267,19 @@ program-Education</p></li>
 <li><p><strong>Enrollment profile</strong>: High undergraduate (see more
 details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 6,718 (This is 50% the cost of Harvard)</p></li>
+aid</strong>: $6,718 (This is 40% the average cost of Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $6,415.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.uncfsu.edu/paying-for-college/cost-calculator'>here</a>
+to see what your family may be asked to pay. It can be MUCH lower than
+the average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, medium, primarily
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 86.7% of first year
+students come from North Carolina</p></li>
+<li><p><strong>In US percentage</strong>: 99.8% of first year students
+come from the US</p></li>
 <li><p>This is a <strong>Historically Black College or University
 (HBCU)</strong></p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
@@ -309,9 +321,10 @@ are registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Restrictive (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: C- (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -324,17 +337,30 @@ marriage</strong>: 38.5% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Moderate risk (based
+on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Middle Atlantic coastal
 forests</li>
 <li><strong>Biome</strong>: Temperate Conifer Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/20154/Average-Weather-in-Fayetteville-North-Carolina-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ff7aa33f8adc46b30c58" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-ff7aa33f8adc46b30c58">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[35.073641,-78.891696,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[35.073641,-78.891696],16,[]],"limits":{"lat":[35.073641,35.073641],"lng":[-78.891696,-78.891696]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6891befabd30904d9871" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6891befabd30904d9871">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"198543.html\">Fayetteville State University</a>","<a href=\"162007.html\">Bowie State University</a>","<a href=\"199999.html\">Winston-Salem State University</a>","<a href=\"234155.html\">Virginia State University</a>","<a href=\"198507.html\">Elizabeth City State University</a>","<a href=\"213598.html\">Lincoln University</a>","<a href=\"217873.html\">Claflin University</a>","<a href=\"234164.html\">Virginia Union University</a>","<a href=\"198756.html\">Johnson C Smith University</a>","<a href=\"199582.html\">Saint Augustine's University</a>","<a href=\"198862.html\">Livingstone College</a>","<a href=\"226833.html\">Midwestern State University</a>","<a href=\"212115.html\">East Stroudsburg University of Pennsylvania</a>","<a href=\"161554.html\">University of Southern Maine</a>","<a href=\"147776.html\">Northeastern Illinois University</a>","<a href=\"162584.html\">Frostburg State University</a>","<a href=\"151102.html\">Purdue University Fort Wayne</a>","<a href=\"218061.html\">Francis Marion University</a>","<a href=\"165820.html\">Fitchburg State University</a>","<a href=\"148654.html\">University of Illinois Springfield</a>","<a href=\"171146.html\">University of Michigan-Flint</a>","<a href=\"199281.html\">University of North Carolina at Pembroke</a>","<a href=\"211361.html\">California University of Pennsylvania</a>","<a href=\"199643.html\">Shaw University</a>","<a href=\"159939.html\">University of New Orleans</a>","<a href=\"224147.html\">Texas A &amp; M University-Corpus Christi</a>","<a href=\"115755.html\">California State Polytechnic University-Humboldt</a>","<a href=\"168430.html\">Worcester State University</a>","<a href=\"130776.html\">Western Connecticut State University</a>","<a href=\"377564.html\">University of Washington-Tacoma Campus</a>","<a href=\"196158.html\">SUNY at Fredonia</a>","<a href=\"139366.html\">Columbus State University</a>","<a href=\"157386.html\">Morehead State University</a>","<a href=\"165866.html\">Framingham State University</a>","<a href=\"196264.html\">SUNY Empire State College</a>","<a href=\"183080.html\">Plymouth State University</a>","<a href=\"228705.html\">Texas A &amp; M University-Kingsville</a>","<a href=\"185129.html\">New Jersey City University</a>","<a href=\"168263.html\">Westfield State University</a>","<a href=\"196200.html\">SUNY College at Potsdam</a>","<a href=\"181215.html\">University of Nebraska at Kearney</a>","<a href=\"196237.html\">SUNY College at Old Westbury</a>","<a href=\"100830.html\">Auburn University at Montgomery</a>","<a href=\"207865.html\">Southwestern Oklahoma State University</a>","<a href=\"212160.html\">Edinboro University of Pennsylvania</a>","<a href=\"151342.html\">Indiana University-South Bend</a>","<a href=\"190691.html\">CUNY York College</a>","<a href=\"218645.html\">University of South Carolina Aiken</a>","<a href=\"151379.html\">Indiana University-Southeast</a>","<a href=\"138716.html\">Albany State University</a>","<a href=\"192439.html\">LIU Brooklyn</a>","<a href=\"210429.html\">Western Oregon University</a>","<a href=\"196130.html\">SUNY Buffalo State</a>","<a href=\"240374.html\">University of Wisconsin-Parkside</a>","<a href=\"186432.html\">Saint Peter's University</a>","<a href=\"207263.html\">Northeastern State University</a>","<a href=\"107071.html\">Henderson State University</a>","<a href=\"151263.html\">University of Indianapolis</a>","<a href=\"129215.html\">Eastern Connecticut State University</a>","<a href=\"217420.html\">Rhode Island College</a>","<a href=\"148496.html\">Dominican University</a>","<a href=\"155025.html\">Emporia State University</a>","<a href=\"139764.html\">Georgia Southwestern State University</a>","<a href=\"225414.html\">University of Houston-Clear Lake</a>","<a href=\"174783.html\">Saint Cloud State University</a>","<a href=\"232937.html\">Norfolk State University</a>","<a href=\"128106.html\">Colorado State University Pueblo</a>","<a href=\"240277.html\">University of Wisconsin-Green Bay</a>","<a href=\"229814.html\">West Texas A &amp; M University</a>","<a href=\"126580.html\">University of Colorado Colorado Springs</a>","<a href=\"151360.html\">Indiana University-Northwest</a>","<a href=\"198835.html\">Lenoir-Rhyne University</a>","<a href=\"420574.html\">Arizona State University-Polytechnic</a>","<a href=\"206941.html\">University of Central Oklahoma</a>","<a href=\"216010.html\">Shippensburg University of Pennsylvania</a>","<a href=\"221768.html\">The University of Tennessee-Martin</a>","<a href=\"218742.html\">University of South Carolina-Upstate</a>","<a href=\"168254.html\">Western New England University</a>","<a href=\"232681.html\">University of Mary Washington</a>","<a href=\"186283.html\">Rider University</a>","<a href=\"490805.html\">Purdue University Northwest</a>","<a href=\"196051.html\">SUNY Morrisville</a>","<a href=\"156365.html\">Campbellsville University</a>","<a href=\"167729.html\">Salem State University</a>","<a href=\"174358.html\">Minnesota State University Moorhead</a>","<a href=\"187444.html\">William Paterson University of New Jersey</a>","<a href=\"482158.html\">Middle Georgia State University</a>","<a href=\"193399.html\">College of Mount Saint Vincent</a>","<a href=\"173124.html\">Bemidji State University</a>","<a href=\"184603.html\">Fairleigh Dickinson University-Metropolitan Campus</a>","<a href=\"184694.html\">Fairleigh Dickinson University-Florham Campus</a>","<a href=\"233897.html\">University of Virginia's College at Wise</a>","<a href=\"228802.html\">The University of Texas at Tyler</a>","<a href=\"178624.html\">Northwest Missouri State University</a>","<a href=\"213613.html\">Lock Haven University</a>","<a href=\"197045.html\">Utica University</a>","<a href=\"222178.html\">Abilene Christian University</a>","<a href=\"190655.html\">CUNY New York City College of Technology</a>","<a href=\"218733.html\">South Carolina State University</a>","<a href=\"194958.html\">Roberts Wesleyan College</a>"],[82,87,81,96,77,80,62,94,45,75,51,95,93,87,62,86,83,86,85,79,74,92,97,65,81,91,91,89,85,83,91,79,90,84,81,92,93,91,94,81,90,77,97,94,92,89,67,84,90,73,84,92,85,75,93,99,75,78,73,85,81,88,86,91,94,89,99,91,97,95,85,86,84,81,93,75,76,90,82,82,76,81,78,90,72,83,99,82,75,85,85,83,94,86,95,89,70,82,88,87],[19,21,21,10,13,17,6,8,21,19,10,21,24,19,16,16,26,27,19,13,17,17,21,9,25,27,10,25,18,34,19,29,19,14,25,15,20,15,23,16,17,13,16,35,23,35,10,35,33,26,12,21,13,27,16,48,23,13,23,20,15,38,27,20,21,19,30,24,24,12,34,9,24,23,18,16,27,14,16,9,38,19,17,17,27,13,43,17,28,14,14,39,35,16,26,16,14,17,27,18],[37,42,46,48,40,49,51,42,39,22,23,47,49,34,21,48,38,43,57,52,36,43,49,16,39,36,48,61,53,58,62,44,45,51,24,53,43,39,61,50,57,48,36,42,50,38,33,43,39,35,32,48,41,42,58,39,37,63,57,46,52,50,34,53,47,37,39,55,46,44,38,48,45,37,58,52,47,63,68,61,40,35,37,57,57,55,28,56,48,53,62,39,42,51,54,60,60,37,30,64],[11,19,12,11,4,22,26,21,26,4,31,26,40,29,22,21,31,33,31,17,36,12,44,29,35,18,12,36,35,null,15,32,18,27,38,38,19,31,34,14,27,19,32,34,34,32,15,32,37,15,null,26,15,24,60,36,15,50,25,30,59,32,22,34,28,13,31,30,29,42,33,40,null,36,32,19,35,59,20,58,34,13,75,33,31,35,21,65,27,70,null,9,10,33,36,64,20,17,16,70],[21,38,21,19,24,19,18,16,22,78,40,24,22,16,15,18,27,15,15,12,18,22,17,null,25,21,23,20,19,22,20,18,25,18,25,25,17,21,20,14,15,27,21,25,13,22,28,21,23,32,18,22,22,25,23,20,20,18,20,16,17,15,21,15,20,34,24,27,25,29,30,17,44,23,18,22,27,15,17,18,23,16,15,16,20,18,22,33,22,20,21,14,22,28,14,21,19,27,18,13],[6415,12673,12455,14577,2213,13251,19776,19117,20919,18419,17017,9055,15427,6336,13285,14256,7358,11809,13562,8109,8583,10460,16481,24312,10940,17688,10466,10132,14158,5765,12874,12808,8959,13069,12111,16740,10611,12878,15145,12267,14058,5302,13773,8407,13425,5777,3442,10420,4802,14504,null,14616,9318,8337,12000,8048,14657,14716,14317,8309,14919,12794,11392,13226,11493,10890,11947,11361,15960,10541,4070,15112,null,14691,18084,9537,12810,24081,15988,22338,6763,17411,18759,14664,12716,15156,9365,17408,11631,9533,13238,8169,8164,10413,11259,19744,24708,3763,21339,20469],[3658,4344,3961,3665,1627,1664,1687,1092,1063,862,869,3619,3844,3567,2657,2888,4752,2712,2506,1739,3032,4728,3566,886,4579,5954,4643,3575,3440,3825,3449,4274,4778,2734,3269,3368,4002,4385,3486,2251,3781,3399,3017,3021,2544,2869,4239,2441,2412,3880,3396,3049,5384,2563,1937,3821,1992,3707,3476,4058,1908,2676,1521,3363,4991,4520,2589,4952,5332,7461,2206,1388,4030,8590,4319,4363,3993,2522,3111,3005,4687,1648,2424,4234,3134,5708,4347,2126,2550,1890,2211,1074,4731,4405,2150,2384,3032,8969,1833,1017],[471,471,361,246,36,108,50,342,44,9,null,300,252,624,487,264,220,125,520,478,640,601,772,91,709,469,412,160,81,445,129,463,189,104,144,377,621,334,389,147,318,149,400,513,569,142,179,419,95,260,1737,225,383,193,456,627,164,706,74,258,348,551,419,946,677,307,449,166,587,499,102,478,497,547,285,186,29,475,123,301,228,null,2486,644,206,517,195,345,82,591,577,null,830,985,277,270,410,null,195,432],["North Carolina","Maryland","North Carolina","Virginia","North Carolina","Pennsylvania","South Carolina","Virginia","North Carolina","North Carolina","North Carolina","Texas","Pennsylvania","Maine","Illinois","Maryland","Indiana","South Carolina","Massachusetts","Illinois","Michigan","North Carolina","Pennsylvania","North Carolina","Louisiana","Texas","California","Massachusetts","Connecticut","Washington","New York","Georgia","Kentucky","Massachusetts","New York","New Hampshire","Texas","New Jersey","Massachusetts","New York","Nebraska","New York","Alabama","Oklahoma","Pennsylvania","Indiana","New York","South Carolina","Indiana","Georgia","New York","Oregon","New York","Wisconsin","New Jersey","Oklahoma","Arkansas","Indiana","Connecticut","Rhode Island","Illinois","Kansas","Georgia","Texas","Minnesota","Virginia","Colorado","Wisconsin","Texas","Colorado","Indiana","North Carolina","Arizona","Oklahoma","Pennsylvania","Tennessee","South Carolina","Massachusetts","Virginia","New Jersey","Indiana","New York","Kentucky","Massachusetts","Minnesota","New Jersey","Georgia","New York","Minnesota","New Jersey","New Jersey","Virginia","Texas","Missouri","Pennsylvania","New York","Texas","New York","South Carolina","New York"],["Approximately stable","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Increasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Increasing","Decreasing","Approximately stable","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Increasing","Decreasing","Decreasing","Approximately stable","Decreasing","Increasing","Decreasing","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Approximately stable"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7259fa1a00a2522b3c99" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-7259fa1a00a2522b3c99">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[35.073641,-78.891696,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[35.073641,-78.891696],16,[]],"limits":{"lat":[35.073641,35.073641],"lng":[-78.891696,-78.891696]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -647,33 +673,13 @@ Master’s Colleges &amp; Universities: Medium Programs
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-15 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_14.png alt=‘Line plot
-from 14 to 15 from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 57%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 56%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 21 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_15.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_14.png alt=‘Line plot
 from 16 to 21 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -684,6 +690,26 @@ from 16 to 21 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (lower) than 47%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
+</td>
+<td style="text-align:center;">
+15 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/FayettevilleStateUniversity_15.png alt=‘Line plot
+from 14 to 15 from 2012 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 57%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 56%
 </td>
 </tr>
 <tr>
@@ -706,17 +732,17 @@ from 277 to 263 from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-71 (2020)
+192 (2020)
 </td>
 <td style="text-align:center;">
 <img src=images/FayettevilleStateUniversity_17.png alt=‘Line plot
-from 34 to 71 from 2012 to 2020’ >
+from 243 to 192 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />5.6 per year
+↓<br />-5.7 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -725,17 +751,17 @@ from 34 to 71 from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-192 (2020)
+71 (2020)
 </td>
 <td style="text-align:center;">
 <img src=images/FayettevilleStateUniversity_18.png alt=‘Line plot
-from 243 to 192 from 2012 to 2020’ >
+from 34 to 71 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↓<br />-5.7 per year
+↑<br />5.6 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -779,11 +805,11 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-3.0% (2021)
+3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_103.png alt=‘Line plot
-from 3.0 to 3.0 from 2010 to 2021’ >
+<img src=images/FayettevilleStateUniversity_100.png alt=‘Line plot
+from 3 to 3 from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -816,13 +842,33 @@ Master’s Colleges &amp; Universities: Medium Programs
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+11% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/FayettevilleStateUniversity_19.png alt=‘Line plot
+from 10 to 11 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 82%
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 99%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $36 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_19.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_20.png alt=‘Line plot
 from 3.0 M to 36 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -842,7 +888,7 @@ Revenue
 $165 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_20.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_21.png alt=‘Line plot
 from 114 M to 165 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -860,7 +906,7 @@ Expenses
 $129 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_21.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_22.png alt=‘Line plot
 from 111 M to 129 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -879,7 +925,7 @@ Assets
 $258 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_22.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_23.png alt=‘Line plot
 from 136 M to 258 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -890,44 +936,6 @@ from 136 M to 258 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪<br />Better (higher) than 77%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-11% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_23.png alt=‘Line plot
-from 10 to 11 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 82%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 99%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-33% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_24.png alt=‘Line plot
-from 43 to 33 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -969,7 +977,7 @@ Total
 37% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_42.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_39.png alt=‘Line plot
 from 34 to 37 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -987,7 +995,7 @@ Men
 31% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_43.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_40.png alt=‘Line plot
 from 26 to 31 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1005,7 +1013,7 @@ Women
 41% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_44.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_41.png alt=‘Line plot
 from 39 to 41 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1023,8 +1031,8 @@ American Indian or Alaska Native men
 12% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_45.png alt=‘Line plot
-from 0.0 to 12 from 2011 to 2021’ >
+<img src=images/FayettevilleStateUniversity_42.png alt=‘Line plot
+from 0 to 12 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 33%
@@ -1041,8 +1049,8 @@ American Indian or Alaska Native women
 7.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_46.png alt=‘Line plot
-from 0.0 to 7.1 from 2011 to 2021’ >
+<img src=images/FayettevilleStateUniversity_43.png alt=‘Line plot
+from 0 to 7.1 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 40%
@@ -1059,8 +1067,8 @@ Asian men
 25% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_47.png alt=‘Line plot
-from 0.0 to 25 from 2011 to 2021’ >
+<img src=images/FayettevilleStateUniversity_44.png alt=‘Line plot
+from 0 to 25 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 43%
@@ -1077,7 +1085,7 @@ Asian women
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_48.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_45.png alt=‘Line plot
 from 20 to 50 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1095,7 +1103,7 @@ Black or African American men
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_49.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_46.png alt=‘Line plot
 from 30 to 33 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1113,7 +1121,7 @@ Black or African American women
 42% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_50.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_47.png alt=‘Line plot
 from 32 to 42 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1131,7 +1139,7 @@ Hispanic men
 36% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_51.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_48.png alt=‘Line plot
 from 30 to 36 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1149,7 +1157,7 @@ Hispanic women
 52% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_52.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_49.png alt=‘Line plot
 from 29 to 52 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1164,11 +1172,11 @@ from 29 to 52 from 2011 to 2021’ >
 Native Hawaiian or other Pacific Islander men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_53.png alt=‘Line plot
-from 0.0 to 0.0 from 2019 to 2021’ >
+<img src=images/FayettevilleStateUniversity_50.png alt=‘Line plot
+from 0 to 0 from 2019 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1180,11 +1188,11 @@ from 0.0 to 0.0 from 2019 to 2021’ >
 Native Hawaiian or other Pacific Islander women
 </td>
 <td style="text-align:center;">
-0.0% (2018)
+0% (2018)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_54.png alt=‘Line plot
-from 0.0 to 0.0 from 2018 to 2018’ >
+<img src=images/FayettevilleStateUniversity_51.png alt=‘Line plot
+from 0 to 0 from 2018 to 2018’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 0%
@@ -1201,7 +1209,7 @@ White men
 21% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_55.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_52.png alt=‘Line plot
 from 26 to 21 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1219,7 +1227,7 @@ White women
 43% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_56.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_53.png alt=‘Line plot
 from 39 to 43 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1237,7 +1245,7 @@ Two or more races men
 33% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_57.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_54.png alt=‘Line plot
 from 33 to 33 from 2017 to 2017’ >
 </td>
 <td style="text-align:center;">
@@ -1255,7 +1263,7 @@ Two or more races women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_58.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_55.png alt=‘Line plot
 from 57 to 100 from 2016 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1270,11 +1278,11 @@ from 57 to 100 from 2016 to 2021’ >
 Nonresident alien men
 </td>
 <td style="text-align:center;">
-0.0% (2019)
+0% (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_59.png alt=‘Line plot
-from 50 to 0.0 from 2014 to 2019’ >
+<img src=images/FayettevilleStateUniversity_56.png alt=‘Line plot
+from 50 to 0 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 17%
@@ -1291,7 +1299,7 @@ Nonresident alien women
 75% (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_60.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_57.png alt=‘Line plot
 from 100 to 75 from 2010 to 2019’ >
 </td>
 <td style="text-align:center;">
@@ -1331,7 +1339,7 @@ Men (percent freshmen)
 34% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_83.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_80.png alt=‘Line plot
 from 39 to 34 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1343,7 +1351,7 @@ Women (percent freshmen)
 66% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_84.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_81.png alt=‘Line plot
 from 61 to 66 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1352,11 +1360,11 @@ from 61 to 66 from 2010 to 2021’ >
 American Indian or Alaska Native men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_85.png alt=‘Line plot
-from 0.6 to 0.0 from 2010 to 2021’ >
+<img src=images/FayettevilleStateUniversity_82.png alt=‘Line plot
+from 0.6 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1367,7 +1375,7 @@ American Indian or Alaska Native women (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_86.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_83.png alt=‘Line plot
 from 0.6 to 0.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1376,11 +1384,11 @@ from 0.6 to 0.2 from 2010 to 2021’ >
 Asian men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_87.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/FayettevilleStateUniversity_84.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1391,7 +1399,7 @@ Asian women (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_88.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_85.png alt=‘Line plot
 from 0.4 to 0.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1403,7 +1411,7 @@ Black or African American men (percent freshmen)
 26% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_89.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_86.png alt=‘Line plot
 from 33 to 26 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1415,7 +1423,7 @@ Black or African American women (percent freshmen)
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_90.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_87.png alt=‘Line plot
 from 51 to 50 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1427,7 +1435,7 @@ Hispanic men (percent freshmen)
 2.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_91.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_88.png alt=‘Line plot
 from 2.2 to 2.0 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1439,7 +1447,7 @@ Hispanic women (percent freshmen)
 7.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_92.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_89.png alt=‘Line plot
 from 1.5 to 7.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1448,11 +1456,11 @@ from 1.5 to 7.3 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_93.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/FayettevilleStateUniversity_90.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1460,11 +1468,11 @@ from 0.0 to 0.0 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_94.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/FayettevilleStateUniversity_91.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1475,7 +1483,7 @@ White men (percent freshmen)
 1.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_95.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_92.png alt=‘Line plot
 from 2.0 to 1.8 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1487,7 +1495,7 @@ White women (percent freshmen)
 2.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_96.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_93.png alt=‘Line plot
 from 3.0 to 2.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1499,8 +1507,8 @@ Two or more races men (percent freshmen)
 3.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_97.png alt=‘Line plot
-from 0.0 to 3.1 from 2010 to 2021’ >
+<img src=images/FayettevilleStateUniversity_94.png alt=‘Line plot
+from 0 to 3.1 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1511,7 +1519,7 @@ Two or more races women (percent freshmen)
 4.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_98.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_95.png alt=‘Line plot
 from 1.3 to 4.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1523,7 +1531,7 @@ Race ethnicity unknown men (percent freshmen)
 0.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_99.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_96.png alt=‘Line plot
 from 1.3 to 0.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1535,7 +1543,7 @@ Race ethnicity unknown women (percent freshmen)
 1.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_100.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_97.png alt=‘Line plot
 from 3.5 to 1.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1547,7 +1555,7 @@ Nonresident alien men (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_101.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_98.png alt=‘Line plot
 from 0.2 to 0.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1556,11 +1564,66 @@ from 0.2 to 0.2 from 2010 to 2021’ >
 Nonresident alien women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/FayettevilleStateUniversity_99.png alt=‘Line plot
+from 0.2 to 0 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Fayetteville State University
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+87% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/FayettevilleStateUniversity_101.png alt=‘Line plot
+from 93 to 87 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+100% (2021)
 </td>
 <td style="text-align:center;">
 <img src=images/FayettevilleStateUniversity_102.png alt=‘Line plot
-from 0.2 to 0.0 from 2010 to 2021’ >
+from 100 to 100 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/FayettevilleStateUniversity_103.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1601,7 +1664,7 @@ Total (tenure-track count)
 192 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_61.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_58.png alt=‘Line plot
 from 243 to 192 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1616,7 +1679,7 @@ Women (tenure-track count)
 86 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_62.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_59.png alt=‘Line plot
 from 105 to 86 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1631,7 +1694,7 @@ Men (tenure-track count)
 106 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_63.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_60.png alt=‘Line plot
 from 138 to 106 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1643,11 +1706,11 @@ from 138 to 106 from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_64.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/FayettevilleStateUniversity_61.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1660,7 +1723,7 @@ Asian (tenure-track count)
 32 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_65.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_62.png alt=‘Line plot
 from 37 to 32 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1674,7 +1737,7 @@ Black or African American (tenure-track count)
 63 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_66.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_63.png alt=‘Line plot
 from 101 to 63 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1686,11 +1749,11 @@ from 101 to 63 from 2012 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_67.png alt=‘Line plot
-from 8.0 to 5.0 from 2012 to 2020’ >
+<img src=images/FayettevilleStateUniversity_64.png alt=‘Line plot
+from 8 to 5 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.5 per year
@@ -1701,11 +1764,11 @@ from 8.0 to 5.0 from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_68.png alt=‘Line plot
-from 1.0 to 2.0 from 2012 to 2020’ >
+<img src=images/FayettevilleStateUniversity_65.png alt=‘Line plot
+from 1 to 2 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1718,7 +1781,7 @@ White (tenure-track count)
 81 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_69.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_66.png alt=‘Line plot
 from 87 to 81 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1729,11 +1792,11 @@ from 87 to 81 from 2012 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_70.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/FayettevilleStateUniversity_67.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1743,11 +1806,11 @@ from 0.0 to 0.0 from 2012 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-9.0 (2020)
+9 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_71.png alt=‘Line plot
-from 8.0 to 9.0 from 2012 to 2020’ >
+<img src=images/FayettevilleStateUniversity_68.png alt=‘Line plot
+from 8 to 9 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.4 per year
@@ -1792,7 +1855,7 @@ Total (non-tenure-track count)
 71 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_72.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_69.png alt=‘Line plot
 from 34 to 71 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1807,7 +1870,7 @@ Women (non-tenure-track count)
 36 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_73.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_70.png alt=‘Line plot
 from 18 to 36 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1822,7 +1885,7 @@ Men (non-tenure-track count)
 35 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_74.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_71.png alt=‘Line plot
 from 16 to 35 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1834,11 +1897,11 @@ from 16 to 35 from 2012 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_75.png alt=‘Line plot
-from 0.0 to 2.0 from 2012 to 2020’ >
+<img src=images/FayettevilleStateUniversity_72.png alt=‘Line plot
+from 0 to 2 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1849,11 +1912,11 @@ from 0.0 to 2.0 from 2012 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_76.png alt=‘Line plot
-from 2.0 to 3.0 from 2012 to 2020’ >
+<img src=images/FayettevilleStateUniversity_73.png alt=‘Line plot
+from 2 to 3 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1866,7 +1929,7 @@ Black or African American (non-tenure-track count)
 44 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_77.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_74.png alt=‘Line plot
 from 24 to 44 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1878,11 +1941,11 @@ from 24 to 44 from 2012 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_78.png alt=‘Line plot
-from 0.0 to 2.0 from 2012 to 2020’ >
+<img src=images/FayettevilleStateUniversity_75.png alt=‘Line plot
+from 0 to 2 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1892,11 +1955,11 @@ from 0.0 to 2.0 from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_79.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/FayettevilleStateUniversity_76.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1909,8 +1972,8 @@ White (non-tenure-track count)
 17 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_80.png alt=‘Line plot
-from 8.0 to 17 from 2012 to 2020’ >
+<img src=images/FayettevilleStateUniversity_77.png alt=‘Line plot
+from 8 to 17 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />1.2 per year
@@ -1921,11 +1984,11 @@ from 8.0 to 17 from 2012 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_81.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/FayettevilleStateUniversity_78.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1935,11 +1998,11 @@ from 0.0 to 0.0 from 2012 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_82.png alt=‘Line plot
-from 0.0 to 1.0 from 2012 to 2020’ >
+<img src=images/FayettevilleStateUniversity_79.png alt=‘Line plot
+from 0 to 1 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1980,7 +2043,7 @@ Number of physical books
 232,574 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_27.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_24.png alt=‘Line plot
 from 365,783 to 232,574 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2001,7 +2064,7 @@ Physical library circulations per students and faculty
 0.3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_28.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_25.png alt=‘Line plot
 from 2.2 to 0.3 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2022,7 +2085,7 @@ Digital library circulations per students and faculty
 27 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_29.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_26.png alt=‘Line plot
 from 10 to 27 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2058,11 +2121,11 @@ Change over ≤ 11 years
 Applicants submitting SAT
 </td>
 <td style="text-align:center;">
-5.0% (2021)
+5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_30.png alt=‘Line plot
-from 71 to 5.0 from 2014 to 2021’ >
+<img src=images/FayettevilleStateUniversity_27.png alt=‘Line plot
+from 71 to 5 from 2014 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -2073,7 +2136,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 440 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_31.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_28.png alt=‘Line plot
 from 440 to 440 from 2017 to 2021’ >
 </td>
 </tr>
@@ -2085,7 +2148,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 520 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_32.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_29.png alt=‘Line plot
 from 510 to 520 from 2017 to 2021’ >
 </td>
 </tr>
@@ -2097,7 +2160,7 @@ SAT Math 25th percentile score
 390 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_33.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_30.png alt=‘Line plot
 from 410 to 390 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2109,7 +2172,7 @@ SAT Math 75th percentile score
 520 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_34.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_31.png alt=‘Line plot
 from 490 to 520 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2143,7 +2206,7 @@ Applicants submitting ACT
 19% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_35.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_32.png alt=‘Line plot
 from 26 to 19 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2157,7 +2220,7 @@ ACT Composite 25th percentile score
 14 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_36.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_33.png alt=‘Line plot
 from 17 to 14 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2171,7 +2234,7 @@ ACT Composite 75th percentile score
 19 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_37.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_34.png alt=‘Line plot
 from 21 to 19 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2185,7 +2248,7 @@ ACT English 25th percentile score
 12 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_38.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_35.png alt=‘Line plot
 from 15 to 12 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2199,7 +2262,7 @@ ACT English 75th percentile score
 18 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_39.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_36.png alt=‘Line plot
 from 21 to 18 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2214,7 +2277,7 @@ ACT Math 25th percentile score
 15 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_40.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_37.png alt=‘Line plot
 from 16 to 15 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2228,7 +2291,7 @@ ACT Math 75th percentile score
 18 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/FayettevilleStateUniversity_41.png alt=‘Line plot
+<img src=images/FayettevilleStateUniversity_38.png alt=‘Line plot
 from 22 to 18 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2241,28 +2304,28 @@ from 22 to 18 from 2014 to 2021’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ec9804d3f3edf979be4b" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-ec9804d3f3edf979be4b">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Bachelors_FireServicesAdministration.html\">Fire Services Administration</a>","<a href=\"majors_Bachelors_SocialWork.html\">Social Work</a>","<a href=\"majors_Bachelors_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_ForensicScienceandTechnology.html\">Forensic Science and Technology</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_PhysicalEducationTeachingandCoaching.html\">Physical Education Teaching and Coaching</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_Finance_General.html\">Finance, General</a>","<a href=\"majors_Bachelors_JuniorHigh_Intermediate_MiddleSchoolEducationandTeaching.html\">Junior High/Intermediate/Middle School Education and Teaching</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_BiologyTeacherEducation.html\">Biology Teacher Education</a>","<a href=\"majors_Bachelors_Geography.html\">Geography</a>","<a href=\"majors_Bachelors_ManagementInformationSystems_General.html\">Management Information Systems, General</a>"],[220,126,125,89,56,46,45,44,40,36,30,25,23,17,17,16,15,13,12,12,11,10,9,7,7,4,2,2,1,1,1],[20.716,11.864,11.77,8.38,5.273,4.331,4.237,4.143,3.766,3.39,2.825,2.354,2.166,1.601,1.601,1.507,1.412,1.224,1.13,1.13,1.036,0.942,0.847,0.659,0.659,0.377,0.188,0.188,0.094,0.094,0.094],[0.14,0.115,0.087,0.29,0.069,0.175,0.186,4.011,0.184,0.256,0.063,1.347,0.061,0.055,0.056,0.055,0.156,0.097,0.404,0.054,0.192,0.026,0.021,0.321,0.039,0.029,0.036,0.028,0.258,0.032,0.012],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-67c94258f511b4fbd5f5" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-67c94258f511b4fbd5f5">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Bachelors_FireServicesAdministration.html\">Fire Services Administration</a>","<a href=\"majors_Bachelors_SocialWork.html\">Social Work</a>","<a href=\"majors_Bachelors_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_ForensicScienceandTechnology.html\">Forensic Science and Technology</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_PhysicalEducationTeachingandCoaching.html\">Physical Education Teaching and Coaching</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_Finance_General.html\">Finance, General</a>","<a href=\"majors_Bachelors_JuniorHigh_Intermediate_MiddleSchoolEducationandTeaching.html\">Junior High/Intermediate/Middle School Education and Teaching</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_BiologyTeacherEducation.html\">Biology Teacher Education</a>","<a href=\"majors_Bachelors_Geography.html\">Geography</a>","<a href=\"majors_Bachelors_ManagementInformationSystems_General.html\">Management Information Systems, General</a>"],[220,126,125,89,56,46,45,44,40,36,30,25,23,17,17,16,15,13,12,12,11,10,9,7,7,4,2,2,1,1,1],[20.716,11.864,11.77,8.38,5.273,4.331,4.237,4.143,3.766,3.39,2.825,2.354,2.166,1.601,1.601,1.507,1.412,1.224,1.13,1.13,1.036,0.942,0.847,0.659,0.659,0.377,0.188,0.188,0.094,0.094,0.094],[0.14,0.115,0.087,0.29,0.069,0.175,0.186,4.011,0.184,0.256,0.063,1.347,0.061,0.055,0.056,0.055,0.156,0.097,0.404,0.054,0.192,0.026,0.021,0.321,0.039,0.029,0.036,0.028,0.258,0.032,0.012],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-edca49d45a94990cf414" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-edca49d45a94990cf414">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_SocialWork.html\">Social Work</a>","<a href=\"majors_Masters_TeacherEducationandProfessionalDevelopment_SpecificLevelsandMethods_Other.html\">Teacher Education and Professional Development, Specific Levels and Methods, Other</a>","<a href=\"majors_Masters_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Masters_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Masters_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Masters_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>"],[154,37,22,14,11,8,6],[61.111,14.683,8.73,5.556,4.365,3.175,2.381],[0.146,0.116,0.547,0.07,0.855,0.126,0.178],["Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-baf6e4b7e7eabf007b76" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-baf6e4b7e7eabf007b76">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_SocialWork.html\">Social Work</a>","<a href=\"majors_Masters_TeacherEducationandProfessionalDevelopment_SpecificLevelsandMethods_Other.html\">Teacher Education and Professional Development, Specific Levels and Methods, Other</a>","<a href=\"majors_Masters_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Masters_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Masters_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Masters_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>"],[154,37,22,14,11,8,6],[61.111,14.683,8.73,5.556,4.365,3.175,2.381],[0.146,0.116,0.547,0.07,0.855,0.126,0.178],["Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-859cb00fe6a03c10dcdd" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-859cb00fe6a03c10dcdd">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>"],[7],[100],[0.121],["Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-710146e75c12d44d1516" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-710146e75c12d44d1516">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>"],[7],[100],[0.121],["Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-397d0a8cd8f72b5d5957" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-397d0a8cd8f72b5d5957">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_ProjectManagement.html\">Project Management</a>","<a href=\"majors_Certificate_SocialWork.html\">Social Work</a>","<a href=\"majors_Certificate_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Certificate_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Certificate_EntrepreneurialandSmallBusinessOperations_Other.html\">Entrepreneurial and Small Business Operations, Other</a>","<a href=\"majors_Certificate_ResearchandExperimentalPsychology_Other.html\">Research and Experimental Psychology, Other</a>","<a href=\"majors_Certificate_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>","<a href=\"majors_Certificate_Medical_HealthManagementandClinicalAssistant_Specialist.html\">Medical/Health Management and Clinical Assistant/Specialist</a>"],[27,18,10,10,4,1,1,1],[37.5,25,13.889,13.889,5.556,1.389,1.389,1.389],[1.526,1.633,0.141,0.026,9.524,4.167,0.026,0.126],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c0305dff161117ae04df" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c0305dff161117ae04df">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_ProjectManagement.html\">Project Management</a>","<a href=\"majors_Certificate_SocialWork.html\">Social Work</a>","<a href=\"majors_Certificate_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Certificate_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Certificate_EntrepreneurialandSmallBusinessOperations_Other.html\">Entrepreneurial and Small Business Operations, Other</a>","<a href=\"majors_Certificate_ResearchandExperimentalPsychology_Other.html\">Research and Experimental Psychology, Other</a>","<a href=\"majors_Certificate_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>","<a href=\"majors_Certificate_Medical_HealthManagementandClinicalAssistant_Specialist.html\">Medical/Health Management and Clinical Assistant/Specialist</a>"],[27,18,10,10,4,1,1,1],[37.5,25,13.889,13.889,5.556,1.389,1.389,1.389],[1.526,1.633,0.141,0.026,9.524,4.167,0.026,0.126],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-dd6384e3668f72e50d5f" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-dd6384e3668f72e50d5f">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9c2512dbe14a8de776d2" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-9c2512dbe14a8de776d2">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

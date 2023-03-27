@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -178,10 +178,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -194,6 +194,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -261,10 +263,20 @@ STEM-dominant</p></li>
 <li><p><strong>Enrollment profile</strong>: High undergraduate (see more
 details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 26,179 (1.9 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $26,179 (1.7 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $15,701.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://ir.mines.edu/net-price-calculator/'>here</a> to see
+what your family may be asked to pay. It can be MUCH lower than the
+average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, medium, primarily
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 54.8% of first year
+students come from Colorado</p></li>
+<li><p><strong>In US percentage</strong>: 97.1% of first year students
+come from the US (note that 0.1% have no residence reported)</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 83.3% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -305,9 +317,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Protective (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: B (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -320,17 +333,29 @@ marriage</strong>: 57.1% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Safest (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Western short grasslands</li>
 <li><strong>Biome</strong>: Temperate Grasslands, Savannas &amp;
 Shrublands</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/3539/Average-Weather-in-Golden-Colorado-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e28bd607b031c19839dc" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-e28bd607b031c19839dc">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[39.751443,-105.223364,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[39.751443,-105.223364],16,[]],"limits":{"lat":[39.751443,39.751443],"lng":[-105.223364,-105.223364]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ea4943ef1e6955bbba43" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ea4943ef1e6955bbba43">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"126775.html\">Colorado School of Mines</a>","<a href=\"127918.html\">Regis University</a>","<a href=\"127556.html\">Colorado Mesa University</a>","<a href=\"219347.html\">South Dakota School of Mines and Technology</a>","<a href=\"180948.html\">Chadron State College</a>","<a href=\"168421.html\">Worcester Polytechnic Institute</a>","<a href=\"127185.html\">Fort Lewis College</a>","<a href=\"128391.html\">Western Colorado University</a>","<a href=\"126580.html\">University of Colorado Colorado Springs</a>","<a href=\"219046.html\">Black Hills State University</a>","<a href=\"194824.html\">Rensselaer Polytechnic Institute</a>","<a href=\"187897.html\">New Mexico Highlands University</a>","<a href=\"230807.html\">Westminster College</a>","<a href=\"186867.html\">Stevens Institute of Technology</a>","<a href=\"128106.html\">Colorado State University Pueblo</a>","<a href=\"122436.html\">University of San Diego</a>","<a href=\"110097.html\">Biola University</a>","<a href=\"129242.html\">Fairfield University</a>","<a href=\"121150.html\">Pepperdine University</a>","<a href=\"192819.html\">Marist College</a>","<a href=\"111948.html\">Chapman University</a>","<a href=\"126182.html\">Adams State University</a>","<a href=\"164739.html\">Bentley University</a>","<a href=\"176053.html\">Mississippi College</a>","<a href=\"174844.html\">St Olaf College</a>","<a href=\"178615.html\">Truman State University</a>","<a href=\"207971.html\">University of Tulsa</a>","<a href=\"165662.html\">Emerson College</a>","<a href=\"126669.html\">Colorado Christian University</a>","<a href=\"218973.html\">Wofford College</a>","<a href=\"235316.html\">Gonzaga University</a>","<a href=\"174914.html\">University of St Thomas</a>","<a href=\"127565.html\">Metropolitan State University of Denver</a>","<a href=\"195216.html\">St Lawrence University</a>","<a href=\"221971.html\">Union University</a>","<a href=\"178420.html\">University of Missouri-St Louis</a>","<a href=\"130253.html\">Sacred Heart University</a>","<a href=\"215770.html\">Saint Joseph's University</a>","<a href=\"221351.html\">Rhodes College</a>","<a href=\"229267.html\">Trinity University</a>","<a href=\"192703.html\">Manhattan College</a>","<a href=\"212674.html\">Gettysburg College</a>","<a href=\"201654.html\">Cedarville University</a>","<a href=\"165334.html\">Clark University</a>","<a href=\"169080.html\">Calvin University</a>","<a href=\"212009.html\">Dickinson College</a>","<a href=\"117946.html\">Loyola Marymount University</a>","<a href=\"122931.html\">Santa Clara University</a>","<a href=\"120254.html\">Occidental College</a>","<a href=\"150136.html\">Ball State University</a>","<a href=\"138354.html\">The University of West Florida</a>","<a href=\"171456.html\">Northern Michigan University</a>","<a href=\"100706.html\">University of Alabama in Huntsville</a>","<a href=\"176479.html\">William Carey University</a>","<a href=\"219976.html\">Lipscomb University</a>","<a href=\"145646.html\">Illinois Wesleyan University</a>","<a href=\"136950.html\">Rollins College</a>","<a href=\"122612.html\">University of San Francisco</a>","<a href=\"188030.html\">New Mexico State University-Main Campus</a>","<a href=\"224323.html\">University of Dallas</a>","<a href=\"196866.html\">Union College</a>","<a href=\"196185.html\">SUNY Oneonta</a>","<a href=\"215132.html\">University of the Sciences</a>","<a href=\"175272.html\">Winona State University</a>","<a href=\"153269.html\">Drake University</a>","<a href=\"156408.html\">Centre College</a>","<a href=\"179894.html\">Webster University</a>","<a href=\"217402.html\">Providence College</a>","<a href=\"228875.html\">Texas Christian University</a>","<a href=\"213543.html\">Lehigh University</a>","<a href=\"160621.html\">Southern University and A &amp; M College</a>","<a href=\"150163.html\">Butler University</a>","<a href=\"199102.html\">North Carolina A &amp; T State University</a>","<a href=\"188429.html\">Adelphi University</a>","<a href=\"231651.html\">Regent University</a>","<a href=\"166939.html\">Mount Holyoke College</a>","<a href=\"145725.html\">Illinois Institute of Technology</a>","<a href=\"196176.html\">State University of New York at New Paltz</a>","<a href=\"106458.html\">Arkansas State University</a>","<a href=\"159993.html\">University of Louisiana at Monroe</a>","<a href=\"234085.html\">Virginia Military Institute</a>","<a href=\"223232.html\">Baylor University</a>","<a href=\"231174.html\">University of Vermont</a>","<a href=\"133553.html\">Embry-Riddle Aeronautical University-Daytona Beach</a>","<a href=\"219471.html\">University of South Dakota</a>","<a href=\"202480.html\">University of Dayton</a>","<a href=\"143084.html\">Augustana College</a>","<a href=\"199218.html\">University of North Carolina Wilmington</a>","<a href=\"185828.html\">New Jersey Institute of Technology</a>","<a href=\"218070.html\">Furman University</a>","<a href=\"237057.html\">Whitman College</a>","<a href=\"150400.html\">DePauw University</a>","<a href=\"191968.html\">Ithaca College</a>","<a href=\"178411.html\">Missouri University of Science and Technology</a>","<a href=\"194578.html\">Pratt Institute-Main</a>","<a href=\"204635.html\">Ohio Northern University</a>","<a href=\"127060.html\">University of Denver</a>","<a href=\"190044.html\">Clarkson University</a>","<a href=\"195003.html\">Rochester Institute of Technology</a>","<a href=\"206622.html\">Xavier University</a>"],[57,81,80,80,null,60,93,91,95,97,53,null,76,53,99,53,61,56,53,60,60,100,61,49,47,61,75,45,94,52,76,76,89,57,53,57,66,83,57,34,75,56,62,48,75,48,46,54,38,68,53,71,74,57,74,45,49,71,57,58,47,70,61,77,69,68,59,58,54,46,59,81,57,77,41,52,66,46,63,70,64,57,64,72,87,81,69,68,69,71,59,65,78,85,68,69,64,75,71,84],[21,9,29,42,null,21,27,15,12,34,14,null,11,18,30,15,25,18,16,18,18,19,18,38,25,27,13,20,40,20,19,21,18,20,25,17,22,15,20,20,9,18,30,13,25,22,18,17,22,21,25,32,28,57,26,21,13,9,28,16,16,14,14,27,14,22,25,16,24,23,32,9,24,11,21,29,12,20,35,33,47,21,18,28,33,15,14,23,17,13,16,14,11,25,21,21,11,14,21,9],[83,62,47,52,39,87,44,48,44,44,84,27,63,87,39,80,70,84,83,82,80,34,88,63,85,72,73,79,58,80,85,78,30,82,68,58,73,83,85,80,77,82,73,79,77,82,79,91,83,68,52,54,61,60,71,81,71,76,50,72,85,74,77,63,77,86,57,89,83,87,32,82,53,71,63,85,71,73,54,54,74,82,77,62,60,80,79,72,74,82,89,83,77,63,71,72,76,76,71,75],[41,62,35,24,18,42,12,34,42,33,33,22,40,61,31,46,52,44,45,46,57,30,48,44,18,17,19,52,68,12,46,38,39,24,57,29,64,48,20,10,51,30,54,32,35,19,60,30,22,31,28,34,21,77,46,25,29,53,14,41,27,20,52,30,40,12,63,46,31,22,17,45,14,70,77,13,35,20,20,38,20,39,36,38,27,23,33,23,27,15,10,13,44,20,86,38,43,35,33,50],[23,19,36,14,20,18,20,19,29,21,22,13,null,19,24,14,16,18,12,35,20,27,20,18,20,17,13,21,null,13,13,17,25,14,9,21,32,17,13,11,15,13,25,13,16,10,15,14,12,22,29,28,30,9,16,14,14,16,19,13,12,25,21,23,11,12,12,16,20,11,26,17,25,17,21,12,11,21,17,20,13,20,20,29,19,19,17,21,24,10,10,11,16,20,18,11,11,16,18,19],[15701,22023,13761,16887,11976,33976,13458,13037,10541,13989,20738,12080,19656,26473,11947,22334,26419,21807,25909,25958,32071,11978,27303,14501,11138,8271,21226,38632,24541,21893,24906,27782,12721,15103,26056,9582,35484,23891,15566,12930,27983,13799,18961,18547,22475,12027,31985,23508,13475,9925,6805,11662,14646,15444,21843,20876,21511,31994,9280,15919,13769,14515,27539,12110,25332,13778,20039,18864,24552,14995,16447,31796,8840,26637,20707,13907,21101,14236,12021,9591,6552,31165,11693,30354,16321,20992,18937,15069,12508,21920,18380,18320,25636,8340,41609,19038,21285,21402,28857,29359],[5200,1916,6614,1708,1444,5051,2914,1645,7461,1697,5564,975,1130,4035,2589,5544,3289,4486,3427,4880,7156,1173,3907,2082,2964,3203,2614,4053,1921,1745,4909,5845,9851,2222,1634,4415,6071,3859,1996,2472,3016,2399,3597,2284,2787,2145,6945,5779,1938,13041,6241,5785,6223,1888,2761,1645,2427,5739,9084,1466,2075,5238,1287,4920,2776,1320,1881,4001,10020,5375,5050,4352,10347,4939,2313,2200,2716,5622,5401,4333,1652,14878,10842,6557,4502,8285,2317,11849,7305,2285,1524,1700,4719,5059,3785,2158,5436,2796,12742,4879],[1239,2067,90,204,106,866,38,302,499,28,1140,628,291,2790,449,1643,759,567,2950,413,1771,739,506,1182,null,244,794,1285,603,null,1811,1059,664,18,526,875,1380,442,7,130,428,null,242,881,103,6,2475,1899,1,1218,586,229,674,1659,1572,null,333,1996,1342,310,null,167,832,288,921,null,1054,204,1601,1032,1106,473,889,1294,2093,15,2416,431,651,1080,null,3623,1698,582,1362,2515,29,1285,1581,92,null,null,368,910,1298,688,3445,640,2181,505],["Colorado","Colorado","Colorado","South Dakota","Nebraska","Massachusetts","Colorado","Colorado","Colorado","South Dakota","New York","New Mexico","Utah","New Jersey","Colorado","California","California","Connecticut","California","New York","California","Colorado","Massachusetts","Mississippi","Minnesota","Missouri","Oklahoma","Massachusetts","Colorado","South Carolina","Washington","Minnesota","Colorado","New York","Tennessee","Missouri","Connecticut","Pennsylvania","Tennessee","Texas","New York","Pennsylvania","Ohio","Massachusetts","Michigan","Pennsylvania","California","California","California","Indiana","Florida","Michigan","Alabama","Mississippi","Tennessee","Illinois","Florida","California","New Mexico","Texas","New York","New York","Pennsylvania","Minnesota","Iowa","Kentucky","Missouri","Rhode Island","Texas","Pennsylvania","Louisiana","Indiana","North Carolina","New York","Virginia","Massachusetts","Illinois","New York","Arkansas","Louisiana","Virginia","Texas","Vermont","Florida","South Dakota","Ohio","Illinois","North Carolina","New Jersey","South Carolina","Washington","Indiana","New York","Missouri","New York","Ohio","Colorado","New York","New York","Ohio"],["Increasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Increasing","Decreasing","Decreasing","Increasing","Decreasing","Increasing","Decreasing","Decreasing","Increasing","Decreasing","Increasing","Decreasing","Increasing","Increasing","Increasing","Increasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Increasing","Decreasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Decreasing","Decreasing","Increasing","Increasing","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Approximately stable","Increasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Increasing","Increasing","Increasing","Approximately stable","Increasing","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Approximately stable","Increasing","Approximately stable","Increasing","Increasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Increasing","Decreasing","Increasing","Approximately stable","Approximately stable","Increasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7bae15b2893c4f809d68" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-7bae15b2893c4f809d68">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[39.751443,-105.223364,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[39.751443,-105.223364],16,[]],"limits":{"lat":[39.751443,39.751443],"lng":[-105.223364,-105.223364]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -656,13 +681,33 @@ Doctoral Universities: Very High Research Activity
 <tbody>
 <tr>
 <td style="text-align:left;">
+Undergrads per tenure track instructor
+</td>
+<td style="text-align:center;">
+23 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/ColoradoSchoolofMines_14.png alt=‘Line plot from 22
+to 23 from 2012 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 46%
+</td>
+<td style="text-align:center;">
+✪✪<br />Better (lower) than 28%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Undergrads per instructor
 </td>
 <td style="text-align:center;">
 15 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_14.png alt=‘Line plot from 17
+<img src=images/ColoradoSchoolofMines_15.png alt=‘Line plot from 17
 to 15 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -673,26 +718,6 @@ to 15 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (lower) than 37%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Undergrads per tenure track instructor
-</td>
-<td style="text-align:center;">
-23 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_15.png alt=‘Line plot from 22
-to 23 from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 46%
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 28%
 </td>
 </tr>
 <tr>
@@ -716,17 +741,17 @@ to 328 from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-112 (2020)
+216 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_17.png alt=‘Line plot from 62
-to 112 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_17.png alt=‘Line plot from 176
+to 216 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />6.1 per year
+↑<br />4.8 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -735,17 +760,17 @@ to 112 from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-216 (2020)
+112 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_18.png alt=‘Line plot from 176
-to 216 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_18.png alt=‘Line plot from 62
+to 112 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />4.8 per year
+↑<br />6.1 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -795,11 +820,11 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-7.0% (2021)
+7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_103.png alt=‘Line plot from 3.0
-to 7.0 from 2010 to 2021’ >
+<img src=images/ColoradoSchoolofMines_100.png alt=‘Line plot from 3
+to 7 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -834,13 +859,33 @@ Doctoral Universities: Very High Research Activity
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+41% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/ColoradoSchoolofMines_19.png alt=‘Line plot from 39
+to 41 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 18%
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 5%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $110 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_19.png alt=‘Line plot from 36 M
+<img src=images/ColoradoSchoolofMines_20.png alt=‘Line plot from 36 M
 to 110 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -860,7 +905,7 @@ Revenue
 $339 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_20.png alt=‘Line plot from 204
+<img src=images/ColoradoSchoolofMines_21.png alt=‘Line plot from 204
 M to 339 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -879,7 +924,7 @@ Expenses
 $229 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_21.png alt=‘Line plot from 168
+<img src=images/ColoradoSchoolofMines_22.png alt=‘Line plot from 168
 M to 229 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -897,7 +942,7 @@ Assets
 $775 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_22.png alt=‘Line plot from 412
+<img src=images/ColoradoSchoolofMines_23.png alt=‘Line plot from 412
 M to 775 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -908,44 +953,6 @@ M to 775 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 5%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-41% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_23.png alt=‘Line plot from 39
-to 41 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 18%
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 5%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-1.3% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_24.png alt=‘Line plot from 0.0
-to 1.3 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -987,7 +994,7 @@ Total
 83% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_42.png alt=‘Line plot from 64
+<img src=images/ColoradoSchoolofMines_39.png alt=‘Line plot from 64
 to 83 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1005,7 +1012,7 @@ Men
 83% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_43.png alt=‘Line plot from 63
+<img src=images/ColoradoSchoolofMines_40.png alt=‘Line plot from 63
 to 83 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1023,7 +1030,7 @@ Women
 84% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_44.png alt=‘Line plot from 69
+<img src=images/ColoradoSchoolofMines_41.png alt=‘Line plot from 69
 to 84 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1041,7 +1048,7 @@ American Indian or Alaska Native men
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_45.png alt=‘Line plot from 50
+<img src=images/ColoradoSchoolofMines_42.png alt=‘Line plot from 50
 to 100 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1059,7 +1066,7 @@ American Indian or Alaska Native women
 67% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_46.png alt=‘Line plot from 33
+<img src=images/ColoradoSchoolofMines_43.png alt=‘Line plot from 33
 to 67 from 2011 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1077,7 +1084,7 @@ Asian men
 95% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_47.png alt=‘Line plot from 63
+<img src=images/ColoradoSchoolofMines_44.png alt=‘Line plot from 63
 to 95 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1095,7 +1102,7 @@ Asian women
 89% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_48.png alt=‘Line plot from 60
+<img src=images/ColoradoSchoolofMines_45.png alt=‘Line plot from 60
 to 89 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1113,7 +1120,7 @@ Black or African American men
 75% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_49.png alt=‘Line plot from 58
+<img src=images/ColoradoSchoolofMines_46.png alt=‘Line plot from 58
 to 75 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1131,8 +1138,8 @@ Black or African American women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_50.png alt=‘Line plot from 0.0
-to 100 from 2011 to 2021’ >
+<img src=images/ColoradoSchoolofMines_47.png alt=‘Line plot from 0 to
+100 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 100%
@@ -1149,7 +1156,7 @@ Hispanic men
 80% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_51.png alt=‘Line plot from 59
+<img src=images/ColoradoSchoolofMines_48.png alt=‘Line plot from 59
 to 80 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1167,7 +1174,7 @@ Hispanic women
 81% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_52.png alt=‘Line plot from 45
+<img src=images/ColoradoSchoolofMines_49.png alt=‘Line plot from 45
 to 81 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1185,8 +1192,8 @@ Native Hawaiian or other Pacific Islander men
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_53.png alt=‘Line plot from 0.0
-to 100 from 2016 to 2021’ >
+<img src=images/ColoradoSchoolofMines_50.png alt=‘Line plot from 0 to
+100 from 2016 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 100%
@@ -1203,7 +1210,7 @@ Native Hawaiian or other Pacific Islander women
 100% (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_54.png alt=‘Line plot from 100
+<img src=images/ColoradoSchoolofMines_51.png alt=‘Line plot from 100
 to 100 from 2019 to 2019’ >
 </td>
 <td style="text-align:center;">
@@ -1221,7 +1228,7 @@ White men
 82% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_55.png alt=‘Line plot from 70
+<img src=images/ColoradoSchoolofMines_52.png alt=‘Line plot from 70
 to 82 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1239,7 +1246,7 @@ White women
 85% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_56.png alt=‘Line plot from 69
+<img src=images/ColoradoSchoolofMines_53.png alt=‘Line plot from 69
 to 85 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1257,7 +1264,7 @@ Two or more races men
 84% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_57.png alt=‘Line plot from 71
+<img src=images/ColoradoSchoolofMines_54.png alt=‘Line plot from 71
 to 84 from 2016 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1275,7 +1282,7 @@ Two or more races women
 92% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_58.png alt=‘Line plot from 71
+<img src=images/ColoradoSchoolofMines_55.png alt=‘Line plot from 71
 to 92 from 2016 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1293,7 +1300,7 @@ Nonresident alien men
 85% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_59.png alt=‘Line plot from 75
+<img src=images/ColoradoSchoolofMines_56.png alt=‘Line plot from 75
 to 85 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1311,7 +1318,7 @@ Nonresident alien women
 56% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_60.png alt=‘Line plot from 67
+<img src=images/ColoradoSchoolofMines_57.png alt=‘Line plot from 67
 to 56 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1351,7 +1358,7 @@ Men (percent freshmen)
 67% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_83.png alt=‘Line plot from 74
+<img src=images/ColoradoSchoolofMines_80.png alt=‘Line plot from 74
 to 67 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1363,7 +1370,7 @@ Women (percent freshmen)
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_84.png alt=‘Line plot from 26
+<img src=images/ColoradoSchoolofMines_81.png alt=‘Line plot from 26
 to 33 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1375,8 +1382,8 @@ American Indian or Alaska Native men (percent freshmen)
 0.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_85.png alt=‘Line plot from 0.0
-to 0.1 from 2010 to 2021’ >
+<img src=images/ColoradoSchoolofMines_82.png alt=‘Line plot from 0 to
+0.1 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1387,8 +1394,8 @@ American Indian or Alaska Native women (percent freshmen)
 0.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_86.png alt=‘Line plot from 0.0
-to 0.1 from 2010 to 2021’ >
+<img src=images/ColoradoSchoolofMines_83.png alt=‘Line plot from 0 to
+0.1 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1399,7 +1406,7 @@ Asian men (percent freshmen)
 3.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_87.png alt=‘Line plot from 2.9
+<img src=images/ColoradoSchoolofMines_84.png alt=‘Line plot from 2.9
 to 3.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1411,7 +1418,7 @@ Asian women (percent freshmen)
 2.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_88.png alt=‘Line plot from 1.3
+<img src=images/ColoradoSchoolofMines_85.png alt=‘Line plot from 1.3
 to 2.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1423,7 +1430,7 @@ Black or African American men (percent freshmen)
 0.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_89.png alt=‘Line plot from 0.7
+<img src=images/ColoradoSchoolofMines_86.png alt=‘Line plot from 0.7
 to 0.7 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1435,7 +1442,7 @@ Black or African American women (percent freshmen)
 0.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_90.png alt=‘Line plot from 0.1
+<img src=images/ColoradoSchoolofMines_87.png alt=‘Line plot from 0.1
 to 0.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1447,7 +1454,7 @@ Hispanic men (percent freshmen)
 8.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_91.png alt=‘Line plot from 5.9
+<img src=images/ColoradoSchoolofMines_88.png alt=‘Line plot from 5.9
 to 8.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1459,7 +1466,7 @@ Hispanic women (percent freshmen)
 4.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_92.png alt=‘Line plot from 2.7
+<img src=images/ColoradoSchoolofMines_89.png alt=‘Line plot from 2.7
 to 4.7 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1468,11 +1475,11 @@ to 4.7 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_93.png alt=‘Line plot from 0.1
-to 0.0 from 2010 to 2021’ >
+<img src=images/ColoradoSchoolofMines_90.png alt=‘Line plot from 0.1
+to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1480,11 +1487,11 @@ to 0.0 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_94.png alt=‘Line plot from 0.0
-to 0.0 from 2010 to 2021’ >
+<img src=images/ColoradoSchoolofMines_91.png alt=‘Line plot from 0 to
+0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1495,7 +1502,7 @@ White men (percent freshmen)
 47% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_95.png alt=‘Line plot from 59
+<img src=images/ColoradoSchoolofMines_92.png alt=‘Line plot from 59
 to 47 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1507,7 +1514,7 @@ White women (percent freshmen)
 22% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_96.png alt=‘Line plot from 20
+<img src=images/ColoradoSchoolofMines_93.png alt=‘Line plot from 20
 to 22 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1519,7 +1526,7 @@ Two or more races men (percent freshmen)
 4.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_97.png alt=‘Line plot from 1.6
+<img src=images/ColoradoSchoolofMines_94.png alt=‘Line plot from 1.6
 to 4.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1531,7 +1538,7 @@ Two or more races women (percent freshmen)
 2.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_98.png alt=‘Line plot from 0.8
+<img src=images/ColoradoSchoolofMines_95.png alt=‘Line plot from 0.8
 to 2.1 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1543,7 +1550,7 @@ Race ethnicity unknown men (percent freshmen)
 1.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_99.png alt=‘Line plot from 1.9
+<img src=images/ColoradoSchoolofMines_96.png alt=‘Line plot from 1.9
 to 1.1 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1555,7 +1562,7 @@ Race ethnicity unknown women (percent freshmen)
 0.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_100.png alt=‘Line plot from 0.5
+<img src=images/ColoradoSchoolofMines_97.png alt=‘Line plot from 0.5
 to 0.8 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1567,7 +1574,7 @@ Nonresident alien men (percent freshmen)
 1.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_101.png alt=‘Line plot from 1.8
+<img src=images/ColoradoSchoolofMines_98.png alt=‘Line plot from 1.8
 to 1.8 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1579,8 +1586,63 @@ Nonresident alien women (percent freshmen)
 0.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_102.png alt=‘Line plot from 0.9
+<img src=images/ColoradoSchoolofMines_99.png alt=‘Line plot from 0.9
 to 0.7 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Colorado School of Mines
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+55% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/ColoradoSchoolofMines_101.png alt=‘Line plot from 64
+to 55 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+97% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/ColoradoSchoolofMines_102.png alt=‘Line plot from 97
+to 97 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0.1% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/ColoradoSchoolofMines_103.png alt=‘Line plot from 0.1
+to 0.1 from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1621,7 +1683,7 @@ Total (tenure-track count)
 216 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_61.png alt=‘Line plot from 176
+<img src=images/ColoradoSchoolofMines_58.png alt=‘Line plot from 176
 to 216 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1636,7 +1698,7 @@ Women (tenure-track count)
 54 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_62.png alt=‘Line plot from 32
+<img src=images/ColoradoSchoolofMines_59.png alt=‘Line plot from 32
 to 54 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1651,7 +1713,7 @@ Men (tenure-track count)
 162 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_63.png alt=‘Line plot from 144
+<img src=images/ColoradoSchoolofMines_60.png alt=‘Line plot from 144
 to 162 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1663,11 +1725,11 @@ to 162 from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_64.png alt=‘Line plot from 0.0
-to 0.0 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_61.png alt=‘Line plot from 0 to
+0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1680,7 +1742,7 @@ Asian (tenure-track count)
 37 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_65.png alt=‘Line plot from 25
+<img src=images/ColoradoSchoolofMines_62.png alt=‘Line plot from 25
 to 37 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1692,11 +1754,11 @@ to 37 from 2012 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_66.png alt=‘Line plot from 2.0
-to 3.0 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_63.png alt=‘Line plot from 2 to
+3 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1709,8 +1771,8 @@ Hispanic or Latino (tenure-track count)
 11 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_67.png alt=‘Line plot from 6.0
-to 11 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_64.png alt=‘Line plot from 6 to
+11 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.6 per year
@@ -1721,11 +1783,11 @@ to 11 from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_68.png alt=‘Line plot from 0.0
-to 0.0 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_65.png alt=‘Line plot from 0 to
+0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1738,7 +1800,7 @@ White (tenure-track count)
 154 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_69.png alt=‘Line plot from 138
+<img src=images/ColoradoSchoolofMines_66.png alt=‘Line plot from 138
 to 154 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1750,11 +1812,11 @@ to 154 from 2012 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_70.png alt=‘Line plot from 1.0
-to 1.0 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_67.png alt=‘Line plot from 1 to
+1 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1764,11 +1826,11 @@ to 1.0 from 2012 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-6.0 (2020)
+6 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_71.png alt=‘Line plot from 4.0
-to 6.0 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_68.png alt=‘Line plot from 4 to
+6 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1812,7 +1874,7 @@ Total (non-tenure-track count)
 112 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_72.png alt=‘Line plot from 62
+<img src=images/ColoradoSchoolofMines_69.png alt=‘Line plot from 62
 to 112 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1827,7 +1889,7 @@ Women (non-tenure-track count)
 48 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_73.png alt=‘Line plot from 26
+<img src=images/ColoradoSchoolofMines_70.png alt=‘Line plot from 26
 to 48 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1842,7 +1904,7 @@ Men (non-tenure-track count)
 64 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_74.png alt=‘Line plot from 36
+<img src=images/ColoradoSchoolofMines_71.png alt=‘Line plot from 36
 to 64 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1854,11 +1916,11 @@ to 64 from 2012 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_75.png alt=‘Line plot from 1.0
-to 1.0 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_72.png alt=‘Line plot from 1 to
+1 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1868,11 +1930,11 @@ to 1.0 from 2012 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_76.png alt=‘Line plot from 5.0
-to 5.0 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_73.png alt=‘Line plot from 5 to
+5 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1882,11 +1944,11 @@ to 5.0 from 2012 to 2020’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_77.png alt=‘Line plot from 0.0
-to 1.0 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_74.png alt=‘Line plot from 0 to
+1 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1897,11 +1959,11 @@ to 1.0 from 2012 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_78.png alt=‘Line plot from 0.0
-to 1.0 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_75.png alt=‘Line plot from 0 to
+1 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1911,11 +1973,11 @@ to 1.0 from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_79.png alt=‘Line plot from 0.0
-to 1.0 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_76.png alt=‘Line plot from 0 to
+1 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.1 per year
@@ -1929,7 +1991,7 @@ White (non-tenure-track count)
 98 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_80.png alt=‘Line plot from 55
+<img src=images/ColoradoSchoolofMines_77.png alt=‘Line plot from 55
 to 98 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1941,11 +2003,11 @@ to 98 from 2012 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-4.0 (2020)
+4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_81.png alt=‘Line plot from 0.0
-to 4.0 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_78.png alt=‘Line plot from 0 to
+4 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.5 per year
@@ -1956,11 +2018,11 @@ to 4.0 from 2012 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_82.png alt=‘Line plot from 1.0
-to 0.0 from 2012 to 2020’ >
+<img src=images/ColoradoSchoolofMines_79.png alt=‘Line plot from 1 to
+0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -2001,7 +2063,7 @@ Number of physical books
 305,920 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_27.png alt=‘Line plot from
+<img src=images/ColoradoSchoolofMines_24.png alt=‘Line plot from
 569,899 to 305,920 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2022,7 +2084,7 @@ Physical library circulations per students and faculty
 0.9 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_28.png alt=‘Line plot from 2.9
+<img src=images/ColoradoSchoolofMines_25.png alt=‘Line plot from 2.9
 to 0.9 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2043,8 +2105,8 @@ Digital library circulations per students and faculty
 41 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_29.png alt=‘Line plot from 0.0
-to 41 from 2014 to 2020’ >
+<img src=images/ColoradoSchoolofMines_26.png alt=‘Line plot from 0 to
+41 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />5.5 per year
@@ -2086,7 +2148,7 @@ Applicants submitting SAT
 53% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_30.png alt=‘Line plot from 33
+<img src=images/ColoradoSchoolofMines_27.png alt=‘Line plot from 33
 to 53 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2100,7 +2162,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 650 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_31.png alt=‘Line plot from 640
+<img src=images/ColoradoSchoolofMines_28.png alt=‘Line plot from 640
 to 650 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2114,7 +2176,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 720 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_32.png alt=‘Line plot from 710
+<img src=images/ColoradoSchoolofMines_29.png alt=‘Line plot from 710
 to 720 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2128,7 +2190,7 @@ SAT Math 25th percentile score
 660 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_33.png alt=‘Line plot from 640
+<img src=images/ColoradoSchoolofMines_30.png alt=‘Line plot from 640
 to 660 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2142,7 +2204,7 @@ SAT Math 75th percentile score
 750 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_34.png alt=‘Line plot from 720
+<img src=images/ColoradoSchoolofMines_31.png alt=‘Line plot from 720
 to 750 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2179,7 +2241,7 @@ Applicants submitting ACT
 31% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_35.png alt=‘Line plot from 86
+<img src=images/ColoradoSchoolofMines_32.png alt=‘Line plot from 86
 to 31 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2193,7 +2255,7 @@ ACT Composite 25th percentile score
 29 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_36.png alt=‘Line plot from 28
+<img src=images/ColoradoSchoolofMines_33.png alt=‘Line plot from 28
 to 29 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2207,7 +2269,7 @@ ACT Composite 75th percentile score
 33 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_37.png alt=‘Line plot from 32
+<img src=images/ColoradoSchoolofMines_34.png alt=‘Line plot from 32
 to 33 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2222,7 +2284,7 @@ ACT English 25th percentile score
 27 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_38.png alt=‘Line plot from 26
+<img src=images/ColoradoSchoolofMines_35.png alt=‘Line plot from 26
 to 27 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2236,7 +2298,7 @@ ACT English 75th percentile score
 34 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_39.png alt=‘Line plot from 32
+<img src=images/ColoradoSchoolofMines_36.png alt=‘Line plot from 32
 to 34 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2251,7 +2313,7 @@ ACT Math 25th percentile score
 28 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_40.png alt=‘Line plot from 28
+<img src=images/ColoradoSchoolofMines_37.png alt=‘Line plot from 28
 to 28 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2265,7 +2327,7 @@ ACT Math 75th percentile score
 33 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColoradoSchoolofMines_41.png alt=‘Line plot from 33
+<img src=images/ColoradoSchoolofMines_38.png alt=‘Line plot from 33
 to 33 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2278,28 +2340,28 @@ to 33 from 2014 to 2021’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b1de981ce5c4ac5efd14" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b1de981ce5c4ac5efd14">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_ChemicalEngineering.html\">Chemical Engineering</a>","<a href=\"majors_Bachelors_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Bachelors_CivilEngineering_General.html\">Civil Engineering, General</a>","<a href=\"majors_Bachelors_PetroleumEngineering.html\">Petroleum Engineering</a>","<a href=\"majors_Bachelors_EngineeringPhysics_AppliedPhysics.html\">Engineering Physics/Applied Physics</a>","<a href=\"majors_Bachelors_MetallurgicalEngineering.html\">Metallurgical Engineering</a>","<a href=\"majors_Bachelors_ComputationalandAppliedMathematics.html\">Computational and Applied Mathematics</a>","<a href=\"majors_Bachelors_Environmental_EnvironmentalHealthEngineering.html\">Environmental/Environmental Health Engineering</a>","<a href=\"majors_Bachelors_Geological_GeophysicalEngineering.html\">Geological/Geophysical Engineering</a>","<a href=\"majors_Bachelors_MiningandMineralEngineering.html\">Mining and Mineral Engineering</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_BioengineeringandBiomedicalEngineering.html\">Bioengineering and Biomedical Engineering</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_Engineering_General.html\">Engineering, General</a>"],[299,144,144,80,73,64,59,46,38,33,32,27,8,7,6,5,1],[28.049,13.508,13.508,7.505,6.848,6.004,5.535,4.315,3.565,3.096,3.002,2.533,0.75,0.657,0.563,0.469,0.094],[0.817,0.382,1.442,0.471,0.489,7.711,8.819,33.094,9.135,1.878,22.857,15.882,0.06,0.083,0.028,0.053,0.041],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2f9266438259fced36bb" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2f9266438259fced36bb">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_ChemicalEngineering.html\">Chemical Engineering</a>","<a href=\"majors_Bachelors_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Bachelors_CivilEngineering_General.html\">Civil Engineering, General</a>","<a href=\"majors_Bachelors_PetroleumEngineering.html\">Petroleum Engineering</a>","<a href=\"majors_Bachelors_EngineeringPhysics_AppliedPhysics.html\">Engineering Physics/Applied Physics</a>","<a href=\"majors_Bachelors_MetallurgicalEngineering.html\">Metallurgical Engineering</a>","<a href=\"majors_Bachelors_ComputationalandAppliedMathematics.html\">Computational and Applied Mathematics</a>","<a href=\"majors_Bachelors_Environmental_EnvironmentalHealthEngineering.html\">Environmental/Environmental Health Engineering</a>","<a href=\"majors_Bachelors_Geological_GeophysicalEngineering.html\">Geological/Geophysical Engineering</a>","<a href=\"majors_Bachelors_MiningandMineralEngineering.html\">Mining and Mineral Engineering</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_BioengineeringandBiomedicalEngineering.html\">Bioengineering and Biomedical Engineering</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_Engineering_General.html\">Engineering, General</a>"],[299,144,144,80,73,64,59,46,38,33,32,27,8,7,6,5,1],[28.049,13.508,13.508,7.505,6.848,6.004,5.535,4.315,3.565,3.096,3.002,2.533,0.75,0.657,0.563,0.469,0.094],[0.817,0.382,1.442,0.471,0.489,7.711,8.819,33.094,9.135,1.878,22.857,15.882,0.06,0.083,0.028,0.053,0.041],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f88b21ceb60ab465ba73" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f88b21ceb60ab465ba73">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_Engineering_IndustrialManagement.html\">Engineering/Industrial Management</a>","<a href=\"majors_Masters_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Masters_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Masters_CivilEngineering_General.html\">Civil Engineering, General</a>","<a href=\"majors_Masters_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Masters_SystemsEngineering.html\">Systems Engineering</a>","<a href=\"majors_Masters_HydrologyandWaterResourcesScience.html\">Hydrology and Water Resources Science</a>","<a href=\"majors_Masters_Geological_GeophysicalEngineering.html\">Geological/Geophysical Engineering</a>","<a href=\"majors_Masters_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Masters_ComputationalandAppliedMathematics.html\">Computational and Applied Mathematics</a>","<a href=\"majors_Masters_MetallurgicalEngineering.html\">Metallurgical Engineering</a>","<a href=\"majors_Masters_PetroleumEngineering.html\">Petroleum Engineering</a>","<a href=\"majors_Masters_GeophysicsandSeismology.html\">Geophysics and Seismology</a>","<a href=\"majors_Masters_ManufacturingEngineering.html\">Manufacturing Engineering</a>","<a href=\"majors_Masters_MaterialsEngineering.html\">Materials Engineering</a>","<a href=\"majors_Masters_MiningandMineralEngineering.html\">Mining and Mineral Engineering</a>","<a href=\"majors_Masters_Mechatronics_Robotics_andAutomationEngineering.html\">Mechatronics, Robotics, and Automation Engineering</a>","<a href=\"majors_Masters_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Masters_Environmental_EnvironmentalHealthEngineering.html\">Environmental/Environmental Health Engineering</a>","<a href=\"majors_Masters_ChemicalEngineering.html\">Chemical Engineering</a>","<a href=\"majors_Masters_Biological_BiosystemsEngineering.html\">Biological/Biosystems Engineering</a>","<a href=\"majors_Masters_BehavioralSciences.html\">Behavioral Sciences</a>","<a href=\"majors_Masters_Physics_Other.html\">Physics, Other</a>","<a href=\"majors_Masters_NuclearEngineering.html\">Nuclear Engineering</a>","<a href=\"majors_Masters_DataScience_General.html\">Data Science, General</a>","<a href=\"majors_Masters_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Masters_Geochemistry.html\">Geochemistry</a>","<a href=\"majors_Masters_GeologicalandEarthSciences_Geosciences_Other.html\">Geological and Earth Sciences/Geosciences, Other</a>","<a href=\"majors_Masters_Engineering_General.html\">Engineering, General</a>"],[58,57,35,35,30,27,24,22,19,19,14,14,14,13,9,8,8,8,7,6,6,5,5,3,3,2,2,2,1],[12.719,12.5,7.675,7.675,6.579,5.921,5.263,4.825,4.167,4.167,3.07,3.07,3.07,2.851,1.974,1.754,1.754,1.754,1.535,1.316,1.316,1.096,1.096,0.658,0.658,0.439,0.439,0.439,0.219],[1.49,0.79,0.244,0.778,0.887,1.236,25,22,0.23,2.87,51.852,5.303,17.722,3.504,0.826,11.594,1.77,0.694,0.938,0.393,12.766,0.436,3.401,1.31,1.107,0.095,16.667,1.481,0.035],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-30e02ce8e86bf980fac1" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-30e02ce8e86bf980fac1">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_Engineering_IndustrialManagement.html\">Engineering/Industrial Management</a>","<a href=\"majors_Masters_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Masters_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Masters_CivilEngineering_General.html\">Civil Engineering, General</a>","<a href=\"majors_Masters_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Masters_SystemsEngineering.html\">Systems Engineering</a>","<a href=\"majors_Masters_HydrologyandWaterResourcesScience.html\">Hydrology and Water Resources Science</a>","<a href=\"majors_Masters_Geological_GeophysicalEngineering.html\">Geological/Geophysical Engineering</a>","<a href=\"majors_Masters_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Masters_ComputationalandAppliedMathematics.html\">Computational and Applied Mathematics</a>","<a href=\"majors_Masters_MetallurgicalEngineering.html\">Metallurgical Engineering</a>","<a href=\"majors_Masters_PetroleumEngineering.html\">Petroleum Engineering</a>","<a href=\"majors_Masters_GeophysicsandSeismology.html\">Geophysics and Seismology</a>","<a href=\"majors_Masters_ManufacturingEngineering.html\">Manufacturing Engineering</a>","<a href=\"majors_Masters_MaterialsEngineering.html\">Materials Engineering</a>","<a href=\"majors_Masters_MiningandMineralEngineering.html\">Mining and Mineral Engineering</a>","<a href=\"majors_Masters_Mechatronics_Robotics_andAutomationEngineering.html\">Mechatronics, Robotics, and Automation Engineering</a>","<a href=\"majors_Masters_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Masters_Environmental_EnvironmentalHealthEngineering.html\">Environmental/Environmental Health Engineering</a>","<a href=\"majors_Masters_ChemicalEngineering.html\">Chemical Engineering</a>","<a href=\"majors_Masters_Biological_BiosystemsEngineering.html\">Biological/Biosystems Engineering</a>","<a href=\"majors_Masters_BehavioralSciences.html\">Behavioral Sciences</a>","<a href=\"majors_Masters_Physics_Other.html\">Physics, Other</a>","<a href=\"majors_Masters_NuclearEngineering.html\">Nuclear Engineering</a>","<a href=\"majors_Masters_DataScience_General.html\">Data Science, General</a>","<a href=\"majors_Masters_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Masters_Geochemistry.html\">Geochemistry</a>","<a href=\"majors_Masters_GeologicalandEarthSciences_Geosciences_Other.html\">Geological and Earth Sciences/Geosciences, Other</a>","<a href=\"majors_Masters_Engineering_General.html\">Engineering, General</a>"],[58,57,35,35,30,27,24,22,19,19,14,14,14,13,9,8,8,8,7,6,6,5,5,3,3,2,2,2,1],[12.719,12.5,7.675,7.675,6.579,5.921,5.263,4.825,4.167,4.167,3.07,3.07,3.07,2.851,1.974,1.754,1.754,1.754,1.535,1.316,1.316,1.096,1.096,0.658,0.658,0.439,0.439,0.439,0.219],[1.49,0.79,0.244,0.778,0.887,1.236,25,22,0.23,2.87,51.852,5.303,17.722,3.504,0.826,11.594,1.77,0.694,0.938,0.393,12.766,0.436,3.401,1.31,1.107,0.095,16.667,1.481,0.035],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a5ff228806b054822cd3" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a5ff228806b054822cd3">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_MaterialsEngineering.html\">Materials Engineering</a>","<a href=\"majors_Doctorate_CivilEngineering_General.html\">Civil Engineering, General</a>","<a href=\"majors_Doctorate_PetroleumEngineering.html\">Petroleum Engineering</a>","<a href=\"majors_Doctorate_MetallurgicalEngineering.html\">Metallurgical Engineering</a>","<a href=\"majors_Doctorate_MiningandMineralEngineering.html\">Mining and Mineral Engineering</a>","<a href=\"majors_Doctorate_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Doctorate_Geological_GeophysicalEngineering.html\">Geological/Geophysical Engineering</a>","<a href=\"majors_Doctorate_HydrologyandWaterResourcesScience.html\">Hydrology and Water Resources Science</a>","<a href=\"majors_Doctorate_Physics_General.html\">Physics, General</a>","<a href=\"majors_Doctorate_ChemicalEngineering.html\">Chemical Engineering</a>","<a href=\"majors_Doctorate_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Doctorate_NuclearEngineering.html\">Nuclear Engineering</a>","<a href=\"majors_Doctorate_Chemistry_Other.html\">Chemistry, Other</a>","<a href=\"majors_Doctorate_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Doctorate_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Doctorate_ComputationalandAppliedMathematics.html\">Computational and Applied Mathematics</a>","<a href=\"majors_Doctorate_Geochemistry.html\">Geochemistry</a>","<a href=\"majors_Doctorate_Environmental_EnvironmentalHealthEngineering.html\">Environmental/Environmental Health Engineering</a>"],[11,8,8,6,6,5,5,5,5,4,4,4,4,4,3,3,2,1],[12.5,9.091,9.091,6.818,6.818,5.682,5.682,5.682,5.682,4.545,4.545,4.545,4.545,4.545,3.409,3.409,2.273,1.136],[1.545,0.768,6.154,50,25,0.306,27.778,20.833,0.308,0.384,0.188,2.395,18.182,0.445,0.24,9.091,16.667,0.671],["Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-98b1488385516af8e6cd" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-98b1488385516af8e6cd">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_MaterialsEngineering.html\">Materials Engineering</a>","<a href=\"majors_Doctorate_CivilEngineering_General.html\">Civil Engineering, General</a>","<a href=\"majors_Doctorate_PetroleumEngineering.html\">Petroleum Engineering</a>","<a href=\"majors_Doctorate_MetallurgicalEngineering.html\">Metallurgical Engineering</a>","<a href=\"majors_Doctorate_MiningandMineralEngineering.html\">Mining and Mineral Engineering</a>","<a href=\"majors_Doctorate_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Doctorate_Geological_GeophysicalEngineering.html\">Geological/Geophysical Engineering</a>","<a href=\"majors_Doctorate_HydrologyandWaterResourcesScience.html\">Hydrology and Water Resources Science</a>","<a href=\"majors_Doctorate_Physics_General.html\">Physics, General</a>","<a href=\"majors_Doctorate_ChemicalEngineering.html\">Chemical Engineering</a>","<a href=\"majors_Doctorate_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Doctorate_NuclearEngineering.html\">Nuclear Engineering</a>","<a href=\"majors_Doctorate_Chemistry_Other.html\">Chemistry, Other</a>","<a href=\"majors_Doctorate_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Doctorate_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Doctorate_ComputationalandAppliedMathematics.html\">Computational and Applied Mathematics</a>","<a href=\"majors_Doctorate_Geochemistry.html\">Geochemistry</a>","<a href=\"majors_Doctorate_Environmental_EnvironmentalHealthEngineering.html\">Environmental/Environmental Health Engineering</a>"],[11,8,8,6,6,5,5,5,5,4,4,4,4,4,3,3,2,1],[12.5,9.091,9.091,6.818,6.818,5.682,5.682,5.682,5.682,4.545,4.545,4.545,4.545,4.545,3.409,3.409,2.273,1.136],[1.545,0.768,6.154,50,25,0.306,27.778,20.833,0.308,0.384,0.188,2.395,18.182,0.445,0.24,9.091,16.667,0.671],["Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c518aafc1b1d9ef72593" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-c518aafc1b1d9ef72593">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_BusinessAnalytics.html\">Business Analytics</a>","<a href=\"majors_Certificate_SystemsEngineering.html\">Systems Engineering</a>","<a href=\"majors_Certificate_Business_Management_Marketing_andRelatedSupportServices_Other.html\">Business, Management, Marketing, and Related Support Services, Other</a>","<a href=\"majors_Certificate_Engineering_General.html\">Engineering, General</a>","<a href=\"majors_Certificate_ManufacturingEngineering.html\">Manufacturing Engineering</a>","<a href=\"majors_Certificate_BehavioralSciences.html\">Behavioral Sciences</a>","<a href=\"majors_Certificate_DataScience_General.html\">Data Science, General</a>","<a href=\"majors_Certificate_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Certificate_AppliedEconomics.html\">Applied Economics</a>"],[20,18,17,6,1,1,1,1,1],[30.303,27.273,25.758,9.091,1.515,1.515,1.515,1.515,1.515],[15.873,2.192,3.137,1.617,1.961,0.365,1.124,1.923,3.448],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5982f69dc308e1383f69" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5982f69dc308e1383f69">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_BusinessAnalytics.html\">Business Analytics</a>","<a href=\"majors_Certificate_SystemsEngineering.html\">Systems Engineering</a>","<a href=\"majors_Certificate_Business_Management_Marketing_andRelatedSupportServices_Other.html\">Business, Management, Marketing, and Related Support Services, Other</a>","<a href=\"majors_Certificate_Engineering_General.html\">Engineering, General</a>","<a href=\"majors_Certificate_ManufacturingEngineering.html\">Manufacturing Engineering</a>","<a href=\"majors_Certificate_BehavioralSciences.html\">Behavioral Sciences</a>","<a href=\"majors_Certificate_DataScience_General.html\">Data Science, General</a>","<a href=\"majors_Certificate_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Certificate_AppliedEconomics.html\">Applied Economics</a>"],[20,18,17,6,1,1,1,1,1],[30.303,27.273,25.758,9.091,1.515,1.515,1.515,1.515,1.515],[15.873,2.192,3.137,1.617,1.961,0.365,1.124,1.923,3.448],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-233781047b3cc2eaa0ee" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-233781047b3cc2eaa0ee">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-eccd36e8d475aacee137" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-eccd36e8d475aacee137">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

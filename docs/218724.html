@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -271,10 +273,20 @@ program-Other</p></li>
 <li><p><strong>Enrollment profile</strong>: Very high undergraduate (see
 more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 14,956 (1.1 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $14,956 (This is 100% the average cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $12,458.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.coastal.edu/financialaid/netpricecalculators/'>here</a>
+to see what your family may be asked to pay. It can be MUCH lower than
+the average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, medium, primarily
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 39.5% of first year
+students come from South Carolina</p></li>
+<li><p><strong>In US percentage</strong>: 99.2% of first year students
+come from the US</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 51.1% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -316,9 +328,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Functional ban (based on <a
+<li><strong>Abortion in this state</strong>: Restrictive (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: F (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -331,17 +344,29 @@ marriage</strong>: 42.9% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: High risk (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Middle Atlantic coastal
 forests</li>
 <li><strong>Biome</strong>: Temperate Conifer Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/19496/Average-Weather-in-Conway-South-Carolina-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-19e4ede16b9cc4157c4a" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-19e4ede16b9cc4157c4a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[33.794995,-79.011767,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[33.794995,-79.011767],16,[]],"limits":{"lat":[33.794995,33.794995],"lng":[-79.011767,-79.011767]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fe99f5c48b63a16742da" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fe99f5c48b63a16742da">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"218724.html\">Coastal Carolina University</a>","<a href=\"102368.html\">Troy University</a>","<a href=\"102094.html\">University of South Alabama</a>","<a href=\"160658.html\">University of Louisiana at Lafayette</a>","<a href=\"106458.html\">Arkansas State University</a>","<a href=\"106245.html\">University of Arkansas at Little Rock</a>","<a href=\"159993.html\">University of Louisiana at Monroe</a>","<a href=\"139931.html\">Georgia Southern University</a>","<a href=\"139940.html\">Georgia State University</a>","<a href=\"228769.html\">The University of Texas at Arlington</a>","<a href=\"197869.html\">Appalachian State University</a>","<a href=\"157401.html\">Murray State University</a>","<a href=\"228459.html\">Texas State University</a>","<a href=\"221740.html\">The University of Tennessee-Chattanooga</a>","<a href=\"220613.html\">Lee University</a>","<a href=\"165936.html\">Gordon College</a>","<a href=\"240268.html\">University of Wisconsin-Eau Claire</a>","<a href=\"217819.html\">College of Charleston</a>","<a href=\"240471.html\">University of Wisconsin-River Falls</a>","<a href=\"200332.html\">North Dakota State University-Main Campus</a>","<a href=\"240480.html\">University of Wisconsin-Stevens Point</a>","<a href=\"236595.html\">Seattle University</a>","<a href=\"101480.html\">Jacksonville State University</a>","<a href=\"195544.html\">St. Joseph's University-New York</a>","<a href=\"144281.html\">Columbia College Chicago</a>","<a href=\"179557.html\">Southeast Missouri State University</a>","<a href=\"219347.html\">South Dakota School of Mines and Technology</a>","<a href=\"175342.html\">Alcorn State University</a>","<a href=\"147013.html\">McKendree University</a>","<a href=\"234827.html\">Central Washington University</a>","<a href=\"190655.html\">CUNY New York City College of Technology</a>","<a href=\"157447.html\">Northern Kentucky University</a>","<a href=\"217059.html\">York College of Pennsylvania</a>","<a href=\"204185.html\">University of Mount Union</a>","<a href=\"165024.html\">Bridgewater State University</a>","<a href=\"240417.html\">University of Wisconsin-Stout</a>","<a href=\"213987.html\">Mercyhurst University</a>","<a href=\"190558.html\">College of Staten Island CUNY</a>","<a href=\"219198.html\">Mount Marty University</a>","<a href=\"174358.html\">Minnesota State University Moorhead</a>","<a href=\"219709.html\">Belmont University</a>","<a href=\"206695.html\">Youngstown State University</a>","<a href=\"163453.html\">Morgan State University</a>","<a href=\"200800.html\">University of Akron Main Campus</a>","<a href=\"221768.html\">The University of Tennessee-Martin</a>","<a href=\"180489.html\">The University of Montana</a>","<a href=\"144962.html\">Elmhurst University</a>","<a href=\"171456.html\">Northern Michigan University</a>","<a href=\"219356.html\">South Dakota State University</a>","<a href=\"175421.html\">Belhaven University</a>","<a href=\"206622.html\">Xavier University</a>","<a href=\"230603.html\">Southern Utah University</a>","<a href=\"161253.html\">University of Maine</a>","<a href=\"219806.html\">Carson-Newman University</a>","<a href=\"215442.html\">Point Park University</a>","<a href=\"175272.html\">Winona State University</a>","<a href=\"238476.html\">Carthage College</a>","<a href=\"169798.html\">Eastern Michigan University</a>","<a href=\"217864.html\">Citadel Military College of South Carolina</a>","<a href=\"167899.html\">Springfield College</a>","<a href=\"207582.html\">Oral Roberts University</a>","<a href=\"197197.html\">Wagner College</a>","<a href=\"213598.html\">Lincoln University</a>","<a href=\"129525.html\">University of Hartford</a>","<a href=\"191968.html\">Ithaca College</a>","<a href=\"220075.html\">East Tennessee State University</a>","<a href=\"211158.html\">Bloomsburg University of Pennsylvania</a>","<a href=\"154235.html\">Saint Ambrose University</a>","<a href=\"407009.html\">Arizona State University-West</a>","<a href=\"200004.html\">Western Carolina University</a>","<a href=\"176372.html\">University of Southern Mississippi</a>","<a href=\"142285.html\">University of Idaho</a>","<a href=\"140553.html\">Morehouse College</a>","<a href=\"159656.html\">Loyola University New Orleans</a>","<a href=\"190637.html\">CUNY Lehman College</a>","<a href=\"153825.html\">Loras College</a>","<a href=\"219383.html\">University of Sioux Falls</a>","<a href=\"166638.html\">University of Massachusetts-Boston</a>","<a href=\"153834.html\">Luther College</a>","<a href=\"199412.html\">Queens University of Charlotte</a>","<a href=\"209825.html\">University of Portland</a>","<a href=\"240462.html\">University of Wisconsin-Platteville</a>","<a href=\"200280.html\">University of North Dakota</a>","<a href=\"215929.html\">University of Scranton</a>","<a href=\"217536.html\">Salve Regina University</a>","<a href=\"183062.html\">Keene State College</a>","<a href=\"172051.html\">Saginaw Valley State University</a>","<a href=\"152390.html\">Saint Mary's College</a>","<a href=\"194310.html\">Pace University</a>","<a href=\"219000.html\">Augustana University</a>","<a href=\"448886.html\">Arizona State University-Downtown Phoenix</a>","<a href=\"228431.html\">Stephen F Austin State University</a>","<a href=\"168281.html\">Wheaton College (Massachusetts)</a>","<a href=\"147244.html\">Millikin University</a>","<a href=\"217688.html\">Charleston Southern University</a>","<a href=\"237932.html\">West Liberty University</a>","<a href=\"129215.html\">Eastern Connecticut State University</a>","<a href=\"168528.html\">Adrian College</a>","<a href=\"198215.html\">Catawba College</a>","<a href=\"217420.html\">Rhode Island College</a>"],[79,95,71,78,63,58,70,91,100,93,85,85,70,86,83,77,77,76,86,95,90,82,76,80,96,79,80,39,78,88,82,80,78,80,86,91,82,99,67,72,88,78,87,85,75,82,71,71,87,64,84,89,96,79,82,77,76,85,86,77,85,82,80,79,78,87,90,72,82,79,96,81,65,78,58,72,77,79,76,69,81,88,89,80,73,88,78,83,88,72,82,83,82,75,57,74,73,76,56,85],[21,25,21,33,35,22,33,33,31,32,23,18,31,32,34,28,31,16,30,32,25,14,23,20,25,26,42,21,20,14,17,32,17,18,18,30,19,22,30,27,22,31,17,22,16,26,20,32,40,19,9,17,16,17,12,27,12,16,27,23,23,16,17,9,11,25,24,17,29,18,18,21,26,16,14,20,17,17,23,12,9,28,33,12,15,18,29,19,10,29,26,26,16,18,31,32,23,28,21,20],[51,52,47,50,54,39,54,54,56,51,73,56,57,54,58,72,68,67,57,65,55,75,50,71,51,54,52,42,56,54,37,50,66,68,62,56,66,51,61,57,68,47,44,60,52,51,68,54,60,54,75,56,57,57,61,63,68,48,73,73,59,72,49,61,77,51,59,64,48,61,52,59,47,62,53,68,58,49,73,64,81,59,62,79,73,60,42,74,59,71,58,53,73,55,49,42,57,52,60,46],[50,39,11,36,20,18,38,31,33,34,24,28,37,26,61,39,34,54,31,24,24,53,31,80,57,30,24,12,47,27,17,50,36,37,36,29,47,20,37,31,58,34,12,31,19,22,73,34,26,54,50,37,26,45,67,30,36,42,34,45,37,55,22,45,44,27,42,39,null,12,25,22,12,44,19,36,53,36,26,33,39,26,31,48,51,32,40,17,61,33,null,29,24,40,56,34,25,44,25,30],[26,25,20,29,17,12,20,28,32,31,22,19,35,27,23,26,28,19,27,24,23,12,21,26,30,26,14,32,20,27,27,22,25,17,22,22,26,29,16,20,19,27,17,31,22,15,24,28,26,19,19,32,19,16,19,23,21,17,14,17,20,21,19,16,16,18,21,14,27,24,21,16,21,19,23,13,27,22,14,17,18,26,19,15,23,19,25,12,21,17,33,23,15,16,19,19,20,25,19,16],[12458,12921,12976,11368,12021,15442,9591,13996,16329,14011,9620,7928,13352,10058,14471,24488,11528,14215,10031,12445,10173,27455,17293,11509,22304,11349,16887,16044,16722,13371,3763,2609,18893,20013,9920,11699,23656,5215,15884,12716,20966,10139,14540,20198,9537,12069,16211,11662,15639,14976,29359,8796,13755,16764,18043,12110,24485,14547,14807,20816,15627,24365,13251,24990,25636,12211,14738,23031,null,11422,11995,8744,33967,17011,3081,19374,18281,14335,20153,22706,32449,10182,12965,23167,27108,14421,11731,13997,26525,17585,null,12046,19297,16102,15230,14828,14317,22406,17408,8309],[8926,7474,7400,10874,5401,3047,4333,19307,21992,19010,17418,5930,26527,8957,3041,1300,8980,9230,4313,9019,6403,4098,6273,3352,6124,6548,1708,2131,1257,8373,8969,7598,3171,1866,6520,5383,2404,8378,578,3134,6792,7428,6258,9411,4363,5779,2689,5785,7558,1105,4879,8281,8162,1566,2339,4920,2563,9038,2512,2026,2752,1514,1664,3681,4719,8396,6367,2121,4076,8233,9018,6372,2197,3090,7927,1185,1183,9994,1717,1347,3483,5468,6988,3349,2069,2877,5713,1368,7483,1626,7827,8341,1700,1693,2480,1798,3476,1718,1044,4058],[169,1106,4148,1092,651,1107,1080,1425,5705,4722,920,555,2695,743,161,164,108,319,147,1005,171,1705,456,170,198,618,204,171,174,238,null,1312,74,170,501,238,274,226,153,206,1227,896,1144,1230,186,1186,176,229,532,216,505,332,881,173,151,288,49,872,185,728,555,127,108,684,368,1883,316,479,219,932,1572,1742,null,722,215,81,63,1311,null,124,130,49,1807,496,197,23,228,63,2498,75,2277,652,null,62,182,123,74,50,64,258],["South Carolina","Alabama","Alabama","Louisiana","Arkansas","Arkansas","Louisiana","Georgia","Georgia","Texas","North Carolina","Kentucky","Texas","Tennessee","Tennessee","Massachusetts","Wisconsin","South Carolina","Wisconsin","North Dakota","Wisconsin","Washington","Alabama","New York","Illinois","Missouri","South Dakota","Mississippi","Illinois","Washington","New York","Kentucky","Pennsylvania","Ohio","Massachusetts","Wisconsin","Pennsylvania","New York","South Dakota","Minnesota","Tennessee","Ohio","Maryland","Ohio","Tennessee","Montana","Illinois","Michigan","South Dakota","Mississippi","Ohio","Utah","Maine","Tennessee","Pennsylvania","Minnesota","Wisconsin","Michigan","South Carolina","Massachusetts","Oklahoma","New York","Pennsylvania","Connecticut","New York","Tennessee","Pennsylvania","Iowa","Arizona","North Carolina","Mississippi","Idaho","Georgia","Louisiana","New York","Iowa","South Dakota","Massachusetts","Iowa","North Carolina","Oregon","Wisconsin","North Dakota","Pennsylvania","Rhode Island","New Hampshire","Michigan","Indiana","New York","South Dakota","Arizona","Texas","Massachusetts","Illinois","South Carolina","West Virginia","Connecticut","Michigan","North Carolina","Rhode Island"],["Increasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Increasing","Increasing","Increasing","Increasing","Decreasing","Increasing","Increasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Increasing","Approximately stable","Increasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Increasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Increasing","Decreasing","Increasing","Increasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e7d7326194346cd84f55" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-e7d7326194346cd84f55">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[33.794995,-79.011767,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[33.794995,-79.011767],16,[]],"limits":{"lat":[33.794995,33.794995],"lng":[-79.011767,-79.011767]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -656,34 +681,13 @@ Master’s Colleges &amp; Universities: Larger Programs
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-18 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_14.png alt=‘Line plot from
-21 to 18 from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-↓<br />-0.4 per year
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 43%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 41%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 26 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_15.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_14.png alt=‘Line plot from
 29 to 26 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -694,6 +698,27 @@ Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (lower) than 28%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
+</td>
+<td style="text-align:center;">
+18 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/CoastalCarolinaUniversity_15.png alt=‘Line plot from
+21 to 18 from 2012 to 2020’ >
+</td>
+<td style="text-align:center;">
+↓<br />-0.4 per year
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 43%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 41%
 </td>
 </tr>
 <tr>
@@ -717,17 +742,17 @@ Total instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-153 (2020)
+333 (2020)
 </td>
 <td style="text-align:center;">
 <img src=images/CoastalCarolinaUniversity_17.png alt=‘Line plot from
-106 to 153 from 2012 to 2020’ >
+277 to 333 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />7.2 per year
+↑<br />6.4 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -736,17 +761,17 @@ Non-tenure track instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-333 (2020)
+153 (2020)
 </td>
 <td style="text-align:center;">
 <img src=images/CoastalCarolinaUniversity_18.png alt=‘Line plot from
-277 to 333 from 2012 to 2020’ >
+106 to 153 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />6.4 per year
+↑<br />7.2 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -796,11 +821,11 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-5.0% (2021)
+5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_103.png alt=‘Line plot from
-3.0 to 5.0 from 2010 to 2021’ >
+<img src=images/CoastalCarolinaUniversity_100.png alt=‘Line plot from
+3 to 5 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -835,13 +860,33 @@ Master’s Colleges &amp; Universities: Larger Programs
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+50% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/CoastalCarolinaUniversity_19.png alt=‘Line plot from
+56 to 50 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 0%
+</td>
+<td style="text-align:center;">
+✪✪<br />Better (lower) than 36%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $19 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_19.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_20.png alt=‘Line plot from
 29 M to 19 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -862,7 +907,7 @@ Revenue
 $261 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_20.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_21.png alt=‘Line plot from
 158 M to 261 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -881,7 +926,7 @@ Expenses
 $242 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_21.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_22.png alt=‘Line plot from
 129 M to 242 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -900,7 +945,7 @@ Assets
 $606 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_22.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_23.png alt=‘Line plot from
 282 M to 606 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -911,44 +956,6 @@ $606 M (2021)
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 87%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-50% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_23.png alt=‘Line plot from
-56 to 50 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 0%
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 36%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-7.4% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_24.png alt=‘Line plot from
-7.9 to 7.4 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -990,7 +997,7 @@ Total
 51% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_42.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_39.png alt=‘Line plot from
 43 to 51 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1008,7 +1015,7 @@ Men
 47% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_43.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_40.png alt=‘Line plot from
 39 to 47 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1026,7 +1033,7 @@ Women
 54% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_44.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_41.png alt=‘Line plot from
 47 to 54 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1044,8 +1051,8 @@ American Indian or Alaska Native men
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_45.png alt=‘Line plot from
-0.0 to 33 from 2011 to 2021’ >
+<img src=images/CoastalCarolinaUniversity_42.png alt=‘Line plot from
+0 to 33 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 47%
@@ -1062,7 +1069,7 @@ American Indian or Alaska Native women
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_46.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_43.png alt=‘Line plot from
 67 to 50 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1080,7 +1087,7 @@ Asian men
 17% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_47.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_44.png alt=‘Line plot from
 20 to 17 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1098,7 +1105,7 @@ Asian women
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_48.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_45.png alt=‘Line plot from
 50 to 50 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1116,7 +1123,7 @@ Black or African American men
 47% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_49.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_46.png alt=‘Line plot from
 48 to 47 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1134,7 +1141,7 @@ Black or African American women
 59% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_50.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_47.png alt=‘Line plot from
 54 to 59 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1152,7 +1159,7 @@ Hispanic men
 41% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_51.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_48.png alt=‘Line plot from
 55 to 41 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1170,7 +1177,7 @@ Hispanic women
 47% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_52.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_49.png alt=‘Line plot from
 11 to 47 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1185,11 +1192,11 @@ Hispanic women
 Native Hawaiian or other Pacific Islander men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_53.png alt=‘Line plot from
-0.0 to 0.0 from 2015 to 2021’ >
+<img src=images/CoastalCarolinaUniversity_50.png alt=‘Line plot from
+0 to 0 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 33%
@@ -1203,11 +1210,11 @@ Native Hawaiian or other Pacific Islander men
 Native Hawaiian or other Pacific Islander women
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_54.png alt=‘Line plot from
-100 to 0.0 from 2016 to 2021’ >
+<img src=images/CoastalCarolinaUniversity_51.png alt=‘Line plot from
+100 to 0 from 2016 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 36%
@@ -1224,7 +1231,7 @@ White men
 49% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_55.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_52.png alt=‘Line plot from
 43 to 49 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1242,7 +1249,7 @@ White women
 55% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_56.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_53.png alt=‘Line plot from
 50 to 55 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1260,7 +1267,7 @@ Two or more races men
 42% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_57.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_54.png alt=‘Line plot from
 30 to 42 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1278,7 +1285,7 @@ Two or more races women
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_58.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_55.png alt=‘Line plot from
 15 to 50 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1296,7 +1303,7 @@ Nonresident alien men
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_59.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_56.png alt=‘Line plot from
 43 to 50 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1314,7 +1321,7 @@ Nonresident alien women
 55% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_60.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_57.png alt=‘Line plot from
 67 to 55 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1354,7 +1361,7 @@ Men (percent freshmen)
 43% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_83.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_80.png alt=‘Line plot from
 46 to 43 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1366,7 +1373,7 @@ Women (percent freshmen)
 57% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_84.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_81.png alt=‘Line plot from
 54 to 57 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1378,7 +1385,7 @@ American Indian or Alaska Native men (percent freshmen)
 0.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_85.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_82.png alt=‘Line plot from
 0.2 to 0.1 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1390,7 +1397,7 @@ American Indian or Alaska Native women (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_86.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_83.png alt=‘Line plot from
 0.2 to 0.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1402,7 +1409,7 @@ Asian men (percent freshmen)
 0.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_87.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_84.png alt=‘Line plot from
 0.5 to 0.5 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1414,7 +1421,7 @@ Asian women (percent freshmen)
 0.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_88.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_85.png alt=‘Line plot from
 0.2 to 0.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1426,7 +1433,7 @@ Black or African American men (percent freshmen)
 7.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_89.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_86.png alt=‘Line plot from
 9.7 to 7.5 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1438,7 +1445,7 @@ Black or African American women (percent freshmen)
 7.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_90.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_87.png alt=‘Line plot from
 10 to 7.6 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1450,7 +1457,7 @@ Hispanic men (percent freshmen)
 2.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_91.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_88.png alt=‘Line plot from
 1.8 to 2.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1462,7 +1469,7 @@ Hispanic women (percent freshmen)
 3.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_92.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_89.png alt=‘Line plot from
 1.9 to 3.8 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1474,7 +1481,7 @@ Native Hawaiian or Other Pacific Islander men (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_93.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_90.png alt=‘Line plot from
 0.2 to 0.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1486,7 +1493,7 @@ Native Hawaiian or Other Pacific Islander women (percent freshmen)
 0.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_94.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_91.png alt=‘Line plot from
 0.1 to 0.0 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1498,7 +1505,7 @@ White men (percent freshmen)
 28% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_95.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_92.png alt=‘Line plot from
 32 to 28 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1510,7 +1517,7 @@ White women (percent freshmen)
 41% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_96.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_93.png alt=‘Line plot from
 40 to 41 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1522,7 +1529,7 @@ Two or more races men (percent freshmen)
 1.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_97.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_94.png alt=‘Line plot from
 0.9 to 1.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1534,7 +1541,7 @@ Two or more races women (percent freshmen)
 2.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_98.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_95.png alt=‘Line plot from
 1.7 to 2.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1546,7 +1553,7 @@ Race ethnicity unknown men (percent freshmen)
 1.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_99.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_96.png alt=‘Line plot from
 0.2 to 1.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1558,7 +1565,7 @@ Race ethnicity unknown women (percent freshmen)
 1.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_100.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_97.png alt=‘Line plot from
 0.1 to 1.7 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1570,7 +1577,7 @@ Nonresident alien men (percent freshmen)
 0.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_101.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_98.png alt=‘Line plot from
 0.3 to 0.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1582,8 +1589,63 @@ Nonresident alien women (percent freshmen)
 0.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_102.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_99.png alt=‘Line plot from
 0.4 to 0.3 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Coastal Carolina University
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+40% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/CoastalCarolinaUniversity_101.png alt=‘Line plot from
+47 to 40 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+99% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/CoastalCarolinaUniversity_102.png alt=‘Line plot from
+99 to 99 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/CoastalCarolinaUniversity_103.png alt=‘Line plot from
+0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1624,7 +1686,7 @@ Total (tenure-track count)
 333 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_61.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_58.png alt=‘Line plot from
 277 to 333 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1639,7 +1701,7 @@ Women (tenure-track count)
 137 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_62.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_59.png alt=‘Line plot from
 114 to 137 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1654,7 +1716,7 @@ Men (tenure-track count)
 196 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_63.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_60.png alt=‘Line plot from
 163 to 196 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1666,11 +1728,11 @@ Men (tenure-track count)
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_64.png alt=‘Line plot from
-2.0 to 1.0 from 2012 to 2020’ >
+<img src=images/CoastalCarolinaUniversity_61.png alt=‘Line plot from
+2 to 1 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.2 per year
@@ -1684,7 +1746,7 @@ Asian (tenure-track count)
 24 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_65.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_62.png alt=‘Line plot from
 12 to 24 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1699,7 +1761,7 @@ Black or African American (tenure-track count)
 22 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_66.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_63.png alt=‘Line plot from
 12 to 22 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1711,11 +1773,11 @@ Black or African American (tenure-track count)
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-8.0 (2020)
+8 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_67.png alt=‘Line plot from
-7.0 to 8.0 from 2012 to 2020’ >
+<img src=images/CoastalCarolinaUniversity_64.png alt=‘Line plot from
+7 to 8 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1725,11 +1787,11 @@ Hispanic or Latino (tenure-track count)
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_68.png alt=‘Line plot from
-0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/CoastalCarolinaUniversity_65.png alt=‘Line plot from
+0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1742,7 +1804,7 @@ White (tenure-track count)
 273 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_69.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_66.png alt=‘Line plot from
 238 to 273 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1754,11 +1816,11 @@ White (tenure-track count)
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_70.png alt=‘Line plot from
-2.0 to 1.0 from 2012 to 2020’ >
+<img src=images/CoastalCarolinaUniversity_67.png alt=‘Line plot from
+2 to 1 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1768,11 +1830,11 @@ Two or more races (tenure-track count)
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_71.png alt=‘Line plot from
-4.0 to 0.0 from 2012 to 2020’ >
+<img src=images/CoastalCarolinaUniversity_68.png alt=‘Line plot from
+4 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1816,7 +1878,7 @@ Total (non-tenure-track count)
 153 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_72.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_69.png alt=‘Line plot from
 106 to 153 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1831,7 +1893,7 @@ Women (non-tenure-track count)
 85 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_73.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_70.png alt=‘Line plot from
 56 to 85 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1846,7 +1908,7 @@ Men (non-tenure-track count)
 68 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_74.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_71.png alt=‘Line plot from
 50 to 68 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1858,11 +1920,11 @@ Men (non-tenure-track count)
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_75.png alt=‘Line plot from
-0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/CoastalCarolinaUniversity_72.png alt=‘Line plot from
+0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1872,11 +1934,11 @@ American Indian or Alaska Native (non-tenure-track count)
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_76.png alt=‘Line plot from
-2.0 to 0.0 from 2012 to 2020’ >
+<img src=images/CoastalCarolinaUniversity_73.png alt=‘Line plot from
+2 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.3 per year
@@ -1887,11 +1949,11 @@ Asian (non-tenure-track count)
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_77.png alt=‘Line plot from
-4.0 to 2.0 from 2012 to 2020’ >
+<img src=images/CoastalCarolinaUniversity_74.png alt=‘Line plot from
+4 to 2 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1901,11 +1963,11 @@ Black or African American (non-tenure-track count)
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_78.png alt=‘Line plot from
-4.0 to 2.0 from 2012 to 2020’ >
+<img src=images/CoastalCarolinaUniversity_75.png alt=‘Line plot from
+4 to 2 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1915,11 +1977,11 @@ Hispanic or Latino (non-tenure-track count)
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_79.png alt=‘Line plot from
-0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/CoastalCarolinaUniversity_76.png alt=‘Line plot from
+0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1932,7 +1994,7 @@ White (non-tenure-track count)
 147 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_80.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_77.png alt=‘Line plot from
 96 to 147 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1944,11 +2006,11 @@ White (non-tenure-track count)
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_81.png alt=‘Line plot from
-0.0 to 2.0 from 2012 to 2020’ >
+<img src=images/CoastalCarolinaUniversity_78.png alt=‘Line plot from
+0 to 2 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1959,11 +2021,11 @@ Two or more races (non-tenure-track count)
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_82.png alt=‘Line plot from
-0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/CoastalCarolinaUniversity_79.png alt=‘Line plot from
+0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -2004,7 +2066,7 @@ Number of physical books
 87,418 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_27.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_24.png alt=‘Line plot from
 135,785 to 87,418 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2024,7 +2086,7 @@ Physical library circulations per students and faculty
 0.9 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_28.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_25.png alt=‘Line plot from
 2.0 to 0.9 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2045,7 +2107,7 @@ Digital library circulations per students and faculty
 14 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_29.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_26.png alt=‘Line plot from
 0.1 to 14 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2088,7 +2150,7 @@ Applicants submitting SAT
 29% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_30.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_27.png alt=‘Line plot from
 64 to 29 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2102,7 +2164,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 520 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_31.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_28.png alt=‘Line plot from
 510 to 520 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2116,7 +2178,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 600 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_32.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_29.png alt=‘Line plot from
 590 to 600 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2130,7 +2192,7 @@ SAT Math 25th percentile score
 510 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_33.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_30.png alt=‘Line plot from
 460 to 510 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2145,7 +2207,7 @@ SAT Math 75th percentile score
 590 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_34.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_31.png alt=‘Line plot from
 550 to 590 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2179,7 +2241,7 @@ Applicants submitting ACT
 13% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_35.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_32.png alt=‘Line plot from
 36 to 13 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2191,7 +2253,7 @@ ACT Composite 25th percentile score
 20 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_36.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_33.png alt=‘Line plot from
 19 to 20 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2203,7 +2265,7 @@ ACT Composite 75th percentile score
 25 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_37.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_34.png alt=‘Line plot from
 23 to 25 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2215,7 +2277,7 @@ ACT English 25th percentile score
 19 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_38.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_35.png alt=‘Line plot from
 19 to 19 from 2016 to 2021’ >
 </td>
 </tr>
@@ -2227,7 +2289,7 @@ ACT English 75th percentile score
 25 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_39.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_36.png alt=‘Line plot from
 24 to 25 from 2016 to 2021’ >
 </td>
 </tr>
@@ -2239,7 +2301,7 @@ ACT Math 25th percentile score
 18 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_40.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_37.png alt=‘Line plot from
 18 to 18 from 2016 to 2021’ >
 </td>
 </tr>
@@ -2251,7 +2313,7 @@ ACT Math 75th percentile score
 25 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/CoastalCarolinaUniversity_41.png alt=‘Line plot from
+<img src=images/CoastalCarolinaUniversity_38.png alt=‘Line plot from
 24 to 25 from 2016 to 2021’ >
 </td>
 </tr>
@@ -2262,28 +2324,28 @@ ACT Math 75th percentile score
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c49fb2585a619aeda617" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-c49fb2585a619aeda617">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Bachelors_ExerciseScienceandKinesiology.html\">Exercise Science and Kinesiology</a>","<a href=\"majors_Bachelors_MarineBiologyandBiologicalOceanography.html\">Marine Biology and Biological Oceanography</a>","<a href=\"majors_Bachelors_SportandFitnessAdministration_Management.html\">Sport and Fitness Administration/Management</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Intelligence_General.html\">Intelligence, General</a>","<a href=\"majors_Bachelors_PublicHealthEducationandPromotion.html\">Public Health Education and Promotion</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Bachelors_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_Finance_General.html\">Finance, General</a>","<a href=\"majors_Bachelors_GraphicDesign.html\">Graphic Design</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_ResortManagement.html\">Resort Management</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_InformationTechnology.html\">Information Technology</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_JuniorHigh_Intermediate_MiddleSchoolEducationandTeaching.html\">Junior High/Intermediate/Middle School Education and Teaching</a>","<a href=\"majors_Bachelors_AppliedMathematics_General.html\">Applied Mathematics, General</a>","<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Bachelors_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Bachelors_Business_ManagerialEconomics.html\">Business/Managerial Economics</a>","<a href=\"majors_Bachelors_EngineeringScience.html\">Engineering Science</a>","<a href=\"majors_Bachelors_ForeignLanguagesandLiteratures_General.html\">Foreign Languages and Literatures, General</a>","<a href=\"majors_Bachelors_Humanities_HumanisticStudies.html\">Humanities/Humanistic Studies</a>","<a href=\"majors_Bachelors_PhysicalEducationTeachingandCoaching.html\">Physical Education Teaching and Coaching</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Bachelors_InformationScience_Studies.html\">Information Science/Studies</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Dramatic_TheatreArtsandStagecraft_Other.html\">Dramatic/Theatre Arts and Stagecraft, Other</a>"],[189,153,141,135,114,107,106,75,74,69,58,55,50,50,50,47,42,38,35,34,30,27,22,21,19,16,16,15,15,13,11,10,10,9,9,9,8,8,7,7,6,6,3,1],[9.844,7.969,7.344,7.031,5.938,5.573,5.521,3.906,3.854,3.594,3.021,2.865,2.604,2.604,2.604,2.448,2.188,1.979,1.823,1.771,1.562,1.406,1.146,1.094,0.99,0.833,0.833,0.781,0.781,0.677,0.573,0.521,0.521,0.469,0.469,0.469,0.417,0.417,0.365,0.365,0.312,0.312,0.156,0.052],[0.132,0.491,0.349,0.501,7.59,0.984,0.096,8.711,2.396,0.085,0.423,0.228,0.19,0.105,0.118,0.915,0.139,0.17,0.093,20.988,0.346,0.211,0.076,0.083,0.871,0.556,0.01,0.24,0.107,0.276,2.052,0.609,0.633,0.157,0.096,0.116,0.086,0.393,0.074,0.098,0.098,0.084,0.022,0.218],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6c376dc48a3a4e1442cf" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6c376dc48a3a4e1442cf">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Bachelors_ExerciseScienceandKinesiology.html\">Exercise Science and Kinesiology</a>","<a href=\"majors_Bachelors_MarineBiologyandBiologicalOceanography.html\">Marine Biology and Biological Oceanography</a>","<a href=\"majors_Bachelors_SportandFitnessAdministration_Management.html\">Sport and Fitness Administration/Management</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Intelligence_General.html\">Intelligence, General</a>","<a href=\"majors_Bachelors_PublicHealthEducationandPromotion.html\">Public Health Education and Promotion</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Bachelors_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_Finance_General.html\">Finance, General</a>","<a href=\"majors_Bachelors_GraphicDesign.html\">Graphic Design</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_ResortManagement.html\">Resort Management</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_InformationTechnology.html\">Information Technology</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_JuniorHigh_Intermediate_MiddleSchoolEducationandTeaching.html\">Junior High/Intermediate/Middle School Education and Teaching</a>","<a href=\"majors_Bachelors_AppliedMathematics_General.html\">Applied Mathematics, General</a>","<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Bachelors_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Bachelors_Business_ManagerialEconomics.html\">Business/Managerial Economics</a>","<a href=\"majors_Bachelors_EngineeringScience.html\">Engineering Science</a>","<a href=\"majors_Bachelors_ForeignLanguagesandLiteratures_General.html\">Foreign Languages and Literatures, General</a>","<a href=\"majors_Bachelors_Humanities_HumanisticStudies.html\">Humanities/Humanistic Studies</a>","<a href=\"majors_Bachelors_PhysicalEducationTeachingandCoaching.html\">Physical Education Teaching and Coaching</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Bachelors_InformationScience_Studies.html\">Information Science/Studies</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Dramatic_TheatreArtsandStagecraft_Other.html\">Dramatic/Theatre Arts and Stagecraft, Other</a>"],[189,153,141,135,114,107,106,75,74,69,58,55,50,50,50,47,42,38,35,34,30,27,22,21,19,16,16,15,15,13,11,10,10,9,9,9,8,8,7,7,6,6,3,1],[9.844,7.969,7.344,7.031,5.938,5.573,5.521,3.906,3.854,3.594,3.021,2.865,2.604,2.604,2.604,2.448,2.188,1.979,1.823,1.771,1.562,1.406,1.146,1.094,0.99,0.833,0.833,0.781,0.781,0.677,0.573,0.521,0.521,0.469,0.469,0.469,0.417,0.417,0.365,0.365,0.312,0.312,0.156,0.052],[0.132,0.491,0.349,0.501,7.59,0.984,0.096,8.711,2.396,0.085,0.423,0.228,0.19,0.105,0.118,0.915,0.139,0.17,0.093,20.988,0.346,0.211,0.076,0.083,0.871,0.556,0.01,0.24,0.107,0.276,2.052,0.609,0.633,0.157,0.096,0.116,0.086,0.393,0.074,0.098,0.098,0.084,0.022,0.218],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-32b315730989905f6830" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-32b315730989905f6830">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Masters_SecondaryEducationandTeaching.html\">Secondary Education and Teaching</a>","<a href=\"majors_Masters_Accounting.html\">Accounting</a>","<a href=\"majors_Masters_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Masters_ReadingTeacherEducation.html\">Reading Teacher Education</a>","<a href=\"majors_Masters_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Masters_MarineBiologyandBiologicalOceanography.html\">Marine Biology and Biological Oceanography</a>","<a href=\"majors_Masters_SportandFitnessAdministration_Management.html\">Sport and Fitness Administration/Management</a>","<a href=\"majors_Masters_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Masters_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Masters_PublicRelations_Advertising_andAppliedCommunication.html\">Public Relations, Advertising, and Applied Communication</a>","<a href=\"majors_Masters_MusicTechnology.html\">Music Technology</a>","<a href=\"majors_Masters_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Masters_TeacherEducation_MultipleLevels.html\">Teacher Education, Multiple Levels</a>"],[60,40,25,21,20,18,16,15,12,10,6,5,3,2,2],[23.529,15.686,9.804,8.235,7.843,7.059,6.275,5.882,4.706,3.922,2.353,1.961,1.176,0.784,0.784],[0.057,0.588,0.434,0.126,0.099,0.326,0.102,7.353,0.241,0.821,0.2,0.693,4.545,0.036,0.04],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-898d01414a57aa51d624" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-898d01414a57aa51d624">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Masters_SecondaryEducationandTeaching.html\">Secondary Education and Teaching</a>","<a href=\"majors_Masters_Accounting.html\">Accounting</a>","<a href=\"majors_Masters_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Masters_ReadingTeacherEducation.html\">Reading Teacher Education</a>","<a href=\"majors_Masters_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Masters_MarineBiologyandBiologicalOceanography.html\">Marine Biology and Biological Oceanography</a>","<a href=\"majors_Masters_SportandFitnessAdministration_Management.html\">Sport and Fitness Administration/Management</a>","<a href=\"majors_Masters_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Masters_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Masters_PublicRelations_Advertising_andAppliedCommunication.html\">Public Relations, Advertising, and Applied Communication</a>","<a href=\"majors_Masters_MusicTechnology.html\">Music Technology</a>","<a href=\"majors_Masters_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Masters_TeacherEducation_MultipleLevels.html\">Teacher Education, Multiple Levels</a>"],[60,40,25,21,20,18,16,15,12,10,6,5,3,2,2],[23.529,15.686,9.804,8.235,7.843,7.059,6.275,5.882,4.706,3.922,2.353,1.961,1.176,0.784,0.784],[0.057,0.588,0.434,0.126,0.099,0.326,0.102,7.353,0.241,0.821,0.2,0.693,4.545,0.036,0.04],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-849b87f5e09b5ad86e04" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-849b87f5e09b5ad86e04">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_Oceanography_ChemicalandPhysical.html\">Oceanography, Chemical and Physical</a>"],[1],[100],[0.847],["Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2495d0102cc93fb62a31" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2495d0102cc93fb62a31">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_Oceanography_ChemicalandPhysical.html\">Oceanography, Chemical and Physical</a>"],[1],[100],[0.847],["Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-10d731dc051d12d04892" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-10d731dc051d12d04892">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Certificate_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Certificate_GeographicInformationScienceandCartography.html\">Geographic Information Science and Cartography</a>"],[3,2,1],[50,33.333,16.667],[0.199,0.031,0.058],["Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7e52abbe1fc732e425fc" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-7e52abbe1fc732e425fc">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Certificate_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Certificate_GeographicInformationScienceandCartography.html\">Geographic Information Science and Cartography</a>"],[3,2,1],[50,33.333,16.667],[0.199,0.031,0.058],["Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6a22fbc8ce477d1562ae" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6a22fbc8ce477d1562ae">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9aebc2f995643967d8dd" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-9aebc2f995643967d8dd">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

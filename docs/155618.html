@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -266,8 +268,18 @@ Undergraduate)</p></li>
 <li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
 two-year (see more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 9,486 (This is 70% the cost of Harvard)</p></li>
+aid</strong>: $9,486 (This is 60% the average cost of Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $7,194.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.nwktc.edu/net-price-calculator'>here</a> to see
+what your family may be asked to pay. It can be MUCH lower than the
+average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Two-year, very small</p></li>
+<li><p><strong>In state percentage</strong>: 35.9% of first year
+students come from Kansas</p></li>
+<li><p><strong>In US percentage</strong>: 95.1% of first year students
+come from the US (note that 0.0% have no residence reported)</p></li>
 <li><p><strong>Student to tenure-stream faculty ratio</strong>: 12.4
 (undergrads to tenure-stream faculty)</p></li>
 <li><p><strong>Student to faculty ratio</strong>: 12.4 (undergrads to
@@ -301,9 +313,10 @@ are registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Restrictive (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: F (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -316,17 +329,30 @@ marriage</strong>: 25% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Moderate risk (based
+on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Western short grasslands</li>
 <li><strong>Biome</strong>: Temperate Grasslands, Savannas &amp;
 Shrublands</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/4774/Average-Weather-in-Goodland-Kansas-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-71546d2958d1c8fd5bd7" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-71546d2958d1c8fd5bd7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[39.346424,-101.70022,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[39.346424,-101.70022],16,[]],"limits":{"lat":[39.346424,39.346424],"lng":[-101.70022,-101.70022]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5864013062ed3098fbb9" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5864013062ed3098fbb9">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"155618.html\">Northwest Kansas Technical College</a>","<a href=\"155201.html\">Independence Community College</a>","<a href=\"240596.html\">Eastern Wyoming College</a>","<a href=\"207069.html\">Redlands Community College</a>","<a href=\"210234.html\">Treasure Valley Community College</a>","<a href=\"173629.html\">Globe University-Woodbury</a>","<a href=\"403487.html\">Wabash Valley College</a>","<a href=\"200192.html\">Lake Region State College</a>","<a href=\"180151.html\">Dawson Community College</a>","<a href=\"380368.html\">Fond du Lac Tribal and Community College</a>","<a href=\"127389.html\">Lamar Community College</a>","<a href=\"155715.html\">Pratt Community College</a>","<a href=\"155098.html\">Fort Scott Community College</a>","<a href=\"155450.html\">Labette Community College</a>","<a href=\"165981.html\">Greenfield Community College</a>","<a href=\"206011.html\">Terra State Community College</a>","<a href=\"114433.html\">Feather River Community College District</a>","<a href=\"200341.html\">Williston State College</a>","<a href=\"125462.html\">West Hills College-Coalinga</a>","<a href=\"174570.html\">Pine Technical &amp; Community College</a>","<a href=\"208035.html\">Western Oklahoma State College</a>","<a href=\"395362.html\">Copper Mountain Community College</a>","<a href=\"171234.html\">Montcalm Community College</a>","<a href=\"155566.html\">Neosho County Community College</a>","<a href=\"200314.html\">Dakota College at Bottineau</a>","<a href=\"101028.html\">Chattahoochee Valley Community College</a>","<a href=\"180276.html\">Helena College University of Montana</a>","<a href=\"174604.html\">Rainy River Community College</a>","<a href=\"130217.html\">Quinebaug Valley Community College</a>","<a href=\"180249.html\">Great Falls College Montana State University</a>","<a href=\"148937.html\">Southeastern Illinois College</a>","<a href=\"101471.html\">J F Ingram State Technical College</a>","<a href=\"187958.html\">University of New Mexico-Gallup Campus</a>","<a href=\"169974.html\">Glen Oaks Community College</a>","<a href=\"175157.html\">Vermilion Community College</a>","<a href=\"240514.html\">Central Wyoming College</a>","<a href=\"154998.html\">Dodge City Community College</a>","<a href=\"156851.html\">Henderson Community College</a>","<a href=\"207050.html\">Eastern Oklahoma State College</a>","<a href=\"154934.html\">Colby Community College</a>","<a href=\"188003.html\">Southeast New Mexico College</a>","<a href=\"155052.html\">Flint Hills Technical College</a>","<a href=\"208275.html\">Blue Mountain Community College</a>","<a href=\"403478.html\">Lincoln Trail College</a>","<a href=\"117274.html\">Lassen Community College</a>","<a href=\"173993.html\">Mesabi Range College</a>","<a href=\"415774.html\">Four-D College</a>","<a href=\"128577.html\">Asnuntuck Community College</a>","<a href=\"155593.html\">North Central Kansas Technical College</a>","<a href=\"162609.html\">Garrett College</a>","<a href=\"420370.html\">Career Technical Institute</a>","<a href=\"130040.html\">Northwestern Connecticut Community College</a>","<a href=\"240657.html\">Northwest College</a>","<a href=\"406200.html\">Wright Career College</a>","<a href=\"172671.html\">West Shore Community College</a>","<a href=\"154925.html\">Coffeyville Community College</a>","<a href=\"145707.html\">Olney Central College</a>","<a href=\"188049.html\">University of New Mexico-Valencia County Campus</a>","<a href=\"148991.html\">Spoon River College</a>","<a href=\"101301.html\">George C Wallace State Community College-Selma</a>","<a href=\"182865.html\">Mount Washington College</a>","<a href=\"204662.html\">Ohio State University Agricultural Technical Institute</a>","<a href=\"221148.html\">Lincoln College of Technology-Nashville</a>","<a href=\"154642.html\">Allen County Community College</a>","<a href=\"190053.html\">Clinton Community College</a>","<a href=\"154907.html\">Cloud County Community College</a>","<a href=\"139995.html\">Gupton Jones College of Funeral Service</a>","<a href=\"105215.html\">Universal Technical Institute of Arizona Inc-Motorcycle Mechanics Institute Division</a>","<a href=\"128780.html\">Charter Oak State College</a>","<a href=\"211006.html\">Automotive Training Center-Exton</a>","<a href=\"461218.html\">Institute of Medical Careers</a>","<a href=\"173735.html\">Hibbing Community College</a>","<a href=\"181817.html\">Western Nebraska Community College</a>","<a href=\"210155.html\">Southwestern Oregon Community College</a>","<a href=\"445993.html\">Marinello Schools of Beauty-Niantic</a>","<a href=\"203614.html\">O C Collins Career Center</a>","<a href=\"123484.html\">College of the Siskiyous</a>","<a href=\"431637.html\">American Beauty Academy</a>","<a href=\"204608.html\">Ohio Technical College</a>","<a href=\"445799.html\">Universal Technical Institute of Pennsylvania Inc</a>","<a href=\"100760.html\">Central Alabama Community College</a>","<a href=\"179919.html\">Wentworth Military Academy and College</a>","<a href=\"101462.html\">J. F. Drake State Community and Technical College</a>","<a href=\"120953.html\">Palo Verde College</a>","<a href=\"164775.html\">Berkshire Community College</a>","<a href=\"215381.html\">Pittsburgh Institute of Aeronautics</a>","<a href=\"382780.html\">Genesis Career College-Lebanon</a>","<a href=\"262341.html\">Conservatory of Recording Arts and Sciences</a>","<a href=\"187994.html\">New Mexico State University-Alamogordo</a>","<a href=\"179344.html\">Missouri State University-West Plains</a>","<a href=\"487791.html\">Arclabs</a>","<a href=\"106041.html\">Universal Technical Institute of Arizona Inc</a>","<a href=\"161688.html\">Allegany College of Maryland</a>","<a href=\"133960.html\">The College of the Florida Keys</a>","<a href=\"148821.html\">Shawnee Community College</a>","<a href=\"173805.html\">Itasca Community College</a>","<a href=\"106908.html\">Paul Mitchell the School-Little Rock</a>","<a href=\"197531.html\">Word of Life Bible Institute</a>","<a href=\"237701.html\">Potomac State College of West Virginia University</a>","<a href=\"442611.html\">NASCAR Technical Institute</a>"],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,19,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,9,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[5,12,8,14,17,89,7,21,7,13,15,7,12,16,15,20,3,8,1,15,19,1,16,14,19,8,16,16,11,14,5,0,9,12,18,11,15,13,18,17,3,35,20,8,3,17,27,14,20,8,100,11,7,88,10,19,8,5,14,9,93,29,72,14,10,17,96,95,46,75,95,26,5,8,81,65,5,97,97,98,8,77,7,2,14,67,100,96,13,7,100,97,13,7,9,18,94,null,null,98],[12,18,15,21,27,null,15,20,18,19,20,16,21,18,10,17,17,27,15,16,21,20,13,15,31,15,11,28,19,14,16,7,20,20,31,12,18,25,21,13,12,10,12,28,12,22,17,19,8,24,null,18,13,null,12,22,11,15,17,12,null,20,null,31,11,18,null,null,null,null,null,16,11,19,null,null,15,null,null,null,14,null,12,18,7,null,null,null,11,22,null,null,10,13,20,25,null,null,22,null],[7194,6782,3396,5553,5800,null,6387,7305,8966,10277,8959,7409,3834,6677,7910,12215,8434,10006,9483,9436,4260,9229,6350,7729,3527,2435,10592,null,6542,8553,5666,null,6716,6020,9181,7590,6082,3592,3234,7920,5033,15955,11252,7236,null,10813,null,8658,12199,4557,19655,6691,6069,null,4062,3882,7570,9063,4659,2007,null,14441,20386,6634,7305,9255,15645,17937,9420,11503,10937,9297,6116,8515,null,5178,9618,null,21846,20158,8734,null,5986,12295,7716,32148,12943,19464,3876,7159,19665,23344,7469,13295,5058,11220,22132,9377,5919,22469],[374,453,456,373,734,373,427,422,258,335,350,512,787,564,374,481,421,565,434,398,503,339,336,556,351,498,338,146,405,442,450,291,581,357,381,586,828,385,626,576,273,274,600,362,463,552,437,437,395,292,479,439,652,778,233,863,461,299,525,480,521,421,1464,961,294,585,297,779,377,365,676,448,674,797,221,454,523,525,470,1031,494,273,255,530,344,609,169,450,235,684,298,1995,777,337,465,552,315,461,883,1211],[null,null,null,null,null,2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,6,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],["Kansas","Kansas","Wyoming","Oklahoma","Oregon","Minnesota","Illinois","North Dakota","Montana","Minnesota","Colorado","Kansas","Kansas","Kansas","Massachusetts","Ohio","California","North Dakota","California","Minnesota","Oklahoma","California","Michigan","Kansas","North Dakota","Alabama","Montana","Minnesota","Connecticut","Montana","Illinois","Alabama","New Mexico","Michigan","Minnesota","Wyoming","Kansas","Kentucky","Oklahoma","Kansas","New Mexico","Kansas","Oregon","Illinois","California","Minnesota","California","Connecticut","Kansas","Maryland","District of Columbia","Connecticut","Wyoming","Kansas","Michigan","Kansas","Illinois","New Mexico","Illinois","Alabama","New Hampshire","Ohio","Tennessee","Kansas","New York","Kansas","Georgia","Arizona","Connecticut","Pennsylvania","Pennsylvania","Minnesota","Nebraska","Oregon","Connecticut","Ohio","California","Maryland","Ohio","Pennsylvania","Alabama","Missouri","Alabama","California","Massachusetts","Pennsylvania","Tennessee","Arizona","New Mexico","Missouri","South Carolina","Arizona","Maryland","Florida","Illinois","Minnesota","Arkansas","New York","West Virginia","North Carolina"],["Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Decreasing","Increasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Increasing","Approximately stable","Decreasing","Unknown or not applicable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Increasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-99ba4eb3b62521211137" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-99ba4eb3b62521211137">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[39.346424,-101.70022,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[39.346424,-101.70022],16,[]],"limits":{"lat":[39.346424,39.346424],"lng":[-101.70022,-101.70022]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -398,13 +424,6 @@ Northwest Kansas Technical College
 <th style="text-align:center;">
 Change over ≤ 11 years
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Associate’s Colleges: High Career &amp; Technical-Mixed
-Traditional/Nontraditional
-</th>
 </tr>
 </thead>
 <tbody>
@@ -419,12 +438,6 @@ $9,486 (2020)
 <img src=images/NorthwestKansasTechnicalCollege_9.png alt=‘Line plot
 from 8,884 to 9,486 from 2011 to 2020’ >
 </td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 72%
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 40%
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -436,12 +449,6 @@ Undergrads getting federal aid
 <td style="text-align:center;">
 <img src=images/NorthwestKansasTechnicalCollege_10.png alt=‘Line plot
 from 67 to 84 from 2014 to 2021’ >
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (higher) than 74%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (higher) than 75%
 </td>
 </tr>
 <tr>
@@ -455,12 +462,6 @@ Undergrads getting any aid
 <img src=images/NorthwestKansasTechnicalCollege_11.png alt=‘Line plot
 from 95 to 97 from 2014 to 2021’ >
 </td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (higher) than 74%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (higher) than 90%
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -472,12 +473,6 @@ Undergrads getting Pell grants
 <td style="text-align:center;">
 <img src=images/NorthwestKansasTechnicalCollege_12.png alt=‘Line plot
 from 67 to 57 from 2014 to 2021’ >
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (higher) than 48%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (higher) than 57%
 </td>
 </tr>
 </tbody>
@@ -496,34 +491,9 @@ Northwest Kansas Technical College
 <th style="text-align:center;">
 Change over ≤ 11 years
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Associate’s Colleges: High Career &amp; Technical-Mixed
-Traditional/Nontraditional
-</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-12 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_14.png alt=‘Line plot
-from 11 to 12 from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 73%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 57%
-</td>
-</tr>
 <tr>
 <td style="text-align:left;">
 Undergrads per tenure track instructor
@@ -532,14 +502,20 @@ Undergrads per tenure track instructor
 12 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_15.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_14.png alt=‘Line plot
 from 11 to 12 from 2012 to 2020’ >
 </td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 87%
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
 </td>
 <td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 72%
+12 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/NorthwestKansasTechnicalCollege_15.png alt=‘Line plot
+from 11 to 12 from 2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -553,10 +529,6 @@ Total instructors
 <img src=images/NorthwestKansasTechnicalCollege_16.png alt=‘Line plot
 from 35 to 30 from 2012 to 2020’ >
 </td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -566,12 +538,8 @@ Tenure track instructors
 30 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_18.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_17.png alt=‘Line plot
 from 35 to 30 from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -617,11 +585,11 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-3.0% (2021)
+3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_103.png alt=‘Line
-plot from 4.0 to 3.0 from 2010 to 2021’ >
+<img src=images/NorthwestKansasTechnicalCollege_100.png alt=‘Line
+plot from 4 to 3 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -645,16 +613,23 @@ Change over ≤ 11 years
 <th style="text-align:center;">
 Trend
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Associate’s Colleges: High Career &amp; Technical-Mixed
-Traditional/Nontraditional
-</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+5.1% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/NorthwestKansasTechnicalCollege_19.png alt=‘Line plot
+from 17 to 5.1 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
 <tr>
 <td style="text-align:left;">
 Revenue minus expenses
@@ -663,16 +638,10 @@ Revenue minus expenses
 $1.0 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_19.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_20.png alt=‘Line plot
 from 461,204 to 1.0 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (higher) than 42%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (higher) than 43%
 </td>
 </tr>
 <tr>
@@ -683,12 +652,8 @@ Revenue
 $9.9 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_20.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_21.png alt=‘Line plot
 from 7.8 M to 9.9 M from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 <td style="text-align:center;">
 </td>
@@ -701,15 +666,11 @@ Expenses
 $8.9 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_21.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_22.png alt=‘Line plot
 from 7.3 M to 8.9 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↑<br />$174,388 per year
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 <tr>
@@ -720,55 +681,11 @@ Assets
 $16 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_22.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_23.png alt=‘Line plot
 from 14 M to 16 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↑<br />$289,089 per year
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (higher) than 34%
-</td>
-<td style="text-align:center;">
-✪<br />Better (higher) than 20%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-5.1% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_23.png alt=‘Line plot
-from 17 to 5.1 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 92%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 97%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-33% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_24.png alt=‘Line plot
-from 35 to 33 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -810,7 +727,7 @@ Men (percent freshmen)
 79% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_83.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_80.png alt=‘Line plot
 from 70 to 79 from 2010 to 2021’ >
 </td>
 </tr>
@@ -822,7 +739,7 @@ Women (percent freshmen)
 21% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_84.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_81.png alt=‘Line plot
 from 30 to 21 from 2010 to 2021’ >
 </td>
 </tr>
@@ -834,7 +751,7 @@ American Indian or Alaska Native men (percent freshmen)
 2.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_85.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_82.png alt=‘Line plot
 from 0.5 to 2.1 from 2010 to 2021’ >
 </td>
 </tr>
@@ -846,7 +763,7 @@ American Indian or Alaska Native women (percent freshmen)
 0.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_86.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_83.png alt=‘Line plot
 from 1.1 to 0.7 from 2010 to 2021’ >
 </td>
 </tr>
@@ -855,11 +772,11 @@ from 1.1 to 0.7 from 2010 to 2021’ >
 Asian men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_87.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/NorthwestKansasTechnicalCollege_84.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -867,11 +784,11 @@ from 0.0 to 0.0 from 2010 to 2021’ >
 Asian women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_88.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/NorthwestKansasTechnicalCollege_85.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -882,7 +799,7 @@ Black or African American men (percent freshmen)
 9.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_89.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_86.png alt=‘Line plot
 from 1.1 to 9.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -894,8 +811,8 @@ Black or African American women (percent freshmen)
 2.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_90.png alt=‘Line plot
-from 0.0 to 2.1 from 2010 to 2021’ >
+<img src=images/NorthwestKansasTechnicalCollege_87.png alt=‘Line plot
+from 0 to 2.1 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -906,7 +823,7 @@ Hispanic men (percent freshmen)
 20% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_91.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_88.png alt=‘Line plot
 from 15 to 20 from 2010 to 2021’ >
 </td>
 </tr>
@@ -918,7 +835,7 @@ Hispanic women (percent freshmen)
 7.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_92.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_89.png alt=‘Line plot
 from 2.7 to 7.0 from 2010 to 2021’ >
 </td>
 </tr>
@@ -927,11 +844,11 @@ from 2.7 to 7.0 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_93.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/NorthwestKansasTechnicalCollege_90.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -939,11 +856,11 @@ from 0.0 to 0.0 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_94.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/NorthwestKansasTechnicalCollege_91.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -954,7 +871,7 @@ White men (percent freshmen)
 44% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_95.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_92.png alt=‘Line plot
 from 50 to 44 from 2010 to 2021’ >
 </td>
 </tr>
@@ -966,7 +883,7 @@ White women (percent freshmen)
 8.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_96.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_93.png alt=‘Line plot
 from 25 to 8.5 from 2010 to 2021’ >
 </td>
 </tr>
@@ -978,7 +895,7 @@ Two or more races men (percent freshmen)
 0.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_97.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_94.png alt=‘Line plot
 from 3.2 to 0.7 from 2010 to 2021’ >
 </td>
 </tr>
@@ -990,7 +907,7 @@ Two or more races women (percent freshmen)
 1.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_98.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_95.png alt=‘Line plot
 from 1.1 to 1.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -999,11 +916,11 @@ from 1.1 to 1.4 from 2010 to 2021’ >
 Race ethnicity unknown men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_99.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/NorthwestKansasTechnicalCollege_96.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1011,11 +928,11 @@ from 0.0 to 0.0 from 2010 to 2021’ >
 Race ethnicity unknown women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_100.png alt=‘Line
-plot from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/NorthwestKansasTechnicalCollege_97.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1026,8 +943,8 @@ Nonresident alien men (percent freshmen)
 2.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_101.png alt=‘Line
-plot from 0.5 to 2.8 from 2010 to 2021’ >
+<img src=images/NorthwestKansasTechnicalCollege_98.png alt=‘Line plot
+from 0.5 to 2.8 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1038,8 +955,63 @@ Nonresident alien women (percent freshmen)
 1.4% (2021)
 </td>
 <td style="text-align:center;">
+<img src=images/NorthwestKansasTechnicalCollege_99.png alt=‘Line plot
+from 0 to 1.4 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Northwest Kansas Technical College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+36% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/NorthwestKansasTechnicalCollege_101.png alt=‘Line
+plot from 100 to 36 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+95% (2021)
+</td>
+<td style="text-align:center;">
 <img src=images/NorthwestKansasTechnicalCollege_102.png alt=‘Line
-plot from 0.0 to 1.4 from 2010 to 2021’ >
+plot from 100 to 95 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/NorthwestKansasTechnicalCollege_103.png alt=‘Line
+plot from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1080,7 +1052,7 @@ Total (tenure-track count)
 30 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_61.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_58.png alt=‘Line plot
 from 35 to 30 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1094,7 +1066,7 @@ Women (tenure-track count)
 11 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_62.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_59.png alt=‘Line plot
 from 11 to 11 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1108,7 +1080,7 @@ Men (tenure-track count)
 19 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_63.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_60.png alt=‘Line plot
 from 24 to 19 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1119,11 +1091,11 @@ from 24 to 19 from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_64.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/NorthwestKansasTechnicalCollege_61.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1133,11 +1105,11 @@ from 0.0 to 0.0 from 2012 to 2020’ >
 Asian (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_65.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/NorthwestKansasTechnicalCollege_62.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1147,11 +1119,11 @@ from 0.0 to 0.0 from 2012 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_66.png alt=‘Line plot
-from 1.0 to 0.0 from 2012 to 2020’ >
+<img src=images/NorthwestKansasTechnicalCollege_63.png alt=‘Line plot
+from 1 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1161,11 +1133,11 @@ from 1.0 to 0.0 from 2012 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_67.png alt=‘Line plot
-from 3.0 to 2.0 from 2012 to 2020’ >
+<img src=images/NorthwestKansasTechnicalCollege_64.png alt=‘Line plot
+from 3 to 2 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.2 per year
@@ -1176,11 +1148,11 @@ from 3.0 to 2.0 from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_68.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/NorthwestKansasTechnicalCollege_65.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1193,7 +1165,7 @@ White (tenure-track count)
 28 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_69.png alt=‘Line plot
+<img src=images/NorthwestKansasTechnicalCollege_66.png alt=‘Line plot
 from 31 to 28 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1204,11 +1176,11 @@ from 31 to 28 from 2012 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_70.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/NorthwestKansasTechnicalCollege_67.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1218,11 +1190,11 @@ from 0.0 to 0.0 from 2012 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/NorthwestKansasTechnicalCollege_71.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/NorthwestKansasTechnicalCollege_68.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1255,28 +1227,28 @@ specified set of ethnicities and races.</p>
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1f7be7a7797e3e350eae" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-1f7be7a7797e3e350eae">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1c850f16eb0083f0c29a" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1c850f16eb0083f0c29a">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-97b29164e3081a8227c7" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-97b29164e3081a8227c7">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-382aef27e47a9e41d91a" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-382aef27e47a9e41d91a">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a931a93a8ab0330d3094" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a931a93a8ab0330d3094">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-27a73f7f0ad78f3a585f" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-27a73f7f0ad78f3a585f">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-697c21ae4494bf1604fe" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-697c21ae4494bf1604fe">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_Electrician.html\">Electrician</a>","<a href=\"majors_Certificate_TruckandBusDriver_CommercialVehicleOperatorandInstructor.html\">Truck and Bus Driver/Commercial Vehicle Operator and Instructor</a>","<a href=\"majors_Certificate_WeldingTechnology_Welder.html\">Welding Technology/Welder</a>","<a href=\"majors_Certificate_NursingAssistant_AideandPatientCareAssistant_Aide.html\">Nursing Assistant/Aide and Patient Care Assistant/Aide</a>","<a href=\"majors_Certificate_Medium_HeavyVehicleandTruckTechnology_Technician.html\">Medium/Heavy Vehicle and Truck Technology/Technician</a>","<a href=\"majors_Certificate_AdministrativeAssistantandSecretarialScience_General.html\">Administrative Assistant and Secretarial Science, General</a>","<a href=\"majors_Certificate_EmergencyMedicalTechnology_Technician_EMTParamedic_.html\">Emergency Medical Technology/Technician (EMT Paramedic)</a>","<a href=\"majors_Certificate_AgroecologyandSustainableAgriculture.html\">Agroecology and Sustainable Agriculture</a>","<a href=\"majors_Certificate_AgroecologyandSustainableAgriculture.html\">Agroecology and Sustainable Agriculture</a>","<a href=\"majors_Certificate_WeldingTechnology_Welder.html\">Welding Technology/Welder</a>","<a href=\"majors_Certificate_CivilEngineeringTechnologies_Technicians.html\">Civil Engineering Technologies/Technicians</a>","<a href=\"majors_Certificate_Automobile_AutomotiveMechanicsTechnology_Technician.html\">Automobile/Automotive Mechanics Technology/Technician</a>","<a href=\"majors_Certificate_Medical_ClinicalAssistant.html\">Medical/Clinical Assistant</a>","<a href=\"majors_Certificate_Cosmetology_Cosmetologist_General.html\">Cosmetology/Cosmetologist, General</a>","<a href=\"majors_Certificate_Carpentry_Carpenter.html\">Carpentry/Carpenter</a>","<a href=\"majors_Certificate_ForensicScienceandTechnology.html\">Forensic Science and Technology</a>","<a href=\"majors_Certificate_MedicationAide.html\">Medication Aide</a>","<a href=\"majors_Certificate_Prepress_DesktopPublishingandDigitalImagingDesign.html\">Prepress/Desktop Publishing and Digital Imaging Design</a>","<a href=\"majors_Certificate_CloudComputing.html\">Cloud Computing</a>","<a href=\"majors_Certificate_Autobody_CollisionandRepairTechnology_Technician.html\">Autobody/Collision and Repair Technology/Technician</a>"],[31,27,26,23,19,18,14,13,13,13,10,8,8,7,7,6,6,5,4,2],[11.923,10.385,10,8.846,7.308,6.923,5.385,5,5,5,3.846,3.077,3.077,2.692,2.692,2.308,2.308,1.923,1.538,0.769],[0.183,0.163,0.066,0.067,1.003,0.434,0.062,10.656,10.656,0.033,4.854,0.037,0.016,0.015,0.246,0.637,0.904,0.864,4,0.051],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f285af6e1327d7d724de" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f285af6e1327d7d724de">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_Electrician.html\">Electrician</a>","<a href=\"majors_Certificate_TruckandBusDriver_CommercialVehicleOperatorandInstructor.html\">Truck and Bus Driver/Commercial Vehicle Operator and Instructor</a>","<a href=\"majors_Certificate_WeldingTechnology_Welder.html\">Welding Technology/Welder</a>","<a href=\"majors_Certificate_NursingAssistant_AideandPatientCareAssistant_Aide.html\">Nursing Assistant/Aide and Patient Care Assistant/Aide</a>","<a href=\"majors_Certificate_Medium_HeavyVehicleandTruckTechnology_Technician.html\">Medium/Heavy Vehicle and Truck Technology/Technician</a>","<a href=\"majors_Certificate_AdministrativeAssistantandSecretarialScience_General.html\">Administrative Assistant and Secretarial Science, General</a>","<a href=\"majors_Certificate_EmergencyMedicalTechnology_Technician_EMTParamedic_.html\">Emergency Medical Technology/Technician (EMT Paramedic)</a>","<a href=\"majors_Certificate_AgroecologyandSustainableAgriculture.html\">Agroecology and Sustainable Agriculture</a>","<a href=\"majors_Certificate_AgroecologyandSustainableAgriculture.html\">Agroecology and Sustainable Agriculture</a>","<a href=\"majors_Certificate_WeldingTechnology_Welder.html\">Welding Technology/Welder</a>","<a href=\"majors_Certificate_CivilEngineeringTechnologies_Technicians.html\">Civil Engineering Technologies/Technicians</a>","<a href=\"majors_Certificate_Automobile_AutomotiveMechanicsTechnology_Technician.html\">Automobile/Automotive Mechanics Technology/Technician</a>","<a href=\"majors_Certificate_Medical_ClinicalAssistant.html\">Medical/Clinical Assistant</a>","<a href=\"majors_Certificate_Cosmetology_Cosmetologist_General.html\">Cosmetology/Cosmetologist, General</a>","<a href=\"majors_Certificate_Carpentry_Carpenter.html\">Carpentry/Carpenter</a>","<a href=\"majors_Certificate_ForensicScienceandTechnology.html\">Forensic Science and Technology</a>","<a href=\"majors_Certificate_MedicationAide.html\">Medication Aide</a>","<a href=\"majors_Certificate_Prepress_DesktopPublishingandDigitalImagingDesign.html\">Prepress/Desktop Publishing and Digital Imaging Design</a>","<a href=\"majors_Certificate_CloudComputing.html\">Cloud Computing</a>","<a href=\"majors_Certificate_Autobody_CollisionandRepairTechnology_Technician.html\">Autobody/Collision and Repair Technology/Technician</a>"],[31,27,26,23,19,18,14,13,13,13,10,8,8,7,7,6,6,5,4,2],[11.923,10.385,10,8.846,7.308,6.923,5.385,5,5,5,3.846,3.077,3.077,2.692,2.692,2.308,2.308,1.923,1.538,0.769],[0.183,0.163,0.066,0.067,1.003,0.434,0.062,10.656,10.656,0.033,4.854,0.037,0.016,0.015,0.246,0.637,0.904,0.864,4,0.051],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b4f75c0367d0b815f7ae" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b4f75c0367d0b815f7ae">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_CivilEngineeringTechnologies_Technicians.html\">Civil Engineering Technologies/Technicians</a>","<a href=\"majors_Associates_Medium_HeavyVehicleandTruckTechnology_Technician.html\">Medium/Heavy Vehicle and Truck Technology/Technician</a>","<a href=\"majors_Associates_AgroecologyandSustainableAgriculture.html\">Agroecology and Sustainable Agriculture</a>","<a href=\"majors_Associates_Electrician.html\">Electrician</a>","<a href=\"majors_Associates_RespiratoryCareTherapy_Therapist.html\">Respiratory Care Therapy/Therapist</a>","<a href=\"majors_Associates_Medical_ClinicalAssistant.html\">Medical/Clinical Assistant</a>","<a href=\"majors_Associates_WeldingTechnology_Welder.html\">Welding Technology/Welder</a>","<a href=\"majors_Associates_AdministrativeAssistantandSecretarialScience_General.html\">Administrative Assistant and Secretarial Science, General</a>","<a href=\"majors_Associates_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Associates_ForensicScienceandTechnology.html\">Forensic Science and Technology</a>","<a href=\"majors_Associates_Carpentry_Carpenter.html\">Carpentry/Carpenter</a>","<a href=\"majors_Associates_Prepress_DesktopPublishingandDigitalImagingDesign.html\">Prepress/Desktop Publishing and Digital Imaging Design</a>","<a href=\"majors_Associates_CloudComputing.html\">Cloud Computing</a>","<a href=\"majors_Associates_Cosmetology_Cosmetologist_General.html\">Cosmetology/Cosmetologist, General</a>","<a href=\"majors_Associates_Autobody_CollisionandRepairTechnology_Technician.html\">Autobody/Collision and Repair Technology/Technician</a>","<a href=\"majors_Associates_Automobile_AutomotiveMechanicsTechnology_Technician.html\">Automobile/Automotive Mechanics Technology/Technician</a>"],[18,17,15,14,13,10,7,7,6,5,5,4,4,4,2,2],[13.534,12.782,11.278,10.526,9.774,7.519,5.263,5.263,4.511,3.759,3.759,3.008,3.008,3.008,1.504,1.504],[2.616,4.885,25,0.536,0.257,0.157,0.234,0.27,0.119,1.068,1.174,1.19,12.5,0.452,0.372,0.028],["Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-14c1f16ea060b3a91f0f" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-14c1f16ea060b3a91f0f">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_CivilEngineeringTechnologies_Technicians.html\">Civil Engineering Technologies/Technicians</a>","<a href=\"majors_Associates_Medium_HeavyVehicleandTruckTechnology_Technician.html\">Medium/Heavy Vehicle and Truck Technology/Technician</a>","<a href=\"majors_Associates_AgroecologyandSustainableAgriculture.html\">Agroecology and Sustainable Agriculture</a>","<a href=\"majors_Associates_Electrician.html\">Electrician</a>","<a href=\"majors_Associates_RespiratoryCareTherapy_Therapist.html\">Respiratory Care Therapy/Therapist</a>","<a href=\"majors_Associates_Medical_ClinicalAssistant.html\">Medical/Clinical Assistant</a>","<a href=\"majors_Associates_WeldingTechnology_Welder.html\">Welding Technology/Welder</a>","<a href=\"majors_Associates_AdministrativeAssistantandSecretarialScience_General.html\">Administrative Assistant and Secretarial Science, General</a>","<a href=\"majors_Associates_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Associates_ForensicScienceandTechnology.html\">Forensic Science and Technology</a>","<a href=\"majors_Associates_Carpentry_Carpenter.html\">Carpentry/Carpenter</a>","<a href=\"majors_Associates_Prepress_DesktopPublishingandDigitalImagingDesign.html\">Prepress/Desktop Publishing and Digital Imaging Design</a>","<a href=\"majors_Associates_CloudComputing.html\">Cloud Computing</a>","<a href=\"majors_Associates_Cosmetology_Cosmetologist_General.html\">Cosmetology/Cosmetologist, General</a>","<a href=\"majors_Associates_Autobody_CollisionandRepairTechnology_Technician.html\">Autobody/Collision and Repair Technology/Technician</a>","<a href=\"majors_Associates_Automobile_AutomotiveMechanicsTechnology_Technician.html\">Automobile/Automotive Mechanics Technology/Technician</a>"],[18,17,15,14,13,10,7,7,6,5,5,4,4,4,2,2],[13.534,12.782,11.278,10.526,9.774,7.519,5.263,5.263,4.511,3.759,3.759,3.008,3.008,3.008,1.504,1.504],[2.616,4.885,25,0.536,0.257,0.157,0.234,0.27,0.119,1.068,1.174,1.19,12.5,0.452,0.372,0.028],["Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

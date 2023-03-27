@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -270,9 +272,21 @@ Undergraduate)</p></li>
 <li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
 four-year (see more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 13,228 (This is 100% the cost of Harvard)</p></li>
+aid</strong>: $13,228 (This is 80% the average cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $13,655.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.ewc.edu/financial-aid/#'>here</a> to see what your
+family may be asked to pay. It can be MUCH lower than the average price
+but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, very small, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 83.3% of first year
+students come from Florida (note that 2.1% have no residence
+reported)</p></li>
+<li><p><strong>In US percentage</strong>: 97.9% of first year students
+come from the US (note that 2.1% have no residence reported)</p></li>
 <li><p>This is a <strong>Historically Black College or University
 (HBCU)</strong></p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
@@ -313,9 +327,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Restrictive (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: C- (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -328,17 +343,29 @@ marriage</strong>: 63% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Worst (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Southeastern conifer
 forests</li>
 <li><strong>Biome</strong>: Temperate Conifer Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/17779/Average-Weather-in-Jacksonville-Florida-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-90c16510ec7bebfa1de2" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-90c16510ec7bebfa1de2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[30.34479,-81.684879,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[30.34479,-81.684879],16,[]],"limits":{"lat":[30.34479,30.34479],"lng":[-81.684879,-81.684879]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f2e3234f18c92020b133" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f2e3234f18c92020b133">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"133526.html\">Edward Waters University</a>","<a href=\"217624.html\">Allen University</a>","<a href=\"220604.html\">Le Moyne-Owen College</a>","<a href=\"220598.html\">Lane College</a>","<a href=\"217721.html\">Benedict College</a>","<a href=\"102234.html\">Spring Hill College</a>","<a href=\"139719.html\">Fort Valley State University</a>","<a href=\"140960.html\">Savannah State University</a>","<a href=\"201690.html\">Central State University</a>","<a href=\"157058.html\">Kentucky State University</a>","<a href=\"138716.html\">Albany State University</a>","<a href=\"197911.html\">Barton College</a>","<a href=\"203085.html\">Heidelberg University</a>","<a href=\"140553.html\">Morehouse College</a>","<a href=\"101675.html\">Miles College</a>","<a href=\"213303.html\">Keystone College</a>","<a href=\"198303.html\">Chowan University</a>","<a href=\"190770.html\">Dowling College</a>","<a href=\"102270.html\">Stillman College</a>","<a href=\"160630.html\">Southern University at New Orleans</a>","<a href=\"161341.html\">University of Maine at Presque Isle</a>","<a href=\"206330.html\">Urbana University</a>","<a href=\"230913.html\">Northern Vermont University</a>","<a href=\"170967.html\">Rochester University</a>","<a href=\"206507.html\">Wilmington College</a>","<a href=\"232089.html\">Ferrum College</a>","<a href=\"226587.html\">McMurry University</a>","<a href=\"140872.html\">Reinhardt University</a>","<a href=\"146676.html\">Lincoln College</a>","<a href=\"101435.html\">Huntingdon College</a>","<a href=\"237215.html\">Bluefield State College</a>","<a href=\"176044.html\">Mississippi Valley State University</a>","<a href=\"183822.html\">Bloomfield College</a>","<a href=\"179946.html\">Westminster College</a>","<a href=\"239080.html\">Marian University</a>","<a href=\"171599.html\">Olivet College</a>","<a href=\"141361.html\">Young Harris College</a>","<a href=\"218821.html\">Spartanburg Methodist College</a>","<a href=\"237899.html\">West Virginia State University</a>","<a href=\"228042.html\">Schreiner University</a>","<a href=\"198899.html\">Mars Hill University</a>","<a href=\"224545.html\">Texas A&amp;M University-Texarkana</a>","<a href=\"161563.html\">Thomas College</a>","<a href=\"144971.html\">Eureka College</a>","<a href=\"225575.html\">Huston-Tillotson University</a>","<a href=\"154013.html\">Mount Mercy University</a>","<a href=\"120184.html\">Notre Dame de Namur University</a>","<a href=\"152363.html\">Saint Josephs College</a>","<a href=\"195243.html\">St. Thomas Aquinas College</a>","<a href=\"176406.html\">Tougaloo College</a>","<a href=\"230931.html\">Lyndon State College</a>","<a href=\"186618.html\">Saint Elizabeth University</a>","<a href=\"139205.html\">Brewton-Parker College</a>","<a href=\"180522.html\">Montana State University-Northern</a>","<a href=\"238430.html\">Cardinal Stritch University</a>","<a href=\"218654.html\">University of South Carolina Beaufort</a>","<a href=\"198507.html\">Elizabeth City State University</a>","<a href=\"131876.html\">Trinity Washington University</a>","<a href=\"167455.html\">Pine Manor College</a>","<a href=\"107877.html\">Williams Baptist University</a>","<a href=\"201371.html\">Bluffton University</a>","<a href=\"199032.html\">Montreat College</a>","<a href=\"214166.html\">Mount Aloysius College</a>","<a href=\"150145.html\">Bethel University</a>","<a href=\"140234.html\">LaGrange College</a>","<a href=\"198598.html\">Greensboro College</a>","<a href=\"232672.html\">Mary Baldwin University</a>","<a href=\"204468.html\">Notre Dame College</a>","<a href=\"192192.html\">Keuka College</a>","<a href=\"217013.html\">Wilson College</a>","<a href=\"203128.html\">Hiram College</a>","<a href=\"172440.html\">Finlandia University</a>","<a href=\"133979.html\">Florida Memorial University</a>","<a href=\"190761.html\">Dominican College of Blauvelt</a>","<a href=\"157632.html\">Saint Catharine College</a>","<a href=\"183974.html\">Centenary University</a>","<a href=\"224004.html\">Concordia University Texas</a>","<a href=\"211352.html\">Cabrini University</a>","<a href=\"198613.html\">Guilford College</a>","<a href=\"177144.html\">Culver-Stockton College</a>","<a href=\"202170.html\">Columbus College of Art and Design</a>","<a href=\"203775.html\">Malone University</a>","<a href=\"206349.html\">Ursuline College</a>","<a href=\"210571.html\">Albright College</a>","<a href=\"218919.html\">Voorhees College</a>","<a href=\"171881.html\">Kuyper College</a>","<a href=\"217934.html\">Columbia College</a>","<a href=\"218238.html\">Limestone University</a>","<a href=\"216357.html\">Thiel College</a>","<a href=\"148405.html\">Rockford University</a>","<a href=\"189848.html\">Cazenovia College</a>","<a href=\"483018.html\">Antioch College</a>","<a href=\"199069.html\">University of Mount Olive</a>","<a href=\"199582.html\">Saint Augustine's University</a>","<a href=\"154721.html\">Bethany College</a>","<a href=\"145691.html\">Illinois College</a>","<a href=\"168786.html\">Aquinas College</a>","<a href=\"159568.html\">Louisiana College</a>","<a href=\"167598.html\">Regis College</a>","<a href=\"148131.html\">Quincy University</a>"],[80,57,98,48,86,72,72,46,59,65,73,99,86,65,null,82,79,78,76,79,100,99,75,98,87,76,78,70,74,69,97,79,84,97,76,88,75,80,97,84,80,96,84,87,50,81,100,77,89,56,97,74,80,100,89,84,77,97,57,64,75,90,92,98,75,88,87,82,94,93,93,78,57,76,78,98,89,80,82,93,94,78,82,76,65,69,99,87,88,67,68,72,83,75,72,75,89,76,89,60],[7,16,27,14,7,14,19,16,17,19,26,14,17,26,null,18,16,13,15,11,20,25,9,26,17,17,28,30,27,15,35,8,12,13,27,21,22,33,11,21,22,14,23,16,16,21,7,20,18,5,19,11,42,31,21,23,13,31,9,25,19,16,21,23,14,15,6,11,15,22,14,9,17,15,38,18,16,12,10,11,27,18,24,8,3,23,17,18,16,18,14,21,17,19,14,9,17,36,10,26],[28,23,18,24,25,56,45,24,23,39,35,52,57,47,24,47,29,36,15,19,36,25,39,40,53,34,31,33,22,44,34,27,38,52,56,44,40,null,30,45,34,24,51,52,33,60,54,50,56,34,43,39,16,41,54,30,40,41,21,32,53,29,54,64,46,30,48,39,50,53,53,21,32,44,26,68,37,52,55,49,60,60,49,47,32,47,54,30,47,32,56,32,48,22,30,64,60,27,61,42],[33,15,25,17,21,30,9,12,13,17,15,44,25,12,14,51,42,85,11,15,18,67,36,61,22,30,32,47,41,32,10,7,48,29,47,39,16,37,20,45,27,18,32,32,26,44,38,58,43,13,47,59,34,23,59,31,4,39,20,29,26,36,35,46,31,35,55,41,54,37,29,43,32,74,56,60,65,47,24,30,70,46,43,30,9,25,51,54,24,50,36,10,51,4,31,22,38,31,77,34],[22,25,22,36,37,17,33,23,21,15,32,20,27,21,18,27,26,24,20,19,22,19,19,22,28,24,18,30,24,21,18,16,24,15,26,24,16,49,28,27,13,20,null,19,29,21,24,22,23,15,19,27,20,18,16,25,24,25,11,21,18,26,null,20,13,49,30,null,17,17,16,17,17,22,null,43,28,23,17,26,null,20,18,21,11,11,16,22,14,14,13,19,null,78,18,21,15,13,49,26],[13655,12140,9519,null,11699,24536,13205,9754,13092,6993,14504,22140,18842,33967,14788,25445,15301,null,20372,null,7678,null,12688,16676,18238,14491,19077,23806,16900,20801,8801,null,16906,22954,18635,20264,18726,12697,14670,27598,17980,13967,18791,18572,18455,17384,null,null,19352,16419,null,17620,17511,10798,18016,13815,2213,13006,14033,13936,20032,20800,19399,14454,21217,16537,17744,22912,21795,19301,15266,15610,19057,19052,null,11522,23727,17862,20202,19992,24562,13526,14491,14822,17966,null,19785,23811,22075,20076,15588,19633,13370,18419,15981,12647,16735,14665,28334,15493],[1011,544,529,988,1884,948,2236,2502,3205,1339,3880,1011,1015,2197,1421,903,887,995,643,927,774,392,970,692,982,842,998,993,649,792,996,1134,1217,639,993,788,902,1008,1317,908,967,1317,673,459,912,1013,590,944,1037,594,871,597,549,703,464,1605,1627,996,75,588,700,743,949,1021,563,599,1214,953,1033,586,788,385,880,1065,526,1028,1414,1235,1085,803,962,796,566,1312,349,72,727,1335,770,899,560,133,1236,862,687,1069,1059,839,1017,939],[31,34,null,null,13,23,134,125,4,75,260,35,70,null,null,28,35,174,null,167,9,24,30,25,4,4,1,83,0,5,null,117,0,null,33,0,18,null,75,65,28,80,30,null,9,116,53,10,81,1,0,181,null,11,119,4,36,118,16,0,54,143,22,38,53,50,407,0,116,18,20,null,24,201,8,24,119,76,0,53,23,67,82,28,null,9,290,139,62,67,29,null,107,9,null,0,55,63,439,35],["Florida","South Carolina","Tennessee","Tennessee","South Carolina","Alabama","Georgia","Georgia","Ohio","Kentucky","Georgia","North Carolina","Ohio","Georgia","Alabama","Pennsylvania","North Carolina","New York","Alabama","Louisiana","Maine","Ohio","Vermont","Michigan","Ohio","Virginia","Texas","Georgia","Illinois","Alabama","West Virginia","Mississippi","New Jersey","Missouri","Wisconsin","Michigan","Georgia","South Carolina","West Virginia","Texas","North Carolina","Texas","Maine","Illinois","Texas","Iowa","California","Indiana","New York","Mississippi","Vermont","New Jersey","Georgia","Montana","Wisconsin","South Carolina","North Carolina","District of Columbia","Massachusetts","Arkansas","Ohio","North Carolina","Pennsylvania","Indiana","Georgia","North Carolina","Virginia","Ohio","New York","Pennsylvania","Ohio","Michigan","Florida","New York","Kentucky","New Jersey","Texas","Pennsylvania","North Carolina","Missouri","Ohio","Ohio","Ohio","Pennsylvania","South Carolina","Michigan","South Carolina","South Carolina","Pennsylvania","Illinois","New York","Ohio","North Carolina","North Carolina","Kansas","Illinois","Michigan","Louisiana","Massachusetts","Illinois"],["Increasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Increasing","Decreasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Decreasing","Increasing","Increasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Increasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Increasing","Approximately stable","Decreasing","Increasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Increasing","Increasing","Decreasing","Decreasing","Increasing","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-86d5ea779b8071a33ccd" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-86d5ea779b8071a33ccd">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[30.34479,-81.684879,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[30.34479,-81.684879],16,[]],"limits":{"lat":[30.34479,30.34479],"lng":[-81.684879,-81.684879]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -426,11 +453,11 @@ Grad students (full time)
 Grad students (part time)
 </td>
 <td style="text-align:center;">
-0.0 (2021)
+0 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_4.png alt=‘Line plot from 0.0 to
-0.0 from 2021 to 2021’ >
+<img src=images/EdwardWatersCollege_4.png alt=‘Line plot from 0 to 0
+from 2021 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -651,13 +678,33 @@ Baccalaureate Colleges: Diverse Fields
 <tbody>
 <tr>
 <td style="text-align:left;">
+Undergrads per tenure track instructor
+</td>
+<td style="text-align:center;">
+22 (2019)
+</td>
+<td style="text-align:center;">
+<img src=images/EdwardWatersCollege_14.png alt=‘Line plot from 38 to
+22 from 2013 to 2019’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 50%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 50%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Undergrads per instructor
 </td>
 <td style="text-align:center;">
 14 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_14.png alt=‘Line plot from 19 to
+<img src=images/EdwardWatersCollege_15.png alt=‘Line plot from 19 to
 14 from 2013 to 2019’ >
 </td>
 <td style="text-align:center;">
@@ -668,26 +715,6 @@ Undergrads per instructor
 </td>
 <td style="text-align:center;">
 ✪✪✪✪<br />Better (lower) than 71%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Undergrads per tenure track instructor
-</td>
-<td style="text-align:center;">
-22 (2019)
-</td>
-<td style="text-align:center;">
-<img src=images/EdwardWatersCollege_15.png alt=‘Line plot from 38 to
-22 from 2013 to 2019’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 50%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 50%
 </td>
 </tr>
 <tr>
@@ -710,14 +737,14 @@ Total instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-15 (2020)
+37 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_17.png alt=‘Line plot from 23 to
-15 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_17.png alt=‘Line plot from 22 to
+37 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -728,14 +755,14 @@ Non-tenure track instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-37 (2020)
+15 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_18.png alt=‘Line plot from 22 to
-37 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_18.png alt=‘Line plot from 23 to
+15 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -787,11 +814,11 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-7.0% (2021)
+7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_103.png alt=‘Line plot from 3.0
-to 7.0 from 2010 to 2021’ >
+<img src=images/EdwardWatersCollege_100.png alt=‘Line plot from 3 to
+7 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -826,13 +853,33 @@ Baccalaureate Colleges: Diverse Fields
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+33% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/EdwardWatersCollege_19.png alt=‘Line plot from 33 to
+33 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 0%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 52%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $10 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_19.png alt=‘Line plot from 1.4 M
+<img src=images/EdwardWatersCollege_20.png alt=‘Line plot from 1.4 M
 to 10 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -852,7 +899,7 @@ Revenue
 $38 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_20.png alt=‘Line plot from 23 M
+<img src=images/EdwardWatersCollege_21.png alt=‘Line plot from 23 M
 to 38 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -871,7 +918,7 @@ Expenses
 $28 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_21.png alt=‘Line plot from 22 M
+<img src=images/EdwardWatersCollege_22.png alt=‘Line plot from 22 M
 to 28 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -890,7 +937,7 @@ Assets
 $50 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_22.png alt=‘Line plot from 29 M
+<img src=images/EdwardWatersCollege_23.png alt=‘Line plot from 29 M
 to 50 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -901,80 +948,6 @@ to 50 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 47%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-33% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/EdwardWatersCollege_23.png alt=‘Line plot from 33 to
-33 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 0%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 52%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/EdwardWatersCollege_24.png alt=‘Line plot from 0.0 to
-0.0 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-50% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/EdwardWatersCollege_25.png alt=‘Line plot from 35 to
-50 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-3.6% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/EdwardWatersCollege_26.png alt=‘Line plot from 5.8 to
-3.6 from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -1016,7 +989,7 @@ Total
 28% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_42.png alt=‘Line plot from 15 to
+<img src=images/EdwardWatersCollege_39.png alt=‘Line plot from 15 to
 28 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1034,7 +1007,7 @@ Men
 25% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_43.png alt=‘Line plot from 13 to
+<img src=images/EdwardWatersCollege_40.png alt=‘Line plot from 13 to
 25 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1052,7 +1025,7 @@ Women
 32% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_44.png alt=‘Line plot from 16 to
+<img src=images/EdwardWatersCollege_41.png alt=‘Line plot from 16 to
 32 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1067,11 +1040,11 @@ Women
 American Indian or Alaska Native men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_45.png alt=‘Line plot from 0.0 to
-0.0 from 2021 to 2021’ >
+<img src=images/EdwardWatersCollege_42.png alt=‘Line plot from 0 to 0
+from 2021 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 100%
@@ -1085,11 +1058,11 @@ American Indian or Alaska Native men
 American Indian or Alaska Native women
 </td>
 <td style="text-align:center;">
-0.0% (2014)
+0% (2014)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_46.png alt=‘Line plot from 0.0 to
-0.0 from 2014 to 2014’ >
+<img src=images/EdwardWatersCollege_43.png alt=‘Line plot from 0 to 0
+from 2014 to 2014’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 33%
@@ -1103,11 +1076,11 @@ American Indian or Alaska Native women
 Asian men
 </td>
 <td style="text-align:center;">
-0.0% (2018)
+0% (2018)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_47.png alt=‘Line plot from 0.0 to
-0.0 from 2018 to 2018’ >
+<img src=images/EdwardWatersCollege_44.png alt=‘Line plot from 0 to 0
+from 2018 to 2018’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 50%
@@ -1121,11 +1094,11 @@ Asian men
 Asian women
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_48.png alt=‘Line plot from 0.0 to
-0.0 from 2021 to 2021’ >
+<img src=images/EdwardWatersCollege_45.png alt=‘Line plot from 0 to 0
+from 2021 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 40%
@@ -1142,7 +1115,7 @@ Black or African American men
 22% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_49.png alt=‘Line plot from 18 to
+<img src=images/EdwardWatersCollege_46.png alt=‘Line plot from 18 to
 22 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1160,7 +1133,7 @@ Black or African American women
 31% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_50.png alt=‘Line plot from 15 to
+<img src=images/EdwardWatersCollege_47.png alt=‘Line plot from 15 to
 31 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1175,11 +1148,11 @@ Black or African American women
 Hispanic men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_51.png alt=‘Line plot from 100 to
-0.0 from 2011 to 2021’ >
+<img src=images/EdwardWatersCollege_48.png alt=‘Line plot from 100 to
+0 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 40%
@@ -1193,11 +1166,11 @@ Hispanic men
 Hispanic women
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_52.png alt=‘Line plot from 0.0 to
-0.0 from 2014 to 2021’ >
+<img src=images/EdwardWatersCollege_49.png alt=‘Line plot from 0 to 0
+from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 44%
@@ -1211,11 +1184,11 @@ Hispanic women
 Native Hawaiian or other Pacific Islander men
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_53.png alt=‘Line plot from 0.0 to
-0.0 from 2017 to 2017’ >
+<img src=images/EdwardWatersCollege_50.png alt=‘Line plot from 0 to 0
+from 2017 to 2017’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 100%
@@ -1232,7 +1205,7 @@ Native Hawaiian or other Pacific Islander women
 100% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_54.png alt=‘Line plot from 100 to
+<img src=images/EdwardWatersCollege_51.png alt=‘Line plot from 100 to
 100 from 2020 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1250,7 +1223,7 @@ White men
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_55.png alt=‘Line plot from 14 to
+<img src=images/EdwardWatersCollege_52.png alt=‘Line plot from 14 to
 50 from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1268,7 +1241,7 @@ White women
 67% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_56.png alt=‘Line plot from 100 to
+<img src=images/EdwardWatersCollege_53.png alt=‘Line plot from 100 to
 67 from 2013 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1286,7 +1259,7 @@ Two or more races men
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_57.png alt=‘Line plot from 50 to
+<img src=images/EdwardWatersCollege_54.png alt=‘Line plot from 50 to
 50 from 2013 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1304,7 +1277,7 @@ Two or more races women
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_58.png alt=‘Line plot from 0.0 to
+<img src=images/EdwardWatersCollege_55.png alt=‘Line plot from 0 to
 50 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1319,11 +1292,11 @@ Two or more races women
 Nonresident alien men
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_59.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2020’ >
+<img src=images/EdwardWatersCollege_56.png alt=‘Line plot from 0 to 0
+from 2010 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 57%
@@ -1340,7 +1313,7 @@ Nonresident alien women
 100% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_60.png alt=‘Line plot from 100 to
+<img src=images/EdwardWatersCollege_57.png alt=‘Line plot from 100 to
 100 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1380,7 +1353,7 @@ Men (percent freshmen)
 57% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_83.png alt=‘Line plot from 59 to
+<img src=images/EdwardWatersCollege_80.png alt=‘Line plot from 59 to
 57 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1392,7 +1365,7 @@ Women (percent freshmen)
 43% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_84.png alt=‘Line plot from 41 to
+<img src=images/EdwardWatersCollege_81.png alt=‘Line plot from 41 to
 43 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1404,7 +1377,7 @@ American Indian or Alaska Native men (percent freshmen)
 0.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_85.png alt=‘Line plot from 0.0 to
+<img src=images/EdwardWatersCollege_82.png alt=‘Line plot from 0 to
 0.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1413,11 +1386,11 @@ American Indian or Alaska Native men (percent freshmen)
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_86.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/EdwardWatersCollege_83.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1425,11 +1398,11 @@ American Indian or Alaska Native women (percent freshmen)
 Asian men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_87.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/EdwardWatersCollege_84.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1437,11 +1410,11 @@ Asian men (percent freshmen)
 Asian women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_88.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/EdwardWatersCollege_85.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1452,7 +1425,7 @@ Black or African American men (percent freshmen)
 49% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_89.png alt=‘Line plot from 51 to
+<img src=images/EdwardWatersCollege_86.png alt=‘Line plot from 51 to
 49 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1464,7 +1437,7 @@ Black or African American women (percent freshmen)
 39% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_90.png alt=‘Line plot from 40 to
+<img src=images/EdwardWatersCollege_87.png alt=‘Line plot from 40 to
 39 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1476,7 +1449,7 @@ Hispanic men (percent freshmen)
 3.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_91.png alt=‘Line plot from 1.1 to
+<img src=images/EdwardWatersCollege_88.png alt=‘Line plot from 1.1 to
 3.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1485,11 +1458,11 @@ Hispanic men (percent freshmen)
 Hispanic women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_92.png alt=‘Line plot from 0.4 to
-0.0 from 2010 to 2021’ >
+<img src=images/EdwardWatersCollege_89.png alt=‘Line plot from 0.4 to
+0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1497,11 +1470,11 @@ Hispanic women (percent freshmen)
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_93.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/EdwardWatersCollege_90.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1512,7 +1485,7 @@ Native Hawaiian or Other Pacific Islander women (percent freshmen)
 0.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_94.png alt=‘Line plot from 0.0 to
+<img src=images/EdwardWatersCollege_91.png alt=‘Line plot from 0 to
 0.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1524,7 +1497,7 @@ White men (percent freshmen)
 1.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_95.png alt=‘Line plot from 4.5 to
+<img src=images/EdwardWatersCollege_92.png alt=‘Line plot from 4.5 to
 1.6 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1536,7 +1509,7 @@ White women (percent freshmen)
 1.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_96.png alt=‘Line plot from 0.4 to
+<img src=images/EdwardWatersCollege_93.png alt=‘Line plot from 0.4 to
 1.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1548,7 +1521,7 @@ Two or more races men (percent freshmen)
 1.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_97.png alt=‘Line plot from 1.5 to
+<img src=images/EdwardWatersCollege_94.png alt=‘Line plot from 1.5 to
 1.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1560,7 +1533,7 @@ Two or more races women (percent freshmen)
 1.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_98.png alt=‘Line plot from 0.4 to
+<img src=images/EdwardWatersCollege_95.png alt=‘Line plot from 0.4 to
 1.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1572,7 +1545,7 @@ Race ethnicity unknown men (percent freshmen)
 1.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_99.png alt=‘Line plot from 0.7 to
+<img src=images/EdwardWatersCollege_96.png alt=‘Line plot from 0.7 to
 1.6 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1584,8 +1557,8 @@ Race ethnicity unknown women (percent freshmen)
 1.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_100.png alt=‘Line plot from 0.4
-to 1.3 from 2010 to 2021’ >
+<img src=images/EdwardWatersCollege_97.png alt=‘Line plot from 0.4 to
+1.3 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1593,11 +1566,11 @@ to 1.3 from 2010 to 2021’ >
 Nonresident alien men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_101.png alt=‘Line plot from 0.0
-to 0.0 from 2010 to 2021’ >
+<img src=images/EdwardWatersCollege_98.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1605,11 +1578,66 @@ to 0.0 from 2010 to 2021’ >
 Nonresident alien women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_102.png alt=‘Line plot from 0.0
-to 0.0 from 2010 to 2021’ >
+<img src=images/EdwardWatersCollege_99.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Edward Waters College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+83% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/EdwardWatersCollege_101.png alt=‘Line plot from 76 to
+83 from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+98% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/EdwardWatersCollege_102.png alt=‘Line plot from 95 to
+98 from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+2.1% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/EdwardWatersCollege_103.png alt=‘Line plot from 2.6
+to 2.1 from 2010 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1650,7 +1678,7 @@ Total (tenure-track count)
 37 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_61.png alt=‘Line plot from 22 to
+<img src=images/EdwardWatersCollege_58.png alt=‘Line plot from 22 to
 37 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1664,7 +1692,7 @@ Women (tenure-track count)
 18 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_62.png alt=‘Line plot from 7.0 to
+<img src=images/EdwardWatersCollege_59.png alt=‘Line plot from 7 to
 18 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1678,7 +1706,7 @@ Men (tenure-track count)
 19 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_63.png alt=‘Line plot from 15 to
+<img src=images/EdwardWatersCollege_60.png alt=‘Line plot from 15 to
 19 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1689,11 +1717,11 @@ Men (tenure-track count)
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_64.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_61.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1703,11 +1731,11 @@ American Indian or Alaska Native (tenure-track count)
 Asian (tenure-track count)
 </td>
 <td style="text-align:center;">
-7.0 (2020)
+7 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_65.png alt=‘Line plot from 5.0 to
-7.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_62.png alt=‘Line plot from 5 to 7
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1720,7 +1748,7 @@ Black or African American (tenure-track count)
 24 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_66.png alt=‘Line plot from 13 to
+<img src=images/EdwardWatersCollege_63.png alt=‘Line plot from 13 to
 24 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1731,11 +1759,11 @@ Black or African American (tenure-track count)
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_67.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_64.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1745,11 +1773,11 @@ Hispanic or Latino (tenure-track count)
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_68.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_65.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1759,11 +1787,11 @@ Native Hawaiian or other Pacific Islander (tenure-track count)
 White (tenure-track count)
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_69.png alt=‘Line plot from 4.0 to
-5.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_66.png alt=‘Line plot from 4 to 5
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1773,11 +1801,11 @@ White (tenure-track count)
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_70.png alt=‘Line plot from 0.0 to
-1.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_67.png alt=‘Line plot from 0 to 1
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1788,11 +1816,11 @@ Two or more races (tenure-track count)
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_71.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_68.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1833,7 +1861,7 @@ Total (non-tenure-track count)
 15 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_72.png alt=‘Line plot from 23 to
+<img src=images/EdwardWatersCollege_69.png alt=‘Line plot from 23 to
 15 from 2013 to 2020’ >
 </td>
 </tr>
@@ -1842,11 +1870,11 @@ Total (non-tenure-track count)
 Women (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_73.png alt=‘Line plot from 16 to
-5.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_70.png alt=‘Line plot from 16 to
+5 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1857,7 +1885,7 @@ Men (non-tenure-track count)
 10 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_74.png alt=‘Line plot from 7.0 to
+<img src=images/EdwardWatersCollege_71.png alt=‘Line plot from 7 to
 10 from 2013 to 2020’ >
 </td>
 </tr>
@@ -1866,11 +1894,11 @@ Men (non-tenure-track count)
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_75.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_72.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1878,11 +1906,11 @@ American Indian or Alaska Native (non-tenure-track count)
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_76.png alt=‘Line plot from 1.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_73.png alt=‘Line plot from 1 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1893,7 +1921,7 @@ Black or African American (non-tenure-track count)
 11 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_77.png alt=‘Line plot from 18 to
+<img src=images/EdwardWatersCollege_74.png alt=‘Line plot from 18 to
 11 from 2013 to 2020’ >
 </td>
 </tr>
@@ -1902,11 +1930,11 @@ Black or African American (non-tenure-track count)
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_78.png alt=‘Line plot from 1.0 to
-2.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_75.png alt=‘Line plot from 1 to 2
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1914,11 +1942,11 @@ Hispanic or Latino (non-tenure-track count)
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_79.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_76.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1926,11 +1954,11 @@ Native Hawaiian or other Pacific Islander (non-tenure-track count)
 White (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_80.png alt=‘Line plot from 2.0 to
-2.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_77.png alt=‘Line plot from 2 to 2
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1938,11 +1966,11 @@ White (non-tenure-track count)
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_81.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_78.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1950,11 +1978,11 @@ Two or more races (non-tenure-track count)
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_82.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/EdwardWatersCollege_79.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1987,7 +2015,7 @@ Applicants submitting SAT
 37% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_30.png alt=‘Line plot from 30 to
+<img src=images/EdwardWatersCollege_27.png alt=‘Line plot from 30 to
 37 from 2014 to 2020’ >
 </td>
 </tr>
@@ -1999,7 +2027,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 430 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_31.png alt=‘Line plot from 400 to
+<img src=images/EdwardWatersCollege_28.png alt=‘Line plot from 400 to
 430 from 2017 to 2020’ >
 </td>
 </tr>
@@ -2011,7 +2039,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 510 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_32.png alt=‘Line plot from 480 to
+<img src=images/EdwardWatersCollege_29.png alt=‘Line plot from 480 to
 510 from 2017 to 2020’ >
 </td>
 </tr>
@@ -2023,7 +2051,7 @@ SAT Math 25th percentile score
 390 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_33.png alt=‘Line plot from 350 to
+<img src=images/EdwardWatersCollege_30.png alt=‘Line plot from 350 to
 390 from 2014 to 2020’ >
 </td>
 </tr>
@@ -2035,7 +2063,7 @@ SAT Math 75th percentile score
 480 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_34.png alt=‘Line plot from 460 to
+<img src=images/EdwardWatersCollege_31.png alt=‘Line plot from 460 to
 480 from 2014 to 2020’ >
 </td>
 </tr>
@@ -2069,7 +2097,7 @@ Applicants submitting ACT
 20% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_35.png alt=‘Line plot from 63 to
+<img src=images/EdwardWatersCollege_32.png alt=‘Line plot from 63 to
 20 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2083,7 +2111,7 @@ ACT Composite 25th percentile score
 14 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_36.png alt=‘Line plot from 15 to
+<img src=images/EdwardWatersCollege_33.png alt=‘Line plot from 15 to
 14 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2097,7 +2125,7 @@ ACT Composite 75th percentile score
 18 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_37.png alt=‘Line plot from 19 to
+<img src=images/EdwardWatersCollege_34.png alt=‘Line plot from 19 to
 18 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2111,7 +2139,7 @@ ACT English 25th percentile score
 11 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_38.png alt=‘Line plot from 12 to
+<img src=images/EdwardWatersCollege_35.png alt=‘Line plot from 12 to
 11 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2125,7 +2153,7 @@ ACT English 75th percentile score
 17 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_39.png alt=‘Line plot from 18 to
+<img src=images/EdwardWatersCollege_36.png alt=‘Line plot from 18 to
 17 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2139,7 +2167,7 @@ ACT Math 25th percentile score
 14 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_40.png alt=‘Line plot from 15 to
+<img src=images/EdwardWatersCollege_37.png alt=‘Line plot from 15 to
 14 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2153,7 +2181,7 @@ ACT Math 75th percentile score
 16 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EdwardWatersCollege_41.png alt=‘Line plot from 18 to
+<img src=images/EdwardWatersCollege_38.png alt=‘Line plot from 18 to
 16 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2167,28 +2195,28 @@ ACT Math 75th percentile score
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4dbf84d58e9cc4710875" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-4dbf84d58e9cc4710875">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Communication_General.html\">Communication, General</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>"],[36,36,17,14,8,7,6,4],[28.125,28.125,13.281,10.938,6.25,5.469,4.688,3.125],[0.117,0.025,0.021,0.046,0.007,0.069,0.084,0.022],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-227294de429259b8ef34" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-227294de429259b8ef34">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Communication_General.html\">Communication, General</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>"],[36,36,17,14,8,7,6,4],[28.125,28.125,13.281,10.938,6.25,5.469,4.688,3.125],[0.117,0.025,0.021,0.046,0.007,0.069,0.084,0.022],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fb3ef97a093dc852a433" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-fb3ef97a093dc852a433">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3e9181e6f8b24c1ddc96" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3e9181e6f8b24c1ddc96">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9ee91ff837595c1aab39" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-9ee91ff837595c1aab39">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-50891c4613b52555bca5" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-50891c4613b52555bca5">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b6be34749b0391d6b9a3" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b6be34749b0391d6b9a3">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2d583095603cd2cc29a2" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2d583095603cd2cc29a2">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3e4e32531ebd9c4a1285" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-3e4e32531ebd9c4a1285">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-118ea5c0eec8a8cd8a25" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-118ea5c0eec8a8cd8a25">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

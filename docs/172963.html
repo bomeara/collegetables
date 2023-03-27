@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -269,8 +271,19 @@ Undergraduate)</p></li>
 <li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
 two-year (see more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 10,929 (This is 80% the cost of Harvard)</p></li>
+aid</strong>: $10,929 (This is 70% the average cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $9,983.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.anokaramsey.edu/cost-aid/net-price-calculator/'>here</a>
+to see what your family may be asked to pay. It can be MUCH lower than
+the average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Two-year, medium</p></li>
+<li><p><strong>In state percentage</strong>: 98.4% of first year
+students come from Minnesota</p></li>
+<li><p><strong>In US percentage</strong>: 100.0% of first year students
+come from the US (note that 0.0% have no residence reported)</p></li>
 <li><p><strong>Student to tenure-stream faculty ratio</strong>: 27.7
 (undergrads to tenure-stream faculty)</p></li>
 <li><p><strong>Student to faculty ratio</strong>: 27 (undergrads to all
@@ -300,9 +313,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Protective (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: C+ (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -315,17 +329,29 @@ marriage</strong>: 71.4% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Safest (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Upper Midwest forest-savanna
 transition</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/10455/Average-Weather-in-Coon-Rapids-Minnesota-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7896124868411a2160e2" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-7896124868411a2160e2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[45.172978,-93.351697,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[45.172978,-93.351697],16,[]],"limits":{"lat":[45.172978,45.172978],"lng":[-93.351697,-93.351697]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a5ad580bc85a0560a30f" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a5ad580bc85a0560a30f">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"172963.html\">Anoka-Ramsey Community College</a>","<a href=\"222062.html\">Walters State Community College</a>","<a href=\"221096.html\">Motlow State Community College</a>","<a href=\"101295.html\">George C Wallace State Community College-Hanceville</a>","<a href=\"115393.html\">Hartnell College</a>","<a href=\"115861.html\">Imperial Valley College</a>","<a href=\"187620.html\">New Mexico State University-Dona Ana</a>","<a href=\"117894.html\">Los Medanos College</a>","<a href=\"184481.html\">Essex County College</a>","<a href=\"190840.html\">Dutchess Community College</a>","<a href=\"182500.html\">Truckee Meadows Community College</a>","<a href=\"236513.html\">Seattle Central College</a>","<a href=\"165033.html\">Bristol Community College</a>","<a href=\"144166.html\">City Colleges of Chicago-Malcolm X College</a>","<a href=\"194240.html\">Orange County Community College</a>","<a href=\"236708.html\">Spokane Falls Community College</a>","<a href=\"193283.html\">Mohawk Valley Community College</a>","<a href=\"222053.html\">Volunteer State Community College</a>","<a href=\"101514.html\">John C Calhoun State Community College</a>","<a href=\"113193.html\">Cuesta College</a>","<a href=\"175041.html\">Saint Paul College</a>","<a href=\"190585.html\">CUNY Hostos Community College</a>","<a href=\"214379.html\">Northampton County Area Community College</a>","<a href=\"203748.html\">Lorain County Community College</a>","<a href=\"189547.html\">SUNY Broome Community College</a>","<a href=\"175315.html\">Century College</a>","<a href=\"184180.html\">County College of Morris</a>","<a href=\"101240.html\">Gadsden State Community College</a>","<a href=\"174428.html\">Normandale Community College</a>","<a href=\"149727.html\">Waubonsee Community College</a>","<a href=\"115126.html\">Golden West College</a>","<a href=\"156921.html\">Jefferson Community and Technical College</a>","<a href=\"234979.html\">Columbia Basin College</a>","<a href=\"167534.html\">Quinsigamond Community College</a>","<a href=\"184791.html\">Rowan College of South Jersey Gloucester Campus</a>","<a href=\"123563.html\">Solano Community College</a>","<a href=\"101505.html\">Jefferson State Community College</a>","<a href=\"444219.html\">Folsom Lake College</a>","<a href=\"101161.html\">Coastal Alabama Community College</a>","<a href=\"161767.html\">Anne Arundel Community College</a>","<a href=\"226134.html\">Laredo College</a>","<a href=\"125028.html\">Ventura College</a>","<a href=\"125091.html\">Victor Valley College</a>","<a href=\"123527.html\">San Bernardino Valley College</a>","<a href=\"207670.html\">Rose State College</a>","<a href=\"108807.html\">Allan Hancock College</a>","<a href=\"144209.html\">City Colleges of Chicago-Harold Washington College</a>","<a href=\"149532.html\">Triton College</a>","<a href=\"105428.html\">Phoenix College</a>","<a href=\"166887.html\">Middlesex Community College</a>","<a href=\"167905.html\">Springfield Technical Community College</a>","<a href=\"201955.html\">University of Cincinnati-Blue Ash College</a>","<a href=\"144944.html\">Elgin Community College</a>","<a href=\"113573.html\">College of the Desert</a>","<a href=\"144218.html\">City Colleges of Chicago-Wilbur Wright College</a>","<a href=\"384333.html\">Estrella Mountain Community College</a>","<a href=\"236188.html\">Olympic College</a>","<a href=\"193946.html\">Niagara County Community College</a>","<a href=\"208318.html\">Central Oregon Community College</a>","<a href=\"204945.html\">Owens Community College</a>","<a href=\"219888.html\">Columbia State Community College</a>","<a href=\"262031.html\">St Charles Community College</a>","<a href=\"109350.html\">Antelope Valley Community College District</a>","<a href=\"119067.html\">Monterey Peninsula College</a>","<a href=\"148380.html\">Rock Valley College</a>","<a href=\"221908.html\">Northeast State Community College</a>","<a href=\"174136.html\">Minneapolis Community and Technical College</a>","<a href=\"364025.html\">Chandler-Gilbert Community College</a>","<a href=\"146685.html\">Lincoln Land Community College</a>","<a href=\"132851.html\">College of Central Florida</a>","<a href=\"155195.html\">Hutchinson Community College</a>","<a href=\"110334.html\">Cabrillo College</a>","<a href=\"235431.html\">Highline College</a>","<a href=\"489201.html\">Clovis Community College</a>","<a href=\"156392.html\">Bluegrass Community and Technical College</a>","<a href=\"135391.html\">State College of Florida-Manatee-Sarasota</a>","<a href=\"183938.html\">Camden County College</a>","<a href=\"200022.html\">Bismarck State College</a>","<a href=\"123299.html\">Shasta College</a>","<a href=\"130396.html\">Gateway Community College</a>","<a href=\"214111.html\">Montgomery County Community College</a>","<a href=\"194222.html\">Onondaga Community College</a>","<a href=\"183655.html\">Atlantic Cape Community College</a>","<a href=\"240505.html\">Casper College</a>","<a href=\"170541.html\">Kalamazoo Valley Community College</a>","<a href=\"169521.html\">Delta College</a>","<a href=\"120290.html\">Ohlone College</a>","<a href=\"129729.html\">Naugatuck Valley Community College</a>","<a href=\"122384.html\">San Diego Miramar College</a>","<a href=\"174376.html\">North Hennepin Community College</a>","<a href=\"219824.html\">Chattanooga State Community College</a>","<a href=\"364016.html\">Paradise Valley Community College</a>","<a href=\"111920.html\">Chabot College</a>","<a href=\"191199.html\">Finger Lakes Community College</a>","<a href=\"119331.html\">Napa Valley College</a>","<a href=\"165112.html\">Bunker Hill Community College</a>","<a href=\"166133.html\">Holyoke Community College</a>","<a href=\"113096.html\">Cosumnes River College</a>","<a href=\"177676.html\">Jefferson College</a>","<a href=\"209250.html\">Mt Hood Community College</a>"],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[27,14,15,20,2,2,8,5,22,20,19,22,21,0,27,18,17,14,25,7,17,5,26,8,20,22,29,10,25,12,6,19,14,19,25,3,24,6,13,14,4,6,2,3,10,2,13,15,8,23,13,47,11,3,10,10,24,18,18,33,21,27,2,4,13,10,17,15,18,9,13,4,12,4,21,19,16,26,3,16,26,16,15,10,21,19,7,15,4,25,16,11,5,20,4,18,16,4,17,19],[28,36,26,19,28,28,27,26,33,28,20,28,23,24,20,24,21,33,18,22,20,20,31,24,22,23,19,15,25,24,28,39,30,18,43,20,21,17,17,25,18,22,37,30,26,19,27,31,16,18,14,23,22,30,37,29,28,27,15,18,39,35,24,22,21,42,21,29,16,30,18,20,24,23,42,34,35,18,37,19,20,22,31,12,20,14,29,20,15,20,20,19,21,20,19,28,13,16,20,18],[9983,4115,8996,7803,3531,866,5310,3824,6655,6949,5085,6034,5388,4411,3799,5175,7179,6488,5616,9722,10927,6666,6814,4383,6096,8398,7480,4624,9811,3483,3515,6229,7750,6928,6028,878,8829,5609,5192,14229,6328,282,9647,6410,8931,2568,4579,4858,10232,3015,8999,11001,2652,11205,3417,9671,6522,5218,10173,8225,7361,4348,3323,10207,7297,5933,11974,9296,4818,9196,7366,12637,7748,2811,5288,16150,4051,8198,5659,7702,6685,5161,7417,6825,3594,1191,8424,6785,3593,9187,6710,9299,6087,10739,11744,8615,6764,5613,8285,6858],[2691,2691,2804,2384,3047,3307,2832,2648,2722,2720,2656,2792,2333,2458,2008,2627,2323,3623,2503,2613,1770,2656,2929,2227,2549,2915,2695,1854,3309,2355,2963,2889,3274,2239,2809,2436,2247,1821,2826,2726,2316,3044,3073,2391,2247,2872,2149,2585,2062,1835,1408,2795,2618,3727,2477,2346,3069,2279,1727,1896,2988,3112,3199,1901,2431,2833,1865,3473,1758,2025,1885,2933,2644,2061,3729,3493,2978,1826,2519,1774,2580,3012,1752,1517,1810,1971,2858,1676,1690,1543,3162,1731,2791,2053,1520,3153,1264,2988,1698,1929],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],["Minnesota","Tennessee","Tennessee","Alabama","California","California","New Mexico","California","New Jersey","New York","Nevada","Washington","Massachusetts","Illinois","New York","Washington","New York","Tennessee","Alabama","California","Minnesota","New York","Pennsylvania","Ohio","New York","Minnesota","New Jersey","Alabama","Minnesota","Illinois","California","Kentucky","Washington","Massachusetts","New Jersey","California","Alabama","California","Alabama","Maryland","Texas","California","California","California","Oklahoma","California","Illinois","Illinois","Arizona","Massachusetts","Massachusetts","Ohio","Illinois","California","Illinois","Arizona","Washington","New York","Oregon","Ohio","Tennessee","Missouri","California","California","Illinois","Tennessee","Minnesota","Arizona","Illinois","Florida","Kansas","California","Washington","California","Kentucky","Florida","New Jersey","North Dakota","California","Connecticut","Pennsylvania","New York","New Jersey","Wyoming","Michigan","Michigan","California","Connecticut","California","Minnesota","Tennessee","Arizona","California","New York","California","Massachusetts","Massachusetts","California","Missouri","Oregon"],["Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-345b88fc72e53b9bf0d7" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-345b88fc72e53b9bf0d7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[45.172978,-93.351697,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[45.172978,-93.351697],16,[]],"limits":{"lat":[45.172978,45.172978],"lng":[-93.351697,-93.351697]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -392,12 +418,6 @@ Change over ≤ 11 years
 <th style="text-align:center;">
 Trend
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Associate’s Colleges: High Transfer-High Nontraditional
-</th>
 </tr>
 </thead>
 <tbody>
@@ -415,12 +435,6 @@ from 14,655 to 10,929 from 2011 to 2020’ >
 <td style="text-align:center;">
 ↓<br />-$255 per year
 </td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 65%
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 18%
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -434,12 +448,6 @@ Undergrads getting federal aid
 from 44 to 89 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (higher) than 82%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (higher) than 93%
 </td>
 </tr>
 <tr>
@@ -455,12 +463,6 @@ from 75 to 93 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (higher) than 62%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (higher) than 76%
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -474,12 +476,6 @@ Undergrads getting Pell grants
 from 44 to 39 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (higher) than 21%
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (higher) than 32%
 </td>
 </tr>
 </tbody>
@@ -498,33 +494,9 @@ Anoka-Ramsey Community College
 <th style="text-align:center;">
 Change over ≤ 11 years
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Associate’s Colleges: High Transfer-High Nontraditional
-</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-27 (2019)
-</td>
-<td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_14.png alt=‘Line plot
-from 26 to 27 from 2013 to 2019’ >
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 20%
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 16%
-</td>
-</tr>
 <tr>
 <td style="text-align:left;">
 Undergrads per tenure track instructor
@@ -533,14 +505,20 @@ Undergrads per tenure track instructor
 28 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_15.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_14.png alt=‘Line plot
 from 27 to 28 from 2013 to 2019’ >
 </td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 31%
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
 </td>
 <td style="text-align:center;">
-✪✪<br />Better (lower) than 26%
+27 (2019)
+</td>
+<td style="text-align:center;">
+<img src=images/Anoka-RamseyCommunityCollege_15.png alt=‘Line plot
+from 26 to 27 from 2013 to 2019’ >
 </td>
 </tr>
 <tr>
@@ -554,26 +532,6 @@ Total instructors
 <img src=images/Anoka-RamseyCommunityCollege_16.png alt=‘Line plot
 from 124 to 126 from 2012 to 2020’ >
 </td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Non-tenure track instructors
-</td>
-<td style="text-align:center;">
-3.0 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_17.png alt=‘Line plot
-from 3.0 to 3.0 from 2013 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -583,12 +541,20 @@ Tenure track instructors
 123 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_18.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_17.png alt=‘Line plot
 from 124 to 123 from 2012 to 2020’ >
 </td>
-<td style="text-align:center;">
+</tr>
+<tr>
+<td style="text-align:left;">
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
+3 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/Anoka-RamseyCommunityCollege_18.png alt=‘Line plot
+from 3 to 3 from 2013 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -613,15 +579,23 @@ Change over ≤ 11 years
 <th style="text-align:center;">
 Trend
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Associate’s Colleges: High Transfer-High Nontraditional
-</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+27% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/Anoka-RamseyCommunityCollege_19.png alt=‘Line plot
+from 31 to 27 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
 <tr>
 <td style="text-align:left;">
 Revenue minus expenses
@@ -630,16 +604,10 @@ Revenue minus expenses
 $1.4 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_19.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_20.png alt=‘Line plot
 from 3.6 M to 1.4 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (higher) than 46%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (higher) than 46%
 </td>
 </tr>
 <tr>
@@ -650,15 +618,11 @@ Revenue
 $67 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_20.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_21.png alt=‘Line plot
 from 59 M to 67 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↑<br />$769,609 per year
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 <tr>
@@ -669,15 +633,11 @@ Expenses
 $65 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_21.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_22.png alt=‘Line plot
 from 55 M to 65 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↑<br />$1.4 M per year
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 <tr>
@@ -688,55 +648,11 @@ Assets
 $95 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_22.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_23.png alt=‘Line plot
 from 76 M to 95 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↑<br />$1.2 M per year
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (higher) than 69%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (higher) than 66%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-27% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_23.png alt=‘Line plot
-from 31 to 27 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 66%
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 9%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-39% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_24.png alt=‘Line plot
-from 29 to 39 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -778,7 +694,7 @@ Men (percent freshmen)
 52% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_83.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_80.png alt=‘Line plot
 from 50 to 52 from 2010 to 2021’ >
 </td>
 </tr>
@@ -790,7 +706,7 @@ Women (percent freshmen)
 48% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_84.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_81.png alt=‘Line plot
 from 50 to 48 from 2010 to 2021’ >
 </td>
 </tr>
@@ -802,7 +718,7 @@ American Indian or Alaska Native men (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_85.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_82.png alt=‘Line plot
 from 0.2 to 0.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -814,7 +730,7 @@ American Indian or Alaska Native women (percent freshmen)
 0.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_86.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_83.png alt=‘Line plot
 from 0.1 to 0.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -826,7 +742,7 @@ Asian men (percent freshmen)
 5.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_87.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_84.png alt=‘Line plot
 from 2.1 to 5.5 from 2010 to 2021’ >
 </td>
 </tr>
@@ -838,7 +754,7 @@ Asian women (percent freshmen)
 2.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_88.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_85.png alt=‘Line plot
 from 1.2 to 2.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -850,7 +766,7 @@ Black or African American men (percent freshmen)
 12% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_89.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_86.png alt=‘Line plot
 from 3.9 to 12 from 2010 to 2021’ >
 </td>
 </tr>
@@ -862,7 +778,7 @@ Black or African American women (percent freshmen)
 6.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_90.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_87.png alt=‘Line plot
 from 2.7 to 6.5 from 2010 to 2021’ >
 </td>
 </tr>
@@ -874,7 +790,7 @@ Hispanic men (percent freshmen)
 3.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_91.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_88.png alt=‘Line plot
 from 1.6 to 3.1 from 2010 to 2021’ >
 </td>
 </tr>
@@ -886,7 +802,7 @@ Hispanic women (percent freshmen)
 3.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_92.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_89.png alt=‘Line plot
 from 1.3 to 3.7 from 2010 to 2021’ >
 </td>
 </tr>
@@ -895,11 +811,11 @@ from 1.3 to 3.7 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_93.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/Anoka-RamseyCommunityCollege_90.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -907,11 +823,11 @@ from 0.0 to 0.0 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_94.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/Anoka-RamseyCommunityCollege_91.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -922,7 +838,7 @@ White men (percent freshmen)
 28% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_95.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_92.png alt=‘Line plot
 from 39 to 28 from 2010 to 2021’ >
 </td>
 </tr>
@@ -934,7 +850,7 @@ White women (percent freshmen)
 31% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_96.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_93.png alt=‘Line plot
 from 41 to 31 from 2010 to 2021’ >
 </td>
 </tr>
@@ -946,7 +862,7 @@ Two or more races men (percent freshmen)
 3.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_97.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_94.png alt=‘Line plot
 from 2.7 to 3.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -958,7 +874,7 @@ Two or more races women (percent freshmen)
 2.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_98.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_95.png alt=‘Line plot
 from 2.5 to 2.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -970,7 +886,7 @@ Race ethnicity unknown men (percent freshmen)
 0.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_99.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_96.png alt=‘Line plot
 from 0.4 to 0.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -982,7 +898,7 @@ Race ethnicity unknown women (percent freshmen)
 0.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_100.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_97.png alt=‘Line plot
 from 0.5 to 0.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -991,11 +907,11 @@ from 0.5 to 0.4 from 2010 to 2021’ >
 Nonresident alien men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_101.png alt=‘Line plot
-from 0.2 to 0.0 from 2010 to 2021’ >
+<img src=images/Anoka-RamseyCommunityCollege_98.png alt=‘Line plot
+from 0.2 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1006,8 +922,63 @@ Nonresident alien women (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_102.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_99.png alt=‘Line plot
 from 0.3 to 0.2 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Anoka-Ramsey Community College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+98% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/Anoka-RamseyCommunityCollege_101.png alt=‘Line plot
+from 98 to 98 from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+100% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/Anoka-RamseyCommunityCollege_102.png alt=‘Line plot
+from 100 to 100 from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/Anoka-RamseyCommunityCollege_103.png alt=‘Line plot
+from 0.1 to 0 from 2010 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1048,7 +1019,7 @@ Total (tenure-track count)
 123 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_61.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_58.png alt=‘Line plot
 from 124 to 123 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1062,7 +1033,7 @@ Women (tenure-track count)
 77 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_62.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_59.png alt=‘Line plot
 from 72 to 77 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1076,7 +1047,7 @@ Men (tenure-track count)
 46 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_63.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_60.png alt=‘Line plot
 from 52 to 46 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1088,11 +1059,11 @@ from 52 to 46 from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_64.png alt=‘Line plot
-from 1.0 to 1.0 from 2012 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_61.png alt=‘Line plot
+from 1 to 1 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1102,11 +1073,11 @@ from 1.0 to 1.0 from 2012 to 2020’ >
 Asian (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_65.png alt=‘Line plot
-from 3.0 to 2.0 from 2012 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_62.png alt=‘Line plot
+from 3 to 2 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1116,11 +1087,11 @@ from 3.0 to 2.0 from 2012 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_66.png alt=‘Line plot
-from 1.0 to 2.0 from 2012 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_63.png alt=‘Line plot
+from 1 to 2 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1130,11 +1101,11 @@ from 1.0 to 2.0 from 2012 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_67.png alt=‘Line plot
-from 1.0 to 3.0 from 2012 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_64.png alt=‘Line plot
+from 1 to 3 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1145,11 +1116,11 @@ from 1.0 to 3.0 from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_68.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_65.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1162,7 +1133,7 @@ White (tenure-track count)
 111 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_69.png alt=‘Line plot
+<img src=images/Anoka-RamseyCommunityCollege_66.png alt=‘Line plot
 from 114 to 111 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1173,11 +1144,11 @@ from 114 to 111 from 2012 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_70.png alt=‘Line plot
-from 3.0 to 3.0 from 2012 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_67.png alt=‘Line plot
+from 3 to 3 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1187,11 +1158,11 @@ from 3.0 to 3.0 from 2012 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_71.png alt=‘Line plot
-from 1.0 to 0.0 from 2012 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_68.png alt=‘Line plot
+from 1 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1229,11 +1200,11 @@ Change over ≤ 11 years
 Total (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_72.png alt=‘Line plot
-from 3.0 to 3.0 from 2013 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_69.png alt=‘Line plot
+from 3 to 3 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1241,11 +1212,11 @@ from 3.0 to 3.0 from 2013 to 2020’ >
 Women (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_73.png alt=‘Line plot
-from 3.0 to 2.0 from 2013 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_70.png alt=‘Line plot
+from 3 to 2 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1253,11 +1224,11 @@ from 3.0 to 2.0 from 2013 to 2020’ >
 Men (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_74.png alt=‘Line plot
-from 0.0 to 1.0 from 2013 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_71.png alt=‘Line plot
+from 0 to 1 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1265,11 +1236,11 @@ from 0.0 to 1.0 from 2013 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_75.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_72.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1277,11 +1248,11 @@ from 0.0 to 0.0 from 2013 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_76.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_73.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1289,11 +1260,11 @@ from 0.0 to 0.0 from 2013 to 2020’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_77.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_74.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1301,11 +1272,11 @@ from 0.0 to 0.0 from 2013 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_78.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_75.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1313,11 +1284,11 @@ from 0.0 to 0.0 from 2013 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_79.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_76.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1325,11 +1296,11 @@ from 0.0 to 0.0 from 2013 to 2020’ >
 White (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_80.png alt=‘Line plot
-from 3.0 to 3.0 from 2013 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_77.png alt=‘Line plot
+from 3 to 3 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1337,11 +1308,11 @@ from 3.0 to 3.0 from 2013 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_81.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_78.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1349,11 +1320,11 @@ from 0.0 to 0.0 from 2013 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/Anoka-RamseyCommunityCollege_82.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/Anoka-RamseyCommunityCollege_79.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1372,28 +1343,28 @@ from 0.0 to 0.0 from 2013 to 2020’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e189342483669df65bc1" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-e189342483669df65bc1">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4eb780f1829c537f005b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-4eb780f1829c537f005b">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-06fab435ef6a9372e447" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-06fab435ef6a9372e447">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c047551cbd79487b23c8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c047551cbd79487b23c8">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-615b5f8aa4526d78473b" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-615b5f8aa4526d78473b">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0f0535a505a5b7ed6b0d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0f0535a505a5b7ed6b0d">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a782d90c540ce57ec1d7" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a782d90c540ce57ec1d7">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Certificate_PharmacyTechnician_Assistant.html\">Pharmacy Technician/Assistant</a>","<a href=\"majors_Certificate_AdministrativeAssistantandSecretarialScience_General.html\">Administrative Assistant and Secretarial Science, General</a>","<a href=\"majors_Certificate_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Certificate_ClinicalResearchCoordinator.html\">Clinical Research Coordinator</a>","<a href=\"majors_Certificate_AccountingTechnology_TechnicianandBookkeeping.html\">Accounting Technology/Technician and Bookkeeping</a>","<a href=\"majors_Certificate_NetworkandSystemAdministration_Administrator.html\">Network and System Administration/Administrator</a>","<a href=\"majors_Certificate_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Certificate_PhysicalEducationTeachingandCoaching.html\">Physical Education Teaching and Coaching</a>","<a href=\"majors_Certificate_PhysicalFitnessTechnician.html\">Physical Fitness Technician</a>","<a href=\"majors_Certificate_Business_OfficeAutomation_Technology_DataEntry.html\">Business/Office Automation/Technology/Data Entry</a>","<a href=\"majors_Certificate_Business_CorporateCommunications_General.html\">Business/Corporate Communications, General</a>","<a href=\"majors_Certificate_ComputerSupportSpecialist.html\">Computer Support Specialist</a>","<a href=\"majors_Certificate_SubstanceAbuse_AddictionCounseling.html\">Substance Abuse/Addiction Counseling</a>","<a href=\"majors_Certificate_MassageTherapy_TherapeuticMassage.html\">Massage Therapy/Therapeutic Massage</a>","<a href=\"majors_Certificate_RetailManagement.html\">Retail Management</a>"],[15,6,5,4,4,4,3,2,2,2,2,2,1,1,1,1],[27.273,10.909,9.091,7.273,7.273,7.273,5.455,3.636,3.636,3.636,3.636,3.636,1.818,1.818,1.818,1.818],[0.327,0.096,0.12,1.099,3.03,0.031,0.088,0.028,0.526,0.202,0.081,1.942,0.052,0.033,0.01,0.172],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f9cc99a2a24978526a54" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f9cc99a2a24978526a54">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Certificate_PharmacyTechnician_Assistant.html\">Pharmacy Technician/Assistant</a>","<a href=\"majors_Certificate_AdministrativeAssistantandSecretarialScience_General.html\">Administrative Assistant and Secretarial Science, General</a>","<a href=\"majors_Certificate_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Certificate_ClinicalResearchCoordinator.html\">Clinical Research Coordinator</a>","<a href=\"majors_Certificate_AccountingTechnology_TechnicianandBookkeeping.html\">Accounting Technology/Technician and Bookkeeping</a>","<a href=\"majors_Certificate_NetworkandSystemAdministration_Administrator.html\">Network and System Administration/Administrator</a>","<a href=\"majors_Certificate_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Certificate_PhysicalEducationTeachingandCoaching.html\">Physical Education Teaching and Coaching</a>","<a href=\"majors_Certificate_PhysicalFitnessTechnician.html\">Physical Fitness Technician</a>","<a href=\"majors_Certificate_Business_OfficeAutomation_Technology_DataEntry.html\">Business/Office Automation/Technology/Data Entry</a>","<a href=\"majors_Certificate_Business_CorporateCommunications_General.html\">Business/Corporate Communications, General</a>","<a href=\"majors_Certificate_ComputerSupportSpecialist.html\">Computer Support Specialist</a>","<a href=\"majors_Certificate_SubstanceAbuse_AddictionCounseling.html\">Substance Abuse/Addiction Counseling</a>","<a href=\"majors_Certificate_MassageTherapy_TherapeuticMassage.html\">Massage Therapy/Therapeutic Massage</a>","<a href=\"majors_Certificate_RetailManagement.html\">Retail Management</a>"],[15,6,5,4,4,4,3,2,2,2,2,2,1,1,1,1],[27.273,10.909,9.091,7.273,7.273,7.273,5.455,3.636,3.636,3.636,3.636,3.636,1.818,1.818,1.818,1.818],[0.327,0.096,0.12,1.099,3.03,0.031,0.088,0.028,0.526,0.202,0.081,1.942,0.052,0.033,0.01,0.172],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-50150f427dbe82291701" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-50150f427dbe82291701">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Associates_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Associates_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Associates_PhysicalTherapyAssistant.html\">Physical Therapy Assistant</a>","<a href=\"majors_Associates_ComputerSystemsNetworkingandTelecommunications.html\">Computer Systems Networking and Telecommunications</a>","<a href=\"majors_Associates_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Associates_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Associates_HealthServices_AlliedHealth_HealthSciences_General.html\">Health Services/Allied Health/Health Sciences, General</a>","<a href=\"majors_Associates_Accounting.html\">Accounting</a>","<a href=\"majors_Associates_Pre_Engineering.html\">Pre-Engineering</a>","<a href=\"majors_Associates_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>","<a href=\"majors_Associates_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Associates_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Associates_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Associates_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Associates_Multi__InterdisciplinaryStudies_General.html\">Multi-/Interdisciplinary Studies, General</a>","<a href=\"majors_Associates_Music_General.html\">Music, General</a>","<a href=\"majors_Associates_CommunityHealthandPreventiveMedicine.html\">Community Health and Preventive Medicine</a>","<a href=\"majors_Associates_AccountingTechnology_TechnicianandBookkeeping.html\">Accounting Technology/Technician and Bookkeeping</a>","<a href=\"majors_Associates_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Associates_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Associates_SubstanceAbuse_AddictionCounseling.html\">Substance Abuse/Addiction Counseling</a>","<a href=\"majors_Associates_BiomedicalTechnology_Technician.html\">Biomedical Technology/Technician</a>","<a href=\"majors_Associates_ExerciseScienceandKinesiology.html\">Exercise Science and Kinesiology</a>","<a href=\"majors_Associates_PharmacyTechnician_Assistant.html\">Pharmacy Technician/Assistant</a>","<a href=\"majors_Associates_Holistic_IntegrativeHealth.html\">Holistic/Integrative Health</a>","<a href=\"majors_Associates_BioengineeringandBiomedicalEngineering.html\">Bioengineering and Biomedical Engineering</a>","<a href=\"majors_Associates_Chemistry_General.html\">Chemistry, General</a>"],[650,151,51,25,23,22,20,14,14,11,11,9,7,7,7,6,5,4,4,3,3,3,2,2,2,2,1,1],[61.321,14.245,4.811,2.358,2.17,2.075,1.887,1.321,1.321,1.038,1.038,0.849,0.66,0.66,0.66,0.566,0.472,0.377,0.377,0.283,0.283,0.283,0.189,0.189,0.189,0.189,0.094,0.094],[0.248,0.179,0.286,0.352,0.695,0.037,0.489,0.149,0.34,0.568,1.324,8.257,0.192,0.085,0.229,0.939,0.489,18.182,0.06,0.92,0.286,0.217,0.376,0.081,0.176,4.167,3.448,0.086],["Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0ab2e2d55c1917c3a279" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0ab2e2d55c1917c3a279">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Associates_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Associates_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Associates_PhysicalTherapyAssistant.html\">Physical Therapy Assistant</a>","<a href=\"majors_Associates_ComputerSystemsNetworkingandTelecommunications.html\">Computer Systems Networking and Telecommunications</a>","<a href=\"majors_Associates_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Associates_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Associates_HealthServices_AlliedHealth_HealthSciences_General.html\">Health Services/Allied Health/Health Sciences, General</a>","<a href=\"majors_Associates_Accounting.html\">Accounting</a>","<a href=\"majors_Associates_Pre_Engineering.html\">Pre-Engineering</a>","<a href=\"majors_Associates_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>","<a href=\"majors_Associates_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Associates_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Associates_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Associates_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Associates_Multi__InterdisciplinaryStudies_General.html\">Multi-/Interdisciplinary Studies, General</a>","<a href=\"majors_Associates_Music_General.html\">Music, General</a>","<a href=\"majors_Associates_CommunityHealthandPreventiveMedicine.html\">Community Health and Preventive Medicine</a>","<a href=\"majors_Associates_AccountingTechnology_TechnicianandBookkeeping.html\">Accounting Technology/Technician and Bookkeeping</a>","<a href=\"majors_Associates_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Associates_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Associates_SubstanceAbuse_AddictionCounseling.html\">Substance Abuse/Addiction Counseling</a>","<a href=\"majors_Associates_BiomedicalTechnology_Technician.html\">Biomedical Technology/Technician</a>","<a href=\"majors_Associates_ExerciseScienceandKinesiology.html\">Exercise Science and Kinesiology</a>","<a href=\"majors_Associates_PharmacyTechnician_Assistant.html\">Pharmacy Technician/Assistant</a>","<a href=\"majors_Associates_Holistic_IntegrativeHealth.html\">Holistic/Integrative Health</a>","<a href=\"majors_Associates_BioengineeringandBiomedicalEngineering.html\">Bioengineering and Biomedical Engineering</a>","<a href=\"majors_Associates_Chemistry_General.html\">Chemistry, General</a>"],[650,151,51,25,23,22,20,14,14,11,11,9,7,7,7,6,5,4,4,3,3,3,2,2,2,2,1,1],[61.321,14.245,4.811,2.358,2.17,2.075,1.887,1.321,1.321,1.038,1.038,0.849,0.66,0.66,0.66,0.566,0.472,0.377,0.377,0.283,0.283,0.283,0.189,0.189,0.189,0.189,0.094,0.094],[0.248,0.179,0.286,0.352,0.695,0.037,0.489,0.149,0.34,0.568,1.324,8.257,0.192,0.085,0.229,0.939,0.489,18.182,0.06,0.92,0.286,0.217,0.376,0.081,0.176,4.167,3.448,0.086],["Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

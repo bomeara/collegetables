@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -178,10 +178,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -194,6 +194,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -236,7 +238,7 @@ institution.</p>
 <p><em>From <a
 href="https://en.wikipedia.org/wiki/%20Emory%20University">Wikipedia</a></em>:
 Emory University is a private research university in Atlanta, Georgia.
-Founded in 1836 as “Emory College” by the Methodist Episcopal Church and
+Founded in 1836 as Emory College by the Methodist Episcopal Church and
 named in honor of Methodist bishop John Emory, Emory is the
 second-oldest private institution of higher education in Georgia.</p>
 <div id="overview-of-institution" class="section level1">
@@ -251,9 +253,20 @@ Comprehensive programs, with medical/veterinary school</p></li>
 <li><p><strong>Enrollment profile</strong>: Majority undergraduate (see
 more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 28,367 (2 times the equivalent cost of Harvard)</p></li>
+aid</strong>: $28,367 (1.8 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $8,976.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://npc.collegeboard.org/app/emory'>here</a> to see what
+your family may be asked to pay. It can be MUCH lower than the average
+price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, large, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 11.4% of first year
+students come from Georgia</p></li>
+<li><p><strong>In US percentage</strong>: 80.3% of first year students
+come from the US</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 90% (this is what is usually reported as “graduation
 rate”)</p></li>
@@ -293,9 +306,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Functional ban (based on <a
-href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+<li><strong>Abortion in this state</strong>: Very restrictive (based on
+<a href="https://states.guttmacher.org/policies/"
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: F (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -308,16 +322,28 @@ marriage</strong>: 42.9% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Worst (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Southeastern mixed forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/15598/Average-Weather-in-Atlanta-Georgia-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b3691380862d71e594a3" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-b3691380862d71e594a3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[33.790183,-84.325512,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[33.790183,-84.325512],16,[]],"limits":{"lat":[33.790183,33.790183],"lng":[-84.325512,-84.325512]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1c39137f817462e8dc89" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1c39137f817462e8dc89">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"139658.html\">Emory University</a>","<a href=\"211440.html\">Carnegie Mellon University</a>","<a href=\"179867.html\">Washington University in St Louis</a>","<a href=\"201645.html\">Case Western Reserve University</a>","<a href=\"144050.html\">University of Chicago</a>","<a href=\"195030.html\">University of Rochester</a>","<a href=\"193900.html\">New York University</a>","<a href=\"165015.html\">Brandeis University</a>","<a href=\"221999.html\">Vanderbilt University</a>","<a href=\"131496.html\">Georgetown University</a>","<a href=\"160755.html\">Tulane University of Louisiana</a>","<a href=\"135726.html\">University of Miami</a>","<a href=\"168148.html\">Tufts University</a>","<a href=\"164924.html\">Boston College</a>","<a href=\"216597.html\">Villanova University</a>","<a href=\"164988.html\">Boston University</a>","<a href=\"199847.html\">Wake Forest University</a>","<a href=\"168342.html\">Williams College</a>","<a href=\"230959.html\">Middlebury College</a>","<a href=\"227757.html\">Rice University</a>","<a href=\"217156.html\">Brown University</a>","<a href=\"152080.html\">University of Notre Dame</a>","<a href=\"164465.html\">Amherst College</a>","<a href=\"168218.html\">Wellesley College</a>","<a href=\"110404.html\">California Institute of Technology</a>","<a href=\"198419.html\">Duke University</a>","<a href=\"130697.html\">Wesleyan University</a>","<a href=\"167358.html\">Northeastern University</a>","<a href=\"161004.html\">Bowdoin College</a>","<a href=\"234207.html\">Washington and Lee University</a>","<a href=\"216287.html\">Swarthmore College</a>","<a href=\"121345.html\">Pomona College</a>","<a href=\"234076.html\">University of Virginia-Main Campus</a>","<a href=\"126678.html\">Colorado College</a>","<a href=\"191515.html\">Hamilton College</a>","<a href=\"173258.html\">Carleton College</a>","<a href=\"162928.html\">Johns Hopkins University</a>","<a href=\"190099.html\">Colgate University</a>","<a href=\"198385.html\">Davidson College</a>","<a href=\"197133.html\">Vassar College</a>","<a href=\"160977.html\">Bates College</a>","<a href=\"161086.html\">Colby College</a>","<a href=\"212911.html\">Haverford College</a>","<a href=\"139755.html\">Georgia Institute of Technology-Main Campus</a>","<a href=\"189097.html\">Barnard College</a>","<a href=\"164580.html\">Babson College</a>","<a href=\"147767.html\">Northwestern University</a>","<a href=\"112260.html\">Claremont McKenna College</a>","<a href=\"182670.html\">Dartmouth College</a>","<a href=\"167835.html\">Smith College</a>","<a href=\"233374.html\">University of Richmond</a>","<a href=\"153384.html\">Grinnell College</a>","<a href=\"211291.html\">Bucknell University</a>","<a href=\"115409.html\">Harvey Mudd College</a>","<a href=\"130794.html\">Yale University</a>","<a href=\"186131.html\">Princeton University</a>","<a href=\"199120.html\">University of North Carolina at Chapel Hill</a>","<a href=\"231624.html\">William &amp; Mary</a>","<a href=\"123961.html\">University of Southern California</a>","<a href=\"190150.html\">Columbia University in the City of New York</a>","<a href=\"131469.html\">George Washington University</a>","<a href=\"166683.html\">Massachusetts Institute of Technology</a>","<a href=\"190415.html\">Cornell University</a>","<a href=\"215062.html\">University of Pennsylvania</a>","<a href=\"121257.html\">Pitzer College</a>","<a href=\"213385.html\">Lafayette College</a>","<a href=\"213543.html\">Lehigh University</a>","<a href=\"110635.html\">University of California-Berkeley</a>","<a href=\"110653.html\">University of California-Irvine</a>","<a href=\"211273.html\">Bryn Mawr College</a>","<a href=\"166027.html\">Harvard University</a>","<a href=\"195526.html\">Skidmore College</a>","<a href=\"170286.html\">Hillsdale College</a>","<a href=\"173902.html\">Macalester College</a>","<a href=\"130590.html\">Trinity College</a>","<a href=\"197027.html\">United States Merchant Marine Academy</a>","<a href=\"217493.html\">Rhode Island School of Design</a>","<a href=\"243744.html\">Stanford University</a>","<a href=\"130624.html\">United States Coast Guard Academy</a>","<a href=\"110680.html\">University of California-San Diego</a>","<a href=\"170976.html\">University of Michigan-Ann Arbor</a>","<a href=\"110705.html\">University of California-Santa Barbara</a>","<a href=\"131520.html\">Howard University</a>","<a href=\"166124.html\">College of the Holy Cross</a>","<a href=\"233921.html\">Virginia Polytechnic Institute and State University</a>","<a href=\"110662.html\">University of California-Los Angeles</a>","<a href=\"204501.html\">Oberlin College</a>","<a href=\"203535.html\">Kenyon College</a>","<a href=\"139959.html\">University of Georgia</a>","<a href=\"202523.html\">Denison University</a>","<a href=\"240444.html\">University of Wisconsin-Madison</a>","<a href=\"199193.html\">North Carolina State University at Raleigh</a>","<a href=\"484844.html\">Minerva University</a>","<a href=\"217882.html\">Clemson University</a>","<a href=\"192110.html\">The Juilliard School</a>","<a href=\"228246.html\">Southern Methodist University</a>","<a href=\"134097.html\">Florida State University</a>","<a href=\"212577.html\">Franklin and Marshall College</a>","<a href=\"230038.html\">Brigham Young University</a>","<a href=\"128328.html\">United States Air Force Academy</a>"],[13,14,13,30,6,41,13,39,7,12,10,28,11,19,25,19,25,9,13,9,6,15,9,16,4,6,19,18,9,19,8,7,21,14,14,18,8,17,18,20,17,9,18,16,11,25,7,11,6,30,29,11,35,10,5,4,20,37,13,4,50,4,9,6,18,41,46,14,29,39,4,31,24,31,38,25,19,4,19,34,20,29,35,43,56,11,34,37,40,28,60,47,1,49,7,53,37,38,59,12],[34,43,45,16,83,20,49,25,48,48,46,23,50,33,29,28,37,52,42,44,66,58,42,49,53,60,36,33,63,39,45,58,39,40,40,40,48,29,48,31,44,47,43,49,65,36,63,57,70,37,22,43,26,48,71,78,45,26,41,65,19,86,64,73,53,23,23,43,21,32,84,21,56,21,25,53,56,80,69,19,45,16,27,29,28,44,24,18,37,24,26,32,73,20,63,19,32,18,79,75],[90,93,93,84,96,86,87,88,93,95,86,84,94,91,91,89,90,94,91,92,96,96,92,92,93,96,91,91,94,94,94,93,94,86,92,91,95,90,90,93,92,87,90,92,93,94,95,93,94,91,89,87,88,94,97,98,90,91,92,97,84,96,94,96,88,88,87,93,84,87,97,84,88,90,85,81,86,96,92,89,94,85,64,93,87,92,82,87,88,81,89,85,81,85,87,82,83,83,77,86],[4,21,4,20,8,5,23,27,7,31,27,14,28,25,41,37,14,4,22,8,10,4,3,5,1,4,13,55,5,10,4,3,8,23,13,13,7,25,9,19,39,13,20,22,38,30,11,9,6,7,9,3,28,18,2,1,9,37,20,14,38,2,16,6,43,22,22,30,14,9,4,27,3,18,20,0,39,3,0,12,9,36,13,22,32,9,13,20,28,13,21,18,42,38,5,31,19,31,11,0],[7,8,5,7,6,5,13,13,9,8,11,11,13,16,14,18,8,7,10,7,9,10,9,11,3,4,11,19,10,9,8,8,11,11,12,11,2,12,12,11,14,12,12,17,16,17,6,10,7,9,10,10,10,9,2,6,14,12,12,4,13,4,11,6,14,11,11,21,21,11,4,13,13,13,15,14,null,5,14,21,11,24,12,13,19,17,12,11,17,12,15,16,null,21,null,14,25,11,23,null],[8976,13608,2446,15570,4777,17764,24131,19186,5731,9871,13380,34926,7987,7075,26460,11782,5612,5480,7221,1340,2842,9136,4459,8021,12190,-927,7475,7376,7823,850,4012,6239,7775,8602,6827,13410,4859,7197,3004,13193,4981,2361,9272,11620,15090,20502,917,8693,8718,9672,8606,13671,28153,20829,2958,4502,7842,5717,17345,4699,14889,-2603,5133,1938,17181,12400,14995,10880,7006,9907,1396,15235,null,10543,8331,5170,33369,1581,null,10192,6904,12305,40938,17357,13739,7882,13745,18974,11557,14686,4697,8687,null,15717,23015,24226,6953,13110,10333,null],[7028,6743,7348,5661,7601,6239,27642,3568,7042,7213,8231,11535,6509,9749,6812,17460,5391,2135,2835,4156,7082,8956,1971,2381,987,6838,3238,15711,1948,1853,1649,1756,16427,2190,2049,2032,5727,3142,1973,2498,1821,2262,1419,15252,2959,2551,8438,1411,4555,2554,3030,1718,3715,902,6532,5240,18931,6465,20206,8161,10284,4588,15450,10106,1132,2706,5375,30200,28753,1421,7483,2655,1473,2206,2118,1006,2044,7645,1049,32327,30798,22458,8419,3005,28929,31485,2905,1868,28223,2307,32071,23414,604,20847,487,6728,30153,2127,28282,4181],[6356,7326,7477,5362,9109,3909,21755,1552,5558,8169,4111,6203,5492,3912,1380,11587,2685,50,0,3692,3174,3894,null,null,1410,10175,132,11189,null,379,null,null,6820,10,null,null,11528,8,null,null,null,null,null,7334,null,561,10397,5,2172,341,480,null,16,null,7828,3157,7559,1741,22425,20761,7375,7199,9558,12924,null,null,1032,10737,6551,308,13677,0,35,null,7,0,532,8960,null,7953,15912,2786,2637,null,5519,12470,11,null,7458,null,10262,5685,0,3082,354,2638,6666,null,2025,null],["Georgia","Pennsylvania","Missouri","Ohio","Illinois","New York","New York","Massachusetts","Tennessee","District of Columbia","Louisiana","Florida","Massachusetts","Massachusetts","Pennsylvania","Massachusetts","North Carolina","Massachusetts","Vermont","Texas","Rhode Island","Indiana","Massachusetts","Massachusetts","California","North Carolina","Connecticut","Massachusetts","Maine","Virginia","Pennsylvania","California","Virginia","Colorado","New York","Minnesota","Maryland","New York","North Carolina","New York","Maine","Maine","Pennsylvania","Georgia","New York","Massachusetts","Illinois","California","New Hampshire","Massachusetts","Virginia","Iowa","Pennsylvania","California","Connecticut","New Jersey","North Carolina","Virginia","California","New York","District of Columbia","Massachusetts","New York","Pennsylvania","California","Pennsylvania","Pennsylvania","California","California","Pennsylvania","Massachusetts","New York","Michigan","Minnesota","Connecticut","New York","Rhode Island","California","Connecticut","California","Michigan","California","District of Columbia","Massachusetts","Virginia","California","Ohio","Ohio","Georgia","Ohio","Wisconsin","North Carolina","California","South Carolina","New York","Texas","Florida","Pennsylvania","Utah","Colorado"],["Approximately stable","Increasing","Increasing","Increasing","Increasing","Increasing","Increasing","Approximately stable","Increasing","Decreasing","Increasing","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Increasing","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Increasing","Approximately stable","Increasing","Increasing","Increasing","Increasing","Increasing","Increasing","Approximately stable","Increasing","Increasing","Decreasing","Decreasing","Approximately stable","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Increasing","Increasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Approximately stable","Increasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Increasing","Approximately stable","Increasing","Increasing","Approximately stable","Increasing","Increasing","Approximately stable","Approximately stable","Approximately stable"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-12b451e2815b063893a8" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-12b451e2815b063893a8">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[33.790183,-84.325512,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[33.790183,-84.325512],16,[]],"limits":{"lat":[33.790183,33.790183],"lng":[-84.325512,-84.325512]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -336,7 +362,7 @@ Change over ≤ 11 years
 Trend
 </th>
 <th style="text-align:center;">
-Southwestern Athletic Conference
+University Athletic Association
 </th>
 <th style="text-align:center;">
 Doctoral Universities: Very High Research Activity
@@ -500,7 +526,7 @@ Emory University
 Change over ≤ 11 years
 </th>
 <th style="text-align:center;">
-Southwestern Athletic Conference
+University Athletic Association
 </th>
 <th style="text-align:center;">
 Doctoral Universities: Very High Research Activity
@@ -600,7 +626,7 @@ Change over ≤ 11 years
 Trend
 </th>
 <th style="text-align:center;">
-Southwestern Athletic Conference
+University Athletic Association
 </th>
 <th style="text-align:center;">
 Doctoral Universities: Very High Research Activity
@@ -610,13 +636,33 @@ Doctoral Universities: Very High Research Activity
 <tbody>
 <tr>
 <td style="text-align:left;">
+Undergrads per tenure track instructor
+</td>
+<td style="text-align:center;">
+6.8 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/EmoryUniversity_14.png alt=‘Line plot from 6.8 to 6.8
+from 2012 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 71%
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 92%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Undergrads per instructor
 </td>
 <td style="text-align:center;">
 3.4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_14.png alt=‘Line plot from 4.8 to 3.4
+<img src=images/EmoryUniversity_15.png alt=‘Line plot from 4.8 to 3.4
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -627,26 +673,6 @@ from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (lower) than 95%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Undergrads per tenure track instructor
-</td>
-<td style="text-align:center;">
-6.8 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/EmoryUniversity_15.png alt=‘Line plot from 6.8 to 6.8
-from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 71%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 92%
 </td>
 </tr>
 <tr>
@@ -669,17 +695,17 @@ Total instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-1,030 (2020)
+999 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_17.png alt=‘Line plot from 469 to
-1,030 from 2012 to 2020’ >
+<img src=images/EmoryUniversity_17.png alt=‘Line plot from 1,120 to
+999 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />67 per year
+↓<br />-14 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -688,17 +714,17 @@ Non-tenure track instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-999 (2020)
+1,030 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_18.png alt=‘Line plot from 1,120 to
-999 from 2012 to 2020’ >
+<img src=images/EmoryUniversity_18.png alt=‘Line plot from 469 to
+1,030 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↓<br />-14 per year
+↑<br />67 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -751,7 +777,7 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 11% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_103.png alt=‘Line plot from 3.0 to 11
+<img src=images/EmoryUniversity_100.png alt=‘Line plot from 3 to 11
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -777,7 +803,7 @@ Change over ≤ 11 years
 Trend
 </th>
 <th style="text-align:center;">
-Southwestern Athletic Conference
+University Athletic Association
 </th>
 <th style="text-align:center;">
 Doctoral Universities: Very High Research Activity
@@ -787,13 +813,33 @@ Doctoral Universities: Very High Research Activity
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+3.8% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/EmoryUniversity_19.png alt=‘Line plot from 7.8 to 3.8
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 100%
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 96%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $3.1 B (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_19.png alt=‘Line plot from 660 M to
+<img src=images/EmoryUniversity_20.png alt=‘Line plot from 660 M to
 3.1 B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -813,7 +859,7 @@ Revenue
 $10 B (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_20.png alt=‘Line plot from 4.0 B to
+<img src=images/EmoryUniversity_21.png alt=‘Line plot from 4.0 B to
 10 B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -832,7 +878,7 @@ Expenses
 $7.1 B (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_21.png alt=‘Line plot from 3.4 B to
+<img src=images/EmoryUniversity_22.png alt=‘Line plot from 3.4 B to
 7.1 B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -851,7 +897,7 @@ Assets
 $20 B (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_22.png alt=‘Line plot from 10 B to 20
+<img src=images/EmoryUniversity_23.png alt=‘Line plot from 10 B to 20
 B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -862,80 +908,6 @@ B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 92%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-3.8% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/EmoryUniversity_23.png alt=‘Line plot from 7.8 to 3.8
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 100%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 96%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/EmoryUniversity_24.png alt=‘Line plot from 0.0 to 0.0
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-5.8% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/EmoryUniversity_25.png alt=‘Line plot from 11 to 5.8
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-4.8% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/EmoryUniversity_26.png alt=‘Line plot from 8.7 to 4.8
-from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -961,7 +933,7 @@ Emory University
 Change over ≤ 11 years
 </th>
 <th style="text-align:center;">
-Southwestern Athletic Conference
+University Athletic Association
 </th>
 <th style="text-align:center;">
 Doctoral Universities: Very High Research Activity
@@ -977,7 +949,7 @@ Total
 90% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_42.png alt=‘Line plot from 89 to 90
+<img src=images/EmoryUniversity_39.png alt=‘Line plot from 89 to 90
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -995,7 +967,7 @@ Men
 87% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_43.png alt=‘Line plot from 88 to 87
+<img src=images/EmoryUniversity_40.png alt=‘Line plot from 88 to 87
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1013,7 +985,7 @@ Women
 92% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_44.png alt=‘Line plot from 89 to 92
+<img src=images/EmoryUniversity_41.png alt=‘Line plot from 89 to 92
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1031,7 +1003,7 @@ American Indian or Alaska Native men
 33% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_45.png alt=‘Line plot from 100 to 33
+<img src=images/EmoryUniversity_42.png alt=‘Line plot from 100 to 33
 from 2015 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1049,7 +1021,7 @@ American Indian or Alaska Native women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_46.png alt=‘Line plot from 100 to 100
+<img src=images/EmoryUniversity_43.png alt=‘Line plot from 100 to 100
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1067,7 +1039,7 @@ Asian men
 92% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_47.png alt=‘Line plot from 88 to 92
+<img src=images/EmoryUniversity_44.png alt=‘Line plot from 88 to 92
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1085,7 +1057,7 @@ Asian women
 95% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_48.png alt=‘Line plot from 97 to 95
+<img src=images/EmoryUniversity_45.png alt=‘Line plot from 97 to 95
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1103,7 +1075,7 @@ Black or African American men
 83% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_49.png alt=‘Line plot from 89 to 83
+<img src=images/EmoryUniversity_46.png alt=‘Line plot from 89 to 83
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1121,7 +1093,7 @@ Black or African American women
 94% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_50.png alt=‘Line plot from 92 to 94
+<img src=images/EmoryUniversity_47.png alt=‘Line plot from 92 to 94
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1139,7 +1111,7 @@ Hispanic men
 87% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_51.png alt=‘Line plot from 83 to 87
+<img src=images/EmoryUniversity_48.png alt=‘Line plot from 83 to 87
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1157,7 +1129,7 @@ Hispanic women
 87% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_52.png alt=‘Line plot from 85 to 87
+<img src=images/EmoryUniversity_49.png alt=‘Line plot from 85 to 87
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1175,7 +1147,7 @@ Native Hawaiian or other Pacific Islander men
 100% (2015)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_53.png alt=‘Line plot from 100 to 100
+<img src=images/EmoryUniversity_50.png alt=‘Line plot from 100 to 100
 from 2015 to 2015’ >
 </td>
 <td style="text-align:center;">
@@ -1193,7 +1165,7 @@ White men
 87% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_55.png alt=‘Line plot from 93 to 87
+<img src=images/EmoryUniversity_52.png alt=‘Line plot from 93 to 87
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1211,7 +1183,7 @@ White women
 90% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_56.png alt=‘Line plot from 89 to 90
+<img src=images/EmoryUniversity_53.png alt=‘Line plot from 89 to 90
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1229,7 +1201,7 @@ Two or more races men
 92% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_57.png alt=‘Line plot from 100 to 92
+<img src=images/EmoryUniversity_54.png alt=‘Line plot from 100 to 92
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1247,7 +1219,7 @@ Two or more races women
 81% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_58.png alt=‘Line plot from 100 to 81
+<img src=images/EmoryUniversity_55.png alt=‘Line plot from 100 to 81
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1265,7 +1237,7 @@ Nonresident alien men
 87% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_59.png alt=‘Line plot from 82 to 87
+<img src=images/EmoryUniversity_56.png alt=‘Line plot from 82 to 87
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1283,7 +1255,7 @@ Nonresident alien women
 97% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_60.png alt=‘Line plot from 91 to 97
+<img src=images/EmoryUniversity_57.png alt=‘Line plot from 91 to 97
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1323,7 +1295,7 @@ Men (percent freshmen)
 40% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_83.png alt=‘Line plot from 45 to 40
+<img src=images/EmoryUniversity_80.png alt=‘Line plot from 45 to 40
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1335,7 +1307,7 @@ Women (percent freshmen)
 60% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_84.png alt=‘Line plot from 55 to 60
+<img src=images/EmoryUniversity_81.png alt=‘Line plot from 55 to 60
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1344,10 +1316,10 @@ from 2010 to 2021’ >
 American Indian or Alaska Native men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_85.png alt=‘Line plot from 0.1 to 0.0
+<img src=images/EmoryUniversity_82.png alt=‘Line plot from 0.1 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1356,10 +1328,10 @@ from 2010 to 2021’ >
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_86.png alt=‘Line plot from 0.1 to 0.0
+<img src=images/EmoryUniversity_83.png alt=‘Line plot from 0.1 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1371,7 +1343,7 @@ Asian men (percent freshmen)
 9.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_87.png alt=‘Line plot from 12 to 9.7
+<img src=images/EmoryUniversity_84.png alt=‘Line plot from 12 to 9.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1383,7 +1355,7 @@ Asian women (percent freshmen)
 12% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_88.png alt=‘Line plot from 14 to 12
+<img src=images/EmoryUniversity_85.png alt=‘Line plot from 14 to 12
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1395,7 +1367,7 @@ Black or African American men (percent freshmen)
 2.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_89.png alt=‘Line plot from 2.5 to 2.3
+<img src=images/EmoryUniversity_86.png alt=‘Line plot from 2.5 to 2.3
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1407,7 +1379,7 @@ Black or African American women (percent freshmen)
 7.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_90.png alt=‘Line plot from 6.7 to 7.6
+<img src=images/EmoryUniversity_87.png alt=‘Line plot from 6.7 to 7.6
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1419,7 +1391,7 @@ Hispanic men (percent freshmen)
 3.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_91.png alt=‘Line plot from 2.3 to 3.9
+<img src=images/EmoryUniversity_88.png alt=‘Line plot from 2.3 to 3.9
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1431,7 +1403,7 @@ Hispanic women (percent freshmen)
 8.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_92.png alt=‘Line plot from 3.0 to 8.4
+<img src=images/EmoryUniversity_89.png alt=‘Line plot from 3.0 to 8.4
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1440,10 +1412,10 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_93.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/EmoryUniversity_90.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1452,10 +1424,10 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_94.png alt=‘Line plot from 0.1 to 0.0
+<img src=images/EmoryUniversity_91.png alt=‘Line plot from 0.1 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1467,7 +1439,7 @@ White men (percent freshmen)
 13% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_95.png alt=‘Line plot from 17 to 13
+<img src=images/EmoryUniversity_92.png alt=‘Line plot from 17 to 13
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1479,7 +1451,7 @@ White women (percent freshmen)
 20% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_96.png alt=‘Line plot from 20 to 20
+<img src=images/EmoryUniversity_93.png alt=‘Line plot from 20 to 20
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1491,7 +1463,7 @@ Two or more races men (percent freshmen)
 2.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_97.png alt=‘Line plot from 1.2 to 2.1
+<img src=images/EmoryUniversity_94.png alt=‘Line plot from 1.2 to 2.1
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1503,7 +1475,7 @@ Two or more races women (percent freshmen)
 2.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_98.png alt=‘Line plot from 1.8 to 2.7
+<img src=images/EmoryUniversity_95.png alt=‘Line plot from 1.8 to 2.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1515,7 +1487,7 @@ Race ethnicity unknown men (percent freshmen)
 0.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_99.png alt=‘Line plot from 1.4 to 0.9
+<img src=images/EmoryUniversity_96.png alt=‘Line plot from 1.4 to 0.9
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1527,8 +1499,8 @@ Race ethnicity unknown women (percent freshmen)
 0.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_100.png alt=‘Line plot from 1.5 to
-0.8 from 2010 to 2021’ >
+<img src=images/EmoryUniversity_97.png alt=‘Line plot from 1.5 to 0.8
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1539,8 +1511,8 @@ Nonresident alien men (percent freshmen)
 7.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_101.png alt=‘Line plot from 7.9 to
-7.8 from 2010 to 2021’ >
+<img src=images/EmoryUniversity_98.png alt=‘Line plot from 7.9 to 7.8
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1551,8 +1523,63 @@ Nonresident alien women (percent freshmen)
 9.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_102.png alt=‘Line plot from 8.2 to
-9.3 from 2010 to 2021’ >
+<img src=images/EmoryUniversity_99.png alt=‘Line plot from 8.2 to 9.3
+from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Emory University
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+11% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/EmoryUniversity_101.png alt=‘Line plot from 22 to 11
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+80% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/EmoryUniversity_102.png alt=‘Line plot from 85 to 80
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/EmoryUniversity_103.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1593,7 +1620,7 @@ Total (tenure-track count)
 999 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_61.png alt=‘Line plot from 1,120 to
+<img src=images/EmoryUniversity_58.png alt=‘Line plot from 1,120 to
 999 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1608,7 +1635,7 @@ Women (tenure-track count)
 370 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_62.png alt=‘Line plot from 352 to 370
+<img src=images/EmoryUniversity_59.png alt=‘Line plot from 352 to 370
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1622,7 +1649,7 @@ Men (tenure-track count)
 629 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_63.png alt=‘Line plot from 768 to 629
+<img src=images/EmoryUniversity_60.png alt=‘Line plot from 768 to 629
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1634,10 +1661,10 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-4.0 (2020)
+4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_64.png alt=‘Line plot from 3.0 to 4.0
+<img src=images/EmoryUniversity_61.png alt=‘Line plot from 3 to 4
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1652,7 +1679,7 @@ Asian (tenure-track count)
 149 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_65.png alt=‘Line plot from 139 to 149
+<img src=images/EmoryUniversity_62.png alt=‘Line plot from 139 to 149
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1667,7 +1694,7 @@ Black or African American (tenure-track count)
 67 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_66.png alt=‘Line plot from 47 to 67
+<img src=images/EmoryUniversity_63.png alt=‘Line plot from 47 to 67
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1682,7 +1709,7 @@ Hispanic or Latino (tenure-track count)
 39 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_67.png alt=‘Line plot from 30 to 39
+<img src=images/EmoryUniversity_64.png alt=‘Line plot from 30 to 39
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1693,10 +1720,10 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_68.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/EmoryUniversity_65.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1710,7 +1737,7 @@ White (tenure-track count)
 698 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_69.png alt=‘Line plot from 849 to 698
+<img src=images/EmoryUniversity_66.png alt=‘Line plot from 849 to 698
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1722,10 +1749,10 @@ from 2012 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-7.0 (2020)
+7 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_70.png alt=‘Line plot from 3.0 to 7.0
+<img src=images/EmoryUniversity_67.png alt=‘Line plot from 3 to 7
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1740,7 +1767,7 @@ Nonresident alien (tenure-track count)
 33 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_71.png alt=‘Line plot from 49 to 33
+<img src=images/EmoryUniversity_68.png alt=‘Line plot from 49 to 33
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1785,7 +1812,7 @@ Total (non-tenure-track count)
 1,030 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_72.png alt=‘Line plot from 469 to
+<img src=images/EmoryUniversity_69.png alt=‘Line plot from 469 to
 1,030 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1800,7 +1827,7 @@ Women (non-tenure-track count)
 472 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_73.png alt=‘Line plot from 251 to 472
+<img src=images/EmoryUniversity_70.png alt=‘Line plot from 251 to 472
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1814,7 +1841,7 @@ Men (non-tenure-track count)
 558 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_74.png alt=‘Line plot from 218 to 558
+<img src=images/EmoryUniversity_71.png alt=‘Line plot from 218 to 558
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1826,10 +1853,10 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_75.png alt=‘Line plot from 0.0 to 2.0
+<img src=images/EmoryUniversity_72.png alt=‘Line plot from 0 to 2
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1843,7 +1870,7 @@ Asian (non-tenure-track count)
 162 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_76.png alt=‘Line plot from 64 to 162
+<img src=images/EmoryUniversity_73.png alt=‘Line plot from 64 to 162
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1857,7 +1884,7 @@ Black or African American (non-tenure-track count)
 74 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_77.png alt=‘Line plot from 40 to 74
+<img src=images/EmoryUniversity_74.png alt=‘Line plot from 40 to 74
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1871,7 +1898,7 @@ Hispanic or Latino (non-tenure-track count)
 47 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_78.png alt=‘Line plot from 15 to 47
+<img src=images/EmoryUniversity_75.png alt=‘Line plot from 15 to 47
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1883,10 +1910,10 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_79.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/EmoryUniversity_76.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1900,7 +1927,7 @@ White (non-tenure-track count)
 692 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_80.png alt=‘Line plot from 269 to 692
+<img src=images/EmoryUniversity_77.png alt=‘Line plot from 269 to 692
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1915,7 +1942,7 @@ Two or more races (non-tenure-track count)
 11 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_81.png alt=‘Line plot from 51 to 11
+<img src=images/EmoryUniversity_78.png alt=‘Line plot from 51 to 11
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1929,7 +1956,7 @@ Nonresident alien (non-tenure-track count)
 41 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_82.png alt=‘Line plot from 30 to 41
+<img src=images/EmoryUniversity_79.png alt=‘Line plot from 30 to 41
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1955,7 +1982,7 @@ Change over ≤ 11 years
 Trend
 </th>
 <th style="text-align:center;">
-Southwestern Athletic Conference
+University Athletic Association
 </th>
 <th style="text-align:center;">
 Doctoral Universities: Very High Research Activity
@@ -1971,7 +1998,7 @@ Number of physical books
 2.4 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_27.png alt=‘Line plot from 3.5 M to
+<img src=images/EmoryUniversity_24.png alt=‘Line plot from 3.5 M to
 2.4 M from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1991,7 +2018,7 @@ Physical library circulations per students and faculty
 4.0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_28.png alt=‘Line plot from 28 to 4.0
+<img src=images/EmoryUniversity_25.png alt=‘Line plot from 28 to 4.0
 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2012,7 +2039,7 @@ Digital library circulations per students and faculty
 147 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_29.png alt=‘Line plot from 38 to 147
+<img src=images/EmoryUniversity_26.png alt=‘Line plot from 38 to 147
 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2055,7 +2082,7 @@ Applicants submitting SAT
 37% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_30.png alt=‘Line plot from 70 to 37
+<img src=images/EmoryUniversity_27.png alt=‘Line plot from 70 to 37
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2069,7 +2096,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 690 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_31.png alt=‘Line plot from 670 to 690
+<img src=images/EmoryUniversity_28.png alt=‘Line plot from 670 to 690
 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2083,7 +2110,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 750 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_32.png alt=‘Line plot from 740 to 750
+<img src=images/EmoryUniversity_29.png alt=‘Line plot from 740 to 750
 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2097,7 +2124,7 @@ SAT Math 25th percentile score
 730 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_33.png alt=‘Line plot from 650 to 730
+<img src=images/EmoryUniversity_30.png alt=‘Line plot from 650 to 730
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2112,7 +2139,7 @@ SAT Math 75th percentile score
 790 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_34.png alt=‘Line plot from 750 to 790
+<img src=images/EmoryUniversity_31.png alt=‘Line plot from 750 to 790
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2149,7 +2176,7 @@ Applicants submitting ACT
 27% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_35.png alt=‘Line plot from 44 to 27
+<img src=images/EmoryUniversity_32.png alt=‘Line plot from 44 to 27
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2163,7 +2190,7 @@ ACT Composite 25th percentile score
 32 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_36.png alt=‘Line plot from 29 to 32
+<img src=images/EmoryUniversity_33.png alt=‘Line plot from 29 to 32
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2178,7 +2205,7 @@ ACT Composite 75th percentile score
 34 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_37.png alt=‘Line plot from 32 to 34
+<img src=images/EmoryUniversity_34.png alt=‘Line plot from 32 to 34
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2193,7 +2220,7 @@ ACT English 25th percentile score
 30 (2015)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_38.png alt=‘Line plot from 28 to 30
+<img src=images/EmoryUniversity_35.png alt=‘Line plot from 28 to 30
 from 2014 to 2015’ >
 </td>
 <td style="text-align:center;">
@@ -2207,7 +2234,7 @@ ACT English 75th percentile score
 34 (2015)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_39.png alt=‘Line plot from 32 to 34
+<img src=images/EmoryUniversity_36.png alt=‘Line plot from 32 to 34
 from 2014 to 2015’ >
 </td>
 <td style="text-align:center;">
@@ -2221,7 +2248,7 @@ ACT Math 25th percentile score
 28 (2015)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_40.png alt=‘Line plot from 28 to 28
+<img src=images/EmoryUniversity_37.png alt=‘Line plot from 28 to 28
 from 2014 to 2015’ >
 </td>
 <td style="text-align:center;">
@@ -2235,7 +2262,7 @@ ACT Math 75th percentile score
 33 (2015)
 </td>
 <td style="text-align:center;">
-<img src=images/EmoryUniversity_41.png alt=‘Line plot from 33 to 33
+<img src=images/EmoryUniversity_38.png alt=‘Line plot from 33 to 33
 from 2014 to 2015’ >
 </td>
 <td style="text-align:center;">
@@ -2248,28 +2275,28 @@ from 2014 to 2015’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d52af3e65364381f889b" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-d52af3e65364381f889b">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_Sports_Kinesiology_andPhysicalEducation_Fitness_General.html\">Sports, Kinesiology, and Physical Education/Fitness, General</a>","<a href=\"majors_Bachelors_Statistics_General.html\">Statistics, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_MedicalRadiologicTechnology_Science_RadiationTherapist.html\">Medical Radiologic Technology/Science - Radiation Therapist</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_MathematicsandStatistics_Other.html\">Mathematics and Statistics, Other</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_MathematicsandStatistics.html\">Mathematics and Statistics</a>","<a href=\"majors_Bachelors_AppliedMathematics_General.html\">Applied Mathematics, General</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_InternationalRelationsandAffairs.html\">International Relations and Affairs</a>","<a href=\"majors_Bachelors_Film_Cinema_MediaStudies.html\">Film/Cinema/Media Studies</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Linguistics.html\">Linguistics</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_CommunicationandMediaStudies_Other.html\">Communication and Media Studies, Other</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Bachelors_MathematicsandComputerScience.html\">Mathematics and Computer Science</a>","<a href=\"majors_Bachelors_Humanities_HumanisticStudies.html\">Humanities/Humanistic Studies</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_CognitivePsychologyandPsycholinguistics.html\">Cognitive Psychology and Psycholinguistics</a>","<a href=\"majors_Bachelors_African_American_BlackStudies.html\">African-American/Black Studies</a>","<a href=\"majors_Bachelors_WomensStudies.html\">Women's Studies</a>","<a href=\"majors_Bachelors_ManagementSciencesandQuantitativeMethods_Other.html\">Management Sciences and Quantitative Methods, Other</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_NearandMiddleEasternStudies.html\">Near and Middle Eastern Studies</a>","<a href=\"majors_Bachelors_ComparativeLiterature.html\">Comparative Literature</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_American_UnitedStatesStudies_Civilization.html\">American/United States Studies/Civilization</a>","<a href=\"majors_Bachelors_PhysicalSciences_General.html\">Physical Sciences, General</a>","<a href=\"majors_Bachelors_Dance_General.html\">Dance, General</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_ChineseLanguageandLiterature.html\">Chinese Language and Literature</a>","<a href=\"majors_Bachelors_AstronomyandAstrophysics_Other.html\">Astronomy and Astrophysics, Other</a>","<a href=\"majors_Bachelors_PublicPolicyAnalysis_General.html\">Public Policy Analysis, General</a>","<a href=\"majors_Bachelors_Biophysics.html\">Biophysics</a>","<a href=\"majors_Bachelors_Classical_AncientMediterranean_andNearEasternStudiesandArchaeology.html\">Classical, Ancient Mediterranean, and Near Eastern Studies and Archaeology</a>","<a href=\"majors_Bachelors_Sports_Kinesiology_andPhysicalEducation_Fitness_Other.html\">Sports, Kinesiology, and Physical Education/Fitness, Other</a>","<a href=\"majors_Bachelors_EastAsianStudies.html\">East Asian Studies</a>","<a href=\"majors_Bachelors_RussianStudies.html\">Russian Studies</a>","<a href=\"majors_Bachelors_FrenchStudies.html\">French Studies</a>","<a href=\"majors_Bachelors_RussianLanguageandLiterature.html\">Russian Language and Literature</a>","<a href=\"majors_Bachelors_ArabicLanguageandLiterature.html\">Arabic Language and Literature</a>","<a href=\"majors_Bachelors_ClassicsandClassicalLanguages_Literatures_andLinguistics_General.html\">Classics and Classical Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_LatinLanguageandLiterature.html\">Latin Language and Literature</a>","<a href=\"majors_Bachelors_Jewish_JudaicStudies.html\">Jewish/Judaic Studies</a>","<a href=\"majors_Bachelors_PlaywritingandScreenwriting.html\">Playwriting and Screenwriting</a>"],[377,336,190,151,95,76,74,71,70,64,48,47,38,37,33,31,29,29,28,28,26,24,23,22,21,19,18,17,16,16,13,11,11,10,8,8,8,7,6,5,5,4,4,4,4,3,3,3,2,2,2,1,1,1,1,1,1,1,1,1],[17.246,15.371,8.692,6.908,4.346,3.477,3.385,3.248,3.202,2.928,2.196,2.15,1.738,1.693,1.51,1.418,1.327,1.327,1.281,1.281,1.189,1.098,1.052,1.006,0.961,0.869,0.823,0.778,0.732,0.732,0.595,0.503,0.503,0.457,0.366,0.366,0.366,0.32,0.274,0.229,0.229,0.183,0.183,0.183,0.183,0.137,0.137,0.137,0.091,0.091,0.091,0.046,0.046,0.046,0.046,0.046,0.046,0.046,0.046,0.046],[0.239,0.235,0.234,1.77,0.086,0.618,0.196,0.703,2.014,0.48,0.127,0.604,2.901,0.14,0.114,1.041,0.417,0.474,7.368,0.125,14.13,0.834,0.049,0.281,0.542,0.106,0.907,0.237,0.792,0.786,1.401,0.696,0.048,6.25,0.994,0.615,0.353,0.098,4.58,0.926,0.09,0.473,1.32,0.168,0.046,0.8,5.769,0.156,1.429,2.469,0.231,0.372,1.562,2.041,0.429,0.621,0.132,3.125,0.38,0.356],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bc73e51f214788408bdf" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bc73e51f214788408bdf">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_Sports_Kinesiology_andPhysicalEducation_Fitness_General.html\">Sports, Kinesiology, and Physical Education/Fitness, General</a>","<a href=\"majors_Bachelors_Statistics_General.html\">Statistics, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_MedicalRadiologicTechnology_Science_RadiationTherapist.html\">Medical Radiologic Technology/Science - Radiation Therapist</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_MathematicsandStatistics_Other.html\">Mathematics and Statistics, Other</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_MathematicsandStatistics.html\">Mathematics and Statistics</a>","<a href=\"majors_Bachelors_AppliedMathematics_General.html\">Applied Mathematics, General</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_InternationalRelationsandAffairs.html\">International Relations and Affairs</a>","<a href=\"majors_Bachelors_Film_Cinema_MediaStudies.html\">Film/Cinema/Media Studies</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Linguistics.html\">Linguistics</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_CommunicationandMediaStudies_Other.html\">Communication and Media Studies, Other</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Bachelors_MathematicsandComputerScience.html\">Mathematics and Computer Science</a>","<a href=\"majors_Bachelors_Humanities_HumanisticStudies.html\">Humanities/Humanistic Studies</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_CognitivePsychologyandPsycholinguistics.html\">Cognitive Psychology and Psycholinguistics</a>","<a href=\"majors_Bachelors_African_American_BlackStudies.html\">African-American/Black Studies</a>","<a href=\"majors_Bachelors_WomensStudies.html\">Women's Studies</a>","<a href=\"majors_Bachelors_ManagementSciencesandQuantitativeMethods_Other.html\">Management Sciences and Quantitative Methods, Other</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_NearandMiddleEasternStudies.html\">Near and Middle Eastern Studies</a>","<a href=\"majors_Bachelors_ComparativeLiterature.html\">Comparative Literature</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_American_UnitedStatesStudies_Civilization.html\">American/United States Studies/Civilization</a>","<a href=\"majors_Bachelors_PhysicalSciences_General.html\">Physical Sciences, General</a>","<a href=\"majors_Bachelors_Dance_General.html\">Dance, General</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_ChineseLanguageandLiterature.html\">Chinese Language and Literature</a>","<a href=\"majors_Bachelors_AstronomyandAstrophysics_Other.html\">Astronomy and Astrophysics, Other</a>","<a href=\"majors_Bachelors_PublicPolicyAnalysis_General.html\">Public Policy Analysis, General</a>","<a href=\"majors_Bachelors_Biophysics.html\">Biophysics</a>","<a href=\"majors_Bachelors_Classical_AncientMediterranean_andNearEasternStudiesandArchaeology.html\">Classical, Ancient Mediterranean, and Near Eastern Studies and Archaeology</a>","<a href=\"majors_Bachelors_Sports_Kinesiology_andPhysicalEducation_Fitness_Other.html\">Sports, Kinesiology, and Physical Education/Fitness, Other</a>","<a href=\"majors_Bachelors_EastAsianStudies.html\">East Asian Studies</a>","<a href=\"majors_Bachelors_RussianStudies.html\">Russian Studies</a>","<a href=\"majors_Bachelors_FrenchStudies.html\">French Studies</a>","<a href=\"majors_Bachelors_RussianLanguageandLiterature.html\">Russian Language and Literature</a>","<a href=\"majors_Bachelors_ArabicLanguageandLiterature.html\">Arabic Language and Literature</a>","<a href=\"majors_Bachelors_ClassicsandClassicalLanguages_Literatures_andLinguistics_General.html\">Classics and Classical Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_LatinLanguageandLiterature.html\">Latin Language and Literature</a>","<a href=\"majors_Bachelors_Jewish_JudaicStudies.html\">Jewish/Judaic Studies</a>","<a href=\"majors_Bachelors_PlaywritingandScreenwriting.html\">Playwriting and Screenwriting</a>"],[377,336,190,151,95,76,74,71,70,64,48,47,38,37,33,31,29,29,28,28,26,24,23,22,21,19,18,17,16,16,13,11,11,10,8,8,8,7,6,5,5,4,4,4,4,3,3,3,2,2,2,1,1,1,1,1,1,1,1,1],[17.246,15.371,8.692,6.908,4.346,3.477,3.385,3.248,3.202,2.928,2.196,2.15,1.738,1.693,1.51,1.418,1.327,1.327,1.281,1.281,1.189,1.098,1.052,1.006,0.961,0.869,0.823,0.778,0.732,0.732,0.595,0.503,0.503,0.457,0.366,0.366,0.366,0.32,0.274,0.229,0.229,0.183,0.183,0.183,0.183,0.137,0.137,0.137,0.091,0.091,0.091,0.046,0.046,0.046,0.046,0.046,0.046,0.046,0.046,0.046],[0.239,0.235,0.234,1.77,0.086,0.618,0.196,0.703,2.014,0.48,0.127,0.604,2.901,0.14,0.114,1.041,0.417,0.474,7.368,0.125,14.13,0.834,0.049,0.281,0.542,0.106,0.907,0.237,0.792,0.786,1.401,0.696,0.048,6.25,0.994,0.615,0.353,0.098,4.58,0.926,0.09,0.473,1.32,0.168,0.046,0.8,5.769,0.156,1.429,2.469,0.231,0.372,1.562,2.041,0.429,0.621,0.132,3.125,0.38,0.356],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-de275d6c0add5fcd2daa" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-de275d6c0add5fcd2daa">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_PublicHealthEducationandPromotion.html\">Public Health Education and Promotion</a>","<a href=\"majors_Masters_Epidemiology.html\">Epidemiology</a>","<a href=\"majors_Masters_InternationalPublicHealth_InternationalHealth.html\">International Public Health/International Health</a>","<a href=\"majors_Masters_HealthServicesAdministration.html\">Health Services Administration</a>","<a href=\"majors_Masters_Divinity_Ministry.html\">Divinity/Ministry</a>","<a href=\"majors_Masters_EnvironmentalHealth.html\">Environmental Health</a>","<a href=\"majors_Masters_FamilyPracticeNurse_Nursing.html\">Family Practice Nurse/Nursing</a>","<a href=\"majors_Masters_PhysicianAssistant.html\">Physician Assistant</a>","<a href=\"majors_Masters_Biostatistics.html\">Biostatistics</a>","<a href=\"majors_Masters_ManagementScience.html\">Management Science</a>","<a href=\"majors_Masters_AnesthesiologistAssistant.html\">Anesthesiologist Assistant</a>","<a href=\"majors_Masters_ManagementSciencesandQuantitativeMethods_Other.html\">Management Sciences and Quantitative Methods, Other</a>","<a href=\"majors_Masters_LegalResearchandAdvancedProfessionalStudies_Other.html\">Legal Research and Advanced Professional Studies, Other</a>","<a href=\"majors_Masters_AdvancedLegalResearch_Studies_General.html\">Advanced Legal Research/Studies, General</a>","<a href=\"majors_Masters_DevelopmentEconomicsandInternationalDevelopment.html\">Development Economics and International Development</a>","<a href=\"majors_Masters_PediatricNurse_Nursing.html\">Pediatric Nurse/Nursing</a>","<a href=\"majors_Masters_NursingPractice.html\">Nursing Practice</a>","<a href=\"majors_Masters_AccountingandBusiness_Management.html\">Accounting and Business/Management</a>","<a href=\"majors_Masters_Theology_TheologicalStudies.html\">Theology/Theological Studies</a>","<a href=\"majors_Masters_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Masters_MedicalScience_Scientist.html\">Medical Science/Scientist</a>","<a href=\"majors_Masters_WomensHealthNurse_Nursing.html\">Women's Health Nurse/Nursing</a>","<a href=\"majors_Masters_Informatics.html\">Informatics</a>","<a href=\"majors_Masters_EmergencyRoom_TraumaNursing.html\">Emergency Room/Trauma Nursing</a>","<a href=\"majors_Masters_BiomedicalSciences_General.html\">Biomedical Sciences, General</a>","<a href=\"majors_Masters_Human_MedicalGenetics.html\">Human/Medical Genetics</a>","<a href=\"majors_Masters_NurseMidwife_NursingMidwifery.html\">Nurse Midwife/Nursing Midwifery</a>","<a href=\"majors_Masters_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Masters_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Masters_ComparativeLaw.html\">Comparative Law</a>","<a href=\"majors_Masters_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Masters_Bioethics_MedicalEthics.html\">Bioethics/Medical Ethics</a>","<a href=\"majors_Masters_History_General.html\">History, General</a>","<a href=\"majors_Masters_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Masters_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Masters_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Masters_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Masters_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Masters_Maternal_ChildHealthandNeonatalNurse_Nursing.html\">Maternal/Child Health and Neonatal Nurse/Nursing</a>","<a href=\"majors_Masters_NursingScience.html\">Nursing Science</a>","<a href=\"majors_Masters_Philosophy.html\">Philosophy</a>","<a href=\"majors_Masters_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Masters_BioengineeringandBiomedicalEngineering.html\">Bioengineering and Biomedical Engineering</a>","<a href=\"majors_Masters_ReligiousEducation.html\">Religious Education</a>","<a href=\"majors_Masters_YouthMinistry.html\">Youth Ministry</a>","<a href=\"majors_Masters_TheologyandReligiousVocations_Other.html\">Theology and Religious Vocations, Other</a>","<a href=\"majors_Masters_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Masters_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Masters_PastoralCounselingandSpecializedMinistries_Other.html\">Pastoral Counseling and Specialized Ministries, Other</a>"],[256,149,147,116,104,93,62,55,52,47,43,35,35,34,29,26,26,24,23,22,19,16,14,13,12,11,10,9,8,8,7,7,7,6,5,5,4,4,4,4,4,3,2,2,2,2,2,1,1,1],[16.295,9.484,9.357,7.384,6.62,5.92,3.947,3.501,3.31,2.992,2.737,2.228,2.228,2.164,1.846,1.655,1.655,1.528,1.464,1.4,1.209,1.018,0.891,0.827,0.764,0.7,0.637,0.573,0.509,0.509,0.446,0.446,0.446,0.382,0.318,0.318,0.255,0.255,0.255,0.255,0.255,0.191,0.127,0.127,0.127,0.127,0.127,0.064,0.064,0.064],[0.243,15.456,9.387,24.319,7.721,1.661,9.764,0.385,0.5,5.087,0.283,14.286,0.353,6.193,1.557,10.97,5.714,7.164,6.267,0.577,0.132,2.465,6.335,1.276,38.71,0.324,5.405,2.055,0.126,0.237,25,0.544,1.746,0.19,0.238,0.657,0.101,0.455,0.239,2.74,0.281,0.427,0.205,0.065,0.351,4.348,0.391,0.04,0.236,0.459],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e3dd1b3ab4dbe24dabae" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e3dd1b3ab4dbe24dabae">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_PublicHealthEducationandPromotion.html\">Public Health Education and Promotion</a>","<a href=\"majors_Masters_Epidemiology.html\">Epidemiology</a>","<a href=\"majors_Masters_InternationalPublicHealth_InternationalHealth.html\">International Public Health/International Health</a>","<a href=\"majors_Masters_HealthServicesAdministration.html\">Health Services Administration</a>","<a href=\"majors_Masters_Divinity_Ministry.html\">Divinity/Ministry</a>","<a href=\"majors_Masters_EnvironmentalHealth.html\">Environmental Health</a>","<a href=\"majors_Masters_FamilyPracticeNurse_Nursing.html\">Family Practice Nurse/Nursing</a>","<a href=\"majors_Masters_PhysicianAssistant.html\">Physician Assistant</a>","<a href=\"majors_Masters_Biostatistics.html\">Biostatistics</a>","<a href=\"majors_Masters_ManagementScience.html\">Management Science</a>","<a href=\"majors_Masters_AnesthesiologistAssistant.html\">Anesthesiologist Assistant</a>","<a href=\"majors_Masters_ManagementSciencesandQuantitativeMethods_Other.html\">Management Sciences and Quantitative Methods, Other</a>","<a href=\"majors_Masters_LegalResearchandAdvancedProfessionalStudies_Other.html\">Legal Research and Advanced Professional Studies, Other</a>","<a href=\"majors_Masters_AdvancedLegalResearch_Studies_General.html\">Advanced Legal Research/Studies, General</a>","<a href=\"majors_Masters_DevelopmentEconomicsandInternationalDevelopment.html\">Development Economics and International Development</a>","<a href=\"majors_Masters_PediatricNurse_Nursing.html\">Pediatric Nurse/Nursing</a>","<a href=\"majors_Masters_NursingPractice.html\">Nursing Practice</a>","<a href=\"majors_Masters_AccountingandBusiness_Management.html\">Accounting and Business/Management</a>","<a href=\"majors_Masters_Theology_TheologicalStudies.html\">Theology/Theological Studies</a>","<a href=\"majors_Masters_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Masters_MedicalScience_Scientist.html\">Medical Science/Scientist</a>","<a href=\"majors_Masters_WomensHealthNurse_Nursing.html\">Women's Health Nurse/Nursing</a>","<a href=\"majors_Masters_Informatics.html\">Informatics</a>","<a href=\"majors_Masters_EmergencyRoom_TraumaNursing.html\">Emergency Room/Trauma Nursing</a>","<a href=\"majors_Masters_BiomedicalSciences_General.html\">Biomedical Sciences, General</a>","<a href=\"majors_Masters_Human_MedicalGenetics.html\">Human/Medical Genetics</a>","<a href=\"majors_Masters_NurseMidwife_NursingMidwifery.html\">Nurse Midwife/Nursing Midwifery</a>","<a href=\"majors_Masters_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Masters_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Masters_ComparativeLaw.html\">Comparative Law</a>","<a href=\"majors_Masters_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Masters_Bioethics_MedicalEthics.html\">Bioethics/Medical Ethics</a>","<a href=\"majors_Masters_History_General.html\">History, General</a>","<a href=\"majors_Masters_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Masters_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Masters_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Masters_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Masters_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Masters_Maternal_ChildHealthandNeonatalNurse_Nursing.html\">Maternal/Child Health and Neonatal Nurse/Nursing</a>","<a href=\"majors_Masters_NursingScience.html\">Nursing Science</a>","<a href=\"majors_Masters_Philosophy.html\">Philosophy</a>","<a href=\"majors_Masters_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Masters_BioengineeringandBiomedicalEngineering.html\">Bioengineering and Biomedical Engineering</a>","<a href=\"majors_Masters_ReligiousEducation.html\">Religious Education</a>","<a href=\"majors_Masters_YouthMinistry.html\">Youth Ministry</a>","<a href=\"majors_Masters_TheologyandReligiousVocations_Other.html\">Theology and Religious Vocations, Other</a>","<a href=\"majors_Masters_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Masters_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Masters_PastoralCounselingandSpecializedMinistries_Other.html\">Pastoral Counseling and Specialized Ministries, Other</a>"],[256,149,147,116,104,93,62,55,52,47,43,35,35,34,29,26,26,24,23,22,19,16,14,13,12,11,10,9,8,8,7,7,7,6,5,5,4,4,4,4,4,3,2,2,2,2,2,1,1,1],[16.295,9.484,9.357,7.384,6.62,5.92,3.947,3.501,3.31,2.992,2.737,2.228,2.228,2.164,1.846,1.655,1.655,1.528,1.464,1.4,1.209,1.018,0.891,0.827,0.764,0.7,0.637,0.573,0.509,0.509,0.446,0.446,0.446,0.382,0.318,0.318,0.255,0.255,0.255,0.255,0.255,0.191,0.127,0.127,0.127,0.127,0.127,0.064,0.064,0.064],[0.243,15.456,9.387,24.319,7.721,1.661,9.764,0.385,0.5,5.087,0.283,14.286,0.353,6.193,1.557,10.97,5.714,7.164,6.267,0.577,0.132,2.465,6.335,1.276,38.71,0.324,5.405,2.055,0.126,0.237,25,0.544,1.746,0.19,0.238,0.657,0.101,0.455,0.239,2.74,0.281,0.427,0.205,0.065,0.351,4.348,0.391,0.04,0.236,0.459],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d55a699ab109e2c085c6" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-d55a699ab109e2c085c6">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_Law.html\">Law</a>","<a href=\"majors_Doctorate_Medicine.html\">Medicine</a>","<a href=\"majors_Doctorate_PhysicalTherapy_Therapist.html\">Physical Therapy/Therapist</a>","<a href=\"majors_Doctorate_BiomedicalSciences_General.html\">Biomedical Sciences, General</a>","<a href=\"majors_Doctorate_Divinity_Ministry.html\">Divinity/Ministry</a>","<a href=\"majors_Doctorate_BioengineeringandBiomedicalEngineering.html\">Bioengineering and Biomedical Engineering</a>","<a href=\"majors_Doctorate_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Doctorate_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Doctorate_Epidemiology.html\">Epidemiology</a>","<a href=\"majors_Doctorate_NursingPractice.html\">Nursing Practice</a>","<a href=\"majors_Doctorate_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Doctorate_Philosophy.html\">Philosophy</a>","<a href=\"majors_Doctorate_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Doctorate_NurseAnesthetist.html\">Nurse Anesthetist</a>","<a href=\"majors_Doctorate_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Doctorate_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Doctorate_BehavioralSciences.html\">Behavioral Sciences</a>","<a href=\"majors_Doctorate_NutritionSciences.html\">Nutrition Sciences</a>","<a href=\"majors_Doctorate_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Doctorate_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Doctorate_WomensStudies.html\">Women's Studies</a>","<a href=\"majors_Doctorate_Physics_General.html\">Physics, General</a>","<a href=\"majors_Doctorate_ComparativeLiterature.html\">Comparative Literature</a>","<a href=\"majors_Doctorate_AdvancedLegalResearch_Studies_General.html\">Advanced Legal Research/Studies, General</a>","<a href=\"majors_Doctorate_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Doctorate_Biostatistics.html\">Biostatistics</a>","<a href=\"majors_Doctorate_EnvironmentalHealth.html\">Environmental Health</a>","<a href=\"majors_Doctorate_NursingScience.html\">Nursing Science</a>","<a href=\"majors_Doctorate_History_General.html\">History, General</a>","<a href=\"majors_Doctorate_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Doctorate_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Doctorate_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Doctorate_IslamicStudies.html\">Islamic Studies</a>"],[281,125,63,55,30,25,25,16,15,14,11,10,10,10,7,6,6,6,6,5,4,4,3,3,3,3,3,3,3,2,2,2,1],[36.877,16.404,8.268,7.218,3.937,3.281,3.281,2.1,1.969,1.837,1.444,1.312,1.312,1.312,0.919,0.787,0.787,0.787,0.787,0.656,0.525,0.525,0.394,0.394,0.394,0.394,0.394,0.394,0.394,0.262,0.262,0.262,0.131],[0.776,0.605,0.479,8.58,4.702,2.281,0.953,8.84,4.673,0.227,0.709,2.786,1.587,0.985,1.222,0.479,4.348,3.315,2.449,1.106,16.667,0.246,2.083,3.614,0.325,1.364,3.659,0.316,0.458,6.897,0.175,1.274,33.333],["Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ca8c21952e3a65beed52" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ca8c21952e3a65beed52">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_Law.html\">Law</a>","<a href=\"majors_Doctorate_Medicine.html\">Medicine</a>","<a href=\"majors_Doctorate_PhysicalTherapy_Therapist.html\">Physical Therapy/Therapist</a>","<a href=\"majors_Doctorate_BiomedicalSciences_General.html\">Biomedical Sciences, General</a>","<a href=\"majors_Doctorate_Divinity_Ministry.html\">Divinity/Ministry</a>","<a href=\"majors_Doctorate_BioengineeringandBiomedicalEngineering.html\">Bioengineering and Biomedical Engineering</a>","<a href=\"majors_Doctorate_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Doctorate_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Doctorate_Epidemiology.html\">Epidemiology</a>","<a href=\"majors_Doctorate_NursingPractice.html\">Nursing Practice</a>","<a href=\"majors_Doctorate_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Doctorate_Philosophy.html\">Philosophy</a>","<a href=\"majors_Doctorate_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Doctorate_NurseAnesthetist.html\">Nurse Anesthetist</a>","<a href=\"majors_Doctorate_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Doctorate_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Doctorate_BehavioralSciences.html\">Behavioral Sciences</a>","<a href=\"majors_Doctorate_NutritionSciences.html\">Nutrition Sciences</a>","<a href=\"majors_Doctorate_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Doctorate_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Doctorate_WomensStudies.html\">Women's Studies</a>","<a href=\"majors_Doctorate_Physics_General.html\">Physics, General</a>","<a href=\"majors_Doctorate_ComparativeLiterature.html\">Comparative Literature</a>","<a href=\"majors_Doctorate_AdvancedLegalResearch_Studies_General.html\">Advanced Legal Research/Studies, General</a>","<a href=\"majors_Doctorate_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Doctorate_Biostatistics.html\">Biostatistics</a>","<a href=\"majors_Doctorate_EnvironmentalHealth.html\">Environmental Health</a>","<a href=\"majors_Doctorate_NursingScience.html\">Nursing Science</a>","<a href=\"majors_Doctorate_History_General.html\">History, General</a>","<a href=\"majors_Doctorate_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Doctorate_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Doctorate_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Doctorate_IslamicStudies.html\">Islamic Studies</a>"],[281,125,63,55,30,25,25,16,15,14,11,10,10,10,7,6,6,6,6,5,4,4,3,3,3,3,3,3,3,2,2,2,1],[36.877,16.404,8.268,7.218,3.937,3.281,3.281,2.1,1.969,1.837,1.444,1.312,1.312,1.312,0.919,0.787,0.787,0.787,0.787,0.656,0.525,0.525,0.394,0.394,0.394,0.394,0.394,0.394,0.394,0.262,0.262,0.262,0.131],[0.776,0.605,0.479,8.58,4.702,2.281,0.953,8.84,4.673,0.227,0.709,2.786,1.587,0.985,1.222,0.479,4.348,3.315,2.449,1.106,16.667,0.246,2.083,3.614,0.325,1.364,3.659,0.316,0.458,6.897,0.175,1.274,33.333],["Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-969827994c1af874f817" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-969827994c1af874f817">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_ResearchMethodologyandQuantitativeMethods.html\">Research Methodology and Quantitative Methods</a>","<a href=\"majors_Certificate_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Certificate_PediatricNurse_Nursing.html\">Pediatric Nurse/Nursing</a>","<a href=\"majors_Certificate_PublicHealth_Other.html\">Public Health, Other</a>","<a href=\"majors_Certificate_Maternal_ChildHealthandNeonatalNurse_Nursing.html\">Maternal/Child Health and Neonatal Nurse/Nursing</a>","<a href=\"majors_Certificate_NurseMidwife_NursingMidwifery.html\">Nurse Midwife/Nursing Midwifery</a>"],[11,9,4,2,2,1],[37.931,31.034,13.793,6.897,6.897,3.448],[8.088,0.188,6.897,0.446,9.524,1.887],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f2f163192f517b70acea" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f2f163192f517b70acea">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_ResearchMethodologyandQuantitativeMethods.html\">Research Methodology and Quantitative Methods</a>","<a href=\"majors_Certificate_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Certificate_PediatricNurse_Nursing.html\">Pediatric Nurse/Nursing</a>","<a href=\"majors_Certificate_PublicHealth_Other.html\">Public Health, Other</a>","<a href=\"majors_Certificate_Maternal_ChildHealthandNeonatalNurse_Nursing.html\">Maternal/Child Health and Neonatal Nurse/Nursing</a>","<a href=\"majors_Certificate_NurseMidwife_NursingMidwifery.html\">Nurse Midwife/Nursing Midwifery</a>"],[11,9,4,2,2,1],[37.931,31.034,13.793,6.897,6.897,3.448],[8.088,0.188,6.897,0.446,9.524,1.887],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-64727ba6b105449f7193" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-64727ba6b105449f7193">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-85fd6e9c75518b457859" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-85fd6e9c75518b457859">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

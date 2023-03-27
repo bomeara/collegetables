@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -269,9 +271,20 @@ Comprehensive programs</p></li>
 <li><p><strong>Enrollment profile</strong>: High undergraduate (see more
 details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 14,322 (1 times the equivalent cost of Harvard)</p></li>
+aid</strong>: $14,322 (This is 90% the average cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $13,773.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.aum.edu/current-students/financial-information/net-price-calculator'>here</a>
+to see what your family may be asked to pay. It can be MUCH lower than
+the average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, medium, primarily
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 90.9% of first year
+students come from Alabama</p></li>
+<li><p><strong>In US percentage</strong>: 95.9% of first year students
+come from the US (note that 0.0% have no residence reported)</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 35.7% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -313,9 +326,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Prohibited (based on <a
-href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+<li><strong>Abortion in this state</strong>: Most restrictive (based on
+<a href="https://states.guttmacher.org/policies/"
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: F (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -328,16 +342,28 @@ marriage</strong>: 14.3% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Worst (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Southeastern mixed forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/14526/Average-Weather-in-Montgomery-Alabama-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-dc21d75f1c86a9c236d2" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-dc21d75f1c86a9c236d2">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[32.36736,-86.177544,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[32.36736,-86.177544],16,[]],"limits":{"lat":[32.36736,32.36736],"lng":[-86.177544,-86.177544]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e2cb8ee08003dda16b9e" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e2cb8ee08003dda16b9e">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"100830.html\">Auburn University at Montgomery</a>","<a href=\"101709.html\">University of Montevallo</a>","<a href=\"175616.html\">Delta State University</a>","<a href=\"219833.html\">Christian Brothers University</a>","<a href=\"140988.html\">Shorter University</a>","<a href=\"101587.html\">University of West Alabama</a>","<a href=\"220613.html\">Lee University</a>","<a href=\"141264.html\">Valdosta State University</a>","<a href=\"141334.html\">University of West Georgia</a>","<a href=\"138354.html\">The University of West Florida</a>","<a href=\"100706.html\">University of Alabama in Huntsville</a>","<a href=\"226471.html\">University of Mary Hardin-Baylor</a>","<a href=\"221971.html\">Union University</a>","<a href=\"207865.html\">Southwestern Oklahoma State University</a>","<a href=\"210429.html\">Western Oregon University</a>","<a href=\"183080.html\">Plymouth State University</a>","<a href=\"171146.html\">University of Michigan-Flint</a>","<a href=\"139764.html\">Georgia Southwestern State University</a>","<a href=\"100724.html\">Alabama State University</a>","<a href=\"128106.html\">Colorado State University Pueblo</a>","<a href=\"226833.html\">Midwestern State University</a>","<a href=\"185129.html\">New Jersey City University</a>","<a href=\"213613.html\">Lock Haven University</a>","<a href=\"484905.html\">University of North Texas at Dallas</a>","<a href=\"163338.html\">University of Maryland Eastern Shore</a>","<a href=\"162584.html\">Frostburg State University</a>","<a href=\"232566.html\">Longwood University</a>","<a href=\"176053.html\">Mississippi College</a>","<a href=\"148487.html\">Roosevelt University</a>","<a href=\"225247.html\">Hardin-Simmons University</a>","<a href=\"190646.html\">CUNY Medgar Evers College</a>","<a href=\"191931.html\">Iona College</a>","<a href=\"165866.html\">Framingham State University</a>","<a href=\"142328.html\">Lewis-Clark State College</a>","<a href=\"186432.html\">Saint Peter's University</a>","<a href=\"141565.html\">University of Hawaii at Hilo</a>","<a href=\"198543.html\">Fayetteville State University</a>","<a href=\"218645.html\">University of South Carolina Aiken</a>","<a href=\"148654.html\">University of Illinois Springfield</a>","<a href=\"151342.html\">Indiana University-South Bend</a>","<a href=\"222178.html\">Abilene Christian University</a>","<a href=\"211431.html\">Carlow University</a>","<a href=\"186283.html\">Rider University</a>","<a href=\"183910.html\">Caldwell University</a>","<a href=\"115755.html\">California State Polytechnic University-Humboldt</a>","<a href=\"234155.html\">Virginia State University</a>","<a href=\"192192.html\">Keuka College</a>","<a href=\"238193.html\">Alverno College</a>","<a href=\"148627.html\">Saint Xavier University</a>","<a href=\"196051.html\">SUNY Morrisville</a>","<a href=\"168263.html\">Westfield State University</a>","<a href=\"156365.html\">Campbellsville University</a>","<a href=\"218061.html\">Francis Marion University</a>","<a href=\"148496.html\">Dominican University</a>","<a href=\"198835.html\">Lenoir-Rhyne University</a>","<a href=\"178341.html\">Missouri Southern State University</a>","<a href=\"232937.html\">Norfolk State University</a>","<a href=\"199999.html\">Winston-Salem State University</a>","<a href=\"196264.html\">SUNY Empire State College</a>","<a href=\"218733.html\">South Carolina State University</a>","<a href=\"221485.html\">Southwest Tennessee Community College</a>","<a href=\"199281.html\">University of North Carolina at Pembroke</a>","<a href=\"224004.html\">Concordia University Texas</a>","<a href=\"238661.html\">Edgewood College</a>","<a href=\"228149.html\">St. Mary's University</a>","<a href=\"217934.html\">Columbia College</a>","<a href=\"236577.html\">Seattle Pacific University</a>","<a href=\"219602.html\">Austin Peay State University</a>","<a href=\"161554.html\">University of Southern Maine</a>","<a href=\"237330.html\">Concord University</a>","<a href=\"211644.html\">Clarion University of Pennsylvania</a>","<a href=\"183822.html\">Bloomfield College</a>","<a href=\"132602.html\">Bethune-Cookman University</a>","<a href=\"171599.html\">Olivet College</a>","<a href=\"211361.html\">California University of Pennsylvania</a>","<a href=\"237215.html\">Bluefield State College</a>","<a href=\"170967.html\">Rochester University</a>","<a href=\"150604.html\">Franklin College</a>","<a href=\"218654.html\">University of South Carolina Beaufort</a>","<a href=\"215655.html\">Robert Morris University</a>","<a href=\"196006.html\">SUNY College of Technology at Alfred</a>","<a href=\"197045.html\">Utica University</a>","<a href=\"196130.html\">SUNY Buffalo State</a>","<a href=\"196015.html\">SUNY College of Technology at Canton</a>","<a href=\"190770.html\">Dowling College</a>","<a href=\"141981.html\">University of Hawaii-West Oahu</a>","<a href=\"139250.html\">College of Coastal Georgia</a>","<a href=\"199111.html\">University of North Carolina at Asheville</a>","<a href=\"212160.html\">Edinboro University of Pennsylvania</a>","<a href=\"157386.html\">Morehead State University</a>","<a href=\"153375.html\">Grand View University</a>","<a href=\"165820.html\">Fitchburg State University</a>","<a href=\"161226.html\">University of Maine at Farmington</a>","<a href=\"237367.html\">Fairmont State University</a>","<a href=\"151102.html\">Purdue University Fort Wayne</a>","<a href=\"161873.html\">University of Baltimore</a>","<a href=\"216931.html\">Wilkes University</a>","<a href=\"206349.html\">Ursuline College</a>","<a href=\"237792.html\">Shepherd University</a>","<a href=\"192439.html\">LIU Brooklyn</a>"],[97,90,100,97,81,74,83,76,70,53,74,99,53,94,92,92,74,86,98,99,95,91,95,90,82,86,90,49,92,95,86,93,84,100,93,92,82,84,79,89,70,92,82,96,91,96,94,91,85,81,94,78,86,81,86,97,89,81,81,88,100,92,89,95,88,99,92,93,87,96,99,84,100,88,97,97,98,95,84,94,82,89,85,95,78,95,97,82,92,90,100,85,97,99,83,89,95,82,96,84],[16,14,29,24,33,31,34,27,34,25,28,6,25,35,21,15,17,27,15,30,21,15,26,16,8,16,13,38,16,19,7,11,14,25,16,17,19,35,13,35,14,19,9,10,10,10,15,19,11,19,23,17,27,15,9,35,19,21,25,27,41,17,16,22,16,17,14,30,19,24,32,12,15,21,21,35,26,17,23,14,27,16,13,21,13,32,29,16,23,19,17,19,23,38,26,28,15,24,32,12],[36,52,44,59,37,37,58,41,42,52,61,53,68,42,48,53,36,34,28,39,47,39,54,37,33,48,65,63,39,52,33,62,51,36,58,43,37,43,52,38,60,52,61,59,48,48,50,48,52,35,61,37,43,52,48,37,37,46,24,30,null,43,37,62,59,54,66,42,34,42,58,38,32,44,49,34,40,61,30,65,49,60,41,48,36,37,27,65,50,45,51,57,55,46,38,38,61,49,44,32],[32,27,27,42,47,47,61,32,35,28,21,54,57,34,26,38,36,22,11,31,26,31,36,31,8,21,22,44,56,23,10,46,27,22,60,17,11,32,17,32,20,56,58,70,12,11,54,54,71,13,34,75,33,59,40,18,13,12,38,16,10,12,65,53,41,51,48,27,29,16,32,48,24,39,44,10,61,26,31,56,14,64,15,18,85,22,17,17,34,18,48,31,19,15,31,33,63,43,28,null],[21,16,16,16,15,23,23,25,23,29,30,24,9,25,22,25,18,21,20,24,24,21,14,42,14,18,15,18,19,22,29,19,18,18,23,13,21,21,12,22,19,14,18,21,23,19,17,11,32,16,20,15,15,17,17,26,34,21,25,18,34,22,28,15,12,16,16,18,16,22,19,24,25,24,17,18,22,16,25,18,23,21,22,32,24,23,25,18,13,25,24,15,14,26,27,7,13,18,18,18],[13773,16120,13257,11036,16168,16479,14471,12126,14906,6805,14646,24397,26056,8407,14616,16740,8583,11392,14170,11947,9055,12878,11259,6125,10014,14256,14351,14501,19320,17979,6725,27957,13069,11024,12000,11742,6415,10420,8109,5777,24708,16143,22338,14470,10466,14577,21795,16842,10429,17411,15145,18759,11809,14919,15112,8646,10890,12455,12111,21339,6323,10460,23727,21017,16585,19785,20918,13230,6336,8602,10157,16906,15535,20264,16481,8801,16676,13344,13815,22862,15527,19744,9318,9973,null,9672,12224,9496,13425,8959,18534,13562,11225,9494,7358,14703,25051,14491,8271,null],[3017,1965,1486,1226,1113,1754,3041,6605,6781,6241,6223,2994,1634,3021,3049,3368,3032,1521,3055,2589,3619,4385,2150,1894,1619,2888,3010,2082,2248,1412,2978,2618,2734,2064,1937,1975,3658,2441,1739,2869,3032,953,3005,1565,4643,3665,1033,703,2848,1648,3486,2424,2712,1908,1388,2755,4520,3961,3269,1833,3017,4728,1414,1050,2007,727,2513,5531,3567,1286,2451,1217,2384,788,3566,996,692,867,1605,2788,3092,2384,5384,2353,995,1641,1661,2805,2544,4778,1399,2506,1293,2478,4752,869,2007,566,2040,3396],[400,153,278,304,103,2997,161,872,575,586,674,333,526,513,225,377,640,419,323,449,300,334,277,425,347,264,264,1182,896,324,null,384,104,0,456,294,471,419,478,142,410,242,301,120,412,246,116,651,162,null,389,2486,125,348,478,28,307,361,144,195,null,601,119,423,907,290,327,394,624,138,180,0,91,0,772,null,25,61,4,0,null,270,383,null,174,null,null,0,569,189,99,520,21,95,220,990,520,82,145,1737],["Alabama","Alabama","Mississippi","Tennessee","Georgia","Alabama","Tennessee","Georgia","Georgia","Florida","Alabama","Texas","Tennessee","Oklahoma","Oregon","New Hampshire","Michigan","Georgia","Alabama","Colorado","Texas","New Jersey","Pennsylvania","Texas","Maryland","Maryland","Virginia","Mississippi","Illinois","Texas","New York","New York","Massachusetts","Idaho","New Jersey","Hawaii","North Carolina","South Carolina","Illinois","Indiana","Texas","Pennsylvania","New Jersey","New Jersey","California","Virginia","New York","Wisconsin","Illinois","New York","Massachusetts","Kentucky","South Carolina","Illinois","North Carolina","Missouri","Virginia","North Carolina","New York","South Carolina","Tennessee","North Carolina","Texas","Wisconsin","Texas","South Carolina","Washington","Tennessee","Maine","West Virginia","Pennsylvania","New Jersey","Florida","Michigan","Pennsylvania","West Virginia","Michigan","Indiana","South Carolina","Pennsylvania","New York","New York","New York","New York","New York","Hawaii","Georgia","North Carolina","Pennsylvania","Kentucky","Iowa","Massachusetts","Maine","West Virginia","Indiana","Maryland","Pennsylvania","Ohio","West Virginia","New York"],["Approximately stable","Decreasing","Decreasing","Increasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Increasing","Increasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Increasing","Decreasing","Increasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Increasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Increasing","Approximately stable","Approximately stable","Increasing","Decreasing","Decreasing","Decreasing","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-74e71523bbcbb55e4bbd" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-74e71523bbcbb55e4bbd">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[32.36736,-86.177544,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[32.36736,-86.177544],16,[]],"limits":{"lat":[32.36736,32.36736],"lng":[-86.177544,-86.177544]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -661,33 +687,13 @@ Master’s Colleges &amp; Universities: Larger Programs
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-16 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_14.png alt=‘Line plot
-from 15 to 16 from 2013 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 50%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 58%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 21 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_15.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_14.png alt=‘Line plot
 from 18 to 21 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -698,6 +704,26 @@ from 18 to 21 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (lower) than 51%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
+</td>
+<td style="text-align:center;">
+16 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/AuburnUniversityatMontgomery_15.png alt=‘Line plot
+from 15 to 16 from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 50%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 58%
 </td>
 </tr>
 <tr>
@@ -720,14 +746,14 @@ from 203 to 217 from 2013 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-53 (2020)
+164 (2020)
 </td>
 <td style="text-align:center;">
 <img src=images/AuburnUniversityatMontgomery_17.png alt=‘Line plot
-from 33 to 53 from 2013 to 2020’ >
+from 170 to 164 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -738,14 +764,14 @@ from 33 to 53 from 2013 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-164 (2020)
+53 (2020)
 </td>
 <td style="text-align:center;">
 <img src=images/AuburnUniversityatMontgomery_18.png alt=‘Line plot
-from 170 to 164 from 2013 to 2020’ >
+from 33 to 53 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -797,11 +823,11 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-5.0% (2021)
+5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_103.png alt=‘Line plot
-from 3.0 to 5.0 from 2010 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_100.png alt=‘Line plot
+from 3 to 5 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -836,13 +862,33 @@ Master’s Colleges &amp; Universities: Larger Programs
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+32% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/AuburnUniversityatMontgomery_19.png alt=‘Line plot
+from 33 to 32 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 47%
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 67%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $14 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_19.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_20.png alt=‘Line plot
 from 2.3 M to 14 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -863,7 +909,7 @@ Revenue
 $116 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_20.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_21.png alt=‘Line plot
 from 88 M to 116 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -882,7 +928,7 @@ Expenses
 $102 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_21.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_22.png alt=‘Line plot
 from 85 M to 102 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -901,7 +947,7 @@ Assets
 $197 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_22.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_23.png alt=‘Line plot
 from 132 M to 197 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -912,44 +958,6 @@ from 132 M to 197 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 35%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-32% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_23.png alt=‘Line plot
-from 33 to 32 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 47%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 67%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-24% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_24.png alt=‘Line plot
-from 28 to 24 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -991,7 +999,7 @@ Total
 36% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_42.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_39.png alt=‘Line plot
 from 25 to 36 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1009,7 +1017,7 @@ Men
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_43.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_40.png alt=‘Line plot
 from 21 to 33 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1027,7 +1035,7 @@ Women
 37% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_44.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_41.png alt=‘Line plot
 from 27 to 37 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1045,7 +1053,7 @@ American Indian or Alaska Native men
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_45.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_42.png alt=‘Line plot
 from 50 to 50 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1063,8 +1071,8 @@ American Indian or Alaska Native women
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_46.png alt=‘Line plot
-from 0.0 to 33 from 2011 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_43.png alt=‘Line plot
+from 0 to 33 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 23%
@@ -1081,7 +1089,7 @@ Asian men
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_47.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_44.png alt=‘Line plot
 from 33 to 33 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1099,7 +1107,7 @@ Asian women
 17% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_48.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_45.png alt=‘Line plot
 from 33 to 17 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1117,7 +1125,7 @@ Black or African American men
 22% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_49.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_46.png alt=‘Line plot
 from 12 to 22 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1135,7 +1143,7 @@ Black or African American women
 36% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_50.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_47.png alt=‘Line plot
 from 21 to 36 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1153,7 +1161,7 @@ Hispanic men
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_51.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_48.png alt=‘Line plot
 from 44 to 33 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1168,11 +1176,11 @@ from 44 to 33 from 2011 to 2021’ >
 Hispanic women
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_52.png alt=‘Line plot
-from 40 to 0.0 from 2011 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_49.png alt=‘Line plot
+from 40 to 0 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 5%
@@ -1186,11 +1194,11 @@ from 40 to 0.0 from 2011 to 2021’ >
 Native Hawaiian or other Pacific Islander men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_53.png alt=‘Line plot
-from 0.0 to 0.0 from 2017 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_50.png alt=‘Line plot
+from 0 to 0 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪<br />Better (higher) than 71%
@@ -1204,11 +1212,11 @@ from 0.0 to 0.0 from 2017 to 2021’ >
 Native Hawaiian or other Pacific Islander women
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_54.png alt=‘Line plot
-from 0.0 to 0.0 from 2017 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_51.png alt=‘Line plot
+from 0 to 0 from 2017 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 0%
@@ -1225,7 +1233,7 @@ White men
 40% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_55.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_52.png alt=‘Line plot
 from 30 to 40 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1243,7 +1251,7 @@ White women
 38% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_56.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_53.png alt=‘Line plot
 from 51 to 38 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1261,7 +1269,7 @@ Two or more races men
 23% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_57.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_54.png alt=‘Line plot
 from 50 to 23 from 2016 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1279,8 +1287,8 @@ Two or more races women
 22% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_58.png alt=‘Line plot
-from 0.0 to 22 from 2016 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_55.png alt=‘Line plot
+from 0 to 22 from 2016 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 6%
@@ -1297,8 +1305,8 @@ Nonresident alien men
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_59.png alt=‘Line plot
-from 0.0 to 33 from 2011 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_56.png alt=‘Line plot
+from 0 to 33 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 33%
@@ -1315,8 +1323,8 @@ Nonresident alien women
 62% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_60.png alt=‘Line plot
-from 0.0 to 62 from 2011 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_57.png alt=‘Line plot
+from 0 to 62 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 53%
@@ -1355,7 +1363,7 @@ Men (percent freshmen)
 35% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_83.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_80.png alt=‘Line plot
 from 37 to 35 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1367,7 +1375,7 @@ Women (percent freshmen)
 65% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_84.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_81.png alt=‘Line plot
 from 63 to 65 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1379,7 +1387,7 @@ American Indian or Alaska Native men (percent freshmen)
 0.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_85.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_82.png alt=‘Line plot
 from 0.1 to 0.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1388,11 +1396,11 @@ from 0.1 to 0.4 from 2010 to 2021’ >
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_86.png alt=‘Line plot
-from 0.3 to 0.0 from 2010 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_83.png alt=‘Line plot
+from 0.3 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1403,7 +1411,7 @@ Asian men (percent freshmen)
 2.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_87.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_84.png alt=‘Line plot
 from 0.7 to 2.1 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1415,7 +1423,7 @@ Asian women (percent freshmen)
 1.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_88.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_85.png alt=‘Line plot
 from 0.8 to 1.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1427,7 +1435,7 @@ Black or African American men (percent freshmen)
 11% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_89.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_86.png alt=‘Line plot
 from 11 to 11 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1439,7 +1447,7 @@ Black or African American women (percent freshmen)
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_90.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_87.png alt=‘Line plot
 from 31 to 33 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1451,7 +1459,7 @@ Hispanic men (percent freshmen)
 0.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_91.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_88.png alt=‘Line plot
 from 0.8 to 0.6 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1463,7 +1471,7 @@ Hispanic women (percent freshmen)
 1.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_92.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_89.png alt=‘Line plot
 from 0.7 to 1.0 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1475,8 +1483,8 @@ Native Hawaiian or Other Pacific Islander men (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_93.png alt=‘Line plot
-from 0.0 to 0.2 from 2010 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_90.png alt=‘Line plot
+from 0 to 0.2 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1484,11 +1492,11 @@ from 0.0 to 0.2 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_94.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_91.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1499,7 +1507,7 @@ White men (percent freshmen)
 18% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_95.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_92.png alt=‘Line plot
 from 22 to 18 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1511,7 +1519,7 @@ White women (percent freshmen)
 24% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_96.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_93.png alt=‘Line plot
 from 28 to 24 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1523,8 +1531,8 @@ Two or more races men (percent freshmen)
 1.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_97.png alt=‘Line plot
-from 0.0 to 1.0 from 2010 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_94.png alt=‘Line plot
+from 0 to 1.0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1535,8 +1543,8 @@ Two or more races women (percent freshmen)
 2.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_98.png alt=‘Line plot
-from 0.0 to 2.7 from 2010 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_95.png alt=‘Line plot
+from 0 to 2.7 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1544,11 +1552,11 @@ from 0.0 to 2.7 from 2010 to 2021’ >
 Race ethnicity unknown men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_99.png alt=‘Line plot
-from 0.7 to 0.0 from 2010 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_96.png alt=‘Line plot
+from 0.7 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1556,11 +1564,11 @@ from 0.7 to 0.0 from 2010 to 2021’ >
 Race ethnicity unknown women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_100.png alt=‘Line plot
-from 1.1 to 0.0 from 2010 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_97.png alt=‘Line plot
+from 1.1 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1571,7 +1579,7 @@ Nonresident alien men (percent freshmen)
 1.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_101.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_98.png alt=‘Line plot
 from 2.1 to 1.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1583,8 +1591,63 @@ Nonresident alien women (percent freshmen)
 2.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_102.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_99.png alt=‘Line plot
 from 0.3 to 2.1 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Auburn University at Montgomery
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+91% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/AuburnUniversityatMontgomery_101.png alt=‘Line plot
+from 92 to 91 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+96% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/AuburnUniversityatMontgomery_102.png alt=‘Line plot
+from 100 to 96 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/AuburnUniversityatMontgomery_103.png alt=‘Line plot
+from 0.2 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1625,7 +1688,7 @@ Total (tenure-track count)
 164 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_61.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_58.png alt=‘Line plot
 from 170 to 164 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1639,7 +1702,7 @@ Women (tenure-track count)
 69 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_62.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_59.png alt=‘Line plot
 from 69 to 69 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1653,7 +1716,7 @@ Men (tenure-track count)
 95 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_63.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_60.png alt=‘Line plot
 from 101 to 95 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1664,11 +1727,11 @@ from 101 to 95 from 2013 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_64.png alt=‘Line plot
-from 0.0 to 1.0 from 2013 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_61.png alt=‘Line plot
+from 0 to 1 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1681,7 +1744,7 @@ Asian (tenure-track count)
 18 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_65.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_62.png alt=‘Line plot
 from 12 to 18 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1695,7 +1758,7 @@ Black or African American (tenure-track count)
 12 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_66.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_63.png alt=‘Line plot
 from 14 to 12 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1706,11 +1769,11 @@ from 14 to 12 from 2013 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-4.0 (2020)
+4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_67.png alt=‘Line plot
-from 6.0 to 4.0 from 2013 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_64.png alt=‘Line plot
+from 6 to 4 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.3 per year
@@ -1721,11 +1784,11 @@ from 6.0 to 4.0 from 2013 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_68.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_65.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1738,7 +1801,7 @@ White (tenure-track count)
 115 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_69.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_66.png alt=‘Line plot
 from 134 to 115 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1749,11 +1812,11 @@ from 134 to 115 from 2013 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_70.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_67.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1766,8 +1829,8 @@ Nonresident alien (tenure-track count)
 10 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_71.png alt=‘Line plot
-from 4.0 to 10 from 2013 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_68.png alt=‘Line plot
+from 4 to 10 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1811,7 +1874,7 @@ Total (non-tenure-track count)
 53 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_72.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_69.png alt=‘Line plot
 from 33 to 53 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1825,7 +1888,7 @@ Women (non-tenure-track count)
 37 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_73.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_70.png alt=‘Line plot
 from 22 to 37 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1839,7 +1902,7 @@ Men (non-tenure-track count)
 16 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_74.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_71.png alt=‘Line plot
 from 11 to 16 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1850,11 +1913,11 @@ from 11 to 16 from 2013 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_75.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_72.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1864,11 +1927,11 @@ from 0.0 to 0.0 from 2013 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_76.png alt=‘Line plot
-from 2.0 to 2.0 from 2013 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_73.png alt=‘Line plot
+from 2 to 2 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1878,11 +1941,11 @@ from 2.0 to 2.0 from 2013 to 2020’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-6.0 (2020)
+6 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_77.png alt=‘Line plot
-from 0.0 to 6.0 from 2013 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_74.png alt=‘Line plot
+from 0 to 6 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.9 per year
@@ -1893,11 +1956,11 @@ from 0.0 to 6.0 from 2013 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_78.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_75.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1907,11 +1970,11 @@ from 0.0 to 0.0 from 2013 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_79.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_76.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1924,7 +1987,7 @@ White (non-tenure-track count)
 42 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_80.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_77.png alt=‘Line plot
 from 29 to 42 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1935,11 +1998,11 @@ from 29 to 42 from 2013 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_81.png alt=‘Line plot
-from 0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_78.png alt=‘Line plot
+from 0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1949,11 +2012,11 @@ from 0.0 to 0.0 from 2013 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_82.png alt=‘Line plot
-from 1.0 to 0.0 from 2013 to 2020’ >
+<img src=images/AuburnUniversityatMontgomery_79.png alt=‘Line plot
+from 1 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1994,7 +2057,7 @@ Number of physical books
 632,359 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_27.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_24.png alt=‘Line plot
 from 1.1 M to 632,359 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2014,7 +2077,7 @@ Physical library circulations per students and faculty
 1.0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_28.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_25.png alt=‘Line plot
 from 1.9 to 1.0 from 2015 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2035,7 +2098,7 @@ Digital library circulations per students and faculty
 1.0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_29.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_26.png alt=‘Line plot
 from 1.5 to 1.0 from 2015 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2071,11 +2134,11 @@ Change over ≤ 11 years
 Applicants submitting SAT
 </td>
 <td style="text-align:center;">
-4.0% (2021)
+4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_30.png alt=‘Line plot
-from 4.0 to 4.0 from 2014 to 2021’ >
+<img src=images/AuburnUniversityatMontgomery_27.png alt=‘Line plot
+from 4 to 4 from 2014 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -2086,7 +2149,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 480 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_31.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_28.png alt=‘Line plot
 from 485 to 480 from 2017 to 2021’ >
 </td>
 </tr>
@@ -2098,7 +2161,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 595 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_32.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_29.png alt=‘Line plot
 from 573 to 595 from 2017 to 2021’ >
 </td>
 </tr>
@@ -2110,7 +2173,7 @@ SAT Math 25th percentile score
 470 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_33.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_30.png alt=‘Line plot
 from 468 to 470 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2122,7 +2185,7 @@ SAT Math 75th percentile score
 565 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_34.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_31.png alt=‘Line plot
 from 550 to 565 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2156,7 +2219,7 @@ Applicants submitting ACT
 80% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_35.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_32.png alt=‘Line plot
 from 88 to 80 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2170,7 +2233,7 @@ ACT Composite 25th percentile score
 17 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_36.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_33.png alt=‘Line plot
 from 19 to 17 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2185,7 +2248,7 @@ ACT Composite 75th percentile score
 24 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_37.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_34.png alt=‘Line plot
 from 24 to 24 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2199,7 +2262,7 @@ ACT English 25th percentile score
 16 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_38.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_35.png alt=‘Line plot
 from 19 to 16 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2214,7 +2277,7 @@ ACT English 75th percentile score
 24 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_39.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_36.png alt=‘Line plot
 from 24 to 24 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2228,7 +2291,7 @@ ACT Math 25th percentile score
 16 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_40.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_37.png alt=‘Line plot
 from 17 to 16 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2243,7 +2306,7 @@ ACT Math 75th percentile score
 22 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/AuburnUniversityatMontgomery_41.png alt=‘Line plot
+<img src=images/AuburnUniversityatMontgomery_38.png alt=‘Line plot
 from 22 to 22 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2256,28 +2319,28 @@ from 22 to 22 from 2014 to 2021’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e787c0531cbe63b2d79b" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-e787c0531cbe63b2d79b">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_InformationTechnology.html\">Information Technology</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_General.html\">Multi-/Interdisciplinary Studies, General</a>","<a href=\"majors_Bachelors_ExerciseScienceandKinesiology.html\">Exercise Science and Kinesiology</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_Clinical_MedicalLaboratoryTechnician.html\">Clinical/Medical Laboratory Technician</a>","<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Bachelors_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_Finance_General.html\">Finance, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>","<a href=\"majors_Bachelors_SecondaryEducationandTeaching.html\">Secondary Education and Teaching</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_Audiology_AudiologistandSpeech_LanguagePathology_Pathologist.html\">Audiology/Audiologist and Speech-Language Pathology/Pathologist</a>","<a href=\"majors_Bachelors_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Bachelors_ForeignLanguagesandLiteratures_General.html\">Foreign Languages and Literatures, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Entrepreneurship_EntrepreneurialStudies.html\">Entrepreneurship/Entrepreneurial Studies</a>","<a href=\"majors_Bachelors_InternationalBusiness_Trade_Commerce.html\">International Business/Trade/Commerce</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_GeographicInformationScienceandCartography.html\">Geographic Information Science and Cartography</a>"],[134,48,47,44,44,39,33,28,26,24,24,23,21,20,20,15,14,13,12,11,11,9,9,8,7,7,5,5,5,4,4,3,1],[18.663,6.685,6.546,6.128,6.128,5.432,4.596,3.9,3.621,3.343,3.343,3.203,2.925,2.786,2.786,2.089,1.95,1.811,1.671,1.532,1.532,1.253,1.253,1.114,0.975,0.975,0.696,0.696,0.696,0.557,0.557,0.418,0.139],[0.085,0.374,0.043,0.054,0.588,0.145,0.109,0.059,0.085,0.25,11.111,0.074,0.015,0.053,0.15,0.037,0.058,0.175,0.028,0.038,0.049,0.024,0.129,0.262,0.033,0.153,0.08,0.305,0.028,0.145,0.072,0.011,0.146],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d749892f406065c9b092" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d749892f406065c9b092">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_InformationTechnology.html\">Information Technology</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_General.html\">Multi-/Interdisciplinary Studies, General</a>","<a href=\"majors_Bachelors_ExerciseScienceandKinesiology.html\">Exercise Science and Kinesiology</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_Clinical_MedicalLaboratoryTechnician.html\">Clinical/Medical Laboratory Technician</a>","<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Bachelors_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_Finance_General.html\">Finance, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>","<a href=\"majors_Bachelors_SecondaryEducationandTeaching.html\">Secondary Education and Teaching</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_Audiology_AudiologistandSpeech_LanguagePathology_Pathologist.html\">Audiology/Audiologist and Speech-Language Pathology/Pathologist</a>","<a href=\"majors_Bachelors_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Bachelors_ForeignLanguagesandLiteratures_General.html\">Foreign Languages and Literatures, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Entrepreneurship_EntrepreneurialStudies.html\">Entrepreneurship/Entrepreneurial Studies</a>","<a href=\"majors_Bachelors_InternationalBusiness_Trade_Commerce.html\">International Business/Trade/Commerce</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_GeographicInformationScienceandCartography.html\">Geographic Information Science and Cartography</a>"],[134,48,47,44,44,39,33,28,26,24,24,23,21,20,20,15,14,13,12,11,11,9,9,8,7,7,5,5,5,4,4,3,1],[18.663,6.685,6.546,6.128,6.128,5.432,4.596,3.9,3.621,3.343,3.343,3.203,2.925,2.786,2.786,2.089,1.95,1.811,1.671,1.532,1.532,1.253,1.253,1.114,0.975,0.975,0.696,0.696,0.696,0.557,0.557,0.418,0.139],[0.085,0.374,0.043,0.054,0.588,0.145,0.109,0.059,0.085,0.25,11.111,0.074,0.015,0.053,0.15,0.037,0.058,0.175,0.028,0.038,0.049,0.024,0.129,0.262,0.033,0.153,0.08,0.305,0.028,0.145,0.072,0.011,0.146],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b99110087ad5d5f31add" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b99110087ad5d5f31add">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Masters_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Masters_InformationTechnology.html\">Information Technology</a>","<a href=\"majors_Masters_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Masters_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Masters_ExerciseScienceandKinesiology.html\">Exercise Science and Kinesiology</a>","<a href=\"majors_Masters_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Masters_Accounting.html\">Accounting</a>","<a href=\"majors_Masters_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Masters_CounselorEducation_SchoolCounselingandGuidanceServices.html\">Counselor Education/School Counseling and Guidance Services</a>","<a href=\"majors_Masters_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Masters_AppliedEconomics.html\">Applied Economics</a>","<a href=\"majors_Masters_SecondaryEducationandTeaching.html\">Secondary Education and Teaching</a>","<a href=\"majors_Masters_HomelandSecurity.html\">Homeland Security</a>","<a href=\"majors_Masters_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Masters_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Masters_GeographicInformationScienceandCartography.html\">Geographic Information Science and Cartography</a>","<a href=\"majors_Masters_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>","<a href=\"majors_Masters_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Masters_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Masters_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Masters_RhetoricandComposition_WritingStudies_Other.html\">Rhetoric and Composition/Writing Studies, Other</a>"],[35,33,27,23,18,18,18,17,13,9,9,9,8,8,7,6,6,5,3,2,2,1],[12.635,11.913,9.747,8.303,6.498,6.498,6.498,6.137,4.693,3.249,3.249,3.249,2.888,2.888,2.527,2.166,2.166,1.805,1.083,0.722,0.722,0.361],[0.418,0.23,0.456,0.257,1.478,0.618,0.096,0.102,0.065,0.082,0.142,3.75,0.139,0.93,0.057,0.038,0.998,0.148,0.044,0.036,0.015,0.662],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6a05c0d9045324ffdd33" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6a05c0d9045324ffdd33">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Masters_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Masters_InformationTechnology.html\">Information Technology</a>","<a href=\"majors_Masters_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Masters_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Masters_ExerciseScienceandKinesiology.html\">Exercise Science and Kinesiology</a>","<a href=\"majors_Masters_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Masters_Accounting.html\">Accounting</a>","<a href=\"majors_Masters_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Masters_CounselorEducation_SchoolCounselingandGuidanceServices.html\">Counselor Education/School Counseling and Guidance Services</a>","<a href=\"majors_Masters_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Masters_AppliedEconomics.html\">Applied Economics</a>","<a href=\"majors_Masters_SecondaryEducationandTeaching.html\">Secondary Education and Teaching</a>","<a href=\"majors_Masters_HomelandSecurity.html\">Homeland Security</a>","<a href=\"majors_Masters_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Masters_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Masters_GeographicInformationScienceandCartography.html\">Geographic Information Science and Cartography</a>","<a href=\"majors_Masters_CriminalJustice_SafetyStudies.html\">Criminal Justice/Safety Studies</a>","<a href=\"majors_Masters_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Masters_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Masters_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Masters_RhetoricandComposition_WritingStudies_Other.html\">Rhetoric and Composition/Writing Studies, Other</a>"],[35,33,27,23,18,18,18,17,13,9,9,9,8,8,7,6,6,5,3,2,2,1],[12.635,11.913,9.747,8.303,6.498,6.498,6.498,6.137,4.693,3.249,3.249,3.249,2.888,2.888,2.527,2.166,2.166,1.805,1.083,0.722,0.722,0.361],[0.418,0.23,0.456,0.257,1.478,0.618,0.096,0.102,0.065,0.082,0.142,3.75,0.139,0.93,0.057,0.038,0.998,0.148,0.044,0.036,0.015,0.662],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8eafab9ff5fc88cbd585" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-8eafab9ff5fc88cbd585">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_NursingPractice.html\">Nursing Practice</a>"],[3],[100],[0.049],["Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3e707f0a209e7f401da8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3e707f0a209e7f401da8">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_NursingPractice.html\">Nursing Practice</a>"],[3],[100],[0.049],["Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9a506afd963a0a55e0b7" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-9a506afd963a0a55e0b7">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_CounselorEducation_SchoolCounselingandGuidanceServices.html\">Counselor Education/School Counseling and Guidance Services</a>","<a href=\"majors_Certificate_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Certificate_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Certificate_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Certificate_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Certificate_GeographicInformationScienceandCartography.html\">Geographic Information Science and Cartography</a>","<a href=\"majors_Certificate_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Certificate_Professional_Technical_Business_andScientificWriting.html\">Professional, Technical, Business, and Scientific Writing</a>","<a href=\"majors_Certificate_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Certificate_GeographicInformationScienceandCartography.html\">Geographic Information Science and Cartography</a>","<a href=\"majors_Certificate_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Certificate_RhetoricandComposition_WritingStudies_Other.html\">Rhetoric and Composition/Writing Studies, Other</a>"],[10,10,7,6,6,6,5,4,4,3,2,1],[15.625,15.625,10.938,9.375,9.375,9.375,7.812,6.25,6.25,4.688,3.125,1.562],[1.119,0.848,0.107,0.398,0.331,0.349,0.332,0.322,0.385,0.174,0.042,1.471],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-163953e7913682f7b3c6" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-163953e7913682f7b3c6">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_CounselorEducation_SchoolCounselingandGuidanceServices.html\">Counselor Education/School Counseling and Guidance Services</a>","<a href=\"majors_Certificate_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Certificate_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Certificate_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Certificate_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Certificate_GeographicInformationScienceandCartography.html\">Geographic Information Science and Cartography</a>","<a href=\"majors_Certificate_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Certificate_Professional_Technical_Business_andScientificWriting.html\">Professional, Technical, Business, and Scientific Writing</a>","<a href=\"majors_Certificate_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Certificate_GeographicInformationScienceandCartography.html\">Geographic Information Science and Cartography</a>","<a href=\"majors_Certificate_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Certificate_RhetoricandComposition_WritingStudies_Other.html\">Rhetoric and Composition/Writing Studies, Other</a>"],[10,10,7,6,6,6,5,4,4,3,2,1],[15.625,15.625,10.938,9.375,9.375,9.375,7.812,6.25,6.25,4.688,3.125,1.562],[1.119,0.848,0.107,0.398,0.331,0.349,0.332,0.322,0.385,0.174,0.042,1.471],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8b7b6232f7b7d3891d0d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-8b7b6232f7b7d3891d0d">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6732154f55c4102991fb" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6732154f55c4102991fb">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

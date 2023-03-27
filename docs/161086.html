@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -178,10 +178,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -194,6 +194,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -262,10 +264,20 @@ Undergraduate)</p></li>
 <li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
 four-year (see more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 17,912 (1.3 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $17,912 (1.1 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $2,361.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.colby.edu/admission/myintuition/'>here</a> to see
+what your family may be asked to pay. It can be MUCH lower than the
+average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, small, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 6.4% of first year students
+come from Maine</p></li>
+<li><p><strong>In US percentage</strong>: 90.5% of first year students
+come from the US (note that 0.0% have no residence reported)</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 86.6% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -304,9 +316,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Protective (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: F (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -319,17 +332,29 @@ marriage</strong>: 100% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Low risk (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Northeastern coastal
 forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/27269/Average-Weather-in-Waterville-Maine-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4e71e1fdd44c010cdef1" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-4e71e1fdd44c010cdef1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[44.564211,-69.66337,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[44.564211,-69.66337],16,[]],"limits":{"lat":[44.564211,44.564211],"lng":[-69.66337,-69.66337]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d26c28345adfd5c25257" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d26c28345adfd5c25257">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"161086.html\">Colby College</a>","<a href=\"164465.html\">Amherst College</a>","<a href=\"160977.html\">Bates College</a>","<a href=\"230959.html\">Middlebury College</a>","<a href=\"161004.html\">Bowdoin College</a>","<a href=\"191515.html\">Hamilton College</a>","<a href=\"168342.html\">Williams College</a>","<a href=\"130697.html\">Wesleyan University</a>","<a href=\"130590.html\">Trinity College</a>","<a href=\"168148.html\">Tufts University</a>","<a href=\"128902.html\">Connecticut College</a>","<a href=\"216287.html\">Swarthmore College</a>","<a href=\"168218.html\">Wellesley College</a>","<a href=\"126678.html\">Colorado College</a>","<a href=\"173258.html\">Carleton College</a>","<a href=\"198385.html\">Davidson College</a>","<a href=\"212911.html\">Haverford College</a>","<a href=\"121345.html\">Pomona College</a>","<a href=\"153384.html\">Grinnell College</a>","<a href=\"189097.html\">Barnard College</a>","<a href=\"197027.html\">United States Merchant Marine Academy</a>","<a href=\"197133.html\">Vassar College</a>","<a href=\"130624.html\">United States Coast Guard Academy</a>","<a href=\"121257.html\">Pitzer College</a>","<a href=\"112260.html\">Claremont McKenna College</a>","<a href=\"190099.html\">Colgate University</a>","<a href=\"115409.html\">Harvey Mudd College</a>","<a href=\"202523.html\">Denison University</a>","<a href=\"173902.html\">Macalester College</a>","<a href=\"234207.html\">Washington and Lee University</a>","<a href=\"195526.html\">Skidmore College</a>","<a href=\"128328.html\">United States Air Force Academy</a>","<a href=\"213385.html\">Lafayette College</a>","<a href=\"164580.html\">Babson College</a>","<a href=\"484844.html\">Minerva University</a>","<a href=\"212577.html\">Franklin and Marshall College</a>","<a href=\"203535.html\">Kenyon College</a>","<a href=\"110404.html\">California Institute of Technology</a>","<a href=\"197036.html\">United States Military Academy</a>","<a href=\"217493.html\">Rhode Island School of Design</a>","<a href=\"170286.html\">Hillsdale College</a>","<a href=\"167835.html\">Smith College</a>","<a href=\"166124.html\">College of the Holy Cross</a>","<a href=\"199847.html\">Wake Forest University</a>","<a href=\"164155.html\">United States Naval Academy</a>","<a href=\"211291.html\">Bucknell University</a>","<a href=\"204501.html\">Oberlin College</a>","<a href=\"166939.html\">Mount Holyoke College</a>","<a href=\"212009.html\">Dickinson College</a>","<a href=\"441982.html\">Franklin W Olin College of Engineering</a>","<a href=\"209922.html\">Reed College</a>","<a href=\"196866.html\">Union College</a>","<a href=\"216597.html\">Villanova University</a>","<a href=\"233374.html\">University of Richmond</a>","<a href=\"156295.html\">Berea College</a>","<a href=\"160755.html\">Tulane University of Louisiana</a>","<a href=\"212674.html\">Gettysburg College</a>","<a href=\"190372.html\">Cooper Union for the Advancement of Science and Art</a>","<a href=\"120254.html\">Occidental College</a>","<a href=\"164924.html\">Boston College</a>","<a href=\"211273.html\">Bryn Mawr College</a>","<a href=\"211440.html\">Carnegie Mellon University</a>","<a href=\"227757.html\">Rice University</a>","<a href=\"131496.html\">Georgetown University</a>","<a href=\"139658.html\">Emory University</a>","<a href=\"211893.html\">Curtis Institute of Music</a>","<a href=\"123165.html\">Scripps College</a>","<a href=\"174844.html\">St Olaf College</a>","<a href=\"192110.html\">The Juilliard School</a>","<a href=\"221999.html\">Vanderbilt University</a>","<a href=\"179867.html\">Washington University in St Louis</a>","<a href=\"197708.html\">Yeshiva University</a>","<a href=\"182670.html\">Dartmouth College</a>","<a href=\"221795.html\">Fountainhead College of Technology</a>","<a href=\"230597.html\">Snow College</a>","<a href=\"399911.html\">Soka University of America</a>","<a href=\"141060.html\">Spelman College</a>","<a href=\"116040.html\">LA College International</a>","<a href=\"164988.html\">Boston University</a>","<a href=\"221351.html\">Rhodes College</a>","<a href=\"437316.html\">Linfield University-School of Nursing</a>","<a href=\"217156.html\">Brown University</a>","<a href=\"480091.html\">Bryant &amp; Stratton College-Online</a>","<a href=\"197221.html\">Webb Institute</a>","<a href=\"152080.html\">University of Notre Dame</a>","<a href=\"195216.html\">St Lawrence University</a>","<a href=\"165015.html\">Brandeis University</a>","<a href=\"230977.html\">New England Culinary Institute</a>","<a href=\"177117.html\">Cottey College</a>","<a href=\"234085.html\">Virginia Military Institute</a>","<a href=\"491914.html\">Yeshiva Gedola Tiferes Yerachmiel</a>","<a href=\"237057.html\">Whitman College</a>","<a href=\"441609.html\">Yeshiva Shaarei Torah of Rockland</a>","<a href=\"231624.html\">William &amp; Mary</a>","<a href=\"238573.html\">Columbia College of Nursing</a>","<a href=\"223506.html\">Brazosport College</a>","<a href=\"162928.html\">Johns Hopkins University</a>","<a href=\"493716.html\">Yeshiva Gedola Tiferes Yaakov Yitzchok</a>","<a href=\"488819.html\">The Colburn Conservatory of Music</a>","<a href=\"192040.html\">Jewish Theological Seminary of America</a>"],[9,9,17,13,9,14,9,19,38,11,41,8,16,14,18,18,18,7,11,11,25,20,19,18,11,17,10,28,31,19,31,12,41,25,1,38,37,4,11,19,24,30,43,25,8,35,34,52,48,18,44,47,25,29,33,10,56,15,38,19,39,14,9,12,13,5,30,47,7,7,13,63,6,null,null,52,51,null,19,57,null,6,null,20,15,57,39,null,61,64,31,59,56,37,null,null,8,37,6,50],[47,42,44,42,63,40,52,36,25,50,16,45,49,40,40,48,43,58,43,65,53,31,69,53,57,29,48,24,21,39,21,75,23,36,73,18,18,53,81,56,56,37,29,37,86,26,24,29,22,56,16,16,29,22,59,46,18,53,22,33,32,43,44,48,34,91,38,25,63,48,45,56,70,null,null,49,14,null,28,20,null,66,null,72,58,20,25,null,39,47,100,16,60,26,null,null,48,93,100,75],[87,92,92,91,94,92,94,91,85,94,81,94,92,86,91,90,90,93,87,93,81,93,92,88,93,90,94,81,90,94,84,86,88,94,81,83,87,93,84,86,88,91,93,90,91,88,82,85,82,97,73,85,91,89,66,86,82,83,83,91,87,93,92,95,90,89,82,85,87,93,93,80,94,80,100,91,76,86,89,85,68,96,100,77,96,82,88,72,88,74,94,89,100,91,100,100,95,88,80,87],[13,3,39,22,5,13,4,13,20,28,21,4,5,23,13,9,20,3,3,38,0,19,0,43,9,25,18,13,18,10,27,0,22,30,42,31,20,1,0,39,3,7,22,14,0,28,13,13,19,4,16,27,41,9,0,27,30,7,22,25,9,21,8,31,4,2,16,18,5,7,4,34,6,100,15,1,14,100,37,20,null,10,87,0,4,24,27,92,4,20,46,10,40,37,91,13,7,36,null,3],[12,9,14,10,10,12,7,11,15,13,11,8,11,11,11,12,12,8,10,16,14,11,14,14,10,12,9,12,13,9,13,null,11,17,null,11,11,3,37,null,13,9,13,8,15,10,12,12,10,null,9,12,14,10,12,11,13,16,12,16,11,8,7,8,7,null,10,20,null,9,5,14,7,null,25,8,16,null,18,13,14,9,null,null,10,14,13,12,7,13,null,10,null,12,null,18,2,null,null,6],[2361,4459,4981,7221,7823,6827,5480,7475,8331,7987,13979,4012,8021,8602,13410,3004,9272,6239,13671,15090,5170,13193,null,17181,8693,7197,20829,14686,10543,850,15235,null,12400,20502,null,13110,18974,12190,null,33369,null,9672,17357,5612,null,28153,13745,13907,12027,859,14035,13769,26460,8606,5313,13380,13799,6146,13475,7075,9907,13608,1340,9871,8976,8402,7525,11138,23015,5731,2446,24273,8718,null,5234,10095,43094,null,11782,15566,null,2842,14186,5605,9136,15103,19186,null,18050,6552,7240,18380,null,5717,null,1668,4859,null,null,20408],[2262,1971,1821,2835,1948,2049,2135,3238,2118,6509,1811,1649,2381,2190,2032,1973,1419,1756,1718,2959,1006,2498,1049,1132,1411,3142,902,2307,2206,1853,2655,4181,2706,2551,604,2127,1868,987,4594,2044,1473,2554,3005,5391,4528,3715,2905,2200,2145,360,1515,2075,6812,3030,1432,8231,2399,873,1938,9749,1421,6743,4156,7213,7028,109,1090,2964,487,7042,7348,2536,4555,88,3520,435,2363,682,17460,1996,339,7082,5132,105,8956,2222,3568,54,302,1652,167,1524,102,6465,119,634,5727,68,57,144],[null,null,null,0,null,null,50,132,7,5492,1,null,null,10,null,null,null,null,null,null,0,null,null,null,5,8,null,null,null,379,0,null,null,561,0,null,null,1410,null,532,35,341,null,2685,null,16,11,15,6,null,0,null,1380,480,null,4111,null,29,1,3912,308,7326,3692,8169,6356,42,20,null,354,5558,7477,2253,2172,null,null,10,null,null,11587,7,0,3174,null,null,3894,18,1552,null,null,null,null,null,null,1741,0,null,11528,null,59,98],["Maine","Massachusetts","Maine","Vermont","Maine","New York","Massachusetts","Connecticut","Connecticut","Massachusetts","Connecticut","Pennsylvania","Massachusetts","Colorado","Minnesota","North Carolina","Pennsylvania","California","Iowa","New York","New York","New York","Connecticut","California","California","New York","California","Ohio","Minnesota","Virginia","New York","Colorado","Pennsylvania","Massachusetts","California","Pennsylvania","Ohio","California","New York","Rhode Island","Michigan","Massachusetts","Massachusetts","North Carolina","Maryland","Pennsylvania","Ohio","Massachusetts","Pennsylvania","Massachusetts","Oregon","New York","Pennsylvania","Virginia","Kentucky","Louisiana","Pennsylvania","New York","California","Massachusetts","Pennsylvania","Pennsylvania","Texas","District of Columbia","Georgia","Pennsylvania","California","Minnesota","New York","Tennessee","Missouri","New York","New Hampshire","Tennessee","Utah","California","Georgia","California","Massachusetts","Tennessee","Oregon","Rhode Island","New York","New York","Indiana","New York","Massachusetts","Vermont","Missouri","Virginia","New Jersey","Washington","New York","Virginia","Wisconsin","Texas","Maryland","New Jersey","California","New York"],["Increasing","Approximately stable","Increasing","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Approximately stable","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Increasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Decreasing","Increasing","Increasing","Increasing","Increasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Increasing","Increasing","Decreasing","Increasing","Decreasing","Increasing","Approximately stable","Approximately stable","Unknown or not applicable","Approximately stable","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Unknown or not applicable","Approximately stable","Approximately stable","Increasing","Decreasing","Decreasing","Approximately stable","Unknown or not applicable","Unknown or not applicable","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4f9690f7a0e48472991c" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-4f9690f7a0e48472991c">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[44.564211,-69.66337,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[44.564211,-69.66337],16,[]],"limits":{"lat":[44.564211,44.564211],"lng":[-69.66337,-69.66337]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -380,11 +405,11 @@ from 2011 to 2021’ >
 Undergrads (part time)
 </td>
 <td style="text-align:center;">
-0.0 (2021)
+0 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_2.png alt=‘Line plot from 0.0 to 0.0
-from 2011 to 2021’ >
+<img src=images/ColbyCollege_2.png alt=‘Line plot from 0 to 0 from
+2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -605,13 +630,33 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
+Undergrads per tenure track instructor
+</td>
+<td style="text-align:center;">
+12 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/ColbyCollege_14.png alt=‘Line plot from 12 to 12 from
+2012 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪<br />Better (lower) than 33%
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 65%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Undergrads per instructor
 </td>
 <td style="text-align:center;">
 9.3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_14.png alt=‘Line plot from 11 to 9.3
+<img src=images/ColbyCollege_15.png alt=‘Line plot from 11 to 9.3
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -622,26 +667,6 @@ from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪<br />Better (lower) than 70%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Undergrads per tenure track instructor
-</td>
-<td style="text-align:center;">
-12 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/ColbyCollege_15.png alt=‘Line plot from 12 to 12 from
-2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 33%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 65%
 </td>
 </tr>
 <tr>
@@ -665,17 +690,17 @@ from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-53 (2020)
+179 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_17.png alt=‘Line plot from 22 to 53 from
-2012 to 2020’ >
+<img src=images/ColbyCollege_17.png alt=‘Line plot from 151 to 179
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />5.3 per year
+↑<br />2.3 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -684,17 +709,17 @@ Non-tenure track instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-179 (2020)
+53 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_18.png alt=‘Line plot from 151 to 179
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_18.png alt=‘Line plot from 22 to 53 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />2.3 per year
+↑<br />5.3 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -747,8 +772,8 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 18% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_103.png alt=‘Line plot from 6.0 to 18
-from 2010 to 2021’ >
+<img src=images/ColbyCollege_100.png alt=‘Line plot from 6 to 18 from
+2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -783,13 +808,33 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+13% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/ColbyCollege_19.png alt=‘Line plot from 24 to 13 from
+2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 70%
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 77%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $390 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_19.png alt=‘Line plot from 123 M to 390
+<img src=images/ColbyCollege_20.png alt=‘Line plot from 123 M to 390
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -809,7 +854,7 @@ Revenue
 $560 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_20.png alt=‘Line plot from 229 M to 560
+<img src=images/ColbyCollege_21.png alt=‘Line plot from 229 M to 560
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -828,7 +873,7 @@ Expenses
 $170 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_21.png alt=‘Line plot from 106 M to 170
+<img src=images/ColbyCollege_22.png alt=‘Line plot from 106 M to 170
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -847,7 +892,7 @@ Assets
 $2.2 B (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_22.png alt=‘Line plot from 1.1 B to 2.2
+<img src=images/ColbyCollege_23.png alt=‘Line plot from 1.1 B to 2.2
 B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -858,80 +903,6 @@ B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 94%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-13% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/ColbyCollege_23.png alt=‘Line plot from 24 to 13 from
-2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 70%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 77%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/ColbyCollege_24.png alt=‘Line plot from 0.0 to 0.0
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-1.3% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/ColbyCollege_25.png alt=‘Line plot from 0.8 to 1.3
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-6.2% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/ColbyCollege_26.png alt=‘Line plot from 49 to 6.2
-from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -973,7 +944,7 @@ Total
 87% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_42.png alt=‘Line plot from 90 to 87 from
+<img src=images/ColbyCollege_39.png alt=‘Line plot from 90 to 87 from
 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -991,7 +962,7 @@ Men
 86% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_43.png alt=‘Line plot from 91 to 86 from
+<img src=images/ColbyCollege_40.png alt=‘Line plot from 91 to 86 from
 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1009,7 +980,7 @@ Women
 88% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_44.png alt=‘Line plot from 88 to 88 from
+<img src=images/ColbyCollege_41.png alt=‘Line plot from 88 to 88 from
 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1027,7 +998,7 @@ American Indian or Alaska Native men
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_45.png alt=‘Line plot from 100 to 100
+<img src=images/ColbyCollege_42.png alt=‘Line plot from 100 to 100
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1045,7 +1016,7 @@ American Indian or Alaska Native women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_46.png alt=‘Line plot from 100 to 100
+<img src=images/ColbyCollege_43.png alt=‘Line plot from 100 to 100
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1063,7 +1034,7 @@ Asian men
 80% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_47.png alt=‘Line plot from 93 to 80 from
+<img src=images/ColbyCollege_44.png alt=‘Line plot from 93 to 80 from
 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1081,7 +1052,7 @@ Asian women
 74% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_48.png alt=‘Line plot from 94 to 74 from
+<img src=images/ColbyCollege_45.png alt=‘Line plot from 94 to 74 from
 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1099,7 +1070,7 @@ Black or African American men
 86% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_49.png alt=‘Line plot from 100 to 86
+<img src=images/ColbyCollege_46.png alt=‘Line plot from 100 to 86
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1117,7 +1088,7 @@ Black or African American women
 80% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_50.png alt=‘Line plot from 100 to 80
+<img src=images/ColbyCollege_47.png alt=‘Line plot from 100 to 80
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1135,7 +1106,7 @@ Hispanic men
 67% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_51.png alt=‘Line plot from 100 to 67
+<img src=images/ColbyCollege_48.png alt=‘Line plot from 100 to 67
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1153,7 +1124,7 @@ Hispanic women
 83% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_52.png alt=‘Line plot from 56 to 83 from
+<img src=images/ColbyCollege_49.png alt=‘Line plot from 56 to 83 from
 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1168,11 +1139,11 @@ Hispanic women
 Native Hawaiian or other Pacific Islander men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_53.png alt=‘Line plot from 0.0 to 0.0
-from 2021 to 2021’ >
+<img src=images/ColbyCollege_50.png alt=‘Line plot from 0 to 0 from
+2021 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1187,7 +1158,7 @@ Native Hawaiian or other Pacific Islander women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_54.png alt=‘Line plot from 100 to 100
+<img src=images/ColbyCollege_51.png alt=‘Line plot from 100 to 100
 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1205,7 +1176,7 @@ White men
 90% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_55.png alt=‘Line plot from 90 to 90 from
+<img src=images/ColbyCollege_52.png alt=‘Line plot from 90 to 90 from
 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1223,7 +1194,7 @@ White women
 90% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_56.png alt=‘Line plot from 92 to 90 from
+<img src=images/ColbyCollege_53.png alt=‘Line plot from 92 to 90 from
 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1241,7 +1212,7 @@ Two or more races men
 80% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_57.png alt=‘Line plot from 100 to 80
+<img src=images/ColbyCollege_54.png alt=‘Line plot from 100 to 80
 from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1259,7 +1230,7 @@ Two or more races women
 56% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_58.png alt=‘Line plot from 100 to 56
+<img src=images/ColbyCollege_55.png alt=‘Line plot from 100 to 56
 from 2013 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1277,7 +1248,7 @@ Nonresident alien men
 90% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_59.png alt=‘Line plot from 89 to 90 from
+<img src=images/ColbyCollege_56.png alt=‘Line plot from 89 to 90 from
 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1295,7 +1266,7 @@ Nonresident alien women
 94% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_60.png alt=‘Line plot from 100 to 94
+<img src=images/ColbyCollege_57.png alt=‘Line plot from 100 to 94
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1335,7 +1306,7 @@ Men (percent freshmen)
 46% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_83.png alt=‘Line plot from 48 to 46 from
+<img src=images/ColbyCollege_80.png alt=‘Line plot from 48 to 46 from
 2010 to 2021’ >
 </td>
 </tr>
@@ -1347,7 +1318,7 @@ Women (percent freshmen)
 54% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_84.png alt=‘Line plot from 52 to 54 from
+<img src=images/ColbyCollege_81.png alt=‘Line plot from 52 to 54 from
 2010 to 2021’ >
 </td>
 </tr>
@@ -1356,11 +1327,11 @@ Women (percent freshmen)
 American Indian or Alaska Native men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_85.png alt=‘Line plot from 0.0 to 0.0
-from 2010 to 2021’ >
+<img src=images/ColbyCollege_82.png alt=‘Line plot from 0 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1371,8 +1342,8 @@ American Indian or Alaska Native women (percent freshmen)
 0.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_86.png alt=‘Line plot from 0.0 to 0.1
-from 2010 to 2021’ >
+<img src=images/ColbyCollege_83.png alt=‘Line plot from 0 to 0.1 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1383,7 +1354,7 @@ Asian men (percent freshmen)
 3.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_87.png alt=‘Line plot from 2.3 to 3.7
+<img src=images/ColbyCollege_84.png alt=‘Line plot from 2.3 to 3.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1395,7 +1366,7 @@ Asian women (percent freshmen)
 9.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_88.png alt=‘Line plot from 3.3 to 9.1
+<img src=images/ColbyCollege_85.png alt=‘Line plot from 3.3 to 9.1
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1407,7 +1378,7 @@ Black or African American men (percent freshmen)
 3.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_89.png alt=‘Line plot from 3.7 to 3.0
+<img src=images/ColbyCollege_86.png alt=‘Line plot from 3.7 to 3.0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1419,7 +1390,7 @@ Black or African American women (percent freshmen)
 1.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_90.png alt=‘Line plot from 2.3 to 1.9
+<img src=images/ColbyCollege_87.png alt=‘Line plot from 2.3 to 1.9
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1431,7 +1402,7 @@ Hispanic men (percent freshmen)
 3.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_91.png alt=‘Line plot from 2.3 to 3.1
+<img src=images/ColbyCollege_88.png alt=‘Line plot from 2.3 to 3.1
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1443,7 +1414,7 @@ Hispanic women (percent freshmen)
 5.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_92.png alt=‘Line plot from 3.1 to 5.8
+<img src=images/ColbyCollege_89.png alt=‘Line plot from 3.1 to 5.8
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1452,11 +1423,11 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_93.png alt=‘Line plot from 0.0 to 0.0
-from 2010 to 2021’ >
+<img src=images/ColbyCollege_90.png alt=‘Line plot from 0 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1464,11 +1435,11 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_94.png alt=‘Line plot from 0.2 to 0.0
-from 2010 to 2021’ >
+<img src=images/ColbyCollege_91.png alt=‘Line plot from 0.2 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1479,7 +1450,7 @@ White men (percent freshmen)
 26% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_95.png alt=‘Line plot from 29 to 26 from
+<img src=images/ColbyCollege_92.png alt=‘Line plot from 29 to 26 from
 2010 to 2021’ >
 </td>
 </tr>
@@ -1491,7 +1462,7 @@ White women (percent freshmen)
 28% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_96.png alt=‘Line plot from 30 to 28 from
+<img src=images/ColbyCollege_93.png alt=‘Line plot from 30 to 28 from
 2010 to 2021’ >
 </td>
 </tr>
@@ -1503,7 +1474,7 @@ Two or more races men (percent freshmen)
 2.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_97.png alt=‘Line plot from 2.1 to 2.8
+<img src=images/ColbyCollege_94.png alt=‘Line plot from 2.1 to 2.8
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1515,7 +1486,7 @@ Two or more races women (percent freshmen)
 3.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_98.png alt=‘Line plot from 2.5 to 3.9
+<img src=images/ColbyCollege_95.png alt=‘Line plot from 2.5 to 3.9
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1527,7 +1498,7 @@ Race ethnicity unknown men (percent freshmen)
 1.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_99.png alt=‘Line plot from 5.8 to 1.8
+<img src=images/ColbyCollege_96.png alt=‘Line plot from 5.8 to 1.8
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1539,7 +1510,7 @@ Race ethnicity unknown women (percent freshmen)
 2.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_100.png alt=‘Line plot from 7.2 to 2.1
+<img src=images/ColbyCollege_97.png alt=‘Line plot from 7.2 to 2.1
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1551,7 +1522,7 @@ Nonresident alien men (percent freshmen)
 5.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_101.png alt=‘Line plot from 3.1 to 5.2
+<img src=images/ColbyCollege_98.png alt=‘Line plot from 3.1 to 5.2
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1563,8 +1534,63 @@ Nonresident alien women (percent freshmen)
 3.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_102.png alt=‘Line plot from 2.7 to 3.6
+<img src=images/ColbyCollege_99.png alt=‘Line plot from 2.7 to 3.6
 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Colby College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+6.4% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/ColbyCollege_101.png alt=‘Line plot from 10 to 6.4
+from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+90% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/ColbyCollege_102.png alt=‘Line plot from 92 to 90
+from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/ColbyCollege_103.png alt=‘Line plot from 0 to 0 from
+2010 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1605,7 +1631,7 @@ Total (tenure-track count)
 179 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_61.png alt=‘Line plot from 151 to 179
+<img src=images/ColbyCollege_58.png alt=‘Line plot from 151 to 179
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1620,7 +1646,7 @@ Women (tenure-track count)
 90 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_62.png alt=‘Line plot from 65 to 90 from
+<img src=images/ColbyCollege_59.png alt=‘Line plot from 65 to 90 from
 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1635,7 +1661,7 @@ Men (tenure-track count)
 89 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_63.png alt=‘Line plot from 86 to 89 from
+<img src=images/ColbyCollege_60.png alt=‘Line plot from 86 to 89 from
 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1646,11 +1672,11 @@ Men (tenure-track count)
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_64.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_61.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1663,8 +1689,8 @@ Asian (tenure-track count)
 15 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_65.png alt=‘Line plot from 9.0 to 15
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_62.png alt=‘Line plot from 9 to 15 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.8 per year
@@ -1675,11 +1701,11 @@ from 2012 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-7.0 (2020)
+7 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_66.png alt=‘Line plot from 4.0 to 7.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_63.png alt=‘Line plot from 4 to 7 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.4 per year
@@ -1690,11 +1716,11 @@ from 2012 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-8.0 (2020)
+8 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_67.png alt=‘Line plot from 7.0 to 8.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_64.png alt=‘Line plot from 7 to 8 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1704,11 +1730,11 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_68.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_65.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1721,7 +1747,7 @@ White (tenure-track count)
 138 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_69.png alt=‘Line plot from 114 to 138
+<img src=images/ColbyCollege_66.png alt=‘Line plot from 114 to 138
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1732,11 +1758,11 @@ from 2012 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_70.png alt=‘Line plot from 2.0 to 1.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_67.png alt=‘Line plot from 2 to 1 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1746,11 +1772,11 @@ from 2012 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-9.0 (2020)
+9 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_71.png alt=‘Line plot from 3.0 to 9.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_68.png alt=‘Line plot from 3 to 9 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.6 per year
@@ -1795,7 +1821,7 @@ Total (non-tenure-track count)
 53 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_72.png alt=‘Line plot from 22 to 53 from
+<img src=images/ColbyCollege_69.png alt=‘Line plot from 22 to 53 from
 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1810,8 +1836,8 @@ Women (non-tenure-track count)
 31 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_73.png alt=‘Line plot from 7.0 to 31
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_70.png alt=‘Line plot from 7 to 31 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />3.5 per year
@@ -1825,7 +1851,7 @@ Men (non-tenure-track count)
 22 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_74.png alt=‘Line plot from 15 to 22 from
+<img src=images/ColbyCollege_71.png alt=‘Line plot from 15 to 22 from
 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1837,11 +1863,11 @@ Men (non-tenure-track count)
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_75.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_72.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1851,11 +1877,11 @@ from 2012 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_76.png alt=‘Line plot from 1.0 to 2.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_73.png alt=‘Line plot from 1 to 2 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1865,11 +1891,11 @@ from 2012 to 2020’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_77.png alt=‘Line plot from 0.0 to 1.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_74.png alt=‘Line plot from 0 to 1 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1879,11 +1905,11 @@ from 2012 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_78.png alt=‘Line plot from 1.0 to 2.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_75.png alt=‘Line plot from 1 to 2 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1893,11 +1919,11 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_79.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_76.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1910,7 +1936,7 @@ White (non-tenure-track count)
 39 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_80.png alt=‘Line plot from 14 to 39 from
+<img src=images/ColbyCollege_77.png alt=‘Line plot from 14 to 39 from
 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1922,11 +1948,11 @@ White (non-tenure-track count)
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_81.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_78.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1936,11 +1962,11 @@ from 2012 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-6.0 (2020)
+6 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_82.png alt=‘Line plot from 3.0 to 6.0
-from 2012 to 2020’ >
+<img src=images/ColbyCollege_79.png alt=‘Line plot from 3 to 6 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1978,7 +2004,7 @@ Applicants submitting SAT
 40% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_30.png alt=‘Line plot from 74 to 40 from
+<img src=images/ColbyCollege_27.png alt=‘Line plot from 74 to 40 from
 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1992,7 +2018,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 690 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_31.png alt=‘Line plot from 670 to 690
+<img src=images/ColbyCollege_28.png alt=‘Line plot from 670 to 690
 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2007,7 +2033,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 750 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_32.png alt=‘Line plot from 740 to 750
+<img src=images/ColbyCollege_29.png alt=‘Line plot from 740 to 750
 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2021,7 +2047,7 @@ SAT Math 25th percentile score
 710 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_33.png alt=‘Line plot from 620 to 710
+<img src=images/ColbyCollege_30.png alt=‘Line plot from 620 to 710
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2036,7 +2062,7 @@ SAT Math 75th percentile score
 780 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_34.png alt=‘Line plot from 720 to 780
+<img src=images/ColbyCollege_31.png alt=‘Line plot from 720 to 780
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2073,7 +2099,7 @@ Applicants submitting ACT
 28% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_35.png alt=‘Line plot from 35 to 28 from
+<img src=images/ColbyCollege_32.png alt=‘Line plot from 35 to 28 from
 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2087,7 +2113,7 @@ ACT Composite 25th percentile score
 32 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_36.png alt=‘Line plot from 28 to 32 from
+<img src=images/ColbyCollege_33.png alt=‘Line plot from 28 to 32 from
 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2102,7 +2128,7 @@ ACT Composite 75th percentile score
 34 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_37.png alt=‘Line plot from 32 to 34 from
+<img src=images/ColbyCollege_34.png alt=‘Line plot from 32 to 34 from
 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2117,7 +2143,7 @@ ACT English 25th percentile score
 33 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_38.png alt=‘Line plot from 28 to 33 from
+<img src=images/ColbyCollege_35.png alt=‘Line plot from 28 to 33 from
 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2132,7 +2158,7 @@ ACT English 75th percentile score
 35 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_39.png alt=‘Line plot from 33 to 35 from
+<img src=images/ColbyCollege_36.png alt=‘Line plot from 33 to 35 from
 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2147,7 +2173,7 @@ ACT Math 25th percentile score
 29 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_40.png alt=‘Line plot from 27 to 29 from
+<img src=images/ColbyCollege_37.png alt=‘Line plot from 27 to 29 from
 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2161,7 +2187,7 @@ ACT Math 75th percentile score
 34 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/ColbyCollege_41.png alt=‘Line plot from 32 to 34 from
+<img src=images/ColbyCollege_38.png alt=‘Line plot from 32 to 34 from
 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2174,28 +2200,28 @@ ACT Math 75th percentile score
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a7a475f978488865aca1" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a7a475f978488865aca1">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_International_GlobalizationStudies.html\">International/Globalization Studies</a>","<a href=\"majors_Bachelors_BehavioralNeuroscience.html\">Behavioral Neuroscience</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Education_General.html\">Education, General</a>","<a href=\"majors_Bachelors_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_MathematicsandStatistics.html\">Mathematics and Statistics</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Science_TechnologyandSociety.html\">Science, Technology and Society</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_American_UnitedStatesStudies_Civilization.html\">American/United States Studies/Civilization</a>","<a href=\"majors_Bachelors_GermanLanguageandLiterature.html\">German Language and Literature</a>","<a href=\"majors_Bachelors_FrenchLanguageandLiterature.html\">French Language and Literature</a>","<a href=\"majors_Bachelors_ComputationalBiology.html\">Computational Biology</a>","<a href=\"majors_Bachelors_EcologyandEvolutionaryBiology.html\">Ecology and Evolutionary Biology</a>","<a href=\"majors_Bachelors_EastAsianStudies.html\">East Asian Studies</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Bachelors_ClassicsandClassicalLanguages_Literatures_andLinguistics_General.html\">Classics and Classical Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_General.html\">Multi-/Interdisciplinary Studies, General</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_Music_Other.html\">Music, Other</a>","<a href=\"majors_Bachelors_WomensStudies.html\">Women's Studies</a>","<a href=\"majors_Bachelors_HumanComputerInteraction.html\">Human Computer Interaction</a>","<a href=\"majors_Bachelors_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>"],[62,62,34,32,30,29,29,22,20,19,16,16,13,12,12,11,11,10,9,8,8,8,6,6,4,4,4,4,4,3,3,2,2,2,2,1,1,1,1],[11.855,11.855,6.501,6.119,5.736,5.545,5.545,4.207,3.824,3.633,3.059,3.059,2.486,2.294,2.294,2.103,2.103,1.912,1.721,1.53,1.53,1.53,1.147,1.147,0.765,0.765,0.765,0.765,0.765,0.574,0.574,0.382,0.382,0.382,0.382,0.191,0.191,0.191,0.191],[0.504,0.164,0.09,0.029,0.405,0.036,0.34,0.405,1.556,0.106,0.223,0.071,0.097,0.236,0.403,0.158,5.978,0.035,0.097,0.145,0.996,0.03,0.098,0.077,0.473,0.69,0.324,4.494,0.783,1.115,0.147,0.264,0.027,0.049,0.266,0.077,0.164,0.045,0.012],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5105fb76ded3911d48c8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5105fb76ded3911d48c8">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_International_GlobalizationStudies.html\">International/Globalization Studies</a>","<a href=\"majors_Bachelors_BehavioralNeuroscience.html\">Behavioral Neuroscience</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Education_General.html\">Education, General</a>","<a href=\"majors_Bachelors_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_MathematicsandStatistics.html\">Mathematics and Statistics</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Science_TechnologyandSociety.html\">Science, Technology and Society</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_American_UnitedStatesStudies_Civilization.html\">American/United States Studies/Civilization</a>","<a href=\"majors_Bachelors_GermanLanguageandLiterature.html\">German Language and Literature</a>","<a href=\"majors_Bachelors_FrenchLanguageandLiterature.html\">French Language and Literature</a>","<a href=\"majors_Bachelors_ComputationalBiology.html\">Computational Biology</a>","<a href=\"majors_Bachelors_EcologyandEvolutionaryBiology.html\">Ecology and Evolutionary Biology</a>","<a href=\"majors_Bachelors_EastAsianStudies.html\">East Asian Studies</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Bachelors_ClassicsandClassicalLanguages_Literatures_andLinguistics_General.html\">Classics and Classical Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_General.html\">Multi-/Interdisciplinary Studies, General</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_Music_Other.html\">Music, Other</a>","<a href=\"majors_Bachelors_WomensStudies.html\">Women's Studies</a>","<a href=\"majors_Bachelors_HumanComputerInteraction.html\">Human Computer Interaction</a>","<a href=\"majors_Bachelors_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>"],[62,62,34,32,30,29,29,22,20,19,16,16,13,12,12,11,11,10,9,8,8,8,6,6,4,4,4,4,4,3,3,2,2,2,2,1,1,1,1],[11.855,11.855,6.501,6.119,5.736,5.545,5.545,4.207,3.824,3.633,3.059,3.059,2.486,2.294,2.294,2.103,2.103,1.912,1.721,1.53,1.53,1.53,1.147,1.147,0.765,0.765,0.765,0.765,0.765,0.574,0.574,0.382,0.382,0.382,0.382,0.191,0.191,0.191,0.191],[0.504,0.164,0.09,0.029,0.405,0.036,0.34,0.405,1.556,0.106,0.223,0.071,0.097,0.236,0.403,0.158,5.978,0.035,0.097,0.145,0.996,0.03,0.098,0.077,0.473,0.69,0.324,4.494,0.783,1.115,0.147,0.264,0.027,0.049,0.266,0.077,0.164,0.045,0.012],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ebf75be081193c0e85e9" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-ebf75be081193c0e85e9">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bfc1d7f6447b50ced251" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bfc1d7f6447b50ced251">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d7be071de77cb7144a4d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-d7be071de77cb7144a4d">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6f330ff780a8c6829981" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6f330ff780a8c6829981">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1735b97084bd0c0077c3" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-1735b97084bd0c0077c3">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1a4c5ba76939fb16757f" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1a4c5ba76939fb16757f">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6bbab279ba3be0dad00f" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6bbab279ba3be0dad00f">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-66024ec516fea08e9896" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-66024ec516fea08e9896">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

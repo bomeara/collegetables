@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -178,10 +178,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -194,6 +194,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -254,10 +256,20 @@ Undergraduate)</p></li>
 <li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
 four-year (see more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 18,914 (1.4 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $18,914 (1.2 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $12,647.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.ic.edu/npc'>here</a> to see what your family may be
+asked to pay. It can be MUCH lower than the average price but also
+higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, small, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 73.4% of first year
+students come from Illinois</p></li>
+<li><p><strong>In US percentage</strong>: 91.9% of first year students
+come from the US</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 64% (this is what is usually reported as “graduation
 rate”)</p></li>
@@ -295,9 +307,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Protective (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: A- (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -310,6 +323,9 @@ marriage</strong>: 83.3% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Safest (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Central forest-grasslands
 transition</li>
 <li><strong>Biome</strong>: Temperate Grasslands, Savannas &amp;
@@ -317,11 +333,20 @@ Shrublands</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/12114/Average-Weather-in-Jacksonville-Illinois-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e3247084aaa40b768fc8" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-e3247084aaa40b768fc8">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[39.7313,-90.246171,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[39.7313,-90.246171],16,[]],"limits":{"lat":[39.7313,39.7313],"lng":[-90.246171,-90.246171]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-874eb6df20e7099dcd97" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-874eb6df20e7099dcd97">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"145691.html\">Illinois College</a>","<a href=\"239628.html\">Ripon College</a>","<a href=\"147341.html\">Monmouth College</a>","<a href=\"153162.html\">Cornell College</a>","<a href=\"146427.html\">Knox College</a>","<a href=\"238333.html\">Beloit College</a>","<a href=\"146481.html\">Lake Forest College</a>","<a href=\"239017.html\">Lawrence University</a>","<a href=\"198613.html\">Guilford College</a>","<a href=\"153108.html\">Central College</a>","<a href=\"213668.html\">Lycoming College</a>","<a href=\"216807.html\">Westminster College</a>","<a href=\"154350.html\">Simpson College</a>","<a href=\"174251.html\">University of Minnesota-Morris</a>","<a href=\"220710.html\">Maryville College</a>","<a href=\"190761.html\">Dominican College of Blauvelt</a>","<a href=\"150145.html\">Bethel University</a>","<a href=\"154527.html\">Wartburg College</a>","<a href=\"216667.html\">Washington &amp; Jefferson College</a>","<a href=\"150066.html\">Anderson University</a>","<a href=\"158802.html\">Dillard University</a>","<a href=\"157818.html\">Transylvania University</a>","<a href=\"156745.html\">Georgetown College</a>","<a href=\"168546.html\">Albion College</a>","<a href=\"216694.html\">Waynesburg University</a>","<a href=\"140696.html\">Oglethorpe University</a>","<a href=\"215266.html\">University of Pittsburgh-Bradford</a>","<a href=\"154013.html\">Mount Mercy University</a>","<a href=\"152363.html\">Saint Josephs College</a>","<a href=\"170639.html\">Lake Superior State University</a>","<a href=\"153144.html\">Coe College</a>","<a href=\"233897.html\">University of Virginia's College at Wise</a>","<a href=\"168786.html\">Aquinas College</a>","<a href=\"204200.html\">Mount Saint Joseph University</a>","<a href=\"204909.html\">Ohio Wesleyan University</a>","<a href=\"111188.html\">California State University Maritime Academy</a>","<a href=\"191533.html\">Hartwick College</a>","<a href=\"237385.html\">Glenville State University</a>","<a href=\"142294.html\">The College of Idaho</a>","<a href=\"143288.html\">Blackburn College</a>","<a href=\"211352.html\">Cabrini University</a>","<a href=\"154004.html\">Morningside University</a>","<a href=\"191676.html\">Houghton College</a>","<a href=\"146825.html\">MacMurray College</a>","<a href=\"170532.html\">Kalamazoo College</a>","<a href=\"181127.html\">Hastings College</a>","<a href=\"180106.html\">Carroll College</a>","<a href=\"170037.html\">Cornerstone University</a>","<a href=\"206525.html\">Wittenberg University</a>","<a href=\"158477.html\">Centenary College of Louisiana</a>","<a href=\"120865.html\">Pacific Union College</a>","<a href=\"239080.html\">Marian University</a>","<a href=\"125763.html\">Whittier College</a>","<a href=\"197230.html\">Wells College</a>","<a href=\"150756.html\">Hanover College</a>","<a href=\"233295.html\">Randolph-Macon College</a>","<a href=\"203775.html\">Malone University</a>","<a href=\"157076.html\">Kentucky Wesleyan College</a>","<a href=\"213783.html\">Mansfield University of Pennsylvania</a>","<a href=\"231581.html\">Bridgewater College</a>","<a href=\"206507.html\">Wilmington College</a>","<a href=\"141361.html\">Young Harris College</a>","<a href=\"195243.html\">St. Thomas Aquinas College</a>","<a href=\"232308.html\">Hollins University</a>","<a href=\"101435.html\">Huntingdon College</a>","<a href=\"220312.html\">Hiwassee College</a>","<a href=\"153001.html\">Buena Vista University</a>","<a href=\"226587.html\">McMurry University</a>","<a href=\"101693.html\">University of Mobile</a>","<a href=\"168591.html\">Alma College</a>","<a href=\"102234.html\">Spring Hill College</a>","<a href=\"183071.html\">University of New Hampshire at Manchester</a>","<a href=\"162760.html\">Hood College</a>","<a href=\"176947.html\">Central Methodist University-College of Liberal Arts and Sciences</a>","<a href=\"203845.html\">Marietta College</a>","<a href=\"192864.html\">Marymount Manhattan College</a>","<a href=\"212656.html\">Geneva College</a>","<a href=\"232089.html\">Ferrum College</a>","<a href=\"167394.html\">College of Our Lady of the Elms</a>","<a href=\"216524.html\">Ursinus College</a>","<a href=\"165671.html\">Emmanuel College</a>","<a href=\"190983.html\">Elmira College</a>","<a href=\"183822.html\">Bloomfield College</a>","<a href=\"107558.html\">University of the Ozarks</a>","<a href=\"211468.html\">Cedar Crest College</a>","<a href=\"100937.html\">Birmingham-Southern College</a>","<a href=\"228468.html\">Southwestern Adventist University</a>","<a href=\"234173.html\">Virginia Wesleyan University</a>","<a href=\"184773.html\">Georgian Court University</a>","<a href=\"203085.html\">Heidelberg University</a>","<a href=\"154688.html\">Baker University</a>","<a href=\"218414.html\">Newberry College</a>","<a href=\"164216.html\">Washington College</a>","<a href=\"237969.html\">West Virginia Wesleyan College</a>","<a href=\"198756.html\">Johnson C Smith University</a>","<a href=\"203128.html\">Hiram College</a>","<a href=\"171599.html\">Olivet College</a>","<a href=\"181020.html\">Doane University</a>","<a href=\"189848.html\">Cazenovia College</a>","<a href=\"151777.html\">Manchester University</a>"],[75,80,66,81,70,67,64,75,82,75,75,82,91,76,68,76,98,83,84,62,55,92,75,69,75,81,73,81,77,73,73,83,89,63,74,82,96,69,56,66,80,74,79,62,80,71,84,91,92,63,58,76,82,68,73,84,78,67,94,75,87,75,89,75,69,67,66,78,64,69,72,83,77,99,83,77,79,76,68,83,74,94,84,55,69,66,58,86,80,86,99,57,70,84,45,93,88,77,68,76],[9,12,11,16,13,13,15,18,10,21,15,15,24,15,20,15,23,12,12,12,10,19,23,10,19,22,34,21,20,21,8,39,17,19,14,24,11,43,15,26,12,15,26,21,14,19,22,21,12,24,19,27,12,9,15,18,18,22,20,16,17,22,18,10,15,29,21,28,22,16,14,26,13,26,18,9,20,17,17,14,10,12,12,19,20,15,21,19,17,17,35,26,13,20,21,14,21,17,14,13],[64,62,55,64,75,73,73,80,55,66,67,73,69,58,56,44,64,70,76,63,52,73,56,64,67,58,39,60,50,54,64,39,60,53,64,68,57,46,56,46,52,54,65,47,76,49,67,60,64,57,44,56,64,55,63,72,60,46,56,62,53,40,56,59,44,64,63,31,51,63,56,67,66,47,51,59,71,34,68,72,70,65,38,49,64,70,45,47,58,57,62,54,75,54,39,53,44,59,56,55],[22,21,18,25,21,28,32,13,24,21,11,20,28,12,23,74,46,33,27,39,16,19,25,17,35,43,null,44,58,22,31,9,38,49,12,10,36,19,17,33,47,37,25,51,19,22,31,48,35,12,29,47,36,16,23,25,46,47,16,21,22,16,43,9,32,49,30,32,42,25,30,72,30,39,23,47,39,30,59,31,36,39,48,17,43,28,34,17,57,25,46,42,39,25,26,29,39,34,36,40],[21,14,13,14,12,14,18,10,17,13,14,17,16,14,16,22,20,21,14,14,32,13,14,14,21,30,35,21,22,18,15,14,15,19,12,18,14,21,19,15,23,20,19,23,15,19,15,16,16,11,18,26,16,13,14,16,20,28,18,17,28,16,23,13,21,27,27,18,17,19,17,19,12,25,15,18,23,24,21,15,29,13,24,21,22,14,14,14,16,27,19,20,12,17,22,16,24,17,13,12],[12647,17767,14440,17628,11933,16197,16238,19037,20202,18512,12949,15852,15511,3397,15426,19052,14454,17063,22695,17325,18658,19267,16410,12732,15013,20482,11804,17384,null,8770,15019,8169,16735,13972,21323,10896,21313,12893,17486,15866,17862,20160,20548,null,17846,17872,19380,18391,15956,20686,18340,18635,21666,15647,15605,20027,13526,17157,10059,18579,18238,18726,19352,16657,20801,null,14348,19077,20348,18565,24536,11459,18234,18965,15092,32450,17135,14491,21731,27127,25838,17906,16906,11825,21135,18870,16879,19765,17250,18842,18141,19821,19748,18075,20919,15266,20264,19878,15588,15241],[1069,794,750,1038,1129,978,1641,1463,1085,1079,1081,1064,1073,1140,963,1065,1021,1473,1138,1063,1128,960,1225,1500,1132,1375,1092,1013,944,1406,1346,1074,1059,1013,1333,852,1137,995,1104,405,1235,1160,807,570,1233,919,1067,1132,1238,515,733,993,1276,335,996,1459,796,757,1384,1416,982,902,1037,707,792,297,1289,998,1045,1308,948,548,1162,1132,1105,1533,996,842,885,1530,1745,610,1217,776,792,1041,610,1108,1202,1015,979,1208,1015,970,1063,788,788,959,560,966],[0,null,null,6,null,null,13,null,0,null,null,21,4,null,null,201,38,1,0,22,null,null,1,null,117,4,null,116,10,0,0,null,55,248,null,0,0,null,14,null,76,42,14,null,null,12,22,39,14,0,2,33,33,null,79,null,67,null,0,33,4,18,81,39,5,null,6,1,62,13,23,1,154,null,91,null,76,4,100,null,14,19,0,null,134,15,5,20,138,70,66,5,0,65,44,20,0,396,29,275],["Illinois","Wisconsin","Illinois","Iowa","Illinois","Wisconsin","Illinois","Wisconsin","North Carolina","Iowa","Pennsylvania","Pennsylvania","Iowa","Minnesota","Tennessee","New York","Indiana","Iowa","Pennsylvania","Indiana","Louisiana","Kentucky","Kentucky","Michigan","Pennsylvania","Georgia","Pennsylvania","Iowa","Indiana","Michigan","Iowa","Virginia","Michigan","Ohio","Ohio","California","New York","West Virginia","Idaho","Illinois","Pennsylvania","Iowa","New York","Illinois","Michigan","Nebraska","Montana","Michigan","Ohio","Louisiana","California","Wisconsin","California","New York","Indiana","Virginia","Ohio","Kentucky","Pennsylvania","Virginia","Ohio","Georgia","New York","Virginia","Alabama","Tennessee","Iowa","Texas","Alabama","Michigan","Alabama","New Hampshire","Maryland","Missouri","Ohio","New York","Pennsylvania","Virginia","Massachusetts","Pennsylvania","Massachusetts","New York","New Jersey","Arkansas","Pennsylvania","Alabama","Texas","Virginia","New Jersey","Ohio","Kansas","South Carolina","Maryland","West Virginia","North Carolina","Ohio","Michigan","Nebraska","New York","Indiana"],["Increasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Increasing","Decreasing","Increasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Increasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Increasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9fd227c0cbac048b72b1" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-9fd227c0cbac048b72b1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[39.7313,-90.246171,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[39.7313,-90.246171],16,[]],"limits":{"lat":[39.7313,39.7313],"lng":[-90.246171,-90.246171]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -390,11 +415,11 @@ from 2010 to 2021’ >
 Grad students (full time)
 </td>
 <td style="text-align:center;">
-0.0 (2016)
+0 (2016)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_3.png alt=‘Line plot from 0.0 to 0.0
-from 2011 to 2016’ >
+<img src=images/IllinoisCollege_3.png alt=‘Line plot from 0 to 0 from
+2011 to 2016’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -408,10 +433,10 @@ from 2011 to 2016’ >
 Grad students (part time)
 </td>
 <td style="text-align:center;">
-2.0 (2016)
+2 (2016)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_4.png alt=‘Line plot from 18 to 2.0
+<img src=images/IllinoisCollege_4.png alt=‘Line plot from 18 to 2
 from 2011 to 2016’ >
 </td>
 <td style="text-align:center;">
@@ -614,34 +639,13 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-14 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/IllinoisCollege_14.png alt=‘Line plot from 12 to 14
-from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-↑<br />0.4 per year
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 29%
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 17%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 21 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_15.png alt=‘Line plot from 15 to 21
+<img src=images/IllinoisCollege_14.png alt=‘Line plot from 15 to 21
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -652,6 +656,27 @@ from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (lower) than 11%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
+</td>
+<td style="text-align:center;">
+14 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/IllinoisCollege_15.png alt=‘Line plot from 12 to 14
+from 2012 to 2020’ >
+</td>
+<td style="text-align:center;">
+↑<br />0.4 per year
+</td>
+<td style="text-align:center;">
+✪✪<br />Better (lower) than 29%
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 17%
 </td>
 </tr>
 <tr>
@@ -674,13 +699,13 @@ from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-25 (2020)
+53 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_17.png alt=‘Line plot from 16 to 25
+<img src=images/IllinoisCollege_17.png alt=‘Line plot from 64 to 53
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -692,13 +717,13 @@ from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-53 (2020)
+25 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_18.png alt=‘Line plot from 64 to 53
+<img src=images/IllinoisCollege_18.png alt=‘Line plot from 16 to 25
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -751,11 +776,11 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-5.0% (2021)
+5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_103.png alt=‘Line plot from 3.0 to
-5.0 from 2010 to 2021’ >
+<img src=images/IllinoisCollege_100.png alt=‘Line plot from 3 to 5
+from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -790,13 +815,33 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+22% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/IllinoisCollege_19.png alt=‘Line plot from 22 to 22
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 42%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 44%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $29 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_19.png alt=‘Line plot from 15 M to 29
+<img src=images/IllinoisCollege_20.png alt=‘Line plot from 15 M to 29
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -816,7 +861,7 @@ Revenue
 $65 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_20.png alt=‘Line plot from 42 M to 65
+<img src=images/IllinoisCollege_21.png alt=‘Line plot from 42 M to 65
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -834,7 +879,7 @@ Expenses
 $36 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_21.png alt=‘Line plot from 27 M to 36
+<img src=images/IllinoisCollege_22.png alt=‘Line plot from 27 M to 36
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -853,7 +898,7 @@ Assets
 $220 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_22.png alt=‘Line plot from 207 M to
+<img src=images/IllinoisCollege_23.png alt=‘Line plot from 207 M to
 220 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -863,80 +908,6 @@ $220 M (2021)
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 36%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-22% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/IllinoisCollege_23.png alt=‘Line plot from 22 to 22
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 42%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 44%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/IllinoisCollege_24.png alt=‘Line plot from 0.0 to 0.0
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-4.6% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/IllinoisCollege_25.png alt=‘Line plot from 1.7 to 4.6
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-4.2% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/IllinoisCollege_26.png alt=‘Line plot from 12 to 4.2
-from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -978,7 +949,7 @@ Total
 64% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_42.png alt=‘Line plot from 61 to 64
+<img src=images/IllinoisCollege_39.png alt=‘Line plot from 61 to 64
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -996,7 +967,7 @@ Men
 56% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_43.png alt=‘Line plot from 50 to 56
+<img src=images/IllinoisCollege_40.png alt=‘Line plot from 50 to 56
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1014,7 +985,7 @@ Women
 71% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_44.png alt=‘Line plot from 71 to 71
+<img src=images/IllinoisCollege_41.png alt=‘Line plot from 71 to 71
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1029,10 +1000,10 @@ from 2010 to 2021’ >
 American Indian or Alaska Native men
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_45.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/IllinoisCollege_42.png alt=‘Line plot from 0 to 0
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1050,7 +1021,7 @@ American Indian or Alaska Native women
 100% (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_46.png alt=‘Line plot from 0.0 to 100
+<img src=images/IllinoisCollege_43.png alt=‘Line plot from 0 to 100
 from 2011 to 2019’ >
 </td>
 <td style="text-align:center;">
@@ -1065,10 +1036,10 @@ from 2011 to 2019’ >
 Asian men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_47.png alt=‘Line plot from 50 to 0.0
+<img src=images/IllinoisCollege_44.png alt=‘Line plot from 50 to 0
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1086,7 +1057,7 @@ Asian women
 50% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_48.png alt=‘Line plot from 100 to 50
+<img src=images/IllinoisCollege_45.png alt=‘Line plot from 100 to 50
 from 2011 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1104,7 +1075,7 @@ Black or African American men
 41% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_49.png alt=‘Line plot from 0.0 to 41
+<img src=images/IllinoisCollege_46.png alt=‘Line plot from 0 to 41
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1122,7 +1093,7 @@ Black or African American women
 45% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_50.png alt=‘Line plot from 29 to 45
+<img src=images/IllinoisCollege_47.png alt=‘Line plot from 29 to 45
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1140,7 +1111,7 @@ Hispanic men
 35% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_51.png alt=‘Line plot from 50 to 35
+<img src=images/IllinoisCollege_48.png alt=‘Line plot from 50 to 35
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1158,7 +1129,7 @@ Hispanic women
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_52.png alt=‘Line plot from 0.0 to 50
+<img src=images/IllinoisCollege_49.png alt=‘Line plot from 0 to 50
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1176,7 +1147,7 @@ Native Hawaiian or other Pacific Islander men
 100% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_53.png alt=‘Line plot from 100 to 100
+<img src=images/IllinoisCollege_50.png alt=‘Line plot from 100 to 100
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1192,7 +1163,7 @@ White men
 66% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_55.png alt=‘Line plot from 53 to 66
+<img src=images/IllinoisCollege_52.png alt=‘Line plot from 53 to 66
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1210,7 +1181,7 @@ White women
 79% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_56.png alt=‘Line plot from 64 to 79
+<img src=images/IllinoisCollege_53.png alt=‘Line plot from 64 to 79
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1228,7 +1199,7 @@ Two or more races men
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_57.png alt=‘Line plot from 100 to 50
+<img src=images/IllinoisCollege_54.png alt=‘Line plot from 100 to 50
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1246,7 +1217,7 @@ Two or more races women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_58.png alt=‘Line plot from 100 to 100
+<img src=images/IllinoisCollege_55.png alt=‘Line plot from 100 to 100
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1264,7 +1235,7 @@ Nonresident alien men
 67% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_59.png alt=‘Line plot from 33 to 67
+<img src=images/IllinoisCollege_56.png alt=‘Line plot from 33 to 67
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1282,7 +1253,7 @@ Nonresident alien women
 88% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_60.png alt=‘Line plot from 100 to 88
+<img src=images/IllinoisCollege_57.png alt=‘Line plot from 100 to 88
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1322,7 +1293,7 @@ Men (percent freshmen)
 51% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_83.png alt=‘Line plot from 50 to 51
+<img src=images/IllinoisCollege_80.png alt=‘Line plot from 50 to 51
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1334,7 +1305,7 @@ Women (percent freshmen)
 49% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_84.png alt=‘Line plot from 50 to 49
+<img src=images/IllinoisCollege_81.png alt=‘Line plot from 50 to 49
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1346,7 +1317,7 @@ American Indian or Alaska Native men (percent freshmen)
 0.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_85.png alt=‘Line plot from 0.0 to 0.4
+<img src=images/IllinoisCollege_82.png alt=‘Line plot from 0 to 0.4
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1358,7 +1329,7 @@ American Indian or Alaska Native women (percent freshmen)
 0.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_86.png alt=‘Line plot from 0.0 to 0.4
+<img src=images/IllinoisCollege_83.png alt=‘Line plot from 0 to 0.4
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1370,7 +1341,7 @@ Asian men (percent freshmen)
 0.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_87.png alt=‘Line plot from 0.4 to 0.8
+<img src=images/IllinoisCollege_84.png alt=‘Line plot from 0.4 to 0.8
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1382,7 +1353,7 @@ Asian women (percent freshmen)
 0.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_88.png alt=‘Line plot from 0.0 to 0.8
+<img src=images/IllinoisCollege_85.png alt=‘Line plot from 0 to 0.8
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1394,7 +1365,7 @@ Black or African American men (percent freshmen)
 7.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_89.png alt=‘Line plot from 6.6 to 7.6
+<img src=images/IllinoisCollege_86.png alt=‘Line plot from 6.6 to 7.6
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1406,7 +1377,7 @@ Black or African American women (percent freshmen)
 2.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_90.png alt=‘Line plot from 4.4 to 2.4
+<img src=images/IllinoisCollege_87.png alt=‘Line plot from 4.4 to 2.4
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1418,7 +1389,7 @@ Hispanic men (percent freshmen)
 5.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_91.png alt=‘Line plot from 1.8 to 5.2
+<img src=images/IllinoisCollege_88.png alt=‘Line plot from 1.8 to 5.2
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1430,7 +1401,7 @@ Hispanic women (percent freshmen)
 10% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_92.png alt=‘Line plot from 4.0 to 10
+<img src=images/IllinoisCollege_89.png alt=‘Line plot from 4.0 to 10
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1439,10 +1410,10 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_93.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/IllinoisCollege_90.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1451,10 +1422,10 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_94.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/IllinoisCollege_91.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1466,7 +1437,7 @@ White men (percent freshmen)
 32% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_95.png alt=‘Line plot from 36 to 32
+<img src=images/IllinoisCollege_92.png alt=‘Line plot from 36 to 32
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1478,7 +1449,7 @@ White women (percent freshmen)
 30% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_96.png alt=‘Line plot from 37 to 30
+<img src=images/IllinoisCollege_93.png alt=‘Line plot from 37 to 30
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1490,7 +1461,7 @@ Two or more races men (percent freshmen)
 0.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_97.png alt=‘Line plot from 2.2 to 0.8
+<img src=images/IllinoisCollege_94.png alt=‘Line plot from 2.2 to 0.8
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1502,7 +1473,7 @@ Two or more races women (percent freshmen)
 1.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_98.png alt=‘Line plot from 1.8 to 1.6
+<img src=images/IllinoisCollege_95.png alt=‘Line plot from 1.8 to 1.6
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1511,10 +1482,10 @@ from 2010 to 2021’ >
 Race ethnicity unknown men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_99.png alt=‘Line plot from 1.8 to 0.0
+<img src=images/IllinoisCollege_96.png alt=‘Line plot from 1.8 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1523,11 +1494,11 @@ from 2010 to 2021’ >
 Race ethnicity unknown women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_100.png alt=‘Line plot from 0.4 to
-0.0 from 2010 to 2021’ >
+<img src=images/IllinoisCollege_97.png alt=‘Line plot from 0.4 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1538,8 +1509,8 @@ Nonresident alien men (percent freshmen)
 4.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_101.png alt=‘Line plot from 1.8 to
-4.4 from 2010 to 2021’ >
+<img src=images/IllinoisCollege_98.png alt=‘Line plot from 1.8 to 4.4
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1550,8 +1521,63 @@ Nonresident alien women (percent freshmen)
 4.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_102.png alt=‘Line plot from 1.8 to
-4.0 from 2010 to 2021’ >
+<img src=images/IllinoisCollege_99.png alt=‘Line plot from 1.8 to 4.0
+from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Illinois College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+73% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/IllinoisCollege_101.png alt=‘Line plot from 82 to 73
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+92% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/IllinoisCollege_102.png alt=‘Line plot from 96 to 92
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/IllinoisCollege_103.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1592,7 +1618,7 @@ Total (tenure-track count)
 53 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_61.png alt=‘Line plot from 64 to 53
+<img src=images/IllinoisCollege_58.png alt=‘Line plot from 64 to 53
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1606,7 +1632,7 @@ Women (tenure-track count)
 23 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_62.png alt=‘Line plot from 28 to 23
+<img src=images/IllinoisCollege_59.png alt=‘Line plot from 28 to 23
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1620,7 +1646,7 @@ Men (tenure-track count)
 30 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_63.png alt=‘Line plot from 36 to 30
+<img src=images/IllinoisCollege_60.png alt=‘Line plot from 36 to 30
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1631,10 +1657,10 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_64.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/IllinoisCollege_61.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1645,10 +1671,10 @@ from 2012 to 2020’ >
 Asian (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_65.png alt=‘Line plot from 3.0 to 1.0
+<img src=images/IllinoisCollege_62.png alt=‘Line plot from 3 to 1
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1660,10 +1686,10 @@ from 2012 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_66.png alt=‘Line plot from 0.0 to 2.0
+<img src=images/IllinoisCollege_63.png alt=‘Line plot from 0 to 2
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1675,10 +1701,10 @@ from 2012 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_67.png alt=‘Line plot from 2.0 to 2.0
+<img src=images/IllinoisCollege_64.png alt=‘Line plot from 2 to 2
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1689,10 +1715,10 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_68.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/IllinoisCollege_65.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1706,7 +1732,7 @@ White (tenure-track count)
 46 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_69.png alt=‘Line plot from 58 to 46
+<img src=images/IllinoisCollege_66.png alt=‘Line plot from 58 to 46
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1718,10 +1744,10 @@ from 2012 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_70.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/IllinoisCollege_67.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1732,10 +1758,10 @@ from 2012 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_71.png alt=‘Line plot from 1.0 to 2.0
+<img src=images/IllinoisCollege_68.png alt=‘Line plot from 1 to 2
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1781,7 +1807,7 @@ Total (non-tenure-track count)
 25 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_72.png alt=‘Line plot from 16 to 25
+<img src=images/IllinoisCollege_69.png alt=‘Line plot from 16 to 25
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1795,7 +1821,7 @@ Women (non-tenure-track count)
 17 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_73.png alt=‘Line plot from 10 to 17
+<img src=images/IllinoisCollege_70.png alt=‘Line plot from 10 to 17
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1806,10 +1832,10 @@ from 2012 to 2020’ >
 Men (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-8.0 (2020)
+8 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_74.png alt=‘Line plot from 6.0 to 8.0
+<img src=images/IllinoisCollege_71.png alt=‘Line plot from 6 to 8
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1820,10 +1846,10 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_75.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/IllinoisCollege_72.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1834,10 +1860,10 @@ from 2012 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_76.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/IllinoisCollege_73.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1848,10 +1874,10 @@ from 2012 to 2020’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_77.png alt=‘Line plot from 1.0 to 0.0
+<img src=images/IllinoisCollege_74.png alt=‘Line plot from 1 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1863,10 +1889,10 @@ from 2012 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_78.png alt=‘Line plot from 0.0 to 1.0
+<img src=images/IllinoisCollege_75.png alt=‘Line plot from 0 to 1
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1877,10 +1903,10 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_79.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/IllinoisCollege_76.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1894,7 +1920,7 @@ White (non-tenure-track count)
 23 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_80.png alt=‘Line plot from 13 to 23
+<img src=images/IllinoisCollege_77.png alt=‘Line plot from 13 to 23
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1905,10 +1931,10 @@ from 2012 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_81.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/IllinoisCollege_78.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1919,10 +1945,10 @@ from 2012 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_82.png alt=‘Line plot from 1.0 to 1.0
+<img src=images/IllinoisCollege_79.png alt=‘Line plot from 1 to 1
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1961,7 +1987,7 @@ Number of physical books
 101,403 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_27.png alt=‘Line plot from 117,514 to
+<img src=images/IllinoisCollege_24.png alt=‘Line plot from 117,514 to
 101,403 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1979,7 +2005,7 @@ Physical library circulations per students and faculty
 5.2 (2016)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_28.png alt=‘Line plot from 113 to 5.2
+<img src=images/IllinoisCollege_25.png alt=‘Line plot from 113 to 5.2
 from 2014 to 2016’ >
 </td>
 <td style="text-align:center;">
@@ -1997,7 +2023,7 @@ Digital library circulations per students and faculty
 0.4 (2016)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_29.png alt=‘Line plot from 3.9 to 0.4
+<img src=images/IllinoisCollege_26.png alt=‘Line plot from 3.9 to 0.4
 from 2014 to 2016’ >
 </td>
 <td style="text-align:center;">
@@ -2034,7 +2060,7 @@ Applicants submitting SAT
 57% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_30.png alt=‘Line plot from 57 to 57
+<img src=images/IllinoisCollege_27.png alt=‘Line plot from 57 to 57
 from 2021 to 2021’ >
 </td>
 </tr>
@@ -2046,7 +2072,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 480 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_31.png alt=‘Line plot from 480 to 480
+<img src=images/IllinoisCollege_28.png alt=‘Line plot from 480 to 480
 from 2021 to 2021’ >
 </td>
 </tr>
@@ -2058,7 +2084,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 590 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_32.png alt=‘Line plot from 590 to 590
+<img src=images/IllinoisCollege_29.png alt=‘Line plot from 590 to 590
 from 2021 to 2021’ >
 </td>
 </tr>
@@ -2070,7 +2096,7 @@ SAT Math 25th percentile score
 470 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_33.png alt=‘Line plot from 470 to 470
+<img src=images/IllinoisCollege_30.png alt=‘Line plot from 470 to 470
 from 2021 to 2021’ >
 </td>
 </tr>
@@ -2082,7 +2108,7 @@ SAT Math 75th percentile score
 560 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_34.png alt=‘Line plot from 560 to 560
+<img src=images/IllinoisCollege_31.png alt=‘Line plot from 560 to 560
 from 2021 to 2021’ >
 </td>
 </tr>
@@ -2113,7 +2139,7 @@ Applicants submitting ACT
 32% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_35.png alt=‘Line plot from 32 to 32
+<img src=images/IllinoisCollege_32.png alt=‘Line plot from 32 to 32
 from 2021 to 2021’ >
 </td>
 </tr>
@@ -2125,7 +2151,7 @@ ACT Composite 25th percentile score
 18 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_36.png alt=‘Line plot from 18 to 18
+<img src=images/IllinoisCollege_33.png alt=‘Line plot from 18 to 18
 from 2021 to 2021’ >
 </td>
 </tr>
@@ -2137,7 +2163,7 @@ ACT Composite 75th percentile score
 24 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_37.png alt=‘Line plot from 24 to 24
+<img src=images/IllinoisCollege_34.png alt=‘Line plot from 24 to 24
 from 2021 to 2021’ >
 </td>
 </tr>
@@ -2149,7 +2175,7 @@ ACT English 25th percentile score
 16 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_38.png alt=‘Line plot from 16 to 16
+<img src=images/IllinoisCollege_35.png alt=‘Line plot from 16 to 16
 from 2021 to 2021’ >
 </td>
 </tr>
@@ -2161,7 +2187,7 @@ ACT English 75th percentile score
 23 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_39.png alt=‘Line plot from 23 to 23
+<img src=images/IllinoisCollege_36.png alt=‘Line plot from 23 to 23
 from 2021 to 2021’ >
 </td>
 </tr>
@@ -2173,7 +2199,7 @@ ACT Math 25th percentile score
 17 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_40.png alt=‘Line plot from 17 to 17
+<img src=images/IllinoisCollege_37.png alt=‘Line plot from 17 to 17
 from 2021 to 2021’ >
 </td>
 </tr>
@@ -2185,7 +2211,7 @@ ACT Math 75th percentile score
 24 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/IllinoisCollege_41.png alt=‘Line plot from 24 to 24
+<img src=images/IllinoisCollege_38.png alt=‘Line plot from 24 to 24
 from 2021 to 2021’ >
 </td>
 </tr>
@@ -2196,28 +2222,28 @@ from 2021 to 2021’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a32329655fc61a4906d4" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a32329655fc61a4906d4">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Criminology.html\">Criminology</a>","<a href=\"majors_Bachelors_HealthServices_AlliedHealth_HealthSciences_General.html\">Health Services/Allied Health/Health Sciences, General</a>","<a href=\"majors_Bachelors_RhetoricandComposition.html\">Rhetoric and Composition</a>","<a href=\"majors_Bachelors_AgriculturalBusinessandManagement_General.html\">Agricultural Business and Management, General</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_RegisteredNursing_NursingAdministration_NursingResearchandClinicalNursing_Other.html\">Registered Nursing, Nursing Administration, Nursing Research and Clinical Nursing, Other</a>","<a href=\"majors_Bachelors_Education_General.html\">Education, General</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_SportandFitnessAdministration_Management.html\">Sport and Fitness Administration/Management</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_Finance_General.html\">Finance, General</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_EnvironmentalBiology.html\">Environmental Biology</a>","<a href=\"majors_Bachelors_International_GlobalizationStudies.html\">International/Globalization Studies</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_ActuarialScience.html\">Actuarial Science</a>"],[38,21,18,13,13,12,11,11,10,9,9,7,7,7,7,6,6,5,5,4,4,4,2,1,1,1,1,1,1,1],[16.102,8.898,7.627,5.508,5.508,5.085,4.661,4.661,4.237,3.814,3.814,2.966,2.966,2.966,2.966,2.542,2.542,2.119,2.119,1.695,1.695,1.695,0.847,0.424,0.424,0.424,0.424,0.424,0.424,0.424],[0.027,0.026,0.016,0.144,0.087,0.797,0.943,0.023,0.006,0.024,0.342,0.138,0.075,0.039,0.033,0.021,0.016,0.072,0.022,0.037,0.015,0.009,0.028,0.018,0.251,0.018,0.007,0.012,0.014,0.065],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0dfb6850f4fcdf8de909" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0dfb6850f4fcdf8de909">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Criminology.html\">Criminology</a>","<a href=\"majors_Bachelors_HealthServices_AlliedHealth_HealthSciences_General.html\">Health Services/Allied Health/Health Sciences, General</a>","<a href=\"majors_Bachelors_RhetoricandComposition.html\">Rhetoric and Composition</a>","<a href=\"majors_Bachelors_AgriculturalBusinessandManagement_General.html\">Agricultural Business and Management, General</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_RegisteredNursing_NursingAdministration_NursingResearchandClinicalNursing_Other.html\">Registered Nursing, Nursing Administration, Nursing Research and Clinical Nursing, Other</a>","<a href=\"majors_Bachelors_Education_General.html\">Education, General</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_SportandFitnessAdministration_Management.html\">Sport and Fitness Administration/Management</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_Finance_General.html\">Finance, General</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_EnvironmentalBiology.html\">Environmental Biology</a>","<a href=\"majors_Bachelors_International_GlobalizationStudies.html\">International/Globalization Studies</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_ActuarialScience.html\">Actuarial Science</a>"],[38,21,18,13,13,12,11,11,10,9,9,7,7,7,7,6,6,5,5,4,4,4,2,1,1,1,1,1,1,1],[16.102,8.898,7.627,5.508,5.508,5.085,4.661,4.661,4.237,3.814,3.814,2.966,2.966,2.966,2.966,2.542,2.542,2.119,2.119,1.695,1.695,1.695,0.847,0.424,0.424,0.424,0.424,0.424,0.424,0.424],[0.027,0.026,0.016,0.144,0.087,0.797,0.943,0.023,0.006,0.024,0.342,0.138,0.075,0.039,0.033,0.021,0.016,0.072,0.022,0.037,0.015,0.009,0.028,0.018,0.251,0.018,0.007,0.012,0.014,0.065],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fb8833c42b3d3f6cb08e" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-fb8833c42b3d3f6cb08e">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5bac42d8c6d47bf146bf" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5bac42d8c6d47bf146bf">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6e609f70bb0b7168f81f" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6e609f70bb0b7168f81f">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8519019ecee287c0b342" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-8519019ecee287c0b342">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6800df8cd4732f30185d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6800df8cd4732f30185d">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e76c1bf62d23757a6d36" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e76c1bf62d23757a6d36">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b7556e2de575b042c84d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b7556e2de575b042c84d">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9e5957151bb90f4e2458" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-9e5957151bb90f4e2458">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

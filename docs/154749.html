@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -260,10 +262,20 @@ Undergraduate)</p></li>
 <li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
 four-year (see more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 24,508 (1.8 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $24,508 (1.6 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $19,211.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.bethelks.edu/affordability/general-information/npc'>here</a>
+to see what your family may be asked to pay. It can be MUCH lower than
+the average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, very small, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 48.3% of first year
+students come from Kansas</p></li>
+<li><p><strong>In US percentage</strong>: 94.0% of first year students
+come from the US (note that 0.0% have no residence reported)</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 46.5% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -301,9 +313,10 @@ are registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Restrictive (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: F (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -316,6 +329,10 @@ marriage</strong>: 25% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Moderate risk (based
+on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Central and Southern mixed
 grasslands</li>
 <li><strong>Biome</strong>: Temperate Grasslands, Savannas &amp;
@@ -323,11 +340,20 @@ Shrublands</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/8296/Average-Weather-in-North-Newton-Kansas-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ce98cab688f2163ed78c" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-ce98cab688f2163ed78c">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[38.075169,-97.343256,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[38.075169,-97.343256],16,[]],"limits":{"lat":[38.075169,38.075169],"lng":[-97.343256,-97.343256]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3129541917f6618b13b8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3129541917f6618b13b8">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"154749.html\">Bethel College-North Newton</a>","<a href=\"155414.html\">Kansas Wesleyan University</a>","<a href=\"155973.html\">Tabor College</a>","<a href=\"155900.html\">Southwestern College</a>","<a href=\"181853.html\">York College</a>","<a href=\"154721.html\">Bethany College</a>","<a href=\"155511.html\">McPherson College</a>","<a href=\"206835.html\">Oklahoma Wesleyan University</a>","<a href=\"155627.html\">Ottawa University-Ottawa</a>","<a href=\"155812.html\">University of Saint Mary</a>","<a href=\"176628.html\">Avila University</a>","<a href=\"155937.html\">Sterling College</a>","<a href=\"155089.html\">Friends University</a>","<a href=\"237358.html\">Davis &amp; Elkins College</a>","<a href=\"214698.html\">Pennsylvania State University-Penn State Beaver</a>","<a href=\"146825.html\">MacMurray College</a>","<a href=\"143288.html\">Blackburn College</a>","<a href=\"157076.html\">Kentucky Wesleyan College</a>","<a href=\"233718.html\">Sweet Briar College</a>","<a href=\"214786.html\">Pennsylvania State University-Penn State Greater Allegheny</a>","<a href=\"202514.html\">Defiance College</a>","<a href=\"107877.html\">Williams Baptist University</a>","<a href=\"145372.html\">Greenville University</a>","<a href=\"165644.html\">Eastern Nazarene College</a>","<a href=\"214810.html\">Pennsylvania State University-Penn State Schuylkill</a>","<a href=\"107558.html\">University of the Ozarks</a>","<a href=\"144971.html\">Eureka College</a>","<a href=\"158477.html\">Centenary College of Louisiana</a>","<a href=\"214625.html\">Pennsylvania State University-Penn State New Kensington</a>","<a href=\"239309.html\">Milwaukee Institute of Art &amp; Design</a>","<a href=\"238078.html\">Wheeling University</a>","<a href=\"197230.html\">Wells College</a>","<a href=\"101435.html\">Huntingdon College</a>","<a href=\"181127.html\">Hastings College</a>","<a href=\"239512.html\">Northland College</a>","<a href=\"214643.html\">Pennsylvania State University-Penn State Wilkes-Barre</a>","<a href=\"146676.html\">Lincoln College</a>","<a href=\"202046.html\">Cleveland Institute of Art</a>","<a href=\"176947.html\">Central Methodist University-College of Liberal Arts and Sciences</a>","<a href=\"214829.html\">Pennsylvania State University-Penn State York</a>","<a href=\"201821.html\">The Christ College of Nursing and Health Sciences</a>","<a href=\"166018.html\">Hampshire College</a>","<a href=\"179548.html\">Stephens College</a>","<a href=\"101541.html\">Judson College</a>","<a href=\"214759.html\">Pennsylvania State University-Penn State Fayette- Eberly</a>","<a href=\"235024.html\">Cornish College of the Arts</a>","<a href=\"220312.html\">Hiwassee College</a>","<a href=\"198808.html\">Lees-McRae College</a>","<a href=\"219091.html\">Dakota Wesleyan University</a>","<a href=\"172440.html\">Finlandia University</a>","<a href=\"133085.html\">Clearwater Christian College</a>","<a href=\"161235.html\">University of Maine at Fort Kent</a>","<a href=\"230940.html\">Marlboro College</a>","<a href=\"171599.html\">Olivet College</a>","<a href=\"215266.html\">University of Pittsburgh-Bradford</a>","<a href=\"214795.html\">Pennsylvania State University-Penn State Mont Alto</a>","<a href=\"483018.html\">Antioch College</a>","<a href=\"228468.html\">Southwestern Adventist University</a>","<a href=\"214634.html\">Pennsylvania State University-Penn State Shenango</a>","<a href=\"239628.html\">Ripon College</a>","<a href=\"217624.html\">Allen University</a>","<a href=\"456959.html\">University of Minnesota-Rochester</a>","<a href=\"152363.html\">Saint Josephs College</a>","<a href=\"148131.html\">Quincy University</a>","<a href=\"166948.html\">Mount Ida College</a>","<a href=\"198862.html\">Livingstone College</a>","<a href=\"160959.html\">College of the Atlantic</a>","<a href=\"176318.html\">Rust College</a>","<a href=\"150668.html\">Goshen College</a>","<a href=\"238980.html\">Lakeland University</a>","<a href=\"217013.html\">Wilson College</a>","<a href=\"232089.html\">Ferrum College</a>","<a href=\"164492.html\">Anna Maria College</a>","<a href=\"199458.html\">Mid-Atlantic Christian University</a>","<a href=\"182634.html\">Colby-Sawyer College</a>","<a href=\"157100.html\">Kentucky Christian University</a>","<a href=\"198613.html\">Guilford College</a>","<a href=\"181376.html\">Nebraska Christian College of Hope International University</a>","<a href=\"239080.html\">Marian University</a>","<a href=\"213303.html\">Keystone College</a>","<a href=\"158802.html\">Dillard University</a>","<a href=\"139205.html\">Brewton-Parker College</a>","<a href=\"147341.html\">Monmouth College</a>","<a href=\"216542.html\">University of Valley Forge</a>","<a href=\"218919.html\">Voorhees College</a>","<a href=\"230931.html\">Lyndon State College</a>","<a href=\"220710.html\">Maryville College</a>","<a href=\"168290.html\">Wheelock College</a>","<a href=\"220598.html\">Lane College</a>","<a href=\"214740.html\">Pennsylvania State University-Penn State DuBois</a>","<a href=\"101648.html\">Marion Military Institute</a>","<a href=\"145691.html\">Illinois College</a>","<a href=\"232308.html\">Hollins University</a>","<a href=\"206349.html\">Ursuline College</a>","<a href=\"154004.html\">Morningside University</a>","<a href=\"214670.html\">Pennsylvania State University-Penn State Lehigh Valley</a>","<a href=\"120865.html\">Pacific Union College</a>","<a href=\"105899.html\">Arizona Christian University</a>","<a href=\"214768.html\">Pennsylvania State University-Penn State Hazleton</a>","<a href=\"150774.html\">Holy Cross College</a>"],[71,68,54,69,62,72,85,54,67,81,68,47,58,78,64,62,66,67,80,87,62,64,80,64,74,55,87,63,80,68,78,68,69,71,58,86,74,66,99,85,64,75,64,56,80,64,67,59,76,78,62,100,83,88,73,76,72,58,75,80,57,80,77,60,75,51,61,38,93,80,93,76,73,48,93,58,82,39,76,82,55,80,66,82,65,97,68,77,48,85,45,75,75,82,74,85,58,76,86,86],[26,22,25,22,38,14,36,42,17,17,15,17,27,27,22,21,26,22,19,34,10,25,26,18,47,19,16,24,46,35,15,9,15,19,15,35,27,22,26,26,27,13,23,30,45,23,29,23,21,9,42,8,28,21,34,49,21,21,52,12,16,19,20,26,22,10,29,36,20,19,22,17,10,35,15,31,10,48,27,18,10,42,11,36,3,19,20,13,14,49,44,9,10,24,15,26,19,34,49,40],[47,39,48,40,43,30,53,33,34,47,39,43,40,50,46,47,46,46,42,47,51,32,48,57,47,49,52,57,47,53,57,55,44,49,58,53,22,56,47,54,59,62,53,48,43,51,64,40,55,21,50,45,46,44,39,53,32,45,45,62,23,47,50,42,41,23,67,26,65,43,53,34,48,46,65,36,55,40,56,47,52,16,55,56,32,43,56,56,24,52,null,64,59,49,54,64,44,36,50,68],[16,31,46,44,20,31,25,48,65,51,51,41,38,13,null,51,33,47,8,null,35,29,33,27,null,17,32,12,null,71,41,16,32,22,35,null,41,43,39,null,null,18,24,19,null,56,49,35,36,43,60,24,21,39,null,null,10,34,null,21,15,35,58,34,50,31,31,21,18,47,37,30,55,18,16,13,24,35,47,51,16,34,18,42,9,47,23,44,17,null,6,22,9,43,37,null,29,37,null,37],[24,17,16,23,27,18,18,null,40,16,18,12,16,38,30,23,15,28,12,21,16,21,19,29,29,21,19,11,31,null,18,13,21,19,13,23,24,null,25,26,null,null,20,7,34,null,27,null,17,17,null,24,6,24,35,26,19,14,33,14,25,50,22,26,66,40,null,null,22,30,17,24,51,null,22,null,17,null,26,27,32,20,13,null,11,19,16,19,36,41,19,21,13,18,20,42,18,null,21,33],[19211,22559,26071,22417,15430,15981,19779,25961,21507,20045,17089,22516,17283,15113,null,null,15866,17157,19052,null,24176,13936,17378,18329,null,11825,18572,20686,null,21589,36594,15647,20801,17872,16375,null,16900,32283,18965,null,13915,14327,22207,null,null,32908,null,18440,20139,15610,null,8142,null,20264,11804,null,19633,16879,null,17767,12140,8309,null,15493,null,17017,14407,9515,13013,20309,19301,14491,21627,26104,20442,20090,20202,null,18635,25445,18658,17511,14440,18421,17966,null,15426,null,null,null,11676,12647,16657,14491,20160,null,18340,27225,null,16969],[476,718,544,658,417,687,811,604,728,738,916,548,889,653,548,570,405,757,448,417,497,588,808,450,490,776,459,515,489,881,506,335,792,919,516,366,649,570,1132,783,608,472,366,196,570,416,297,841,619,385,395,443,151,788,1092,591,133,610,230,794,544,616,944,939,1458,869,360,462,683,751,586,842,921,123,757,501,1085,104,993,903,1128,549,750,425,349,871,963,593,988,447,314,1069,707,566,1160,764,733,876,592,431],[null,0,0,46,17,null,1,4,82,187,280,14,167,null,null,null,null,null,2,null,14,0,12,91,null,null,null,0,0,null,5,null,5,12,null,0,0,null,null,0,null,null,147,null,0,4,null,0,65,null,3,null,null,0,null,0,null,5,null,null,34,null,10,35,10,null,1,null,12,107,18,4,120,null,12,11,0,null,33,28,null,null,null,5,null,0,null,115,null,null,null,0,39,82,42,0,2,null,null,null],["Kansas","Kansas","Kansas","Kansas","Nebraska","Kansas","Kansas","Oklahoma","Kansas","Kansas","Missouri","Kansas","Kansas","West Virginia","Pennsylvania","Illinois","Illinois","Kentucky","Virginia","Pennsylvania","Ohio","Arkansas","Illinois","Massachusetts","Pennsylvania","Arkansas","Illinois","Louisiana","Pennsylvania","Wisconsin","West Virginia","New York","Alabama","Nebraska","Wisconsin","Pennsylvania","Illinois","Ohio","Missouri","Pennsylvania","Ohio","Massachusetts","Missouri","Alabama","Pennsylvania","Washington","Tennessee","North Carolina","South Dakota","Michigan","Florida","Maine","Vermont","Michigan","Pennsylvania","Pennsylvania","Ohio","Texas","Pennsylvania","Wisconsin","South Carolina","Minnesota","Indiana","Illinois","Massachusetts","North Carolina","Maine","Mississippi","Indiana","Wisconsin","Pennsylvania","Virginia","Massachusetts","North Carolina","New Hampshire","Kentucky","North Carolina","Nebraska","Wisconsin","Pennsylvania","Louisiana","Georgia","Illinois","Pennsylvania","South Carolina","Vermont","Tennessee","Massachusetts","Tennessee","Pennsylvania","Alabama","Illinois","Virginia","Ohio","Iowa","Pennsylvania","California","Arizona","Pennsylvania","Indiana"],["Approximately stable","Approximately stable","Approximately stable","Increasing","Decreasing","Increasing","Increasing","Approximately stable","Increasing","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Increasing","Decreasing","Increasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-340c7216c618d2755aa1" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-340c7216c618d2755aa1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[38.075169,-97.343256,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[38.075169,-97.343256],16,[]],"limits":{"lat":[38.075169,38.075169],"lng":[-97.343256,-97.343256]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -377,11 +403,11 @@ Undergrads (full time)
 Undergrads (part time)
 </td>
 <td style="text-align:center;">
-9.0 (2021)
+9 (2021)
 </td>
 <td style="text-align:center;">
 <img src=images/BethelCollege-NorthNewton_2.png alt=‘Line plot from
-19 to 9.0 from 2010 to 2021’ >
+19 to 9 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-1.1 per year
@@ -592,31 +618,13 @@ Baccalaureate Colleges: Diverse Fields
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-13 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_14.png alt=‘Line plot from
-13 to 13 from 2013 to 2020’ >
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 80%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 83%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 24 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_15.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_14.png alt=‘Line plot from
 22 to 24 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -624,6 +632,24 @@ Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (lower) than 45%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
+</td>
+<td style="text-align:center;">
+13 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/BethelCollege-NorthNewton_15.png alt=‘Line plot from
+13 to 13 from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 80%
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 83%
 </td>
 </tr>
 <tr>
@@ -644,14 +670,14 @@ Total instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-16 (2020)
+20 (2020)
 </td>
 <td style="text-align:center;">
 <img src=images/BethelCollege-NorthNewton_17.png alt=‘Line plot from
-14 to 16 from 2013 to 2020’ >
+21 to 20 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -660,14 +686,14 @@ Non-tenure track instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-20 (2020)
+16 (2020)
 </td>
 <td style="text-align:center;">
 <img src=images/BethelCollege-NorthNewton_18.png alt=‘Line plot from
-21 to 20 from 2013 to 2020’ >
+14 to 16 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -711,11 +737,11 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-3.0% (2021)
+3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_103.png alt=‘Line plot from
-3.0 to 3.0 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_100.png alt=‘Line plot from
+3 to 3 from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -748,13 +774,33 @@ Baccalaureate Colleges: Diverse Fields
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+16% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/BethelCollege-NorthNewton_19.png alt=‘Line plot from
+34 to 16 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 100%
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 85%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $18 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_19.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_20.png alt=‘Line plot from
 2.3 M to 18 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -774,7 +820,7 @@ Revenue
 $32 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_20.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_21.png alt=‘Line plot from
 14 M to 32 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -792,7 +838,7 @@ Expenses
 $14 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_21.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_22.png alt=‘Line plot from
 12 M to 14 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -811,7 +857,7 @@ Assets
 $61 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_22.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_23.png alt=‘Line plot from
 42 M to 61 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -821,80 +867,6 @@ $61 M (2021)
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 53%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-16% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_23.png alt=‘Line plot from
-34 to 16 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 100%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 85%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_24.png alt=‘Line plot from
-0.0 to 0.0 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_25.png alt=‘Line plot from
-0.5 to 0.0 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-52% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_26.png alt=‘Line plot from
-22 to 52 from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -936,7 +908,7 @@ Total
 47% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_42.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_39.png alt=‘Line plot from
 54 to 47 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -954,7 +926,7 @@ Men
 44% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_43.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_40.png alt=‘Line plot from
 48 to 44 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -972,7 +944,7 @@ Women
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_44.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_41.png alt=‘Line plot from
 62 to 50 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -987,11 +959,11 @@ Women
 American Indian or Alaska Native men
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_45.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_42.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 43%
@@ -1005,11 +977,11 @@ American Indian or Alaska Native men
 American Indian or Alaska Native women
 </td>
 <td style="text-align:center;">
-0.0% (2019)
+0% (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_46.png alt=‘Line plot from
-0.0 to 0.0 from 2011 to 2019’ >
+<img src=images/BethelCollege-NorthNewton_43.png alt=‘Line plot from
+0 to 0 from 2011 to 2019’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 25%
@@ -1023,11 +995,11 @@ American Indian or Alaska Native women
 Asian men
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_47.png alt=‘Line plot from
-0.0 to 0.0 from 2020 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_44.png alt=‘Line plot from
+0 to 0 from 2020 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪<br />Better (higher) than 67%
@@ -1044,7 +1016,7 @@ Asian women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_48.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_45.png alt=‘Line plot from
 100 to 100 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1062,7 +1034,7 @@ Black or African American men
 43% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_49.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_46.png alt=‘Line plot from
 33 to 43 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1080,7 +1052,7 @@ Black or African American women
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_50.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_47.png alt=‘Line plot from
 50 to 50 from 2013 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1098,7 +1070,7 @@ Hispanic men
 18% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_51.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_48.png alt=‘Line plot from
 50 to 18 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1116,7 +1088,7 @@ Hispanic women
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_52.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_49.png alt=‘Line plot from
 33 to 33 from 2013 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1131,11 +1103,11 @@ Hispanic women
 Native Hawaiian or other Pacific Islander men
 </td>
 <td style="text-align:center;">
-0.0% (2018)
+0% (2018)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_53.png alt=‘Line plot from
-0.0 to 0.0 from 2018 to 2018’ >
+<img src=images/BethelCollege-NorthNewton_50.png alt=‘Line plot from
+0 to 0 from 2018 to 2018’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 50%
@@ -1152,7 +1124,7 @@ White men
 52% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_55.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_52.png alt=‘Line plot from
 50 to 52 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1170,7 +1142,7 @@ White women
 47% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_56.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_53.png alt=‘Line plot from
 60 to 47 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1185,11 +1157,11 @@ White women
 Two or more races men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_57.png alt=‘Line plot from
-0.0 to 0.0 from 2017 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_54.png alt=‘Line plot from
+0 to 0 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 40%
@@ -1206,8 +1178,8 @@ Two or more races women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_58.png alt=‘Line plot from
-0.0 to 100 from 2015 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_55.png alt=‘Line plot from
+0 to 100 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 100%
@@ -1221,11 +1193,11 @@ Two or more races women
 Nonresident alien men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_59.png alt=‘Line plot from
-100 to 0.0 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_56.png alt=‘Line plot from
+100 to 0 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 38%
@@ -1239,11 +1211,11 @@ Nonresident alien men
 Nonresident alien women
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_60.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_57.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 25%
@@ -1282,7 +1254,7 @@ Men (percent freshmen)
 57% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_83.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_80.png alt=‘Line plot from
 56 to 57 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1294,7 +1266,7 @@ Women (percent freshmen)
 43% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_84.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_81.png alt=‘Line plot from
 44 to 43 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1306,8 +1278,8 @@ American Indian or Alaska Native men (percent freshmen)
 2.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_85.png alt=‘Line plot from
-0.0 to 2.7 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_82.png alt=‘Line plot from
+0 to 2.7 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1315,11 +1287,11 @@ American Indian or Alaska Native men (percent freshmen)
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-2.0% (2021)
+2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_86.png alt=‘Line plot from
-0.0 to 2.0 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_83.png alt=‘Line plot from
+0 to 2 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1327,11 +1299,11 @@ American Indian or Alaska Native women (percent freshmen)
 Asian men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_87.png alt=‘Line plot from
-0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_84.png alt=‘Line plot from
+0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1342,8 +1314,8 @@ Asian women (percent freshmen)
 1.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_88.png alt=‘Line plot from
-0.0 to 1.3 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_85.png alt=‘Line plot from
+0 to 1.3 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1354,7 +1326,7 @@ Black or African American men (percent freshmen)
 11% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_89.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_86.png alt=‘Line plot from
 5.5 to 11 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1363,11 +1335,11 @@ Black or African American men (percent freshmen)
 Black or African American women (percent freshmen)
 </td>
 <td style="text-align:center;">
-2.0% (2021)
+2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_90.png alt=‘Line plot from
-0.8 to 2.0 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_87.png alt=‘Line plot from
+0.8 to 2 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1375,11 +1347,11 @@ Black or African American women (percent freshmen)
 Hispanic men (percent freshmen)
 </td>
 <td style="text-align:center;">
-8.0% (2021)
+8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_91.png alt=‘Line plot from
-1.6 to 8.0 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_88.png alt=‘Line plot from
+1.6 to 8 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1390,7 +1362,7 @@ Hispanic women (percent freshmen)
 5.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_92.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_89.png alt=‘Line plot from
 3.9 to 5.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1399,11 +1371,11 @@ Hispanic women (percent freshmen)
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_93.png alt=‘Line plot from
-0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_90.png alt=‘Line plot from
+0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1411,11 +1383,11 @@ Native Hawaiian or Other Pacific Islander men (percent freshmen)
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_94.png alt=‘Line plot from
-0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_91.png alt=‘Line plot from
+0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1426,7 +1398,7 @@ White men (percent freshmen)
 31% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_95.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_92.png alt=‘Line plot from
 49 to 31 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1438,7 +1410,7 @@ White women (percent freshmen)
 31% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_96.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_93.png alt=‘Line plot from
 36 to 31 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1447,11 +1419,11 @@ White women (percent freshmen)
 Two or more races men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_97.png alt=‘Line plot from
-0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_94.png alt=‘Line plot from
+0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1459,11 +1431,11 @@ Two or more races men (percent freshmen)
 Two or more races women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_98.png alt=‘Line plot from
-2.4 to 0.0 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_95.png alt=‘Line plot from
+2.4 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1471,11 +1443,11 @@ Two or more races women (percent freshmen)
 Race ethnicity unknown men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_99.png alt=‘Line plot from
-0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_96.png alt=‘Line plot from
+0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1486,8 +1458,8 @@ Race ethnicity unknown women (percent freshmen)
 0.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_100.png alt=‘Line plot from
-0.0 to 0.7 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_97.png alt=‘Line plot from
+0 to 0.7 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1498,8 +1470,8 @@ Nonresident alien men (percent freshmen)
 4.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_101.png alt=‘Line plot from
-0.0 to 4.7 from 2010 to 2021’ >
+<img src=images/BethelCollege-NorthNewton_98.png alt=‘Line plot from
+0 to 4.7 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1510,8 +1482,63 @@ Nonresident alien women (percent freshmen)
 0.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_102.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_99.png alt=‘Line plot from
 0.8 to 0.7 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Bethel College-North Newton
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+48% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/BethelCollege-NorthNewton_101.png alt=‘Line plot from
+71 to 48 from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+94% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/BethelCollege-NorthNewton_102.png alt=‘Line plot from
+98 to 94 from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/BethelCollege-NorthNewton_103.png alt=‘Line plot from
+0.8 to 0 from 2010 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1552,7 +1579,7 @@ Total (tenure-track count)
 20 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_61.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_58.png alt=‘Line plot from
 21 to 20 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1566,8 +1593,8 @@ Women (tenure-track count)
 11 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_62.png alt=‘Line plot from
-8.0 to 11 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_59.png alt=‘Line plot from
+8 to 11 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1577,11 +1604,11 @@ Women (tenure-track count)
 Men (tenure-track count)
 </td>
 <td style="text-align:center;">
-9.0 (2020)
+9 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_63.png alt=‘Line plot from
-13 to 9.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_60.png alt=‘Line plot from
+13 to 9 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1591,11 +1618,11 @@ Men (tenure-track count)
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_64.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_61.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1605,11 +1632,11 @@ American Indian or Alaska Native (tenure-track count)
 Asian (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_65.png alt=‘Line plot from
-0.0 to 2.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_62.png alt=‘Line plot from
+0 to 2 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.3 per year
@@ -1620,11 +1647,11 @@ Asian (tenure-track count)
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_66.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_63.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1634,11 +1661,11 @@ Black or African American (tenure-track count)
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_67.png alt=‘Line plot from
-1.0 to 1.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_64.png alt=‘Line plot from
+1 to 1 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1648,11 +1675,11 @@ Hispanic or Latino (tenure-track count)
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_68.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_65.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1665,7 +1692,7 @@ White (tenure-track count)
 17 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_69.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_66.png alt=‘Line plot from
 20 to 17 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1676,11 +1703,11 @@ White (tenure-track count)
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_70.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_67.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1690,11 +1717,11 @@ Two or more races (tenure-track count)
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_71.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_68.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1735,7 +1762,7 @@ Total (non-tenure-track count)
 16 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_72.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_69.png alt=‘Line plot from
 14 to 16 from 2013 to 2020’ >
 </td>
 </tr>
@@ -1747,8 +1774,8 @@ Women (non-tenure-track count)
 10 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_73.png alt=‘Line plot from
-9.0 to 10 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_70.png alt=‘Line plot from
+9 to 10 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1756,11 +1783,11 @@ Women (non-tenure-track count)
 Men (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-6.0 (2020)
+6 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_74.png alt=‘Line plot from
-5.0 to 6.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_71.png alt=‘Line plot from
+5 to 6 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1768,11 +1795,11 @@ Men (non-tenure-track count)
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_75.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_72.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1780,11 +1807,11 @@ American Indian or Alaska Native (non-tenure-track count)
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_76.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_73.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1792,11 +1819,11 @@ Asian (non-tenure-track count)
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_77.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_74.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1804,11 +1831,11 @@ Black or African American (non-tenure-track count)
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_78.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_75.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1816,11 +1843,11 @@ Hispanic or Latino (non-tenure-track count)
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_79.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_76.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1831,7 +1858,7 @@ White (non-tenure-track count)
 16 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_80.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_77.png alt=‘Line plot from
 14 to 16 from 2013 to 2020’ >
 </td>
 </tr>
@@ -1840,11 +1867,11 @@ White (non-tenure-track count)
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_81.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_78.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1852,11 +1879,11 @@ Two or more races (non-tenure-track count)
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_82.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/BethelCollege-NorthNewton_79.png alt=‘Line plot from
+0 to 0 from 2013 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1892,7 +1919,7 @@ Applicants submitting SAT
 13% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_30.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_27.png alt=‘Line plot from
 17 to 13 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1906,7 +1933,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 490 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_31.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_28.png alt=‘Line plot from
 468 to 490 from 2018 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1920,7 +1947,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 590 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_32.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_29.png alt=‘Line plot from
 563 to 590 from 2018 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1934,7 +1961,7 @@ SAT Math 25th percentile score
 500 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_33.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_30.png alt=‘Line plot from
 425 to 500 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1949,7 +1976,7 @@ SAT Math 75th percentile score
 570 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_34.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_31.png alt=‘Line plot from
 475 to 570 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1982,7 +2009,7 @@ Applicants submitting ACT
 65% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_35.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_32.png alt=‘Line plot from
 83 to 65 from 2014 to 2021’ >
 </td>
 </tr>
@@ -1994,7 +2021,7 @@ ACT Composite 25th percentile score
 18 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_36.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_33.png alt=‘Line plot from
 19 to 18 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2006,7 +2033,7 @@ ACT Composite 75th percentile score
 25 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_37.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_34.png alt=‘Line plot from
 25 to 25 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2018,7 +2045,7 @@ ACT English 25th percentile score
 16 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_38.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_35.png alt=‘Line plot from
 17 to 16 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2030,7 +2057,7 @@ ACT English 75th percentile score
 24 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_39.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_36.png alt=‘Line plot from
 25 to 24 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2042,7 +2069,7 @@ ACT Math 25th percentile score
 16 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_40.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_37.png alt=‘Line plot from
 17 to 16 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2054,7 +2081,7 @@ ACT Math 75th percentile score
 25 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BethelCollege-NorthNewton_41.png alt=‘Line plot from
+<img src=images/BethelCollege-NorthNewton_38.png alt=‘Line plot from
 24 to 25 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2065,28 +2092,28 @@ ACT Math 75th percentile score
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-02fcf0163133ce2fabf8" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-02fcf0163133ce2fabf8">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_SocialWork.html\">Social Work</a>","<a href=\"majors_Bachelors_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_NaturalSciences.html\">Natural Sciences</a>","<a href=\"majors_Bachelors_Music_Other.html\">Music, Other</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_MassCommunication_MediaStudies.html\">Mass Communication/Media Studies</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_CommercialandAdvertisingArt.html\">Commercial and Advertising Art</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Bachelors_AthleticTraining_Trainer.html\">Athletic Training/Trainer</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>"],[15,14,13,5,4,4,3,3,2,2,2,1,1,1,1,1,1],[20.548,19.178,17.808,6.849,5.479,5.479,4.11,4.11,2.74,2.74,2.74,1.37,1.37,1.37,1.37,1.37,1.37],[0.01,0.064,0.054,0.006,0.013,0.004,0.336,0.399,0.007,0.011,0.022,0.012,0.007,0.131,0.049,0.049,0.004],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f9c0ea78956dd24320b1" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f9c0ea78956dd24320b1">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_SocialWork.html\">Social Work</a>","<a href=\"majors_Bachelors_Business_Commerce_General.html\">Business/Commerce, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_NaturalSciences.html\">Natural Sciences</a>","<a href=\"majors_Bachelors_Music_Other.html\">Music, Other</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_MassCommunication_MediaStudies.html\">Mass Communication/Media Studies</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_CommercialandAdvertisingArt.html\">Commercial and Advertising Art</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Bachelors_AthleticTraining_Trainer.html\">Athletic Training/Trainer</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>"],[15,14,13,5,4,4,3,3,2,2,2,1,1,1,1,1,1],[20.548,19.178,17.808,6.849,5.479,5.479,4.11,4.11,2.74,2.74,2.74,1.37,1.37,1.37,1.37,1.37,1.37],[0.01,0.064,0.054,0.006,0.013,0.004,0.336,0.399,0.007,0.011,0.022,0.012,0.007,0.131,0.049,0.049,0.004],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a4b3318a30174b262efe" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a4b3318a30174b262efe">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a602b3ac9695dc05bd6b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a602b3ac9695dc05bd6b">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1de4d4eb945a12aa7fb8" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-1de4d4eb945a12aa7fb8">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2efd744301b1d9dba2a4" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2efd744301b1d9dba2a4">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4e9e51d44b1f1dcaf8c9" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-4e9e51d44b1f1dcaf8c9">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_PhysicalEducationTeachingandCoaching.html\">Physical Education Teaching and Coaching</a>"],[2],[100],[0.526],["Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-18005cb5d33c2cec488e" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-18005cb5d33c2cec488e">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_PhysicalEducationTeachingandCoaching.html\">Physical Education Teaching and Coaching</a>"],[2],[100],[0.526],["Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9a44f65b930b4e074608" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-9a44f65b930b4e074608">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-99714d3955fbb84e4c67" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-99714d3955fbb84e4c67">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

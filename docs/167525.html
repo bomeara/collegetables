@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -265,8 +267,19 @@ Undergraduate)</p></li>
 <li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
 two-year (see more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 13,171 (This is 90% the cost of Harvard)</p></li>
+aid</strong>: $13,171 (This is 80% the average cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $13,375.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.quincycollege.edu/netprice/npcalc.htm'>here</a> to
+see what your family may be asked to pay. It can be MUCH lower than the
+average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Two-year, small</p></li>
+<li><p><strong>In state percentage</strong>: 98.9% of first year
+students come from Massachusetts</p></li>
+<li><p><strong>In US percentage</strong>: 100.0% of first year students
+come from the US</p></li>
 <li><p><strong>Student to tenure-stream faculty ratio</strong>: 21.2
 (undergrads to tenure-stream faculty)</p></li>
 <li><p><strong>Student to faculty ratio</strong>: 21.2 (undergrads to
@@ -297,9 +310,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Protective (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: A- (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -312,17 +326,29 @@ marriage</strong>: 100% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Safest (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Northeastern coastal
 forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/26281/Average-Weather-in-Quincy-Massachusetts-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2fd70b22d733437fab5b" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-2fd70b22d733437fab5b">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[42.252416,-71.003476,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[42.252416,-71.003476],16,[]],"limits":{"lat":[42.252416,42.252416],"lng":[-71.003476,-71.003476]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-250b15e44e8db37770d1" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-250b15e44e8db37770d1">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"167525.html\">Quincy College</a>","<a href=\"157304.html\">Madisonville Community College</a>","<a href=\"145831.html\">Illinois Valley Community College</a>","<a href=\"105792.html\">South Mountain Community College</a>","<a href=\"129756.html\">Middlesex Community College</a>","<a href=\"148256.html\">Rend Lake College</a>","<a href=\"211343.html\">Butler County Community College</a>","<a href=\"135160.html\">Florida Gateway College</a>","<a href=\"196699.html\">Ulster County Community College</a>","<a href=\"236258.html\">Peninsula College</a>","<a href=\"118772.html\">Merritt College</a>","<a href=\"189839.html\">Cayuga County Community College</a>","<a href=\"102076.html\">Snead State Community College</a>","<a href=\"235334.html\">Grays Harbor College</a>","<a href=\"101897.html\">Northeast Alabama Community College</a>","<a href=\"168883.html\">Bay de Noc Community College</a>","<a href=\"236382.html\">Renton Technical College</a>","<a href=\"101143.html\">Enterprise State Community College</a>","<a href=\"125170.html\">Berkeley City College</a>","<a href=\"166957.html\">Mount Wachusett Community College</a>","<a href=\"109907.html\">Barstow Community College</a>","<a href=\"146278.html\">John Wood Community College</a>","<a href=\"179715.html\">North Central Missouri College</a>","<a href=\"226408.html\">College of the Mainland</a>","<a href=\"147411.html\">Morton College</a>","<a href=\"191302.html\">Fulton-Montgomery Community College</a>","<a href=\"488730.html\">Northeast Lakeview College</a>","<a href=\"156790.html\">Hazard Community and Technical College</a>","<a href=\"207397.html\">Oklahoma State University-Oklahoma City</a>","<a href=\"146418.html\">Kishwaukee College</a>","<a href=\"112561.html\">Columbia College</a>","<a href=\"167631.html\">Roxbury Community College</a>","<a href=\"195988.html\">Sullivan County Community College</a>","<a href=\"190169.html\">Columbia-Greene Community College</a>","<a href=\"117195.html\">Lake Tahoe Community College</a>","<a href=\"146205.html\">John A Logan College</a>","<a href=\"148007.html\">Prairie State College</a>","<a href=\"148821.html\">Shawnee Community College</a>","<a href=\"124113.html\">Taft College</a>","<a href=\"173735.html\">Hibbing Community College</a>","<a href=\"165194.html\">Cape Cod Community College</a>","<a href=\"172291.html\">St Clair County Community College</a>","<a href=\"118684.html\">Mendocino College</a>","<a href=\"144184.html\">City Colleges of Chicago-Harry S Truman College</a>","<a href=\"196565.html\">Tompkins Cortland Community College</a>","<a href=\"144175.html\">City Colleges of Chicago-Olive-Harvey College</a>","<a href=\"184205.html\">Rowan College South Jersey Cumberland Campus</a>","<a href=\"441760.html\">Lamar Institute of Technology</a>","<a href=\"171225.html\">Monroe County Community College</a>","<a href=\"236504.html\">South Seattle College</a>","<a href=\"180197.html\">Flathead Valley Community College</a>","<a href=\"211079.html\">Community College of Beaver County</a>","<a href=\"234845.html\">Centralia College</a>","<a href=\"165981.html\">Greenfield Community College</a>","<a href=\"182564.html\">Western Nevada College</a>","<a href=\"172954.html\">Anoka Technical College</a>","<a href=\"194028.html\">North Country Community College</a>","<a href=\"143613.html\">Carl Sandburg College</a>","<a href=\"141990.html\">Windward Community College</a>","<a href=\"172918.html\">Alexandria Technical &amp; Community College</a>","<a href=\"195322.html\">Schenectady County Community College</a>","<a href=\"173799.html\">Inver Hills Community College</a>","<a href=\"234696.html\">Bellingham Technical College</a>","<a href=\"235750.html\">Lower Columbia College</a>","<a href=\"157739.html\">Southeast Kentucky Community &amp; Technical College</a>","<a href=\"166647.html\">Massachusetts Bay Community College</a>","<a href=\"100760.html\">Central Alabama Community College</a>","<a href=\"173416.html\">Dakota County Technical College</a>","<a href=\"222567.html\">Alvin Community College</a>","<a href=\"114938.html\">Gavilan College</a>","<a href=\"102313.html\">H Councill Trenholm State Community College</a>","<a href=\"108667.html\">College of Alameda</a>","<a href=\"105145.html\">GateWay Community College</a>","<a href=\"204699.html\">Ohio State University-Marion Campus</a>","<a href=\"154907.html\">Cloud County Community College</a>","<a href=\"448594.html\">West Hills College-Lemoore</a>","<a href=\"112385.html\">Coastline Community College</a>","<a href=\"226116.html\">Lamar State College-Port Arthur</a>","<a href=\"234711.html\">Big Bend Community College</a>","<a href=\"111896.html\">Cerro Coso Community College</a>","<a href=\"133021.html\">Chipola College</a>","<a href=\"121707.html\">College of the Redwoods</a>","<a href=\"482699.html\">South Georgia State College</a>","<a href=\"207740.html\">Seminole State College</a>","<a href=\"237701.html\">Potomac State College of West Virginia University</a>","<a href=\"137315.html\">South Florida State College</a>","<a href=\"117274.html\">Lassen Community College</a>","<a href=\"144157.html\">City Colleges of Chicago-Kennedy-King College</a>","<a href=\"146366.html\">Kaskaskia College</a>","<a href=\"179344.html\">Missouri State University-West Plains</a>","<a href=\"475565.html\">CUNY Stella and Charles Guttman Community College</a>","<a href=\"120953.html\">Palo Verde College</a>","<a href=\"187666.html\">Eastern New Mexico University-Roswell Campus</a>","<a href=\"129808.html\">Three Rivers Community College</a>","<a href=\"175263.html\">Minnesota State College Southeast</a>","<a href=\"101736.html\">Northwest-Shoals Community College</a>","<a href=\"198987.html\">Mitchell Community College</a>","<a href=\"126119.html\">Yuba College</a>","<a href=\"204015.html\">Miami University-Middletown</a>","<a href=\"204680.html\">Ohio State University-Mansfield Campus</a>"],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,15,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,19,15],[58,14,13,6,18,5,29,6,16,10,6,19,21,8,15,27,16,16,6,16,1,16,14,12,11,14,13,11,22,15,6,9,10,14,8,8,10,9,3,26,16,33,3,10,24,2,16,17,14,14,18,36,8,15,17,23,14,13,11,26,10,27,14,9,9,18,8,26,13,2,13,6,9,38,17,1,6,11,13,3,10,3,11,16,null,10,3,3,12,7,2,2,5,16,23,13,7,1,64,35],[21,29,13,18,20,19,18,16,20,27,23,23,27,21,33,20,19,17,21,17,24,20,18,20,14,21,27,34,15,17,19,9,22,11,19,21,11,20,28,16,12,22,18,20,22,17,37,21,16,30,15,16,25,10,26,17,21,19,11,17,28,20,23,20,35,17,14,23,12,23,13,11,10,27,18,36,16,15,30,14,19,17,22,24,22,16,12,14,16,22,20,18,16,16,18,15,null,25,35,26],[13375,6612,4939,9944,2849,10136,4835,51,4594,4490,13235,4555,7406,7103,2939,6931,4080,2145,10719,6260,9056,6472,9086,-1827,7116,9283,4882,3702,7435,4845,6805,10345,10582,4840,3144,5563,8015,5058,6224,9297,8475,4474,3659,4580,9965,5119,8571,7975,3517,5951,7011,5134,7700,7910,10919,11207,12434,3026,9414,10860,4447,8611,null,6004,3570,6052,8734,10143,8542,6559,5335,8128,10088,10435,9255,10462,6801,4690,6287,7241,2475,4958,8189,12235,5919,3426,null,6655,5355,7159,6340,12295,3995,7184,13939,1520,7594,4375,10617,14204],[933,935,914,891,770,951,953,944,973,826,980,832,997,954,885,671,1075,913,790,903,910,836,699,1118,1016,616,1121,919,998,885,509,302,583,397,606,1268,784,465,852,448,785,1144,697,1087,1008,613,995,1387,602,1299,651,549,1167,374,1132,837,580,674,459,1062,1131,1249,1096,1227,969,1136,494,1286,792,1460,758,595,985,875,585,1049,591,788,1262,822,700,971,1013,754,883,1044,463,800,1109,684,772,530,734,1060,662,900,946,1259,958,757],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0],["Massachusetts","Kentucky","Illinois","Arizona","Connecticut","Illinois","Pennsylvania","Florida","New York","Washington","California","New York","Alabama","Washington","Alabama","Michigan","Washington","Alabama","California","Massachusetts","California","Illinois","Missouri","Texas","Illinois","New York","Texas","Kentucky","Oklahoma","Illinois","California","Massachusetts","New York","New York","California","Illinois","Illinois","Illinois","California","Minnesota","Massachusetts","Michigan","California","Illinois","New York","Illinois","New Jersey","Texas","Michigan","Washington","Montana","Pennsylvania","Washington","Massachusetts","Nevada","Minnesota","New York","Illinois","Hawaii","Minnesota","New York","Minnesota","Washington","Washington","Kentucky","Massachusetts","Alabama","Minnesota","Texas","California","Alabama","California","Arizona","Ohio","Kansas","California","California","Texas","Washington","California","Florida","California","Georgia","Oklahoma","West Virginia","Florida","California","Illinois","Illinois","Missouri","New York","California","New Mexico","Connecticut","Minnesota","Alabama","North Carolina","California","Ohio","Ohio"],["Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6bef9408a31522df2c63" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-6bef9408a31522df2c63">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[42.252416,-71.003476,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[42.252416,-71.003476],16,[]],"limits":{"lat":[42.252416,42.252416],"lng":[-71.003476,-71.003476]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -389,12 +415,6 @@ Change over ≤ 11 years
 <th style="text-align:center;">
 Trend
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Associate’s Colleges: High Transfer-High Nontraditional
-</th>
 </tr>
 </thead>
 <tbody>
@@ -412,12 +432,6 @@ $13,171 (2020)
 <td style="text-align:center;">
 ↑<br />$374 per year
 </td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 55%
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 6%
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -431,12 +445,6 @@ Undergrads getting federal aid
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (higher) than 29%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (higher) than 43%
 </td>
 </tr>
 <tr>
@@ -452,12 +460,6 @@ from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
-<td style="text-align:center;">
-✪<br />Better (higher) than 11%
-</td>
-<td style="text-align:center;">
-✪<br />Better (higher) than 11%
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -471,12 +473,6 @@ Undergrads getting Pell grants
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (higher) than 34%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (higher) than 55%
 </td>
 </tr>
 </tbody>
@@ -495,33 +491,9 @@ Quincy College
 <th style="text-align:center;">
 Change over ≤ 11 years
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Associate’s Colleges: High Transfer-High Nontraditional
-</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-21 (2019)
-</td>
-<td style="text-align:center;">
-<img src=images/QuincyCollege_14.png alt=‘Line plot from 32 to 21
-from 2013 to 2019’ >
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 35%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 40%
-</td>
-</tr>
 <tr>
 <td style="text-align:left;">
 Undergrads per tenure track instructor
@@ -530,14 +502,20 @@ Undergrads per tenure track instructor
 21 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_15.png alt=‘Line plot from 32 to 21
+<img src=images/QuincyCollege_14.png alt=‘Line plot from 32 to 21
 from 2013 to 2019’ >
 </td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 57%
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
 </td>
 <td style="text-align:center;">
-✪✪✪<br />Better (lower) than 55%
+21 (2019)
+</td>
+<td style="text-align:center;">
+<img src=images/QuincyCollege_15.png alt=‘Line plot from 32 to 21
+from 2013 to 2019’ >
 </td>
 </tr>
 <tr>
@@ -551,26 +529,6 @@ Total instructors
 <img src=images/QuincyCollege_16.png alt=‘Line plot from 45 to 38
 from 2012 to 2020’ >
 </td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Non-tenure track instructors
-</td>
-<td style="text-align:center;">
-1.0 (2013)
-</td>
-<td style="text-align:center;">
-<img src=images/QuincyCollege_17.png alt=‘Line plot from 1.0 to 1.0
-from 2013 to 2013’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -580,12 +538,20 @@ Tenure track instructors
 38 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_18.png alt=‘Line plot from 45 to 38
+<img src=images/QuincyCollege_17.png alt=‘Line plot from 45 to 38
 from 2012 to 2020’ >
 </td>
-<td style="text-align:center;">
+</tr>
+<tr>
+<td style="text-align:left;">
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
+1 (2013)
+</td>
+<td style="text-align:center;">
+<img src=images/QuincyCollege_18.png alt=‘Line plot from 1 to 1 from
+2013 to 2013’ >
 </td>
 </tr>
 </tbody>
@@ -607,15 +573,21 @@ Quincy College
 <th style="text-align:center;">
 Change over ≤ 11 years
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Associate’s Colleges: High Transfer-High Nontraditional
-</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+58% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/QuincyCollege_19.png alt=‘Line plot from 69 to 58
+from 2011 to 2021’ >
+</td>
+</tr>
 <tr>
 <td style="text-align:left;">
 Revenue minus expenses
@@ -624,14 +596,8 @@ Revenue minus expenses
 $714,867 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_19.png alt=‘Line plot from 117,029 to
+<img src=images/QuincyCollege_20.png alt=‘Line plot from 117,029 to
 714,867 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (higher) than 37%
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (higher) than 37%
 </td>
 </tr>
 <tr>
@@ -642,12 +608,8 @@ Revenue
 $24 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_20.png alt=‘Line plot from 20 M to 24 M
+<img src=images/QuincyCollege_21.png alt=‘Line plot from 20 M to 24 M
 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 <tr>
@@ -658,12 +620,8 @@ Expenses
 $24 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_21.png alt=‘Line plot from 20 M to 24 M
+<img src=images/QuincyCollege_22.png alt=‘Line plot from 20 M to 24 M
 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 <tr>
@@ -674,48 +632,8 @@ Assets
 $17 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_22.png alt=‘Line plot from 18 M to 17 M
+<img src=images/QuincyCollege_23.png alt=‘Line plot from 18 M to 17 M
 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (higher) than 35%
-</td>
-<td style="text-align:center;">
-✪<br />Better (higher) than 14%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-58% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/QuincyCollege_23.png alt=‘Line plot from 69 to 58
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 52%
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 1%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/QuincyCollege_24.png alt=‘Line plot from 0.0 to 0.0
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -757,7 +675,7 @@ Men (percent freshmen)
 49% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_83.png alt=‘Line plot from 36 to 49
+<img src=images/QuincyCollege_80.png alt=‘Line plot from 36 to 49
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -769,7 +687,7 @@ Women (percent freshmen)
 51% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_84.png alt=‘Line plot from 64 to 51
+<img src=images/QuincyCollege_81.png alt=‘Line plot from 64 to 51
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -778,11 +696,11 @@ from 2010 to 2021’ >
 American Indian or Alaska Native men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_85.png alt=‘Line plot from 0.0 to 0.0
-from 2010 to 2021’ >
+<img src=images/QuincyCollege_82.png alt=‘Line plot from 0 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -790,11 +708,11 @@ from 2010 to 2021’ >
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_86.png alt=‘Line plot from 0.0 to 0.0
-from 2010 to 2021’ >
+<img src=images/QuincyCollege_83.png alt=‘Line plot from 0 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -805,7 +723,7 @@ Asian men (percent freshmen)
 2.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_87.png alt=‘Line plot from 4.3 to 2.7
+<img src=images/QuincyCollege_84.png alt=‘Line plot from 4.3 to 2.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -817,7 +735,7 @@ Asian women (percent freshmen)
 2.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_88.png alt=‘Line plot from 2.6 to 2.7
+<img src=images/QuincyCollege_85.png alt=‘Line plot from 2.6 to 2.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -829,7 +747,7 @@ Black or African American men (percent freshmen)
 7.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_89.png alt=‘Line plot from 5.3 to 7.4
+<img src=images/QuincyCollege_86.png alt=‘Line plot from 5.3 to 7.4
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -841,7 +759,7 @@ Black or African American women (percent freshmen)
 11% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_90.png alt=‘Line plot from 13 to 11
+<img src=images/QuincyCollege_87.png alt=‘Line plot from 13 to 11
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -853,7 +771,7 @@ Hispanic men (percent freshmen)
 3.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_91.png alt=‘Line plot from 0.4 to 3.2
+<img src=images/QuincyCollege_88.png alt=‘Line plot from 0.4 to 3.2
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -865,7 +783,7 @@ Hispanic women (percent freshmen)
 7.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_92.png alt=‘Line plot from 2.8 to 7.4
+<img src=images/QuincyCollege_89.png alt=‘Line plot from 2.8 to 7.4
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -874,10 +792,10 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_93.png alt=‘Line plot from 0.2 to 0.0
+<img src=images/QuincyCollege_90.png alt=‘Line plot from 0.2 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -886,11 +804,11 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_94.png alt=‘Line plot from 0.0 to 0.0
-from 2010 to 2021’ >
+<img src=images/QuincyCollege_91.png alt=‘Line plot from 0 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -901,7 +819,7 @@ White men (percent freshmen)
 27% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_95.png alt=‘Line plot from 16 to 27
+<img src=images/QuincyCollege_92.png alt=‘Line plot from 16 to 27
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -913,7 +831,7 @@ White women (percent freshmen)
 19% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_96.png alt=‘Line plot from 30 to 19
+<img src=images/QuincyCollege_93.png alt=‘Line plot from 30 to 19
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -925,7 +843,7 @@ Two or more races men (percent freshmen)
 2.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_97.png alt=‘Line plot from 0.0 to 2.7
+<img src=images/QuincyCollege_94.png alt=‘Line plot from 0 to 2.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -937,7 +855,7 @@ Two or more races women (percent freshmen)
 2.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_98.png alt=‘Line plot from 0.0 to 2.7
+<img src=images/QuincyCollege_95.png alt=‘Line plot from 0 to 2.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -949,7 +867,7 @@ Race ethnicity unknown men (percent freshmen)
 2.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_99.png alt=‘Line plot from 0.8 to 2.7
+<img src=images/QuincyCollege_96.png alt=‘Line plot from 0.8 to 2.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -961,7 +879,7 @@ Race ethnicity unknown women (percent freshmen)
 3.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_100.png alt=‘Line plot from 2.3 to 3.2
+<img src=images/QuincyCollege_97.png alt=‘Line plot from 2.3 to 3.2
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -973,7 +891,7 @@ Nonresident alien men (percent freshmen)
 3.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_101.png alt=‘Line plot from 9.1 to 3.7
+<img src=images/QuincyCollege_98.png alt=‘Line plot from 9.1 to 3.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -985,8 +903,63 @@ Nonresident alien women (percent freshmen)
 5.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_102.png alt=‘Line plot from 14 to 5.3
+<img src=images/QuincyCollege_99.png alt=‘Line plot from 14 to 5.3
 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Quincy College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+99% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/QuincyCollege_101.png alt=‘Line plot from 86 to 99
+from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+100% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/QuincyCollege_102.png alt=‘Line plot from 86 to 100
+from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/QuincyCollege_103.png alt=‘Line plot from 0 to 0 from
+2010 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1027,7 +1000,7 @@ Total (tenure-track count)
 38 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_61.png alt=‘Line plot from 45 to 38
+<img src=images/QuincyCollege_58.png alt=‘Line plot from 45 to 38
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1041,7 +1014,7 @@ Women (tenure-track count)
 19 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_62.png alt=‘Line plot from 27 to 19
+<img src=images/QuincyCollege_59.png alt=‘Line plot from 27 to 19
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1055,7 +1028,7 @@ Men (tenure-track count)
 19 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_63.png alt=‘Line plot from 18 to 19
+<img src=images/QuincyCollege_60.png alt=‘Line plot from 18 to 19
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1066,11 +1039,11 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_64.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/QuincyCollege_61.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1080,11 +1053,11 @@ from 2012 to 2020’ >
 Asian (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_65.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/QuincyCollege_62.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1094,11 +1067,11 @@ from 2012 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_66.png alt=‘Line plot from 2.0 to 3.0
-from 2012 to 2020’ >
+<img src=images/QuincyCollege_63.png alt=‘Line plot from 2 to 3 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1108,11 +1081,11 @@ from 2012 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_67.png alt=‘Line plot from 1.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/QuincyCollege_64.png alt=‘Line plot from 1 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.1 per year
@@ -1123,11 +1096,11 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_68.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/QuincyCollege_65.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1140,7 +1113,7 @@ White (tenure-track count)
 35 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_69.png alt=‘Line plot from 41 to 35
+<img src=images/QuincyCollege_66.png alt=‘Line plot from 41 to 35
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1151,11 +1124,11 @@ from 2012 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_70.png alt=‘Line plot from 1.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/QuincyCollege_67.png alt=‘Line plot from 1 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.2 per year
@@ -1166,11 +1139,11 @@ from 2012 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_71.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/QuincyCollege_68.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1208,11 +1181,11 @@ Change over ≤ 11 years
 Total (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2013)
+1 (2013)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_72.png alt=‘Line plot from 1.0 to 1.0
-from 2013 to 2013’ >
+<img src=images/QuincyCollege_69.png alt=‘Line plot from 1 to 1 from
+2013 to 2013’ >
 </td>
 </tr>
 <tr>
@@ -1220,11 +1193,11 @@ from 2013 to 2013’ >
 Women (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2013)
+0 (2013)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_73.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2013’ >
+<img src=images/QuincyCollege_70.png alt=‘Line plot from 0 to 0 from
+2013 to 2013’ >
 </td>
 </tr>
 <tr>
@@ -1232,11 +1205,11 @@ from 2013 to 2013’ >
 Men (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2013)
+1 (2013)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_74.png alt=‘Line plot from 1.0 to 1.0
-from 2013 to 2013’ >
+<img src=images/QuincyCollege_71.png alt=‘Line plot from 1 to 1 from
+2013 to 2013’ >
 </td>
 </tr>
 <tr>
@@ -1244,11 +1217,11 @@ from 2013 to 2013’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2013)
+0 (2013)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_75.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2013’ >
+<img src=images/QuincyCollege_72.png alt=‘Line plot from 0 to 0 from
+2013 to 2013’ >
 </td>
 </tr>
 <tr>
@@ -1256,11 +1229,11 @@ from 2013 to 2013’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2013)
+0 (2013)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_76.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2013’ >
+<img src=images/QuincyCollege_73.png alt=‘Line plot from 0 to 0 from
+2013 to 2013’ >
 </td>
 </tr>
 <tr>
@@ -1268,11 +1241,11 @@ from 2013 to 2013’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2013)
+0 (2013)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_77.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2013’ >
+<img src=images/QuincyCollege_74.png alt=‘Line plot from 0 to 0 from
+2013 to 2013’ >
 </td>
 </tr>
 <tr>
@@ -1280,11 +1253,11 @@ from 2013 to 2013’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2013)
+0 (2013)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_78.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2013’ >
+<img src=images/QuincyCollege_75.png alt=‘Line plot from 0 to 0 from
+2013 to 2013’ >
 </td>
 </tr>
 <tr>
@@ -1292,11 +1265,11 @@ from 2013 to 2013’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2013)
+0 (2013)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_79.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2013’ >
+<img src=images/QuincyCollege_76.png alt=‘Line plot from 0 to 0 from
+2013 to 2013’ >
 </td>
 </tr>
 <tr>
@@ -1304,11 +1277,11 @@ from 2013 to 2013’ >
 White (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2013)
+1 (2013)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_80.png alt=‘Line plot from 1.0 to 1.0
-from 2013 to 2013’ >
+<img src=images/QuincyCollege_77.png alt=‘Line plot from 1 to 1 from
+2013 to 2013’ >
 </td>
 </tr>
 <tr>
@@ -1316,11 +1289,11 @@ from 2013 to 2013’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2013)
+0 (2013)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_81.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2013’ >
+<img src=images/QuincyCollege_78.png alt=‘Line plot from 0 to 0 from
+2013 to 2013’ >
 </td>
 </tr>
 <tr>
@@ -1328,11 +1301,11 @@ from 2013 to 2013’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2013)
+0 (2013)
 </td>
 <td style="text-align:center;">
-<img src=images/QuincyCollege_82.png alt=‘Line plot from 0.0 to 0.0
-from 2013 to 2013’ >
+<img src=images/QuincyCollege_79.png alt=‘Line plot from 0 to 0 from
+2013 to 2013’ >
 </td>
 </tr>
 </tbody>
@@ -1351,28 +1324,28 @@ from 2013 to 2013’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fe604ad0234de4a5eef6" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-fe604ad0234de4a5eef6">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b9e05158027db76d8484" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-b9e05158027db76d8484">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-538430ff429a11c68dfe" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-538430ff429a11c68dfe">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-df894d080775142d17c8" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-df894d080775142d17c8">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-58f83526bbd26bd85fc0" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-58f83526bbd26bd85fc0">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ccaf694dcfa2e25f7034" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ccaf694dcfa2e25f7034">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-03dacbae89f3094f5160" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-03dacbae89f3094f5160">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_SurgicalTechnology_Technologist.html\">Surgical Technology/Technologist</a>","<a href=\"majors_Certificate_Biology_BiotechnologyTechnology_Technician.html\">Biology/Biotechnology Technology/Technician</a>","<a href=\"majors_Certificate_SubstanceAbuse_AddictionCounseling.html\">Substance Abuse/Addiction Counseling</a>","<a href=\"majors_Certificate_HealthServicesAdministration.html\">Health Services Administration</a>","<a href=\"majors_Certificate_LicensedPractical_VocationalNurseTraining.html\">Licensed Practical/Vocational Nurse Training</a>","<a href=\"majors_Certificate_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Certificate_HumanServices_General.html\">Human Services, General</a>","<a href=\"majors_Certificate_PhlebotomyTechnician_Phlebotomist.html\">Phlebotomy Technician/Phlebotomist</a>","<a href=\"majors_Certificate_Accounting.html\">Accounting</a>","<a href=\"majors_Certificate_WebPage_Digital_MultimediaandInformationResourcesDesign.html\">Web Page, Digital/Multimedia and Information Resources Design</a>","<a href=\"majors_Certificate_PhysicalFitnessTechnician.html\">Physical Fitness Technician</a>","<a href=\"majors_Certificate_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Certificate_EmergencyCareAttendant_EMTAmbulance_.html\">Emergency Care Attendant (EMT Ambulance)</a>","<a href=\"majors_Certificate_CustomerServiceManagement.html\">Customer Service Management</a>","<a href=\"majors_Certificate_Entrepreneurship_EntrepreneurialStudies.html\">Entrepreneurship/Entrepreneurial Studies</a>","<a href=\"majors_Certificate_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Certificate_ExercisePhysiologyandKinesiology.html\">Exercise Physiology and Kinesiology</a>","<a href=\"majors_Certificate_Gerontology.html\">Gerontology</a>","<a href=\"majors_Certificate_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Certificate_MedicalAdministrative_ExecutiveAssistantandMedicalSecretary.html\">Medical Administrative/Executive Assistant and Medical Secretary</a>"],[27,25,13,12,8,5,5,4,4,3,3,2,2,2,2,1,1,1,1,1],[22.131,20.492,10.656,9.836,6.557,4.098,4.098,3.279,3.279,2.459,2.459,1.639,1.639,1.639,1.639,0.82,0.82,0.82,0.82,0.82],[0.8,7.418,0.428,7.273,0.018,0.756,0.419,0.053,0.126,0.126,0.303,0.026,0.067,1.587,0.049,0.023,100,0.202,0.028,0.02],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-be8aff173bab5202024b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-be8aff173bab5202024b">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_SurgicalTechnology_Technologist.html\">Surgical Technology/Technologist</a>","<a href=\"majors_Certificate_Biology_BiotechnologyTechnology_Technician.html\">Biology/Biotechnology Technology/Technician</a>","<a href=\"majors_Certificate_SubstanceAbuse_AddictionCounseling.html\">Substance Abuse/Addiction Counseling</a>","<a href=\"majors_Certificate_HealthServicesAdministration.html\">Health Services Administration</a>","<a href=\"majors_Certificate_LicensedPractical_VocationalNurseTraining.html\">Licensed Practical/Vocational Nurse Training</a>","<a href=\"majors_Certificate_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Certificate_HumanServices_General.html\">Human Services, General</a>","<a href=\"majors_Certificate_PhlebotomyTechnician_Phlebotomist.html\">Phlebotomy Technician/Phlebotomist</a>","<a href=\"majors_Certificate_Accounting.html\">Accounting</a>","<a href=\"majors_Certificate_WebPage_Digital_MultimediaandInformationResourcesDesign.html\">Web Page, Digital/Multimedia and Information Resources Design</a>","<a href=\"majors_Certificate_PhysicalFitnessTechnician.html\">Physical Fitness Technician</a>","<a href=\"majors_Certificate_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Certificate_EmergencyCareAttendant_EMTAmbulance_.html\">Emergency Care Attendant (EMT Ambulance)</a>","<a href=\"majors_Certificate_CustomerServiceManagement.html\">Customer Service Management</a>","<a href=\"majors_Certificate_Entrepreneurship_EntrepreneurialStudies.html\">Entrepreneurship/Entrepreneurial Studies</a>","<a href=\"majors_Certificate_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Certificate_ExercisePhysiologyandKinesiology.html\">Exercise Physiology and Kinesiology</a>","<a href=\"majors_Certificate_Gerontology.html\">Gerontology</a>","<a href=\"majors_Certificate_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Certificate_MedicalAdministrative_ExecutiveAssistantandMedicalSecretary.html\">Medical Administrative/Executive Assistant and Medical Secretary</a>"],[27,25,13,12,8,5,5,4,4,3,3,2,2,2,2,1,1,1,1,1],[22.131,20.492,10.656,9.836,6.557,4.098,4.098,3.279,3.279,2.459,2.459,1.639,1.639,1.639,1.639,0.82,0.82,0.82,0.82,0.82],[0.8,7.418,0.428,7.273,0.018,0.756,0.419,0.053,0.126,0.126,0.303,0.026,0.067,1.587,0.049,0.023,100,0.202,0.028,0.02],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1fe41395b6325e188215" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-1fe41395b6325e188215">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Associates_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Associates_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Associates_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Associates_HumanServices_General.html\">Human Services, General</a>","<a href=\"majors_Associates_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Associates_Biology_BiotechnologyTechnology_Technician.html\">Biology/Biotechnology Technology/Technician</a>","<a href=\"majors_Associates_Accounting.html\">Accounting</a>","<a href=\"majors_Associates_HealthServicesAdministration.html\">Health Services Administration</a>","<a href=\"majors_Associates_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Associates_Clinical_MedicalLaboratoryTechnician.html\">Clinical/Medical Laboratory Technician</a>","<a href=\"majors_Associates_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Associates_PhysicalTherapyAssistant.html\">Physical Therapy Assistant</a>","<a href=\"majors_Associates_GeneralStudies.html\">General Studies</a>","<a href=\"majors_Associates_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Associates_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Associates_ExercisePhysiologyandKinesiology.html\">Exercise Physiology and Kinesiology</a>","<a href=\"majors_Associates_FineArtsandArtStudies_Other.html\">Fine Arts and Art Studies, Other</a>","<a href=\"majors_Associates_Electromechanical_ElectromechanicalEngineeringTechnology_Technician.html\">Electromechanical/Electromechanical Engineering Technology/Technician</a>","<a href=\"majors_Associates_SecuritiesServicesAdministration_Management.html\">Securities Services Administration/Management</a>"],[76,67,46,40,22,20,20,19,15,10,8,7,7,6,6,5,4,4,1,1],[19.792,17.448,11.979,10.417,5.729,5.208,5.208,4.948,3.906,2.604,2.083,1.823,1.823,1.562,1.562,1.302,1.042,1.042,0.26,0.26],[0.029,0.112,0.377,0.047,0.487,0.489,6.211,0.461,5.051,0.495,0.245,0.093,0.098,0.006,0.073,0.096,100,3.419,0.101,8.333],["Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-de004a9a7174b2bcc1d7" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-de004a9a7174b2bcc1d7">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Associates_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Associates_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Associates_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Associates_HumanServices_General.html\">Human Services, General</a>","<a href=\"majors_Associates_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Associates_Biology_BiotechnologyTechnology_Technician.html\">Biology/Biotechnology Technology/Technician</a>","<a href=\"majors_Associates_Accounting.html\">Accounting</a>","<a href=\"majors_Associates_HealthServicesAdministration.html\">Health Services Administration</a>","<a href=\"majors_Associates_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Associates_Clinical_MedicalLaboratoryTechnician.html\">Clinical/Medical Laboratory Technician</a>","<a href=\"majors_Associates_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Associates_PhysicalTherapyAssistant.html\">Physical Therapy Assistant</a>","<a href=\"majors_Associates_GeneralStudies.html\">General Studies</a>","<a href=\"majors_Associates_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Associates_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Associates_ExercisePhysiologyandKinesiology.html\">Exercise Physiology and Kinesiology</a>","<a href=\"majors_Associates_FineArtsandArtStudies_Other.html\">Fine Arts and Art Studies, Other</a>","<a href=\"majors_Associates_Electromechanical_ElectromechanicalEngineeringTechnology_Technician.html\">Electromechanical/Electromechanical Engineering Technology/Technician</a>","<a href=\"majors_Associates_SecuritiesServicesAdministration_Management.html\">Securities Services Administration/Management</a>"],[76,67,46,40,22,20,20,19,15,10,8,7,7,6,6,5,4,4,1,1],[19.792,17.448,11.979,10.417,5.729,5.208,5.208,4.948,3.906,2.604,2.083,1.823,1.823,1.562,1.562,1.302,1.042,1.042,0.26,0.26],[0.029,0.112,0.377,0.047,0.487,0.489,6.211,0.461,5.051,0.495,0.245,0.093,0.098,0.006,0.073,0.096,100,3.419,0.101,8.333],["Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

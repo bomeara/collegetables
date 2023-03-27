@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -178,10 +178,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -194,6 +194,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -252,10 +254,20 @@ Undergraduate)</p></li>
 <li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
 four-year (see more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 26,727 (1.9 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $26,727 (1.7 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $7,823.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://bowdoin.studentaidcalculator.com/survey.aspx'>here</a>
+to see what your family may be asked to pay. It can be MUCH lower than
+the average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, small, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 7.8% of first year students
+come from Maine</p></li>
+<li><p><strong>In US percentage</strong>: 91.5% of first year students
+come from the US</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 93.8% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -295,9 +307,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Protective (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: F (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -310,17 +323,29 @@ marriage</strong>: 100% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Low risk (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Northeastern coastal
 forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/27201/Average-Weather-in-Brunswick-Maine-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fc8de1ad7208b1a3417e" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-fc8de1ad7208b1a3417e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[43.907134,-69.963942,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[43.907134,-69.963942],16,[]],"limits":{"lat":[43.907134,43.907134],"lng":[-69.963942,-69.963942]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bd7a9bfe771e4b54c430" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bd7a9bfe771e4b54c430">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"161004.html\">Bowdoin College</a>","<a href=\"164465.html\">Amherst College</a>","<a href=\"161086.html\">Colby College</a>","<a href=\"191515.html\">Hamilton College</a>","<a href=\"230959.html\">Middlebury College</a>","<a href=\"160977.html\">Bates College</a>","<a href=\"168342.html\">Williams College</a>","<a href=\"130697.html\">Wesleyan University</a>","<a href=\"130590.html\">Trinity College</a>","<a href=\"168148.html\">Tufts University</a>","<a href=\"121345.html\">Pomona College</a>","<a href=\"128902.html\">Connecticut College</a>","<a href=\"216287.html\">Swarthmore College</a>","<a href=\"198385.html\">Davidson College</a>","<a href=\"189097.html\">Barnard College</a>","<a href=\"168218.html\">Wellesley College</a>","<a href=\"173258.html\">Carleton College</a>","<a href=\"112260.html\">Claremont McKenna College</a>","<a href=\"153384.html\">Grinnell College</a>","<a href=\"126678.html\">Colorado College</a>","<a href=\"212911.html\">Haverford College</a>","<a href=\"115409.html\">Harvey Mudd College</a>","<a href=\"197133.html\">Vassar College</a>","<a href=\"234207.html\">Washington and Lee University</a>","<a href=\"130624.html\">United States Coast Guard Academy</a>","<a href=\"110404.html\">California Institute of Technology</a>","<a href=\"121257.html\">Pitzer College</a>","<a href=\"484844.html\">Minerva University</a>","<a href=\"197027.html\">United States Merchant Marine Academy</a>","<a href=\"190099.html\">Colgate University</a>","<a href=\"173902.html\">Macalester College</a>","<a href=\"197036.html\">United States Military Academy</a>","<a href=\"203535.html\">Kenyon College</a>","<a href=\"170286.html\">Hillsdale College</a>","<a href=\"164155.html\">United States Naval Academy</a>","<a href=\"213385.html\">Lafayette College</a>","<a href=\"195526.html\">Skidmore College</a>","<a href=\"202523.html\">Denison University</a>","<a href=\"164580.html\">Babson College</a>","<a href=\"182670.html\">Dartmouth College</a>","<a href=\"212577.html\">Franklin and Marshall College</a>","<a href=\"128328.html\">United States Air Force Academy</a>","<a href=\"211440.html\">Carnegie Mellon University</a>","<a href=\"160755.html\">Tulane University of Louisiana</a>","<a href=\"441982.html\">Franklin W Olin College of Engineering</a>","<a href=\"221999.html\">Vanderbilt University</a>","<a href=\"167835.html\">Smith College</a>","<a href=\"227757.html\">Rice University</a>","<a href=\"166124.html\">College of the Holy Cross</a>","<a href=\"152080.html\">University of Notre Dame</a>","<a href=\"217493.html\">Rhode Island School of Design</a>","<a href=\"217156.html\">Brown University</a>","<a href=\"120254.html\">Occidental College</a>","<a href=\"131496.html\">Georgetown University</a>","<a href=\"211291.html\">Bucknell University</a>","<a href=\"139658.html\">Emory University</a>","<a href=\"156295.html\">Berea College</a>","<a href=\"179867.html\">Washington University in St Louis</a>","<a href=\"211893.html\">Curtis Institute of Music</a>","<a href=\"196866.html\">Union College</a>","<a href=\"192110.html\">The Juilliard School</a>","<a href=\"209922.html\">Reed College</a>","<a href=\"198419.html\">Duke University</a>","<a href=\"216597.html\">Villanova University</a>","<a href=\"233374.html\">University of Richmond</a>","<a href=\"204501.html\">Oberlin College</a>","<a href=\"190372.html\">Cooper Union for the Advancement of Science and Art</a>","<a href=\"186131.html\">Princeton University</a>","<a href=\"147767.html\">Northwestern University</a>","<a href=\"166939.html\">Mount Holyoke College</a>","<a href=\"211273.html\">Bryn Mawr College</a>","<a href=\"162928.html\">Johns Hopkins University</a>","<a href=\"199847.html\">Wake Forest University</a>","<a href=\"212009.html\">Dickinson College</a>","<a href=\"164924.html\">Boston College</a>","<a href=\"491914.html\">Yeshiva Gedola Tiferes Yerachmiel</a>","<a href=\"123165.html\">Scripps College</a>","<a href=\"197221.html\">Webb Institute</a>","<a href=\"441609.html\">Yeshiva Shaarei Torah of Rockland</a>","<a href=\"446561.html\">Stanbridge University</a>","<a href=\"130794.html\">Yale University</a>","<a href=\"480912.html\">Gemini School of Visual Arts &amp; Communication</a>","<a href=\"190415.html\">Cornell University</a>","<a href=\"221351.html\">Rhodes College</a>","<a href=\"174844.html\">St Olaf College</a>","<a href=\"190150.html\">Columbia University in the City of New York</a>","<a href=\"206589.html\">The College of Wooster</a>","<a href=\"212674.html\">Gettysburg College</a>","<a href=\"399911.html\">Soka University of America</a>","<a href=\"164988.html\">Boston University</a>","<a href=\"215062.html\">University of Pennsylvania</a>","<a href=\"144050.html\">University of Chicago</a>","<a href=\"230597.html\">Snow College</a>","<a href=\"139755.html\">Georgia Institute of Technology-Main Campus</a>","<a href=\"493716.html\">Yeshiva Gedola Tiferes Yaakov Yitzchok</a>","<a href=\"480091.html\">Bryant &amp; Stratton College-Online</a>","<a href=\"488819.html\">The Colburn Conservatory of Music</a>","<a href=\"192040.html\">Jewish Theological Seminary of America</a>","<a href=\"167358.html\">Northeastern University</a>","<a href=\"184959.html\">Eastwick College-Ramsey</a>"],[9,9,9,14,13,17,9,19,38,11,7,41,8,18,11,16,18,11,11,14,18,10,20,19,19,4,18,1,25,17,31,11,37,24,8,41,31,28,25,6,38,12,14,10,18,7,30,9,43,15,19,6,38,12,35,13,33,13,5,47,7,44,6,25,29,34,15,4,7,52,39,8,25,48,19,31,30,20,56,10,5,17,9,57,47,4,61,56,52,19,6,6,null,16,37,null,6,50,18,37],[63,42,47,40,42,44,52,36,25,50,58,16,45,48,65,49,40,57,43,40,43,48,31,39,69,53,53,73,53,29,21,81,18,56,86,23,21,24,36,70,18,75,43,46,56,48,37,44,29,58,56,66,22,48,26,34,59,45,91,16,63,16,60,29,22,24,53,78,63,29,32,48,37,22,33,100,38,72,60,93,71,100,64,20,25,65,15,18,49,28,73,83,null,49,93,null,100,75,33,97],[94,92,87,92,91,92,94,91,85,94,93,81,94,90,93,92,91,93,87,86,90,94,93,94,92,93,88,81,81,90,90,84,87,88,91,88,84,81,94,94,83,86,93,86,97,93,91,92,93,96,86,96,83,95,88,90,66,93,89,85,87,73,96,91,89,82,83,98,95,85,87,95,90,82,91,94,82,77,100,96,97,100,94,85,85,97,77,82,91,89,96,96,100,92,88,100,80,87,91,100],[5,3,13,13,22,39,4,13,20,28,3,21,4,9,38,5,13,9,3,23,20,18,19,10,0,1,43,42,0,25,18,0,20,3,0,22,27,13,30,6,31,0,21,27,4,7,7,8,22,4,39,10,22,31,28,4,0,4,2,27,5,16,4,41,9,13,7,1,11,13,9,7,14,19,25,46,16,0,40,99,2,7,16,20,18,14,19,30,1,37,6,8,15,22,36,87,null,3,55,100],[10,9,12,12,10,14,7,11,15,13,8,11,8,12,16,11,11,10,10,11,12,9,11,9,14,3,14,null,14,12,13,37,11,13,15,11,13,12,17,7,11,null,8,11,null,9,9,7,13,10,null,9,12,8,10,7,12,5,null,12,null,9,4,14,10,12,16,6,6,12,11,2,8,10,16,null,10,null,null,null,2,null,11,13,20,4,14,13,8,18,6,6,25,17,null,null,null,6,19,null],[7823,4459,2361,6827,7221,4981,5480,7475,8331,7987,6239,13979,4012,3004,15090,8021,13410,8693,13671,8602,9272,20829,13193,850,null,12190,17181,null,5170,7197,10543,null,18974,null,null,12400,15235,14686,20502,8718,13110,null,13608,13380,859,5731,9672,1340,17357,9136,33369,2842,13475,9871,28153,8976,5313,2446,8402,13769,23015,14035,-927,26460,8606,13745,6146,4502,917,13907,9907,4859,5612,12027,7075,7240,7525,5605,null,38330,2958,null,5133,15566,11138,4699,17111,13799,10095,11782,1938,4777,5234,11620,null,14186,null,20408,7376,26614],[1948,1971,2262,2049,2835,1821,2135,3238,2118,6509,1756,1811,1649,1973,2959,2381,2032,1411,1718,2190,1419,902,2498,1853,1049,987,1132,604,1006,3142,2206,4594,1868,1473,4528,2706,2655,2307,2551,4555,2127,4181,6743,8231,360,7042,2554,4156,3005,8956,2044,7082,1938,7213,3715,7028,1432,7348,109,2075,487,1515,6838,6812,3030,2905,873,5240,8438,2200,1421,5727,5391,2145,9749,167,1090,105,102,1710,6532,7,15450,1996,2964,8161,1947,2399,435,17460,10106,7601,3520,15252,68,5132,57,144,15711,320],[null,null,null,null,0,null,50,132,7,5492,null,1,null,null,null,null,null,5,null,10,null,null,null,379,null,1410,null,0,0,8,null,null,null,35,null,null,0,null,561,2172,null,null,7326,4111,null,5558,341,3692,null,3894,532,3174,1,8169,16,6356,null,7477,42,null,354,0,10175,1380,480,11,29,3157,10397,15,308,11528,2685,6,3912,null,20,null,null,191,7828,null,9558,7,null,20761,null,null,10,11587,12924,9109,null,7334,null,null,59,98,11189,null],["Maine","Massachusetts","Maine","New York","Vermont","Maine","Massachusetts","Connecticut","Connecticut","Massachusetts","California","Connecticut","Pennsylvania","North Carolina","New York","Massachusetts","Minnesota","California","Iowa","Colorado","Pennsylvania","California","New York","Virginia","Connecticut","California","California","California","New York","New York","Minnesota","New York","Ohio","Michigan","Maryland","Pennsylvania","New York","Ohio","Massachusetts","New Hampshire","Pennsylvania","Colorado","Pennsylvania","Louisiana","Massachusetts","Tennessee","Massachusetts","Texas","Massachusetts","Indiana","Rhode Island","Rhode Island","California","District of Columbia","Pennsylvania","Georgia","Kentucky","Missouri","Pennsylvania","New York","New York","Oregon","North Carolina","Pennsylvania","Virginia","Ohio","New York","New Jersey","Illinois","Massachusetts","Pennsylvania","Maryland","North Carolina","Pennsylvania","Massachusetts","New Jersey","California","New York","New York","California","Connecticut","Texas","New York","Tennessee","Minnesota","New York","Ohio","Pennsylvania","California","Massachusetts","Pennsylvania","Illinois","Utah","Georgia","New Jersey","New York","California","New York","Massachusetts","New Jersey"],["Increasing","Approximately stable","Increasing","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Decreasing","Increasing","Approximately stable","Decreasing","Approximately stable","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Increasing","Increasing","Increasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Approximately stable","Increasing","Approximately stable","Increasing","Increasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Increasing","Approximately stable","Approximately stable","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Increasing","Approximately stable","Increasing","Decreasing","Increasing","Approximately stable","Increasing","Approximately stable","Increasing","Decreasing","Decreasing","Increasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Increasing","Approximately stable","Increasing","Decreasing","Increasing","Unknown or not applicable","Approximately stable","Increasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Unknown or not applicable","Increasing","Unknown or not applicable","Decreasing","Increasing","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-50bf2e62e05aff76e43f" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-50bf2e62e05aff76e43f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[43.907134,-69.963942,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[43.907134,-69.963942],16,[]],"limits":{"lat":[43.907134,43.907134],"lng":[-69.963942,-69.963942]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -371,11 +396,11 @@ Undergrads (full time)
 Undergrads (part time)
 </td>
 <td style="text-align:center;">
-3.0 (2021)
+3 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_2.png alt=‘Line plot from 7.0 to 3.0
-from 2010 to 2021’ >
+<img src=images/BowdoinCollege_2.png alt=‘Line plot from 7 to 3 from
+2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.5 per year
@@ -609,34 +634,13 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-8.1 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/BowdoinCollege_14.png alt=‘Line plot from 8.9 to 8.1
-from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-↓<br />-0.1 per year
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 44%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 85%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 10 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_15.png alt=‘Line plot from 12 to 10
+<img src=images/BowdoinCollege_14.png alt=‘Line plot from 12 to 10
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -647,6 +651,27 @@ from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (lower) than 82%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
+</td>
+<td style="text-align:center;">
+8.1 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/BowdoinCollege_15.png alt=‘Line plot from 8.9 to 8.1
+from 2012 to 2020’ >
+</td>
+<td style="text-align:center;">
+↓<br />-0.1 per year
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 44%
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 85%
 </td>
 </tr>
 <tr>
@@ -670,16 +695,17 @@ from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-48 (2020)
+172 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_17.png alt=‘Line plot from 47 to 48
+<img src=images/BowdoinCollege_17.png alt=‘Line plot from 159 to 172
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
+↑<br />1.3 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -688,17 +714,16 @@ from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-172 (2020)
+48 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_18.png alt=‘Line plot from 159 to 172
+<img src=images/BowdoinCollege_18.png alt=‘Line plot from 47 to 48
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />1.3 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -742,10 +767,10 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-8.0% (2021)
+8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_103.png alt=‘Line plot from 6.0 to 8.0
+<img src=images/BowdoinCollege_100.png alt=‘Line plot from 6 to 8
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -779,13 +804,33 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+5.2% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/BowdoinCollege_19.png alt=‘Line plot from 19 to 5.2
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 80%
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 92%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $946 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_19.png alt=‘Line plot from 141 M to
+<img src=images/BowdoinCollege_20.png alt=‘Line plot from 141 M to
 946 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -805,7 +850,7 @@ Revenue
 $1.1 B (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_20.png alt=‘Line plot from 269 M to
+<img src=images/BowdoinCollege_21.png alt=‘Line plot from 269 M to
 1.1 B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -823,7 +868,7 @@ Expenses
 $177 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_21.png alt=‘Line plot from 128 M to
+<img src=images/BowdoinCollege_22.png alt=‘Line plot from 128 M to
 177 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -842,7 +887,7 @@ Assets
 $3.3 B (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_22.png alt=‘Line plot from 1.3 B to
+<img src=images/BowdoinCollege_23.png alt=‘Line plot from 1.3 B to
 3.3 B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -853,80 +898,6 @@ $3.3 B (2021)
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 96%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-5.2% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/BowdoinCollege_23.png alt=‘Line plot from 19 to 5.2
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 80%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 92%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/BowdoinCollege_24.png alt=‘Line plot from 0.0 to 0.0
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-0.4% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/BowdoinCollege_25.png alt=‘Line plot from 1.2 to 0.4
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-3.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/BowdoinCollege_26.png alt=‘Line plot from 7.1 to 3.0
-from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -968,7 +939,7 @@ Total
 94% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_42.png alt=‘Line plot from 93 to 94
+<img src=images/BowdoinCollege_39.png alt=‘Line plot from 93 to 94
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -986,7 +957,7 @@ Men
 92% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_43.png alt=‘Line plot from 94 to 92
+<img src=images/BowdoinCollege_40.png alt=‘Line plot from 94 to 92
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1004,7 +975,7 @@ Women
 95% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_44.png alt=‘Line plot from 91 to 95
+<img src=images/BowdoinCollege_41.png alt=‘Line plot from 91 to 95
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1022,7 +993,7 @@ American Indian or Alaska Native men
 50% (2011)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_45.png alt=‘Line plot from 50 to 50
+<img src=images/BowdoinCollege_42.png alt=‘Line plot from 50 to 50
 from 2011 to 2011’ >
 </td>
 <td style="text-align:center;">
@@ -1040,7 +1011,7 @@ American Indian or Alaska Native women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_46.png alt=‘Line plot from 38 to 100
+<img src=images/BowdoinCollege_43.png alt=‘Line plot from 38 to 100
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1058,7 +1029,7 @@ Asian men
 88% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_47.png alt=‘Line plot from 100 to 88
+<img src=images/BowdoinCollege_44.png alt=‘Line plot from 100 to 88
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1076,7 +1047,7 @@ Asian women
 95% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_48.png alt=‘Line plot from 97 to 95
+<img src=images/BowdoinCollege_45.png alt=‘Line plot from 97 to 95
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1094,7 +1065,7 @@ Black or African American men
 89% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_49.png alt=‘Line plot from 100 to 89
+<img src=images/BowdoinCollege_46.png alt=‘Line plot from 100 to 89
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1112,7 +1083,7 @@ Black or African American women
 82% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_50.png alt=‘Line plot from 82 to 82
+<img src=images/BowdoinCollege_47.png alt=‘Line plot from 82 to 82
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1130,7 +1101,7 @@ Hispanic men
 87% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_51.png alt=‘Line plot from 72 to 87
+<img src=images/BowdoinCollege_48.png alt=‘Line plot from 72 to 87
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1148,7 +1119,7 @@ Hispanic women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_52.png alt=‘Line plot from 95 to 100
+<img src=images/BowdoinCollege_49.png alt=‘Line plot from 95 to 100
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1163,10 +1134,10 @@ from 2011 to 2021’ >
 Native Hawaiian or other Pacific Islander men
 </td>
 <td style="text-align:center;">
-0.0% (2018)
+0% (2018)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_53.png alt=‘Line plot from 100 to 0.0
+<img src=images/BowdoinCollege_50.png alt=‘Line plot from 100 to 0
 from 2014 to 2018’ >
 </td>
 <td style="text-align:center;">
@@ -1184,7 +1155,7 @@ White men
 94% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_55.png alt=‘Line plot from 94 to 94
+<img src=images/BowdoinCollege_52.png alt=‘Line plot from 94 to 94
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1202,7 +1173,7 @@ White women
 94% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_56.png alt=‘Line plot from 94 to 94
+<img src=images/BowdoinCollege_53.png alt=‘Line plot from 94 to 94
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1220,7 +1191,7 @@ Two or more races men
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_57.png alt=‘Line plot from 100 to 100
+<img src=images/BowdoinCollege_54.png alt=‘Line plot from 100 to 100
 from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1238,7 +1209,7 @@ Two or more races women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_58.png alt=‘Line plot from 85 to 100
+<img src=images/BowdoinCollege_55.png alt=‘Line plot from 85 to 100
 from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1256,7 +1227,7 @@ Nonresident alien men
 77% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_59.png alt=‘Line plot from 100 to 77
+<img src=images/BowdoinCollege_56.png alt=‘Line plot from 100 to 77
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1274,7 +1245,7 @@ Nonresident alien women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_60.png alt=‘Line plot from 75 to 100
+<img src=images/BowdoinCollege_57.png alt=‘Line plot from 75 to 100
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1314,7 +1285,7 @@ Men (percent freshmen)
 51% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_83.png alt=‘Line plot from 51 to 51
+<img src=images/BowdoinCollege_80.png alt=‘Line plot from 51 to 51
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1326,7 +1297,7 @@ Women (percent freshmen)
 49% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_84.png alt=‘Line plot from 49 to 49
+<img src=images/BowdoinCollege_81.png alt=‘Line plot from 49 to 49
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1335,11 +1306,11 @@ from 2010 to 2021’ >
 American Indian or Alaska Native men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_85.png alt=‘Line plot from 0.0 to 0.0
-from 2010 to 2021’ >
+<img src=images/BowdoinCollege_82.png alt=‘Line plot from 0 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1347,10 +1318,10 @@ from 2010 to 2021’ >
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_86.png alt=‘Line plot from 0.2 to 0.0
+<img src=images/BowdoinCollege_83.png alt=‘Line plot from 0.2 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1362,7 +1333,7 @@ Asian men (percent freshmen)
 4.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_87.png alt=‘Line plot from 3.2 to 4.8
+<img src=images/BowdoinCollege_84.png alt=‘Line plot from 3.2 to 4.8
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1374,7 +1345,7 @@ Asian women (percent freshmen)
 6.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_88.png alt=‘Line plot from 4.1 to 6.2
+<img src=images/BowdoinCollege_85.png alt=‘Line plot from 4.1 to 6.2
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1386,7 +1357,7 @@ Black or African American men (percent freshmen)
 2.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_89.png alt=‘Line plot from 1.8 to 2.7
+<img src=images/BowdoinCollege_86.png alt=‘Line plot from 1.8 to 2.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1398,7 +1369,7 @@ Black or African American women (percent freshmen)
 2.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_90.png alt=‘Line plot from 2.8 to 2.1
+<img src=images/BowdoinCollege_87.png alt=‘Line plot from 2.8 to 2.1
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1410,7 +1381,7 @@ Hispanic men (percent freshmen)
 6.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_91.png alt=‘Line plot from 6.3 to 6.4
+<img src=images/BowdoinCollege_88.png alt=‘Line plot from 6.3 to 6.4
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1422,7 +1393,7 @@ Hispanic women (percent freshmen)
 7.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_92.png alt=‘Line plot from 6.5 to 7.5
+<img src=images/BowdoinCollege_89.png alt=‘Line plot from 6.5 to 7.5
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1431,11 +1402,11 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_93.png alt=‘Line plot from 0.0 to 0.0
-from 2010 to 2021’ >
+<img src=images/BowdoinCollege_90.png alt=‘Line plot from 0 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1446,7 +1417,7 @@ Native Hawaiian or Other Pacific Islander women (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_94.png alt=‘Line plot from 0.0 to 0.2
+<img src=images/BowdoinCollege_91.png alt=‘Line plot from 0 to 0.2
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1458,7 +1429,7 @@ White men (percent freshmen)
 28% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_95.png alt=‘Line plot from 34 to 28
+<img src=images/BowdoinCollege_92.png alt=‘Line plot from 34 to 28
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1470,7 +1441,7 @@ White women (percent freshmen)
 25% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_96.png alt=‘Line plot from 29 to 25
+<img src=images/BowdoinCollege_93.png alt=‘Line plot from 29 to 25
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1482,7 +1453,7 @@ Two or more races men (percent freshmen)
 4.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_97.png alt=‘Line plot from 3.0 to 4.8
+<img src=images/BowdoinCollege_94.png alt=‘Line plot from 3.0 to 4.8
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1494,7 +1465,7 @@ Two or more races women (percent freshmen)
 5.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_98.png alt=‘Line plot from 3.7 to 5.4
+<img src=images/BowdoinCollege_95.png alt=‘Line plot from 3.7 to 5.4
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1503,10 +1474,10 @@ from 2010 to 2021’ >
 Race ethnicity unknown men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_99.png alt=‘Line plot from 1.0 to 0.0
+<img src=images/BowdoinCollege_96.png alt=‘Line plot from 1.0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1515,10 +1486,10 @@ from 2010 to 2021’ >
 Race ethnicity unknown women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_100.png alt=‘Line plot from 0.6 to 0.0
+<img src=images/BowdoinCollege_97.png alt=‘Line plot from 0.6 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1530,7 +1501,7 @@ Nonresident alien men (percent freshmen)
 4.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_101.png alt=‘Line plot from 2.0 to 4.1
+<img src=images/BowdoinCollege_98.png alt=‘Line plot from 2.0 to 4.1
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1542,7 +1513,62 @@ Nonresident alien women (percent freshmen)
 3.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_102.png alt=‘Line plot from 1.8 to 3.3
+<img src=images/BowdoinCollege_99.png alt=‘Line plot from 1.8 to 3.3
+from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Bowdoin College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+7.8% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/BowdoinCollege_101.png alt=‘Line plot from 11 to 7.8
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+92% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/BowdoinCollege_102.png alt=‘Line plot from 95 to 92
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/BowdoinCollege_103.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1584,7 +1610,7 @@ Total (tenure-track count)
 172 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_61.png alt=‘Line plot from 159 to 172
+<img src=images/BowdoinCollege_58.png alt=‘Line plot from 159 to 172
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1599,7 +1625,7 @@ Women (tenure-track count)
 96 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_62.png alt=‘Line plot from 77 to 96
+<img src=images/BowdoinCollege_59.png alt=‘Line plot from 77 to 96
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1614,7 +1640,7 @@ Men (tenure-track count)
 76 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_63.png alt=‘Line plot from 82 to 76
+<img src=images/BowdoinCollege_60.png alt=‘Line plot from 82 to 76
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1626,11 +1652,11 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_64.png alt=‘Line plot from 1.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/BowdoinCollege_61.png alt=‘Line plot from 1 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.2 per year
@@ -1644,7 +1670,7 @@ Asian (tenure-track count)
 10 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_65.png alt=‘Line plot from 9.0 to 10
+<img src=images/BowdoinCollege_62.png alt=‘Line plot from 9 to 10
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1656,11 +1682,11 @@ from 2012 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-7.0 (2020)
+7 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_66.png alt=‘Line plot from 4.0 to 7.0
-from 2012 to 2020’ >
+<img src=images/BowdoinCollege_63.png alt=‘Line plot from 4 to 7 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.4 per year
@@ -1674,7 +1700,7 @@ Hispanic or Latino (tenure-track count)
 12 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_67.png alt=‘Line plot from 8.0 to 12
+<img src=images/BowdoinCollege_64.png alt=‘Line plot from 8 to 12
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1686,11 +1712,11 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_68.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/BowdoinCollege_65.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1703,7 +1729,7 @@ White (tenure-track count)
 122 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_69.png alt=‘Line plot from 128 to 122
+<img src=images/BowdoinCollege_66.png alt=‘Line plot from 128 to 122
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1715,11 +1741,11 @@ from 2012 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_70.png alt=‘Line plot from 1.0 to 2.0
-from 2012 to 2020’ >
+<img src=images/BowdoinCollege_67.png alt=‘Line plot from 1 to 2 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.1 per year
@@ -1730,11 +1756,11 @@ from 2012 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-4.0 (2020)
+4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_71.png alt=‘Line plot from 3.0 to 4.0
-from 2012 to 2020’ >
+<img src=images/BowdoinCollege_68.png alt=‘Line plot from 3 to 4 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1778,7 +1804,7 @@ Total (non-tenure-track count)
 48 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_72.png alt=‘Line plot from 47 to 48
+<img src=images/BowdoinCollege_69.png alt=‘Line plot from 47 to 48
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1792,7 +1818,7 @@ Women (non-tenure-track count)
 25 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_73.png alt=‘Line plot from 23 to 25
+<img src=images/BowdoinCollege_70.png alt=‘Line plot from 23 to 25
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1806,7 +1832,7 @@ Men (non-tenure-track count)
 23 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_74.png alt=‘Line plot from 24 to 23
+<img src=images/BowdoinCollege_71.png alt=‘Line plot from 24 to 23
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1817,11 +1843,11 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_75.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/BowdoinCollege_72.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1831,11 +1857,11 @@ from 2012 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_76.png alt=‘Line plot from 2.0 to 3.0
-from 2012 to 2020’ >
+<img src=images/BowdoinCollege_73.png alt=‘Line plot from 2 to 3 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1845,11 +1871,11 @@ from 2012 to 2020’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_77.png alt=‘Line plot from 2.0 to 1.0
-from 2012 to 2020’ >
+<img src=images/BowdoinCollege_74.png alt=‘Line plot from 2 to 1 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1859,11 +1885,11 @@ from 2012 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-4.0 (2020)
+4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_78.png alt=‘Line plot from 1.0 to 4.0
-from 2012 to 2020’ >
+<img src=images/BowdoinCollege_75.png alt=‘Line plot from 1 to 4 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.3 per year
@@ -1874,11 +1900,11 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_79.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/BowdoinCollege_76.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1891,7 +1917,7 @@ White (non-tenure-track count)
 28 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_80.png alt=‘Line plot from 34 to 28
+<img src=images/BowdoinCollege_77.png alt=‘Line plot from 34 to 28
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1902,11 +1928,11 @@ from 2012 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_81.png alt=‘Line plot from 2.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/BowdoinCollege_78.png alt=‘Line plot from 2 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.3 per year
@@ -1917,11 +1943,11 @@ from 2012 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-6.0 (2020)
+6 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/BowdoinCollege_82.png alt=‘Line plot from 5.0 to 6.0
-from 2012 to 2020’ >
+<img src=images/BowdoinCollege_79.png alt=‘Line plot from 5 to 6 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1942,28 +1968,28 @@ from 2012 to 2020’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fa0ffe981bfd630477c9" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-fa0ffe981bfd630477c9">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_ResearchandExperimentalPsychology_Other.html\">Research and Experimental Psychology, Other</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_AfricanStudies.html\">African Studies</a>","<a href=\"majors_Bachelors_AsianStudies_Civilization.html\">Asian Studies/Civilization</a>","<a href=\"majors_Bachelors_SpanishandIberianStudies.html\">Spanish and Iberian Studies</a>","<a href=\"majors_Bachelors_MathematicsandComputerScience.html\">Mathematics and Computer Science</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_GermanLanguageandLiterature.html\">German Language and Literature</a>","<a href=\"majors_Bachelors_ClassicsandClassicalLanguages_Literatures_andLinguistics_General.html\">Classics and Classical Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Bachelors_TheatreLiterature_HistoryandCriticism.html\">Theatre Literature, History and Criticism</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Bachelors_LatinAmericanStudies.html\">Latin American Studies</a>","<a href=\"majors_Bachelors_FrenchStudies.html\">French Studies</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_Ethnic_CulturalMinority_Gender_andGroupStudies_Other.html\">Ethnic, Cultural Minority, Gender, and Group Studies, Other</a>","<a href=\"majors_Bachelors_RussianLanguageandLiterature.html\">Russian Language and Literature</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_FineArtsandArtStudies_Other.html\">Fine Arts and Art Studies, Other</a>"],[82,61,30,28,25,25,25,20,19,19,13,12,11,8,8,8,5,5,5,5,4,4,4,4,4,4,2,2,2,1,1,1,1],[18.304,13.616,6.696,6.25,5.58,5.58,5.58,4.464,4.241,4.241,2.902,2.679,2.455,1.786,1.786,1.786,1.116,1.116,1.116,1.116,0.893,0.893,0.893,0.893,0.893,0.893,0.446,0.446,0.446,0.223,0.223,0.223,0.223],[0.217,0.496,0.037,0.298,0.086,0.293,0.14,0.076,0.05,0.222,0.318,0.054,0.141,10.959,1.349,34.783,0.539,0.082,0.037,0.07,0.69,0.528,0.178,8.889,0.043,0.197,0.82,4.082,0.028,0.128,0.429,0.004,0.264],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-29ed77c9d5072aa92372" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-29ed77c9d5072aa92372">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_ResearchandExperimentalPsychology_Other.html\">Research and Experimental Psychology, Other</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_AfricanStudies.html\">African Studies</a>","<a href=\"majors_Bachelors_AsianStudies_Civilization.html\">Asian Studies/Civilization</a>","<a href=\"majors_Bachelors_SpanishandIberianStudies.html\">Spanish and Iberian Studies</a>","<a href=\"majors_Bachelors_MathematicsandComputerScience.html\">Mathematics and Computer Science</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_GermanLanguageandLiterature.html\">German Language and Literature</a>","<a href=\"majors_Bachelors_ClassicsandClassicalLanguages_Literatures_andLinguistics_General.html\">Classics and Classical Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Bachelors_TheatreLiterature_HistoryandCriticism.html\">Theatre Literature, History and Criticism</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Bachelors_LatinAmericanStudies.html\">Latin American Studies</a>","<a href=\"majors_Bachelors_FrenchStudies.html\">French Studies</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_Ethnic_CulturalMinority_Gender_andGroupStudies_Other.html\">Ethnic, Cultural Minority, Gender, and Group Studies, Other</a>","<a href=\"majors_Bachelors_RussianLanguageandLiterature.html\">Russian Language and Literature</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_FineArtsandArtStudies_Other.html\">Fine Arts and Art Studies, Other</a>"],[82,61,30,28,25,25,25,20,19,19,13,12,11,8,8,8,5,5,5,5,4,4,4,4,4,4,2,2,2,1,1,1,1],[18.304,13.616,6.696,6.25,5.58,5.58,5.58,4.464,4.241,4.241,2.902,2.679,2.455,1.786,1.786,1.786,1.116,1.116,1.116,1.116,0.893,0.893,0.893,0.893,0.893,0.893,0.446,0.446,0.446,0.223,0.223,0.223,0.223],[0.217,0.496,0.037,0.298,0.086,0.293,0.14,0.076,0.05,0.222,0.318,0.054,0.141,10.959,1.349,34.783,0.539,0.082,0.037,0.07,0.69,0.528,0.178,8.889,0.043,0.197,0.82,4.082,0.028,0.128,0.429,0.004,0.264],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fd083be9bbdf0599924f" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-fd083be9bbdf0599924f">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3bb334ae2a03aa655583" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3bb334ae2a03aa655583">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-611d956869a044c98ca4" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-611d956869a044c98ca4">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-401271acf58653a2dbb9" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-401271acf58653a2dbb9">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-55c040b4f86e1f70ccfc" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-55c040b4f86e1f70ccfc">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-19dd5061dafb5db08967" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-19dd5061dafb5db08967">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9879f2f86a30857336b0" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-9879f2f86a30857336b0">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0c40a773461b884371ed" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0c40a773461b884371ed">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

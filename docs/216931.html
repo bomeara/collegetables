@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -178,10 +178,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -194,6 +194,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -257,10 +259,20 @@ program-Education</p></li>
 <li><p><strong>Enrollment profile</strong>: Majority undergraduate (see
 more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 30,155 (2.2 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $30,155 (1.9 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $25,051.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.wilkes.edu/admissions/financial-aid/undergraduate-aid/types-of-aid/net-price-calculator.aspx'>here</a>
+to see what your family may be asked to pay. It can be MUCH lower than
+the average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, medium, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 70.7% of first year
+students come from Pennsylvania</p></li>
+<li><p><strong>In US percentage</strong>: 96.2% of first year students
+come from the US</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 61.4% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -301,9 +313,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Restrictive (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: B- (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -316,17 +329,29 @@ marriage</strong>: 66.7% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Low risk (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Appalachian-Blue Ridge
 forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/23135/Average-Weather-in-Wilkes-Barre-Pennsylvania-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-75e9d85c8bc15c13764e" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-75e9d85c8bc15c13764e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[41.244199,-75.890262,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[41.244199,-75.890262],16,[]],"limits":{"lat":[41.244199,41.244199],"lng":[-75.890262,-75.890262]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2dab36b31c4243f05d54" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2dab36b31c4243f05d54">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"216931.html\">Wilkes University</a>","<a href=\"211088.html\">Arcadia University</a>","<a href=\"210739.html\">DeSales University</a>","<a href=\"214069.html\">Misericordia University</a>","<a href=\"211981.html\">Delaware Valley University</a>","<a href=\"213507.html\">Lebanon Valley College</a>","<a href=\"216852.html\">Widener University</a>","<a href=\"213668.html\">Lycoming College</a>","<a href=\"217059.html\">York College of Pennsylvania</a>","<a href=\"213996.html\">Messiah University</a>","<a href=\"210571.html\">Albright College</a>","<a href=\"210775.html\">Alvernia University</a>","<a href=\"164173.html\">Stevenson University</a>","<a href=\"212133.html\">Eastern University</a>","<a href=\"228149.html\">St. Mary's University</a>","<a href=\"201548.html\">Capital University</a>","<a href=\"232609.html\">University of Lynchburg</a>","<a href=\"165820.html\">Fitchburg State University</a>","<a href=\"193584.html\">Nazareth College</a>","<a href=\"202763.html\">The University of Findlay</a>","<a href=\"148654.html\">University of Illinois Springfield</a>","<a href=\"191931.html\">Iona College</a>","<a href=\"213367.html\">La Salle University</a>","<a href=\"186867.html\">Stevens Institute of Technology</a>","<a href=\"168254.html\">Western New England University</a>","<a href=\"164270.html\">McDaniel College</a>","<a href=\"184603.html\">Fairleigh Dickinson University-Metropolitan Campus</a>","<a href=\"195234.html\">The College of Saint Rose</a>","<a href=\"186432.html\">Saint Peter's University</a>","<a href=\"209506.html\">Oregon Institute of Technology</a>","<a href=\"101709.html\">University of Montevallo</a>","<a href=\"184694.html\">Fairleigh Dickinson University-Florham Campus</a>","<a href=\"156286.html\">Bellarmine University</a>","<a href=\"237792.html\">Shepherd University</a>","<a href=\"236577.html\">Seattle Pacific University</a>","<a href=\"141565.html\">University of Hawaii at Hilo</a>","<a href=\"227845.html\">Saint Edward's University</a>","<a href=\"213613.html\">Lock Haven University</a>","<a href=\"175005.html\">St Catherine University</a>","<a href=\"179265.html\">University of Health Sciences and Pharmacy in St. Louis</a>","<a href=\"212160.html\">Edinboro University of Pennsylvania</a>","<a href=\"213321.html\">King's College</a>","<a href=\"197045.html\">Utica University</a>","<a href=\"163462.html\">Mount St. Mary's University</a>","<a href=\"192749.html\">Manhattanville College</a>","<a href=\"148496.html\">Dominican University</a>","<a href=\"196024.html\">SUNY College of Technology at Delhi</a>","<a href=\"173045.html\">Augsburg University</a>","<a href=\"194958.html\">Roberts Wesleyan College</a>","<a href=\"210401.html\">Willamette University</a>","<a href=\"183080.html\">Plymouth State University</a>","<a href=\"215655.html\">Robert Morris University</a>","<a href=\"164562.html\">Assumption University</a>","<a href=\"193973.html\">Niagara University</a>","<a href=\"203368.html\">John Carroll University</a>","<a href=\"219833.html\">Christian Brothers University</a>","<a href=\"238661.html\">Edgewood College</a>","<a href=\"208822.html\">George Fox University</a>","<a href=\"211644.html\">Clarion University of Pennsylvania</a>","<a href=\"142461.html\">Northwest Nazarene University</a>","<a href=\"145619.html\">Benedictine University</a>","<a href=\"107071.html\">Henderson State University</a>","<a href=\"190725.html\">Daemen University</a>","<a href=\"210429.html\">Western Oregon University</a>","<a href=\"232706.html\">Marymount University</a>","<a href=\"123554.html\">Saint Mary's College of California</a>","<a href=\"236230.html\">Pacific Lutheran University</a>","<a href=\"180416.html\">Montana Technological University</a>","<a href=\"190716.html\">D'Youville College</a>","<a href=\"148487.html\">Roosevelt University</a>","<a href=\"113698.html\">Dominican University of California</a>","<a href=\"207865.html\">Southwestern Oklahoma State University</a>","<a href=\"183062.html\">Keene State College</a>","<a href=\"206525.html\">Wittenberg University</a>","<a href=\"134945.html\">Jacksonville University</a>","<a href=\"219806.html\">Carson-Newman University</a>","<a href=\"127918.html\">Regis University</a>","<a href=\"175078.html\">Southwest Minnesota State University</a>","<a href=\"137546.html\">Stetson University</a>","<a href=\"173160.html\">Bethel University</a>","<a href=\"154235.html\">Saint Ambrose University</a>","<a href=\"186283.html\">Rider University</a>","<a href=\"174491.html\">University of Northwestern-St Paul</a>","<a href=\"189705.html\">Canisius College</a>","<a href=\"125763.html\">Whittier College</a>","<a href=\"214157.html\">Moravian University</a>","<a href=\"193399.html\">College of Mount Saint Vincent</a>","<a href=\"213783.html\">Mansfield University of Pennsylvania</a>","<a href=\"212601.html\">Gannon University</a>","<a href=\"198835.html\">Lenoir-Rhyne University</a>","<a href=\"141486.html\">Chaminade University of Honolulu</a>","<a href=\"168786.html\">Aquinas College</a>","<a href=\"184773.html\">Georgian Court University</a>","<a href=\"163338.html\">University of Maryland Eastern Shore</a>","<a href=\"213826.html\">Marywood University</a>","<a href=\"215442.html\">Point Park University</a>","<a href=\"237066.html\">Whitworth University</a>","<a href=\"239716.html\">Saint Norbert College</a>","<a href=\"187967.html\">New Mexico Institute of Mining and Technology</a>","<a href=\"181020.html\">Doane University</a>"],[95,82,78,89,93,78,85,75,78,77,76,58,91,69,88,74,97,85,86,84,79,93,81,53,90,87,85,76,93,91,90,85,86,96,92,92,92,95,75,91,92,96,89,82,83,81,88,76,87,80,92,94,86,92,88,97,95,83,99,88,80,75,78,92,84,70,88,90,92,92,93,94,88,92,78,79,81,91,92,89,72,82,82,81,82,78,82,94,84,86,90,89,80,82,82,82,91,85,97,77],[15,8,19,19,22,20,13,15,17,29,8,13,16,26,16,16,11,19,15,22,13,11,10,18,14,13,14,9,16,11,14,14,16,32,14,17,13,26,27,16,23,14,16,14,9,15,21,20,18,9,15,14,12,19,17,24,22,20,32,11,18,23,17,21,17,17,18,23,14,16,13,35,18,12,10,17,9,28,8,28,17,9,34,15,12,21,17,20,16,9,21,17,17,8,22,12,15,17,31,17],[61,62,69,71,54,68,68,67,66,77,47,65,59,62,59,62,66,57,73,63,52,62,60,87,63,65,53,59,58,56,52,62,65,44,66,43,66,54,60,77,50,67,60,61,61,52,58,58,64,72,53,65,72,70,76,59,62,69,58,62,47,37,57,48,62,73,69,57,64,39,77,42,60,64,48,57,62,48,63,74,64,61,68,71,64,68,56,56,65,48,66,60,58,33,70,61,75,78,55,59],[63,63,54,59,53,42,73,11,36,55,30,60,39,62,41,43,42,31,55,55,17,46,62,61,59,32,70,50,60,25,27,null,62,28,48,17,59,36,46,37,34,41,64,54,64,59,17,55,70,30,38,56,58,45,34,42,53,68,32,45,77,15,65,26,66,53,49,19,58,56,67,34,32,35,54,45,62,25,39,45,39,58,43,40,36,45,65,16,59,40,51,38,57,8,67,67,37,37,7,34],[13,17,17,16,26,17,13,14,25,16,21,24,null,20,12,21,14,15,15,15,12,19,18,19,15,20,20,15,23,17,16,21,17,18,16,13,19,14,15,9,13,19,21,19,15,17,17,17,13,8,25,18,18,20,17,16,15,15,19,13,18,20,13,22,15,13,15,11,12,19,18,25,19,16,14,16,19,19,14,14,14,18,null,16,16,14,33,18,16,17,30,15,16,14,17,19,22,16,9,17],[25051,25459,22741,21800,22984,22675,31220,12949,18893,19670,14822,23745,22632,18544,16585,21198,18080,13562,24679,20606,8109,27957,21539,26473,24081,26512,9533,19375,12000,11094,16120,13238,19455,8271,20918,11742,20290,11259,15209,20817,13425,23439,19744,26934,15825,14919,14872,20943,20469,24635,16740,22862,24748,15468,18160,11036,21017,22556,10157,18633,22996,14657,12732,14616,21777,30065,15500,14290,18048,19320,28684,8407,14421,15956,22172,16764,22023,10511,20178,21256,23031,22338,18896,14064,21666,22402,17408,10059,18377,15112,19740,16735,17250,10014,18171,18043,17191,19840,7566,19878],[2007,1646,1949,1417,1551,1607,2540,1081,3171,2304,1312,1641,2616,1237,2007,2010,1582,2506,1995,2164,1739,2618,2304,4035,2522,1736,1890,1720,1937,2212,1965,2211,2291,2040,2513,1975,2670,2150,1772,253,2544,1697,2384,1911,1290,1908,1971,2113,1017,1200,3368,2788,1879,2706,2591,1226,1050,2341,2451,1042,1837,1992,1566,3049,1759,1989,2279,1382,1075,2248,1134,3021,2877,1238,2398,1566,1916,1650,2781,2121,2121,3005,2003,1783,1276,1802,2126,1384,2627,1388,1308,1059,1202,1619,1654,2339,2253,1905,1135,959],[520,518,407,247,139,190,1754,null,74,284,28,278,92,747,907,514,465,520,362,613,478,384,270,2790,475,561,591,585,456,53,153,577,326,145,327,294,177,277,524,520,569,75,270,273,366,348,10,563,432,521,377,0,177,565,267,304,423,626,180,569,318,164,569,225,787,493,228,71,687,896,483,513,23,14,631,173,2067,225,980,345,479,301,16,409,33,230,345,0,1037,478,473,55,138,347,632,151,152,8,239,396],["Pennsylvania","Pennsylvania","Pennsylvania","Pennsylvania","Pennsylvania","Pennsylvania","Pennsylvania","Pennsylvania","Pennsylvania","Pennsylvania","Pennsylvania","Pennsylvania","Maryland","Pennsylvania","Texas","Ohio","Virginia","Massachusetts","New York","Ohio","Illinois","New York","Pennsylvania","New Jersey","Massachusetts","Maryland","New Jersey","New York","New Jersey","Oregon","Alabama","New Jersey","Kentucky","West Virginia","Washington","Hawaii","Texas","Pennsylvania","Minnesota","Missouri","Pennsylvania","Pennsylvania","New York","Maryland","New York","Illinois","New York","Minnesota","New York","Oregon","New Hampshire","Pennsylvania","Massachusetts","New York","Ohio","Tennessee","Wisconsin","Oregon","Pennsylvania","Idaho","Illinois","Arkansas","New York","Oregon","Virginia","California","Washington","Montana","New York","Illinois","California","Oklahoma","New Hampshire","Ohio","Florida","Tennessee","Colorado","Minnesota","Florida","Minnesota","Iowa","New Jersey","Minnesota","New York","California","Pennsylvania","New York","Pennsylvania","Pennsylvania","North Carolina","Hawaii","Michigan","New Jersey","Maryland","Pennsylvania","Pennsylvania","Washington","Wisconsin","New Mexico","Nebraska"],["Approximately stable","Approximately stable","Increasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Increasing","Increasing","Decreasing","Increasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Increasing","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Approximately stable","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Increasing","Increasing","Decreasing","Increasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e20a36a7ff5296c363f3" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-e20a36a7ff5296c363f3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[41.244199,-75.890262,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[41.244199,-75.890262],16,[]],"limits":{"lat":[41.244199,41.244199],"lng":[-75.890262,-75.890262]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -630,34 +655,13 @@ Doctoral/Professional Universities
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-11 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/WilkesUniversity_14.png alt=‘Line plot from 13 to 11
-from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-↓<br />-0.3 per year
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 67%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 67%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 13 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_15.png alt=‘Line plot from 14 to 13
+<img src=images/WilkesUniversity_14.png alt=‘Line plot from 14 to 13
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -668,6 +672,27 @@ from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (lower) than 82%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
+</td>
+<td style="text-align:center;">
+11 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/WilkesUniversity_15.png alt=‘Line plot from 13 to 11
+from 2012 to 2020’ >
+</td>
+<td style="text-align:center;">
+↓<br />-0.3 per year
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 67%
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 67%
 </td>
 </tr>
 <tr>
@@ -691,16 +716,17 @@ Total instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-24 (2020)
+152 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_17.png alt=‘Line plot from 14 to 24
-from 2012 to 2020’ >
+<img src=images/WilkesUniversity_17.png alt=‘Line plot from 146 to
+152 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
+↑<br />2.4 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -709,17 +735,16 @@ from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-152 (2020)
+24 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_18.png alt=‘Line plot from 146 to
-152 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_18.png alt=‘Line plot from 14 to 24
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />2.4 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -769,11 +794,11 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-5.0% (2021)
+5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_103.png alt=‘Line plot from 3.0 to
-5.0 from 2010 to 2021’ >
+<img src=images/WilkesUniversity_100.png alt=‘Line plot from 3 to 5
+from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -808,13 +833,33 @@ Doctoral/Professional Universities
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+63% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/WilkesUniversity_19.png alt=‘Line plot from 70 to 63
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 18%
+</td>
+<td style="text-align:center;">
+✪✪<br />Better (lower) than 32%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $20 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_19.png alt=‘Line plot from 7.4 M to
+<img src=images/WilkesUniversity_20.png alt=‘Line plot from 7.4 M to
 20 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -834,7 +879,7 @@ Revenue
 $115 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_20.png alt=‘Line plot from 86 M to
+<img src=images/WilkesUniversity_21.png alt=‘Line plot from 86 M to
 115 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -853,7 +898,7 @@ Expenses
 $95 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_21.png alt=‘Line plot from 78 M to
+<img src=images/WilkesUniversity_22.png alt=‘Line plot from 78 M to
 95 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -872,7 +917,7 @@ Assets
 $258 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_22.png alt=‘Line plot from 151 M to
+<img src=images/WilkesUniversity_23.png alt=‘Line plot from 151 M to
 258 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -883,80 +928,6 @@ $258 M (2021)
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 43%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-63% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/WilkesUniversity_23.png alt=‘Line plot from 70 to 63
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 18%
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 32%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/WilkesUniversity_24.png alt=‘Line plot from 0.0 to
-0.0 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-6.5% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/WilkesUniversity_25.png alt=‘Line plot from 4.5 to
-6.5 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-2.7% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/WilkesUniversity_26.png alt=‘Line plot from 7.3 to
-2.7 from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -998,7 +969,7 @@ Total
 61% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_42.png alt=‘Line plot from 64 to 61
+<img src=images/WilkesUniversity_39.png alt=‘Line plot from 64 to 61
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1016,7 +987,7 @@ Men
 62% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_43.png alt=‘Line plot from 63 to 62
+<img src=images/WilkesUniversity_40.png alt=‘Line plot from 63 to 62
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1034,7 +1005,7 @@ Women
 60% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_44.png alt=‘Line plot from 66 to 60
+<img src=images/WilkesUniversity_41.png alt=‘Line plot from 66 to 60
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1052,7 +1023,7 @@ American Indian or Alaska Native men
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_45.png alt=‘Line plot from 50 to 33
+<img src=images/WilkesUniversity_42.png alt=‘Line plot from 50 to 33
 from 2013 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1070,7 +1041,7 @@ American Indian or Alaska Native women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_46.png alt=‘Line plot from 100 to
+<img src=images/WilkesUniversity_43.png alt=‘Line plot from 100 to
 100 from 2013 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1088,7 +1059,7 @@ Asian men
 57% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_47.png alt=‘Line plot from 75 to 57
+<img src=images/WilkesUniversity_44.png alt=‘Line plot from 75 to 57
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1106,7 +1077,7 @@ Asian women
 69% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_48.png alt=‘Line plot from 62 to 69
+<img src=images/WilkesUniversity_45.png alt=‘Line plot from 62 to 69
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1124,7 +1095,7 @@ Black or African American men
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_49.png alt=‘Line plot from 56 to 50
+<img src=images/WilkesUniversity_46.png alt=‘Line plot from 56 to 50
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1142,7 +1113,7 @@ Black or African American women
 40% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_50.png alt=‘Line plot from 20 to 40
+<img src=images/WilkesUniversity_47.png alt=‘Line plot from 20 to 40
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1160,7 +1131,7 @@ Hispanic men
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_51.png alt=‘Line plot from 25 to 33
+<img src=images/WilkesUniversity_48.png alt=‘Line plot from 25 to 33
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1178,7 +1149,7 @@ Hispanic women
 53% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_52.png alt=‘Line plot from 67 to 53
+<img src=images/WilkesUniversity_49.png alt=‘Line plot from 67 to 53
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1196,7 +1167,7 @@ Native Hawaiian or other Pacific Islander men
 100% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_53.png alt=‘Line plot from 100 to
+<img src=images/WilkesUniversity_50.png alt=‘Line plot from 100 to
 100 from 2018 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1214,7 +1185,7 @@ White men
 65% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_55.png alt=‘Line plot from 57 to 65
+<img src=images/WilkesUniversity_52.png alt=‘Line plot from 57 to 65
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1232,7 +1203,7 @@ White women
 62% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_56.png alt=‘Line plot from 59 to 62
+<img src=images/WilkesUniversity_53.png alt=‘Line plot from 59 to 62
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1250,7 +1221,7 @@ Two or more races men
 80% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_57.png alt=‘Line plot from 100 to 80
+<img src=images/WilkesUniversity_54.png alt=‘Line plot from 100 to 80
 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1268,7 +1239,7 @@ Two or more races women
 40% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_58.png alt=‘Line plot from 0.0 to 40
+<img src=images/WilkesUniversity_55.png alt=‘Line plot from 0 to 40
 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1286,7 +1257,7 @@ Nonresident alien men
 71% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_59.png alt=‘Line plot from 100 to 71
+<img src=images/WilkesUniversity_56.png alt=‘Line plot from 100 to 71
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1304,7 +1275,7 @@ Nonresident alien women
 83% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_60.png alt=‘Line plot from 67 to 83
+<img src=images/WilkesUniversity_57.png alt=‘Line plot from 67 to 83
 from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1344,7 +1315,7 @@ Men (percent freshmen)
 46% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_83.png alt=‘Line plot from 50 to 46
+<img src=images/WilkesUniversity_80.png alt=‘Line plot from 50 to 46
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1356,7 +1327,7 @@ Women (percent freshmen)
 54% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_84.png alt=‘Line plot from 50 to 54
+<img src=images/WilkesUniversity_81.png alt=‘Line plot from 50 to 54
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1365,11 +1336,11 @@ from 2010 to 2021’ >
 American Indian or Alaska Native men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_85.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/WilkesUniversity_82.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1377,11 +1348,11 @@ American Indian or Alaska Native men (percent freshmen)
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_86.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/WilkesUniversity_83.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1392,7 +1363,7 @@ Asian men (percent freshmen)
 1.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_87.png alt=‘Line plot from 0.8 to
+<img src=images/WilkesUniversity_84.png alt=‘Line plot from 0.8 to
 1.7 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1404,7 +1375,7 @@ Asian women (percent freshmen)
 2.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_88.png alt=‘Line plot from 2.2 to
+<img src=images/WilkesUniversity_85.png alt=‘Line plot from 2.2 to
 2.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1416,7 +1387,7 @@ Black or African American men (percent freshmen)
 4.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_89.png alt=‘Line plot from 2.6 to
+<img src=images/WilkesUniversity_86.png alt=‘Line plot from 2.6 to
 4.8 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1428,7 +1399,7 @@ Black or African American women (percent freshmen)
 2.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_90.png alt=‘Line plot from 1.4 to
+<img src=images/WilkesUniversity_87.png alt=‘Line plot from 1.4 to
 2.8 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1440,7 +1411,7 @@ Hispanic men (percent freshmen)
 5.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_91.png alt=‘Line plot from 1.6 to
+<img src=images/WilkesUniversity_88.png alt=‘Line plot from 1.6 to
 5.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1452,7 +1423,7 @@ Hispanic women (percent freshmen)
 7.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_92.png alt=‘Line plot from 1.8 to
+<img src=images/WilkesUniversity_89.png alt=‘Line plot from 1.8 to
 7.0 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1461,11 +1432,11 @@ Hispanic women (percent freshmen)
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_93.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/WilkesUniversity_90.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1476,8 +1447,8 @@ Native Hawaiian or Other Pacific Islander women (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_94.png alt=‘Line plot from 0.0 to
-0.2 from 2010 to 2021’ >
+<img src=images/WilkesUniversity_91.png alt=‘Line plot from 0 to 0.2
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1488,7 +1459,7 @@ White men (percent freshmen)
 31% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_95.png alt=‘Line plot from 35 to 31
+<img src=images/WilkesUniversity_92.png alt=‘Line plot from 35 to 31
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1500,7 +1471,7 @@ White women (percent freshmen)
 39% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_96.png alt=‘Line plot from 32 to 39
+<img src=images/WilkesUniversity_93.png alt=‘Line plot from 32 to 39
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1512,7 +1483,7 @@ Two or more races men (percent freshmen)
 1.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_97.png alt=‘Line plot from 1.2 to
+<img src=images/WilkesUniversity_94.png alt=‘Line plot from 1.2 to
 1.8 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1524,7 +1495,7 @@ Two or more races women (percent freshmen)
 0.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_98.png alt=‘Line plot from 1.6 to
+<img src=images/WilkesUniversity_95.png alt=‘Line plot from 1.6 to
 0.7 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1536,7 +1507,7 @@ Race ethnicity unknown men (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_99.png alt=‘Line plot from 7.0 to
+<img src=images/WilkesUniversity_96.png alt=‘Line plot from 7.0 to
 0.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1545,11 +1516,11 @@ Race ethnicity unknown men (percent freshmen)
 Race ethnicity unknown women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_100.png alt=‘Line plot from 10 to
-0.0 from 2010 to 2021’ >
+<img src=images/WilkesUniversity_97.png alt=‘Line plot from 10 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1560,7 +1531,7 @@ Nonresident alien men (percent freshmen)
 0.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_101.png alt=‘Line plot from 1.8 to
+<img src=images/WilkesUniversity_98.png alt=‘Line plot from 1.8 to
 0.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1572,8 +1543,63 @@ Nonresident alien women (percent freshmen)
 2.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_102.png alt=‘Line plot from 0.4 to
+<img src=images/WilkesUniversity_99.png alt=‘Line plot from 0.4 to
 2.6 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Wilkes University
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+71% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/WilkesUniversity_101.png alt=‘Line plot from 74 to 71
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+96% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/WilkesUniversity_102.png alt=‘Line plot from 98 to 96
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/WilkesUniversity_103.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1614,7 +1640,7 @@ Total (tenure-track count)
 152 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_61.png alt=‘Line plot from 146 to
+<img src=images/WilkesUniversity_58.png alt=‘Line plot from 146 to
 152 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1629,7 +1655,7 @@ Women (tenure-track count)
 69 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_62.png alt=‘Line plot from 66 to 69
+<img src=images/WilkesUniversity_59.png alt=‘Line plot from 66 to 69
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1644,7 +1670,7 @@ Men (tenure-track count)
 83 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_63.png alt=‘Line plot from 80 to 83
+<img src=images/WilkesUniversity_60.png alt=‘Line plot from 80 to 83
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1655,11 +1681,11 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_64.png alt=‘Line plot from 1.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_61.png alt=‘Line plot from 1 to 0
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.1 per year
@@ -1673,7 +1699,7 @@ Asian (tenure-track count)
 16 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_65.png alt=‘Line plot from 9.0 to 16
+<img src=images/WilkesUniversity_62.png alt=‘Line plot from 9 to 16
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1685,11 +1711,11 @@ from 2012 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_66.png alt=‘Line plot from 2.0 to
-3.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_63.png alt=‘Line plot from 2 to 3
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1699,11 +1725,11 @@ Black or African American (tenure-track count)
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-4.0 (2020)
+4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_67.png alt=‘Line plot from 3.0 to
-4.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_64.png alt=‘Line plot from 3 to 4
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1713,11 +1739,11 @@ Hispanic or Latino (tenure-track count)
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_68.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_65.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1730,7 +1756,7 @@ White (tenure-track count)
 119 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_69.png alt=‘Line plot from 124 to
+<img src=images/WilkesUniversity_66.png alt=‘Line plot from 124 to
 119 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1741,11 +1767,11 @@ White (tenure-track count)
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_70.png alt=‘Line plot from 1.0 to
-2.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_67.png alt=‘Line plot from 1 to 2
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1756,11 +1782,11 @@ Two or more races (tenure-track count)
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-7.0 (2020)
+7 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_71.png alt=‘Line plot from 4.0 to
-7.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_68.png alt=‘Line plot from 4 to 7
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />1.0 per year
@@ -1802,7 +1828,7 @@ Total (non-tenure-track count)
 24 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_72.png alt=‘Line plot from 14 to 24
+<img src=images/WilkesUniversity_69.png alt=‘Line plot from 14 to 24
 from 2012 to 2020’ >
 </td>
 </tr>
@@ -1814,7 +1840,7 @@ Women (non-tenure-track count)
 17 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_73.png alt=‘Line plot from 9.0 to 17
+<img src=images/WilkesUniversity_70.png alt=‘Line plot from 9 to 17
 from 2012 to 2020’ >
 </td>
 </tr>
@@ -1823,11 +1849,11 @@ from 2012 to 2020’ >
 Men (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-7.0 (2020)
+7 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_74.png alt=‘Line plot from 5.0 to
-7.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_71.png alt=‘Line plot from 5 to 7
+from 2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1835,11 +1861,11 @@ Men (non-tenure-track count)
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_75.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_72.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1847,11 +1873,11 @@ American Indian or Alaska Native (non-tenure-track count)
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_76.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_73.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1859,11 +1885,11 @@ Asian (non-tenure-track count)
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_77.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_74.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1871,11 +1897,11 @@ Black or African American (non-tenure-track count)
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_78.png alt=‘Line plot from 0.0 to
-1.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_75.png alt=‘Line plot from 0 to 1
+from 2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1883,11 +1909,11 @@ Hispanic or Latino (non-tenure-track count)
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_79.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_76.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1898,7 +1924,7 @@ White (non-tenure-track count)
 21 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_80.png alt=‘Line plot from 14 to 21
+<img src=images/WilkesUniversity_77.png alt=‘Line plot from 14 to 21
 from 2012 to 2020’ >
 </td>
 </tr>
@@ -1907,11 +1933,11 @@ from 2012 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_81.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_78.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1919,11 +1945,11 @@ Two or more races (non-tenure-track count)
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_82.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/WilkesUniversity_79.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1962,7 +1988,7 @@ Number of physical books
 152,716 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_27.png alt=‘Line plot from 212,199
+<img src=images/WilkesUniversity_24.png alt=‘Line plot from 212,199
 to 152,716 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1983,7 +2009,7 @@ Physical library circulations per students and faculty
 2.1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_28.png alt=‘Line plot from 2.4 to
+<img src=images/WilkesUniversity_25.png alt=‘Line plot from 2.4 to
 2.1 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2003,7 +2029,7 @@ Digital library circulations per students and faculty
 132 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_29.png alt=‘Line plot from 173 to
+<img src=images/WilkesUniversity_26.png alt=‘Line plot from 173 to
 132 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2045,7 +2071,7 @@ Applicants submitting SAT
 30% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_30.png alt=‘Line plot from 92 to 30
+<img src=images/WilkesUniversity_27.png alt=‘Line plot from 92 to 30
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2059,7 +2085,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 520 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_31.png alt=‘Line plot from 520 to
+<img src=images/WilkesUniversity_28.png alt=‘Line plot from 520 to
 520 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2073,7 +2099,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 630 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_32.png alt=‘Line plot from 610 to
+<img src=images/WilkesUniversity_29.png alt=‘Line plot from 610 to
 630 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2087,7 +2113,7 @@ SAT Math 25th percentile score
 520 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_33.png alt=‘Line plot from 470 to
+<img src=images/WilkesUniversity_30.png alt=‘Line plot from 470 to
 520 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2102,7 +2128,7 @@ SAT Math 75th percentile score
 620 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_34.png alt=‘Line plot from 590 to
+<img src=images/WilkesUniversity_31.png alt=‘Line plot from 590 to
 620 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2133,11 +2159,11 @@ Change over ≤ 11 years
 Applicants submitting ACT
 </td>
 <td style="text-align:center;">
-5.0% (2021)
+5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_35.png alt=‘Line plot from 0.0 to
-5.0 from 2015 to 2021’ >
+<img src=images/WilkesUniversity_32.png alt=‘Line plot from 0 to 5
+from 2015 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -2148,7 +2174,7 @@ ACT Composite 25th percentile score
 20 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_36.png alt=‘Line plot from 20 to 20
+<img src=images/WilkesUniversity_33.png alt=‘Line plot from 20 to 20
 from 2016 to 2021’ >
 </td>
 </tr>
@@ -2160,7 +2186,7 @@ ACT Composite 75th percentile score
 28 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_37.png alt=‘Line plot from 25 to 28
+<img src=images/WilkesUniversity_34.png alt=‘Line plot from 25 to 28
 from 2016 to 2021’ >
 </td>
 </tr>
@@ -2172,7 +2198,7 @@ ACT English 25th percentile score
 18 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_38.png alt=‘Line plot from 19 to 18
+<img src=images/WilkesUniversity_35.png alt=‘Line plot from 19 to 18
 from 2016 to 2021’ >
 </td>
 </tr>
@@ -2184,7 +2210,7 @@ ACT English 75th percentile score
 27 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_39.png alt=‘Line plot from 24 to 27
+<img src=images/WilkesUniversity_36.png alt=‘Line plot from 24 to 27
 from 2016 to 2021’ >
 </td>
 </tr>
@@ -2196,7 +2222,7 @@ ACT Math 25th percentile score
 19 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_40.png alt=‘Line plot from 19 to 19
+<img src=images/WilkesUniversity_37.png alt=‘Line plot from 19 to 19
 from 2016 to 2021’ >
 </td>
 </tr>
@@ -2208,7 +2234,7 @@ ACT Math 75th percentile score
 27 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/WilkesUniversity_41.png alt=‘Line plot from 26 to 27
+<img src=images/WilkesUniversity_38.png alt=‘Line plot from 26 to 27
 from 2016 to 2021’ >
 </td>
 </tr>
@@ -2219,28 +2245,28 @@ from 2016 to 2021’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-eb887e832396858eb32c" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-eb887e832396858eb32c">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Environmental_EnvironmentalHealthEngineering.html\">Environmental/Environmental Health Engineering</a>","<a href=\"majors_Bachelors_Finance_General.html\">Finance, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_DigitalCommunicationandMedia_Multimedia.html\">Digital Communication and Media/Multimedia</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_JuniorHigh_Intermediate_MiddleSchoolEducationandTeaching.html\">Junior High/Intermediate/Middle School Education and Teaching</a>","<a href=\"majors_Bachelors_Criminology.html\">Criminology</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_Engineering_IndustrialManagement.html\">Engineering/Industrial Management</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_InternationalRelationsandAffairs.html\">International Relations and Affairs</a>","<a href=\"majors_Bachelors_Logistics_Materials_andSupplyChainManagement.html\">Logistics, Materials, and Supply Chain Management</a>","<a href=\"majors_Bachelors_HospitalityAdministration_Management_General.html\">Hospitality Administration/Management, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_ClinicalLaboratoryScience_MedicalTechnology_Technologist.html\">Clinical Laboratory Science/Medical Technology/Technologist</a>","<a href=\"majors_Bachelors_Entrepreneurship_EntrepreneurialStudies.html\">Entrepreneurship/Entrepreneurial Studies</a>"],[91,80,44,43,27,24,24,20,16,15,15,13,10,10,9,9,9,8,8,7,7,6,5,4,3,3,3,3,3,2,2,2,1,1,1,1,1],[17.17,15.094,8.302,8.113,5.094,4.528,4.528,3.774,3.019,2.83,2.83,2.453,1.887,1.887,1.698,1.698,1.698,1.509,1.509,1.321,1.321,1.132,0.943,0.755,0.566,0.566,0.566,0.566,0.566,0.377,0.377,0.377,0.189,0.189,0.189,0.189,0.189],[0.058,0.332,0.031,0.118,0.025,1.366,0.056,0.025,0.094,0.032,0.037,0.042,0.166,0.033,0.413,0.099,0.04,0.028,0.094,0.028,0.171,0.016,0.019,0.302,0.054,0.032,0.017,0.022,0.035,0.026,0.031,0.029,0.013,0.004,0.016,0.032,0.036],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-649abf306445e1749785" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-649abf306445e1749785">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Environmental_EnvironmentalHealthEngineering.html\">Environmental/Environmental Health Engineering</a>","<a href=\"majors_Bachelors_Finance_General.html\">Finance, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_DigitalCommunicationandMedia_Multimedia.html\">Digital Communication and Media/Multimedia</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_JuniorHigh_Intermediate_MiddleSchoolEducationandTeaching.html\">Junior High/Intermediate/Middle School Education and Teaching</a>","<a href=\"majors_Bachelors_Criminology.html\">Criminology</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_Engineering_IndustrialManagement.html\">Engineering/Industrial Management</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_InternationalRelationsandAffairs.html\">International Relations and Affairs</a>","<a href=\"majors_Bachelors_Logistics_Materials_andSupplyChainManagement.html\">Logistics, Materials, and Supply Chain Management</a>","<a href=\"majors_Bachelors_HospitalityAdministration_Management_General.html\">Hospitality Administration/Management, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_ClinicalLaboratoryScience_MedicalTechnology_Technologist.html\">Clinical Laboratory Science/Medical Technology/Technologist</a>","<a href=\"majors_Bachelors_Entrepreneurship_EntrepreneurialStudies.html\">Entrepreneurship/Entrepreneurial Studies</a>"],[91,80,44,43,27,24,24,20,16,15,15,13,10,10,9,9,9,8,8,7,7,6,5,4,3,3,3,3,3,2,2,2,1,1,1,1,1],[17.17,15.094,8.302,8.113,5.094,4.528,4.528,3.774,3.019,2.83,2.83,2.453,1.887,1.887,1.698,1.698,1.698,1.509,1.509,1.321,1.321,1.132,0.943,0.755,0.566,0.566,0.566,0.566,0.566,0.377,0.377,0.377,0.189,0.189,0.189,0.189,0.189],[0.058,0.332,0.031,0.118,0.025,1.366,0.056,0.025,0.094,0.032,0.037,0.042,0.166,0.033,0.413,0.099,0.04,0.028,0.094,0.028,0.171,0.016,0.019,0.302,0.054,0.032,0.017,0.022,0.035,0.026,0.031,0.029,0.013,0.004,0.016,0.032,0.036],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c5a1c0541aeb5ee42401" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-c5a1c0541aeb5ee42401">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_TeacherEducationandProfessionalDevelopment_SpecificSubjectAreas_Other.html\">Teacher Education and Professional Development, Specific Subject Areas, Other</a>","<a href=\"majors_Masters_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Masters_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Masters_ElementaryandMiddleSchoolAdministration_Principalship.html\">Elementary and Middle School Administration/Principalship</a>","<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Masters_TeachingEnglishasaSecondorForeignLanguage_ESLLanguageInstructor.html\">Teaching English as a Second or Foreign Language/ESL Language Instructor</a>","<a href=\"majors_Masters_Education_Other.html\">Education, Other</a>","<a href=\"majors_Masters_ReadingTeacherEducation.html\">Reading Teacher Education</a>","<a href=\"majors_Masters_OnlineEducator_OnlineTeaching.html\">Online Educator/Online Teaching</a>","<a href=\"majors_Masters_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Masters_MathematicsTeacherEducation.html\">Mathematics Teacher Education</a>","<a href=\"majors_Masters_InternationalSchoolAdministration_Leadership.html\">International School Administration/Leadership</a>","<a href=\"majors_Masters_English_LanguageArtsTeacherEducation.html\">English/Language Arts Teacher Education</a>","<a href=\"majors_Masters_ScienceTeacherEducation_GeneralScienceTeacherEducation.html\">Science Teacher Education/General Science Teacher Education</a>","<a href=\"majors_Masters_BioengineeringandBiomedicalEngineering.html\">Bioengineering and Biomedical Engineering</a>","<a href=\"majors_Masters_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Masters_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Masters_Engineering_IndustrialManagement.html\">Engineering/Industrial Management</a>","<a href=\"majors_Masters_SocialStudiesTeacherEducation.html\">Social Studies Teacher Education</a>"],[133,122,114,54,42,32,25,24,22,17,11,10,6,6,6,3,2,2,2,1],[20.978,19.243,17.981,8.517,6.625,5.047,3.943,3.785,3.47,2.681,1.735,1.577,0.946,0.946,0.946,0.473,0.315,0.315,0.315,0.158],[10.965,1.795,0.608,9.359,0.04,1.068,0.726,1.452,0.399,85,0.07,0.594,100,0.615,0.724,0.097,0.024,0.028,0.051,0.201],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1c947904efb54438937d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1c947904efb54438937d">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_TeacherEducationandProfessionalDevelopment_SpecificSubjectAreas_Other.html\">Teacher Education and Professional Development, Specific Subject Areas, Other</a>","<a href=\"majors_Masters_Educational_InstructionalTechnology.html\">Educational/Instructional Technology</a>","<a href=\"majors_Masters_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Masters_ElementaryandMiddleSchoolAdministration_Principalship.html\">Elementary and Middle School Administration/Principalship</a>","<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Masters_TeachingEnglishasaSecondorForeignLanguage_ESLLanguageInstructor.html\">Teaching English as a Second or Foreign Language/ESL Language Instructor</a>","<a href=\"majors_Masters_Education_Other.html\">Education, Other</a>","<a href=\"majors_Masters_ReadingTeacherEducation.html\">Reading Teacher Education</a>","<a href=\"majors_Masters_OnlineEducator_OnlineTeaching.html\">Online Educator/Online Teaching</a>","<a href=\"majors_Masters_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Masters_MathematicsTeacherEducation.html\">Mathematics Teacher Education</a>","<a href=\"majors_Masters_InternationalSchoolAdministration_Leadership.html\">International School Administration/Leadership</a>","<a href=\"majors_Masters_English_LanguageArtsTeacherEducation.html\">English/Language Arts Teacher Education</a>","<a href=\"majors_Masters_ScienceTeacherEducation_GeneralScienceTeacherEducation.html\">Science Teacher Education/General Science Teacher Education</a>","<a href=\"majors_Masters_BioengineeringandBiomedicalEngineering.html\">Bioengineering and Biomedical Engineering</a>","<a href=\"majors_Masters_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Masters_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Masters_Engineering_IndustrialManagement.html\">Engineering/Industrial Management</a>","<a href=\"majors_Masters_SocialStudiesTeacherEducation.html\">Social Studies Teacher Education</a>"],[133,122,114,54,42,32,25,24,22,17,11,10,6,6,6,3,2,2,2,1],[20.978,19.243,17.981,8.517,6.625,5.047,3.943,3.785,3.47,2.681,1.735,1.577,0.946,0.946,0.946,0.473,0.315,0.315,0.315,0.158],[10.965,1.795,0.608,9.359,0.04,1.068,0.726,1.452,0.399,85,0.07,0.594,100,0.615,0.724,0.097,0.024,0.028,0.051,0.201],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f1806fb17648d1caaa45" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f1806fb17648d1caaa45">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_Pharmacy.html\">Pharmacy</a>","<a href=\"majors_Doctorate_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Doctorate_NursingPractice.html\">Nursing Practice</a>","<a href=\"majors_Doctorate_NursingPractice.html\">Nursing Practice</a>","<a href=\"majors_Doctorate_InternationalSchoolAdministration_Leadership.html\">International School Administration/Leadership</a>"],[70,29,23,8,4],[52.239,21.642,17.164,5.97,2.985],[0.477,0.502,0.373,0.13,100],["Doctorate","Doctorate","Doctorate","Doctorate","Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8f87445bcb73aa4f67ac" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-8f87445bcb73aa4f67ac">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_Pharmacy.html\">Pharmacy</a>","<a href=\"majors_Doctorate_EducationalLeadershipandAdministration_General.html\">Educational Leadership and Administration, General</a>","<a href=\"majors_Doctorate_NursingPractice.html\">Nursing Practice</a>","<a href=\"majors_Doctorate_NursingPractice.html\">Nursing Practice</a>","<a href=\"majors_Doctorate_InternationalSchoolAdministration_Leadership.html\">International School Administration/Leadership</a>"],[70,29,23,8,4],[52.239,21.642,17.164,5.97,2.985],[0.477,0.502,0.373,0.13,100],["Doctorate","Doctorate","Doctorate","Doctorate","Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-68d01787209c9bb3bbb3" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-68d01787209c9bb3bbb3">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_SustainabilityStudies.html\">Sustainability Studies</a>"],[9],[100],[1.744],["Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ace9b7d062c2dc23a07b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ace9b7d062c2dc23a07b">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_SustainabilityStudies.html\">Sustainability Studies</a>"],[9],[100],[1.744],["Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c3e390c12a8448bff64f" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-c3e390c12a8448bff64f">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-912fbb8d934c59337b40" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-912fbb8d934c59337b40">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

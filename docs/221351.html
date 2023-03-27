@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -268,10 +270,20 @@ Business-dominant, with other professional programs</p></li>
 <li><p><strong>Enrollment profile</strong>: Very high undergraduate (see
 more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 30,525 (2.2 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $30,525 (1.9 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $15,566.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://npc.collegeboard.org/student/app/rhodes'>here</a> to
+see what your family may be asked to pay. It can be MUCH lower than the
+average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, small, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 24.9% of first year
+students come from Tennessee</p></li>
+<li><p><strong>In US percentage</strong>: 96.6% of first year students
+come from the US (note that 0.0% have no residence reported)</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 85.4% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -311,9 +323,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Prohibited (based on <a
-href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+<li><strong>Abortion in this state</strong>: Most restrictive (based on
+<a href="https://states.guttmacher.org/policies/"
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: F (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -326,17 +339,29 @@ marriage</strong>: 22.2% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Worst (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Central U.S. hardwood
 forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/11921/Average-Weather-in-Memphis-Tennessee-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d756e2f1699b0f9a7747" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-d756e2f1699b0f9a7747">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[35.154405,-89.990803,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[35.154405,-89.990803],16,[]],"limits":{"lat":[35.154405,35.154405],"lng":[-89.990803,-89.990803]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-acc68ed5627ce00f55ae" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-acc68ed5627ce00f55ae">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"221351.html\">Rhodes College</a>","<a href=\"221519.html\">The University of the South</a>","<a href=\"156408.html\">Centre College</a>","<a href=\"107080.html\">Hendrix College</a>","<a href=\"139144.html\">Berry College</a>","<a href=\"100937.html\">Birmingham-Southern College</a>","<a href=\"175980.html\">Millsaps College</a>","<a href=\"195216.html\">St Lawrence University</a>","<a href=\"140696.html\">Oglethorpe University</a>","<a href=\"214175.html\">Muhlenberg College</a>","<a href=\"212009.html\">Dickinson College</a>","<a href=\"196866.html\">Union College</a>","<a href=\"212674.html\">Gettysburg College</a>","<a href=\"166939.html\">Mount Holyoke College</a>","<a href=\"150400.html\">DePauw University</a>","<a href=\"120254.html\">Occidental College</a>","<a href=\"206589.html\">The College of Wooster</a>","<a href=\"152318.html\">Rose-Hulman Institute of Technology</a>","<a href=\"128902.html\">Connecticut College</a>","<a href=\"237057.html\">Whitman College</a>","<a href=\"218973.html\">Wofford College</a>","<a href=\"141060.html\">Spelman College</a>","<a href=\"174844.html\">St Olaf College</a>","<a href=\"130590.html\">Trinity College</a>","<a href=\"203535.html\">Kenyon College</a>","<a href=\"173902.html\">Macalester College</a>","<a href=\"133492.html\">Eckerd College</a>","<a href=\"189088.html\">Bard College</a>","<a href=\"165334.html\">Clark University</a>","<a href=\"212577.html\">Franklin and Marshall College</a>","<a href=\"239017.html\">Lawrence University</a>","<a href=\"153834.html\">Luther College</a>","<a href=\"183239.html\">Saint Anselm College</a>","<a href=\"202523.html\">Denison University</a>","<a href=\"145646.html\">Illinois Wesleyan University</a>","<a href=\"191630.html\">Hobart William Smith Colleges</a>","<a href=\"102377.html\">Tuskegee University</a>","<a href=\"218070.html\">Furman University</a>","<a href=\"152530.html\">Taylor University</a>","<a href=\"143084.html\">Augustana College</a>","<a href=\"209922.html\">Reed College</a>","<a href=\"177117.html\">Cottey College</a>","<a href=\"399911.html\">Soka University of America</a>","<a href=\"146481.html\">Lake Forest College</a>","<a href=\"149781.html\">Wheaton College</a>","<a href=\"234085.html\">Virginia Military Institute</a>","<a href=\"205957.html\">Franciscan University of Steubenville</a>","<a href=\"154235.html\">Saint Ambrose University</a>","<a href=\"173300.html\">Concordia College at Moorhead</a>","<a href=\"238333.html\">Beloit College</a>","<a href=\"173647.html\">Gustavus Adolphus College</a>","<a href=\"201654.html\">Cedarville University</a>","<a href=\"136950.html\">Rollins College</a>","<a href=\"167996.html\">Stonehill College</a>","<a href=\"195304.html\">Sarah Lawrence College</a>","<a href=\"210669.html\">Allegheny College</a>","<a href=\"146427.html\">Knox College</a>","<a href=\"152673.html\">Wabash College</a>","<a href=\"163976.html\">St. John's College</a>","<a href=\"204501.html\">Oberlin College</a>","<a href=\"195526.html\">Skidmore College</a>","<a href=\"129242.html\">Fairfield University</a>","<a href=\"167899.html\">Springfield College</a>","<a href=\"239716.html\">Saint Norbert College</a>","<a href=\"140553.html\">Morehouse College</a>","<a href=\"168281.html\">Wheaton College (Massachusetts)</a>","<a href=\"164216.html\">Washington College</a>","<a href=\"216278.html\">Susquehanna University</a>","<a href=\"213251.html\">Juniata College</a>","<a href=\"213385.html\">Lafayette College</a>","<a href=\"192819.html\">Marist College</a>","<a href=\"209056.html\">Lewis &amp; Clark College</a>","<a href=\"213996.html\">Messiah University</a>","<a href=\"169080.html\">Calvin University</a>","<a href=\"233426.html\">Roanoke College</a>","<a href=\"164739.html\">Bentley University</a>","<a href=\"153269.html\">Drake University</a>","<a href=\"176053.html\">Mississippi College</a>","<a href=\"236896.html\">Walla Walla University</a>","<a href=\"217402.html\">Providence College</a>","<a href=\"104586.html\">Embry-Riddle Aeronautical University-Prescott</a>","<a href=\"228343.html\">Southwestern University</a>","<a href=\"150455.html\">Earlham College</a>","<a href=\"123554.html\">Saint Mary's College of California</a>","<a href=\"153162.html\">Cornell College</a>","<a href=\"221971.html\">Union University</a>","<a href=\"153825.html\">Loras College</a>","<a href=\"224323.html\">University of Dallas</a>","<a href=\"217536.html\">Salve Regina University</a>","<a href=\"177746.html\">Kansas City Art Institute</a>","<a href=\"217165.html\">Bryant University</a>","<a href=\"138600.html\">Agnes Scott College</a>","<a href=\"170301.html\">Hope College</a>","<a href=\"219000.html\">Augustana University</a>","<a href=\"188854.html\">American Musical and Dramatic Academy</a>","<a href=\"152390.html\">Saint Mary's College</a>","<a href=\"130253.html\">Sacred Heart University</a>","<a href=\"136774.html\">Ringling College of Art and Design</a>","<a href=\"232256.html\">Hampden-Sydney College</a>","<a href=\"231059.html\">Saint Michael's College</a>"],[57,60,68,68,70,66,68,57,81,68,48,47,56,52,65,38,61,77,41,59,52,51,47,38,37,31,70,60,48,38,75,76,78,28,45,67,34,71,73,69,44,61,52,64,86,64,68,72,72,67,73,62,49,72,58,75,70,62,53,34,31,56,77,85,65,82,70,77,74,41,60,79,77,75,80,61,69,49,51,58,74,51,69,70,81,53,72,58,73,60,74,70,92,72,22,83,66,69,37,86],[20,19,22,19,20,15,13,20,22,16,22,16,18,29,14,22,15,18,16,16,20,14,25,25,18,21,17,15,13,18,18,23,15,24,21,15,19,13,27,14,16,39,49,15,32,47,38,17,17,13,20,30,13,12,17,12,13,21,27,24,21,18,23,17,26,16,13,13,16,23,18,15,29,25,12,18,14,38,36,16,28,15,15,17,16,25,20,16,15,38,13,27,21,29,21,19,22,28,21,16],[85,80,86,73,72,70,62,82,58,82,82,85,82,85,83,83,77,87,81,89,80,76,85,85,87,90,68,71,79,83,80,73,77,81,81,73,57,82,77,79,73,88,91,73,88,74,75,64,74,73,78,73,71,85,76,75,75,83,75,82,84,84,73,78,47,73,75,74,76,88,82,74,77,77,70,88,77,63,63,89,70,74,73,73,64,68,68,72,73,62,84,75,81,71,68,74,73,80,65,78],[20,20,12,11,8,28,15,24,43,33,19,27,30,13,13,22,19,35,21,10,12,14,18,20,20,18,51,11,32,31,13,26,28,13,25,26,13,15,34,33,16,4,1,32,19,20,36,39,31,28,26,54,29,28,43,19,21,8,13,13,27,44,45,37,12,24,39,34,30,22,46,41,55,35,32,48,40,44,20,46,null,20,6,53,25,57,36,41,51,32,48,19,30,33,64,17,64,61,12,44],[13,12,12,12,16,14,11,14,30,15,10,12,13,12,11,12,14,11,11,10,13,16,20,15,11,13,14,13,13,11,10,14,16,12,14,11,13,10,16,17,9,7,8,18,11,13,21,14,15,14,16,25,14,19,16,12,12,11,8,12,13,18,17,16,21,15,12,18,14,11,35,12,16,16,14,20,11,18,17,16,29,16,11,13,14,9,13,13,23,16,28,14,17,17,null,12,32,null,11,16],[15566,23671,13778,10861,16418,18870,18999,15103,20482,21330,12027,13769,13799,13907,18320,13475,17111,27109,13979,18380,21893,43094,11138,8331,18974,10543,26620,18011,18547,13110,19037,20153,23615,14686,20876,21954,35955,21920,17253,18937,14035,18050,10095,16238,18519,6552,18170,23031,17445,16197,16445,18961,21511,22192,25765,18748,11933,14558,19008,13745,15235,21807,20816,19840,33967,19297,19748,18710,15816,12400,25958,21141,19670,22475,20849,27303,25332,14501,16772,18864,33240,20981,15864,30065,17628,26056,19374,15919,27108,25646,36373,17463,18994,17585,40524,13997,35484,47026,27931,25433],[1996,1724,1320,1101,2157,1041,632,2222,1375,2007,2145,2075,2399,2200,1700,1938,1947,2058,1811,1524,1745,2363,2964,2118,1868,2206,1981,1982,2284,2127,1463,1717,1940,2307,1645,1640,2068,2285,1670,2317,1515,302,435,1641,2202,1652,2301,2121,1837,978,2224,3597,2427,2349,1512,1528,1129,837,470,2905,2655,4486,2026,1905,2197,1700,1015,2108,1222,2706,4880,2097,2304,2787,1817,3907,2776,2082,1236,4001,2892,1480,657,1989,1038,1634,1185,1466,2069,713,3038,1050,2966,1626,1656,1368,6071,1635,842,1395],[7,67,null,9,56,15,18,18,4,21,6,null,null,15,null,1,null,15,1,null,null,null,null,7,null,null,null,332,881,null,null,null,23,null,null,24,414,92,17,29,0,null,10,13,228,null,176,479,0,null,null,242,333,18,193,null,null,null,45,11,0,567,728,8,null,null,0,2,8,null,413,949,284,103,null,506,921,1182,160,204,33,null,40,493,6,526,81,310,197,null,197,15,null,75,10,63,1380,null,null,43],["Tennessee","Tennessee","Kentucky","Arkansas","Georgia","Alabama","Mississippi","New York","Georgia","Pennsylvania","Pennsylvania","New York","Pennsylvania","Massachusetts","Indiana","California","Ohio","Indiana","Connecticut","Washington","South Carolina","Georgia","Minnesota","Connecticut","Ohio","Minnesota","Florida","New York","Massachusetts","Pennsylvania","Wisconsin","Iowa","New Hampshire","Ohio","Illinois","New York","Alabama","South Carolina","Indiana","Illinois","Oregon","Missouri","California","Illinois","Illinois","Virginia","Ohio","Iowa","Minnesota","Wisconsin","Minnesota","Ohio","Florida","Massachusetts","New York","Pennsylvania","Illinois","Indiana","Maryland","Ohio","New York","Connecticut","Massachusetts","Wisconsin","Georgia","Massachusetts","Maryland","Pennsylvania","Pennsylvania","Pennsylvania","New York","Oregon","Pennsylvania","Michigan","Virginia","Massachusetts","Iowa","Mississippi","Washington","Rhode Island","Arizona","Texas","Indiana","California","Iowa","Tennessee","Iowa","Texas","Rhode Island","Missouri","Rhode Island","Georgia","Michigan","South Dakota","New York","Indiana","Connecticut","Florida","Virginia","Vermont"],["Approximately stable","Increasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Increasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Increasing","Approximately stable","Decreasing","Approximately stable","Increasing","Decreasing","Approximately stable","Decreasing","Increasing","Increasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Increasing","Increasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Increasing","Increasing","Decreasing","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ad0889072d8a53ba7387" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-ad0889072d8a53ba7387">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[35.154405,-89.990803,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[35.154405,-89.990803],16,[]],"limits":{"lat":[35.154405,35.154405],"lng":[-89.990803,-89.990803]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -405,11 +430,11 @@ Undergrads (part time)
 Grad students (full time)
 </td>
 <td style="text-align:center;">
-7.0 (2021)
+7 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_3.png alt=‘Line plot from 12 to 7.0
-from 2011 to 2021’ >
+<img src=images/RhodesCollege_3.png alt=‘Line plot from 12 to 7 from
+2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -426,8 +451,8 @@ Grad students (part time)
 16 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_4.png alt=‘Line plot from 0.0 to 16
-from 2011 to 2021’ >
+<img src=images/RhodesCollege_4.png alt=‘Line plot from 0 to 16 from
+2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↑<br />1.4 per year
@@ -661,33 +686,13 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-11 (2019)
-</td>
-<td style="text-align:center;">
-<img src=images/RhodesCollege_14.png alt=‘Line plot from 11 to 11
-from 2012 to 2019’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 71%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 62%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 13 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_15.png alt=‘Line plot from 14 to 13
+<img src=images/RhodesCollege_14.png alt=‘Line plot from 14 to 13
 from 2012 to 2019’ >
 </td>
 <td style="text-align:center;">
@@ -698,6 +703,26 @@ from 2012 to 2019’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪<br />Better (lower) than 66%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
+</td>
+<td style="text-align:center;">
+11 (2019)
+</td>
+<td style="text-align:center;">
+<img src=images/RhodesCollege_15.png alt=‘Line plot from 11 to 11
+from 2012 to 2019’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 71%
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 62%
 </td>
 </tr>
 <tr>
@@ -720,16 +745,17 @@ from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-24 (2020)
+158 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_17.png alt=‘Line plot from 32 to 24
+<img src=images/RhodesCollege_17.png alt=‘Line plot from 138 to 158
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
+↑<br />2.2 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -738,17 +764,16 @@ from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-158 (2020)
+24 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_18.png alt=‘Line plot from 138 to 158
+<img src=images/RhodesCollege_18.png alt=‘Line plot from 32 to 24
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />2.2 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -801,7 +826,7 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 17% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_103.png alt=‘Line plot from 6.0 to 17
+<img src=images/RhodesCollege_100.png alt=‘Line plot from 6 to 17
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -837,13 +862,33 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+20% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/RhodesCollege_19.png alt=‘Line plot from 32 to 20
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 43%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 56%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $85 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_19.png alt=‘Line plot from 33 M to 85 M
+<img src=images/RhodesCollege_20.png alt=‘Line plot from 33 M to 85 M
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -863,7 +908,7 @@ Revenue
 $165 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_20.png alt=‘Line plot from 98 M to 165
+<img src=images/RhodesCollege_21.png alt=‘Line plot from 98 M to 165
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -881,7 +926,7 @@ Expenses
 $80 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_21.png alt=‘Line plot from 65 M to 80 M
+<img src=images/RhodesCollege_22.png alt=‘Line plot from 65 M to 80 M
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -900,7 +945,7 @@ Assets
 $688 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_22.png alt=‘Line plot from 479 M to 688
+<img src=images/RhodesCollege_23.png alt=‘Line plot from 479 M to 688
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -911,80 +956,6 @@ M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪<br />Better (higher) than 74%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-20% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/RhodesCollege_23.png alt=‘Line plot from 32 to 20
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 43%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 56%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.2% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/RhodesCollege_24.png alt=‘Line plot from 0.2 to 0.2
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-1.9% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/RhodesCollege_25.png alt=‘Line plot from 0.9 to 1.9
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-7.4% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/RhodesCollege_26.png alt=‘Line plot from 20 to 7.4
-from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -1026,7 +997,7 @@ Total
 85% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_42.png alt=‘Line plot from 80 to 85
+<img src=images/RhodesCollege_39.png alt=‘Line plot from 80 to 85
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1044,7 +1015,7 @@ Men
 82% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_43.png alt=‘Line plot from 76 to 82
+<img src=images/RhodesCollege_40.png alt=‘Line plot from 76 to 82
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1062,7 +1033,7 @@ Women
 88% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_44.png alt=‘Line plot from 83 to 88
+<img src=images/RhodesCollege_41.png alt=‘Line plot from 83 to 88
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1080,7 +1051,7 @@ American Indian or Alaska Native men
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_45.png alt=‘Line plot from 0.0 to 100
+<img src=images/RhodesCollege_42.png alt=‘Line plot from 0 to 100
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1098,7 +1069,7 @@ American Indian or Alaska Native women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_46.png alt=‘Line plot from 0.0 to 100
+<img src=images/RhodesCollege_43.png alt=‘Line plot from 0 to 100
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1116,7 +1087,7 @@ Asian men
 70% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_47.png alt=‘Line plot from 67 to 70
+<img src=images/RhodesCollege_44.png alt=‘Line plot from 67 to 70
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1134,7 +1105,7 @@ Asian women
 88% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_48.png alt=‘Line plot from 67 to 88
+<img src=images/RhodesCollege_45.png alt=‘Line plot from 67 to 88
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1152,7 +1123,7 @@ Black or African American men
 89% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_49.png alt=‘Line plot from 67 to 89
+<img src=images/RhodesCollege_46.png alt=‘Line plot from 67 to 89
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1170,7 +1141,7 @@ Black or African American women
 79% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_50.png alt=‘Line plot from 75 to 79
+<img src=images/RhodesCollege_47.png alt=‘Line plot from 75 to 79
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1188,7 +1159,7 @@ Hispanic men
 82% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_51.png alt=‘Line plot from 100 to 82
+<img src=images/RhodesCollege_48.png alt=‘Line plot from 100 to 82
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1206,7 +1177,7 @@ Hispanic women
 82% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_52.png alt=‘Line plot from 60 to 82
+<img src=images/RhodesCollege_49.png alt=‘Line plot from 60 to 82
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1224,7 +1195,7 @@ Native Hawaiian or other Pacific Islander men
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_53.png alt=‘Line plot from 100 to 100
+<img src=images/RhodesCollege_50.png alt=‘Line plot from 100 to 100
 from 2021 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1240,7 +1211,7 @@ White men
 82% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_55.png alt=‘Line plot from 76 to 82
+<img src=images/RhodesCollege_52.png alt=‘Line plot from 76 to 82
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1258,7 +1229,7 @@ White women
 89% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_56.png alt=‘Line plot from 77 to 89
+<img src=images/RhodesCollege_53.png alt=‘Line plot from 77 to 89
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1276,8 +1247,8 @@ Two or more races men
 83% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_57.png alt=‘Line plot from 0.0 to 83
-from 2011 to 2021’ >
+<img src=images/RhodesCollege_54.png alt=‘Line plot from 0 to 83 from
+2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (higher) than 50%
@@ -1294,7 +1265,7 @@ Two or more races women
 93% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_58.png alt=‘Line plot from 50 to 93
+<img src=images/RhodesCollege_55.png alt=‘Line plot from 50 to 93
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1312,7 +1283,7 @@ Nonresident alien men
 70% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_59.png alt=‘Line plot from 100 to 70
+<img src=images/RhodesCollege_56.png alt=‘Line plot from 100 to 70
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1330,7 +1301,7 @@ Nonresident alien women
 89% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_60.png alt=‘Line plot from 50 to 89
+<img src=images/RhodesCollege_57.png alt=‘Line plot from 50 to 89
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1370,7 +1341,7 @@ Men (percent freshmen)
 41% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_83.png alt=‘Line plot from 39 to 41
+<img src=images/RhodesCollege_80.png alt=‘Line plot from 39 to 41
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1382,7 +1353,7 @@ Women (percent freshmen)
 59% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_84.png alt=‘Line plot from 61 to 59
+<img src=images/RhodesCollege_81.png alt=‘Line plot from 61 to 59
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1394,7 +1365,7 @@ American Indian or Alaska Native men (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_85.png alt=‘Line plot from 0.2 to 0.2
+<img src=images/RhodesCollege_82.png alt=‘Line plot from 0.2 to 0.2
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1403,10 +1374,10 @@ from 2010 to 2021’ >
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_86.png alt=‘Line plot from 0.6 to 0.0
+<img src=images/RhodesCollege_83.png alt=‘Line plot from 0.6 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1418,7 +1389,7 @@ Asian men (percent freshmen)
 1.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_87.png alt=‘Line plot from 1.6 to 1.9
+<img src=images/RhodesCollege_84.png alt=‘Line plot from 1.6 to 1.9
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1430,7 +1401,7 @@ Asian women (percent freshmen)
 5.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_88.png alt=‘Line plot from 2.0 to 5.1
+<img src=images/RhodesCollege_85.png alt=‘Line plot from 2.0 to 5.1
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1442,7 +1413,7 @@ Black or African American men (percent freshmen)
 2.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_89.png alt=‘Line plot from 2.4 to 2.0
+<img src=images/RhodesCollege_86.png alt=‘Line plot from 2.4 to 2.0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1454,7 +1425,7 @@ Black or African American women (percent freshmen)
 5.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_90.png alt=‘Line plot from 4.0 to 5.4
+<img src=images/RhodesCollege_87.png alt=‘Line plot from 4.0 to 5.4
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1466,7 +1437,7 @@ Hispanic men (percent freshmen)
 1.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_91.png alt=‘Line plot from 1.6 to 1.5
+<img src=images/RhodesCollege_88.png alt=‘Line plot from 1.6 to 1.5
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1478,7 +1449,7 @@ Hispanic women (percent freshmen)
 4.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_92.png alt=‘Line plot from 1.4 to 4.2
+<img src=images/RhodesCollege_89.png alt=‘Line plot from 1.4 to 4.2
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1487,11 +1458,11 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_93.png alt=‘Line plot from 0.0 to 0.0
-from 2010 to 2021’ >
+<img src=images/RhodesCollege_90.png alt=‘Line plot from 0 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1499,11 +1470,11 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_94.png alt=‘Line plot from 0.0 to 0.0
-from 2010 to 2021’ >
+<img src=images/RhodesCollege_91.png alt=‘Line plot from 0 to 0 from
+2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1514,7 +1485,7 @@ White men (percent freshmen)
 31% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_95.png alt=‘Line plot from 29 to 31
+<img src=images/RhodesCollege_92.png alt=‘Line plot from 29 to 31
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1526,7 +1497,7 @@ White women (percent freshmen)
 39% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_96.png alt=‘Line plot from 48 to 39
+<img src=images/RhodesCollege_93.png alt=‘Line plot from 48 to 39
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1538,7 +1509,7 @@ Two or more races men (percent freshmen)
 1.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_97.png alt=‘Line plot from 1.2 to 1.4
+<img src=images/RhodesCollege_94.png alt=‘Line plot from 1.2 to 1.4
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1550,7 +1521,7 @@ Two or more races women (percent freshmen)
 2.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_98.png alt=‘Line plot from 1.0 to 2.7
+<img src=images/RhodesCollege_95.png alt=‘Line plot from 1.0 to 2.7
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1559,10 +1530,10 @@ from 2010 to 2021’ >
 Race ethnicity unknown men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_99.png alt=‘Line plot from 1.6 to 0.0
+<img src=images/RhodesCollege_96.png alt=‘Line plot from 1.6 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1571,10 +1542,10 @@ from 2010 to 2021’ >
 Race ethnicity unknown women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_100.png alt=‘Line plot from 2.2 to 0.0
+<img src=images/RhodesCollege_97.png alt=‘Line plot from 2.2 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1586,7 +1557,7 @@ Nonresident alien men (percent freshmen)
 2.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_101.png alt=‘Line plot from 0.8 to 2.9
+<img src=images/RhodesCollege_98.png alt=‘Line plot from 0.8 to 2.9
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1598,8 +1569,63 @@ Nonresident alien women (percent freshmen)
 2.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_102.png alt=‘Line plot from 1.6 to 2.9
+<img src=images/RhodesCollege_99.png alt=‘Line plot from 1.6 to 2.9
 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Rhodes College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+25% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/RhodesCollege_101.png alt=‘Line plot from 26 to 25
+from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+97% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/RhodesCollege_102.png alt=‘Line plot from 97 to 97
+from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/RhodesCollege_103.png alt=‘Line plot from 0 to 0 from
+2010 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1640,7 +1666,7 @@ Total (tenure-track count)
 158 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_61.png alt=‘Line plot from 138 to 158
+<img src=images/RhodesCollege_58.png alt=‘Line plot from 138 to 158
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1655,7 +1681,7 @@ Women (tenure-track count)
 70 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_62.png alt=‘Line plot from 58 to 70
+<img src=images/RhodesCollege_59.png alt=‘Line plot from 58 to 70
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1670,7 +1696,7 @@ Men (tenure-track count)
 88 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_63.png alt=‘Line plot from 80 to 88
+<img src=images/RhodesCollege_60.png alt=‘Line plot from 80 to 88
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1681,11 +1707,11 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_64.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_61.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1695,11 +1721,11 @@ from 2012 to 2020’ >
 Asian (tenure-track count)
 </td>
 <td style="text-align:center;">
-9.0 (2020)
+9 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_65.png alt=‘Line plot from 2.0 to 9.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_62.png alt=‘Line plot from 2 to 9 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.9 per year
@@ -1713,8 +1739,8 @@ Black or African American (tenure-track count)
 14 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_66.png alt=‘Line plot from 4.0 to 14
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_63.png alt=‘Line plot from 4 to 14 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />1.3 per year
@@ -1725,11 +1751,11 @@ from 2012 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_67.png alt=‘Line plot from 3.0 to 5.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_64.png alt=‘Line plot from 3 to 5 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.5 per year
@@ -1740,11 +1766,11 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_68.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_65.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1757,7 +1783,7 @@ White (tenure-track count)
 116 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_69.png alt=‘Line plot from 115 to 116
+<img src=images/RhodesCollege_66.png alt=‘Line plot from 115 to 116
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1768,11 +1794,11 @@ from 2012 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_70.png alt=‘Line plot from 2.0 to 2.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_67.png alt=‘Line plot from 2 to 2 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1782,11 +1808,11 @@ from 2012 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-7.0 (2020)
+7 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_71.png alt=‘Line plot from 8.0 to 7.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_68.png alt=‘Line plot from 8 to 7 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1827,7 +1853,7 @@ Total (non-tenure-track count)
 24 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_72.png alt=‘Line plot from 32 to 24
+<img src=images/RhodesCollege_69.png alt=‘Line plot from 32 to 24
 from 2012 to 2020’ >
 </td>
 </tr>
@@ -1839,7 +1865,7 @@ Women (non-tenure-track count)
 16 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_73.png alt=‘Line plot from 21 to 16
+<img src=images/RhodesCollege_70.png alt=‘Line plot from 21 to 16
 from 2012 to 2020’ >
 </td>
 </tr>
@@ -1848,11 +1874,11 @@ from 2012 to 2020’ >
 Men (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-8.0 (2020)
+8 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_74.png alt=‘Line plot from 11 to 8.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_71.png alt=‘Line plot from 11 to 8 from
+2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1860,11 +1886,11 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_75.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_72.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1872,11 +1898,11 @@ from 2012 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_76.png alt=‘Line plot from 2.0 to 2.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_73.png alt=‘Line plot from 2 to 2 from
+2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1884,11 +1910,11 @@ from 2012 to 2020’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_77.png alt=‘Line plot from 0.0 to 2.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_74.png alt=‘Line plot from 0 to 2 from
+2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1896,11 +1922,11 @@ from 2012 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_78.png alt=‘Line plot from 1.0 to 1.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_75.png alt=‘Line plot from 1 to 1 from
+2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1908,11 +1934,11 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_79.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_76.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1923,7 +1949,7 @@ White (non-tenure-track count)
 18 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_80.png alt=‘Line plot from 28 to 18
+<img src=images/RhodesCollege_77.png alt=‘Line plot from 28 to 18
 from 2012 to 2020’ >
 </td>
 </tr>
@@ -1932,11 +1958,11 @@ from 2012 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_81.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_78.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1944,11 +1970,11 @@ from 2012 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_82.png alt=‘Line plot from 1.0 to 1.0
-from 2012 to 2020’ >
+<img src=images/RhodesCollege_79.png alt=‘Line plot from 1 to 1 from
+2012 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1987,7 +2013,7 @@ Number of physical books
 211,280 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_27.png alt=‘Line plot from 362,936 to
+<img src=images/RhodesCollege_24.png alt=‘Line plot from 362,936 to
 211,280 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2008,7 +2034,7 @@ Physical library circulations per students and faculty
 7.2 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_28.png alt=‘Line plot from 10 to 7.2
+<img src=images/RhodesCollege_25.png alt=‘Line plot from 10 to 7.2
 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
@@ -2028,7 +2054,7 @@ Digital library circulations per students and faculty
 8.9 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_29.png alt=‘Line plot from 2.2 to 8.9
+<img src=images/RhodesCollege_26.png alt=‘Line plot from 2.2 to 8.9
 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
@@ -2067,7 +2093,7 @@ Applicants submitting SAT
 12% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_30.png alt=‘Line plot from 50 to 12
+<img src=images/RhodesCollege_27.png alt=‘Line plot from 50 to 12
 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2079,7 +2105,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 680 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_31.png alt=‘Line plot from 620 to 680
+<img src=images/RhodesCollege_28.png alt=‘Line plot from 620 to 680
 from 2017 to 2021’ >
 </td>
 </tr>
@@ -2091,7 +2117,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 730 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_32.png alt=‘Line plot from 720 to 730
+<img src=images/RhodesCollege_29.png alt=‘Line plot from 720 to 730
 from 2017 to 2021’ >
 </td>
 </tr>
@@ -2103,7 +2129,7 @@ SAT Math 25th percentile score
 650 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_33.png alt=‘Line plot from 600 to 650
+<img src=images/RhodesCollege_30.png alt=‘Line plot from 600 to 650
 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2115,7 +2141,7 @@ SAT Math 75th percentile score
 760 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_34.png alt=‘Line plot from 690 to 760
+<img src=images/RhodesCollege_31.png alt=‘Line plot from 690 to 760
 from 2014 to 2021’ >
 </td>
 </tr>
@@ -2149,7 +2175,7 @@ Applicants submitting ACT
 32% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_35.png alt=‘Line plot from 73 to 32
+<img src=images/RhodesCollege_32.png alt=‘Line plot from 73 to 32
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2163,7 +2189,7 @@ ACT Composite 25th percentile score
 28 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_36.png alt=‘Line plot from 27 to 28
+<img src=images/RhodesCollege_33.png alt=‘Line plot from 27 to 28
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2177,7 +2203,7 @@ ACT Composite 75th percentile score
 32 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_37.png alt=‘Line plot from 31 to 32
+<img src=images/RhodesCollege_34.png alt=‘Line plot from 31 to 32
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2191,7 +2217,7 @@ ACT English 25th percentile score
 29 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_38.png alt=‘Line plot from 27 to 29
+<img src=images/RhodesCollege_35.png alt=‘Line plot from 27 to 29
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2206,7 +2232,7 @@ ACT English 75th percentile score
 35 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_39.png alt=‘Line plot from 34 to 35
+<img src=images/RhodesCollege_36.png alt=‘Line plot from 34 to 35
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2221,7 +2247,7 @@ ACT Math 25th percentile score
 26 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_40.png alt=‘Line plot from 25 to 26
+<img src=images/RhodesCollege_37.png alt=‘Line plot from 25 to 26
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2235,7 +2261,7 @@ ACT Math 75th percentile score
 31 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RhodesCollege_41.png alt=‘Line plot from 30 to 31
+<img src=images/RhodesCollege_38.png alt=‘Line plot from 30 to 31
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2248,28 +2274,28 @@ from 2014 to 2021’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-24b444a47e9810a0dec2" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-24b444a47e9810a0dec2">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_InternationalRelationsandAffairs.html\">International Relations and Affairs</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_Education_General.html\">Education, General</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_UrbanStudies_Affairs.html\">Urban Studies/Affairs</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_Bioethics_MedicalEthics.html\">Bioethics/Medical Ethics</a>","<a href=\"majors_Bachelors_PoliticalEconomy.html\">Political Economy</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_LatinAmericanStudies.html\">Latin American Studies</a>","<a href=\"majors_Bachelors_ClassicsandClassicalLanguages_Literatures_andLinguistics_General.html\">Classics and Classical Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_InternationalEconomics.html\">International Economics</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_RussianStudies.html\">Russian Studies</a>","<a href=\"majors_Bachelors_FrenchLanguageandLiterature.html\">French Language and Literature</a>","<a href=\"majors_Bachelors_Biomathematics_Bioinformatics_andComputationalBiology_Other.html\">Biomathematics, Bioinformatics, and Computational Biology, Other</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Bachelors_EastAsianStudies.html\">East Asian Studies</a>","<a href=\"majors_Bachelors_Ethnic_CulturalMinority_Gender_andGroupStudies_Other.html\">Ethnic, Cultural Minority, Gender, and Group Studies, Other</a>","<a href=\"majors_Bachelors_GermanLanguageandLiterature.html\">German Language and Literature</a>","<a href=\"majors_Bachelors_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Bachelors_Film_Cinema_MediaStudies.html\">Film/Cinema/Media Studies</a>"],[63,46,36,29,27,27,24,22,19,13,11,10,9,9,9,8,8,7,6,5,5,4,4,3,3,3,3,2,2,2,2,2,1,1,1,1,1],[14.72,10.748,8.411,6.776,6.308,6.308,5.607,5.14,4.439,3.037,2.57,2.336,2.103,2.103,2.103,1.869,1.869,1.636,1.402,1.168,1.168,0.935,0.935,0.701,0.701,0.701,0.701,0.467,0.467,0.467,0.467,0.467,0.234,0.234,0.234,0.234,0.234],[0.044,0.057,0.422,0.1,0.202,0.025,0.064,0.281,0.05,0.058,0.148,0.197,0.126,0.042,0.955,0.103,16,2.397,0.084,0.028,0.223,0.072,0.065,1.23,0.396,1.099,0.035,3.125,0.162,2.41,0.021,0.098,0.372,0.128,0.172,0.008,0.026],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3a82022c117949a90135" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3a82022c117949a90135">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_InternationalRelationsandAffairs.html\">International Relations and Affairs</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_Education_General.html\">Education, General</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_UrbanStudies_Affairs.html\">Urban Studies/Affairs</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_Bioethics_MedicalEthics.html\">Bioethics/Medical Ethics</a>","<a href=\"majors_Bachelors_PoliticalEconomy.html\">Political Economy</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_LatinAmericanStudies.html\">Latin American Studies</a>","<a href=\"majors_Bachelors_ClassicsandClassicalLanguages_Literatures_andLinguistics_General.html\">Classics and Classical Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_InternationalEconomics.html\">International Economics</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_RussianStudies.html\">Russian Studies</a>","<a href=\"majors_Bachelors_FrenchLanguageandLiterature.html\">French Language and Literature</a>","<a href=\"majors_Bachelors_Biomathematics_Bioinformatics_andComputationalBiology_Other.html\">Biomathematics, Bioinformatics, and Computational Biology, Other</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>","<a href=\"majors_Bachelors_EastAsianStudies.html\">East Asian Studies</a>","<a href=\"majors_Bachelors_Ethnic_CulturalMinority_Gender_andGroupStudies_Other.html\">Ethnic, Cultural Minority, Gender, and Group Studies, Other</a>","<a href=\"majors_Bachelors_GermanLanguageandLiterature.html\">German Language and Literature</a>","<a href=\"majors_Bachelors_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Bachelors_Film_Cinema_MediaStudies.html\">Film/Cinema/Media Studies</a>"],[63,46,36,29,27,27,24,22,19,13,11,10,9,9,9,8,8,7,6,5,5,4,4,3,3,3,3,2,2,2,2,2,1,1,1,1,1],[14.72,10.748,8.411,6.776,6.308,6.308,5.607,5.14,4.439,3.037,2.57,2.336,2.103,2.103,2.103,1.869,1.869,1.636,1.402,1.168,1.168,0.935,0.935,0.701,0.701,0.701,0.701,0.467,0.467,0.467,0.467,0.467,0.234,0.234,0.234,0.234,0.234],[0.044,0.057,0.422,0.1,0.202,0.025,0.064,0.281,0.05,0.058,0.148,0.197,0.126,0.042,0.955,0.103,16,2.397,0.084,0.028,0.223,0.072,0.065,1.23,0.396,1.099,0.035,3.125,0.162,2.41,0.021,0.098,0.372,0.128,0.172,0.008,0.026],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0250e81818cc32b81457" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-0250e81818cc32b81457">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_UrbanEducationandLeadership.html\">Urban Education and Leadership</a>","<a href=\"majors_Masters_Accounting.html\">Accounting</a>"],[13,13],[50,50],[2.471,0.078],["Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b67b815aae7b0e578a1a" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-b67b815aae7b0e578a1a">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_UrbanEducationandLeadership.html\">Urban Education and Leadership</a>","<a href=\"majors_Masters_Accounting.html\">Accounting</a>"],[13,13],[50,50],[2.471,0.078],["Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9ba1de4100404b061f53" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-9ba1de4100404b061f53">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-cfaf907bc02636203781" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-cfaf907bc02636203781">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4405a737d8667b28a213" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-4405a737d8667b28a213">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_Bioethics_MedicalEthics.html\">Bioethics/Medical Ethics</a>"],[9],[100],[5.96],["Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-17f9fc34bd2a9134bd25" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-17f9fc34bd2a9134bd25">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_Bioethics_MedicalEthics.html\">Bioethics/Medical Ethics</a>"],[9],[100],[5.96],["Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6302568ef8005e55eeec" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6302568ef8005e55eeec">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-eb5bd1adbb0971ae9d07" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-eb5bd1adbb0971ae9d07">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -271,10 +273,20 @@ Business-dominant, with other professional programs</p></li>
 <li><p><strong>Enrollment profile</strong>: Majority undergraduate (see
 more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 23,801 (1.7 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $23,801 (1.5 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $20,045.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.stmary.edu/Admissions/Net-Price-Calculator.aspx'>here</a>
+to see what your family may be asked to pay. It can be MUCH lower than
+the average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, small, primarily
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 39.3% of first year
+students come from Kansas</p></li>
+<li><p><strong>In US percentage</strong>: 99.6% of first year students
+come from the US (note that 0.0% have no residence reported)</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 46.7% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -314,9 +326,10 @@ are registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Restrictive (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: F (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -329,6 +342,10 @@ marriage</strong>: 25% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Moderate risk (based
+on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Central forest-grasslands
 transition</li>
 <li><strong>Biome</strong>: Temperate Grasslands, Savannas &amp;
@@ -336,11 +353,20 @@ Shrublands</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/9827/Average-Weather-in-Leavenworth-Kansas-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-30c7f0572c5cd8fb48fe" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-30c7f0572c5cd8fb48fe">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[39.279396,-94.906743,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[39.279396,-94.906743],16,[]],"limits":{"lat":[39.279396,39.279396],"lng":[-94.906743,-94.906743]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a5771cc170698869d52b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a5771cc170698869d52b">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"155812.html\">University of Saint Mary</a>","<a href=\"155414.html\">Kansas Wesleyan University</a>","<a href=\"154721.html\">Bethany College</a>","<a href=\"155627.html\">Ottawa University-Ottawa</a>","<a href=\"155900.html\">Southwestern College</a>","<a href=\"155511.html\">McPherson College</a>","<a href=\"176628.html\">Avila University</a>","<a href=\"154749.html\">Bethel College-North Newton</a>","<a href=\"155089.html\">Friends University</a>","<a href=\"155973.html\">Tabor College</a>","<a href=\"155937.html\">Sterling College</a>","<a href=\"181853.html\">York College</a>","<a href=\"206835.html\">Oklahoma Wesleyan University</a>","<a href=\"180595.html\">Rocky Mountain College</a>","<a href=\"161518.html\">Saint Joseph's College of Maine</a>","<a href=\"238980.html\">Lakeland University</a>","<a href=\"149514.html\">Trinity International University-Illinois</a>","<a href=\"153126.html\">Clarke University</a>","<a href=\"145372.html\">Greenville University</a>","<a href=\"182634.html\">Colby-Sawyer College</a>","<a href=\"216357.html\">Thiel College</a>","<a href=\"232308.html\">Hollins University</a>","<a href=\"211583.html\">Chestnut Hill College</a>","<a href=\"153366.html\">Graceland University-Lamoni</a>","<a href=\"118888.html\">Mills College</a>","<a href=\"203757.html\">Lourdes University</a>","<a href=\"232025.html\">Emory &amp; Henry College</a>","<a href=\"190761.html\">Dominican College of Blauvelt</a>","<a href=\"181127.html\">Hastings College</a>","<a href=\"237969.html\">West Virginia Wesleyan College</a>","<a href=\"213303.html\">Keystone College</a>","<a href=\"198303.html\">Chowan University</a>","<a href=\"177144.html\">Culver-Stockton College</a>","<a href=\"237118.html\">Alderson Broaddus University</a>","<a href=\"203128.html\">Hiram College</a>","<a href=\"232089.html\">Ferrum College</a>","<a href=\"232043.html\">Eastern Mennonite University</a>","<a href=\"168290.html\">Wheelock College</a>","<a href=\"101435.html\">Huntingdon College</a>","<a href=\"217961.html\">Converse University</a>","<a href=\"194161.html\">Nyack College</a>","<a href=\"198066.html\">Brevard College</a>","<a href=\"177418.html\">Fontbonne University</a>","<a href=\"120865.html\">Pacific Union College</a>","<a href=\"217934.html\">Columbia College</a>","<a href=\"220181.html\">Fisk University</a>","<a href=\"198899.html\">Mars Hill University</a>","<a href=\"239628.html\">Ripon College</a>","<a href=\"230931.html\">Lyndon State College</a>","<a href=\"219091.html\">Dakota Wesleyan University</a>","<a href=\"167288.html\">Massachusetts College of Liberal Arts</a>","<a href=\"219383.html\">University of Sioux Falls</a>","<a href=\"171599.html\">Olivet College</a>","<a href=\"217013.html\">Wilson College</a>","<a href=\"162654.html\">Goucher College</a>","<a href=\"201371.html\">Bluffton University</a>","<a href=\"102234.html\">Spring Hill College</a>","<a href=\"152363.html\">Saint Josephs College</a>","<a href=\"154004.html\">Morningside University</a>","<a href=\"199032.html\">Montreat College</a>","<a href=\"230913.html\">Northern Vermont University</a>","<a href=\"237181.html\">Bethany College</a>","<a href=\"157076.html\">Kentucky Wesleyan College</a>","<a href=\"176947.html\">Central Methodist University-College of Liberal Arts and Sciences</a>","<a href=\"131876.html\">Trinity Washington University</a>","<a href=\"237358.html\">Davis &amp; Elkins College</a>","<a href=\"150668.html\">Goshen College</a>","<a href=\"107558.html\">University of the Ozarks</a>","<a href=\"202514.html\">Defiance College</a>","<a href=\"219198.html\">Mount Marty University</a>","<a href=\"183211.html\">Rivier University</a>","<a href=\"140234.html\">LaGrange College</a>","<a href=\"199865.html\">Warren Wilson College</a>","<a href=\"181738.html\">Union College</a>","<a href=\"233718.html\">Sweet Briar College</a>","<a href=\"197984.html\">Belmont Abbey College</a>","<a href=\"190770.html\">Dowling College</a>","<a href=\"236133.html\">Northwest University</a>","<a href=\"195243.html\">St. Thomas Aquinas College</a>","<a href=\"175980.html\">Millsaps College</a>","<a href=\"238078.html\">Wheeling University</a>","<a href=\"131098.html\">Wesley College</a>","<a href=\"203775.html\">Malone University</a>","<a href=\"147013.html\">McKendree University</a>","<a href=\"157809.html\">Thomas More University</a>","<a href=\"152992.html\">Briar Cliff University</a>","<a href=\"238430.html\">Cardinal Stritch University</a>","<a href=\"200156.html\">University of Jamestown</a>","<a href=\"213598.html\">Lincoln University</a>","<a href=\"123457.html\">Simpson University</a>","<a href=\"206349.html\">Ursuline College</a>","<a href=\"203845.html\">Marietta College</a>","<a href=\"228468.html\">Southwestern Adventist University</a>","<a href=\"164492.html\">Anna Maria College</a>","<a href=\"175421.html\">Belhaven University</a>","<a href=\"148405.html\">Rockford University</a>","<a href=\"213011.html\">Immaculata University</a>","<a href=\"217907.html\">Coker University</a>","<a href=\"181020.html\">Doane University</a>","<a href=\"179946.html\">Westminster College</a>"],[81,68,72,67,69,85,68,71,58,54,47,62,54,81,81,80,91,89,80,93,88,75,98,67,80,75,87,76,71,84,82,79,93,67,93,76,95,77,69,82,100,45,78,58,99,61,80,80,97,76,91,77,88,93,82,75,72,77,74,90,75,74,67,99,97,78,93,55,62,67,84,75,77,98,80,99,78,96,89,68,78,59,78,78,96,62,89,76,80,67,82,83,58,73,64,67,80,98,77,97],[17,22,14,17,22,36,15,26,27,25,17,38,42,20,19,19,26,10,26,15,16,10,17,13,6,21,20,15,19,20,18,16,11,23,14,17,20,13,15,15,41,22,24,19,17,11,22,12,19,21,13,17,21,22,12,19,14,20,15,16,9,9,22,26,31,27,20,19,10,30,21,14,25,16,19,24,13,36,18,13,15,16,18,20,15,19,21,34,17,21,24,18,21,10,19,18,18,27,17,13],[47,39,30,34,40,53,39,47,40,48,43,43,33,52,68,43,45,54,48,65,47,59,63,47,62,58,51,44,49,54,47,29,49,32,53,34,55,56,44,57,40,33,61,44,54,46,34,62,43,55,58,58,44,53,59,53,56,50,54,29,39,43,46,47,41,50,65,49,51,61,61,46,39,61,42,46,36,58,56,62,57,32,60,56,51,56,54,56,49,45,49,51,45,48,54,32,69,37,59,52],[51,31,31,65,44,25,51,16,38,46,41,20,48,40,49,47,25,48,33,16,24,9,59,31,16,50,29,74,22,25,51,42,30,37,29,30,40,44,32,36,51,42,47,29,51,19,27,21,47,36,17,53,39,37,22,26,30,58,37,36,36,21,47,39,39,13,18,17,35,37,53,31,26,45,8,36,85,50,43,15,41,52,46,47,49,44,59,27,22,48,43,23,34,55,54,50,61,33,34,29],[16,17,18,40,23,18,18,24,16,16,12,27,null,17,18,30,9,12,19,22,14,13,21,17,12,null,16,22,19,17,27,26,26,13,16,24,14,19,21,10,15,17,16,18,16,19,13,14,19,17,11,27,24,17,16,18,17,22,20,26,19,13,28,25,25,38,22,21,16,16,34,13,null,11,12,29,24,17,23,11,18,15,20,20,23,10,16,null,19,null,18,15,14,51,19,14,14,14,17,15],[20045,22559,15981,21507,22417,19779,17089,19211,17283,26071,22516,15430,25961,16769,22844,20309,19089,24023,17378,20442,22075,16657,19917,16406,22472,17936,11842,19052,17872,18075,25445,15301,19992,19391,15266,14491,19832,null,20801,30531,16501,26488,11443,18340,19785,21790,17980,17767,null,20139,13643,18281,20264,19301,21710,20032,24536,null,20160,20800,12688,9728,17157,18965,13006,15113,13013,11825,24176,15884,25293,21217,23317,22238,19052,18625,null,14058,19352,18999,36594,null,13526,16722,18441,18049,18016,16466,13251,22937,14491,15092,16879,21627,14976,20076,22823,17046,19878,22954],[738,718,687,728,658,811,916,476,889,544,548,417,604,791,736,751,428,690,808,757,770,707,867,877,395,734,1048,1065,919,970,903,887,803,668,788,842,824,593,792,781,783,743,592,733,727,874,967,794,871,619,759,1183,788,586,1033,700,948,944,1160,743,970,538,757,1132,996,653,683,776,497,578,942,563,718,561,448,1363,995,750,1037,632,506,976,796,1257,1312,584,464,967,1664,737,566,1105,610,921,1105,899,1000,809,959,639],[187,0,null,82,46,1,280,null,167,0,14,17,4,195,35,107,289,122,12,12,62,39,216,225,189,164,286,201,12,65,28,35,53,78,20,4,83,115,5,125,373,10,155,2,290,23,28,null,0,65,64,63,0,18,67,54,23,10,42,143,30,14,null,null,118,null,12,null,14,153,220,53,80,89,2,8,174,229,81,18,5,105,67,174,57,106,119,118,108,94,82,91,5,120,216,67,196,52,396,null],["Kansas","Kansas","Kansas","Kansas","Kansas","Kansas","Missouri","Kansas","Kansas","Kansas","Kansas","Nebraska","Oklahoma","Montana","Maine","Wisconsin","Illinois","Iowa","Illinois","New Hampshire","Pennsylvania","Virginia","Pennsylvania","Iowa","California","Ohio","Virginia","New York","Nebraska","West Virginia","Pennsylvania","North Carolina","Missouri","West Virginia","Ohio","Virginia","Virginia","Massachusetts","Alabama","South Carolina","New York","North Carolina","Missouri","California","South Carolina","Tennessee","North Carolina","Wisconsin","Vermont","South Dakota","Massachusetts","South Dakota","Michigan","Pennsylvania","Maryland","Ohio","Alabama","Indiana","Iowa","North Carolina","Vermont","West Virginia","Kentucky","Missouri","District of Columbia","West Virginia","Indiana","Arkansas","Ohio","South Dakota","New Hampshire","Georgia","North Carolina","Nebraska","Virginia","North Carolina","New York","Washington","New York","Mississippi","West Virginia","Delaware","Ohio","Illinois","Kentucky","Iowa","Wisconsin","North Dakota","Pennsylvania","California","Ohio","Ohio","Texas","Massachusetts","Mississippi","Illinois","Pennsylvania","South Carolina","Nebraska","Missouri"],["Increasing","Approximately stable","Increasing","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Increasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Increasing","Decreasing","Increasing","Decreasing","Decreasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Increasing","Approximately stable","Increasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Increasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Increasing","Approximately stable","Increasing","Decreasing","Decreasing","Approximately stable","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-23bdc249ac720771299a" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-23bdc249ac720771299a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[39.279396,-94.906743,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[39.279396,-94.906743],16,[]],"limits":{"lat":[39.279396,39.279396],"lng":[-94.906743,-94.906743]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -665,33 +691,13 @@ Master’s Colleges &amp; Universities: Medium Programs
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-10 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/UniversityofSaintMary_14.png alt=‘Line plot from 9.9
-to 10 from 2013 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 100%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 92%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 16 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_15.png alt=‘Line plot from 12
+<img src=images/UniversityofSaintMary_14.png alt=‘Line plot from 12
 to 16 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -702,6 +708,26 @@ to 16 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (lower) than 80%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
+</td>
+<td style="text-align:center;">
+10 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/UniversityofSaintMary_15.png alt=‘Line plot from 9.9
+to 10 from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 100%
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 92%
 </td>
 </tr>
 <tr>
@@ -725,17 +751,16 @@ to 72 from 2013 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-27 (2020)
+45 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_17.png alt=‘Line plot from 10
-to 27 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_17.png alt=‘Line plot from 47
+to 45 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />2.7 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -744,16 +769,17 @@ to 27 from 2013 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-45 (2020)
+27 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_18.png alt=‘Line plot from 47
-to 45 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_18.png alt=‘Line plot from 10
+to 27 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
+↑<br />2.7 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -803,11 +829,11 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-3.0% (2021)
+3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_103.png alt=‘Line plot from 3.0
-to 3.0 from 2010 to 2021’ >
+<img src=images/UniversityofSaintMary_100.png alt=‘Line plot from 3
+to 3 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -842,13 +868,33 @@ Master’s Colleges &amp; Universities: Medium Programs
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+51% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/UniversityofSaintMary_19.png alt=‘Line plot from 42
+to 51 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 8%
+</td>
+<td style="text-align:center;">
+✪✪<br />Better (lower) than 32%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $11 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_19.png alt=‘Line plot from 6.3
+<img src=images/UniversityofSaintMary_20.png alt=‘Line plot from 6.3
 M to 11 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -868,7 +914,7 @@ Revenue
 $36 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_20.png alt=‘Line plot from 21 M
+<img src=images/UniversityofSaintMary_21.png alt=‘Line plot from 21 M
 to 36 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -887,7 +933,7 @@ Expenses
 $25 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_21.png alt=‘Line plot from 15 M
+<img src=images/UniversityofSaintMary_22.png alt=‘Line plot from 15 M
 to 25 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -906,7 +952,7 @@ Assets
 $67 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_22.png alt=‘Line plot from 35 M
+<img src=images/UniversityofSaintMary_23.png alt=‘Line plot from 35 M
 to 67 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -917,80 +963,6 @@ to 67 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 18%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-51% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/UniversityofSaintMary_23.png alt=‘Line plot from 42
-to 51 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 8%
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 32%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/UniversityofSaintMary_24.png alt=‘Line plot from 0.0
-to 0.0 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-4.5% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/UniversityofSaintMary_25.png alt=‘Line plot from 4.9
-to 4.5 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-19% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/UniversityofSaintMary_26.png alt=‘Line plot from 19
-to 19 from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -1032,7 +1004,7 @@ Total
 47% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_42.png alt=‘Line plot from 34
+<img src=images/UniversityofSaintMary_39.png alt=‘Line plot from 34
 to 47 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1050,7 +1022,7 @@ Men
 39% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_43.png alt=‘Line plot from 29
+<img src=images/UniversityofSaintMary_40.png alt=‘Line plot from 29
 to 39 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1068,7 +1040,7 @@ Women
 58% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_44.png alt=‘Line plot from 38
+<img src=images/UniversityofSaintMary_41.png alt=‘Line plot from 38
 to 58 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1086,8 +1058,8 @@ American Indian or Alaska Native men
 100% (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_45.png alt=‘Line plot from 0.0
-to 100 from 2014 to 2019’ >
+<img src=images/UniversityofSaintMary_42.png alt=‘Line plot from 0 to
+100 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 100%
@@ -1104,8 +1076,8 @@ American Indian or Alaska Native women
 100% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_46.png alt=‘Line plot from 0.0
-to 100 from 2014 to 2020’ >
+<img src=images/UniversityofSaintMary_43.png alt=‘Line plot from 0 to
+100 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 100%
@@ -1122,8 +1094,8 @@ Asian men
 100% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_47.png alt=‘Line plot from 0.0
-to 100 from 2011 to 2020’ >
+<img src=images/UniversityofSaintMary_44.png alt=‘Line plot from 0 to
+100 from 2011 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 100%
@@ -1137,11 +1109,11 @@ to 100 from 2011 to 2020’ >
 Asian women
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_48.png alt=‘Line plot from 100
-to 0.0 from 2013 to 2021’ >
+<img src=images/UniversityofSaintMary_45.png alt=‘Line plot from 100
+to 0 from 2013 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪<br />Better (higher) than 71%
@@ -1158,7 +1130,7 @@ Black or African American men
 20% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_49.png alt=‘Line plot from 12
+<img src=images/UniversityofSaintMary_46.png alt=‘Line plot from 12
 to 20 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1176,7 +1148,7 @@ Black or African American women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_50.png alt=‘Line plot from 22
+<img src=images/UniversityofSaintMary_47.png alt=‘Line plot from 22
 to 100 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1194,7 +1166,7 @@ Hispanic men
 25% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_51.png alt=‘Line plot from 18
+<img src=images/UniversityofSaintMary_48.png alt=‘Line plot from 18
 to 25 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1212,7 +1184,7 @@ Hispanic women
 38% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_52.png alt=‘Line plot from 57
+<img src=images/UniversityofSaintMary_49.png alt=‘Line plot from 57
 to 38 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1230,7 +1202,7 @@ Native Hawaiian or other Pacific Islander men
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_53.png alt=‘Line plot from 100
+<img src=images/UniversityofSaintMary_50.png alt=‘Line plot from 100
 to 50 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1248,7 +1220,7 @@ Native Hawaiian or other Pacific Islander women
 100% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_54.png alt=‘Line plot from 100
+<img src=images/UniversityofSaintMary_51.png alt=‘Line plot from 100
 to 100 from 2017 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1266,7 +1238,7 @@ White men
 54% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_55.png alt=‘Line plot from 54
+<img src=images/UniversityofSaintMary_52.png alt=‘Line plot from 54
 to 54 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1284,7 +1256,7 @@ White women
 61% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_56.png alt=‘Line plot from 55
+<img src=images/UniversityofSaintMary_53.png alt=‘Line plot from 55
 to 61 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1299,11 +1271,11 @@ to 61 from 2011 to 2021’ >
 Two or more races men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_57.png alt=‘Line plot from 100
-to 0.0 from 2014 to 2021’ >
+<img src=images/UniversityofSaintMary_54.png alt=‘Line plot from 100
+to 0 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 40%
@@ -1317,11 +1289,11 @@ to 0.0 from 2014 to 2021’ >
 Two or more races women
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_58.png alt=‘Line plot from 50
-to 0.0 from 2015 to 2021’ >
+<img src=images/UniversityofSaintMary_55.png alt=‘Line plot from 50
+to 0 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 11%
@@ -1335,11 +1307,11 @@ to 0.0 from 2015 to 2021’ >
 Nonresident alien men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_59.png alt=‘Line plot from 0.0
-to 0.0 from 2010 to 2021’ >
+<img src=images/UniversityofSaintMary_56.png alt=‘Line plot from 0 to
+0 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 38%
@@ -1356,7 +1328,7 @@ Nonresident alien women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_60.png alt=‘Line plot from 100
+<img src=images/UniversityofSaintMary_57.png alt=‘Line plot from 100
 to 100 from 2021 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1396,7 +1368,7 @@ Men (percent freshmen)
 53% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_83.png alt=‘Line plot from 54
+<img src=images/UniversityofSaintMary_80.png alt=‘Line plot from 54
 to 53 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1408,7 +1380,7 @@ Women (percent freshmen)
 47% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_84.png alt=‘Line plot from 46
+<img src=images/UniversityofSaintMary_81.png alt=‘Line plot from 46
 to 47 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1417,11 +1389,11 @@ to 47 from 2010 to 2021’ >
 American Indian or Alaska Native men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_85.png alt=‘Line plot from 0.7
-to 0.0 from 2010 to 2021’ >
+<img src=images/UniversityofSaintMary_82.png alt=‘Line plot from 0.7
+to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1429,11 +1401,11 @@ to 0.0 from 2010 to 2021’ >
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_86.png alt=‘Line plot from 0.0
-to 0.0 from 2010 to 2021’ >
+<img src=images/UniversityofSaintMary_83.png alt=‘Line plot from 0 to
+0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1444,7 +1416,7 @@ Asian men (percent freshmen)
 0.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_87.png alt=‘Line plot from 2.2
+<img src=images/UniversityofSaintMary_84.png alt=‘Line plot from 2.2
 to 0.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1456,7 +1428,7 @@ Asian women (percent freshmen)
 0.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_88.png alt=‘Line plot from 0.7
+<img src=images/UniversityofSaintMary_85.png alt=‘Line plot from 0.7
 to 0.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1468,7 +1440,7 @@ Black or African American men (percent freshmen)
 10.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_89.png alt=‘Line plot from 10
+<img src=images/UniversityofSaintMary_86.png alt=‘Line plot from 10
 to 10.0 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1480,7 +1452,7 @@ Black or African American women (percent freshmen)
 5.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_90.png alt=‘Line plot from 3.7
+<img src=images/UniversityofSaintMary_87.png alt=‘Line plot from 3.7
 to 5.0 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1492,7 +1464,7 @@ Hispanic men (percent freshmen)
 12% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_91.png alt=‘Line plot from 3.7
+<img src=images/UniversityofSaintMary_88.png alt=‘Line plot from 3.7
 to 12 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1504,7 +1476,7 @@ Hispanic women (percent freshmen)
 10.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_92.png alt=‘Line plot from 3.0
+<img src=images/UniversityofSaintMary_89.png alt=‘Line plot from 3.0
 to 10.0 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1513,11 +1485,11 @@ to 10.0 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_93.png alt=‘Line plot from 0.0
-to 0.0 from 2010 to 2021’ >
+<img src=images/UniversityofSaintMary_90.png alt=‘Line plot from 0 to
+0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1525,11 +1497,11 @@ to 0.0 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_94.png alt=‘Line plot from 0.0
-to 0.0 from 2010 to 2021’ >
+<img src=images/UniversityofSaintMary_91.png alt=‘Line plot from 0 to
+0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1540,7 +1512,7 @@ White men (percent freshmen)
 27% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_95.png alt=‘Line plot from 29
+<img src=images/UniversityofSaintMary_92.png alt=‘Line plot from 29
 to 27 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1552,7 +1524,7 @@ White women (percent freshmen)
 29% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_96.png alt=‘Line plot from 29
+<img src=images/UniversityofSaintMary_93.png alt=‘Line plot from 29
 to 29 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1564,8 +1536,8 @@ Two or more races men (percent freshmen)
 2.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_97.png alt=‘Line plot from 0.0
-to 2.5 from 2010 to 2021’ >
+<img src=images/UniversityofSaintMary_94.png alt=‘Line plot from 0 to
+2.5 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1576,8 +1548,8 @@ Two or more races women (percent freshmen)
 1.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_98.png alt=‘Line plot from 0.0
-to 1.7 from 2010 to 2021’ >
+<img src=images/UniversityofSaintMary_95.png alt=‘Line plot from 0 to
+1.7 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1588,7 +1560,7 @@ Race ethnicity unknown men (percent freshmen)
 0.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_99.png alt=‘Line plot from 7.5
+<img src=images/UniversityofSaintMary_96.png alt=‘Line plot from 7.5
 to 0.8 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1600,7 +1572,7 @@ Race ethnicity unknown women (percent freshmen)
 1.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_100.png alt=‘Line plot from 9.7
+<img src=images/UniversityofSaintMary_97.png alt=‘Line plot from 9.7
 to 1.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1612,8 +1584,8 @@ Nonresident alien men (percent freshmen)
 0.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_101.png alt=‘Line plot from 0.0
-to 0.4 from 2010 to 2021’ >
+<img src=images/UniversityofSaintMary_98.png alt=‘Line plot from 0 to
+0.4 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1621,11 +1593,66 @@ to 0.4 from 2010 to 2021’ >
 Nonresident alien women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_102.png alt=‘Line plot from 0.0
-to 0.0 from 2010 to 2021’ >
+<img src=images/UniversityofSaintMary_99.png alt=‘Line plot from 0 to
+0 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+University of Saint Mary
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+39% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/UniversityofSaintMary_101.png alt=‘Line plot from 48
+to 39 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+100% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/UniversityofSaintMary_102.png alt=‘Line plot from 100
+to 100 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/UniversityofSaintMary_103.png alt=‘Line plot from 0
+to 0 from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1666,7 +1693,7 @@ Total (tenure-track count)
 45 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_61.png alt=‘Line plot from 47
+<img src=images/UniversityofSaintMary_58.png alt=‘Line plot from 47
 to 45 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1680,7 +1707,7 @@ Women (tenure-track count)
 26 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_62.png alt=‘Line plot from 26
+<img src=images/UniversityofSaintMary_59.png alt=‘Line plot from 26
 to 26 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1694,7 +1721,7 @@ Men (tenure-track count)
 19 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_63.png alt=‘Line plot from 21
+<img src=images/UniversityofSaintMary_60.png alt=‘Line plot from 21
 to 19 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1705,11 +1732,11 @@ to 19 from 2013 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_64.png alt=‘Line plot from 0.0
-to 0.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_61.png alt=‘Line plot from 0 to
+0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1719,11 +1746,11 @@ to 0.0 from 2013 to 2020’ >
 Asian (tenure-track count)
 </td>
 <td style="text-align:center;">
-4.0 (2020)
+4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_65.png alt=‘Line plot from 3.0
-to 4.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_62.png alt=‘Line plot from 3 to
+4 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1733,11 +1760,11 @@ to 4.0 from 2013 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_66.png alt=‘Line plot from 0.0
-to 3.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_63.png alt=‘Line plot from 0 to
+3 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.4 per year
@@ -1748,11 +1775,11 @@ to 3.0 from 2013 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_67.png alt=‘Line plot from 0.0
-to 1.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_64.png alt=‘Line plot from 0 to
+1 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1762,11 +1789,11 @@ to 1.0 from 2013 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_68.png alt=‘Line plot from 0.0
-to 0.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_65.png alt=‘Line plot from 0 to
+0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1779,7 +1806,7 @@ White (tenure-track count)
 36 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_69.png alt=‘Line plot from 43
+<img src=images/UniversityofSaintMary_66.png alt=‘Line plot from 43
 to 36 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1790,11 +1817,11 @@ to 36 from 2013 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_70.png alt=‘Line plot from 1.0
-to 0.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_67.png alt=‘Line plot from 1 to
+0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1804,11 +1831,11 @@ to 0.0 from 2013 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_71.png alt=‘Line plot from 0.0
-to 0.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_68.png alt=‘Line plot from 0 to
+0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1852,7 +1879,7 @@ Total (non-tenure-track count)
 27 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_72.png alt=‘Line plot from 10
+<img src=images/UniversityofSaintMary_69.png alt=‘Line plot from 10
 to 27 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1867,8 +1894,8 @@ Women (non-tenure-track count)
 20 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_73.png alt=‘Line plot from 4.0
-to 20 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_70.png alt=‘Line plot from 4 to
+20 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />2.4 per year
@@ -1879,11 +1906,11 @@ to 20 from 2013 to 2020’ >
 Men (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-7.0 (2020)
+7 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_74.png alt=‘Line plot from 6.0
-to 7.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_71.png alt=‘Line plot from 6 to
+7 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1893,11 +1920,11 @@ to 7.0 from 2013 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_75.png alt=‘Line plot from 0.0
-to 0.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_72.png alt=‘Line plot from 0 to
+0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1907,11 +1934,11 @@ to 0.0 from 2013 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_76.png alt=‘Line plot from 0.0
-to 0.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_73.png alt=‘Line plot from 0 to
+0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1921,11 +1948,11 @@ to 0.0 from 2013 to 2020’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_77.png alt=‘Line plot from 1.0
-to 1.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_74.png alt=‘Line plot from 1 to
+1 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1935,11 +1962,11 @@ to 1.0 from 2013 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_78.png alt=‘Line plot from 0.0
-to 1.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_75.png alt=‘Line plot from 0 to
+1 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1949,11 +1976,11 @@ to 1.0 from 2013 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_79.png alt=‘Line plot from 0.0
-to 1.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_76.png alt=‘Line plot from 0 to
+1 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1966,8 +1993,8 @@ White (non-tenure-track count)
 24 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_80.png alt=‘Line plot from 9.0
-to 24 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_77.png alt=‘Line plot from 9 to
+24 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />2.3 per year
@@ -1978,11 +2005,11 @@ to 24 from 2013 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_81.png alt=‘Line plot from 0.0
-to 0.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_78.png alt=‘Line plot from 0 to
+0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1992,11 +2019,11 @@ to 0.0 from 2013 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_82.png alt=‘Line plot from 0.0
-to 0.0 from 2013 to 2020’ >
+<img src=images/UniversityofSaintMary_79.png alt=‘Line plot from 0 to
+0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -2037,7 +2064,7 @@ Number of physical books
 40,000 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_27.png alt=‘Line plot from
+<img src=images/UniversityofSaintMary_24.png alt=‘Line plot from
 119,625 to 40,000 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2058,7 +2085,7 @@ Physical library circulations per students and faculty
 0.3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_28.png alt=‘Line plot from 0.4
+<img src=images/UniversityofSaintMary_25.png alt=‘Line plot from 0.4
 to 0.3 from 2015 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2078,7 +2105,7 @@ Digital library circulations per students and faculty
 1.1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_29.png alt=‘Line plot from 0.2
+<img src=images/UniversityofSaintMary_26.png alt=‘Line plot from 0.2
 to 1.1 from 2015 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2117,7 +2144,7 @@ Applicants submitting SAT
 37% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_30.png alt=‘Line plot from 14
+<img src=images/UniversityofSaintMary_27.png alt=‘Line plot from 14
 to 37 from 2014 to 2020’ >
 </td>
 </tr>
@@ -2129,7 +2156,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 440 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_31.png alt=‘Line plot from 470
+<img src=images/UniversityofSaintMary_28.png alt=‘Line plot from 470
 to 440 from 2017 to 2020’ >
 </td>
 </tr>
@@ -2141,7 +2168,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 530 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_32.png alt=‘Line plot from 575
+<img src=images/UniversityofSaintMary_29.png alt=‘Line plot from 575
 to 530 from 2017 to 2020’ >
 </td>
 </tr>
@@ -2153,7 +2180,7 @@ SAT Math 25th percentile score
 430 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_33.png alt=‘Line plot from 420
+<img src=images/UniversityofSaintMary_30.png alt=‘Line plot from 420
 to 430 from 2014 to 2020’ >
 </td>
 </tr>
@@ -2165,7 +2192,7 @@ SAT Math 75th percentile score
 530 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_34.png alt=‘Line plot from 525
+<img src=images/UniversityofSaintMary_31.png alt=‘Line plot from 525
 to 530 from 2014 to 2020’ >
 </td>
 </tr>
@@ -2199,7 +2226,7 @@ Applicants submitting ACT
 66% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_35.png alt=‘Line plot from 84
+<img src=images/UniversityofSaintMary_32.png alt=‘Line plot from 84
 to 66 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2213,7 +2240,7 @@ ACT Composite 25th percentile score
 17 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_36.png alt=‘Line plot from 19
+<img src=images/UniversityofSaintMary_33.png alt=‘Line plot from 19
 to 17 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2228,7 +2255,7 @@ ACT Composite 75th percentile score
 23 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_37.png alt=‘Line plot from 24
+<img src=images/UniversityofSaintMary_34.png alt=‘Line plot from 24
 to 23 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2242,7 +2269,7 @@ ACT English 25th percentile score
 17 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_38.png alt=‘Line plot from 18
+<img src=images/UniversityofSaintMary_35.png alt=‘Line plot from 18
 to 17 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2256,7 +2283,7 @@ ACT English 75th percentile score
 25 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_39.png alt=‘Line plot from 24
+<img src=images/UniversityofSaintMary_36.png alt=‘Line plot from 24
 to 25 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2270,7 +2297,7 @@ ACT Math 25th percentile score
 17 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_40.png alt=‘Line plot from 18
+<img src=images/UniversityofSaintMary_37.png alt=‘Line plot from 18
 to 17 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2284,7 +2311,7 @@ ACT Math 75th percentile score
 23 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofSaintMary_41.png alt=‘Line plot from 25
+<img src=images/UniversityofSaintMary_38.png alt=‘Line plot from 25
 to 23 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2297,28 +2324,28 @@ to 23 from 2014 to 2020’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c98211746e538d263c90" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-c98211746e538d263c90">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_RegisteredNursing_NursingAdministration_NursingResearchandClinicalNursing_Other.html\">Registered Nursing, Nursing Administration, Nursing Research and Clinical Nursing, Other</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_ExerciseScienceandKinesiology.html\">Exercise Science and Kinesiology</a>","<a href=\"majors_Bachelors_Criminology.html\">Criminology</a>","<a href=\"majors_Bachelors_SportandFitnessAdministration_Management.html\">Sport and Fitness Administration/Management</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_HealthInformation_MedicalRecordsTechnology_Technician.html\">Health Information/Medical Records Technology/Technician</a>","<a href=\"majors_Bachelors_ChildDevelopment.html\">Child Development</a>","<a href=\"majors_Bachelors_AppliedPsychology.html\">Applied Psychology</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_DigitalCommunicationandMedia_Multimedia.html\">Digital Communication and Media/Multimedia</a>","<a href=\"majors_Bachelors_AppliedMathematics_General.html\">Applied Mathematics, General</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_SportsStudies.html\">Sports Studies</a>","<a href=\"majors_Bachelors_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Bachelors_HumanBiology.html\">Human Biology</a>","<a href=\"majors_Bachelors_PastoralStudies_Counseling.html\">Pastoral Studies/Counseling</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_Clinical_MedicalLaboratoryScienceandAlliedProfessions_Other.html\">Clinical/Medical Laboratory Science and Allied Professions, Other</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>"],[45,26,20,18,14,10,9,8,8,7,6,4,4,4,3,3,3,2,2,2,2,1,1,1,1,1,1,1],[21.739,12.56,9.662,8.696,6.763,4.831,4.348,3.865,3.865,3.382,2.899,1.932,1.932,1.932,1.449,1.449,1.449,0.966,0.966,0.966,0.966,0.483,0.483,0.483,0.483,0.483,0.483,0.483],[0.029,0.988,0.025,0.016,0.052,0.11,0.083,0.026,0.006,0.031,0.024,0.014,0.022,5.714,0.182,0.284,0.008,0.033,0.07,0.009,0.683,0.004,0.054,0.272,0.007,0.01,0.164,0.002],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0b2440bb594bea75c647" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0b2440bb594bea75c647">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_RegisteredNursing_NursingAdministration_NursingResearchandClinicalNursing_Other.html\">Registered Nursing, Nursing Administration, Nursing Research and Clinical Nursing, Other</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_ExerciseScienceandKinesiology.html\">Exercise Science and Kinesiology</a>","<a href=\"majors_Bachelors_Criminology.html\">Criminology</a>","<a href=\"majors_Bachelors_SportandFitnessAdministration_Management.html\">Sport and Fitness Administration/Management</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_HealthInformation_MedicalRecordsTechnology_Technician.html\">Health Information/Medical Records Technology/Technician</a>","<a href=\"majors_Bachelors_ChildDevelopment.html\">Child Development</a>","<a href=\"majors_Bachelors_AppliedPsychology.html\">Applied Psychology</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_DigitalCommunicationandMedia_Multimedia.html\">Digital Communication and Media/Multimedia</a>","<a href=\"majors_Bachelors_AppliedMathematics_General.html\">Applied Mathematics, General</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_SportsStudies.html\">Sports Studies</a>","<a href=\"majors_Bachelors_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Bachelors_HumanBiology.html\">Human Biology</a>","<a href=\"majors_Bachelors_PastoralStudies_Counseling.html\">Pastoral Studies/Counseling</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_Clinical_MedicalLaboratoryScienceandAlliedProfessions_Other.html\">Clinical/Medical Laboratory Science and Allied Professions, Other</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>"],[45,26,20,18,14,10,9,8,8,7,6,4,4,4,3,3,3,2,2,2,2,1,1,1,1,1,1,1],[21.739,12.56,9.662,8.696,6.763,4.831,4.348,3.865,3.865,3.382,2.899,1.932,1.932,1.932,1.449,1.449,1.449,0.966,0.966,0.966,0.966,0.483,0.483,0.483,0.483,0.483,0.483,0.483],[0.029,0.988,0.025,0.016,0.052,0.11,0.083,0.026,0.006,0.031,0.024,0.014,0.022,5.714,0.182,0.284,0.008,0.033,0.07,0.009,0.683,0.004,0.054,0.272,0.007,0.01,0.164,0.002],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-70dd04db94d69c4dbb10" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-70dd04db94d69c4dbb10">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_FamilyPracticeNurse_Nursing.html\">Family Practice Nurse/Nursing</a>","<a href=\"majors_Masters_CounselingPsychology.html\">Counseling Psychology</a>","<a href=\"majors_Masters_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Masters_AthleticTraining_Trainer.html\">Athletic Training/Trainer</a>","<a href=\"majors_Masters_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Masters_Psychology_Other.html\">Psychology, Other</a>","<a href=\"majors_Masters_Education_General.html\">Education, General</a>","<a href=\"majors_Masters_SecondaryEducationandTeaching.html\">Secondary Education and Teaching</a>"],[81,14,12,11,5,3,3,2,1],[61.364,10.606,9.091,8.333,3.788,2.273,2.273,1.515,0.758],[0.077,0.098,0.145,0.059,0.361,0.034,0.169,0.011,0.017],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-60ac3a585f59de37bdcc" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-60ac3a585f59de37bdcc">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_FamilyPracticeNurse_Nursing.html\">Family Practice Nurse/Nursing</a>","<a href=\"majors_Masters_CounselingPsychology.html\">Counseling Psychology</a>","<a href=\"majors_Masters_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Masters_AthleticTraining_Trainer.html\">Athletic Training/Trainer</a>","<a href=\"majors_Masters_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Masters_Psychology_Other.html\">Psychology, Other</a>","<a href=\"majors_Masters_Education_General.html\">Education, General</a>","<a href=\"majors_Masters_SecondaryEducationandTeaching.html\">Secondary Education and Teaching</a>"],[81,14,12,11,5,3,3,2,1],[61.364,10.606,9.091,8.333,3.788,2.273,2.273,1.515,0.758],[0.077,0.098,0.145,0.059,0.361,0.034,0.169,0.011,0.017],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c3535447a563ee4d2b13" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-c3535447a563ee4d2b13">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_PhysicalTherapy_Therapist.html\">Physical Therapy/Therapist</a>"],[41],[100],[0.312],["Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-86fdcabd923060a8ce5f" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-86fdcabd923060a8ce5f">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_PhysicalTherapy_Therapist.html\">Physical Therapy/Therapist</a>"],[41],[100],[0.312],["Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a566ef833fa7081cbe84" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a566ef833fa7081cbe84">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bbbe50c5486573361d06" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-bbbe50c5486573361d06">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6fc2cab21155d8b5b339" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6fc2cab21155d8b5b339">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b17dbc7ae06c27f33212" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-b17dbc7ae06c27f33212">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

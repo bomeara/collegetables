@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -178,10 +178,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -194,6 +194,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -252,9 +254,20 @@ Other-dominant, with Arts &amp; Sciences</p></li>
 <li><p><strong>Enrollment profile</strong>: Very high undergraduate (see
 more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 11,291 (This is 80% the cost of Harvard)</p></li>
+aid</strong>: $11,291 (This is 70% the average cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $11,361.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.uwgb.edu/vsa/calculator/'>here</a> to see what your
+family may be asked to pay. It can be MUCH lower than the average price
+but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, medium, primarily
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 91.1% of first year
+students come from Wisconsin</p></li>
+<li><p><strong>In US percentage</strong>: 98.8% of first year students
+come from the US</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 54.6% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -293,9 +306,10 @@ are registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Prohibited (based on <a
+<li><strong>Abortion in this state</strong>: Restrictive (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: C- (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -308,17 +322,29 @@ marriage</strong>: 50% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Low risk (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Upper Midwest forest-savanna
 transition</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/13582/Average-Weather-in-Green-Bay-Wisconsin-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-68febaf58639c3d0343b" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-68febaf58639c3d0343b">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[44.532298,-87.919973,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[44.532298,-87.919973],16,[]],"limits":{"lat":[44.532298,44.532298],"lng":[-87.919973,-87.919973]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-08a3bac507bba75668c2" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-08a3bac507bba75668c2">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"240277.html\">University of Wisconsin-Green Bay</a>","<a href=\"151102.html\">Purdue University Fort Wayne</a>","<a href=\"215655.html\">Robert Morris University</a>","<a href=\"206604.html\">Wright State University-Main Campus</a>","<a href=\"202134.html\">Cleveland State University</a>","<a href=\"169716.html\">University of Detroit Mercy</a>","<a href=\"171571.html\">Oakland University</a>","<a href=\"206695.html\">Youngstown State University</a>","<a href=\"240453.html\">University of Wisconsin-Milwaukee</a>","<a href=\"157447.html\">Northern Kentucky University</a>","<a href=\"151111.html\">Indiana University-Purdue University-Indianapolis</a>","<a href=\"214041.html\">Millersville University of Pennsylvania</a>","<a href=\"145600.html\">University of Illinois Chicago</a>","<a href=\"240480.html\">University of Wisconsin-Stevens Point</a>","<a href=\"168430.html\">Worcester State University</a>","<a href=\"106467.html\">Arkansas Tech University</a>","<a href=\"441937.html\">California State University-Channel Islands</a>","<a href=\"159966.html\">Nicholls State University</a>","<a href=\"157386.html\">Morehead State University</a>","<a href=\"196158.html\">SUNY at Fredonia</a>","<a href=\"212115.html\">East Stroudsburg University of Pennsylvania</a>","<a href=\"221768.html\">The University of Tennessee-Martin</a>","<a href=\"240471.html\">University of Wisconsin-River Falls</a>","<a href=\"211644.html\">Clarion University of Pennsylvania</a>","<a href=\"167987.html\">University of Massachusetts-Dartmouth</a>","<a href=\"240365.html\">University of Wisconsin-Oshkosh</a>","<a href=\"174783.html\">Saint Cloud State University</a>","<a href=\"196237.html\">SUNY College at Old Westbury</a>","<a href=\"168263.html\">Westfield State University</a>","<a href=\"165866.html\">Framingham State University</a>","<a href=\"240374.html\">University of Wisconsin-Parkside</a>","<a href=\"216010.html\">Shippensburg University of Pennsylvania</a>","<a href=\"151342.html\">Indiana University-South Bend</a>","<a href=\"490805.html\">Purdue University Northwest</a>","<a href=\"218742.html\">University of South Carolina-Upstate</a>","<a href=\"160038.html\">Northwestern State University of Louisiana</a>","<a href=\"409698.html\">California State University-Monterey Bay</a>","<a href=\"151306.html\">University of Southern Indiana</a>","<a href=\"240462.html\">University of Wisconsin-Platteville</a>","<a href=\"159939.html\">University of New Orleans</a>","<a href=\"226833.html\">Midwestern State University</a>","<a href=\"190691.html\">CUNY York College</a>","<a href=\"234827.html\">Central Washington University</a>","<a href=\"115755.html\">California State Polytechnic University-Humboldt</a>","<a href=\"195544.html\">St. Joseph's University-New York</a>","<a href=\"377564.html\">University of Washington-Tacoma Campus</a>","<a href=\"231712.html\">Christopher Newport University</a>","<a href=\"130776.html\">Western Connecticut State University</a>","<a href=\"228802.html\">The University of Texas at Tyler</a>","<a href=\"213613.html\">Lock Haven University</a>","<a href=\"218061.html\">Francis Marion University</a>","<a href=\"199999.html\">Winston-Salem State University</a>","<a href=\"196185.html\">SUNY Oneonta</a>","<a href=\"407009.html\">Arizona State University-West</a>","<a href=\"148627.html\">Saint Xavier University</a>","<a href=\"377555.html\">University of Washington-Bothell Campus</a>","<a href=\"181215.html\">University of Nebraska at Kearney</a>","<a href=\"210146.html\">Southern Oregon University</a>","<a href=\"196006.html\">SUNY College of Technology at Alfred</a>","<a href=\"240417.html\">University of Wisconsin-Stout</a>","<a href=\"214689.html\">Pennsylvania State University-Penn State Altoona</a>","<a href=\"173124.html\">Bemidji State University</a>","<a href=\"210429.html\">Western Oregon University</a>","<a href=\"196200.html\">SUNY College at Potsdam</a>","<a href=\"214713.html\">Pennsylvania State University-Penn State Harrisburg</a>","<a href=\"190558.html\">College of Staten Island CUNY</a>","<a href=\"199281.html\">University of North Carolina at Pembroke</a>","<a href=\"211158.html\">Bloomsburg University of Pennsylvania</a>","<a href=\"123572.html\">Sonoma State University</a>","<a href=\"129215.html\">Eastern Connecticut State University</a>","<a href=\"213349.html\">Kutztown University of Pennsylvania</a>","<a href=\"167729.html\">Salem State University</a>","<a href=\"178624.html\">Northwest Missouri State University</a>","<a href=\"101879.html\">University of North Alabama</a>","<a href=\"152336.html\">University of Saint Francis-Fort Wayne</a>","<a href=\"229814.html\">West Texas A &amp; M University</a>","<a href=\"204185.html\">University of Mount Union</a>","<a href=\"183080.html\">Plymouth State University</a>","<a href=\"232566.html\">Longwood University</a>","<a href=\"214704.html\">Pennsylvania State University-Penn State Berks</a>","<a href=\"165820.html\">Fitchburg State University</a>","<a href=\"227845.html\">Saint Edward's University</a>","<a href=\"196024.html\">SUNY College of Technology at Delhi</a>","<a href=\"198543.html\">Fayetteville State University</a>","<a href=\"199111.html\">University of North Carolina at Asheville</a>","<a href=\"232681.html\">University of Mary Washington</a>","<a href=\"127556.html\">Colorado Mesa University</a>","<a href=\"172051.html\">Saginaw Valley State University</a>","<a href=\"236230.html\">Pacific Lutheran University</a>","<a href=\"107071.html\">Henderson State University</a>","<a href=\"225414.html\">University of Houston-Clear Lake</a>","<a href=\"139861.html\">Georgia College &amp; State University</a>","<a href=\"162584.html\">Frostburg State University</a>","<a href=\"196219.html\">SUNY at Purchase College</a>","<a href=\"138789.html\">Armstrong State University</a>","<a href=\"187444.html\">William Paterson University of New Jersey</a>","<a href=\"237367.html\">Fairmont State University</a>","<a href=\"101709.html\">University of Montevallo</a>","<a href=\"196033.html\">SUNY College of Agriculture and Technology at Cobleskill</a>","<a href=\"219602.html\">Austin Peay State University</a>"],[91,83,94,96,91,93,92,78,89,80,84,96,79,90,89,94,93,97,90,91,93,75,86,99,92,90,94,77,94,84,75,93,89,76,76,96,93,96,88,81,95,67,88,91,80,83,89,85,94,95,86,81,70,82,85,83,90,90,82,91,91,75,92,81,88,99,92,90,94,73,97,90,86,90,99,97,80,92,90,87,85,92,88,82,82,82,80,78,88,75,91,88,86,75,80,83,99,90,81,93],[24,26,14,19,18,14,21,31,25,32,28,21,23,25,25,24,7,45,19,19,24,16,30,32,17,23,21,13,23,14,27,18,35,38,27,36,8,36,28,25,21,10,14,10,20,34,17,18,35,26,27,21,14,29,11,25,17,30,27,30,28,28,21,16,25,22,17,24,8,23,23,17,16,33,34,24,18,15,13,38,19,13,21,19,16,16,29,29,18,23,20,37,16,22,52,13,38,14,27,30],[55,38,65,44,51,67,56,47,47,50,57,57,62,55,61,48,58,51,45,62,49,52,57,58,54,55,47,48,61,51,42,58,38,40,47,45,60,50,59,39,47,33,54,48,71,58,75,53,42,54,43,46,74,48,52,66,57,41,49,56,66,48,48,50,63,51,43,59,60,57,54,57,51,51,57,46,68,53,65,60,57,66,58,37,65,68,47,42,69,37,53,62,48,63,31,55,46,52,54,42],[30,31,56,31,42,64,49,34,33,50,21,43,10,24,36,25,14,38,18,15,40,19,31,32,32,32,28,19,34,27,24,32,32,34,35,44,20,29,26,35,26,15,27,12,80,null,23,35,10,36,33,12,20,null,71,null,27,31,14,29,null,27,26,14,null,20,12,42,18,25,34,33,33,35,61,29,37,38,22,null,31,59,17,11,17,20,35,40,49,15,34,36,21,17,36,35,15,27,12,27],[27,27,18,19,23,10,21,27,25,22,15,19,15,23,20,27,37,29,25,20,22,22,27,19,18,26,20,27,20,18,25,18,22,23,27,24,33,23,26,25,24,28,27,23,26,22,21,19,22,14,15,21,25,27,32,33,15,25,23,22,29,22,22,14,27,29,22,21,27,20,21,16,28,23,20,25,17,25,15,26,15,19,17,21,18,17,36,25,15,20,15,20,18,22,25,18,26,16,22,18],[11361,7358,22862,12777,13719,12694,9258,10139,11904,2609,6181,14930,9963,10173,10132,11363,11945,12084,8959,12874,15427,9537,10031,10157,19414,10451,11493,5302,15145,13069,8337,18084,5777,6763,12810,13960,2520,10239,10182,10940,9055,3442,13371,10466,11509,5765,22326,14158,8164,11259,11809,12455,14515,null,10429,4498,14058,9786,15527,11699,null,11631,14616,12267,null,5215,10460,14738,3117,14317,18087,14664,10413,10828,15158,15960,20013,16740,14351,null,13562,20290,14872,6415,9496,15988,13761,11731,15500,14657,13226,16499,14256,17735,null,15156,9494,16120,15187,13230],[4952,4752,2788,5564,8241,2182,10869,7428,15864,7598,15922,4916,20071,6403,3575,5398,4991,4582,4778,3449,3844,4363,4313,2451,4905,7236,4991,3399,3486,2734,2563,4319,2869,4687,3993,5694,5848,5242,5468,4579,3619,4239,8373,4643,3352,3825,4388,3440,4731,2150,2712,3961,5238,4076,2848,4683,3781,2589,3092,5383,3125,2550,3049,2251,3915,8378,4728,6367,5732,3476,6047,4234,4405,4530,1516,5332,1866,3368,3010,2277,2506,2670,1971,3658,2805,3111,6614,5713,2279,1992,3363,5045,2888,3145,4513,5708,2478,1965,1682,5531],[166,220,0,1142,2865,1724,1929,896,2578,1312,5097,202,8416,171,160,152,213,222,189,129,252,186,147,180,751,295,677,149,389,104,193,285,142,228,29,197,609,376,49,709,300,179,238,412,170,445,90,81,830,277,125,361,167,219,162,310,318,163,null,238,0,82,225,147,231,226,601,316,376,74,301,644,985,597,173,587,170,377,264,0,520,177,10,471,0,123,90,228,228,164,946,297,264,69,322,517,95,153,null,394],["Wisconsin","Indiana","Pennsylvania","Ohio","Ohio","Michigan","Michigan","Ohio","Wisconsin","Kentucky","Indiana","Pennsylvania","Illinois","Wisconsin","Massachusetts","Arkansas","California","Louisiana","Kentucky","New York","Pennsylvania","Tennessee","Wisconsin","Pennsylvania","Massachusetts","Wisconsin","Minnesota","New York","Massachusetts","Massachusetts","Wisconsin","Pennsylvania","Indiana","Indiana","South Carolina","Louisiana","California","Indiana","Wisconsin","Louisiana","Texas","New York","Washington","California","New York","Washington","Virginia","Connecticut","Texas","Pennsylvania","South Carolina","North Carolina","New York","Arizona","Illinois","Washington","Nebraska","Oregon","New York","Wisconsin","Pennsylvania","Minnesota","Oregon","New York","Pennsylvania","New York","North Carolina","Pennsylvania","California","Connecticut","Pennsylvania","Massachusetts","Missouri","Alabama","Indiana","Texas","Ohio","New Hampshire","Virginia","Pennsylvania","Massachusetts","Texas","New York","North Carolina","North Carolina","Virginia","Colorado","Michigan","Washington","Arkansas","Texas","Georgia","Maryland","New York","Georgia","New Jersey","West Virginia","Alabama","New York","Tennessee"],["Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Increasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Increasing","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Increasing","Approximately stable","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Increasing","Increasing","Increasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Increasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-213d3312f1e4c170e802" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-213d3312f1e4c170e802">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[44.532298,-87.919973,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[44.532298,-87.919973],16,[]],"limits":{"lat":[44.532298,44.532298],"lng":[-87.919973,-87.919973]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -612,13 +638,33 @@ Master’s Colleges &amp; Universities: Medium Programs
 <tbody>
 <tr>
 <td style="text-align:left;">
+Undergrads per tenure track instructor
+</td>
+<td style="text-align:center;">
+27 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/UniversityofWisconsin-GreenBay_14.png alt=‘Line plot
+from 31 to 27 from 2012 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 8%
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 12%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Undergrads per instructor
 </td>
 <td style="text-align:center;">
 20 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_14.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_15.png alt=‘Line plot
 from 25 to 20 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -629,26 +675,6 @@ from 25 to 20 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (lower) than 24%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Undergrads per tenure track instructor
-</td>
-<td style="text-align:center;">
-27 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_15.png alt=‘Line plot
-from 31 to 27 from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 8%
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 12%
 </td>
 </tr>
 <tr>
@@ -672,17 +698,17 @@ from 188 to 245 from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-68 (2020)
+177 (2020)
 </td>
 <td style="text-align:center;">
 <img src=images/UniversityofWisconsin-GreenBay_17.png alt=‘Line plot
-from 38 to 68 from 2012 to 2020’ >
+from 150 to 177 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />3.9 per year
+↑<br />3.5 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -691,17 +717,17 @@ from 38 to 68 from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-177 (2020)
+68 (2020)
 </td>
 <td style="text-align:center;">
 <img src=images/UniversityofWisconsin-GreenBay_18.png alt=‘Line plot
-from 150 to 177 from 2012 to 2020’ >
+from 38 to 68 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />3.5 per year
+↑<br />3.9 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -745,11 +771,11 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-3.0% (2021)
+3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_103.png alt=‘Line plot
-from 3.0 to 3.0 from 2010 to 2021’ >
+<img src=images/UniversityofWisconsin-GreenBay_100.png alt=‘Line plot
+from 3 to 3 from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -782,13 +808,33 @@ Master’s Colleges &amp; Universities: Medium Programs
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+30% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/UniversityofWisconsin-GreenBay_19.png alt=‘Line plot
+from 26 to 30 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 80%
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 72%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $9.9 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_19.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_20.png alt=‘Line plot
 from 4.1 M to 9.9 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -808,7 +854,7 @@ Revenue
 $115 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_20.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_21.png alt=‘Line plot
 from 93 M to 115 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -827,7 +873,7 @@ Expenses
 $106 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_21.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_22.png alt=‘Line plot
 from 89 M to 106 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -846,7 +892,7 @@ Assets
 $164 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_22.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_23.png alt=‘Line plot
 from 149 M to 164 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -856,44 +902,6 @@ from 149 M to 164 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪<br />Better (higher) than 61%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-30% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_23.png alt=‘Line plot
-from 26 to 30 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 80%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 72%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-24% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_24.png alt=‘Line plot
-from 28 to 24 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -935,7 +943,7 @@ Total
 55% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_42.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_39.png alt=‘Line plot
 from 51 to 55 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -953,7 +961,7 @@ Men
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_43.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_40.png alt=‘Line plot
 from 51 to 50 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -971,7 +979,7 @@ Women
 57% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_44.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_41.png alt=‘Line plot
 from 50 to 57 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -989,8 +997,8 @@ American Indian or Alaska Native men
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_45.png alt=‘Line plot
-from 0.0 to 33 from 2011 to 2021’ >
+<img src=images/UniversityofWisconsin-GreenBay_42.png alt=‘Line plot
+from 0 to 33 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪<br />Better (higher) than 75%
@@ -1004,11 +1012,11 @@ from 0.0 to 33 from 2011 to 2021’ >
 American Indian or Alaska Native women
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_46.png alt=‘Line plot
-from 40 to 0.0 from 2011 to 2021’ >
+<img src=images/UniversityofWisconsin-GreenBay_43.png alt=‘Line plot
+from 40 to 0 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 30%
@@ -1025,7 +1033,7 @@ Asian men
 56% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_47.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_44.png alt=‘Line plot
 from 25 to 56 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1043,7 +1051,7 @@ Asian women
 75% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_48.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_45.png alt=‘Line plot
 from 50 to 75 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1061,7 +1069,7 @@ Black or African American men
 17% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_49.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_46.png alt=‘Line plot
 from 25 to 17 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1076,11 +1084,11 @@ from 25 to 17 from 2011 to 2021’ >
 Black or African American women
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_50.png alt=‘Line plot
-from 50 to 0.0 from 2011 to 2021’ >
+<img src=images/UniversityofWisconsin-GreenBay_47.png alt=‘Line plot
+from 50 to 0 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 7%
@@ -1097,7 +1105,7 @@ Hispanic men
 44% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_51.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_48.png alt=‘Line plot
 from 50 to 44 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1115,7 +1123,7 @@ Hispanic women
 54% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_52.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_49.png alt=‘Line plot
 from 60 to 54 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1133,7 +1141,7 @@ Native Hawaiian or other Pacific Islander women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_54.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_51.png alt=‘Line plot
 from 100 to 100 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1151,7 +1159,7 @@ White men
 54% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_55.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_52.png alt=‘Line plot
 from 55 to 54 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1169,7 +1177,7 @@ White women
 57% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_56.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_53.png alt=‘Line plot
 from 56 to 57 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1187,7 +1195,7 @@ Two or more races men
 40% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_57.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_54.png alt=‘Line plot
 from 40 to 40 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1205,7 +1213,7 @@ Two or more races women
 60% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_58.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_55.png alt=‘Line plot
 from 33 to 60 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1223,7 +1231,7 @@ Nonresident alien men
 44% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_59.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_56.png alt=‘Line plot
 from 67 to 44 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1241,7 +1249,7 @@ Nonresident alien women
 56% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_60.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_57.png alt=‘Line plot
 from 67 to 56 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1281,7 +1289,7 @@ Men (percent freshmen)
 38% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_83.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_80.png alt=‘Line plot
 from 36 to 38 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1293,7 +1301,7 @@ Women (percent freshmen)
 62% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_84.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_81.png alt=‘Line plot
 from 64 to 62 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1305,7 +1313,7 @@ American Indian or Alaska Native men (percent freshmen)
 0.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_85.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_82.png alt=‘Line plot
 from 0.3 to 0.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1317,7 +1325,7 @@ American Indian or Alaska Native women (percent freshmen)
 0.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_86.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_83.png alt=‘Line plot
 from 0.3 to 0.6 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1329,7 +1337,7 @@ Asian men (percent freshmen)
 1.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_87.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_84.png alt=‘Line plot
 from 0.6 to 1.5 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1341,7 +1349,7 @@ Asian women (percent freshmen)
 2.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_88.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_85.png alt=‘Line plot
 from 1.9 to 2.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1353,7 +1361,7 @@ Black or African American men (percent freshmen)
 2.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_89.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_86.png alt=‘Line plot
 from 0.1 to 2.7 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1365,7 +1373,7 @@ Black or African American women (percent freshmen)
 1.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_90.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_87.png alt=‘Line plot
 from 0.2 to 1.0 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1377,7 +1385,7 @@ Hispanic men (percent freshmen)
 3.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_91.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_88.png alt=‘Line plot
 from 1.3 to 3.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1389,7 +1397,7 @@ Hispanic women (percent freshmen)
 4.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_92.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_89.png alt=‘Line plot
 from 1.6 to 4.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1398,11 +1406,11 @@ from 1.6 to 4.4 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_93.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/UniversityofWisconsin-GreenBay_90.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1410,11 +1418,11 @@ from 0.0 to 0.0 from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_94.png alt=‘Line plot
-from 0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/UniversityofWisconsin-GreenBay_91.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1425,7 +1433,7 @@ White men (percent freshmen)
 28% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_95.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_92.png alt=‘Line plot
 from 32 to 28 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1437,7 +1445,7 @@ White women (percent freshmen)
 49% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_96.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_93.png alt=‘Line plot
 from 58 to 49 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1449,7 +1457,7 @@ Two or more races men (percent freshmen)
 2.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_97.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_94.png alt=‘Line plot
 from 0.9 to 2.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1461,7 +1469,7 @@ Two or more races women (percent freshmen)
 3.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_98.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_95.png alt=‘Line plot
 from 1.1 to 3.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1473,7 +1481,7 @@ Race ethnicity unknown men (percent freshmen)
 0.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_99.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_96.png alt=‘Line plot
 from 0.2 to 0.5 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1485,7 +1493,7 @@ Race ethnicity unknown women (percent freshmen)
 0.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_100.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_97.png alt=‘Line plot
 from 0.1 to 0.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1497,7 +1505,7 @@ Nonresident alien men (percent freshmen)
 0.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_101.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_98.png alt=‘Line plot
 from 0.9 to 0.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1509,8 +1517,63 @@ Nonresident alien women (percent freshmen)
 0.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_102.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_99.png alt=‘Line plot
 from 0.4 to 0.6 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+University of Wisconsin-Green Bay
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+91% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/UniversityofWisconsin-GreenBay_101.png alt=‘Line plot
+from 93 to 91 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+99% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/UniversityofWisconsin-GreenBay_102.png alt=‘Line plot
+from 99 to 99 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/UniversityofWisconsin-GreenBay_103.png alt=‘Line plot
+from 0 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1551,7 +1614,7 @@ Total (tenure-track count)
 177 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_61.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_58.png alt=‘Line plot
 from 150 to 177 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1566,7 +1629,7 @@ Women (tenure-track count)
 79 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_62.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_59.png alt=‘Line plot
 from 61 to 79 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1581,7 +1644,7 @@ Men (tenure-track count)
 98 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_63.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_60.png alt=‘Line plot
 from 89 to 98 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1592,11 +1655,11 @@ from 89 to 98 from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_64.png alt=‘Line plot
-from 1.0 to 2.0 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_61.png alt=‘Line plot
+from 1 to 2 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1609,7 +1672,7 @@ Asian (tenure-track count)
 18 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_65.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_62.png alt=‘Line plot
 from 10 to 18 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1621,11 +1684,11 @@ from 10 to 18 from 2012 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_66.png alt=‘Line plot
-from 4.0 to 5.0 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_63.png alt=‘Line plot
+from 4 to 5 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1635,11 +1698,11 @@ from 4.0 to 5.0 from 2012 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-6.0 (2020)
+6 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_67.png alt=‘Line plot
-from 9.0 to 6.0 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_64.png alt=‘Line plot
+from 9 to 6 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.4 per year
@@ -1650,11 +1713,11 @@ from 9.0 to 6.0 from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_68.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_65.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1667,7 +1730,7 @@ White (tenure-track count)
 130 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_69.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_66.png alt=‘Line plot
 from 118 to 130 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1678,11 +1741,11 @@ from 118 to 130 from 2012 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_70.png alt=‘Line plot
-from 0.0 to 2.0 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_67.png alt=‘Line plot
+from 0 to 2 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1696,8 +1759,8 @@ Nonresident alien (tenure-track count)
 14 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_71.png alt=‘Line plot
-from 8.0 to 14 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_68.png alt=‘Line plot
+from 8 to 14 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />1.3 per year
@@ -1742,7 +1805,7 @@ Total (non-tenure-track count)
 68 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_72.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_69.png alt=‘Line plot
 from 38 to 68 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1757,7 +1820,7 @@ Women (non-tenure-track count)
 48 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_73.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_70.png alt=‘Line plot
 from 23 to 48 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1772,7 +1835,7 @@ Men (non-tenure-track count)
 20 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_74.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_71.png alt=‘Line plot
 from 15 to 20 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1784,11 +1847,11 @@ from 15 to 20 from 2012 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_75.png alt=‘Line plot
-from 1.0 to 1.0 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_72.png alt=‘Line plot
+from 1 to 1 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1798,11 +1861,11 @@ from 1.0 to 1.0 from 2012 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-6.0 (2020)
+6 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_76.png alt=‘Line plot
-from 1.0 to 6.0 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_73.png alt=‘Line plot
+from 1 to 6 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.6 per year
@@ -1813,11 +1876,11 @@ from 1.0 to 6.0 from 2012 to 2020’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_77.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_74.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1827,11 +1890,11 @@ from 0.0 to 0.0 from 2012 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_78.png alt=‘Line plot
-from 0.0 to 1.0 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_75.png alt=‘Line plot
+from 0 to 1 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.3 per year
@@ -1842,11 +1905,11 @@ from 0.0 to 1.0 from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_79.png alt=‘Line plot
-from 0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_76.png alt=‘Line plot
+from 0 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1859,7 +1922,7 @@ White (non-tenure-track count)
 57 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_80.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_77.png alt=‘Line plot
 from 33 to 57 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1871,11 +1934,11 @@ from 33 to 57 from 2012 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_81.png alt=‘Line plot
-from 1.0 to 1.0 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_78.png alt=‘Line plot
+from 1 to 1 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1885,11 +1948,11 @@ from 1.0 to 1.0 from 2012 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_82.png alt=‘Line plot
-from 2.0 to 0.0 from 2012 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_79.png alt=‘Line plot
+from 2 to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1930,7 +1993,7 @@ Number of physical books
 235,326 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_27.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_24.png alt=‘Line plot
 from 353,331 to 235,326 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1950,7 +2013,7 @@ Physical library circulations per students and faculty
 0.8 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_28.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_25.png alt=‘Line plot
 from 2.4 to 0.8 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1971,8 +2034,8 @@ Digital library circulations per students and faculty
 5.5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_29.png alt=‘Line plot
-from 0.0 to 5.5 from 2014 to 2020’ >
+<img src=images/UniversityofWisconsin-GreenBay_26.png alt=‘Line plot
+from 0 to 5.5 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -2016,7 +2079,7 @@ Applicants submitting ACT
 68% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_35.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_32.png alt=‘Line plot
 from 97 to 68 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2030,7 +2093,7 @@ ACT Composite 25th percentile score
 18 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_36.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_33.png alt=‘Line plot
 from 20 to 18 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2045,7 +2108,7 @@ ACT Composite 75th percentile score
 25 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_37.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_34.png alt=‘Line plot
 from 25 to 25 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2059,7 +2122,7 @@ ACT English 25th percentile score
 17 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_38.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_35.png alt=‘Line plot
 from 20 to 17 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2074,7 +2137,7 @@ ACT English 75th percentile score
 24 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_39.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_36.png alt=‘Line plot
 from 25 to 24 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2089,7 +2152,7 @@ ACT Math 25th percentile score
 17 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_40.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_37.png alt=‘Line plot
 from 19 to 17 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2104,7 +2167,7 @@ ACT Math 75th percentile score
 25 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/UniversityofWisconsin-GreenBay_41.png alt=‘Line plot
+<img src=images/UniversityofWisconsin-GreenBay_38.png alt=‘Line plot
 from 25 to 25 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2117,28 +2180,28 @@ from 25 to 25 from 2014 to 2021’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-97825eb5b33095b7f059" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-97825eb5b33095b7f059">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_HumanBiology.html\">Human Biology</a>","<a href=\"majors_Bachelors_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Bachelors_Education_General.html\">Education, General</a>","<a href=\"majors_Bachelors_Communication_General.html\">Communication, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_SocialWork.html\">Social Work</a>","<a href=\"majors_Bachelors_BehavioralSciences.html\">Behavioral Sciences</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_HealthInformation_MedicalRecordsAdministration_Administrator.html\">Health Information/Medical Records Administration/Administrator</a>","<a href=\"majors_Bachelors_SocialSciences_Other.html\">Social Sciences, Other</a>","<a href=\"majors_Bachelors_DesignandVisualCommunications_General.html\">Design and Visual Communications, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_InformationScience_Studies.html\">Information Science/Studies</a>","<a href=\"majors_Bachelors_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Bachelors_Mechanical_MechanicalEngineeringTechnology_Technician.html\">Mechanical/Mechanical Engineering Technology/Technician</a>","<a href=\"majors_Bachelors_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_Electrical_Electronic_andCommunicationsEngineeringTechnology_Technician.html\">Electrical, Electronic, and Communications Engineering Technology/Technician</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Bachelors_Arts_Entertainment_andMediaManagement_General.html\">Arts, Entertainment, and Media Management, General</a>","<a href=\"majors_Bachelors_Environmental_EnvironmentalEngineeringTechnology_Technician.html\">Environmental/Environmental Engineering Technology/Technician</a>","<a href=\"majors_Bachelors_AmericanIndian_NativeAmericanStudies.html\">American Indian/Native American Studies</a>","<a href=\"majors_Bachelors_GermanicLanguages_Literatures_andLinguistics_General.html\">Germanic Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_HydrologyandWaterResourcesScience.html\">Hydrology and Water Resources Science</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_UrbanStudies_Affairs.html\">Urban Studies/Affairs</a>"],[275,141,107,96,91,71,43,36,35,30,29,29,28,28,27,25,19,18,18,14,13,13,11,11,10,9,9,9,9,8,7,7,6,5,4,3,2,2,2,1,1,1],[21.105,10.821,8.212,7.368,6.984,5.449,3.3,2.763,2.686,2.302,2.226,2.226,2.149,2.149,2.072,1.919,1.458,1.381,1.381,1.074,0.998,0.998,0.844,0.844,0.767,0.691,0.691,0.691,0.691,0.614,0.537,0.537,0.46,0.384,0.307,0.23,0.153,0.153,0.153,0.077,0.077,0.077],[0.192,0.128,0.068,5.175,0.377,1.399,0.425,0.095,0.043,0.138,1.761,0.13,0.378,0.059,1.722,1.736,0.651,0.062,0.048,0.146,0.138,0.036,0.536,0.37,0.144,0.732,0.163,0.05,0.126,0.092,0.052,0.171,0.201,0.8,2.564,1.31,3.922,0.009,0.033,2.703,0.005,0.106],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-352519519f79ddffca01" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-352519519f79ddffca01">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>","<a href=\"majors_Bachelors_HumanBiology.html\">Human Biology</a>","<a href=\"majors_Bachelors_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Bachelors_Education_General.html\">Education, General</a>","<a href=\"majors_Bachelors_Communication_General.html\">Communication, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_SocialWork.html\">Social Work</a>","<a href=\"majors_Bachelors_BehavioralSciences.html\">Behavioral Sciences</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_HealthInformation_MedicalRecordsAdministration_Administrator.html\">Health Information/Medical Records Administration/Administrator</a>","<a href=\"majors_Bachelors_SocialSciences_Other.html\">Social Sciences, Other</a>","<a href=\"majors_Bachelors_DesignandVisualCommunications_General.html\">Design and Visual Communications, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_InformationScience_Studies.html\">Information Science/Studies</a>","<a href=\"majors_Bachelors_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Bachelors_Mechanical_MechanicalEngineeringTechnology_Technician.html\">Mechanical/Mechanical Engineering Technology/Technician</a>","<a href=\"majors_Bachelors_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_Electrical_Electronic_andCommunicationsEngineeringTechnology_Technician.html\">Electrical, Electronic, and Communications Engineering Technology/Technician</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Bachelors_Arts_Entertainment_andMediaManagement_General.html\">Arts, Entertainment, and Media Management, General</a>","<a href=\"majors_Bachelors_Environmental_EnvironmentalEngineeringTechnology_Technician.html\">Environmental/Environmental Engineering Technology/Technician</a>","<a href=\"majors_Bachelors_AmericanIndian_NativeAmericanStudies.html\">American Indian/Native American Studies</a>","<a href=\"majors_Bachelors_GermanicLanguages_Literatures_andLinguistics_General.html\">Germanic Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_HydrologyandWaterResourcesScience.html\">Hydrology and Water Resources Science</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_UrbanStudies_Affairs.html\">Urban Studies/Affairs</a>"],[275,141,107,96,91,71,43,36,35,30,29,29,28,28,27,25,19,18,18,14,13,13,11,11,10,9,9,9,9,8,7,7,6,5,4,3,2,2,2,1,1,1],[21.105,10.821,8.212,7.368,6.984,5.449,3.3,2.763,2.686,2.302,2.226,2.226,2.149,2.149,2.072,1.919,1.458,1.381,1.381,1.074,0.998,0.998,0.844,0.844,0.767,0.691,0.691,0.691,0.691,0.614,0.537,0.537,0.46,0.384,0.307,0.23,0.153,0.153,0.153,0.077,0.077,0.077],[0.192,0.128,0.068,5.175,0.377,1.399,0.425,0.095,0.043,0.138,1.761,0.13,0.378,0.059,1.722,1.736,0.651,0.062,0.048,0.146,0.138,0.036,0.536,0.37,0.144,0.732,0.163,0.05,0.126,0.092,0.052,0.171,0.201,0.8,2.564,1.31,3.922,0.009,0.033,2.703,0.005,0.106],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6e9f72b3806b1f4f1470" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6e9f72b3806b1f4f1470">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_SocialWork.html\">Social Work</a>","<a href=\"majors_Masters_TeacherEducationandProfessionalDevelopment_SpecificLevelsandMethods_Other.html\">Teacher Education and Professional Development, Specific Levels and Methods, Other</a>","<a href=\"majors_Masters_SustainabilityStudies.html\">Sustainability Studies</a>","<a href=\"majors_Masters_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Masters_DataScience_General.html\">Data Science, General</a>","<a href=\"majors_Masters_OrganizationalLeadership.html\">Organizational Leadership</a>","<a href=\"majors_Masters_HealthandWellness_General.html\">Health and Wellness, General</a>","<a href=\"majors_Masters_NursingAdministration.html\">Nursing Administration</a>","<a href=\"majors_Masters_AthleticTraining_Trainer.html\">Athletic Training/Trainer</a>"],[59,26,23,15,13,10,9,2,1],[37.342,16.456,14.557,9.494,8.228,6.329,5.696,1.266,0.633],[0.184,0.646,1.874,1.535,4.797,0.142,2.387,0.024,0.072],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e6557f8e8307e13f9654" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e6557f8e8307e13f9654">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_SocialWork.html\">Social Work</a>","<a href=\"majors_Masters_TeacherEducationandProfessionalDevelopment_SpecificLevelsandMethods_Other.html\">Teacher Education and Professional Development, Specific Levels and Methods, Other</a>","<a href=\"majors_Masters_SustainabilityStudies.html\">Sustainability Studies</a>","<a href=\"majors_Masters_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Masters_DataScience_General.html\">Data Science, General</a>","<a href=\"majors_Masters_OrganizationalLeadership.html\">Organizational Leadership</a>","<a href=\"majors_Masters_HealthandWellness_General.html\">Health and Wellness, General</a>","<a href=\"majors_Masters_NursingAdministration.html\">Nursing Administration</a>","<a href=\"majors_Masters_AthleticTraining_Trainer.html\">Athletic Training/Trainer</a>"],[59,26,23,15,13,10,9,2,1],[37.342,16.456,14.557,9.494,8.228,6.329,5.696,1.266,0.633],[0.184,0.646,1.874,1.535,4.797,0.142,2.387,0.024,0.072],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-371d18f9696ce03d9525" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-371d18f9696ce03d9525">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6a1798b766ac8bbe05dc" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6a1798b766ac8bbe05dc">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-9b0165caae4a78ce6e31" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-9b0165caae4a78ce6e31">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_LiberalArtsandSciences_GeneralStudiesandHumanities_Other.html\">Liberal Arts and Sciences, General Studies and Humanities, Other</a>","<a href=\"majors_Certificate_SocialWork.html\">Social Work</a>","<a href=\"majors_Certificate_Non_Profit_Public_OrganizationalManagement.html\">Non-Profit/Public/Organizational Management</a>","<a href=\"majors_Certificate_Entrepreneurship_EntrepreneurialStudies.html\">Entrepreneurship/Entrepreneurial Studies</a>","<a href=\"majors_Certificate_TeachingEnglishasaSecondorForeignLanguage_ESLLanguageInstructor.html\">Teaching English as a Second or Foreign Language/ESL Language Instructor</a>","<a href=\"majors_Certificate_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Certificate_SocialSciences_Other.html\">Social Sciences, Other</a>","<a href=\"majors_Certificate_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Certificate_Education_General.html\">Education, General</a>","<a href=\"majors_Certificate_PhysicalEducationTeachingandCoaching.html\">Physical Education Teaching and Coaching</a>"],[11,10,7,6,2,2,2,2,1,1],[25,22.727,15.909,13.636,4.545,4.545,4.545,4.545,2.273,2.273],[0.07,0.907,0.899,0.146,0.107,0.332,1.307,0.142,0.047,0.263],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d4065779475522ea023d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d4065779475522ea023d">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_LiberalArtsandSciences_GeneralStudiesandHumanities_Other.html\">Liberal Arts and Sciences, General Studies and Humanities, Other</a>","<a href=\"majors_Certificate_SocialWork.html\">Social Work</a>","<a href=\"majors_Certificate_Non_Profit_Public_OrganizationalManagement.html\">Non-Profit/Public/Organizational Management</a>","<a href=\"majors_Certificate_Entrepreneurship_EntrepreneurialStudies.html\">Entrepreneurship/Entrepreneurial Studies</a>","<a href=\"majors_Certificate_TeachingEnglishasaSecondorForeignLanguage_ESLLanguageInstructor.html\">Teaching English as a Second or Foreign Language/ESL Language Instructor</a>","<a href=\"majors_Certificate_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Certificate_SocialSciences_Other.html\">Social Sciences, Other</a>","<a href=\"majors_Certificate_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Certificate_Education_General.html\">Education, General</a>","<a href=\"majors_Certificate_PhysicalEducationTeachingandCoaching.html\">Physical Education Teaching and Coaching</a>"],[11,10,7,6,2,2,2,2,1,1],[25,22.727,15.909,13.636,4.545,4.545,4.545,4.545,2.273,2.273],[0.07,0.907,0.899,0.146,0.107,0.332,1.307,0.142,0.047,0.263],["Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4533bba4741bc65c947f" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-4533bba4741bc65c947f">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_LiberalArtsandSciences_GeneralStudiesandHumanities_Other.html\">Liberal Arts and Sciences, General Studies and Humanities, Other</a>"],[205],[100],[1.111],["Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-440c122a32d79bc5d829" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-440c122a32d79bc5d829">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_LiberalArtsandSciences_GeneralStudiesandHumanities_Other.html\">Liberal Arts and Sciences, General Studies and Humanities, Other</a>"],[205],[100],[1.111],["Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -178,10 +178,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -194,6 +194,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -251,10 +253,19 @@ Undergraduate)</p></li>
 <li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
 four-year (see more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 30,939 (2.2 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $30,939 (2 times the equivalent cost of Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $10,543.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.macalester.edu/financialaid/estimate/'>here</a> to
+see what your family may be asked to pay. It can be MUCH lower than the
+average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, small, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 13.6% of first year
+students come from Minnesota</p></li>
+<li><p><strong>In US percentage</strong>: 87.5% of first year students
+come from the US</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 89.7% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -294,9 +305,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Protective (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: C+ (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -309,17 +321,29 @@ marriage</strong>: 71.4% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Safest (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Upper Midwest forest-savanna
 transition</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/10422/Average-Weather-in-Saint-Paul-Minnesota-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-665a86dba19c925e46de" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-665a86dba19c925e46de">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[44.938565,-93.168053,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[44.938565,-93.168053],16,[]],"limits":{"lat":[44.938565,44.938565],"lng":[-93.168053,-93.168053]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-417087cbd40a4c32c9c4" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-417087cbd40a4c32c9c4">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"173902.html\">Macalester College</a>","<a href=\"174844.html\">St Olaf College</a>","<a href=\"173258.html\">Carleton College</a>","<a href=\"173647.html\">Gustavus Adolphus College</a>","<a href=\"173300.html\">Concordia College at Moorhead</a>","<a href=\"203535.html\">Kenyon College</a>","<a href=\"202523.html\">Denison University</a>","<a href=\"166939.html\">Mount Holyoke College</a>","<a href=\"120254.html\">Occidental College</a>","<a href=\"130590.html\">Trinity College</a>","<a href=\"195526.html\">Skidmore College</a>","<a href=\"212577.html\">Franklin and Marshall College</a>","<a href=\"196866.html\">Union College</a>","<a href=\"213385.html\">Lafayette College</a>","<a href=\"173160.html\">Bethel University</a>","<a href=\"128902.html\">Connecticut College</a>","<a href=\"212009.html\">Dickinson College</a>","<a href=\"221351.html\">Rhodes College</a>","<a href=\"204501.html\">Oberlin College</a>","<a href=\"174747.html\">College of Saint Benedict</a>","<a href=\"212674.html\">Gettysburg College</a>","<a href=\"195216.html\">St Lawrence University</a>","<a href=\"174792.html\">Saint Johns University</a>","<a href=\"198385.html\">Davidson College</a>","<a href=\"153384.html\">Grinnell College</a>","<a href=\"166124.html\">College of the Holy Cross</a>","<a href=\"173665.html\">Hamline University</a>","<a href=\"197133.html\">Vassar College</a>","<a href=\"191515.html\">Hamilton College</a>","<a href=\"175005.html\">St Catherine University</a>","<a href=\"173045.html\">Augsburg University</a>","<a href=\"126678.html\">Colorado College</a>","<a href=\"237057.html\">Whitman College</a>","<a href=\"141060.html\">Spelman College</a>","<a href=\"209922.html\">Reed College</a>","<a href=\"211273.html\">Bryn Mawr College</a>","<a href=\"123165.html\">Scripps College</a>","<a href=\"150400.html\">DePauw University</a>","<a href=\"212911.html\">Haverford College</a>","<a href=\"167835.html\">Smith College</a>","<a href=\"156295.html\">Berea College</a>","<a href=\"164465.html\">Amherst College</a>","<a href=\"218973.html\">Wofford College</a>","<a href=\"168218.html\">Wellesley College</a>","<a href=\"160977.html\">Bates College</a>","<a href=\"206589.html\">The College of Wooster</a>","<a href=\"216287.html\">Swarthmore College</a>","<a href=\"211291.html\">Bucknell University</a>","<a href=\"441982.html\">Franklin W Olin College of Engineering</a>","<a href=\"233374.html\">University of Richmond</a>","<a href=\"165015.html\">Brandeis University</a>","<a href=\"165334.html\">Clark University</a>","<a href=\"161086.html\">Colby College</a>","<a href=\"145646.html\">Illinois Wesleyan University</a>","<a href=\"149781.html\">Wheaton College</a>","<a href=\"214175.html\">Muhlenberg College</a>","<a href=\"152318.html\">Rose-Hulman Institute of Technology</a>","<a href=\"102377.html\">Tuskegee University</a>","<a href=\"221519.html\">The University of the South</a>","<a href=\"399911.html\">Soka University of America</a>","<a href=\"165662.html\">Emerson College</a>","<a href=\"239017.html\">Lawrence University</a>","<a href=\"190099.html\">Colgate University</a>","<a href=\"133492.html\">Eckerd College</a>","<a href=\"170286.html\">Hillsdale College</a>","<a href=\"480091.html\">Bryant &amp; Stratton College-Online</a>","<a href=\"197027.html\">United States Merchant Marine Academy</a>","<a href=\"177117.html\">Cottey College</a>","<a href=\"230959.html\">Middlebury College</a>","<a href=\"217402.html\">Providence College</a>","<a href=\"229267.html\">Trinity University</a>","<a href=\"164580.html\">Babson College</a>","<a href=\"153834.html\">Luther College</a>","<a href=\"213543.html\">Lehigh University</a>","<a href=\"140553.html\">Morehouse College</a>","<a href=\"161004.html\">Bowdoin College</a>","<a href=\"115409.html\">Harvey Mudd College</a>","<a href=\"156408.html\">Centre College</a>","<a href=\"234085.html\">Virginia Military Institute</a>","<a href=\"129242.html\">Fairfield University</a>","<a href=\"234207.html\">Washington and Lee University</a>","<a href=\"121257.html\">Pitzer College</a>","<a href=\"188854.html\">American Musical and Dramatic Academy</a>","<a href=\"232256.html\">Hampden-Sydney College</a>","<a href=\"189088.html\">Bard College</a>","<a href=\"121345.html\">Pomona College</a>","<a href=\"484844.html\">Minerva University</a>","<a href=\"218070.html\">Furman University</a>","<a href=\"230597.html\">Snow College</a>","<a href=\"205957.html\">Franciscan University of Steubenville</a>","<a href=\"491914.html\">Yeshiva Gedola Tiferes Yerachmiel</a>","<a href=\"493716.html\">Yeshiva Gedola Tiferes Yaakov Yitzchok</a>","<a href=\"136950.html\">Rollins College</a>","<a href=\"197708.html\">Yeshiva University</a>","<a href=\"151962.html\">Mid-America College of Funeral Service</a>","<a href=\"195304.html\">Sarah Lawrence College</a>","<a href=\"201645.html\">Case Western Reserve University</a>","<a href=\"112260.html\">Claremont McKenna College</a>","<a href=\"163976.html\">St. John's College</a>","<a href=\"197221.html\">Webb Institute</a>"],[31,47,18,73,72,37,28,52,38,38,31,38,47,41,89,41,48,57,34,92,56,57,89,18,11,43,76,20,14,75,76,14,59,51,44,39,30,65,18,30,33,9,52,16,17,61,8,35,18,29,39,48,9,45,86,68,77,34,60,52,45,75,17,70,24,null,25,61,13,58,34,25,76,46,65,9,10,68,64,56,19,18,22,37,60,7,1,71,null,68,31,37,49,63,null,58,30,11,53,20],[21,25,40,20,17,18,24,29,22,25,21,18,16,23,28,16,22,20,24,25,18,20,30,48,43,29,14,31,40,27,20,40,16,14,16,32,38,14,43,37,59,42,20,49,44,15,45,26,56,22,25,13,47,21,32,16,18,19,19,49,20,18,29,17,56,null,53,39,42,16,20,36,23,23,26,63,48,22,47,18,39,53,21,21,15,58,73,13,null,38,100,93,13,56,null,17,16,57,27,72],[90,85,91,78,74,87,81,85,83,85,84,83,85,88,74,81,82,85,82,77,82,82,79,90,87,93,65,93,92,60,58,86,89,76,73,87,82,83,90,91,66,92,80,92,92,77,94,88,97,89,88,79,87,81,88,82,87,57,80,91,79,80,90,68,88,100,81,88,91,89,80,94,73,87,47,94,94,86,74,84,94,88,68,65,71,93,81,82,100,75,94,88,71,80,97,76,84,93,75,77],[18,18,13,26,31,20,13,13,22,20,27,31,27,22,45,21,19,20,13,40,30,24,20,9,3,22,49,19,13,46,55,23,10,14,16,9,16,13,20,7,0,3,12,5,39,19,4,28,4,9,27,32,13,25,19,33,35,13,20,1,52,13,25,51,3,87,0,4,22,46,10,30,26,22,12,5,18,12,20,44,10,43,64,12,11,3,42,15,15,36,46,36,29,34,97,43,20,9,13,0],[13,20,11,16,15,11,12,12,12,15,13,11,12,11,14,11,10,13,12,16,13,14,17,12,10,13,17,11,12,15,17,11,10,16,9,11,10,11,12,9,12,9,13,11,14,14,8,10,null,10,13,13,12,14,11,15,11,13,12,8,21,10,12,14,13,null,14,7,10,16,11,17,14,11,21,10,9,12,13,18,9,14,null,11,13,8,null,10,25,21,null,null,14,14,null,16,7,10,8,null],[10543,11138,13410,16445,17445,18974,14686,13907,13475,8331,15235,13110,13769,12400,21256,13979,12027,15566,13745,17510,13799,15103,16058,3004,13671,17357,17386,13193,6827,15209,20943,8602,18380,43094,14035,9907,7525,18320,9272,9672,5313,4459,21893,8021,4981,17111,4012,28153,859,8606,19186,18547,2361,20876,18519,21330,27109,35955,23671,10095,38632,19037,7197,26620,null,14186,5170,18050,7221,18864,12930,20502,20153,14995,33967,7823,20829,13778,6552,21807,850,17181,40524,27931,18011,6239,null,21920,5234,18170,7240,null,21511,24273,20389,25765,15570,8693,19008,5605],[2206,2964,2032,2224,1837,1868,2307,2200,1938,2118,2655,2127,2075,2706,2121,1811,2145,1996,2905,1533,2399,2222,1515,1973,1718,3005,1747,2498,2049,1772,2113,2190,1524,2363,1515,1421,1090,1700,1419,2554,1432,1971,1745,2381,1821,1947,1649,3715,360,3030,3568,2284,2262,1645,2202,2007,2058,2068,1724,435,4053,1463,3142,1981,1473,5132,1006,302,2835,4001,2472,2551,1717,5375,2197,1948,902,1320,1652,4486,1853,1132,1656,842,1982,1756,604,2285,3520,2301,167,68,2427,2536,271,1512,5661,1411,470,105],[null,null,null,null,0,null,null,15,1,7,0,null,null,null,345,1,6,7,11,14,null,18,47,null,null,null,41,null,null,524,563,10,null,null,0,308,20,null,null,341,null,null,null,null,null,null,null,16,null,480,1552,881,null,null,228,21,15,414,67,10,1285,null,8,null,35,null,0,null,0,204,130,561,null,1032,null,null,null,null,null,567,379,null,10,null,332,null,0,92,null,176,null,null,333,2253,null,193,5362,5,45,null],["Minnesota","Minnesota","Minnesota","Minnesota","Minnesota","Ohio","Ohio","Massachusetts","California","Connecticut","New York","Pennsylvania","New York","Pennsylvania","Minnesota","Connecticut","Pennsylvania","Tennessee","Ohio","Minnesota","Pennsylvania","New York","Minnesota","North Carolina","Iowa","Massachusetts","Minnesota","New York","New York","Minnesota","Minnesota","Colorado","Washington","Georgia","Oregon","Pennsylvania","California","Indiana","Pennsylvania","Massachusetts","Kentucky","Massachusetts","South Carolina","Massachusetts","Maine","Ohio","Pennsylvania","Pennsylvania","Massachusetts","Virginia","Massachusetts","Massachusetts","Maine","Illinois","Illinois","Pennsylvania","Indiana","Alabama","Tennessee","California","Massachusetts","Wisconsin","New York","Florida","Michigan","New York","New York","Missouri","Vermont","Rhode Island","Texas","Massachusetts","Iowa","Pennsylvania","Georgia","Maine","California","Kentucky","Virginia","Connecticut","Virginia","California","New York","Virginia","New York","California","California","South Carolina","Utah","Ohio","New Jersey","New Jersey","Florida","New York","Indiana","New York","Ohio","California","Maryland","New York"],["Increasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Increasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Increasing","Decreasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Approximately stable","Increasing","Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Increasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Increasing","Decreasing","Increasing","Approximately stable","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Increasing","Decreasing","Increasing","Approximately stable","Unknown or not applicable","Unknown or not applicable","Approximately stable","Decreasing","Increasing","Approximately stable","Increasing","Increasing","Approximately stable","Increasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0b45ea89371467e2d093" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-0b45ea89371467e2d093">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[44.938565,-93.168053,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[44.938565,-93.168053],16,[]],"limits":{"lat":[44.938565,44.938565],"lng":[-93.168053,-93.168053]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -607,13 +631,33 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
+Undergrads per tenure track instructor
+</td>
+<td style="text-align:center;">
+13 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/MacalesterCollege_14.png alt=‘Line plot from 14 to 13
+from 2012 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 90%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 54%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Undergrads per instructor
 </td>
 <td style="text-align:center;">
 10 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_14.png alt=‘Line plot from 12 to 10
+<img src=images/MacalesterCollege_15.png alt=‘Line plot from 12 to 10
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -624,26 +668,6 @@ from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪<br />Better (lower) than 57%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Undergrads per tenure track instructor
-</td>
-<td style="text-align:center;">
-13 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/MacalesterCollege_15.png alt=‘Line plot from 14 to 13
-from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 90%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 54%
 </td>
 </tr>
 <tr>
@@ -667,16 +691,17 @@ Total instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-39 (2020)
+157 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_17.png alt=‘Line plot from 32 to 39
-from 2012 to 2020’ >
+<img src=images/MacalesterCollege_17.png alt=‘Line plot from 142 to
+157 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
+↑<br />1.5 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -685,17 +710,16 @@ from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-157 (2020)
+39 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_18.png alt=‘Line plot from 142 to
-157 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_18.png alt=‘Line plot from 32 to 39
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />1.5 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -748,8 +772,8 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 21% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_103.png alt=‘Line plot from 6.0 to
-21 from 2010 to 2021’ >
+<img src=images/MacalesterCollege_100.png alt=‘Line plot from 6 to 21
+from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -784,13 +808,33 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+18% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/MacalesterCollege_19.png alt=‘Line plot from 23 to 18
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪✪<br />Better (lower) than 92%
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 64%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $178 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_19.png alt=‘Line plot from 81 M to
+<img src=images/MacalesterCollege_20.png alt=‘Line plot from 81 M to
 178 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -810,7 +854,7 @@ Revenue
 $295 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_20.png alt=‘Line plot from 175 M to
+<img src=images/MacalesterCollege_21.png alt=‘Line plot from 175 M to
 295 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -828,7 +872,7 @@ Expenses
 $117 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_21.png alt=‘Line plot from 94 M to
+<img src=images/MacalesterCollege_22.png alt=‘Line plot from 94 M to
 117 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -847,7 +891,7 @@ Assets
 $1.2 B (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_22.png alt=‘Line plot from 934 M to
+<img src=images/MacalesterCollege_23.png alt=‘Line plot from 934 M to
 1.2 B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -858,80 +902,6 @@ $1.2 B (2021)
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 85%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-18% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/MacalesterCollege_23.png alt=‘Line plot from 23 to 18
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 92%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 64%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/MacalesterCollege_24.png alt=‘Line plot from 0.0 to
-0.0 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-1.7% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/MacalesterCollege_25.png alt=‘Line plot from 1.5 to
-1.7 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-3.4% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/MacalesterCollege_26.png alt=‘Line plot from 11 to
-3.4 from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -973,7 +943,7 @@ Total
 90% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_42.png alt=‘Line plot from 88 to 90
+<img src=images/MacalesterCollege_39.png alt=‘Line plot from 88 to 90
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -991,7 +961,7 @@ Men
 88% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_43.png alt=‘Line plot from 85 to 88
+<img src=images/MacalesterCollege_40.png alt=‘Line plot from 85 to 88
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1009,7 +979,7 @@ Women
 91% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_44.png alt=‘Line plot from 89 to 91
+<img src=images/MacalesterCollege_41.png alt=‘Line plot from 89 to 91
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1027,7 +997,7 @@ American Indian or Alaska Native men
 100% (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_45.png alt=‘Line plot from 100 to
+<img src=images/MacalesterCollege_42.png alt=‘Line plot from 100 to
 100 from 2011 to 2019’ >
 </td>
 <td style="text-align:center;">
@@ -1045,7 +1015,7 @@ American Indian or Alaska Native women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_46.png alt=‘Line plot from 100 to
+<img src=images/MacalesterCollege_43.png alt=‘Line plot from 100 to
 100 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1063,7 +1033,7 @@ Asian men
 91% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_47.png alt=‘Line plot from 86 to 91
+<img src=images/MacalesterCollege_44.png alt=‘Line plot from 86 to 91
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1081,7 +1051,7 @@ Asian women
 83% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_48.png alt=‘Line plot from 92 to 83
+<img src=images/MacalesterCollege_45.png alt=‘Line plot from 92 to 83
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1099,7 +1069,7 @@ Black or African American men
 86% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_49.png alt=‘Line plot from 100 to
+<img src=images/MacalesterCollege_46.png alt=‘Line plot from 100 to
 86 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1117,7 +1087,7 @@ Black or African American women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_50.png alt=‘Line plot from 60 to
+<img src=images/MacalesterCollege_47.png alt=‘Line plot from 60 to
 100 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1135,7 +1105,7 @@ Hispanic men
 80% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_51.png alt=‘Line plot from 83 to 80
+<img src=images/MacalesterCollege_48.png alt=‘Line plot from 83 to 80
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1153,7 +1123,7 @@ Hispanic women
 86% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_52.png alt=‘Line plot from 79 to 86
+<img src=images/MacalesterCollege_49.png alt=‘Line plot from 79 to 86
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1171,7 +1141,7 @@ Native Hawaiian or other Pacific Islander women
 100% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_54.png alt=‘Line plot from 100 to
+<img src=images/MacalesterCollege_51.png alt=‘Line plot from 100 to
 100 from 2020 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1189,7 +1159,7 @@ White men
 87% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_55.png alt=‘Line plot from 84 to 87
+<img src=images/MacalesterCollege_52.png alt=‘Line plot from 84 to 87
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1207,7 +1177,7 @@ White women
 92% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_56.png alt=‘Line plot from 91 to 92
+<img src=images/MacalesterCollege_53.png alt=‘Line plot from 91 to 92
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1225,7 +1195,7 @@ Two or more races men
 88% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_57.png alt=‘Line plot from 100 to
+<img src=images/MacalesterCollege_54.png alt=‘Line plot from 100 to
 88 from 2016 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1243,7 +1213,7 @@ Two or more races women
 89% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_58.png alt=‘Line plot from 82 to 89
+<img src=images/MacalesterCollege_55.png alt=‘Line plot from 82 to 89
 from 2016 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1261,7 +1231,7 @@ Nonresident alien men
 94% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_59.png alt=‘Line plot from 95 to 94
+<img src=images/MacalesterCollege_56.png alt=‘Line plot from 95 to 94
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1279,7 +1249,7 @@ Nonresident alien women
 92% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_60.png alt=‘Line plot from 94 to 92
+<img src=images/MacalesterCollege_57.png alt=‘Line plot from 94 to 92
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1319,7 +1289,7 @@ Men (percent freshmen)
 45% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_83.png alt=‘Line plot from 39 to 45
+<img src=images/MacalesterCollege_80.png alt=‘Line plot from 39 to 45
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1331,7 +1301,7 @@ Women (percent freshmen)
 55% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_84.png alt=‘Line plot from 61 to 55
+<img src=images/MacalesterCollege_81.png alt=‘Line plot from 61 to 55
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1343,7 +1313,7 @@ American Indian or Alaska Native men (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_85.png alt=‘Line plot from 0.4 to
+<img src=images/MacalesterCollege_82.png alt=‘Line plot from 0.4 to
 0.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1352,11 +1322,11 @@ American Indian or Alaska Native men (percent freshmen)
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_86.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/MacalesterCollege_83.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1367,7 +1337,7 @@ Asian men (percent freshmen)
 2.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_87.png alt=‘Line plot from 1.9 to
+<img src=images/MacalesterCollege_84.png alt=‘Line plot from 1.9 to
 2.5 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1379,7 +1349,7 @@ Asian women (percent freshmen)
 4.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_88.png alt=‘Line plot from 3.5 to
+<img src=images/MacalesterCollege_85.png alt=‘Line plot from 3.5 to
 4.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1391,7 +1361,7 @@ Black or African American men (percent freshmen)
 2.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_89.png alt=‘Line plot from 1.2 to
+<img src=images/MacalesterCollege_86.png alt=‘Line plot from 1.2 to
 2.0 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1403,7 +1373,7 @@ Black or African American women (percent freshmen)
 4.0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_90.png alt=‘Line plot from 2.9 to
+<img src=images/MacalesterCollege_87.png alt=‘Line plot from 2.9 to
 4.0 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1415,7 +1385,7 @@ Hispanic men (percent freshmen)
 3.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_91.png alt=‘Line plot from 3.5 to
+<img src=images/MacalesterCollege_88.png alt=‘Line plot from 3.5 to
 3.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1427,7 +1397,7 @@ Hispanic women (percent freshmen)
 6.8% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_92.png alt=‘Line plot from 4.3 to
+<img src=images/MacalesterCollege_89.png alt=‘Line plot from 4.3 to
 6.8 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1436,11 +1406,11 @@ Hispanic women (percent freshmen)
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_93.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/MacalesterCollege_90.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1451,8 +1421,8 @@ Native Hawaiian or Other Pacific Islander women (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_94.png alt=‘Line plot from 0.0 to
-0.2 from 2010 to 2021’ >
+<img src=images/MacalesterCollege_91.png alt=‘Line plot from 0 to 0.2
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1463,7 +1433,7 @@ White men (percent freshmen)
 29% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_95.png alt=‘Line plot from 25 to 29
+<img src=images/MacalesterCollege_92.png alt=‘Line plot from 25 to 29
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1475,7 +1445,7 @@ White women (percent freshmen)
 30% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_96.png alt=‘Line plot from 39 to 30
+<img src=images/MacalesterCollege_93.png alt=‘Line plot from 39 to 30
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1487,7 +1457,7 @@ Two or more races men (percent freshmen)
 3.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_97.png alt=‘Line plot from 1.7 to
+<img src=images/MacalesterCollege_94.png alt=‘Line plot from 1.7 to
 3.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1499,7 +1469,7 @@ Two or more races women (percent freshmen)
 5.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_98.png alt=‘Line plot from 4.3 to
+<img src=images/MacalesterCollege_95.png alt=‘Line plot from 4.3 to
 5.7 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1508,11 +1478,11 @@ Two or more races women (percent freshmen)
 Race ethnicity unknown men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_99.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/MacalesterCollege_96.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1520,11 +1490,11 @@ Race ethnicity unknown men (percent freshmen)
 Race ethnicity unknown women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_100.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/MacalesterCollege_97.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1535,7 +1505,7 @@ Nonresident alien men (percent freshmen)
 5.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_101.png alt=‘Line plot from 5.2 to
+<img src=images/MacalesterCollege_98.png alt=‘Line plot from 5.2 to
 5.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1547,8 +1517,63 @@ Nonresident alien women (percent freshmen)
 4.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_102.png alt=‘Line plot from 6.6 to
+<img src=images/MacalesterCollege_99.png alt=‘Line plot from 6.6 to
 4.3 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Macalester College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+14% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/MacalesterCollege_101.png alt=‘Line plot from 14 to
+14 from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+88% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/MacalesterCollege_102.png alt=‘Line plot from 87 to
+88 from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/MacalesterCollege_103.png alt=‘Line plot from 0 to 0
+from 2010 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1589,7 +1614,7 @@ Total (tenure-track count)
 157 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_61.png alt=‘Line plot from 142 to
+<img src=images/MacalesterCollege_58.png alt=‘Line plot from 142 to
 157 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1604,7 +1629,7 @@ Women (tenure-track count)
 81 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_62.png alt=‘Line plot from 64 to 81
+<img src=images/MacalesterCollege_59.png alt=‘Line plot from 64 to 81
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1619,7 +1644,7 @@ Men (tenure-track count)
 76 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_63.png alt=‘Line plot from 78 to 76
+<img src=images/MacalesterCollege_60.png alt=‘Line plot from 78 to 76
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1630,11 +1655,11 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_64.png alt=‘Line plot from 1.0 to
-2.0 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_61.png alt=‘Line plot from 1 to 2
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1648,7 +1673,7 @@ Asian (tenure-track count)
 16 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_65.png alt=‘Line plot from 12 to 16
+<img src=images/MacalesterCollege_62.png alt=‘Line plot from 12 to 16
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1663,8 +1688,8 @@ Black or African American (tenure-track count)
 10 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_66.png alt=‘Line plot from 4.0 to
-10 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_63.png alt=‘Line plot from 4 to 10
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.8 per year
@@ -1678,8 +1703,8 @@ Hispanic or Latino (tenure-track count)
 14 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_67.png alt=‘Line plot from 8.0 to
-14 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_64.png alt=‘Line plot from 8 to 14
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.5 per year
@@ -1690,11 +1715,11 @@ Hispanic or Latino (tenure-track count)
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_68.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_65.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1707,7 +1732,7 @@ White (tenure-track count)
 108 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_69.png alt=‘Line plot from 110 to
+<img src=images/MacalesterCollege_66.png alt=‘Line plot from 110 to
 108 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1718,11 +1743,11 @@ White (tenure-track count)
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_70.png alt=‘Line plot from 2.0 to
-3.0 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_67.png alt=‘Line plot from 2 to 3
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1733,11 +1758,11 @@ Two or more races (tenure-track count)
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_71.png alt=‘Line plot from 5.0 to
-2.0 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_68.png alt=‘Line plot from 5 to 2
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1781,7 +1806,7 @@ Total (non-tenure-track count)
 39 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_72.png alt=‘Line plot from 32 to 39
+<img src=images/MacalesterCollege_69.png alt=‘Line plot from 32 to 39
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1795,7 +1820,7 @@ Women (non-tenure-track count)
 26 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_73.png alt=‘Line plot from 21 to 26
+<img src=images/MacalesterCollege_70.png alt=‘Line plot from 21 to 26
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1809,7 +1834,7 @@ Men (non-tenure-track count)
 13 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_74.png alt=‘Line plot from 11 to 13
+<img src=images/MacalesterCollege_71.png alt=‘Line plot from 11 to 13
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1820,11 +1845,11 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_75.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_72.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1834,11 +1859,11 @@ American Indian or Alaska Native (non-tenure-track count)
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_76.png alt=‘Line plot from 1.0 to
-3.0 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_73.png alt=‘Line plot from 1 to 3
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.4 per year
@@ -1849,11 +1874,11 @@ Asian (non-tenure-track count)
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_77.png alt=‘Line plot from 0.0 to
-1.0 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_74.png alt=‘Line plot from 0 to 1
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1864,11 +1889,11 @@ Black or African American (non-tenure-track count)
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-4.0 (2020)
+4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_78.png alt=‘Line plot from 3.0 to
-4.0 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_75.png alt=‘Line plot from 3 to 4
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1879,11 +1904,11 @@ Hispanic or Latino (non-tenure-track count)
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_79.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_76.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1896,7 +1921,7 @@ White (non-tenure-track count)
 29 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_80.png alt=‘Line plot from 25 to 29
+<img src=images/MacalesterCollege_77.png alt=‘Line plot from 25 to 29
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1907,11 +1932,11 @@ from 2012 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_81.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_78.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1921,11 +1946,11 @@ Two or more races (non-tenure-track count)
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_82.png alt=‘Line plot from 3.0 to
-1.0 from 2012 to 2020’ >
+<img src=images/MacalesterCollege_79.png alt=‘Line plot from 3 to 1
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1963,7 +1988,7 @@ Applicants submitting SAT
 35% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_30.png alt=‘Line plot from 58 to 35
+<img src=images/MacalesterCollege_27.png alt=‘Line plot from 58 to 35
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1977,7 +2002,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 680 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_31.png alt=‘Line plot from 660 to
+<img src=images/MacalesterCollege_28.png alt=‘Line plot from 660 to
 680 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1991,7 +2016,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 750 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_32.png alt=‘Line plot from 740 to
+<img src=images/MacalesterCollege_29.png alt=‘Line plot from 740 to
 750 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2005,7 +2030,7 @@ SAT Math 25th percentile score
 660 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_33.png alt=‘Line plot from 630 to
+<img src=images/MacalesterCollege_30.png alt=‘Line plot from 630 to
 660 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2020,7 +2045,7 @@ SAT Math 75th percentile score
 765 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_34.png alt=‘Line plot from 735 to
+<img src=images/MacalesterCollege_31.png alt=‘Line plot from 735 to
 765 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2056,7 +2081,7 @@ Applicants submitting ACT
 39% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_35.png alt=‘Line plot from 56 to 39
+<img src=images/MacalesterCollege_32.png alt=‘Line plot from 56 to 39
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2070,7 +2095,7 @@ ACT Composite 25th percentile score
 29 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_36.png alt=‘Line plot from 28 to 29
+<img src=images/MacalesterCollege_33.png alt=‘Line plot from 28 to 29
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2084,7 +2109,7 @@ ACT Composite 75th percentile score
 33 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_37.png alt=‘Line plot from 32 to 33
+<img src=images/MacalesterCollege_34.png alt=‘Line plot from 32 to 33
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2099,7 +2124,7 @@ ACT English 25th percentile score
 30 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_38.png alt=‘Line plot from 29 to 30
+<img src=images/MacalesterCollege_35.png alt=‘Line plot from 29 to 30
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2113,7 +2138,7 @@ ACT English 75th percentile score
 35 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_39.png alt=‘Line plot from 34 to 35
+<img src=images/MacalesterCollege_36.png alt=‘Line plot from 34 to 35
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2128,7 +2153,7 @@ ACT Math 25th percentile score
 27 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_40.png alt=‘Line plot from 27 to 27
+<img src=images/MacalesterCollege_37.png alt=‘Line plot from 27 to 27
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2142,7 +2167,7 @@ ACT Math 75th percentile score
 32 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MacalesterCollege_41.png alt=‘Line plot from 32 to 32
+<img src=images/MacalesterCollege_38.png alt=‘Line plot from 32 to 32
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2155,28 +2180,28 @@ from 2014 to 2021’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-41367de7e7c0b5d041ad" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-41367de7e7c0b5d041ad">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_ResearchandExperimentalPsychology_Other.html\">Research and Experimental Psychology, Other</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_International_GlobalizationStudies.html\">International/Globalization Studies</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_Geography.html\">Geography</a>","<a href=\"majors_Bachelors_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_MassCommunication_MediaStudies.html\">Mass Communication/Media Studies</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Linguistics.html\">Linguistics</a>","<a href=\"majors_Bachelors_Intercultural_MulticulturalandDiversityStudies.html\">Intercultural/Multicultural and Diversity Studies</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Bachelors_Dramatic_TheatreArtsandStagecraft_Other.html\">Dramatic/Theatre Arts and Stagecraft, Other</a>","<a href=\"majors_Bachelors_JapaneseLanguageandLiterature.html\">Japanese Language and Literature</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_ClassicsandClassicalLanguages_Literatures_andLinguistics_General.html\">Classics and Classical Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_AsianStudies_Civilization.html\">Asian Studies/Civilization</a>","<a href=\"majors_Bachelors_WomensStudies.html\">Women's Studies</a>","<a href=\"majors_Bachelors_RussianLanguageandLiterature.html\">Russian Language and Literature</a>","<a href=\"majors_Bachelors_GermanLanguageandLiterature.html\">German Language and Literature</a>","<a href=\"majors_Bachelors_FrenchLanguageandLiterature.html\">French Language and Literature</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_LatinAmericanStudies.html\">Latin American Studies</a>","<a href=\"majors_Bachelors_ChineseLanguageandLiterature.html\">Chinese Language and Literature</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>"],[52,52,34,32,31,26,21,19,17,13,12,12,11,10,10,9,8,8,7,7,7,6,6,5,5,4,3,3,2,2,2,2,2,2,2,1,1,1],[11.633,11.633,7.606,7.159,6.935,5.817,4.698,4.251,3.803,2.908,2.685,2.685,2.461,2.237,2.237,2.013,1.79,1.79,1.566,1.566,1.566,1.342,1.342,1.119,1.119,0.895,0.671,0.671,0.447,0.447,0.447,0.447,0.447,0.447,0.447,0.224,0.224,0.224],[0.064,0.423,0.135,0.374,0.082,0.146,0.246,0.35,0.244,0.415,0.403,0.154,0.038,0.14,0.045,0.147,0.094,0.06,0.353,6.364,0.171,0.267,1.31,0.883,0.019,0.528,0.054,0.032,0.337,0.154,0.858,0.345,0.162,0.009,0.028,0.41,0.267,0.049],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d2a245113eb426f730f7" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d2a245113eb426f730f7">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_ResearchandExperimentalPsychology_Other.html\">Research and Experimental Psychology, Other</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_International_GlobalizationStudies.html\">International/Globalization Studies</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_Geography.html\">Geography</a>","<a href=\"majors_Bachelors_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Bachelors_Anthropology_General.html\">Anthropology, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_MassCommunication_MediaStudies.html\">Mass Communication/Media Studies</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Linguistics.html\">Linguistics</a>","<a href=\"majors_Bachelors_Intercultural_MulticulturalandDiversityStudies.html\">Intercultural/Multicultural and Diversity Studies</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Bachelors_Dramatic_TheatreArtsandStagecraft_Other.html\">Dramatic/Theatre Arts and Stagecraft, Other</a>","<a href=\"majors_Bachelors_JapaneseLanguageandLiterature.html\">Japanese Language and Literature</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_ClassicsandClassicalLanguages_Literatures_andLinguistics_General.html\">Classics and Classical Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_AsianStudies_Civilization.html\">Asian Studies/Civilization</a>","<a href=\"majors_Bachelors_WomensStudies.html\">Women's Studies</a>","<a href=\"majors_Bachelors_RussianLanguageandLiterature.html\">Russian Language and Literature</a>","<a href=\"majors_Bachelors_GermanLanguageandLiterature.html\">German Language and Literature</a>","<a href=\"majors_Bachelors_FrenchLanguageandLiterature.html\">French Language and Literature</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_LatinAmericanStudies.html\">Latin American Studies</a>","<a href=\"majors_Bachelors_ChineseLanguageandLiterature.html\">Chinese Language and Literature</a>","<a href=\"majors_Bachelors_ArtHistory_CriticismandConservation.html\">Art History, Criticism and Conservation</a>"],[52,52,34,32,31,26,21,19,17,13,12,12,11,10,10,9,8,8,7,7,7,6,6,5,5,4,3,3,2,2,2,2,2,2,2,1,1,1],[11.633,11.633,7.606,7.159,6.935,5.817,4.698,4.251,3.803,2.908,2.685,2.685,2.461,2.237,2.237,2.013,1.79,1.79,1.566,1.566,1.566,1.342,1.342,1.119,1.119,0.895,0.671,0.671,0.447,0.447,0.447,0.447,0.447,0.447,0.447,0.224,0.224,0.224],[0.064,0.423,0.135,0.374,0.082,0.146,0.246,0.35,0.244,0.415,0.403,0.154,0.038,0.14,0.045,0.147,0.094,0.06,0.353,6.364,0.171,0.267,1.31,0.883,0.019,0.528,0.054,0.032,0.337,0.154,0.858,0.345,0.162,0.009,0.028,0.41,0.267,0.049],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-bfef4f8a368fae7d073a" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-bfef4f8a368fae7d073a">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-33a0d219775651070cc7" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-33a0d219775651070cc7">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d6db3a05f0bdb6443f6e" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-d6db3a05f0bdb6443f6e">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5a02cbe9a728e0ee9b7d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5a02cbe9a728e0ee9b7d">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b13ded2577b754f7b3ad" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b13ded2577b754f7b3ad">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d0ba49e7eeecfb17c007" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d0ba49e7eeecfb17c007">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d8e5d3e9e216725d335c" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-d8e5d3e9e216725d335c">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5b99d534531398c79ae7" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5b99d534531398c79ae7">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

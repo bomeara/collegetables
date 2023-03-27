@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -271,9 +273,21 @@ program-Other</p></li>
 <li><p><strong>Enrollment profile</strong>: Very high undergraduate (see
 more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 10,558 (This is 80% the cost of Harvard)</p></li>
+aid</strong>: $10,558 (This is 70% the average cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $14,033.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.pmc.edu/websites/pmc/np/npcalc.htm'>here</a> to see
+what your family may be asked to pay. It can be MUCH lower than the
+average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, very small, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 83.3% of first year
+students come from Massachusetts (note that 5.6% have no residence
+reported)</p></li>
+<li><p><strong>In US percentage</strong>: 94.4% of first year students
+come from the US (note that 5.6% have no residence reported)</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 20.6% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -312,9 +326,10 @@ are registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Protective (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: A- (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -327,17 +342,29 @@ marriage</strong>: 100% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Safest (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Northeastern coastal
 forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https://weatherspark.com/countries/US/MA#Figures-Temperature">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5089fa838054bfc6b010" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-5089fa838054bfc6b010">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[42.320827,-71.156464,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[42.320827,-71.156464],16,[]],"limits":{"lat":[42.320827,42.320827],"lng":[-71.156464,-71.156464]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a10b24a5ca237bb9147e" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a10b24a5ca237bb9147e">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"167455.html\">Pine Manor College</a>","<a href=\"213358.html\">La Roche University</a>","<a href=\"215114.html\">Cairn University-Langhorne</a>","<a href=\"213321.html\">King's College</a>","<a href=\"138761.html\">Andrew College</a>","<a href=\"456269.html\">MJS School of Technology</a>","<a href=\"171881.html\">Kuyper College</a>","<a href=\"195702.html\">Saint Elizabeth College of Nursing</a>","<a href=\"251251.html\">ITT Technical Institute-Newburgh</a>","<a href=\"103787.html\">American Indian College Inc</a>","<a href=\"162210.html\">Washington Adventist University</a>","<a href=\"135063.html\">Jones College-Jacksonville</a>","<a href=\"154332.html\">La James International College-Davenport</a>","<a href=\"433174.html\">Carolinas College of Health Sciences</a>","<a href=\"377546.html\">Northwest College of Art &amp; Design</a>","<a href=\"469160.html\">Cortiva Institute-Aurora</a>","<a href=\"450757.html\">Empire Beauty School-Portsmouth</a>","<a href=\"131061.html\">Schilling-Douglas School of Hair Design LLC</a>","<a href=\"456764.html\">Regency Beauty Institute-Arlington</a>","<a href=\"449232.html\">Regency Beauty Institute-Champaign</a>","<a href=\"367088.html\">Tricoci University of Beauty Culture LLC-Bloomington</a>","<a href=\"367130.html\">Empire Beauty School-Lowell</a>","<a href=\"172440.html\">Finlandia University</a>","<a href=\"170842.html\">Marygrove College</a>","<a href=\"237242.html\">Cabell County Career Technology Center</a>","<a href=\"236230.html\">Pacific Lutheran University</a>","<a href=\"476896.html\">Wade Gordon Hairdressing Academy</a>","<a href=\"207704.html\">Jenks Beauty College</a>","<a href=\"126872.html\">CollegeAmerica-Denver</a>","<a href=\"451945.html\">ITT Technical Institute-Madison</a>","<a href=\"483018.html\">Antioch College</a>","<a href=\"485582.html\">MKG Beauty &amp; Business</a>","<a href=\"174765.html\">Regency Beauty Institute-St Cloud</a>","<a href=\"178466.html\">Hillyard Technical Center</a>","<a href=\"163408.html\">Montgomery Beauty School</a>","<a href=\"165802.html\">Fisher College</a>","<a href=\"450650.html\">The Institute of Beauty and Wellness</a>","<a href=\"480994.html\">Aspen Beauty Academy of Laurel</a>","<a href=\"454519.html\">Regency Beauty Institute-Columbus</a>","<a href=\"484154.html\">Preparing People Barber Styling College</a>","<a href=\"380474.html\">Cortiva Institute-Salt Lake</a>","<a href=\"217095.html\">Empire Beauty School-Providence</a>","<a href=\"455600.html\">Brown Mackie College-Boise</a>","<a href=\"219587.html\">Arnolds Beauty School</a>","<a href=\"202055.html\">Cleveland Institute of Dental-Medical Assistants-Cleveland</a>","<a href=\"197993.html\">Bennett College</a>","<a href=\"147396.html\">Morrison Institute of Technology</a>","<a href=\"468291.html\">San Joaquin Valley College-Hanford Classroom</a>","<a href=\"144883.html\">East-West University</a>","<a href=\"237570.html\">Morgantown Beauty College Inc</a>","<a href=\"236531.html\">Everest College-Seattle</a>","<a href=\"260965.html\">Educators of Beauty College of Cosmetology-Rockford</a>","<a href=\"458317.html\">Regency Beauty Institute-Shreveport</a>","<a href=\"475699.html\">Bryant &amp; Stratton College-Akron</a>","<a href=\"198747.html\">John Wesley University</a>","<a href=\"245281.html\">Traxlers School of Hair</a>","<a href=\"432241.html\">University of Phoenix-Oregon</a>","<a href=\"445391.html\">University of Phoenix-Kentucky</a>","<a href=\"231077.html\">College of St Joseph</a>","<a href=\"459310.html\">Future-Tech Institute</a>","<a href=\"484686.html\">University of Phoenix-Louisiana</a>","<a href=\"475608.html\">Criswell College</a>","<a href=\"437857.html\">Rudae's School of Beauty Culture-Ft Wayne</a>","<a href=\"375300.html\">Cleveland Institute of Dental-Medical Assistants-Mentor</a>","<a href=\"449995.html\">Paul Mitchell the School-Tysons Corner</a>","<a href=\"176637.html\">ITT Technical Institute-Earth City</a>","<a href=\"151458.html\">International Business College-Fort Wayne</a>","<a href=\"140720.html\">Paine College</a>","<a href=\"215309.html\">University of Pittsburgh-Titusville</a>","<a href=\"238166.html\">Advanced Institute of Hair Design-Glendale</a>","<a href=\"493451.html\">WellSpring School of Allied Health-Springfield</a>","<a href=\"458168.html\">The Salon Professional Academy-Onalaska</a>","<a href=\"102270.html\">Stillman College</a>","<a href=\"378886.html\">Artistic Nails and Beauty Academy-Tampa</a>","<a href=\"151810.html\">Martin University</a>","<a href=\"455105.html\">Mississippi Institute of Aesthetics Nails &amp; Cosmetology</a>","<a href=\"374592.html\">MCVSD</a>","<a href=\"453792.html\">Ohio Medical Career College</a>","<a href=\"459602.html\">ITT Technical Institute-Salem</a>","<a href=\"484710.html\">University of Phoenix-Nevada</a>","<a href=\"458858.html\">Empire Beauty School-Speedway</a>","<a href=\"190451.html\">Pomeroy College of Nursing at Crouse Hospital</a>","<a href=\"157632.html\">Saint Catharine College</a>","<a href=\"192484.html\">Long Island Beauty School-Hempstead</a>","<a href=\"450827.html\">Regency Beauty Institute-Rockford</a>","<a href=\"460048.html\">Brown Mackie College-St Louis</a>","<a href=\"218159.html\">Kenneth Shuler School of Cosmetology-North Augusta</a>","<a href=\"458487.html\">Paul Mitchell the School-St George</a>","<a href=\"462336.html\">International College of Beauty Arts &amp; Sciences</a>","<a href=\"144573.html\">Tricoci University of Beauty Culture</a>","<a href=\"467678.html\">Regency Beauty Institute-SW Houston</a>","<a href=\"248846.html\">FIDM-Fashion Institute of Design &amp; Merchandising-San Diego</a>","<a href=\"488378.html\">International Beauty Education Center</a>","<a href=\"262402.html\">California Career School</a>","<a href=\"456719.html\">Regency Beauty Institute-Tinley Park</a>","<a href=\"483610.html\">Sutter Beauty College</a>","<a href=\"442523.html\">Alaska Christian College</a>","<a href=\"437723.html\">New Community Career &amp; Technical Institute</a>","<a href=\"146010.html\">Sanford-Brown College-Chicago</a>","<a href=\"127219.html\">Glenwood Beauty Academy</a>"],[57,98,82,96,51,null,69,67,54,null,62,null,null,61,72,null,null,null,null,null,null,null,78,41,null,88,null,null,null,68,72,null,null,54,null,72,null,null,null,null,null,null,null,null,null,79,null,null,41,null,null,null,null,null,45,null,null,null,47,null,null,98,null,null,null,59,74,52,47,null,null,null,76,null,null,null,null,null,53,null,null,49,78,null,null,null,null,null,null,null,null,59,null,null,null,null,null,null,null,null],[9,10,50,14,24,null,23,50,34,null,5,null,null,55,32,null,null,null,null,null,null,null,9,5,null,18,null,null,null,32,21,null,null,43,null,9,null,null,null,null,null,null,null,null,null,3,null,null,19,null,null,null,null,null,43,null,null,null,12,null,null,31,null,null,null,36,0,18,33,null,null,null,15,null,null,null,null,null,38,null,null,41,38,null,null,null,null,null,null,null,null,59,null,null,null,null,null,null,null,null],[21,52,61,67,null,null,47,null,20,14,40,12,null,null,38,null,null,null,null,null,null,null,21,39,null,69,null,null,13,20,32,null,null,null,null,38,null,null,null,null,null,null,10,null,null,22,null,null,13,null,null,null,null,null,25,null,15,21,50,null,15,57,null,null,null,12,59,8,null,null,null,null,15,null,25,null,null,null,null,17,null,null,26,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,19,null],[20,60,44,41,20,null,25,32,100,17,46,21,72,42,93,null,null,91,null,null,95,81,43,39,18,49,87,85,100,100,10,83,null,21,68,45,89,77,null,100,93,84,93,83,63,9,44,null,33,95,100,79,null,100,68,85,81,98,47,100,98,12,94,null,89,100,79,21,null,76,84,74,11,87,40,95,17,100,100,98,85,null,56,82,null,90,80,86,95,95,null,null,97,71,null,87,13,null,88,89],[11,null,null,19,13,null,11,6,null,null,null,null,null,null,null,null,null,null,null,null,null,null,17,7,null,15,null,null,null,null,19,null,null,null,null,null,null,null,null,null,null,null,null,null,null,11,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,7,8,null,null,null,20,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[14033,18706,23260,23439,19351,null,null,null,null,null,18413,null,16131,null,15771,null,null,16571,null,null,14069,null,15610,null,null,15500,null,12771,null,null,19633,null,null,null,18150,18693,9543,null,null,null,null,null,null,14512,null,21736,20954,22210,16022,10692,null,null,null,null,null,null,null,null,null,null,null,7968,21938,null,17402,null,null,13492,null,null,24237,11893,20372,12781,null,null,21509,16411,null,null,18455,null,null,null,null,null,14678,null,null,null,null,null,12999,null,null,null,null,6404,null,null],[75,798,786,1697,200,3,72,75,123,75,481,74,74,73,93,75,76,75,75,75,75,76,385,207,76,2279,77,75,72,208,133,79,75,70,72,588,74,74,76,75,80,82,74,79,75,181,71,75,487,76,76,78,66,74,121,74,18,18,126,77,15,74,81,77,64,358,124,209,25,80,76,68,643,73,85,76,74,86,106,78,74,82,526,74,70,87,91,84,86,87,74,61,82,82,70,71,71,73,25,58],[16,237,44,75,null,null,9,null,null,null,21,null,null,null,null,null,null,null,null,null,null,null,null,13,null,228,null,null,null,null,null,null,null,null,null,9,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,22,null,1,1,25,null,15,22,null,null,null,null,null,null,null,null,null,null,null,null,17,null,null,null,null,4,null,null,8,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],["Massachusetts","Pennsylvania","Pennsylvania","Pennsylvania","Georgia","Ohio","Michigan","New York","Indiana","Arizona","Maryland","Florida","Iowa","North Carolina","Washington","Colorado","New Hampshire","Delaware","Texas","Illinois","Indiana","Massachusetts","Michigan","Michigan","West Virginia","Washington","Texas","Oklahoma","Colorado","Alabama","Ohio","Rhode Island","Minnesota","Missouri","Maryland","Massachusetts","Wisconsin","Maryland","Ohio","Texas","Utah","Rhode Island","Idaho","Tennessee","Ohio","North Carolina","Illinois","California","Illinois","West Virginia","Washington","Illinois","Louisiana","Ohio","North Carolina","Mississippi","Oregon","Kentucky","Vermont","Florida","Louisiana","Texas","Indiana","Ohio","Virginia","Missouri","Indiana","Georgia","Pennsylvania","Wisconsin","Missouri","Wisconsin","Alabama","Florida","Indiana","Mississippi","New Jersey","Ohio","Virginia","Nevada","Indiana","New York","Kentucky","New York","Illinois","Missouri","South Carolina","Utah","California","Illinois","Texas","California","Washington","California","Illinois","California","Alaska","New Jersey","Illinois","Colorado"],["Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Unknown or not applicable","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Unknown or not applicable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Unknown or not applicable","Decreasing","Increasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Increasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Increasing","Approximately stable","Decreasing","Approximately stable"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0867158e292628c45426" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-0867158e292628c45426">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[42.320827,-71.156464,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[42.320827,-71.156464],16,[]],"limits":{"lat":[42.320827,42.320827],"lng":[-71.156464,-71.156464]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -387,10 +414,10 @@ from 2011 to 2021’ >
 Undergrads (part time)
 </td>
 <td style="text-align:center;">
-2.0 (2021)
+2 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_2.png alt=‘Line plot from 9.0 to 2.0
+<img src=images/PineManorCollege_2.png alt=‘Line plot from 9 to 2
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -424,10 +451,10 @@ from 2011 to 2021’ >
 Grad students (part time)
 </td>
 <td style="text-align:center;">
-0.0 (2021)
+0 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_4.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/PineManorCollege_4.png alt=‘Line plot from 0 to 0
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -649,13 +676,13 @@ Baccalaureate Colleges: Diverse Fields
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
+Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
-8.5 (2020)
+11 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_14.png alt=‘Line plot from 15 to 8.5
+<img src=images/PineManorCollege_14.png alt=‘Line plot from 22 to 11
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -669,13 +696,13 @@ from 2013 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Undergrads per tenure track instructor
+Undergrads per instructor
 </td>
 <td style="text-align:center;">
-11 (2020)
+8.5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_15.png alt=‘Line plot from 22 to 11
+<img src=images/PineManorCollege_15.png alt=‘Line plot from 15 to 8.5
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -707,16 +734,17 @@ from 2013 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+17 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_17.png alt=‘Line plot from 6.0 to
-5.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_17.png alt=‘Line plot from 14 to 17
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
+↑<br />0.5 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -725,17 +753,16 @@ Non-tenure track instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-17 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_18.png alt=‘Line plot from 14 to 17
+<img src=images/PineManorCollege_18.png alt=‘Line plot from 6 to 5
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />0.5 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -779,11 +806,11 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-3.0% (2021)
+3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_103.png alt=‘Line plot from 3.0 to
-3.0 from 2010 to 2021’ >
+<img src=images/PineManorCollege_100.png alt=‘Line plot from 3 to 3
+from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -813,13 +840,31 @@ Baccalaureate Colleges: Diverse Fields
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+20% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/PineManorCollege_19.png alt=‘Line plot from 33 to 20
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 78%
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 77%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $2.9 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_19.png alt=‘Line plot from -1.2 M to
+<img src=images/PineManorCollege_20.png alt=‘Line plot from -1.2 M to
 2.9 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -837,7 +882,7 @@ Revenue
 $14 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_20.png alt=‘Line plot from 15 M to
+<img src=images/PineManorCollege_21.png alt=‘Line plot from 15 M to
 14 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -853,7 +898,7 @@ Expenses
 $11 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_21.png alt=‘Line plot from 16 M to
+<img src=images/PineManorCollege_22.png alt=‘Line plot from 16 M to
 11 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -869,7 +914,7 @@ Assets
 $30 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_22.png alt=‘Line plot from 29 M to
+<img src=images/PineManorCollege_23.png alt=‘Line plot from 29 M to
 30 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -877,72 +922,6 @@ $30 M (2021)
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 31%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-20% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/PineManorCollege_23.png alt=‘Line plot from 33 to 20
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 78%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 77%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/PineManorCollege_24.png alt=‘Line plot from 0.0 to
-0.0 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-1.9% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/PineManorCollege_25.png alt=‘Line plot from 0.1 to
-1.9 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-12% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/PineManorCollege_26.png alt=‘Line plot from 5.9 to 12
-from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -984,7 +963,7 @@ Total
 21% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_42.png alt=‘Line plot from 34 to 21
+<img src=images/PineManorCollege_39.png alt=‘Line plot from 34 to 21
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1002,7 +981,7 @@ Men
 20% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_43.png alt=‘Line plot from 0.0 to 20
+<img src=images/PineManorCollege_40.png alt=‘Line plot from 0 to 20
 from 2018 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1020,7 +999,7 @@ Women
 22% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_44.png alt=‘Line plot from 34 to 22
+<img src=images/PineManorCollege_41.png alt=‘Line plot from 34 to 22
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1035,11 +1014,11 @@ from 2010 to 2021’ >
 American Indian or Alaska Native men
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_45.png alt=‘Line plot from 0.0 to
-0.0 from 2020 to 2020’ >
+<img src=images/PineManorCollege_42.png alt=‘Line plot from 0 to 0
+from 2020 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 38%
@@ -1053,11 +1032,11 @@ American Indian or Alaska Native men
 American Indian or Alaska Native women
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_46.png alt=‘Line plot from 100 to
-0.0 from 2012 to 2021’ >
+<img src=images/PineManorCollege_43.png alt=‘Line plot from 100 to 0
+from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 38%
@@ -1071,11 +1050,11 @@ American Indian or Alaska Native women
 Asian men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_47.png alt=‘Line plot from 0.0 to
-0.0 from 2021 to 2021’ >
+<img src=images/PineManorCollege_44.png alt=‘Line plot from 0 to 0
+from 2021 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 25%
@@ -1092,7 +1071,7 @@ Asian women
 33% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_48.png alt=‘Line plot from 57 to 33
+<img src=images/PineManorCollege_45.png alt=‘Line plot from 57 to 33
 from 2011 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1110,7 +1089,7 @@ Black or African American men
 20% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_49.png alt=‘Line plot from 0.0 to 20
+<img src=images/PineManorCollege_46.png alt=‘Line plot from 0 to 20
 from 2018 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1128,7 +1107,7 @@ Black or African American women
 24% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_50.png alt=‘Line plot from 37 to 24
+<img src=images/PineManorCollege_47.png alt=‘Line plot from 37 to 24
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1146,7 +1125,7 @@ Hispanic men
 29% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_51.png alt=‘Line plot from 100 to 29
+<img src=images/PineManorCollege_48.png alt=‘Line plot from 100 to 29
 from 2019 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1164,7 +1143,7 @@ Hispanic women
 5.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_52.png alt=‘Line plot from 47 to 5.6
+<img src=images/PineManorCollege_49.png alt=‘Line plot from 47 to 5.6
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1179,11 +1158,11 @@ from 2011 to 2021’ >
 Native Hawaiian or other Pacific Islander women
 </td>
 <td style="text-align:center;">
-0.0% (2013)
+0% (2013)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_54.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2013’ >
+<img src=images/PineManorCollege_51.png alt=‘Line plot from 0 to 0
+from 2013 to 2013’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 0%
@@ -1197,11 +1176,11 @@ Native Hawaiian or other Pacific Islander women
 White men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_55.png alt=‘Line plot from 0.0 to
-0.0 from 2020 to 2021’ >
+<img src=images/PineManorCollege_52.png alt=‘Line plot from 0 to 0
+from 2020 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 0%
@@ -1218,7 +1197,7 @@ White women
 22% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_56.png alt=‘Line plot from 22 to 22
+<img src=images/PineManorCollege_53.png alt=‘Line plot from 22 to 22
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1233,11 +1212,11 @@ from 2011 to 2021’ >
 Two or more races men
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_57.png alt=‘Line plot from 0.0 to
-0.0 from 2018 to 2021’ >
+<img src=images/PineManorCollege_54.png alt=‘Line plot from 0 to 0
+from 2018 to 2021’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 24%
@@ -1254,7 +1233,7 @@ Two or more races women
 67% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_58.png alt=‘Line plot from 20 to 67
+<img src=images/PineManorCollege_55.png alt=‘Line plot from 20 to 67
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1269,11 +1248,11 @@ from 2011 to 2021’ >
 Nonresident alien men
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_59.png alt=‘Line plot from 0.0 to
-0.0 from 2018 to 2020’ >
+<img src=images/PineManorCollege_56.png alt=‘Line plot from 0 to 0
+from 2018 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪<br />Better (higher) than 0%
@@ -1287,10 +1266,10 @@ Nonresident alien men
 Nonresident alien women
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_60.png alt=‘Line plot from 20 to 0.0
+<img src=images/PineManorCollege_57.png alt=‘Line plot from 20 to 0
 from 2010 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1330,7 +1309,7 @@ Men (percent freshmen)
 28% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_83.png alt=‘Line plot from 0.0 to 28
+<img src=images/PineManorCollege_80.png alt=‘Line plot from 0 to 28
 from 2010 to 2020’ >
 </td>
 </tr>
@@ -1342,7 +1321,7 @@ Women (percent freshmen)
 72% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_84.png alt=‘Line plot from 100 to 72
+<img src=images/PineManorCollege_81.png alt=‘Line plot from 100 to 72
 from 2010 to 2020’ >
 </td>
 </tr>
@@ -1351,11 +1330,11 @@ from 2010 to 2020’ >
 American Indian or Alaska Native men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_85.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2020’ >
+<img src=images/PineManorCollege_82.png alt=‘Line plot from 0 to 0
+from 2010 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1366,8 +1345,8 @@ American Indian or Alaska Native women (percent freshmen)
 5.6% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_86.png alt=‘Line plot from 0.0 to
-5.6 from 2010 to 2020’ >
+<img src=images/PineManorCollege_83.png alt=‘Line plot from 0 to 5.6
+from 2010 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1375,11 +1354,11 @@ American Indian or Alaska Native women (percent freshmen)
 Asian men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_87.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2020’ >
+<img src=images/PineManorCollege_84.png alt=‘Line plot from 0 to 0
+from 2010 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1387,11 +1366,11 @@ Asian men (percent freshmen)
 Asian women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_88.png alt=‘Line plot from 6.4 to
-0.0 from 2010 to 2020’ >
+<img src=images/PineManorCollege_85.png alt=‘Line plot from 6.4 to 0
+from 2010 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1402,7 +1381,7 @@ Black or African American men (percent freshmen)
 11% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_89.png alt=‘Line plot from 0.0 to 11
+<img src=images/PineManorCollege_86.png alt=‘Line plot from 0 to 11
 from 2010 to 2020’ >
 </td>
 </tr>
@@ -1414,7 +1393,7 @@ Black or African American women (percent freshmen)
 17% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_90.png alt=‘Line plot from 39 to 17
+<img src=images/PineManorCollege_87.png alt=‘Line plot from 39 to 17
 from 2010 to 2020’ >
 </td>
 </tr>
@@ -1423,11 +1402,11 @@ from 2010 to 2020’ >
 Hispanic men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_91.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2020’ >
+<img src=images/PineManorCollege_88.png alt=‘Line plot from 0 to 0
+from 2010 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1438,7 +1417,7 @@ Hispanic women (percent freshmen)
 28% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_92.png alt=‘Line plot from 22 to 28
+<img src=images/PineManorCollege_89.png alt=‘Line plot from 22 to 28
 from 2010 to 2020’ >
 </td>
 </tr>
@@ -1447,11 +1426,11 @@ from 2010 to 2020’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_93.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2020’ >
+<img src=images/PineManorCollege_90.png alt=‘Line plot from 0 to 0
+from 2010 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1459,11 +1438,11 @@ Native Hawaiian or Other Pacific Islander men (percent freshmen)
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_94.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2020’ >
+<img src=images/PineManorCollege_91.png alt=‘Line plot from 0 to 0
+from 2010 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1474,7 +1453,7 @@ White men (percent freshmen)
 11% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_95.png alt=‘Line plot from 0.0 to 11
+<img src=images/PineManorCollege_92.png alt=‘Line plot from 0 to 11
 from 2010 to 2020’ >
 </td>
 </tr>
@@ -1483,10 +1462,10 @@ from 2010 to 2020’ >
 White women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_96.png alt=‘Line plot from 11 to 0.0
+<img src=images/PineManorCollege_93.png alt=‘Line plot from 11 to 0
 from 2010 to 2020’ >
 </td>
 </tr>
@@ -1495,11 +1474,11 @@ from 2010 to 2020’ >
 Two or more races men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_97.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2020’ >
+<img src=images/PineManorCollege_94.png alt=‘Line plot from 0 to 0
+from 2010 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1507,10 +1486,10 @@ Two or more races men (percent freshmen)
 Two or more races women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_98.png alt=‘Line plot from 15 to 0.0
+<img src=images/PineManorCollege_95.png alt=‘Line plot from 15 to 0
 from 2010 to 2020’ >
 </td>
 </tr>
@@ -1522,8 +1501,8 @@ Race ethnicity unknown men (percent freshmen)
 5.6% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_99.png alt=‘Line plot from 0.0 to
-5.6 from 2010 to 2020’ >
+<img src=images/PineManorCollege_96.png alt=‘Line plot from 0 to 5.6
+from 2010 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1534,8 +1513,8 @@ Race ethnicity unknown women (percent freshmen)
 22% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_100.png alt=‘Line plot from 3.8 to
-22 from 2010 to 2020’ >
+<img src=images/PineManorCollege_97.png alt=‘Line plot from 3.8 to 22
+from 2010 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1543,11 +1522,11 @@ Race ethnicity unknown women (percent freshmen)
 Nonresident alien men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_101.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2020’ >
+<img src=images/PineManorCollege_98.png alt=‘Line plot from 0 to 0
+from 2010 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1555,11 +1534,66 @@ Nonresident alien men (percent freshmen)
 Nonresident alien women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_102.png alt=‘Line plot from 1.3 to
-0.0 from 2010 to 2020’ >
+<img src=images/PineManorCollege_99.png alt=‘Line plot from 1.3 to 0
+from 2010 to 2020’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Pine Manor College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+83% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/PineManorCollege_101.png alt=‘Line plot from 69 to 83
+from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+94% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/PineManorCollege_102.png alt=‘Line plot from 100 to
+94 from 2010 to 2020’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+5.6% (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/PineManorCollege_103.png alt=‘Line plot from 0 to 5.6
+from 2010 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1600,7 +1634,7 @@ Total (tenure-track count)
 17 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_61.png alt=‘Line plot from 14 to 17
+<img src=images/PineManorCollege_58.png alt=‘Line plot from 14 to 17
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1615,7 +1649,7 @@ Women (tenure-track count)
 13 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_62.png alt=‘Line plot from 10 to 13
+<img src=images/PineManorCollege_59.png alt=‘Line plot from 10 to 13
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1627,11 +1661,11 @@ from 2013 to 2020’ >
 Men (tenure-track count)
 </td>
 <td style="text-align:center;">
-4.0 (2020)
+4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_63.png alt=‘Line plot from 4.0 to
-4.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_60.png alt=‘Line plot from 4 to 4
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1641,11 +1675,11 @@ Men (tenure-track count)
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_64.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_61.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1655,11 +1689,11 @@ American Indian or Alaska Native (tenure-track count)
 Asian (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_65.png alt=‘Line plot from 2.0 to
-1.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_62.png alt=‘Line plot from 2 to 1
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1669,11 +1703,11 @@ Asian (tenure-track count)
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_66.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_63.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1683,11 +1717,11 @@ Black or African American (tenure-track count)
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_67.png alt=‘Line plot from 0.0 to
-2.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_64.png alt=‘Line plot from 0 to 2
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1697,11 +1731,11 @@ Hispanic or Latino (tenure-track count)
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_68.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_65.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1714,7 +1748,7 @@ White (tenure-track count)
 13 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_69.png alt=‘Line plot from 12 to 13
+<img src=images/PineManorCollege_66.png alt=‘Line plot from 12 to 13
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1725,11 +1759,11 @@ from 2013 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_70.png alt=‘Line plot from 0.0 to
-1.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_67.png alt=‘Line plot from 0 to 1
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1740,11 +1774,11 @@ Two or more races (tenure-track count)
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_71.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_68.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1782,11 +1816,11 @@ Change over ≤ 11 years
 Total (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_72.png alt=‘Line plot from 6.0 to
-5.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_69.png alt=‘Line plot from 6 to 5
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1794,11 +1828,11 @@ Total (non-tenure-track count)
 Women (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_73.png alt=‘Line plot from 6.0 to
-5.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_70.png alt=‘Line plot from 6 to 5
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1806,11 +1840,11 @@ Women (non-tenure-track count)
 Men (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_74.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_71.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1818,11 +1852,11 @@ Men (non-tenure-track count)
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_75.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_72.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1830,11 +1864,11 @@ American Indian or Alaska Native (non-tenure-track count)
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_76.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_73.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1842,11 +1876,11 @@ Asian (non-tenure-track count)
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_77.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_74.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1854,11 +1888,11 @@ Black or African American (non-tenure-track count)
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_78.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_75.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1866,11 +1900,11 @@ Hispanic or Latino (non-tenure-track count)
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_79.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_76.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1878,11 +1912,11 @@ Native Hawaiian or other Pacific Islander (non-tenure-track count)
 White (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_80.png alt=‘Line plot from 6.0 to
-5.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_77.png alt=‘Line plot from 6 to 5
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1890,11 +1924,11 @@ White (non-tenure-track count)
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_81.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_78.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 <tr>
@@ -1902,11 +1936,11 @@ Two or more races (non-tenure-track count)
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_82.png alt=‘Line plot from 0.0 to
-0.0 from 2013 to 2020’ >
+<img src=images/PineManorCollege_79.png alt=‘Line plot from 0 to 0
+from 2013 to 2020’ >
 </td>
 </tr>
 </tbody>
@@ -1942,7 +1976,7 @@ Number of physical books
 53,471 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_27.png alt=‘Line plot from 56,588 to
+<img src=images/PineManorCollege_24.png alt=‘Line plot from 56,588 to
 53,471 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1960,7 +1994,7 @@ Physical library circulations per students and faculty
 9.8 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_28.png alt=‘Line plot from 5.1 to
+<img src=images/PineManorCollege_25.png alt=‘Line plot from 5.1 to
 9.8 from 2015 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1978,7 +2012,7 @@ Digital library circulations per students and faculty
 46 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_29.png alt=‘Line plot from 0.1 to 46
+<img src=images/PineManorCollege_26.png alt=‘Line plot from 0.1 to 46
 from 2015 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -2015,7 +2049,7 @@ Applicants submitting SAT
 38% (2015)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_30.png alt=‘Line plot from 60 to 38
+<img src=images/PineManorCollege_27.png alt=‘Line plot from 60 to 38
 from 2014 to 2015’ >
 </td>
 </tr>
@@ -2027,7 +2061,7 @@ SAT Math 25th percentile score
 340 (2015)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_33.png alt=‘Line plot from 340 to
+<img src=images/PineManorCollege_30.png alt=‘Line plot from 340 to
 340 from 2014 to 2015’ >
 </td>
 </tr>
@@ -2039,7 +2073,7 @@ SAT Math 75th percentile score
 440 (2015)
 </td>
 <td style="text-align:center;">
-<img src=images/PineManorCollege_34.png alt=‘Line plot from 450 to
+<img src=images/PineManorCollege_31.png alt=‘Line plot from 450 to
 440 from 2014 to 2015’ >
 </td>
 </tr>
@@ -2053,28 +2087,28 @@ SAT Math 75th percentile score
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f95734f73e0ebfd8bf98" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f95734f73e0ebfd8bf98">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_PoliticalScienceandGovernment_Other.html\">Political Science and Government, Other</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Bachelors_Communication_General.html\">Communication, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_FineArtsandArtStudies_Other.html\">Fine Arts and Art Studies, Other</a>","<a href=\"majors_Bachelors_CommunityHealthServices_Liaison_Counseling.html\">Community Health Services/Liaison/Counseling</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>"],[12,9,7,5,4,3,3,3,1],[25.532,19.149,14.894,10.638,8.511,6.383,6.383,6.383,2.128],[1.558,0.006,0.006,0.036,0.04,0.004,0.792,0.199,0.003],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-71f2a9457848c92c7ec9" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-71f2a9457848c92c7ec9">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_PoliticalScienceandGovernment_Other.html\">Political Science and Government, Other</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_EarlyChildhoodEducationandTeaching.html\">Early Childhood Education and Teaching</a>","<a href=\"majors_Bachelors_Communication_General.html\">Communication, General</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_FineArtsandArtStudies_Other.html\">Fine Arts and Art Studies, Other</a>","<a href=\"majors_Bachelors_CommunityHealthServices_Liaison_Counseling.html\">Community Health Services/Liaison/Counseling</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>"],[12,9,7,5,4,3,3,3,1],[25.532,19.149,14.894,10.638,8.511,6.383,6.383,6.383,2.128],[1.558,0.006,0.006,0.036,0.04,0.004,0.792,0.199,0.003],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6963de2a3ef51699615d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6963de2a3ef51699615d">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_FineArtsandArtStudies_Other.html\">Fine Arts and Art Studies, Other</a>"],[9],[100],[5.488],["Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e17e918692ba6ef51946" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e17e918692ba6ef51946">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_FineArtsandArtStudies_Other.html\">Fine Arts and Art Studies, Other</a>"],[9],[100],[5.488],["Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b36246cf73841c2eefc6" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b36246cf73841c2eefc6">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-35feb08e530e6145a92a" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-35feb08e530e6145a92a">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5f969b1b2aab8e2e654f" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-5f969b1b2aab8e2e654f">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_College_Postsecondary_UniversityTeaching.html\">College/Postsecondary/University Teaching</a>"],[3],[100],[2.885],["Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-22f42feaf42a00d2a122" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-22f42feaf42a00d2a122">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_College_Postsecondary_UniversityTeaching.html\">College/Postsecondary/University Teaching</a>"],[3],[100],[2.885],["Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4d7b17c1bf93bab30299" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-4d7b17c1bf93bab30299">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_LiberalArtsandSciences_GeneralStudiesandHumanities_Other.html\">Liberal Arts and Sciences, General Studies and Humanities, Other</a>","<a href=\"majors_Associates_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Associates_CriminalJusticeandCorrections_General.html\">Criminal Justice and Corrections, General</a>","<a href=\"majors_Associates_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Associates_Psychology_Other.html\">Psychology, Other</a>"],[8,5,2,1,1],[47.059,29.412,11.765,5.882,5.882],[0.043,0.008,0.813,0.012,2.941],["Associates","Associates","Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3dc402f9bbba6545b8d6" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3dc402f9bbba6545b8d6">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_LiberalArtsandSciences_GeneralStudiesandHumanities_Other.html\">Liberal Arts and Sciences, General Studies and Humanities, Other</a>","<a href=\"majors_Associates_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Associates_CriminalJusticeandCorrections_General.html\">Criminal Justice and Corrections, General</a>","<a href=\"majors_Associates_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Associates_Psychology_Other.html\">Psychology, Other</a>"],[8,5,2,1,1],[47.059,29.412,11.765,5.882,5.882],[0.043,0.008,0.813,0.012,2.941],["Associates","Associates","Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

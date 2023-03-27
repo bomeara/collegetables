@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -178,10 +178,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -194,6 +194,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -251,10 +253,20 @@ Other-dominant, with Arts &amp; Sciences</p></li>
 <li><p><strong>Enrollment profile</strong>: Very high undergraduate (see
 more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 36,537 (2.6 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $36,537 (2.3 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $32,930.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://rwu.studentaidcalculator.com/survey.aspx'>here</a> to
+see what your family may be asked to pay. It can be MUCH lower than the
+average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, medium, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 14.7% of first year
+students come from Rhode Island</p></li>
+<li><p><strong>In US percentage</strong>: 99.7% of first year students
+come from the US (note that 0.0% have no residence reported)</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 70.3% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -295,9 +307,11 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Some
+restrictions/protections (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: B (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -310,17 +324,29 @@ marriage</strong>: 100% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Low risk (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Northeastern coastal
 forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/26137/Average-Weather-in-Bristol-Rhode-Island-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-85b42249cb89c9408493" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-85b42249cb89c9408493">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[41.650214,-71.260374,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[41.650214,-71.260374],16,[]],"limits":{"lat":[41.650214,41.650214],"lng":[-71.260374,-71.260374]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b4d4e1e5beba1401bbed" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-b4d4e1e5beba1401bbed">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"217518.html\">Roger Williams University</a>","<a href=\"217536.html\">Salve Regina University</a>","<a href=\"168254.html\">Western New England University</a>","<a href=\"161457.html\">University of New England</a>","<a href=\"165936.html\">Gordon College</a>","<a href=\"168005.html\">Suffolk University</a>","<a href=\"168227.html\">Wentworth Institute of Technology</a>","<a href=\"165699.html\">Endicott College</a>","<a href=\"167260.html\">Nichols College</a>","<a href=\"163046.html\">Loyola University Maryland</a>","<a href=\"236328.html\">University of Puget Sound</a>","<a href=\"209825.html\">University of Portland</a>","<a href=\"231059.html\">Saint Michael's College</a>","<a href=\"236230.html\">Pacific Lutheran University</a>","<a href=\"209612.html\">Pacific University</a>","<a href=\"152600.html\">Valparaiso University</a>","<a href=\"143048.html\">School of the Art Institute of Chicago</a>","<a href=\"214713.html\">Pennsylvania State University-Penn State Harrisburg</a>","<a href=\"238476.html\">Carthage College</a>","<a href=\"217864.html\">Citadel Military College of South Carolina</a>","<a href=\"215770.html\">Saint Joseph's University</a>","<a href=\"183239.html\">Saint Anselm College</a>","<a href=\"230995.html\">Norwich University</a>","<a href=\"149781.html\">Wheaton College</a>","<a href=\"129525.html\">University of Hartford</a>","<a href=\"217165.html\">Bryant University</a>","<a href=\"185572.html\">Monmouth University</a>","<a href=\"183062.html\">Keene State College</a>","<a href=\"198695.html\">High Point University</a>","<a href=\"213987.html\">Mercyhurst University</a>","<a href=\"193292.html\">Molloy College</a>","<a href=\"168281.html\">Wheaton College (Massachusetts)</a>","<a href=\"186283.html\">Rider University</a>","<a href=\"209056.html\">Lewis &amp; Clark College</a>","<a href=\"203368.html\">John Carroll University</a>","<a href=\"131283.html\">The Catholic University of America</a>","<a href=\"234155.html\">Virginia State University</a>","<a href=\"153366.html\">Graceland University-Lamoni</a>","<a href=\"168430.html\">Worcester State University</a>","<a href=\"181215.html\">University of Nebraska at Kearney</a>","<a href=\"194578.html\">Pratt Institute-Main</a>","<a href=\"133492.html\">Eckerd College</a>","<a href=\"152390.html\">Saint Mary's College</a>","<a href=\"240471.html\">University of Wisconsin-River Falls</a>","<a href=\"196158.html\">SUNY at Fredonia</a>","<a href=\"201195.html\">Baldwin Wallace University</a>","<a href=\"168740.html\">Andrews University</a>","<a href=\"154712.html\">Benedictine College</a>","<a href=\"150455.html\">Earlham College</a>","<a href=\"166850.html\">Merrimack College</a>","<a href=\"197197.html\">Wagner College</a>","<a href=\"159656.html\">Loyola University New Orleans</a>","<a href=\"154235.html\">Saint Ambrose University</a>","<a href=\"210429.html\">Western Oregon University</a>","<a href=\"214157.html\">Moravian University</a>","<a href=\"195474.html\">Siena College</a>","<a href=\"233426.html\">Roanoke College</a>","<a href=\"153825.html\">Loras College</a>","<a href=\"217059.html\">York College of Pennsylvania</a>","<a href=\"195164.html\">St Bonaventure University</a>","<a href=\"210401.html\">Willamette University</a>","<a href=\"214069.html\">Misericordia University</a>","<a href=\"207582.html\">Oral Roberts University</a>","<a href=\"236577.html\">Seattle Pacific University</a>","<a href=\"238333.html\">Beloit College</a>","<a href=\"151263.html\">University of Indianapolis</a>","<a href=\"164562.html\">Assumption University</a>","<a href=\"227845.html\">Saint Edward's University</a>","<a href=\"215929.html\">University of Scranton</a>","<a href=\"150534.html\">University of Evansville</a>","<a href=\"163462.html\">Mount St. Mary's University</a>","<a href=\"153162.html\">Cornell College</a>","<a href=\"215442.html\">Point Park University</a>","<a href=\"206622.html\">Xavier University</a>","<a href=\"407009.html\">Arizona State University-West</a>","<a href=\"153834.html\">Luther College</a>","<a href=\"237066.html\">Whitworth University</a>","<a href=\"212115.html\">East Stroudsburg University of Pennsylvania</a>","<a href=\"174358.html\">Minnesota State University Moorhead</a>","<a href=\"129941.html\">University of New Haven</a>","<a href=\"216852.html\">Widener University</a>","<a href=\"156286.html\">Bellarmine University</a>","<a href=\"138947.html\">Clark Atlanta University</a>","<a href=\"213367.html\">La Salle University</a>","<a href=\"184348.html\">Drew University</a>","<a href=\"212601.html\">Gannon University</a>","<a href=\"175856.html\">Jackson State University</a>","<a href=\"216524.html\">Ursinus College</a>","<a href=\"215655.html\">Robert Morris University</a>","<a href=\"199999.html\">Winston-Salem State University</a>","<a href=\"130934.html\">Delaware State University</a>","<a href=\"190044.html\">Clarkson University</a>","<a href=\"232566.html\">Longwood University</a>","<a href=\"240417.html\">University of Wisconsin-Stout</a>","<a href=\"201654.html\">Cedarville University</a>","<a href=\"170301.html\">Hope College</a>","<a href=\"210669.html\">Allegheny College</a>","<a href=\"180106.html\">Carroll College</a>","<a href=\"199412.html\">Queens University of Charlotte</a>","<a href=\"150941.html\">Huntington University</a>"],[91,73,90,90,77,88,90,77,85,84,88,81,86,88,91,93,81,88,76,86,83,78,87,86,79,74,84,88,80,82,79,82,82,79,88,86,96,67,89,90,68,70,83,86,91,79,82,98,69,80,82,78,72,92,78,83,80,72,78,78,80,89,85,92,67,78,86,92,80,75,82,81,82,84,82,76,91,93,72,94,85,86,58,81,80,84,62,83,94,81,59,75,90,91,62,92,75,84,69,79],[14,15,14,14,28,15,19,21,17,12,9,9,16,18,18,11,14,25,12,27,15,15,23,32,9,13,14,18,16,19,13,16,9,15,17,14,10,13,25,17,21,17,19,30,19,22,28,23,15,12,16,16,17,21,21,15,12,20,17,19,9,19,23,14,13,13,12,13,12,12,14,16,12,9,29,23,15,24,27,13,13,16,12,10,13,16,16,14,14,21,36,14,13,30,30,21,12,22,12,29],[70,73,63,66,72,60,72,78,58,81,74,81,78,69,71,74,65,63,68,73,83,77,62,88,61,84,69,60,70,66,70,73,61,74,76,74,48,47,61,57,71,68,74,57,62,66,73,63,73,69,72,62,64,48,68,77,70,68,66,71,72,71,59,66,73,63,72,66,79,69,61,64,61,75,48,73,75,49,57,66,68,65,42,60,74,65,39,72,65,46,47,76,65,56,73,81,75,67,64,69],[54,51,59,69,39,58,54,50,47,45,28,39,44,49,69,25,null,null,36,34,48,28,24,19,45,48,64,32,51,47,81,24,58,41,34,33,11,31,36,27,86,51,17,31,15,36,39,41,6,61,55,44,39,26,45,42,32,36,36,37,30,59,37,48,28,50,58,59,48,35,54,25,67,50,null,26,37,40,31,57,73,62,39,62,45,59,21,31,56,12,22,35,22,29,54,30,19,31,33,41],[20,23,15,19,26,17,null,null,61,17,10,18,16,15,9,13,17,27,21,14,17,16,23,11,16,28,19,19,21,26,15,15,18,12,17,11,19,17,20,15,18,14,12,27,20,15,7,21,11,26,21,19,14,22,14,18,14,13,25,15,8,16,20,16,14,18,18,19,15,13,19,14,19,19,27,14,22,22,20,32,13,17,22,18,15,16,20,15,18,21,22,16,15,22,25,17,12,15,17,15],[32930,27108,24081,29941,24488,29224,32080,26371,28285,30197,24158,32449,25433,15500,21500,19717,41804,null,24485,14807,23891,23615,17841,18519,24990,36373,22413,14421,33503,23656,22975,19297,22338,21141,18160,27863,14577,16406,10132,14058,41609,26620,13997,10031,12874,19525,17509,23180,15864,27079,24365,17011,23031,14616,22402,22678,20849,19374,18893,15848,24635,21800,15627,20918,16197,14716,24748,20290,23167,19897,26934,17628,18043,29359,null,20153,17191,15427,12716,31290,31220,19455,34229,21539,17287,18377,15698,27127,22862,12455,10571,21402,14351,11699,18961,18994,18748,19380,22706,19251],[3765,2069,2522,2209,1300,4043,3658,2799,1111,3735,1835,3483,1395,2279,1624,2472,2515,3915,2563,2512,3859,1940,2429,2202,3681,3038,3908,2877,4854,2404,2657,1700,3005,2097,2591,2805,3665,877,3575,3781,3785,1981,1368,4313,3449,2687,1198,2060,657,3924,1514,3090,2121,3049,1802,3394,1817,1185,3171,1724,1200,1417,2752,2513,978,3707,1879,2670,3349,1520,1911,1038,2339,4879,4076,1717,2253,3844,3134,4718,2540,2291,3224,2304,1589,2627,4046,1530,2788,3961,3766,2796,3010,5383,3597,2966,1528,1067,1347,895],[225,197,475,2454,164,1345,121,296,64,401,249,130,43,228,1811,305,672,231,49,185,442,23,656,228,684,197,720,23,887,274,290,null,301,949,267,887,246,225,160,318,1298,null,63,147,129,353,616,67,40,724,127,722,479,225,230,84,null,81,74,219,521,247,555,327,null,706,177,177,496,275,273,6,151,505,219,null,152,252,206,1742,1754,326,461,270,283,1037,870,null,0,361,705,640,264,238,242,null,null,22,124,208],["Rhode Island","Rhode Island","Massachusetts","Maine","Massachusetts","Massachusetts","Massachusetts","Massachusetts","Massachusetts","Maryland","Washington","Oregon","Vermont","Washington","Oregon","Indiana","Illinois","Pennsylvania","Wisconsin","South Carolina","Pennsylvania","New Hampshire","Vermont","Illinois","Connecticut","Rhode Island","New Jersey","New Hampshire","North Carolina","Pennsylvania","New York","Massachusetts","New Jersey","Oregon","Ohio","District of Columbia","Virginia","Iowa","Massachusetts","Nebraska","New York","Florida","Indiana","Wisconsin","New York","Ohio","Michigan","Kansas","Indiana","Massachusetts","New York","Louisiana","Iowa","Oregon","Pennsylvania","New York","Virginia","Iowa","Pennsylvania","New York","Oregon","Pennsylvania","Oklahoma","Washington","Wisconsin","Indiana","Massachusetts","Texas","Pennsylvania","Indiana","Maryland","Iowa","Pennsylvania","Ohio","Arizona","Iowa","Washington","Pennsylvania","Minnesota","Connecticut","Pennsylvania","Kentucky","Georgia","Pennsylvania","New Jersey","Pennsylvania","Mississippi","Pennsylvania","Pennsylvania","North Carolina","Delaware","New York","Virginia","Wisconsin","Ohio","Michigan","Pennsylvania","Montana","North Carolina","Indiana"],["Approximately stable","Increasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Increasing","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Increasing","Approximately stable","Increasing","Decreasing","Increasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable","Increasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Increasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Decreasing","Increasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Decreasing","Increasing","Approximately stable","Approximately stable","Increasing","Increasing","Decreasing","Approximately stable","Decreasing","Decreasing","Increasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Increasing","Decreasing","Decreasing","Approximately stable","Decreasing","Increasing","Approximately stable","Decreasing","Decreasing","Increasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a891bbca1f3849021cb3" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-a891bbca1f3849021cb3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[41.650214,-71.260374,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[41.650214,-71.260374],16,[]],"limits":{"lat":[41.650214,41.650214],"lng":[-71.260374,-71.260374]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -609,7 +635,7 @@ Master’s Colleges &amp; Universities: Medium Programs
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
+Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 20 (2020)
@@ -619,15 +645,15 @@ Undergrads per instructor
 to 20 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
-✪✪✪<br />Better (lower) than 50%
+✪✪✪✪<br />Better (lower) than 75%
 </td>
 <td style="text-align:center;">
-✪✪<br />Better (lower) than 21%
+✪✪✪<br />Better (lower) than 49%
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Undergrads per tenure track instructor
+Undergrads per instructor
 </td>
 <td style="text-align:center;">
 20 (2020)
@@ -637,10 +663,10 @@ Undergrads per tenure track instructor
 to 20 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 75%
+✪✪✪<br />Better (lower) than 50%
 </td>
 <td style="text-align:center;">
-✪✪✪<br />Better (lower) than 49%
+✪✪<br />Better (lower) than 21%
 </td>
 </tr>
 <tr>
@@ -661,14 +687,14 @@ Total instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+187 (2020)
 </td>
 <td style="text-align:center;">
 <img src=images/RogerWilliamsUniversity_17.png alt=‘Line plot from
-6.0 to 5.0 from 2013 to 2020’ >
+200 to 187 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -677,14 +703,14 @@ Non-tenure track instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-187 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_18.png alt=‘Line plot from
-200 to 187 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_18.png alt=‘Line plot from 6
+to 5 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -737,8 +763,8 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 14% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_103.png alt=‘Line plot from
-3.0 to 14 from 2010 to 2021’ >
+<img src=images/RogerWilliamsUniversity_100.png alt=‘Line plot from 3
+to 14 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -773,13 +799,33 @@ Master’s Colleges &amp; Universities: Medium Programs
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+54% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/RogerWilliamsUniversity_19.png alt=‘Line plot from 60
+to 54 from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 42%
+</td>
+<td style="text-align:center;">
+✪✪<br />Better (lower) than 25%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $17 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_19.png alt=‘Line plot from 12
+<img src=images/RogerWilliamsUniversity_20.png alt=‘Line plot from 12
 M to 17 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -799,7 +845,7 @@ Revenue
 $166 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_20.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_21.png alt=‘Line plot from
 143 M to 166 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -817,7 +863,7 @@ Expenses
 $149 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_21.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_22.png alt=‘Line plot from
 131 M to 149 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -836,7 +882,7 @@ Assets
 $299 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_22.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_23.png alt=‘Line plot from
 289 M to 299 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -846,80 +892,6 @@ $299 M (2021)
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 85%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-54% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_23.png alt=‘Line plot from 60
-to 54 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 42%
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 25%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_24.png alt=‘Line plot from
-0.0 to 0.0 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-3.7% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_25.png alt=‘Line plot from
-2.6 to 3.7 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-4.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_26.png alt=‘Line plot from
-2.6 to 4.0 from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -961,7 +933,7 @@ Total
 70% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_42.png alt=‘Line plot from 62
+<img src=images/RogerWilliamsUniversity_39.png alt=‘Line plot from 62
 to 70 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -979,7 +951,7 @@ Men
 66% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_43.png alt=‘Line plot from 59
+<img src=images/RogerWilliamsUniversity_40.png alt=‘Line plot from 59
 to 66 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -997,7 +969,7 @@ Women
 74% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_44.png alt=‘Line plot from 64
+<img src=images/RogerWilliamsUniversity_41.png alt=‘Line plot from 64
 to 74 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1012,11 +984,11 @@ to 74 from 2010 to 2021’ >
 American Indian or Alaska Native men
 </td>
 <td style="text-align:center;">
-0.0% (2020)
+0% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_45.png alt=‘Line plot from
-0.0 to 0.0 from 2012 to 2020’ >
+<img src=images/RogerWilliamsUniversity_42.png alt=‘Line plot from 0
+to 0 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 33%
@@ -1033,7 +1005,7 @@ American Indian or Alaska Native women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_46.png alt=‘Line plot from 50
+<img src=images/RogerWilliamsUniversity_43.png alt=‘Line plot from 50
 to 100 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1051,7 +1023,7 @@ Asian men
 33% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_47.png alt=‘Line plot from 40
+<img src=images/RogerWilliamsUniversity_44.png alt=‘Line plot from 40
 to 33 from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1069,7 +1041,7 @@ Asian women
 83% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_48.png alt=‘Line plot from 86
+<img src=images/RogerWilliamsUniversity_45.png alt=‘Line plot from 86
 to 83 from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1087,7 +1059,7 @@ Black or African American men
 80% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_49.png alt=‘Line plot from 75
+<img src=images/RogerWilliamsUniversity_46.png alt=‘Line plot from 75
 to 80 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1105,7 +1077,7 @@ Black or African American women
 60% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_50.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_47.png alt=‘Line plot from
 100 to 60 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1123,7 +1095,7 @@ Hispanic men
 45% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_51.png alt=‘Line plot from 67
+<img src=images/RogerWilliamsUniversity_48.png alt=‘Line plot from 67
 to 45 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1141,7 +1113,7 @@ Hispanic women
 70% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_52.png alt=‘Line plot from 64
+<img src=images/RogerWilliamsUniversity_49.png alt=‘Line plot from 64
 to 70 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1159,7 +1131,7 @@ White men
 69% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_55.png alt=‘Line plot from 60
+<img src=images/RogerWilliamsUniversity_52.png alt=‘Line plot from 60
 to 69 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1177,7 +1149,7 @@ White women
 73% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_56.png alt=‘Line plot from 60
+<img src=images/RogerWilliamsUniversity_53.png alt=‘Line plot from 60
 to 73 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1195,7 +1167,7 @@ Two or more races men
 83% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_57.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_54.png alt=‘Line plot from
 100 to 83 from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1213,7 +1185,7 @@ Two or more races women
 64% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_58.png alt=‘Line plot from 44
+<img src=images/RogerWilliamsUniversity_55.png alt=‘Line plot from 44
 to 64 from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1231,7 +1203,7 @@ Nonresident alien men
 40% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_59.png alt=‘Line plot from 38
+<img src=images/RogerWilliamsUniversity_56.png alt=‘Line plot from 38
 to 40 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1249,7 +1221,7 @@ Nonresident alien women
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_60.png alt=‘Line plot from 25
+<img src=images/RogerWilliamsUniversity_57.png alt=‘Line plot from 25
 to 100 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1289,7 +1261,7 @@ Men (percent freshmen)
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_83.png alt=‘Line plot from 52
+<img src=images/RogerWilliamsUniversity_80.png alt=‘Line plot from 52
 to 50 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1301,7 +1273,7 @@ Women (percent freshmen)
 50% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_84.png alt=‘Line plot from 48
+<img src=images/RogerWilliamsUniversity_81.png alt=‘Line plot from 48
 to 50 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1313,7 +1285,7 @@ American Indian or Alaska Native men (percent freshmen)
 0.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_85.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_82.png alt=‘Line plot from
 0.4 to 0.1 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1325,7 +1297,7 @@ American Indian or Alaska Native women (percent freshmen)
 0.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_86.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_83.png alt=‘Line plot from
 0.6 to 0.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1337,7 +1309,7 @@ Asian men (percent freshmen)
 0.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_87.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_84.png alt=‘Line plot from
 2.5 to 0.7 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1349,7 +1321,7 @@ Asian women (percent freshmen)
 1.4% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_88.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_85.png alt=‘Line plot from
 1.4 to 1.4 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1361,7 +1333,7 @@ Black or African American men (percent freshmen)
 0.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_89.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_86.png alt=‘Line plot from
 1.0 to 0.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1373,7 +1345,7 @@ Black or African American women (percent freshmen)
 1.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_90.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_87.png alt=‘Line plot from
 1.6 to 1.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1385,7 +1357,7 @@ Hispanic men (percent freshmen)
 3.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_91.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_88.png alt=‘Line plot from
 3.1 to 3.1 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1397,7 +1369,7 @@ Hispanic women (percent freshmen)
 4.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_92.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_89.png alt=‘Line plot from
 2.7 to 4.5 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1406,11 +1378,11 @@ Hispanic women (percent freshmen)
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_93.png alt=‘Line plot from
-0.1 to 0.0 from 2010 to 2021’ >
+<img src=images/RogerWilliamsUniversity_90.png alt=‘Line plot from
+0.1 to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1418,11 +1390,11 @@ Native Hawaiian or Other Pacific Islander men (percent freshmen)
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_94.png alt=‘Line plot from
-0.0 to 0.0 from 2010 to 2021’ >
+<img src=images/RogerWilliamsUniversity_91.png alt=‘Line plot from 0
+to 0 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1433,7 +1405,7 @@ White men (percent freshmen)
 41% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_95.png alt=‘Line plot from 40
+<img src=images/RogerWilliamsUniversity_92.png alt=‘Line plot from 40
 to 41 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1445,7 +1417,7 @@ White women (percent freshmen)
 39% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_96.png alt=‘Line plot from 37
+<img src=images/RogerWilliamsUniversity_93.png alt=‘Line plot from 37
 to 39 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1457,8 +1429,8 @@ Two or more races men (percent freshmen)
 1.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_97.png alt=‘Line plot from
-0.0 to 1.3 from 2010 to 2021’ >
+<img src=images/RogerWilliamsUniversity_94.png alt=‘Line plot from 0
+to 1.3 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1469,8 +1441,8 @@ Two or more races women (percent freshmen)
 2.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_98.png alt=‘Line plot from
-0.0 to 2.1 from 2010 to 2021’ >
+<img src=images/RogerWilliamsUniversity_95.png alt=‘Line plot from 0
+to 2.1 from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1481,7 +1453,7 @@ Race ethnicity unknown men (percent freshmen)
 1.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_99.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_96.png alt=‘Line plot from
 1.1 to 1.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1493,7 +1465,7 @@ Race ethnicity unknown women (percent freshmen)
 1.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_100.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_97.png alt=‘Line plot from
 2.8 to 1.5 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1505,7 +1477,7 @@ Nonresident alien men (percent freshmen)
 0.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_101.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_98.png alt=‘Line plot from
 4.1 to 0.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1517,8 +1489,63 @@ Nonresident alien women (percent freshmen)
 0.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_102.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_99.png alt=‘Line plot from
 2.0 to 0.1 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Roger Williams University
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+15% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/RogerWilliamsUniversity_101.png alt=‘Line plot from 8
+to 15 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+100% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/RogerWilliamsUniversity_102.png alt=‘Line plot from
+96 to 100 from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/RogerWilliamsUniversity_103.png alt=‘Line plot from 0
+to 0 from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1559,7 +1586,7 @@ Total (tenure-track count)
 187 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_61.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_58.png alt=‘Line plot from
 200 to 187 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1573,7 +1600,7 @@ Women (tenure-track count)
 84 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_62.png alt=‘Line plot from 84
+<img src=images/RogerWilliamsUniversity_59.png alt=‘Line plot from 84
 to 84 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1587,7 +1614,7 @@ Men (tenure-track count)
 103 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_63.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_60.png alt=‘Line plot from
 116 to 103 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1599,11 +1626,11 @@ Men (tenure-track count)
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_64.png alt=‘Line plot from
-2.0 to 2.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_61.png alt=‘Line plot from 2
+to 2 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1616,7 +1643,7 @@ Asian (tenure-track count)
 12 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_65.png alt=‘Line plot from 10
+<img src=images/RogerWilliamsUniversity_62.png alt=‘Line plot from 10
 to 12 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1627,11 +1654,11 @@ to 12 from 2013 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-7.0 (2020)
+7 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_66.png alt=‘Line plot from
-6.0 to 7.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_63.png alt=‘Line plot from 6
+to 7 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1645,8 +1672,8 @@ Hispanic or Latino (tenure-track count)
 11 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_67.png alt=‘Line plot from
-5.0 to 11 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_64.png alt=‘Line plot from 5
+to 11 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.9 per year
@@ -1657,11 +1684,11 @@ Hispanic or Latino (tenure-track count)
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_68.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_65.png alt=‘Line plot from 0
+to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1674,7 +1701,7 @@ White (tenure-track count)
 144 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_69.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_66.png alt=‘Line plot from
 174 to 144 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1686,11 +1713,11 @@ White (tenure-track count)
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_70.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_67.png alt=‘Line plot from 0
+to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1700,11 +1727,11 @@ Two or more races (tenure-track count)
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-6.0 (2020)
+6 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_71.png alt=‘Line plot from
-0.0 to 6.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_68.png alt=‘Line plot from 0
+to 6 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />1.0 per year
@@ -1746,11 +1773,11 @@ Trend
 Total (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_72.png alt=‘Line plot from
-6.0 to 5.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_69.png alt=‘Line plot from 6
+to 5 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1760,11 +1787,11 @@ Total (non-tenure-track count)
 Women (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_73.png alt=‘Line plot from
-2.0 to 5.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_70.png alt=‘Line plot from 2
+to 5 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.5 per year
@@ -1775,11 +1802,11 @@ Women (non-tenure-track count)
 Men (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_74.png alt=‘Line plot from
-4.0 to 0.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_71.png alt=‘Line plot from 4
+to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1789,11 +1816,11 @@ Men (non-tenure-track count)
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_75.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_72.png alt=‘Line plot from 0
+to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1803,11 +1830,11 @@ American Indian or Alaska Native (non-tenure-track count)
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_76.png alt=‘Line plot from
-1.0 to 0.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_73.png alt=‘Line plot from 1
+to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1817,11 +1844,11 @@ Asian (non-tenure-track count)
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_77.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_74.png alt=‘Line plot from 0
+to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1831,11 +1858,11 @@ Black or African American (non-tenure-track count)
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_78.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_75.png alt=‘Line plot from 0
+to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1845,11 +1872,11 @@ Hispanic or Latino (non-tenure-track count)
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_79.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_76.png alt=‘Line plot from 0
+to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1859,11 +1886,11 @@ Native Hawaiian or other Pacific Islander (non-tenure-track count)
 White (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_80.png alt=‘Line plot from
-5.0 to 3.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_77.png alt=‘Line plot from 5
+to 3 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1873,11 +1900,11 @@ White (non-tenure-track count)
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_81.png alt=‘Line plot from
-0.0 to 0.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_78.png alt=‘Line plot from 0
+to 0 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1887,11 +1914,11 @@ Two or more races (non-tenure-track count)
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_82.png alt=‘Line plot from
-0.0 to 1.0 from 2013 to 2020’ >
+<img src=images/RogerWilliamsUniversity_79.png alt=‘Line plot from 0
+to 1 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1932,7 +1959,7 @@ Number of physical books
 186,844 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_27.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_24.png alt=‘Line plot from
 236,722 to 186,844 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1953,7 +1980,7 @@ Physical library circulations per students and faculty
 1.3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_28.png alt=‘Line plot from
+<img src=images/RogerWilliamsUniversity_25.png alt=‘Line plot from
 4.6 to 1.3 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1974,7 +2001,7 @@ Digital library circulations per students and faculty
 8.2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RogerWilliamsUniversity_29.png alt=‘Line plot from 13
+<img src=images/RogerWilliamsUniversity_26.png alt=‘Line plot from 13
 to 8.2 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1999,28 +2026,28 @@ to 8.2 from 2014 to 2020’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-00e6c3e5b06fceea5f60" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-00e6c3e5b06fceea5f60">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Bachelors_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Bachelors_Architecture.html\">Architecture</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_FinancialPlanningandServices.html\">Financial Planning and Services</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_ConstructionManagement_General.html\">Construction Management, General</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_MarineBiologyandBiologicalOceanography.html\">Marine Biology and Biological Oceanography</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_CommunicationandMediaStudies_Other.html\">Communication and Media Studies, Other</a>","<a href=\"majors_Bachelors_LegalProfessionsandStudies_Other.html\">Legal Professions and Studies, Other</a>","<a href=\"majors_Bachelors_PublicRelations_Advertising_andAppliedCommunication.html\">Public Relations, Advertising, and Applied Communication</a>","<a href=\"majors_Bachelors_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_CorrectionsandCriminalJustice_Other.html\">Corrections and Criminal Justice, Other</a>","<a href=\"majors_Bachelors_ForensicScienceandTechnology.html\">Forensic Science and Technology</a>","<a href=\"majors_Bachelors_TeacherEducation_MultipleLevels.html\">Teacher Education, Multiple Levels</a>","<a href=\"majors_Bachelors_PublicHealth_General.html\">Public Health, General</a>","<a href=\"majors_Bachelors_GraphicDesign.html\">Graphic Design</a>","<a href=\"majors_Bachelors_InternationalBusiness_Trade_Commerce.html\">International Business/Trade/Commerce</a>","<a href=\"majors_Bachelors_CivilEngineering_General.html\">Civil Engineering, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_SociologyandAnthropology.html\">Sociology and Anthropology</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_SocialSciences_General.html\">Social Sciences, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_InternationalRelationsandAffairs.html\">International Relations and Affairs</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Bachelors_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Bachelors_Journalism.html\">Journalism</a>","<a href=\"majors_Bachelors_English_LanguageArtsTeacherEducation.html\">English/Language Arts Teacher Education</a>","<a href=\"majors_Bachelors_MathematicsTeacherEducation.html\">Mathematics Teacher Education</a>","<a href=\"majors_Bachelors_HistoryTeacherEducation.html\">History Teacher Education</a>","<a href=\"majors_Bachelors_Engineering_General.html\">Engineering, General</a>","<a href=\"majors_Bachelors_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Bachelors_AppliedMathematics_General.html\">Applied Mathematics, General</a>","<a href=\"majors_Bachelors_Dance_General.html\">Dance, General</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_EmergencyMedicalTechnology_Technician_EMTParamedic_.html\">Emergency Medical Technology/Technician (EMT Paramedic)</a>","<a href=\"majors_Bachelors_OperationsManagementandSupervision.html\">Operations Management and Supervision</a>","<a href=\"majors_Bachelors_ComputerEngineering_General.html\">Computer Engineering, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_MentalandSocialHealthServicesandAlliedProfessions_Other.html\">Mental and Social Health Services and Allied Professions, Other</a>","<a href=\"majors_Bachelors_Business_Management_Marketing_andRelatedSupportServices_Other.html\">Business, Management, Marketing, and Related Support Services, Other</a>","<a href=\"majors_Bachelors_ArchitecturalHistoryandCriticism_General.html\">Architectural History and Criticism, General</a>","<a href=\"majors_Bachelors_American_UnitedStatesStudies_Civilization.html\">American/United States Studies/Civilization</a>","<a href=\"majors_Bachelors_InternationalandInterculturalCommunication.html\">International and Intercultural Communication</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_ForeignLanguageTeacherEducation.html\">Foreign Language Teacher  Education</a>","<a href=\"majors_Bachelors_ForeignLanguagesandLiteratures_General.html\">Foreign Languages and Literatures, General</a>","<a href=\"majors_Bachelors_ClassicsandClassicalLanguages_Literatures_andLinguistics_General.html\">Classics and Classical Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_Pre_LawStudies.html\">Pre-Law Studies</a>","<a href=\"majors_Bachelors_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_HistoricPreservationandConservation_General.html\">Historic Preservation and Conservation, General</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_EnvironmentalChemistry.html\">Environmental Chemistry</a>","<a href=\"majors_Bachelors_Cyber_ComputerForensicsandCounterterrorism.html\">Cyber/Computer Forensics and Counterterrorism</a>"],[83,73,66,62,60,48,44,43,35,29,27,26,24,22,21,21,20,19,18,17,15,14,13,13,12,10,10,8,7,6,6,5,5,5,4,4,4,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[8.682,7.636,6.904,6.485,6.276,5.021,4.603,4.498,3.661,3.033,2.824,2.72,2.51,2.301,2.197,2.197,2.092,1.987,1.883,1.778,1.569,1.464,1.36,1.36,1.255,1.046,1.046,0.837,0.732,0.628,0.628,0.523,0.523,0.523,0.418,0.418,0.418,0.314,0.314,0.314,0.314,0.314,0.314,0.314,0.314,0.314,0.314,0.314,0.209,0.209,0.209,0.209,0.209,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105],[0.206,0.521,1.791,0.056,8.837,0.034,1.591,0.142,2.33,0.061,0.074,0.032,1.188,4.331,0.648,2.229,0.053,0.05,1.04,0.916,0.814,0.142,0.253,0.235,0.08,0.135,2.079,0.036,0.114,0.021,0.201,0.082,0.023,0.064,0.03,0.135,0.028,0.031,0.162,0.223,0.52,0.124,0.018,0.104,0.126,0.031,0.829,0.091,0.02,0.011,0.023,0.471,0.066,1.235,0.118,0.746,0.004,1.429,0.061,0.132,0.312,0.004,0.011,0.99,0.004,11.111,0.204],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-edf75203fb6eef186003" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-edf75203fb6eef186003">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Bachelors_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Bachelors_Architecture.html\">Architecture</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_FinancialPlanningandServices.html\">Financial Planning and Services</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_ConstructionManagement_General.html\">Construction Management, General</a>","<a href=\"majors_Bachelors_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Bachelors_MarineBiologyandBiologicalOceanography.html\">Marine Biology and Biological Oceanography</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_CommunicationandMediaStudies_Other.html\">Communication and Media Studies, Other</a>","<a href=\"majors_Bachelors_LegalProfessionsandStudies_Other.html\">Legal Professions and Studies, Other</a>","<a href=\"majors_Bachelors_PublicRelations_Advertising_andAppliedCommunication.html\">Public Relations, Advertising, and Applied Communication</a>","<a href=\"majors_Bachelors_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_CorrectionsandCriminalJustice_Other.html\">Corrections and Criminal Justice, Other</a>","<a href=\"majors_Bachelors_ForensicScienceandTechnology.html\">Forensic Science and Technology</a>","<a href=\"majors_Bachelors_TeacherEducation_MultipleLevels.html\">Teacher Education, Multiple Levels</a>","<a href=\"majors_Bachelors_PublicHealth_General.html\">Public Health, General</a>","<a href=\"majors_Bachelors_GraphicDesign.html\">Graphic Design</a>","<a href=\"majors_Bachelors_InternationalBusiness_Trade_Commerce.html\">International Business/Trade/Commerce</a>","<a href=\"majors_Bachelors_CivilEngineering_General.html\">Civil Engineering, General</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_SociologyandAnthropology.html\">Sociology and Anthropology</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_SocialSciences_General.html\">Social Sciences, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_CreativeWriting.html\">Creative Writing</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_InternationalRelationsandAffairs.html\">International Relations and Affairs</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Bachelors_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Bachelors_Journalism.html\">Journalism</a>","<a href=\"majors_Bachelors_English_LanguageArtsTeacherEducation.html\">English/Language Arts Teacher Education</a>","<a href=\"majors_Bachelors_MathematicsTeacherEducation.html\">Mathematics Teacher Education</a>","<a href=\"majors_Bachelors_HistoryTeacherEducation.html\">History Teacher Education</a>","<a href=\"majors_Bachelors_Engineering_General.html\">Engineering, General</a>","<a href=\"majors_Bachelors_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Bachelors_AppliedMathematics_General.html\">Applied Mathematics, General</a>","<a href=\"majors_Bachelors_Dance_General.html\">Dance, General</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_EmergencyMedicalTechnology_Technician_EMTParamedic_.html\">Emergency Medical Technology/Technician (EMT Paramedic)</a>","<a href=\"majors_Bachelors_OperationsManagementandSupervision.html\">Operations Management and Supervision</a>","<a href=\"majors_Bachelors_ComputerEngineering_General.html\">Computer Engineering, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_MentalandSocialHealthServicesandAlliedProfessions_Other.html\">Mental and Social Health Services and Allied Professions, Other</a>","<a href=\"majors_Bachelors_Business_Management_Marketing_andRelatedSupportServices_Other.html\">Business, Management, Marketing, and Related Support Services, Other</a>","<a href=\"majors_Bachelors_ArchitecturalHistoryandCriticism_General.html\">Architectural History and Criticism, General</a>","<a href=\"majors_Bachelors_American_UnitedStatesStudies_Civilization.html\">American/United States Studies/Civilization</a>","<a href=\"majors_Bachelors_InternationalandInterculturalCommunication.html\">International and Intercultural Communication</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_ForeignLanguageTeacherEducation.html\">Foreign Language Teacher  Education</a>","<a href=\"majors_Bachelors_ForeignLanguagesandLiteratures_General.html\">Foreign Languages and Literatures, General</a>","<a href=\"majors_Bachelors_ClassicsandClassicalLanguages_Literatures_andLinguistics_General.html\">Classics and Classical Languages, Literatures, and Linguistics, General</a>","<a href=\"majors_Bachelors_Pre_LawStudies.html\">Pre-Law Studies</a>","<a href=\"majors_Bachelors_LiberalArtsandSciences_LiberalStudies.html\">Liberal Arts and Sciences/Liberal Studies</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_HistoricPreservationandConservation_General.html\">Historic Preservation and Conservation, General</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_EnvironmentalChemistry.html\">Environmental Chemistry</a>","<a href=\"majors_Bachelors_Cyber_ComputerForensicsandCounterterrorism.html\">Cyber/Computer Forensics and Counterterrorism</a>"],[83,73,66,62,60,48,44,43,35,29,27,26,24,22,21,21,20,19,18,17,15,14,13,13,12,10,10,8,7,6,6,5,5,5,4,4,4,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1],[8.682,7.636,6.904,6.485,6.276,5.021,4.603,4.498,3.661,3.033,2.824,2.72,2.51,2.301,2.197,2.197,2.092,1.987,1.883,1.778,1.569,1.464,1.36,1.36,1.255,1.046,1.046,0.837,0.732,0.628,0.628,0.523,0.523,0.523,0.418,0.418,0.418,0.314,0.314,0.314,0.314,0.314,0.314,0.314,0.314,0.314,0.314,0.314,0.209,0.209,0.209,0.209,0.209,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105,0.105],[0.206,0.521,1.791,0.056,8.837,0.034,1.591,0.142,2.33,0.061,0.074,0.032,1.188,4.331,0.648,2.229,0.053,0.05,1.04,0.916,0.814,0.142,0.253,0.235,0.08,0.135,2.079,0.036,0.114,0.021,0.201,0.082,0.023,0.064,0.03,0.135,0.028,0.031,0.162,0.223,0.52,0.124,0.018,0.104,0.126,0.031,0.829,0.091,0.02,0.011,0.023,0.471,0.066,1.235,0.118,0.746,0.004,1.429,0.061,0.132,0.312,0.004,0.011,0.99,0.004,11.111,0.204],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-59f911e8c773aa2d839e" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-59f911e8c773aa2d839e">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_ArchitecturalandBuildingSciences_Technology.html\">Architectural and Building Sciences/Technology</a>","<a href=\"majors_Masters_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Masters_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Masters_Clinical_CounselingandAppliedPsychology_Other.html\">Clinical, Counseling and Applied Psychology, Other</a>","<a href=\"majors_Masters_Architecture.html\">Architecture</a>","<a href=\"majors_Masters_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Masters_ForensicPsychology.html\">Forensic Psychology</a>","<a href=\"majors_Masters_SocialSciences_General.html\">Social Sciences, General</a>","<a href=\"majors_Masters_OrganizationalLeadership.html\">Organizational Leadership</a>","<a href=\"majors_Masters_ConstructionManagement_General.html\">Construction Management, General</a>"],[41,28,24,15,14,11,9,8,6,2,2,2],[25.309,17.284,14.815,9.259,8.642,6.79,5.556,4.938,3.704,1.235,1.235,1.235],[1.238,1.003,0.023,0.096,0.114,2.625,1.026,0.144,0.485,0.402,0.028,0.597],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4891297ef11200770eb2" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-4891297ef11200770eb2">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_ArchitecturalandBuildingSciences_Technology.html\">Architectural and Building Sciences/Technology</a>","<a href=\"majors_Masters_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Masters_PublicAdministration.html\">Public Administration</a>","<a href=\"majors_Masters_Clinical_CounselingandAppliedPsychology_Other.html\">Clinical, Counseling and Applied Psychology, Other</a>","<a href=\"majors_Masters_Architecture.html\">Architecture</a>","<a href=\"majors_Masters_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Masters_ForensicPsychology.html\">Forensic Psychology</a>","<a href=\"majors_Masters_SocialSciences_General.html\">Social Sciences, General</a>","<a href=\"majors_Masters_OrganizationalLeadership.html\">Organizational Leadership</a>","<a href=\"majors_Masters_ConstructionManagement_General.html\">Construction Management, General</a>"],[41,28,24,15,14,11,9,8,6,2,2,2],[25.309,17.284,14.815,9.259,8.642,6.79,5.556,4.938,3.704,1.235,1.235,1.235],[1.238,1.003,0.023,0.096,0.114,2.625,1.026,0.144,0.485,0.402,0.028,0.597],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e70729abba150efcf662" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-e70729abba150efcf662">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ab9628e3d1c78e234d9e" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ab9628e3d1c78e234d9e">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-8f059b39489a6af3ecd1" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-8f059b39489a6af3ecd1">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Certificate_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Certificate_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Certificate_City_Urban_Community_andRegionalPlanning.html\">City/Urban, Community, and Regional Planning</a>","<a href=\"majors_Certificate_PublicAdministration.html\">Public Administration</a>"],[11,4,3,1,1],[55,20,15,5,5],[0.252,0.283,0.042,0.606,0.096],["Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a0c0e5fe082a3c9b934d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-a0c0e5fe082a3c9b934d">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Certificate_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Certificate_ComputerandInformationSystemsSecurity_Auditing_InformationAssurance.html\">Computer and Information Systems Security/Auditing/Information Assurance</a>","<a href=\"majors_Certificate_City_Urban_Community_andRegionalPlanning.html\">City/Urban, Community, and Regional Planning</a>","<a href=\"majors_Certificate_PublicAdministration.html\">Public Administration</a>"],[11,4,3,1,1],[55,20,15,5,5],[0.252,0.283,0.042,0.606,0.096],["Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-47c6f851dcc1802b29df" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-47c6f851dcc1802b29df">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Associates_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Associates_SocialSciences_General.html\">Social Sciences, General</a>"],[35,4,3],[83.333,9.524,7.143],[0.675,0.033,0.025],["Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5457e7448e7f5a5c4f41" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5457e7448e7f5a5c4f41">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Associates_CriminalJustice_LawEnforcementAdministration.html\">Criminal Justice/Law Enforcement Administration</a>","<a href=\"majors_Associates_SocialSciences_General.html\">Social Sciences, General</a>"],[35,4,3],[83.333,9.524,7.143],[0.675,0.033,0.025],["Associates","Associates","Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

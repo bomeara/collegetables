@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -178,10 +178,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -194,6 +194,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -257,10 +259,20 @@ Undergraduate)</p></li>
 <li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
 four-year (see more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 38,754 (2.8 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $38,754 (2.5 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $12,400.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://npc.collegeboard.org/app/lafayette'>here</a> to see
+what your family may be asked to pay. It can be MUCH lower than the
+average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, small, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 16.1% of first year
+students come from Pennsylvania</p></li>
+<li><p><strong>In US percentage</strong>: 93.0% of first year students
+come from the US</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 87.9% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -300,9 +312,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Restrictive (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: B- (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -315,17 +328,29 @@ marriage</strong>: 66.7% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Low risk (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Appalachian-Blue Ridge
 forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/22903/Average-Weather-in-Easton-Pennsylvania-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7060cb7ab05f07180f98" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-7060cb7ab05f07180f98">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[40.69956,-75.209786,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[40.69956,-75.209786],16,[]],"limits":{"lat":[40.69956,40.69956],"lng":[-75.209786,-75.209786]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-667c207e3141501f06fc" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-667c207e3141501f06fc">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"213385.html\">Lafayette College</a>","<a href=\"166124.html\">College of the Holy Cross</a>","<a href=\"211291.html\">Bucknell University</a>","<a href=\"190099.html\">Colgate University</a>","<a href=\"213543.html\">Lehigh University</a>","<a href=\"195526.html\">Skidmore College</a>","<a href=\"131159.html\">American University</a>","<a href=\"163046.html\">Loyola University Maryland</a>","<a href=\"212577.html\">Franklin and Marshall College</a>","<a href=\"203535.html\">Kenyon College</a>","<a href=\"197133.html\">Vassar College</a>","<a href=\"130590.html\">Trinity College</a>","<a href=\"202523.html\">Denison University</a>","<a href=\"173902.html\">Macalester College</a>","<a href=\"204501.html\">Oberlin College</a>","<a href=\"164988.html\">Boston University</a>","<a href=\"196866.html\">Union College</a>","<a href=\"212674.html\">Gettysburg College</a>","<a href=\"212009.html\">Dickinson College</a>","<a href=\"174844.html\">St Olaf College</a>","<a href=\"128902.html\">Connecticut College</a>","<a href=\"209922.html\">Reed College</a>","<a href=\"120254.html\">Occidental College</a>","<a href=\"173258.html\">Carleton College</a>","<a href=\"166939.html\">Mount Holyoke College</a>","<a href=\"233374.html\">University of Richmond</a>","<a href=\"168218.html\">Wellesley College</a>","<a href=\"197036.html\">United States Military Academy</a>","<a href=\"211273.html\">Bryn Mawr College</a>","<a href=\"230959.html\">Middlebury College</a>","<a href=\"191515.html\">Hamilton College</a>","<a href=\"198385.html\">Davidson College</a>","<a href=\"212911.html\">Haverford College</a>","<a href=\"164465.html\">Amherst College</a>","<a href=\"167835.html\">Smith College</a>","<a href=\"164155.html\">United States Naval Academy</a>","<a href=\"165015.html\">Brandeis University</a>","<a href=\"237057.html\">Whitman College</a>","<a href=\"141060.html\">Spelman College</a>","<a href=\"221351.html\">Rhodes College</a>","<a href=\"126678.html\">Colorado College</a>","<a href=\"217402.html\">Providence College</a>","<a href=\"160977.html\">Bates College</a>","<a href=\"123165.html\">Scripps College</a>","<a href=\"218973.html\">Wofford College</a>","<a href=\"161086.html\">Colby College</a>","<a href=\"229267.html\">Trinity University</a>","<a href=\"195216.html\">St Lawrence University</a>","<a href=\"197027.html\">United States Merchant Marine Academy</a>","<a href=\"129242.html\">Fairfield University</a>","<a href=\"150400.html\">DePauw University</a>","<a href=\"164580.html\">Babson College</a>","<a href=\"153384.html\">Grinnell College</a>","<a href=\"216287.html\">Swarthmore College</a>","<a href=\"165662.html\">Emerson College</a>","<a href=\"234207.html\">Washington and Lee University</a>","<a href=\"206589.html\">The College of Wooster</a>","<a href=\"399911.html\">Soka University of America</a>","<a href=\"177117.html\">Cottey College</a>","<a href=\"441982.html\">Franklin W Olin College of Engineering</a>","<a href=\"145646.html\">Illinois Wesleyan University</a>","<a href=\"156295.html\">Berea College</a>","<a href=\"164739.html\">Bentley University</a>","<a href=\"130697.html\">Wesleyan University</a>","<a href=\"218070.html\">Furman University</a>","<a href=\"121257.html\">Pitzer College</a>","<a href=\"239017.html\">Lawrence University</a>","<a href=\"115409.html\">Harvey Mudd College</a>","<a href=\"221519.html\">The University of the South</a>","<a href=\"152318.html\">Rose-Hulman Institute of Technology</a>","<a href=\"480091.html\">Bryant &amp; Stratton College-Online</a>","<a href=\"133492.html\">Eckerd College</a>","<a href=\"197708.html\">Yeshiva University</a>","<a href=\"161004.html\">Bowdoin College</a>","<a href=\"153834.html\">Luther College</a>","<a href=\"156408.html\">Centre College</a>","<a href=\"121345.html\">Pomona College</a>","<a href=\"214175.html\">Muhlenberg College</a>","<a href=\"165334.html\">Clark University</a>","<a href=\"441609.html\">Yeshiva Shaarei Torah of Rockland</a>","<a href=\"149781.html\">Wheaton College</a>","<a href=\"234085.html\">Virginia Military Institute</a>","<a href=\"102377.html\">Tuskegee University</a>","<a href=\"192040.html\">Jewish Theological Seminary of America</a>","<a href=\"484844.html\">Minerva University</a>","<a href=\"217493.html\">Rhode Island School of Design</a>","<a href=\"493716.html\">Yeshiva Gedola Tiferes Yaakov Yitzchok</a>","<a href=\"163976.html\">St. John's College</a>","<a href=\"168421.html\">Worcester Polytechnic Institute</a>","<a href=\"112260.html\">Claremont McKenna College</a>","<a href=\"168342.html\">Williams College</a>","<a href=\"189097.html\">Barnard College</a>","<a href=\"153269.html\">Drake University</a>","<a href=\"232256.html\">Hampden-Sydney College</a>","<a href=\"122931.html\">Santa Clara University</a>","<a href=\"170286.html\">Hillsdale College</a>","<a href=\"194824.html\">Rensselaer Polytechnic Institute</a>","<a href=\"195304.html\">Sarah Lawrence College</a>","<a href=\"228246.html\">Southern Methodist University</a>","<a href=\"238333.html\">Beloit College</a>"],[41,43,35,17,46,31,64,84,38,37,20,38,28,31,34,19,47,56,48,47,41,44,38,18,52,29,16,11,39,13,14,18,18,9,30,8,39,59,51,57,14,58,17,30,52,9,34,57,25,56,65,25,11,8,45,19,61,52,61,18,45,33,61,19,71,18,75,10,60,77,null,70,63,9,76,68,7,68,48,56,86,64,34,50,1,19,37,53,60,11,9,11,69,37,54,24,53,58,53,67],[23,29,26,29,23,21,19,12,18,18,31,25,24,21,24,28,16,18,22,25,16,16,22,40,29,22,49,81,32,42,40,48,43,42,37,86,25,16,14,20,40,16,44,38,20,47,20,20,53,18,14,36,43,45,20,39,15,49,39,56,21,59,18,36,13,53,18,48,19,18,null,17,56,63,23,22,58,16,13,60,32,47,19,75,73,56,93,27,21,57,52,65,14,21,17,56,14,17,19,13],[88,93,88,90,87,84,79,81,83,87,93,85,81,90,82,89,85,82,82,85,81,73,83,91,85,89,92,84,87,91,92,90,90,92,91,91,88,89,76,85,86,89,92,82,80,87,80,82,81,84,83,94,87,94,79,94,77,91,88,97,81,66,88,91,82,88,80,94,80,87,100,68,80,94,73,86,93,82,79,100,88,74,57,87,81,86,88,75,87,93,94,93,77,65,91,88,84,76,82,73],[22,22,28,25,22,27,50,45,31,20,19,20,13,18,13,37,27,30,19,18,21,16,22,13,13,9,5,0,9,22,13,9,20,3,7,0,27,10,14,20,23,46,39,16,12,13,10,24,0,44,13,30,3,4,52,10,19,1,4,4,25,0,48,13,15,43,13,18,20,35,87,51,34,5,26,12,3,33,32,40,19,20,13,3,42,39,36,13,42,9,4,38,40,12,30,3,33,43,31,28],[11,13,10,12,11,13,19,17,11,11,11,15,12,13,12,18,12,13,10,20,11,9,12,11,12,10,11,37,11,10,12,12,12,9,9,15,13,10,16,13,11,16,14,10,13,12,11,14,14,18,11,17,10,8,21,9,14,8,7,null,14,12,20,11,10,14,10,9,12,11,null,14,14,10,14,12,8,15,13,null,11,13,13,6,null,null,null,8,18,10,7,16,11,11,14,13,22,16,14,14],[12400,17357,28153,7197,14995,15235,20965,30197,13110,18974,13193,8331,14686,10543,13745,11782,13769,13799,12027,11138,13979,14035,13475,13410,13907,8606,8021,null,9907,7221,6827,3004,9272,4459,9672,null,19186,18380,43094,15566,8602,18864,4981,7525,21893,2361,12930,15103,5170,21807,18320,20502,13671,4012,38632,850,17111,10095,18050,859,20876,5313,27303,7475,21920,17181,19037,20829,23671,27109,14186,26620,24273,7823,20153,13778,6239,21330,18547,null,18519,6552,35955,20408,null,33369,null,19008,33976,8693,5480,15090,25332,27931,23508,null,20738,25765,24226,16197],[2706,3005,3715,3142,5375,2655,8124,3735,2127,1868,2498,2118,2307,2206,2905,17460,2075,2399,2145,2964,1811,1515,1938,2032,2200,3030,2381,4594,1421,2835,2049,1973,1419,1971,2554,4528,3568,1524,2363,1996,2190,4001,1821,1090,1745,2262,2472,2222,1006,4486,1700,2551,1718,1649,4053,1853,1947,435,302,360,1645,1432,3907,3238,2285,1132,1463,902,1724,2058,5132,1981,2536,1948,1717,1320,1756,2007,2284,102,2202,1652,2068,144,604,2044,68,470,5051,1411,2135,2959,2776,842,5779,1473,5564,1512,6728,978],[null,null,16,8,1032,0,3116,401,null,null,null,7,null,null,11,11587,null,null,6,null,1,0,1,null,15,480,null,null,308,0,null,null,null,null,341,null,1552,null,null,7,10,204,null,20,null,null,130,18,0,567,null,561,null,null,1285,379,null,10,null,null,null,null,506,132,92,null,null,null,67,15,null,null,2253,null,null,null,null,21,881,null,228,null,414,98,0,532,null,45,866,5,50,null,921,null,1899,35,1140,193,2638,null],["Pennsylvania","Massachusetts","Pennsylvania","New York","Pennsylvania","New York","District of Columbia","Maryland","Pennsylvania","Ohio","New York","Connecticut","Ohio","Minnesota","Ohio","Massachusetts","New York","Pennsylvania","Pennsylvania","Minnesota","Connecticut","Oregon","California","Minnesota","Massachusetts","Virginia","Massachusetts","New York","Pennsylvania","Vermont","New York","North Carolina","Pennsylvania","Massachusetts","Massachusetts","Maryland","Massachusetts","Washington","Georgia","Tennessee","Colorado","Rhode Island","Maine","California","South Carolina","Maine","Texas","New York","New York","Connecticut","Indiana","Massachusetts","Iowa","Pennsylvania","Massachusetts","Virginia","Ohio","California","Missouri","Massachusetts","Illinois","Kentucky","Massachusetts","Connecticut","South Carolina","California","Wisconsin","California","Tennessee","Indiana","New York","Florida","New York","Maine","Iowa","Kentucky","California","Pennsylvania","Massachusetts","New York","Illinois","Virginia","Alabama","New York","California","Rhode Island","New Jersey","Maryland","Massachusetts","California","Massachusetts","New York","Iowa","Virginia","California","Michigan","New York","New York","Texas","Wisconsin"],["Increasing","Approximately stable","Increasing","Increasing","Increasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Increasing","Increasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Increasing","Increasing","Increasing","Approximately stable","Increasing","Increasing","Increasing","Approximately stable","Approximately stable","Increasing","Decreasing","Increasing","Approximately stable","Approximately stable","Increasing","Increasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Increasing","Increasing","Approximately stable","Increasing","Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Increasing","Approximately stable","Unknown or not applicable","Approximately stable","Increasing","Increasing","Approximately stable","Increasing","Decreasing","Decreasing","Increasing","Approximately stable","Increasing","Approximately stable","Increasing","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6cc224a6833c1025c4ae" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-6cc224a6833c1025c4ae">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[40.69956,-75.209786,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[40.69956,-75.209786],16,[]],"limits":{"lat":[40.69956,40.69956],"lng":[-75.209786,-75.209786]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -614,13 +639,33 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
+Undergrads per tenure track instructor
+</td>
+<td style="text-align:center;">
+11 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/LafayetteCollege_14.png alt=‘Line plot from 12 to 11
+from 2012 to 2020’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 80%
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 74%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Undergrads per instructor
 </td>
 <td style="text-align:center;">
 9.8 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_14.png alt=‘Line plot from 11 to 9.8
+<img src=images/LafayetteCollege_15.png alt=‘Line plot from 11 to 9.8
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -631,26 +676,6 @@ from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪✪✪<br />Better (lower) than 63%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Undergrads per tenure track instructor
-</td>
-<td style="text-align:center;">
-11 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/LafayetteCollege_15.png alt=‘Line plot from 12 to 11
-from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 80%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 74%
 </td>
 </tr>
 <tr>
@@ -674,16 +699,17 @@ Total instructors
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-31 (2020)
+220 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_17.png alt=‘Line plot from 24 to 31
-from 2012 to 2020’ >
+<img src=images/LafayetteCollege_17.png alt=‘Line plot from 199 to
+220 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
+↑<br />3.1 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -692,17 +718,16 @@ from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-220 (2020)
+31 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_18.png alt=‘Line plot from 199 to
-220 from 2012 to 2020’ >
+<img src=images/LafayetteCollege_18.png alt=‘Line plot from 24 to 31
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-↑<br />3.1 per year
 </td>
 <td style="text-align:center;">
 </td>
@@ -755,8 +780,8 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 12% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_103.png alt=‘Line plot from 5.0 to
-12 from 2010 to 2021’ >
+<img src=images/LafayetteCollege_100.png alt=‘Line plot from 5 to 12
+from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -791,13 +816,33 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+22% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/LafayetteCollege_19.png alt=‘Line plot from 28 to 22
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 56%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 43%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $220 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_19.png alt=‘Line plot from 79 M to
+<img src=images/LafayetteCollege_20.png alt=‘Line plot from 79 M to
 220 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -817,7 +862,7 @@ Revenue
 $378 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_20.png alt=‘Line plot from 212 M to
+<img src=images/LafayetteCollege_21.png alt=‘Line plot from 212 M to
 378 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -835,7 +880,7 @@ Expenses
 $158 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_21.png alt=‘Line plot from 133 M to
+<img src=images/LafayetteCollege_22.png alt=‘Line plot from 133 M to
 158 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -854,7 +899,7 @@ Assets
 $1.6 B (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_22.png alt=‘Line plot from 1.0 B to
+<img src=images/LafayetteCollege_23.png alt=‘Line plot from 1.0 B to
 1.6 B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -865,80 +910,6 @@ $1.6 B (2021)
 </td>
 <td style="text-align:center;">
 ✪✪✪✪✪<br />Better (higher) than 87%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-22% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/LafayetteCollege_23.png alt=‘Line plot from 28 to 22
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 56%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 43%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/LafayetteCollege_24.png alt=‘Line plot from 0.0 to
-0.0 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-1.2% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/LafayetteCollege_25.png alt=‘Line plot from 1.6 to
-1.2 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-4.3% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/LafayetteCollege_26.png alt=‘Line plot from 14 to 4.3
-from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -980,7 +951,7 @@ Total
 88% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_42.png alt=‘Line plot from 89 to 88
+<img src=images/LafayetteCollege_39.png alt=‘Line plot from 89 to 88
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -998,7 +969,7 @@ Men
 87% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_43.png alt=‘Line plot from 89 to 87
+<img src=images/LafayetteCollege_40.png alt=‘Line plot from 89 to 87
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1016,7 +987,7 @@ Women
 89% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_44.png alt=‘Line plot from 89 to 89
+<img src=images/LafayetteCollege_41.png alt=‘Line plot from 89 to 89
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1034,7 +1005,7 @@ American Indian or Alaska Native men
 100% (2018)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_45.png alt=‘Line plot from 100 to
+<img src=images/LafayetteCollege_42.png alt=‘Line plot from 100 to
 100 from 2018 to 2018’ >
 </td>
 <td style="text-align:center;">
@@ -1049,10 +1020,10 @@ American Indian or Alaska Native men
 American Indian or Alaska Native women
 </td>
 <td style="text-align:center;">
-0.0% (2018)
+0% (2018)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_46.png alt=‘Line plot from 50 to 0.0
+<img src=images/LafayetteCollege_43.png alt=‘Line plot from 50 to 0
 from 2011 to 2018’ >
 </td>
 <td style="text-align:center;">
@@ -1070,7 +1041,7 @@ Asian men
 82% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_47.png alt=‘Line plot from 80 to 82
+<img src=images/LafayetteCollege_44.png alt=‘Line plot from 80 to 82
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1088,7 +1059,7 @@ Asian women
 94% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_48.png alt=‘Line plot from 50 to 94
+<img src=images/LafayetteCollege_45.png alt=‘Line plot from 50 to 94
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1106,7 +1077,7 @@ Black or African American men
 84% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_49.png alt=‘Line plot from 65 to 84
+<img src=images/LafayetteCollege_46.png alt=‘Line plot from 65 to 84
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1124,7 +1095,7 @@ Black or African American women
 88% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_50.png alt=‘Line plot from 91 to 88
+<img src=images/LafayetteCollege_47.png alt=‘Line plot from 91 to 88
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1142,7 +1113,7 @@ Hispanic men
 62% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_51.png alt=‘Line plot from 84 to 62
+<img src=images/LafayetteCollege_48.png alt=‘Line plot from 84 to 62
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1160,7 +1131,7 @@ Hispanic women
 90% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_52.png alt=‘Line plot from 76 to 90
+<img src=images/LafayetteCollege_49.png alt=‘Line plot from 76 to 90
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1178,7 +1149,7 @@ Native Hawaiian or other Pacific Islander women
 100% (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_54.png alt=‘Line plot from 100 to
+<img src=images/LafayetteCollege_51.png alt=‘Line plot from 100 to
 100 from 2015 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1196,7 +1167,7 @@ White men
 89% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_55.png alt=‘Line plot from 88 to 89
+<img src=images/LafayetteCollege_52.png alt=‘Line plot from 88 to 89
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1214,7 +1185,7 @@ White women
 89% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_56.png alt=‘Line plot from 91 to 89
+<img src=images/LafayetteCollege_53.png alt=‘Line plot from 91 to 89
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1232,7 +1203,7 @@ Two or more races men
 57% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_57.png alt=‘Line plot from 100 to 57
+<img src=images/LafayetteCollege_54.png alt=‘Line plot from 100 to 57
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1250,7 +1221,7 @@ Two or more races women
 89% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_58.png alt=‘Line plot from 100 to 89
+<img src=images/LafayetteCollege_55.png alt=‘Line plot from 100 to 89
 from 2012 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1268,7 +1239,7 @@ Nonresident alien men
 92% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_59.png alt=‘Line plot from 94 to 92
+<img src=images/LafayetteCollege_56.png alt=‘Line plot from 94 to 92
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1286,7 +1257,7 @@ Nonresident alien women
 87% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_60.png alt=‘Line plot from 93 to 87
+<img src=images/LafayetteCollege_57.png alt=‘Line plot from 93 to 87
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1326,7 +1297,7 @@ Men (percent freshmen)
 53% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_83.png alt=‘Line plot from 55 to 53
+<img src=images/LafayetteCollege_80.png alt=‘Line plot from 55 to 53
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1338,7 +1309,7 @@ Women (percent freshmen)
 47% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_84.png alt=‘Line plot from 45 to 47
+<img src=images/LafayetteCollege_81.png alt=‘Line plot from 45 to 47
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1347,11 +1318,11 @@ from 2010 to 2021’ >
 American Indian or Alaska Native men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_85.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/LafayetteCollege_82.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1359,11 +1330,11 @@ American Indian or Alaska Native men (percent freshmen)
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_86.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/LafayetteCollege_83.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1374,7 +1345,7 @@ Asian men (percent freshmen)
 2.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_87.png alt=‘Line plot from 1.9 to
+<img src=images/LafayetteCollege_84.png alt=‘Line plot from 1.9 to
 2.2 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1386,7 +1357,7 @@ Asian women (percent freshmen)
 1.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_88.png alt=‘Line plot from 1.1 to
+<img src=images/LafayetteCollege_85.png alt=‘Line plot from 1.1 to
 1.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1398,7 +1369,7 @@ Black or African American men (percent freshmen)
 3.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_89.png alt=‘Line plot from 4.2 to
+<img src=images/LafayetteCollege_86.png alt=‘Line plot from 4.2 to
 3.6 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1410,7 +1381,7 @@ Black or African American women (percent freshmen)
 1.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_90.png alt=‘Line plot from 1.4 to
+<img src=images/LafayetteCollege_87.png alt=‘Line plot from 1.4 to
 1.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1422,7 +1393,7 @@ Hispanic men (percent freshmen)
 4.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_91.png alt=‘Line plot from 2.5 to
+<img src=images/LafayetteCollege_88.png alt=‘Line plot from 2.5 to
 4.6 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1434,7 +1405,7 @@ Hispanic women (percent freshmen)
 3.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_92.png alt=‘Line plot from 1.7 to
+<img src=images/LafayetteCollege_89.png alt=‘Line plot from 1.7 to
 3.7 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1443,11 +1414,11 @@ Hispanic women (percent freshmen)
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_93.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/LafayetteCollege_90.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1455,11 +1426,11 @@ Native Hawaiian or Other Pacific Islander men (percent freshmen)
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_94.png alt=‘Line plot from 0.2 to
-0.0 from 2010 to 2021’ >
+<img src=images/LafayetteCollege_91.png alt=‘Line plot from 0.2 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1470,7 +1441,7 @@ White men (percent freshmen)
 35% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_95.png alt=‘Line plot from 35 to 35
+<img src=images/LafayetteCollege_92.png alt=‘Line plot from 35 to 35
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1482,7 +1453,7 @@ White women (percent freshmen)
 35% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_96.png alt=‘Line plot from 34 to 35
+<img src=images/LafayetteCollege_93.png alt=‘Line plot from 34 to 35
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1494,7 +1465,7 @@ Two or more races men (percent freshmen)
 1.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_97.png alt=‘Line plot from 1.4 to
+<img src=images/LafayetteCollege_94.png alt=‘Line plot from 1.4 to
 1.9 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1506,7 +1477,7 @@ Two or more races women (percent freshmen)
 1.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_98.png alt=‘Line plot from 1.4 to
+<img src=images/LafayetteCollege_95.png alt=‘Line plot from 1.4 to
 1.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1518,7 +1489,7 @@ Race ethnicity unknown men (percent freshmen)
 2.3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_99.png alt=‘Line plot from 6.8 to
+<img src=images/LafayetteCollege_96.png alt=‘Line plot from 6.8 to
 2.3 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1530,7 +1501,7 @@ Race ethnicity unknown women (percent freshmen)
 0.5% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_100.png alt=‘Line plot from 5.4 to
+<img src=images/LafayetteCollege_97.png alt=‘Line plot from 5.4 to
 0.5 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1542,7 +1513,7 @@ Nonresident alien men (percent freshmen)
 3.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_101.png alt=‘Line plot from 2.9 to
+<img src=images/LafayetteCollege_98.png alt=‘Line plot from 2.9 to
 3.6 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1554,8 +1525,63 @@ Nonresident alien women (percent freshmen)
 2.7% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_102.png alt=‘Line plot from 0.8 to
+<img src=images/LafayetteCollege_99.png alt=‘Line plot from 0.8 to
 2.7 from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Lafayette College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+16% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/LafayetteCollege_101.png alt=‘Line plot from 20 to 16
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+93% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/LafayetteCollege_102.png alt=‘Line plot from 96 to 93
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/LafayetteCollege_103.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1596,7 +1622,7 @@ Total (tenure-track count)
 220 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_61.png alt=‘Line plot from 199 to
+<img src=images/LafayetteCollege_58.png alt=‘Line plot from 199 to
 220 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1611,7 +1637,7 @@ Women (tenure-track count)
 91 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_62.png alt=‘Line plot from 65 to 91
+<img src=images/LafayetteCollege_59.png alt=‘Line plot from 65 to 91
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1626,7 +1652,7 @@ Men (tenure-track count)
 129 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_63.png alt=‘Line plot from 134 to
+<img src=images/LafayetteCollege_60.png alt=‘Line plot from 134 to
 129 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1637,11 +1663,11 @@ Men (tenure-track count)
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_64.png alt=‘Line plot from 0.0 to
-1.0 from 2012 to 2020’ >
+<img src=images/LafayetteCollege_61.png alt=‘Line plot from 0 to 1
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.2 per year
@@ -1655,7 +1681,7 @@ Asian (tenure-track count)
 12 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_65.png alt=‘Line plot from 6.0 to 12
+<img src=images/LafayetteCollege_62.png alt=‘Line plot from 6 to 12
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1670,7 +1696,7 @@ Black or African American (tenure-track count)
 10 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_66.png alt=‘Line plot from 5.0 to 10
+<img src=images/LafayetteCollege_63.png alt=‘Line plot from 5 to 10
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1682,11 +1708,11 @@ from 2012 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-8.0 (2020)
+8 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_67.png alt=‘Line plot from 6.0 to
-8.0 from 2012 to 2020’ >
+<img src=images/LafayetteCollege_64.png alt=‘Line plot from 6 to 8
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.3 per year
@@ -1697,11 +1723,11 @@ Hispanic or Latino (tenure-track count)
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_68.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/LafayetteCollege_65.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1714,7 +1740,7 @@ White (tenure-track count)
 164 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_69.png alt=‘Line plot from 165 to
+<img src=images/LafayetteCollege_66.png alt=‘Line plot from 165 to
 164 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1725,11 +1751,11 @@ White (tenure-track count)
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-7.0 (2020)
+7 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_70.png alt=‘Line plot from 1.0 to
-7.0 from 2012 to 2020’ >
+<img src=images/LafayetteCollege_67.png alt=‘Line plot from 1 to 7
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.7 per year
@@ -1743,7 +1769,7 @@ Nonresident alien (tenure-track count)
 12 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_71.png alt=‘Line plot from 9.0 to 12
+<img src=images/LafayetteCollege_68.png alt=‘Line plot from 9 to 12
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1788,7 +1814,7 @@ Total (non-tenure-track count)
 31 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_72.png alt=‘Line plot from 24 to 31
+<img src=images/LafayetteCollege_69.png alt=‘Line plot from 24 to 31
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1802,7 +1828,7 @@ Women (non-tenure-track count)
 16 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_73.png alt=‘Line plot from 11 to 16
+<img src=images/LafayetteCollege_70.png alt=‘Line plot from 11 to 16
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1816,7 +1842,7 @@ Men (non-tenure-track count)
 15 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_74.png alt=‘Line plot from 13 to 15
+<img src=images/LafayetteCollege_71.png alt=‘Line plot from 13 to 15
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1827,11 +1853,11 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_75.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/LafayetteCollege_72.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1841,11 +1867,11 @@ American Indian or Alaska Native (non-tenure-track count)
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_76.png alt=‘Line plot from 2.0 to
-1.0 from 2012 to 2020’ >
+<img src=images/LafayetteCollege_73.png alt=‘Line plot from 2 to 1
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.2 per year
@@ -1856,11 +1882,11 @@ Asian (non-tenure-track count)
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_77.png alt=‘Line plot from 1.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/LafayetteCollege_74.png alt=‘Line plot from 1 to 0
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1870,11 +1896,11 @@ Black or African American (non-tenure-track count)
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_78.png alt=‘Line plot from 0.0 to
-2.0 from 2012 to 2020’ >
+<img src=images/LafayetteCollege_75.png alt=‘Line plot from 0 to 2
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1884,11 +1910,11 @@ Hispanic or Latino (non-tenure-track count)
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_79.png alt=‘Line plot from 0.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/LafayetteCollege_76.png alt=‘Line plot from 0 to 0
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1901,7 +1927,7 @@ White (non-tenure-track count)
 21 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_80.png alt=‘Line plot from 17 to 21
+<img src=images/LafayetteCollege_77.png alt=‘Line plot from 17 to 21
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1912,11 +1938,11 @@ from 2012 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_81.png alt=‘Line plot from 1.0 to
-0.0 from 2012 to 2020’ >
+<img src=images/LafayetteCollege_78.png alt=‘Line plot from 1 to 0
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.2 per year
@@ -1927,11 +1953,11 @@ Two or more races (non-tenure-track count)
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-6.0 (2020)
+6 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_82.png alt=‘Line plot from 3.0 to
-6.0 from 2012 to 2020’ >
+<img src=images/LafayetteCollege_79.png alt=‘Line plot from 3 to 6
+from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.7 per year
@@ -1970,7 +1996,7 @@ Applicants submitting SAT
 28% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_30.png alt=‘Line plot from 76 to 28
+<img src=images/LafayetteCollege_27.png alt=‘Line plot from 76 to 28
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1984,7 +2010,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 640 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_31.png alt=‘Line plot from 630 to
+<img src=images/LafayetteCollege_28.png alt=‘Line plot from 630 to
 640 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1998,7 +2024,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 720 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_32.png alt=‘Line plot from 710 to
+<img src=images/LafayetteCollege_29.png alt=‘Line plot from 710 to
 720 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2012,7 +2038,7 @@ SAT Math 25th percentile score
 660 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_33.png alt=‘Line plot from 620 to
+<img src=images/LafayetteCollege_30.png alt=‘Line plot from 620 to
 660 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2027,7 +2053,7 @@ SAT Math 75th percentile score
 740 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_34.png alt=‘Line plot from 720 to
+<img src=images/LafayetteCollege_31.png alt=‘Line plot from 720 to
 740 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2064,7 +2090,7 @@ Applicants submitting ACT
 13% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_35.png alt=‘Line plot from 39 to 13
+<img src=images/LafayetteCollege_32.png alt=‘Line plot from 39 to 13
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2078,7 +2104,7 @@ ACT Composite 25th percentile score
 30 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_36.png alt=‘Line plot from 27 to 30
+<img src=images/LafayetteCollege_33.png alt=‘Line plot from 27 to 30
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2093,7 +2119,7 @@ ACT Composite 75th percentile score
 33 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_37.png alt=‘Line plot from 31 to 33
+<img src=images/LafayetteCollege_34.png alt=‘Line plot from 31 to 33
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2108,7 +2134,7 @@ ACT English 25th percentile score
 30 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_38.png alt=‘Line plot from 27 to 30
+<img src=images/LafayetteCollege_35.png alt=‘Line plot from 27 to 30
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2123,7 +2149,7 @@ ACT English 75th percentile score
 35 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_39.png alt=‘Line plot from 33 to 35
+<img src=images/LafayetteCollege_36.png alt=‘Line plot from 33 to 35
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2138,7 +2164,7 @@ ACT Math 25th percentile score
 27 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_40.png alt=‘Line plot from 27 to 27
+<img src=images/LafayetteCollege_37.png alt=‘Line plot from 27 to 27
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2152,7 +2178,7 @@ ACT Math 75th percentile score
 32 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/LafayetteCollege_41.png alt=‘Line plot from 31 to 32
+<img src=images/LafayetteCollege_38.png alt=‘Line plot from 31 to 32
 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2165,28 +2191,28 @@ from 2014 to 2021’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b7c4c150ca752638c5c3" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b7c4c150ca752638c5c3">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_ChemicalEngineering.html\">Chemical Engineering</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_CivilEngineering_General.html\">Civil Engineering, General</a>","<a href=\"majors_Bachelors_InternationalRelationsandAffairs.html\">International Relations and Affairs</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Bachelors_Engineering_General.html\">Engineering, General</a>","<a href=\"majors_Bachelors_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Bachelors_SociologyandAnthropology.html\">Sociology and Anthropology</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_Film_Cinema_MediaStudies.html\">Film/Cinema/Media Studies</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_Other.html\">Political Science and Government, Other</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_FrenchLanguageandLiterature.html\">French Language and Literature</a>","<a href=\"majors_Bachelors_AsianStudies_Civilization.html\">Asian Studies/Civilization</a>","<a href=\"majors_Bachelors_AreaStudies_Other.html\">Area Studies, Other</a>","<a href=\"majors_Bachelors_WomensStudies.html\">Women's Studies</a>","<a href=\"majors_Bachelors_GermanLanguageandLiterature.html\">German Language and Literature</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>"],[81,60,39,38,35,34,32,32,28,27,21,19,17,16,16,14,11,10,9,9,8,6,6,6,6,5,4,4,3,2,1,1,1,1,1,1],[13.411,9.934,6.457,6.291,5.795,5.629,5.298,5.298,4.636,4.47,3.477,3.146,2.815,2.649,2.649,2.318,1.821,1.656,1.49,1.49,1.325,0.993,0.993,0.993,0.993,0.828,0.662,0.662,0.497,0.331,0.166,0.166,0.166,0.166,0.166,0.166],[0.379,0.164,0.457,0.101,0.35,0.031,0.214,0.409,0.035,0.107,0.072,0.106,0.138,0.662,0.094,2.911,0.158,0.107,0.22,0.04,0.206,0.026,0.098,0.045,0.779,0.067,0.042,0.056,0.042,0.162,0.169,0.219,0.077,0.172,0.018,0.012],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7d379b519a4759a1e19b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-7d379b519a4759a1e19b">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_Economics_General.html\">Economics, General</a>","<a href=\"majors_Bachelors_MechanicalEngineering.html\">Mechanical Engineering</a>","<a href=\"majors_Bachelors_Neuroscience.html\">Neuroscience</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_ChemicalEngineering.html\">Chemical Engineering</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_CivilEngineering_General.html\">Civil Engineering, General</a>","<a href=\"majors_Bachelors_InternationalRelationsandAffairs.html\">International Relations and Affairs</a>","<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_ComputerandInformationSciences_General.html\">Computer and Information Sciences, General</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_EconometricsandQuantitativeEconomics.html\">Econometrics and Quantitative Economics</a>","<a href=\"majors_Bachelors_Engineering_General.html\">Engineering, General</a>","<a href=\"majors_Bachelors_ElectricalandElectronicsEngineering.html\">Electrical and Electronics Engineering</a>","<a href=\"majors_Bachelors_SociologyandAnthropology.html\">Sociology and Anthropology</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_Geology_EarthScience_General.html\">Geology/Earth Science, General</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_Film_Cinema_MediaStudies.html\">Film/Cinema/Media Studies</a>","<a href=\"majors_Bachelors_Multi__InterdisciplinaryStudies_Other.html\">Multi-/Interdisciplinary Studies, Other</a>","<a href=\"majors_Bachelors_Philosophy.html\">Philosophy</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_Other.html\">Political Science and Government, Other</a>","<a href=\"majors_Bachelors_EnvironmentalScience.html\">Environmental Science</a>","<a href=\"majors_Bachelors_Art_ArtStudies_General.html\">Art/Art Studies, General</a>","<a href=\"majors_Bachelors_Music_General.html\">Music, General</a>","<a href=\"majors_Bachelors_Physics_General.html\">Physics, General</a>","<a href=\"majors_Bachelors_FrenchLanguageandLiterature.html\">French Language and Literature</a>","<a href=\"majors_Bachelors_AsianStudies_Civilization.html\">Asian Studies/Civilization</a>","<a href=\"majors_Bachelors_AreaStudies_Other.html\">Area Studies, Other</a>","<a href=\"majors_Bachelors_WomensStudies.html\">Women's Studies</a>","<a href=\"majors_Bachelors_GermanLanguageandLiterature.html\">German Language and Literature</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>"],[81,60,39,38,35,34,32,32,28,27,21,19,17,16,16,14,11,10,9,9,8,6,6,6,6,5,4,4,3,2,1,1,1,1,1,1],[13.411,9.934,6.457,6.291,5.795,5.629,5.298,5.298,4.636,4.47,3.477,3.146,2.815,2.649,2.649,2.318,1.821,1.656,1.49,1.49,1.325,0.993,0.993,0.993,0.993,0.828,0.662,0.662,0.497,0.331,0.166,0.166,0.166,0.166,0.166,0.166],[0.379,0.164,0.457,0.101,0.35,0.031,0.214,0.409,0.035,0.107,0.072,0.106,0.138,0.662,0.094,2.911,0.158,0.107,0.22,0.04,0.206,0.026,0.098,0.045,0.779,0.067,0.042,0.056,0.042,0.162,0.169,0.219,0.077,0.172,0.018,0.012],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6b1d07116c3fa0e900e1" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6b1d07116c3fa0e900e1">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-63473bbdfbcfb025e01c" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-63473bbdfbcfb025e01c">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-250b15e44e8db37770d1" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-250b15e44e8db37770d1">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e2c89692f64cbf0c08e5" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e2c89692f64cbf0c08e5">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6bef9408a31522df2c63" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-6bef9408a31522df2c63">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5f4ec89013420acd276c" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5f4ec89013420acd276c">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b9e05158027db76d8484" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-b9e05158027db76d8484">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4acfe63083a803f9ff77" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-4acfe63083a803f9ff77">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

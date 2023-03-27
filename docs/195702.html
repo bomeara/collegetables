@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -258,9 +260,19 @@ Undergraduate)</p></li>
 <li><p><strong>Enrollment profile</strong>: Exclusively undergraduate
 two-year (see more details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 19,878 (1.4 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $19,878 (1.3 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.secon.edu/net-price-calculator/'>here</a> to see
+what your family may be asked to pay. It can be MUCH lower than the
+average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Two-year, very small</p></li>
+<li><p><strong>In state percentage</strong>: 100% of first year students
+come from New York</p></li>
+<li><p><strong>In US percentage</strong>: 100% of first year students
+come from the US</p></li>
 <li><p><strong>Student to tenure-stream faculty ratio</strong>: 5.5
 (undergrads to tenure-stream faculty)</p></li>
 <li><p><strong>Student to faculty ratio</strong>: 5.5 (undergrads to all
@@ -288,9 +300,10 @@ are registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
-href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+<li><strong>Abortion in this state</strong>: Very protective (based on
+<a href="https://states.guttmacher.org/policies/"
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: A- (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -303,17 +316,29 @@ marriage</strong>: 96% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Safest (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Eastern Great Lakes lowland
 forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/23180/Average-Weather-in-Utica-New-York-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b554ba399389f6740376" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-b554ba399389f6740376">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[43.082768,-75.267857,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[43.082768,-75.267857],16,[]],"limits":{"lat":[43.082768,43.082768],"lng":[-75.267857,-75.267857]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-10fb2d89e804d19dd05e" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-10fb2d89e804d19dd05e">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"195702.html\">Saint Elizabeth College of Nursing</a>","<a href=\"433174.html\">Carolinas College of Health Sciences</a>","<a href=\"165060.html\">Signature Healthcare Brockton Hospital School of Nursing</a>","<a href=\"178466.html\">Hillyard Technical Center</a>","<a href=\"206631.html\">ITT Technical Institute-Youngstown</a>","<a href=\"380094.html\">Remington College-Houston Campus</a>","<a href=\"440271.html\">Remington College-Baton Rouge Campus</a>","<a href=\"214528.html\">Orleans Technical College</a>","<a href=\"418524.html\">Venango County Area Vocational Technical School</a>","<a href=\"475750.html\">Carrington College-Mesquite</a>","<a href=\"451857.html\">Remington College-Houston Southeast Campus</a>","<a href=\"450696.html\">Carrington College-Stockton</a>","<a href=\"430388.html\">ITT Technical Institute-Strongsville</a>","<a href=\"449612.html\">Louisiana Culinary Institute</a>","<a href=\"406422.html\">Central Susquehanna Intermediate Unit LPN Career</a>","<a href=\"438869.html\">Remington College-Little Rock Campus</a>","<a href=\"446923.html\">ITT Technical Institute-Warrensville Heights</a>","<a href=\"441487.html\">Texas County Technical College</a>","<a href=\"373711.html\">Upper Cape Cod Regional Technical School</a>","<a href=\"443535.html\">ITT Technical Institute-Hilliard</a>","<a href=\"418427.html\">Chester County Intermediate Unit</a>","<a href=\"190451.html\">Pomeroy College of Nursing at Crouse Hospital</a>","<a href=\"430351.html\">ITT Technical Institute-Harrisburg</a>","<a href=\"213622.html\">UPMC St. Margaret School of Nursing</a>","<a href=\"459611.html\">ITT Technical Institute-Akron</a>","<a href=\"103909.html\">Carrington College-Mesa</a>","<a href=\"145239.html\">Fox College</a>","<a href=\"414586.html\">ITT Technical Institute-Orland Park</a>","<a href=\"448497.html\">ITT Technical Institute-Maumee</a>","<a href=\"479637.html\">ITT Technical Institute-Douglasville</a>","<a href=\"218681.html\">University of South Carolina-Salkehatchie</a>","<a href=\"260992.html\">Northwestern College</a>","<a href=\"476887.html\">Elaine Sterling Institute</a>","<a href=\"459602.html\">ITT Technical Institute-Salem</a>","<a href=\"443270.html\">Southeastern College-Jacksonville</a>","<a href=\"379621.html\">Madison Oneida BOCES-Practical Nursing Program</a>","<a href=\"467368.html\">Carrington College-Ontario</a>","<a href=\"430379.html\">ITT Technical Institute-Norwood</a>","<a href=\"193122.html\">Southern Westchester BOCES-Practical Nursing Program</a>","<a href=\"138761.html\">Andrew College</a>","<a href=\"160524.html\">Remington College-Lafayette Campus</a>","<a href=\"215309.html\">University of Pittsburgh-Titusville</a>","<a href=\"446464.html\">Professional Massage Training Center</a>","<a href=\"451990.html\">ITT Technical Institute-High Point</a>","<a href=\"201177.html\">Aultman College of Nursing and Health Sciences</a>","<a href=\"237543.html\">Mercer County Technical Education Center</a>","<a href=\"457439.html\">Summit Salon Academy-Gainesville</a>","<a href=\"251251.html\">ITT Technical Institute-Newburgh</a>","<a href=\"377111.html\">Remington College-Fort Worth Campus</a>","<a href=\"237598.html\">Mountain State College</a>","<a href=\"211802.html\">DLP Conemaugh Memorial Medical Center</a>","<a href=\"430403.html\">Prism Career Institute-West Atlantic City</a>","<a href=\"475741.html\">Chamberlain University-Indiana</a>","<a href=\"201539.html\">Canton City Schools Adult Career and Technical Education</a>","<a href=\"217077.html\">YTI Career Institute-York</a>","<a href=\"417910.html\">Veeb Nassau County School of Practical Nursing</a>","<a href=\"176637.html\">ITT Technical Institute-Earth City</a>","<a href=\"208965.html\">ITT Technical Institute-Portland</a>","<a href=\"179052.html\">Rolla Technical Institute/Center</a>","<a href=\"114390.html\">FIDM-Fashion Institute of Design &amp; Merchandising-San Francisco</a>","<a href=\"216773.html\">Western Pennsylvania Hospital School of Nursing</a>","<a href=\"406547.html\">City College-Gainesville</a>","<a href=\"413857.html\">ITT Technical Institute-Louisville</a>","<a href=\"459596.html\">ITT Technical Institute-Tallahassee</a>","<a href=\"142337.html\">ITT Technical Institute-Boise</a>","<a href=\"220464.html\">John A Gupton College</a>","<a href=\"438258.html\">Carrington College-Pleasant Hill Campus</a>","<a href=\"428019.html\">Green Country Technology Center</a>","<a href=\"434052.html\">ITT Technical Institute-Richardson</a>","<a href=\"417327.html\">City College-Altamonte Springs</a>","<a href=\"455424.html\">Brensten Education</a>","<a href=\"419217.html\">Mercy Hospital School of Practical Nursing-Plantation General Hospital</a>","<a href=\"148955.html\">National Latino Education Institute</a>","<a href=\"449667.html\">Center for Natural Wellness School of Massage Therapy</a>","<a href=\"451963.html\">ITT Technical Institute-Columbus</a>","<a href=\"223472.html\">Vet Tech Institute of Houston</a>","<a href=\"456436.html\">ITT Technical Institute-Fort Myers</a>","<a href=\"375966.html\">Eastern Center for Arts and Technology</a>","<a href=\"178183.html\">Midwest Institute</a>","<a href=\"205054.html\">Professional Skills Institute</a>","<a href=\"441955.html\">ITT Technical Institute-Springfield</a>","<a href=\"450234.html\">ITT Technical Institute-Wichita</a>","<a href=\"153445.html\">Hawkeye Community College</a>","<a href=\"458034.html\">Houston International College Cardiotech Ultrasound School</a>","<a href=\"427308.html\">Merkaz Bnos-Business School</a>","<a href=\"408729.html\">Laurel Technical Institute</a>","<a href=\"486512.html\">Florida International Training Institute</a>","<a href=\"470904.html\">ITT Technical Institute-Myrtle Beach</a>","<a href=\"493798.html\">New York Seminary</a>","<a href=\"448460.html\">ITT Technical Institute-Dunmore</a>","<a href=\"211149.html\">Bidwell Training Center Inc</a>","<a href=\"366289.html\">InterCoast Colleges-Santa Ana</a>","<a href=\"445249.html\">Remington College-Nashville Campus</a>","<a href=\"451981.html\">ITT Technical Institute-Madison</a>","<a href=\"243799.html\">Blue Hills Regional Technical School</a>","<a href=\"377546.html\">Northwest College of Art &amp; Design</a>","<a href=\"103927.html\">Carrington College-Tucson</a>","<a href=\"475477.html\">City College-Hollywood</a>","<a href=\"440642.html\">ITT Technical Institute-Levittown</a>","<a href=\"451945.html\">ITT Technical Institute-Madison</a>"],[67,61,43,54,63,69,45,68,44,74,75,68,67,63,68,60,60,70,91,60,48,49,74,64,69,55,61,65,76,76,72,81,71,53,58,82,79,75,40,51,79,47,83,66,32,82,52,54,78,75,53,72,60,96,69,67,59,74,75,32,74,83,77,59,84,52,81,85,78,80,85,100,80,62,75,84,71,100,76,62,81,79,69,78,92,91,83,85,74,90,89,48,62,88,62,72,87,80,85,68],[50,55,50,43,59,85,50,52,62,48,61,64,45,43,86,67,46,86,100,45,64,41,42,67,43,48,48,44,47,55,50,56,60,38,65,89,56,47,65,24,62,33,60,36,35,78,58,34,65,67,43,69,67,69,45,45,36,44,44,55,76,100,44,36,50,78,62,97,48,83,68,100,75,38,42,63,40,100,69,52,48,36,40,100,59,84,80,43,71,47,72,65,63,54,75,32,75,88,49,32],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,19,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,9,null,null,null,20,null,null,null,null,25,null,null,null,12,7,null,null,null,null,23,null,7,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,18,null,null,null,null,null,null,null,null,null,null,null,null,null,null,38,null,null,null,20],[32,42,null,21,100,99,100,null,34,83,100,70,100,100,39,98,100,100,83,100,11,null,100,null,100,80,90,100,100,100,14,100,88,100,93,48,67,100,71,20,100,null,85,100,null,17,83,100,100,100,94,100,100,12,16,38,100,100,10,null,null,null,100,100,100,72,82,1,100,null,100,83,null,53,100,95,100,8,100,100,100,100,16,67,null,93,100,100,68,100,0,100,100,100,36,93,72,null,100,100],[6,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,28,null,null,null,null,null,null,null,null,13,null,8,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,20533,18516,19986,null,21707,24956,null,21795,14411,null,null,17869,20023,null,21068,null,null,19512,null,39966,9299,null,null,null,11913,23789,16321,null,null,16619,25194,null,null,19351,22035,null,null,null,23514,null,24747,null,19675,null,18476,29831,null,6216,8916,36439,null,null,null,28210,null,18877,null,null,null,9458,31218,4736,null,15686,null,null,21276,null,null,14771,null,null,null,30986,null,null,9644,30562,16891,7248,null,null,11508,null,null,26642,18514,null,46770,15771,35716,16017,null,null],[75,73,106,70,303,80,134,172,47,66,99,357,230,93,32,21,274,54,76,233,60,82,78,98,162,591,308,301,119,157,343,122,525,106,67,57,128,238,31,200,279,25,57,210,105,69,25,123,264,20,150,322,87,73,446,212,358,365,46,98,117,42,183,213,137,56,415,49,520,47,402,76,24,39,216,220,206,78,223,354,537,90,1921,100,92,87,304,85,100,98,164,7,272,91,56,93,517,29,269,208],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],["New York","North Carolina","Massachusetts","Missouri","Ohio","Texas","Louisiana","Pennsylvania","Pennsylvania","Texas","Texas","California","Ohio","Louisiana","Pennsylvania","Arkansas","Ohio","Missouri","Massachusetts","Ohio","Pennsylvania","New York","Pennsylvania","Pennsylvania","Ohio","Arizona","Illinois","Illinois","Ohio","Georgia","South Carolina","Illinois","Georgia","Virginia","Florida","New York","California","Ohio","New York","Georgia","Louisiana","Pennsylvania","Missouri","North Carolina","Ohio","West Virginia","Florida","Indiana","Texas","West Virginia","Pennsylvania","New Jersey","Indiana","Ohio","Pennsylvania","New York","Missouri","Oregon","Missouri","California","Pennsylvania","Florida","Kentucky","Florida","Idaho","Tennessee","California","Oklahoma","Texas","Florida","Wisconsin","Florida","Illinois","New York","Ohio","Texas","Florida","Pennsylvania","Missouri","Ohio","Virginia","Kansas","Iowa","Texas","New York","Pennsylvania","Florida","South Carolina","New York","Pennsylvania","Pennsylvania","California","Tennessee","Wisconsin","Massachusetts","Washington","Arizona","Florida","Pennsylvania","Alabama"],["Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Increasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Unknown or not applicable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Unknown or not applicable","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b34cc49d10280f02e252" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b34cc49d10280f02e252">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[43.082768,-75.267857,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[43.082768,-75.267857],16,[]],"limits":{"lat":[43.082768,43.082768],"lng":[-75.267857,-75.267857]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -330,12 +355,6 @@ Change over ≤ 11 years
 </th>
 <th style="text-align:center;">
 Trend
-</th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Special Focus Two-Year: Health Professions
 </th>
 </tr>
 </thead>
@@ -354,10 +373,6 @@ from 21 to 75 from 2011 to 2021’ >
 <td style="text-align:center;">
 ↑<br />6.6 per year
 </td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -368,11 +383,7 @@ Undergrads (part time)
 </td>
 <td style="text-align:center;">
 <img src=images/SaintElizabethCollegeofNursing_2.png alt=‘Line plot
-from 0.0 to 62 from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
+from 0 to 62 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -390,10 +401,6 @@ from 62 to 67 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
 </td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -408,12 +415,6 @@ accept)
 from 67 to 50 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (higher) than 46%
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (higher) than 29%
 </td>
 </tr>
 </tbody>
@@ -438,12 +439,6 @@ Saint Elizabeth College of Nursing
 <th style="text-align:center;">
 Change over ≤ 11 years
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Special Focus Two-Year: Health Professions
-</th>
 </tr>
 </thead>
 <tbody>
@@ -458,12 +453,6 @@ $19,878 (2017)
 <img src=images/SaintElizabethCollegeofNursing_9.png alt=‘Line plot
 from 17,598 to 19,878 from 2011 to 2017’ >
 </td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 23%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 68%
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -475,12 +464,6 @@ Undergrads getting federal aid
 <td style="text-align:center;">
 <img src=images/SaintElizabethCollegeofNursing_10.png alt=‘Line plot
 from 67 to 50 from 2014 to 2018’ >
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (higher) than 31%
-</td>
-<td style="text-align:center;">
-✪<br />Better (higher) than 20%
 </td>
 </tr>
 <tr>
@@ -494,12 +477,6 @@ Undergrads getting any aid
 <img src=images/SaintElizabethCollegeofNursing_11.png alt=‘Line plot
 from 100 to 100 from 2014 to 2018’ >
 </td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (higher) than 100%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (higher) than 100%
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -511,12 +488,6 @@ Undergrads getting Pell grants
 <td style="text-align:center;">
 <img src=images/SaintElizabethCollegeofNursing_12.png alt=‘Line plot
 from 67 to 50 from 2014 to 2018’ >
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (higher) than 32%
-</td>
-<td style="text-align:center;">
-✪<br />Better (higher) than 20%
 </td>
 </tr>
 </tbody>
@@ -538,35 +509,9 @@ Change over ≤ 11 years
 <th style="text-align:center;">
 Trend
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Special Focus Two-Year: Health Professions
-</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-5.5 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_14.png alt=‘Line plot
-from 5.3 to 5.5 from 2014 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 95%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 80%
-</td>
-</tr>
 <tr>
 <td style="text-align:left;">
 Undergrads per tenure track instructor
@@ -575,13 +520,22 @@ Undergrads per tenure track instructor
 5.5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_15.png alt=‘Line plot
+<img src=images/SaintElizabethCollegeofNursing_14.png alt=‘Line plot
 from 3.4 to 5.5 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
+</td>
 <td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 98%
+5.5 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/SaintElizabethCollegeofNursing_15.png alt=‘Line plot
+from 5.3 to 5.5 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -599,29 +553,6 @@ from 15 to 16 from 2014 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Non-tenure track instructors
-</td>
-<td style="text-align:center;">
-2.0 (2019)
-</td>
-<td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_17.png alt=‘Line plot
-from 15 to 2.0 from 2014 to 2019’ >
-</td>
-<td style="text-align:center;">
-↓<br />-3.2 per year
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -631,14 +562,25 @@ Tenure track instructors
 16 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_18.png alt=‘Line plot
+<img src=images/SaintElizabethCollegeofNursing_17.png alt=‘Line plot
 from 18 to 16 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
-<td style="text-align:center;">
+</tr>
+<tr>
+<td style="text-align:left;">
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
+2 (2019)
+</td>
+<td style="text-align:center;">
+<img src=images/SaintElizabethCollegeofNursing_18.png alt=‘Line plot
+from 15 to 2 from 2014 to 2019’ >
+</td>
+<td style="text-align:center;">
+↓<br />-3.2 per year
 </td>
 </tr>
 </tbody>
@@ -663,15 +605,23 @@ Change over ≤ 11 years
 <th style="text-align:center;">
 Trend
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Special Focus Two-Year: Health Professions
-</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+32% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/SaintElizabethCollegeofNursing_19.png alt=‘Line plot
+from 25 to 32 from 2014 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
 <tr>
 <td style="text-align:left;">
 Revenue minus expenses
@@ -680,16 +630,10 @@ Revenue minus expenses
 -$581,273 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_19.png alt=‘Line plot
+<img src=images/SaintElizabethCollegeofNursing_20.png alt=‘Line plot
 from 338,225 to -581,273 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪<br />Better (higher) than 11%
-</td>
-<td style="text-align:center;">
-✪<br />Better (higher) than 4%
 </td>
 </tr>
 <tr>
@@ -700,12 +644,8 @@ Revenue
 $4.2 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_20.png alt=‘Line plot
+<img src=images/SaintElizabethCollegeofNursing_21.png alt=‘Line plot
 from 4.4 M to 4.2 M from 2014 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 <td style="text-align:center;">
 </td>
@@ -718,15 +658,11 @@ Expenses
 $4.8 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_21.png alt=‘Line plot
+<img src=images/SaintElizabethCollegeofNursing_22.png alt=‘Line plot
 from 4.1 M to 4.8 M from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↑<br />$138,284 per year
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 <tr>
@@ -737,91 +673,11 @@ Assets
 $4.8 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_22.png alt=‘Line plot
+<img src=images/SaintElizabethCollegeofNursing_23.png alt=‘Line plot
 from 1.4 M to 4.8 M from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↑<br />$559,260 per year
-</td>
-<td style="text-align:center;">
-✪<br />Better (higher) than 20%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (higher) than 60%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-32% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_23.png alt=‘Line plot
-from 25 to 32 from 2014 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 64%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 97%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_24.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-9.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_25.png alt=‘Line plot
-from 11 to 9.0 from 2014 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_26.png alt=‘Line plot
-from 1.9 to 0.0 from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -860,11 +716,11 @@ Change over ≤ 11 years
 Men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_83.png alt=‘Line plot
-from 11 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_80.png alt=‘Line plot
+from 11 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -875,7 +731,7 @@ Women (percent freshmen)
 100% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_84.png alt=‘Line plot
+<img src=images/SaintElizabethCollegeofNursing_81.png alt=‘Line plot
 from 89 to 100 from 2014 to 2017’ >
 </td>
 </tr>
@@ -884,11 +740,11 @@ from 89 to 100 from 2014 to 2017’ >
 American Indian or Alaska Native men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_85.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_82.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -896,11 +752,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 American Indian or Alaska Native women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_86.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_83.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -908,11 +764,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Asian men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_87.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_84.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -920,11 +776,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Asian women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_88.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_85.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -932,11 +788,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Black or African American men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_89.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_86.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -944,11 +800,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Black or African American women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_90.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_87.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -956,11 +812,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Hispanic men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_91.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_88.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -968,11 +824,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Hispanic women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_92.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_89.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -980,11 +836,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_93.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_90.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -992,11 +848,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_94.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_91.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -1004,11 +860,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 White men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_95.png alt=‘Line plot
-from 11 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_92.png alt=‘Line plot
+from 11 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -1019,7 +875,7 @@ White women (percent freshmen)
 100% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_96.png alt=‘Line plot
+<img src=images/SaintElizabethCollegeofNursing_93.png alt=‘Line plot
 from 89 to 100 from 2014 to 2017’ >
 </td>
 </tr>
@@ -1028,11 +884,11 @@ from 89 to 100 from 2014 to 2017’ >
 Two or more races men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_97.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_94.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -1040,11 +896,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Two or more races women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_98.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_95.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -1052,11 +908,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Race ethnicity unknown men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_99.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_96.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -1064,11 +920,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Race ethnicity unknown women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_100.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_97.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -1076,11 +932,11 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Nonresident alien men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_101.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+<img src=images/SaintElizabethCollegeofNursing_98.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
 </td>
 </tr>
 <tr>
@@ -1088,11 +944,66 @@ from 0.0 to 0.0 from 2014 to 2017’ >
 Nonresident alien women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2017)
+0% (2017)
+</td>
+<td style="text-align:center;">
+<img src=images/SaintElizabethCollegeofNursing_99.png alt=‘Line plot
+from 0 to 0 from 2014 to 2017’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Saint Elizabeth College of Nursing
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+100% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/SaintElizabethCollegeofNursing_101.png alt=‘Line plot
+from 100 to 100 from 2014 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+100% (2021)
 </td>
 <td style="text-align:center;">
 <img src=images/SaintElizabethCollegeofNursing_102.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2017’ >
+from 100 to 100 from 2014 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/SaintElizabethCollegeofNursing_103.png alt=‘Line plot
+from 0 to 0 from 2014 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1133,7 +1044,7 @@ Total (tenure-track count)
 16 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_61.png alt=‘Line plot
+<img src=images/SaintElizabethCollegeofNursing_58.png alt=‘Line plot
 from 18 to 16 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1147,7 +1058,7 @@ Women (tenure-track count)
 14 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_62.png alt=‘Line plot
+<img src=images/SaintElizabethCollegeofNursing_59.png alt=‘Line plot
 from 17 to 14 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1158,11 +1069,11 @@ from 17 to 14 from 2016 to 2020’ >
 Men (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_63.png alt=‘Line plot
-from 1.0 to 2.0 from 2016 to 2020’ >
+<img src=images/SaintElizabethCollegeofNursing_60.png alt=‘Line plot
+from 1 to 2 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1172,11 +1083,11 @@ from 1.0 to 2.0 from 2016 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_64.png alt=‘Line plot
-from 0.0 to 0.0 from 2016 to 2020’ >
+<img src=images/SaintElizabethCollegeofNursing_61.png alt=‘Line plot
+from 0 to 0 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1186,11 +1097,11 @@ from 0.0 to 0.0 from 2016 to 2020’ >
 Asian (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_65.png alt=‘Line plot
-from 0.0 to 0.0 from 2016 to 2020’ >
+<img src=images/SaintElizabethCollegeofNursing_62.png alt=‘Line plot
+from 0 to 0 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1200,11 +1111,11 @@ from 0.0 to 0.0 from 2016 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_66.png alt=‘Line plot
-from 0.0 to 0.0 from 2016 to 2020’ >
+<img src=images/SaintElizabethCollegeofNursing_63.png alt=‘Line plot
+from 0 to 0 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1214,11 +1125,11 @@ from 0.0 to 0.0 from 2016 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_67.png alt=‘Line plot
-from 0.0 to 0.0 from 2016 to 2020’ >
+<img src=images/SaintElizabethCollegeofNursing_64.png alt=‘Line plot
+from 0 to 0 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1228,11 +1139,11 @@ from 0.0 to 0.0 from 2016 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_68.png alt=‘Line plot
-from 0.0 to 0.0 from 2016 to 2020’ >
+<img src=images/SaintElizabethCollegeofNursing_65.png alt=‘Line plot
+from 0 to 0 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1245,7 +1156,7 @@ White (tenure-track count)
 14 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_69.png alt=‘Line plot
+<img src=images/SaintElizabethCollegeofNursing_66.png alt=‘Line plot
 from 18 to 14 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1256,11 +1167,11 @@ from 18 to 14 from 2016 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_70.png alt=‘Line plot
-from 0.0 to 2.0 from 2016 to 2020’ >
+<img src=images/SaintElizabethCollegeofNursing_67.png alt=‘Line plot
+from 0 to 2 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.4 per year
@@ -1271,11 +1182,11 @@ from 0.0 to 2.0 from 2016 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_71.png alt=‘Line plot
-from 0.0 to 0.0 from 2016 to 2020’ >
+<img src=images/SaintElizabethCollegeofNursing_68.png alt=‘Line plot
+from 0 to 0 from 2016 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1316,11 +1227,11 @@ Trend
 Total (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2019)
+2 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_72.png alt=‘Line plot
-from 15 to 2.0 from 2014 to 2019’ >
+<img src=images/SaintElizabethCollegeofNursing_69.png alt=‘Line plot
+from 15 to 2 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-3.2 per year
@@ -1331,11 +1242,11 @@ from 15 to 2.0 from 2014 to 2019’ >
 Women (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2019)
+2 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_73.png alt=‘Line plot
-from 14 to 2.0 from 2014 to 2019’ >
+<img src=images/SaintElizabethCollegeofNursing_70.png alt=‘Line plot
+from 14 to 2 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-2.9 per year
@@ -1346,11 +1257,11 @@ from 14 to 2.0 from 2014 to 2019’ >
 Men (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2019)
+0 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_74.png alt=‘Line plot
-from 1.0 to 0.0 from 2014 to 2019’ >
+<img src=images/SaintElizabethCollegeofNursing_71.png alt=‘Line plot
+from 1 to 0 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.2 per year
@@ -1361,11 +1272,11 @@ from 1.0 to 0.0 from 2014 to 2019’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2019)
+0 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_75.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2019’ >
+<img src=images/SaintElizabethCollegeofNursing_72.png alt=‘Line plot
+from 0 to 0 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1375,11 +1286,11 @@ from 0.0 to 0.0 from 2014 to 2019’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2019)
+0 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_76.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2019’ >
+<img src=images/SaintElizabethCollegeofNursing_73.png alt=‘Line plot
+from 0 to 0 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1389,11 +1300,11 @@ from 0.0 to 0.0 from 2014 to 2019’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2019)
+0 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_77.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2019’ >
+<img src=images/SaintElizabethCollegeofNursing_74.png alt=‘Line plot
+from 0 to 0 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1403,11 +1314,11 @@ from 0.0 to 0.0 from 2014 to 2019’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2019)
+0 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_78.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2019’ >
+<img src=images/SaintElizabethCollegeofNursing_75.png alt=‘Line plot
+from 0 to 0 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1417,11 +1328,11 @@ from 0.0 to 0.0 from 2014 to 2019’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2019)
+0 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_79.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2019’ >
+<img src=images/SaintElizabethCollegeofNursing_76.png alt=‘Line plot
+from 0 to 0 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1431,11 +1342,11 @@ from 0.0 to 0.0 from 2014 to 2019’ >
 White (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2019)
+1 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_80.png alt=‘Line plot
-from 15 to 1.0 from 2014 to 2019’ >
+<img src=images/SaintElizabethCollegeofNursing_77.png alt=‘Line plot
+from 15 to 1 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-3.4 per year
@@ -1446,11 +1357,11 @@ from 15 to 1.0 from 2014 to 2019’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2019)
+1 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_81.png alt=‘Line plot
-from 0.0 to 1.0 from 2014 to 2019’ >
+<img src=images/SaintElizabethCollegeofNursing_78.png alt=‘Line plot
+from 0 to 1 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1460,11 +1371,11 @@ from 0.0 to 1.0 from 2014 to 2019’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2019)
+0 (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/SaintElizabethCollegeofNursing_82.png alt=‘Line plot
-from 0.0 to 0.0 from 2014 to 2019’ >
+<img src=images/SaintElizabethCollegeofNursing_79.png alt=‘Line plot
+from 0 to 0 from 2014 to 2019’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1485,28 +1396,28 @@ from 0.0 to 0.0 from 2014 to 2019’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ca6d12d14a9435995c09" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-ca6d12d14a9435995c09">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-fca20aa32078463a4de3" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-fca20aa32078463a4de3">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a9af022faf4175a8296e" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a9af022faf4175a8296e">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7b326a6634ea41262a0d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-7b326a6634ea41262a0d">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5388334ae58d9cf2b226" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-5388334ae58d9cf2b226">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-36276633046f2252429a" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-36276633046f2252429a">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-12793dc12d12fbf0e03c" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-12793dc12d12fbf0e03c">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-db5cdfff8c4ebf0e8d64" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-db5cdfff8c4ebf0e8d64">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-79357f373255b7e1a413" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-79357f373255b7e1a413">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>"],[67],[100],[0.079],["Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3f7472e2492f71b8be87" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3f7472e2492f71b8be87">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Associates_RegisteredNursing_RegisteredNurse.html\">Registered Nursing/Registered Nurse</a>"],[67],[100],[0.079],["Associates"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>

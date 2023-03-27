@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -268,10 +270,20 @@ Other-dominant, with Arts &amp; Sciences</p></li>
 <li><p><strong>Enrollment profile</strong>: High undergraduate (see more
 details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ 21,717 (1.6 times the equivalent cost of
-Harvard)</p></li>
+aid</strong>: $21,717 (1.4 times the equivalent cost of
+Harvard).</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $20,462.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href='https://www.collegecostcalculator.org/meredith'>here</a> to see
+what your family may be asked to pay. It can be MUCH lower than the
+average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, small, highly
 residential</p></li>
+<li><p><strong>In state percentage</strong>: 85.2% of first year
+students come from North Carolina</p></li>
+<li><p><strong>In US percentage</strong>: 94.5% of first year students
+come from the US (note that 0.0% have no residence reported)</p></li>
 <li><p><strong>Graduation rate (within 6 years) for students seeking a
 Bachelors</strong>: 68.5% (this is what is usually reported as
 “graduation rate”)</p></li>
@@ -311,9 +323,10 @@ registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Restrictive (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: C- (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -326,16 +339,29 @@ marriage</strong>: 38.5% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Moderate risk (based
+on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Southeastern mixed forests</li>
 <li><strong>Biome</strong>: Temperate Broadleaf &amp; Mixed Forests</li>
 <li><strong>Climate</strong>: See overview at <a
 href="https:/weatherspark.com/y/20170/Average-Weather-in-Raleigh-North-Carolina-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7cfdc755e506010d2ce3" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-7cfdc755e506010d2ce3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[35.799351,-78.689995,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[35.799351,-78.689995],16,[]],"limits":{"lat":[35.799351,35.799351],"lng":[-78.689995,-78.689995]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d3a4e3b99ea0ad2c4866" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d3a4e3b99ea0ad2c4866">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"198950.html\">Meredith College</a>","<a href=\"138600.html\">Agnes Scott College</a>","<a href=\"220710.html\">Maryville College</a>","<a href=\"198969.html\">Methodist University</a>","<a href=\"141325.html\">Wesleyan College</a>","<a href=\"140234.html\">LaGrange College</a>","<a href=\"139393.html\">Covenant College</a>","<a href=\"199209.html\">North Carolina Wesleyan College</a>","<a href=\"101435.html\">Huntingdon College</a>","<a href=\"231420.html\">Averett University</a>","<a href=\"199607.html\">Salem College</a>","<a href=\"198066.html\">Brevard College</a>","<a href=\"140818.html\">Piedmont University</a>","<a href=\"156295.html\">Berea College</a>","<a href=\"199306.html\">Pfeiffer University</a>","<a href=\"215798.html\">Saint Vincent College</a>","<a href=\"232672.html\">Mary Baldwin University</a>","<a href=\"449931.html\">Averett University-Non-Traditional Programs</a>","<a href=\"220215.html\">Freed-Hardeman University</a>","<a href=\"206437.html\">Walsh University</a>","<a href=\"213507.html\">Lebanon Valley College</a>","<a href=\"199272.html\">William Peace University</a>","<a href=\"166692.html\">Massachusetts Maritime Academy</a>","<a href=\"177214.html\">Drury University</a>","<a href=\"215743.html\">Saint Francis University</a>","<a href=\"169983.html\">Kettering University</a>","<a href=\"212197.html\">Elizabethtown College</a>","<a href=\"163912.html\">St. Mary's College of Maryland</a>","<a href=\"226231.html\">LeTourneau University</a>","<a href=\"196103.html\">SUNY College of Environmental Science and Forestry</a>","<a href=\"174792.html\">Saint Johns University</a>","<a href=\"144962.html\">Elmhurst University</a>","<a href=\"219000.html\">Augustana University</a>","<a href=\"199412.html\">Queens University of Charlotte</a>","<a href=\"204909.html\">Ohio Wesleyan University</a>","<a href=\"152381.html\">Saint Mary-of-the-Woods College</a>","<a href=\"233295.html\">Randolph-Macon College</a>","<a href=\"147679.html\">North Park University</a>","<a href=\"166674.html\">Massachusetts College of Art and Design</a>","<a href=\"174747.html\">College of Saint Benedict</a>","<a href=\"168591.html\">Alma College</a>","<a href=\"114813.html\">Fresno Pacific University</a>","<a href=\"139144.html\">Berry College</a>","<a href=\"205443.html\">Shawnee State University</a>","<a href=\"168546.html\">Albion College</a>","<a href=\"148584.html\">University of St Francis</a>","<a href=\"231581.html\">Bridgewater College</a>","<a href=\"173665.html\">Hamline University</a>","<a href=\"204185.html\">University of Mount Union</a>","<a href=\"216694.html\">Waynesburg University</a>","<a href=\"107512.html\">Ouachita Baptist University</a>","<a href=\"177339.html\">Evangel University</a>","<a href=\"179043.html\">Rockhurst University</a>","<a href=\"195562.html\">St. Joseph's College-Long Island</a>","<a href=\"174899.html\">The College of Saint Scholastica</a>","<a href=\"240107.html\">Viterbo University</a>","<a href=\"180416.html\">Montana Technological University</a>","<a href=\"228343.html\">Southwestern University</a>","<a href=\"170639.html\">Lake Superior State University</a>","<a href=\"153108.html\">Central College</a>","<a href=\"236452.html\">Saint Martin's University</a>","<a href=\"218229.html\">Lander University</a>","<a href=\"207458.html\">Oklahoma City University</a>","<a href=\"156408.html\">Centre College</a>","<a href=\"204936.html\">Otterbein University</a>","<a href=\"195164.html\">St Bonaventure University</a>","<a href=\"201104.html\">Ashland University</a>","<a href=\"175005.html\">St Catherine University</a>","<a href=\"219806.html\">Carson-Newman University</a>","<a href=\"184773.html\">Georgian Court University</a>","<a href=\"214157.html\">Moravian University</a>","<a href=\"215947.html\">Seton Hill University</a>","<a href=\"232681.html\">University of Mary Washington</a>","<a href=\"140696.html\">Oglethorpe University</a>","<a href=\"162760.html\">Hood College</a>","<a href=\"228981.html\">Texas Lutheran University</a>","<a href=\"214069.html\">Misericordia University</a>","<a href=\"211468.html\">Cedar Crest College</a>","<a href=\"188641.html\">Alfred University</a>","<a href=\"123651.html\">Vanguard University of Southern California</a>","<a href=\"152390.html\">Saint Mary's College</a>","<a href=\"222983.html\">Austin College</a>","<a href=\"173300.html\">Concordia College at Moorhead</a>","<a href=\"150941.html\">Huntington University</a>","<a href=\"196291.html\">SUNY Maritime College</a>","<a href=\"155335.html\">Newman University</a>","<a href=\"156745.html\">Georgetown College</a>","<a href=\"161226.html\">University of Maine at Farmington</a>","<a href=\"170806.html\">Madonna University</a>","<a href=\"197197.html\">Wagner College</a>","<a href=\"207403.html\">Oklahoma Baptist University</a>","<a href=\"486901.html\">Milligan University</a>","<a href=\"217873.html\">Claflin University</a>","<a href=\"201548.html\">Capital University</a>","<a href=\"156213.html\">Asbury University</a>","<a href=\"150066.html\">Anderson University</a>","<a href=\"213251.html\">Juniata College</a>","<a href=\"184348.html\">Drew University</a>","<a href=\"107080.html\">Hendrix College</a>","<a href=\"106412.html\">University of Arkansas at Pine Bluff</a>"],[70,70,68,79,62,75,89,28,69,48,90,45,67,33,72,73,87,9,88,80,78,52,90,65,73,86,79,77,54,65,89,71,72,69,74,70,84,67,79,92,69,78,70,69,69,68,75,76,80,75,74,64,67,73,74,77,90,51,73,75,72,69,79,68,83,78,70,75,79,80,78,74,82,81,77,63,89,69,67,69,83,43,72,79,74,72,75,97,52,82,56,60,62,74,77,62,74,80,68,68],[29,27,20,18,17,14,38,31,15,14,11,22,17,59,20,24,6,29,37,23,20,20,33,25,26,20,22,17,26,21,30,20,29,12,14,34,18,17,20,25,16,28,20,35,10,19,16,14,18,19,25,39,17,34,23,26,23,15,21,21,18,27,26,22,19,19,23,27,17,17,21,18,16,22,13,19,19,20,9,25,19,16,17,29,31,30,23,23,40,16,21,34,6,16,30,12,16,13,19,21],[68,75,56,39,56,46,73,40,44,42,67,33,48,66,34,73,48,100,65,69,68,42,78,60,74,70,75,73,64,76,79,68,71,64,64,62,72,61,74,77,63,68,72,53,64,65,62,65,68,67,66,63,74,72,65,65,57,74,54,66,61,53,65,86,69,71,68,60,57,58,68,67,68,58,66,54,71,64,60,61,74,68,74,69,74,63,56,55,64,72,54,70,51,62,65,63,76,74,73,41],[40,19,23,56,20,31,31,46,32,46,19,42,64,0,44,28,55,100,30,52,42,37,29,27,50,45,36,17,56,11,20,73,33,33,12,47,25,40,32,40,25,73,8,28,17,70,21,49,37,35,25,40,58,87,51,54,19,20,22,21,56,21,49,12,42,37,51,46,45,57,45,45,20,43,30,30,59,43,19,71,17,24,31,41,21,57,25,19,64,55,26,42,26,43,30,39,30,45,11,11],[15,14,16,12,10,13,14,30,21,17,15,17,72,12,null,19,30,19,16,21,17,100,17,16,19,19,16,13,16,13,17,24,17,17,12,16,16,20,16,16,19,30,16,20,14,21,17,17,17,21,17,19,19,29,17,17,11,16,18,13,16,29,14,12,17,15,20,15,16,16,14,20,17,30,12,20,16,22,11,27,12,14,15,15,28,11,14,14,null,21,19,9,18,21,16,14,14,15,12,23],[20462,17463,15426,22803,8713,21217,26551,16027,20801,21265,17459,26488,15776,5313,32096,17606,17744,null,15534,13457,22675,22846,5234,14146,23249,30263,17622,10370,19661,16041,16058,16211,17585,22706,21323,11678,20027,16166,19485,17510,18565,17827,16418,12832,12732,12679,18579,17386,20013,15013,16902,23931,15034,null,16932,14905,14290,20981,8770,18512,19743,15666,17871,13778,16175,15848,14311,15209,16764,17250,22402,19326,15988,20482,18234,16842,21800,21135,19639,15246,13997,15894,17445,19251,15549,14970,16410,11225,13079,24365,17911,16444,19776,21198,18887,17325,15816,17287,10861,10177],[1373,1050,963,1376,455,563,804,1196,792,979,276,743,1117,1432,719,1365,1214,108,1378,1377,1607,628,1405,1318,1501,1452,1537,1471,1390,1278,1515,2689,1626,1347,1333,663,1459,1699,1556,1533,1308,1395,2157,2163,1500,1250,1416,1747,1866,1132,1551,1421,1779,2611,1804,1336,1382,1480,1406,1079,1249,3206,1383,1320,2102,1724,2219,1772,1566,1202,1802,1526,3111,1375,1162,1351,1417,792,1425,1777,1368,1205,1837,895,1300,832,1225,1293,1485,1514,1332,741,1687,2010,1127,1063,1222,1589,1101,2093],[128,15,null,294,37,53,36,78,5,51,3,10,309,null,161,84,407,225,107,314,190,null,98,22,278,110,71,24,48,192,47,176,75,124,null,112,null,113,102,14,13,382,56,87,null,196,33,41,170,117,48,195,387,122,957,538,71,null,0,null,63,78,812,null,80,219,717,524,173,138,230,277,123,4,154,41,247,134,167,54,63,16,0,208,68,383,1,21,109,127,26,239,50,514,20,22,8,283,9,127],["North Carolina","Georgia","Tennessee","North Carolina","Georgia","Georgia","Georgia","North Carolina","Alabama","Virginia","North Carolina","North Carolina","Georgia","Kentucky","North Carolina","Pennsylvania","Virginia","Virginia","Tennessee","Ohio","Pennsylvania","North Carolina","Massachusetts","Missouri","Pennsylvania","Michigan","Pennsylvania","Maryland","Texas","New York","Minnesota","Illinois","South Dakota","North Carolina","Ohio","Indiana","Virginia","Illinois","Massachusetts","Minnesota","Michigan","California","Georgia","Ohio","Michigan","Illinois","Virginia","Minnesota","Ohio","Pennsylvania","Arkansas","Missouri","Missouri","New York","Minnesota","Wisconsin","Montana","Texas","Michigan","Iowa","Washington","South Carolina","Oklahoma","Kentucky","Ohio","New York","Ohio","Minnesota","Tennessee","New Jersey","Pennsylvania","Pennsylvania","Virginia","Georgia","Maryland","Texas","Pennsylvania","Pennsylvania","New York","California","Indiana","Texas","Minnesota","Indiana","New York","Kansas","Kentucky","Maine","Michigan","New York","Oklahoma","Tennessee","South Carolina","Ohio","Kentucky","Indiana","Pennsylvania","New Jersey","Arkansas","Arkansas"],["Approximately stable","Increasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Increasing","Decreasing","Increasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Increasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Increasing","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Approximately stable","Increasing","Approximately stable","Approximately stable","Increasing","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Increasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Approximately stable","Decreasing","Approximately stable","Approximately stable","Approximately stable","Decreasing","Approximately stable","Decreasing","Decreasing","Approximately stable","Decreasing","Decreasing"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1625a91662f6c870a714" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-1625a91662f6c870a714">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[35.799351,-78.689995,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[35.799351,-78.689995],16,[]],"limits":{"lat":[35.799351,35.799351],"lng":[-78.689995,-78.689995]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -644,31 +670,13 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
-</td>
-<td style="text-align:center;">
-11 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/MeredithCollege_14.png alt=‘Line plot from 12 to 11
-from 2013 to 2020’ >
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (lower) than 65%
-</td>
-<td style="text-align:center;">
-✪✪✪<br />Better (lower) than 47%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 15 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_15.png alt=‘Line plot from 14 to 15
+<img src=images/MeredithCollege_14.png alt=‘Line plot from 14 to 15
 from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -676,6 +684,24 @@ from 2013 to 2020’ >
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (lower) than 39%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Undergrads per instructor
+</td>
+<td style="text-align:center;">
+11 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/MeredithCollege_15.png alt=‘Line plot from 12 to 11
+from 2013 to 2020’ >
+</td>
+<td style="text-align:center;">
+✪✪✪✪<br />Better (lower) than 65%
+</td>
+<td style="text-align:center;">
+✪✪✪<br />Better (lower) than 47%
 </td>
 </tr>
 <tr>
@@ -696,13 +722,13 @@ from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Non-tenure track instructors
+Tenure track instructors
 </td>
 <td style="text-align:center;">
-29 (2020)
+101 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_17.png alt=‘Line plot from 19 to 29
+<img src=images/MeredithCollege_17.png alt=‘Line plot from 105 to 101
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -712,13 +738,13 @@ from 2012 to 2020’ >
 </tr>
 <tr>
 <td style="text-align:left;">
-Tenure track instructors
+Non-tenure track instructors
 </td>
 <td style="text-align:center;">
-101 (2020)
+29 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_18.png alt=‘Line plot from 105 to 101
+<img src=images/MeredithCollege_18.png alt=‘Line plot from 19 to 29
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -766,7 +792,7 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 18% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_103.png alt=‘Line plot from 3.0 to 18
+<img src=images/MeredithCollege_100.png alt=‘Line plot from 3 to 18
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -800,13 +826,33 @@ Baccalaureate Colleges: Arts &amp; Sciences Focus
 <tbody>
 <tr>
 <td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+40% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/MeredithCollege_19.png alt=‘Line plot from 56 to 40
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+✪✪<br />Better (lower) than 40%
+</td>
+<td style="text-align:center;">
+✪<br />Better (lower) than 9%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
 Revenue minus expenses
 </td>
 <td style="text-align:center;">
 $28 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_19.png alt=‘Line plot from 11 M to 28
+<img src=images/MeredithCollege_20.png alt=‘Line plot from 11 M to 28
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -826,7 +872,7 @@ Revenue
 $83 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_20.png alt=‘Line plot from 62 M to 83
+<img src=images/MeredithCollege_21.png alt=‘Line plot from 62 M to 83
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -845,7 +891,7 @@ Expenses
 $55 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_21.png alt=‘Line plot from 50 M to 55
+<img src=images/MeredithCollege_22.png alt=‘Line plot from 50 M to 55
 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -864,7 +910,7 @@ Assets
 $230 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_22.png alt=‘Line plot from 162 M to
+<img src=images/MeredithCollege_23.png alt=‘Line plot from 162 M to
 230 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -875,80 +921,6 @@ $230 M (2021)
 </td>
 <td style="text-align:center;">
 ✪✪<br />Better (higher) than 37%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-40% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/MeredithCollege_23.png alt=‘Line plot from 56 to 40
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (lower) than 40%
-</td>
-<td style="text-align:center;">
-✪<br />Better (lower) than 9%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.2% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/MeredithCollege_24.png alt=‘Line plot from 0.0 to 0.2
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-3.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/MeredithCollege_25.png alt=‘Line plot from 0.3 to 3.0
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-7.5% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/MeredithCollege_26.png alt=‘Line plot from 15 to 7.5
-from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -990,7 +962,7 @@ Total
 68% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_42.png alt=‘Line plot from 60 to 68
+<img src=images/MeredithCollege_39.png alt=‘Line plot from 60 to 68
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1008,7 +980,7 @@ Women
 68% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_44.png alt=‘Line plot from 60 to 68
+<img src=images/MeredithCollege_41.png alt=‘Line plot from 60 to 68
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1026,7 +998,7 @@ American Indian or Alaska Native women
 80% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_46.png alt=‘Line plot from 0.0 to 80
+<img src=images/MeredithCollege_43.png alt=‘Line plot from 0 to 80
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1044,7 +1016,7 @@ Asian women
 80% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_48.png alt=‘Line plot from 50 to 80
+<img src=images/MeredithCollege_45.png alt=‘Line plot from 50 to 80
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1062,7 +1034,7 @@ Black or African American women
 54% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_50.png alt=‘Line plot from 49 to 54
+<img src=images/MeredithCollege_47.png alt=‘Line plot from 49 to 54
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1080,7 +1052,7 @@ Hispanic women
 79% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_52.png alt=‘Line plot from 50 to 79
+<img src=images/MeredithCollege_49.png alt=‘Line plot from 50 to 79
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1095,10 +1067,10 @@ from 2011 to 2021’ >
 Native Hawaiian or other Pacific Islander women
 </td>
 <td style="text-align:center;">
-0.0% (2019)
+0% (2019)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_54.png alt=‘Line plot from 100 to 0.0
+<img src=images/MeredithCollege_51.png alt=‘Line plot from 100 to 0
 from 2015 to 2019’ >
 </td>
 <td style="text-align:center;">
@@ -1116,7 +1088,7 @@ White women
 71% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_56.png alt=‘Line plot from 59 to 71
+<img src=images/MeredithCollege_53.png alt=‘Line plot from 59 to 71
 from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1134,7 +1106,7 @@ Two or more races women
 39% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_58.png alt=‘Line plot from 56 to 39
+<img src=images/MeredithCollege_55.png alt=‘Line plot from 56 to 39
 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1152,7 +1124,7 @@ Nonresident alien women
 71% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_60.png alt=‘Line plot from 100 to 71
+<img src=images/MeredithCollege_57.png alt=‘Line plot from 100 to 71
 from 2010 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1189,10 +1161,10 @@ Change over ≤ 11 years
 Men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_83.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_80.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1204,7 +1176,7 @@ Women (percent freshmen)
 100% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_84.png alt=‘Line plot from 100 to 100
+<img src=images/MeredithCollege_81.png alt=‘Line plot from 100 to 100
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1213,10 +1185,10 @@ from 2010 to 2021’ >
 American Indian or Alaska Native men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_85.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_82.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1228,7 +1200,7 @@ American Indian or Alaska Native women (percent freshmen)
 1.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_86.png alt=‘Line plot from 0.3 to 1.2
+<img src=images/MeredithCollege_83.png alt=‘Line plot from 0.3 to 1.2
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1237,10 +1209,10 @@ from 2010 to 2021’ >
 Asian men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_87.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_84.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1252,7 +1224,7 @@ Asian women (percent freshmen)
 4.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_88.png alt=‘Line plot from 1.6 to 4.1
+<img src=images/MeredithCollege_85.png alt=‘Line plot from 1.6 to 4.1
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1261,10 +1233,10 @@ from 2010 to 2021’ >
 Black or African American men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_89.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_86.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1276,7 +1248,7 @@ Black or African American women (percent freshmen)
 9.1% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_90.png alt=‘Line plot from 11 to 9.1
+<img src=images/MeredithCollege_87.png alt=‘Line plot from 11 to 9.1
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1285,10 +1257,10 @@ from 2010 to 2021’ >
 Hispanic men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_91.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_88.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1300,7 +1272,7 @@ Hispanic women (percent freshmen)
 13% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_92.png alt=‘Line plot from 1.6 to 13
+<img src=images/MeredithCollege_89.png alt=‘Line plot from 1.6 to 13
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1309,10 +1281,10 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_93.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_90.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1321,10 +1293,10 @@ from 2010 to 2021’ >
 Native Hawaiian or Other Pacific Islander women (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_94.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_91.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1333,10 +1305,10 @@ from 2010 to 2021’ >
 White men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_95.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_92.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1348,7 +1320,7 @@ White women (percent freshmen)
 65% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_96.png alt=‘Line plot from 75 to 65
+<img src=images/MeredithCollege_93.png alt=‘Line plot from 75 to 65
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1357,10 +1329,10 @@ from 2010 to 2021’ >
 Two or more races men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_97.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_94.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1372,7 +1344,7 @@ Two or more races women (percent freshmen)
 2.6% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_98.png alt=‘Line plot from 1.4 to 2.6
+<img src=images/MeredithCollege_95.png alt=‘Line plot from 1.4 to 2.6
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1381,10 +1353,10 @@ from 2010 to 2021’ >
 Race ethnicity unknown men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_99.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_96.png alt=‘Line plot from 0 to 0
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -1396,8 +1368,8 @@ Race ethnicity unknown women (percent freshmen)
 2.9% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_100.png alt=‘Line plot from 2.2 to
-2.9 from 2010 to 2021’ >
+<img src=images/MeredithCollege_97.png alt=‘Line plot from 2.2 to 2.9
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1405,11 +1377,11 @@ Race ethnicity unknown women (percent freshmen)
 Nonresident alien men (percent freshmen)
 </td>
 <td style="text-align:center;">
-0.0% (2021)
+0% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_101.png alt=‘Line plot from 0.0 to
-0.0 from 2010 to 2021’ >
+<img src=images/MeredithCollege_98.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 <tr>
@@ -1420,8 +1392,63 @@ Nonresident alien women (percent freshmen)
 1.2% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_102.png alt=‘Line plot from 6.8 to
-1.2 from 2010 to 2021’ >
+<img src=images/MeredithCollege_99.png alt=‘Line plot from 6.8 to 1.2
+from 2010 to 2021’ >
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Meredith College
+</th>
+<th style="text-align:center;">
+Change over ≤ 11 years
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+In state
+</td>
+<td style="text-align:center;">
+85% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/MeredithCollege_101.png alt=‘Line plot from 81 to 85
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:center;">
+94% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/MeredithCollege_102.png alt=‘Line plot from 92 to 94
+from 2010 to 2021’ >
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Not reported
+</td>
+<td style="text-align:center;">
+0% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/MeredithCollege_103.png alt=‘Line plot from 0 to 0
+from 2010 to 2021’ >
 </td>
 </tr>
 </tbody>
@@ -1462,7 +1489,7 @@ Total (tenure-track count)
 101 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_61.png alt=‘Line plot from 105 to 101
+<img src=images/MeredithCollege_58.png alt=‘Line plot from 105 to 101
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1476,7 +1503,7 @@ Women (tenure-track count)
 69 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_62.png alt=‘Line plot from 70 to 69
+<img src=images/MeredithCollege_59.png alt=‘Line plot from 70 to 69
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1490,7 +1517,7 @@ Men (tenure-track count)
 32 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_63.png alt=‘Line plot from 35 to 32
+<img src=images/MeredithCollege_60.png alt=‘Line plot from 35 to 32
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1501,10 +1528,10 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_64.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_61.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1515,10 +1542,10 @@ from 2012 to 2020’ >
 Asian (tenure-track count)
 </td>
 <td style="text-align:center;">
-4.0 (2020)
+4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_65.png alt=‘Line plot from 4.0 to 4.0
+<img src=images/MeredithCollege_62.png alt=‘Line plot from 4 to 4
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1529,10 +1556,10 @@ from 2012 to 2020’ >
 Black or African American (tenure-track count)
 </td>
 <td style="text-align:center;">
-3.0 (2020)
+3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_66.png alt=‘Line plot from 4.0 to 3.0
+<img src=images/MeredithCollege_63.png alt=‘Line plot from 4 to 3
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1543,10 +1570,10 @@ from 2012 to 2020’ >
 Hispanic or Latino (tenure-track count)
 </td>
 <td style="text-align:center;">
-5.0 (2020)
+5 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_67.png alt=‘Line plot from 3.0 to 5.0
+<img src=images/MeredithCollege_64.png alt=‘Line plot from 3 to 5
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1558,10 +1585,10 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_68.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_65.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1575,7 +1602,7 @@ White (tenure-track count)
 86 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_69.png alt=‘Line plot from 91 to 86
+<img src=images/MeredithCollege_66.png alt=‘Line plot from 91 to 86
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1586,10 +1613,10 @@ from 2012 to 2020’ >
 Two or more races (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_70.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_67.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1600,10 +1627,10 @@ from 2012 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_71.png alt=‘Line plot from 1.0 to 0.0
+<img src=images/MeredithCollege_68.png alt=‘Line plot from 1 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1648,7 +1675,7 @@ Total (non-tenure-track count)
 29 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_72.png alt=‘Line plot from 19 to 29
+<img src=images/MeredithCollege_69.png alt=‘Line plot from 19 to 29
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1662,7 +1689,7 @@ Women (non-tenure-track count)
 19 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_73.png alt=‘Line plot from 15 to 19
+<img src=images/MeredithCollege_70.png alt=‘Line plot from 15 to 19
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1676,7 +1703,7 @@ Men (non-tenure-track count)
 10 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_74.png alt=‘Line plot from 4.0 to 10
+<img src=images/MeredithCollege_71.png alt=‘Line plot from 4 to 10
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1688,10 +1715,10 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_75.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_72.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1702,10 +1729,10 @@ from 2012 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_76.png alt=‘Line plot from 1.0 to 0.0
+<img src=images/MeredithCollege_73.png alt=‘Line plot from 1 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1717,10 +1744,10 @@ from 2012 to 2020’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-2.0 (2020)
+2 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_77.png alt=‘Line plot from 0.0 to 2.0
+<img src=images/MeredithCollege_74.png alt=‘Line plot from 0 to 2
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1731,10 +1758,10 @@ from 2012 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_78.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_75.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1745,10 +1772,10 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_79.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_76.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1762,7 +1789,7 @@ White (non-tenure-track count)
 27 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_80.png alt=‘Line plot from 18 to 27
+<img src=images/MeredithCollege_77.png alt=‘Line plot from 18 to 27
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1774,10 +1801,10 @@ from 2012 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_81.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_78.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1788,10 +1815,10 @@ from 2012 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_82.png alt=‘Line plot from 0.0 to 0.0
+<img src=images/MeredithCollege_79.png alt=‘Line plot from 0 to 0
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1833,7 +1860,7 @@ Number of physical books
 113,361 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_27.png alt=‘Line plot from 152,713 to
+<img src=images/MeredithCollege_24.png alt=‘Line plot from 152,713 to
 113,361 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1853,7 +1880,7 @@ Physical library circulations per students and faculty
 5.7 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_28.png alt=‘Line plot from 11 to 5.7
+<img src=images/MeredithCollege_25.png alt=‘Line plot from 11 to 5.7
 from 2015 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1874,7 +1901,7 @@ Digital library circulations per students and faculty
 8.3 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_29.png alt=‘Line plot from 8.0 to 8.3
+<img src=images/MeredithCollege_26.png alt=‘Line plot from 8.0 to 8.3
 from 2015 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1916,7 +1943,7 @@ Applicants submitting SAT
 15% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_30.png alt=‘Line plot from 56 to 15
+<img src=images/MeredithCollege_27.png alt=‘Line plot from 56 to 15
 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1930,7 +1957,7 @@ SAT Evidence Based Reading and Writing 25th percentile score
 560 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_31.png alt=‘Line plot from 510 to 560
+<img src=images/MeredithCollege_28.png alt=‘Line plot from 510 to 560
 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1944,7 +1971,7 @@ SAT Evidence Based Reading and Writing 75th percentile score
 650 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_32.png alt=‘Line plot from 610 to 650
+<img src=images/MeredithCollege_29.png alt=‘Line plot from 610 to 650
 from 2017 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1958,7 +1985,7 @@ SAT Math 25th percentile score
 538 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_33.png alt=‘Line plot from 460 to 538
+<img src=images/MeredithCollege_30.png alt=‘Line plot from 460 to 538
 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -1973,7 +2000,7 @@ SAT Math 75th percentile score
 623 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_34.png alt=‘Line plot from 570 to 623
+<img src=images/MeredithCollege_31.png alt=‘Line plot from 570 to 623
 from 2015 to 2021’ >
 </td>
 <td style="text-align:center;">
@@ -2007,7 +2034,7 @@ Applicants submitting ACT
 29% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_35.png alt=‘Line plot from 44 to 29
+<img src=images/MeredithCollege_32.png alt=‘Line plot from 44 to 29
 from 2015 to 2021’ >
 </td>
 </tr>
@@ -2019,7 +2046,7 @@ ACT Composite 25th percentile score
 23 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_36.png alt=‘Line plot from 20 to 23
+<img src=images/MeredithCollege_33.png alt=‘Line plot from 20 to 23
 from 2015 to 2021’ >
 </td>
 </tr>
@@ -2031,7 +2058,7 @@ ACT Composite 75th percentile score
 29 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_37.png alt=‘Line plot from 25 to 29
+<img src=images/MeredithCollege_34.png alt=‘Line plot from 25 to 29
 from 2015 to 2021’ >
 </td>
 </tr>
@@ -2043,7 +2070,7 @@ ACT English 25th percentile score
 21 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_38.png alt=‘Line plot from 19 to 21
+<img src=images/MeredithCollege_35.png alt=‘Line plot from 19 to 21
 from 2015 to 2021’ >
 </td>
 </tr>
@@ -2055,7 +2082,7 @@ ACT English 75th percentile score
 29 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_39.png alt=‘Line plot from 25 to 29
+<img src=images/MeredithCollege_36.png alt=‘Line plot from 25 to 29
 from 2015 to 2021’ >
 </td>
 </tr>
@@ -2067,7 +2094,7 @@ ACT Math 25th percentile score
 21 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_40.png alt=‘Line plot from 18 to 21
+<img src=images/MeredithCollege_37.png alt=‘Line plot from 18 to 21
 from 2015 to 2021’ >
 </td>
 </tr>
@@ -2079,7 +2106,7 @@ ACT Math 75th percentile score
 27 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/MeredithCollege_41.png alt=‘Line plot from 24 to 27
+<img src=images/MeredithCollege_38.png alt=‘Line plot from 24 to 27
 from 2015 to 2021’ >
 </td>
 </tr>
@@ -2090,28 +2117,28 @@ from 2015 to 2021’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-792fea9fdda08a6d7a72" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-792fea9fdda08a6d7a72">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Sports_Kinesiology_andPhysicalEducation_Fitness_General.html\">Sports, Kinesiology, and Physical Education/Fitness, General</a>","<a href=\"majors_Bachelors_InteriorDesign.html\">Interior Design</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_PublicHealth_General.html\">Public Health, General</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_SocialWork.html\">Social Work</a>","<a href=\"majors_Bachelors_Dietetics_Dietitian.html\">Dietetics/Dietitian</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>","<a href=\"majors_Bachelors_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Bachelors_FashionMerchandising.html\">Fashion Merchandising</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_GraphicDesign.html\">Graphic Design</a>","<a href=\"majors_Bachelors_ChildDevelopment.html\">Child Development</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Bachelors_PublicRelations_Advertising_andAppliedCommunication.html\">Public Relations, Advertising, and Applied Communication</a>","<a href=\"majors_Bachelors_MusicTeacherEducation.html\">Music Teacher Education</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Dance_General.html\">Dance, General</a>","<a href=\"majors_Bachelors_Fashion_ApparelDesign.html\">Fashion/Apparel Design</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_MassCommunication_MediaStudies.html\">Mass Communication/Media Studies</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_FamilyandConsumerSciences_HumanSciences_General.html\">Family and Consumer Sciences/Human Sciences, General</a>","<a href=\"majors_Bachelors_MusicPerformance_General.html\">Music Performance, General</a>","<a href=\"majors_Bachelors_DieteticsandClinicalNutritionServices_Other.html\">Dietetics and Clinical Nutrition Services, Other</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_DramaandDanceTeacherEducation.html\">Drama and Dance Teacher Education</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_ArtTeacherEducation.html\">Art Teacher Education</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_InternationalRelationsandAffairs.html\">International Relations and Affairs</a>","<a href=\"majors_Bachelors_MeetingandEventPlanning.html\">Meeting and Event Planning</a>"],[45,39,20,17,15,14,14,13,13,12,10,10,10,10,9,8,8,7,7,6,5,5,5,5,5,5,4,4,4,4,3,2,2,2,2,2,1,1,1,1],[12.857,11.143,5.714,4.857,4.286,4,4,3.714,3.714,3.429,2.857,2.857,2.857,2.857,2.571,2.286,2.286,2,2,1.714,1.429,1.429,1.429,1.429,1.429,1.429,1.143,1.143,1.143,1.143,0.857,0.571,0.571,0.571,0.571,0.571,0.286,0.286,0.286,0.286],[0.055,0.035,0.198,0.573,0.084,0.142,0.01,0.06,0.579,0.046,0.144,0.025,0.468,0.045,0.024,0.026,0.156,0.425,0.052,0.267,0.154,0.151,0.017,0.21,0.271,0.011,0.047,0.011,0.167,0.102,1.974,0.029,1.242,0.036,0.023,0.022,0.099,0.011,0.013,0.196],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ce4f1efc6d77e50bdcb6" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ce4f1efc6d77e50bdcb6">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_Biology_BiologicalSciences_General.html\">Biology/Biological Sciences, General</a>","<a href=\"majors_Bachelors_Psychology_General.html\">Psychology, General</a>","<a href=\"majors_Bachelors_Sports_Kinesiology_andPhysicalEducation_Fitness_General.html\">Sports, Kinesiology, and Physical Education/Fitness, General</a>","<a href=\"majors_Bachelors_InteriorDesign.html\">Interior Design</a>","<a href=\"majors_Bachelors_Mathematics_General.html\">Mathematics, General</a>","<a href=\"majors_Bachelors_PublicHealth_General.html\">Public Health, General</a>","<a href=\"majors_Bachelors_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Bachelors_SocialWork.html\">Social Work</a>","<a href=\"majors_Bachelors_Dietetics_Dietitian.html\">Dietetics/Dietitian</a>","<a href=\"majors_Bachelors_Sociology_General.html\">Sociology, General</a>","<a href=\"majors_Bachelors_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>","<a href=\"majors_Bachelors_Marketing_MarketingManagement_General.html\">Marketing/Marketing Management, General</a>","<a href=\"majors_Bachelors_FashionMerchandising.html\">Fashion Merchandising</a>","<a href=\"majors_Bachelors_History_General.html\">History, General</a>","<a href=\"majors_Bachelors_PoliticalScienceandGovernment_General.html\">Political Science and Government, General</a>","<a href=\"majors_Bachelors_SpeechCommunicationandRhetoric.html\">Speech Communication and Rhetoric</a>","<a href=\"majors_Bachelors_GraphicDesign.html\">Graphic Design</a>","<a href=\"majors_Bachelors_ChildDevelopment.html\">Child Development</a>","<a href=\"majors_Bachelors_Chemistry_General.html\">Chemistry, General</a>","<a href=\"majors_Bachelors_Religion_ReligiousStudies.html\">Religion/Religious Studies</a>","<a href=\"majors_Bachelors_PublicRelations_Advertising_andAppliedCommunication.html\">Public Relations, Advertising, and Applied Communication</a>","<a href=\"majors_Bachelors_MusicTeacherEducation.html\">Music Teacher Education</a>","<a href=\"majors_Bachelors_EnglishLanguageandLiterature_General.html\">English Language and Literature, General</a>","<a href=\"majors_Bachelors_Dance_General.html\">Dance, General</a>","<a href=\"majors_Bachelors_Fashion_ApparelDesign.html\">Fashion/Apparel Design</a>","<a href=\"majors_Bachelors_Accounting.html\">Accounting</a>","<a href=\"majors_Bachelors_MassCommunication_MediaStudies.html\">Mass Communication/Media Studies</a>","<a href=\"majors_Bachelors_ComputerScience.html\">Computer Science</a>","<a href=\"majors_Bachelors_FamilyandConsumerSciences_HumanSciences_General.html\">Family and Consumer Sciences/Human Sciences, General</a>","<a href=\"majors_Bachelors_MusicPerformance_General.html\">Music Performance, General</a>","<a href=\"majors_Bachelors_DieteticsandClinicalNutritionServices_Other.html\">Dietetics and Clinical Nutrition Services, Other</a>","<a href=\"majors_Bachelors_EnvironmentalStudies.html\">Environmental Studies</a>","<a href=\"majors_Bachelors_DramaandDanceTeacherEducation.html\">Drama and Dance Teacher Education</a>","<a href=\"majors_Bachelors_SpanishLanguageandLiterature.html\">Spanish Language and Literature</a>","<a href=\"majors_Bachelors_DramaandDramatics_TheatreArts_General.html\">Drama and Dramatics/Theatre Arts, General</a>","<a href=\"majors_Bachelors_Fine_StudioArts_General.html\">Fine/Studio Arts, General</a>","<a href=\"majors_Bachelors_ArtTeacherEducation.html\">Art Teacher Education</a>","<a href=\"majors_Bachelors_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Bachelors_InternationalRelationsandAffairs.html\">International Relations and Affairs</a>","<a href=\"majors_Bachelors_MeetingandEventPlanning.html\">Meeting and Event Planning</a>"],[45,39,20,17,15,14,14,13,13,12,10,10,10,10,9,8,8,7,7,6,5,5,5,5,5,5,4,4,4,4,3,2,2,2,2,2,1,1,1,1],[12.857,11.143,5.714,4.857,4.286,4,4,3.714,3.714,3.429,2.857,2.857,2.857,2.857,2.571,2.286,2.286,2,2,1.714,1.429,1.429,1.429,1.429,1.429,1.429,1.143,1.143,1.143,1.143,0.857,0.571,0.571,0.571,0.571,0.571,0.286,0.286,0.286,0.286],[0.055,0.035,0.198,0.573,0.084,0.142,0.01,0.06,0.579,0.046,0.144,0.025,0.468,0.045,0.024,0.026,0.156,0.425,0.052,0.267,0.154,0.151,0.017,0.21,0.271,0.011,0.047,0.011,0.167,0.102,1.974,0.029,1.242,0.036,0.023,0.022,0.099,0.011,0.013,0.196],["Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-1cac120e1bc39d0213e8" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-1cac120e1bc39d0213e8">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_Foods_Nutrition_andWellnessStudies_General.html\">Foods, Nutrition, and Wellness Studies, General</a>","<a href=\"majors_Masters_IndustrialandOrganizationalPsychology.html\">Industrial and Organizational Psychology</a>","<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Masters_TeachingEnglishasaSecondorForeignLanguage_ESLLanguageInstructor.html\">Teaching English as a Second or Foreign Language/ESL Language Instructor</a>","<a href=\"majors_Masters_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Masters_ReadingTeacherEducation.html\">Reading Teacher Education</a>","<a href=\"majors_Masters_HumanNutrition.html\">Human Nutrition</a>","<a href=\"majors_Masters_PhysicalEducationTeachingandCoaching.html\">Physical Education Teaching and Coaching</a>","<a href=\"majors_Masters_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>","<a href=\"majors_Masters_Entrepreneurship_EntrepreneurialStudies.html\">Entrepreneurship/Entrepreneurial Studies</a>"],[26,12,12,6,4,3,3,3,2,2,1],[35.135,16.216,16.216,8.108,5.405,4.054,4.054,4.054,2.703,2.703,1.351],[4.429,0.708,0.011,0.067,0.116,0.019,0.054,0.686,0.117,0.033,0.121],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4cece419b74c76ed4d32" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-4cece419b74c76ed4d32">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_Foods_Nutrition_andWellnessStudies_General.html\">Foods, Nutrition, and Wellness Studies, General</a>","<a href=\"majors_Masters_IndustrialandOrganizationalPsychology.html\">Industrial and Organizational Psychology</a>","<a href=\"majors_Masters_BusinessAdministrationandManagement_General.html\">Business Administration and Management, General</a>","<a href=\"majors_Masters_ElementaryEducationandTeaching.html\">Elementary Education and Teaching</a>","<a href=\"majors_Masters_TeachingEnglishasaSecondorForeignLanguage_ESLLanguageInstructor.html\">Teaching English as a Second or Foreign Language/ESL Language Instructor</a>","<a href=\"majors_Masters_SpecialEducationandTeaching_General.html\">Special Education and Teaching, General</a>","<a href=\"majors_Masters_ReadingTeacherEducation.html\">Reading Teacher Education</a>","<a href=\"majors_Masters_HumanNutrition.html\">Human Nutrition</a>","<a href=\"majors_Masters_PhysicalEducationTeachingandCoaching.html\">Physical Education Teaching and Coaching</a>","<a href=\"majors_Masters_HumanResourcesManagement_PersonnelAdministration_General.html\">Human Resources Management/Personnel Administration, General</a>","<a href=\"majors_Masters_Entrepreneurship_EntrepreneurialStudies.html\">Entrepreneurship/Entrepreneurial Studies</a>"],[26,12,12,6,4,3,3,3,2,2,1],[35.135,16.216,16.216,8.108,5.405,4.054,4.054,4.054,2.703,2.703,1.351],[4.429,0.708,0.011,0.067,0.116,0.019,0.054,0.686,0.117,0.033,0.121],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-12113605ce62da039331" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-12113605ce62da039331">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-c59d84b01e6948ea7445" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c59d84b01e6948ea7445">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a65003c2a18b5c7f2e41" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-a65003c2a18b5c7f2e41">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_Health_MedicalPreparatoryPrograms_Other.html\">Health/Medical Preparatory Programs, Other</a>","<a href=\"majors_Certificate_ClinicalNutrition_Nutritionist.html\">Clinical Nutrition/Nutritionist</a>","<a href=\"majors_Certificate_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Certificate_DigitalCommunicationandMedia_Multimedia.html\">Digital Communication and Media/Multimedia</a>","<a href=\"majors_Certificate_CurriculumandInstruction.html\">Curriculum and Instruction</a>"],[32,28,25,1,1],[36.782,32.184,28.736,1.149,1.149],[5.451,60.87,0.573,0.088,0.065],["Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3cf63716547e39547333" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-3cf63716547e39547333">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_Health_MedicalPreparatoryPrograms_Other.html\">Health/Medical Preparatory Programs, Other</a>","<a href=\"majors_Certificate_ClinicalNutrition_Nutritionist.html\">Clinical Nutrition/Nutritionist</a>","<a href=\"majors_Certificate_LegalAssistant_Paralegal.html\">Legal Assistant/Paralegal</a>","<a href=\"majors_Certificate_DigitalCommunicationandMedia_Multimedia.html\">Digital Communication and Media/Multimedia</a>","<a href=\"majors_Certificate_CurriculumandInstruction.html\">Curriculum and Instruction</a>"],[32,28,25,1,1],[36.782,32.184,28.736,1.149,1.149],[5.451,60.87,0.573,0.088,0.065],["Certificate","Certificate","Certificate","Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ea23df809bd95ace1d9d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-ea23df809bd95ace1d9d">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-944a5d7c148ae3b02ae0" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-944a5d7c148ae3b02ae0">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
