@@ -29,6 +29,7 @@ source("_packages.R")
 source("R/functions.R")
 index_table <- params$index_table
 comparison_table <- params$comparison_table
+comparison_table <- comparison_table[order(comparison_table$`IPEDS Year`, decreasing=TRUE),]
 ```
 
 
@@ -116,6 +117,9 @@ try({
 
 	harvard_price <- FirstNaOmit(subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution`=="166027")$`Average net price students awarded grant or scholarship aid`)
 	RatioToHarvard <- as.numeric(most_current_info['Average net price students awarded grant or scholarship aid'])/as.numeric(harvard_price)
+	
+	
+
 }, silent=TRUE)
 
 try({
