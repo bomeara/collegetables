@@ -490,7 +490,7 @@ try({
 
 
 ```
-<a href='`r PrependHttpsIfNeeded(most_current_info['Institution s internet website address'])`'>`r most_current_info['Institution entity name']`</a> is located in `r most_current_info['City location of institution']`, `r most_current_info['State']`. It is a `r tolower(most_current_info['Sector of institution'])` institution.
+<a href='`r try({PrependHttpsIfNeeded(most_current_info['Institution s internet website address'])}, silent=TRUE)`'>`r most_current_info['Institution entity name']`</a> is located in `r most_current_info['City location of institution']`, `r most_current_info['State']`. It is a `r try({tolower(most_current_info['Sector of institution'])}, silent=TRUE)` institution.
 
 ```{r, results='asis'}
 try({
@@ -514,14 +514,14 @@ if(length(notes)>0) {
 
 # Overview of institution
 
-* **Institution kind**: `r most_current_info['Carnegie Classification 2021 Basic']`
-* **Undergrad program**: `r most_current_info['Carnegie Classification 2021 Undergraduate Instructional Program']`
-* **Graduate program**: `r most_current_info['Carnegie Classification 2021 Graduate Instructional Program']`
-* **Enrollment profile**: `r most_current_info['Carnegie Classification 2021 Enrollment Profile']` (see more details below)
+* **Institution kind**: `r try({most_current_info['Carnegie Classification 2021 Basic']}, silent=TRUE)`
+* **Undergrad program**: `r try({most_current_info['Carnegie Classification 2021 Undergraduate Instructional Program']}, silent=TRUE)`
+* **Graduate program**: `r try({most_current_info['Carnegie Classification 2021 Graduate Instructional Program']}, silent=TRUE)`
+* **Enrollment profile**: `r try({most_current_info['Carnegie Classification 2021 Enrollment Profile']}, silent=TRUE)` (see more details below)
 * **Average net price for undergrads on financial aid**: $`r formatMe(as.numeric(most_current_info['Average net price students awarded grant or scholarship aid']))` (`r ifelse(RatioToHarvard>1, paste0(round(RatioToHarvard,1), " times the equivalent cost of Harvard)"), paste0("This is ", 100*round(RatioToHarvard,1), "% the average cost of Harvard)"))`. 
 * **Average net price for families with $30K-48K income**: $`r formatMe(as.numeric(most_current_info['Average net price for 30K to 48K family income']))`. `r ifelse(!is.na(as.numeric(most_current_info['Average net price for 30K to 48K family income'])), ifelse(as.numeric(most_current_info['Average net price for 30K to 48K family income'])<0, " (The negative number means students in this income bracket receive this much OVER the expected total cost)",""),"")`
-* **Actual price for *your* family**: Go <a href='`r PrependHttpsIfNeeded(most_current_info['Net price calculator web address'])`'>here</a> to see what your family may be asked to pay. It can be MUCH lower than the average price but also higher for some.
-* **Size and setting**: `r most_current_info['Carnegie Classification 2021 Size and Setting']`
+* **Actual price for *your* family**: Go <a href='`r try({PrependHttpsIfNeeded(most_current_info['Net price calculator web address'])}, silent=TRUE)`'>here</a> to see what your family may be asked to pay. It can be MUCH lower than the average price but also higher for some.
+* **Size and setting**: `r try({most_current_info['Carnegie Classification 2021 Size and Setting']}, silent=TRUE)`
 * **In state percentage**: `r most_current_info['Percent first year students from in state']`% of first year students come from `r most_current_info['State']` `r ifelse(!is.na(as.numeric(most_current_info['Percent first year students residence not reported'])), ifelse(as.numeric(most_current_info['Percent first year students residence not reported'])>1, paste0("(note that ",most_current_info['Percent first year students residence not reported'], "% have no residence reported)" ),""),"")`
 * **In US percentage**: `r most_current_info['Percent first year students from US']`% of first year students come from the US `r ifelse(!is.na(most_current_info['Percent first year students residence not reported']), ifelse(most_current_info['Percent first year students residence not reported']>0, paste0("(note that ",most_current_info['Percent first year students residence not reported'], "% have no residence reported)" ),""),"")`
 `r ifelse(most_current_info['Tribal college']=="Yes", '* This is a **Tribal College**\n', "")`
