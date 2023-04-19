@@ -552,7 +552,7 @@ if(length(notes)>0) {
 * **Anti-trans legislative risk**: `r gsub("\\d: ", "", most_current_info['Trans Risk'])` (based on [Erin Reed's work](https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk), as of March 18, 2023)
 * **Ecological region**: `r most_current_info['eco_name']`
 * **Biome**: `r most_current_info['biome']`
-* **Climate**: See overview at [WeatherSpark.com](`r GetClosestWeatherspark(most_current_info, weatherspark)`).
+* **Climate**: See overview at [WeatherSpark](`r GetClosestWeatherspark(most_current_info, weatherspark)`).
 
 # Similar institutions
 
