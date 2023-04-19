@@ -18,16 +18,7 @@
         <link href="institution_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
         <link href="institution_files/readthedown-0.1/readthedown_fonts_embed.css" rel="stylesheet" />
         <script src="institution_files/readthedown-0.1/readthedown.js"></script>
-        <script src="institution_files/htmlwidgets-1.6.1/htmlwidgets.js"></script>
-        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
-        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
-        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-        <script src="institution_files/leaflet-binding-2.1.1/leaflet.js"></script>
-        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
-        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+        <script src="institution_files/htmlwidgets-1.6.2/htmlwidgets.js"></script>
         <link href="institution_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
         <script src="institution_files/datatables-binding-0.27/datatables.js"></script>
         <link href="institution_files/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -35,6 +26,15 @@
         <script src="institution_files/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
         <link href="institution_files/crosstalk-1.2.0.9000/css/crosstalk.min.css" rel="stylesheet" />
         <script src="institution_files/crosstalk-1.2.0.9000/js/crosstalk.min.js"></script>
+        <link href="institution_files/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-1.3.1/leaflet.js"></script>
+        <link href="institution_files/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+        <script src="institution_files/proj4-2.6.2/proj4.min.js"></script>
+        <script src="institution_files/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+        <link href="institution_files/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+        <script src="institution_files/leaflet-binding-2.1.2/leaflet.js"></script>
+        <script src="institution_files/kePrint-0.0.1/kePrint.js"></script>
+        <link href="institution_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q67PXWY3L5"></script>
         <script>
@@ -179,10 +179,10 @@
       <li><a href="#overview-of-institution"
       id="toc-overview-of-institution">Overview of institution</a></li>
       <li><a href="#overview-of-location"
-      id="toc-overview-of-location">Overview of location</a>
-      <ul>
+      id="toc-overview-of-location">Overview of location</a></li>
+      <li><a href="#similar-institutions"
+      id="toc-similar-institutions">Similar institutions</a></li>
       <li><a href="#map" id="toc-map">Map</a></li>
-      </ul></li>
       <li><a href="#enrollment" id="toc-enrollment">Enrollment</a></li>
       <li><a href="#student-financing"
       id="toc-student-financing">Student financing</a></li>
@@ -195,6 +195,8 @@
       id="toc-graduation-rates">Graduation rates</a></li>
       <li><a href="#freshmen-demographics"
       id="toc-freshmen-demographics">Freshmen demographics</a></li>
+      <li><a href="#freshmen-geography"
+      id="toc-freshmen-geography">Freshmen geography</a></li>
       <li><a href="#tenure-track-faculty"
       id="toc-tenure-track-faculty">Tenure track faculty</a></li>
       <li><a href="#non-tenure-track-faculty"
@@ -270,9 +272,18 @@ STEM-dominant</p></li>
 <li><p><strong>Enrollment profile</strong>: Majority graduate (see more
 details below)</p></li>
 <li><p><strong>Average net price for undergrads on financial
-aid</strong>: $ (NA</p></li>
+aid</strong>: $ (NA.</p></li>
+<li><p><strong>Average net price for families with $30K-48K
+income</strong>: $.</p></li>
+<li><p><strong>Actual price for <em>your</em> family</strong>: Go
+<a href=''>here</a> to see what your family may be asked to pay. It can
+be MUCH lower than the average price but also higher for some.</p></li>
 <li><p><strong>Size and setting</strong>: Four-year, small, primarily
 nonresidential</p></li>
+<li><p><strong>In state percentage</strong>: NA% of first year students
+come from Illinois</p></li>
+<li><p><strong>In US percentage</strong>: NA% of first year students
+come from the US</p></li>
 <li><p><strong>Student to tenure-stream faculty ratio</strong>: 0
 (undergrads to tenure-stream faculty)</p></li>
 <li><p><strong>Student to faculty ratio</strong>: 0 (undergrads to all
@@ -305,9 +316,10 @@ are registered as having disabilities.</p></li>
 <div id="overview-of-location" class="section level1">
 <h1>Overview of location</h1>
 <ul>
-<li><strong>Abortion in this state</strong>: Legal (based on <a
+<li><strong>Abortion in this state</strong>: Protective (based on <a
 href="https://states.guttmacher.org/policies/"
-class="uri">https://states.guttmacher.org/policies/</a>)</li>
+class="uri">https://states.guttmacher.org/policies/</a> as of March 22,
+2023)</li>
 <li><strong>Gun law stringency</strong>: A- (higher grade = <a
 href="https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state">more
 stringent</a>)</li>
@@ -320,18 +332,30 @@ marriage</strong>: 83.3% of US reps from this state <a
 href="https://www.congress.gov/bill/117th-congress/house-bill/8404">voted
 in favor</a> of requiring states to recognize same-sex and interracial
 marriages performed in other states</li>
+<li><strong>Anti-trans legislative risk</strong>: Safest (based on <a
+href="https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk">Erin
+Reed’s work</a>, as of March 18, 2023)</li>
 <li><strong>Ecological region</strong>: Central forest-grasslands
 transition</li>
 <li><strong>Biome</strong>: Temperate Grasslands, Savannas &amp;
 Shrublands</li>
 <li><strong>Climate</strong>: See overview at <a
-href="https:/weatherspark.com/y/14091/Average-Weather-in-Chicago-Illinois-United-States-Year-Round#Figures-Summary">WeatherSpark.com</a>.</li>
+href="https:/weatherspark.com/y/14091/Average-Weather-in-Chicago-Illinois-United-States-Year-Round#Figures-Summary">WeatherSpark</a>.</li>
 </ul>
-<div id="map" class="section level2">
-<h2>Map</h2>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a090ec750e288531af5c" style="width:768px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-a090ec750e288531af5c">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[41.874742,-87.668581,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[41.874742,-87.668581],16,[]],"limits":{"lat":[41.874742,41.874742],"lng":[-87.668581,-87.668581]}},"evals":[],"jsHooks":[]}</script>
 </div>
+<div id="similar-institutions" class="section level1">
+<h1>Similar institutions</h1>
+<p>This is using information about school size, acceptance rate, yield
+rate, graduation rate, cost, athletic conference, and similar metrics,
+but it can miss important axes of similarity (for example, culinary
+versus hair styling schools).</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e6bb6a6111419ca3bcdd" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e6bb6a6111419ca3bcdd">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"148511.html\">Rush University</a>","<a href=\"243203.html\">University of Puerto Rico-Medical Sciences</a>","<a href=\"228635.html\">University of Texas Southwestern Medical Center</a>","<a href=\"196255.html\">SUNY Downstate Health Sciences University</a>","<a href=\"209490.html\">Oregon Health &amp; Science University</a>","<a href=\"239169.html\">Medical College of Wisconsin</a>","<a href=\"223214.html\">Texas A &amp; M University Health Science Center</a>","<a href=\"196307.html\">Upstate Medical University</a>","<a href=\"228653.html\">The University of Texas Medical Branch at Galveston</a>","<a href=\"223223.html\">Baylor College of Medicine</a>","<a href=\"120698.html\">Palo Alto University</a>","<a href=\"159373.html\">Louisiana State University Health Sciences Center-New Orleans</a>","<a href=\"487010.html\">The University of Tennessee Health Science Center</a>","<a href=\"218335.html\">Medical University of South Carolina</a>","<a href=\"176026.html\">University of Mississippi Medical Center</a>","<a href=\"106263.html\">University of Arkansas for Medical Sciences</a>","<a href=\"435000.html\">Louisiana State University Health Sciences Center-Shreveport</a>","<a href=\"207342.html\">University of Oklahoma-Health Sciences Center</a>","<a href=\"193405.html\">Icahn School of Medicine at Mount Sinai</a>","<a href=\"181428.html\">University of Nebraska Medical Center</a>","<a href=\"229300.html\">The University of Texas Health Science Center at Houston</a>","<a href=\"455707.html\">Cardiac and Vascular Institute of Ultrasound</a>","<a href=\"497161.html\">Ohio Business College-Dayton-Driving Academy</a>","<a href=\"459824.html\">Touro University Nevada</a>","<a href=\"190424.html\">Weill Medical College of Cornell University</a>","<a href=\"492689.html\">Texas Tech University Health Sciences Center-El Paso</a>","<a href=\"117636.html\">Loma Linda University</a>","<a href=\"193830.html\">New York Medical College</a>","<a href=\"123633.html\">South Baylo University</a>","<a href=\"119678.html\">Naval Postgraduate School</a>","<a href=\"133942.html\">Florida Institute of Ultrasound Inc</a>","<a href=\"115083.html\">Golden Gate University</a>","<a href=\"229337.html\">Texas Tech University Health Sciences Center</a>","<a href=\"147590.html\">National University of Health Sciences</a>","<a href=\"145558.html\">Rosalind Franklin University of Medicine and Science</a>","<a href=\"163259.html\">University of Maryland, Baltimore</a>","<a href=\"434034.html\">National Labor College</a>","<a href=\"166708.html\">University of Massachusetts Medical School Worcester</a>","<a href=\"214616.html\">Pennsylvania State University-College of Medicine</a>","<a href=\"245892.html\">Antioch University</a>","<a href=\"245838.html\">Antioch University-Los Angeles</a>","<a href=\"110699.html\">University of California-San Francisco</a>","<a href=\"442806.html\">Edward Via College of Osteopathic Medicine</a>","<a href=\"110316.html\">California Institute of Integral Studies</a>","<a href=\"100812.html\">Athens State University</a>","<a href=\"235547.html\">Bastyr University</a>","<a href=\"172608.html\">Walsh College</a>","<a href=\"185624.html\">HackensackUMC Mountainside School of Nursing</a>","<a href=\"228909.html\">University of North Texas Health Science Center</a>","<a href=\"188580.html\">Albany Medical College</a>","<a href=\"400558.html\">Los Angeles Pacific College</a>","<a href=\"215479.html\">Joseph F McCloskey School of Nursing</a>","<a href=\"476355.html\">Miami Ad School-New York</a>","<a href=\"130837.html\">Margaret H Rollins School of Nursing at Beebe Medical Center</a>","<a href=\"139746.html\">Grady Health System Professional Schools</a>","<a href=\"490328.html\">Mechon L'hoyroa</a>","<a href=\"112251.html\">Claremont Graduate University</a>","<a href=\"446701.html\">University of Phoenix-Cheyenne Campus</a>","<a href=\"196468.html\">Teachers College at Columbia University</a>","<a href=\"215123.html\">Philadelphia College of Osteopathic Medicine</a>","<a href=\"439783.html\">New York College of Traditional Chinese Medicine</a>","<a href=\"143853.html\">Midwestern University-Downers Grove</a>","<a href=\"231970.html\">Eastern Virginia Medical School</a>","<a href=\"154156.html\">Des Moines University-Osteopathic Medical Center</a>","<a href=\"187046.html\">Thomas Edison State University</a>","<a href=\"202268.html\">Springfield Regional School of Nursing</a>","<a href=\"485908.html\">Antioch University Online</a>","<a href=\"493895.html\">SANS Technology Institute</a>","<a href=\"222628.html\">Amberton University</a>","<a href=\"177834.html\">A T Still University of Health Sciences</a>","<a href=\"411754.html\">Cleveland Clinic Health System-School of Diagnostic Imaging</a>","<a href=\"439446.html\">Atlantic Institute of Oriental Medicine</a>","<a href=\"148593.html\">St. John's College-Department of Nursing</a>","<a href=\"166869.html\">MGH Institute of Health Professions</a>","<a href=\"445735.html\">Roseman University of Health Sciences</a>","<a href=\"448804.html\">The Robert B Miller College</a>","<a href=\"220792.html\">Meharry Medical College</a>","<a href=\"166045.html\">Hebrew College</a>","<a href=\"423643.html\">Midwestern University-Glendale</a>","<a href=\"452133.html\">John Hancock University</a>","<a href=\"207315.html\">Oklahoma State University Center for Health Sciences</a>","<a href=\"224305.html\">Dallas Theological Seminary</a>","<a href=\"204477.html\">Northeast Ohio Medical University</a>","<a href=\"428000.html\">Miami Ad School</a>","<a href=\"478625.html\">California College San Diego</a>","<a href=\"475273.html\">Springfield College-Regional, Online, and Continuing Education</a>","<a href=\"189501.html\">Brooklyn Law School</a>","<a href=\"146533.html\">Lakeview College of Nursing</a>","<a href=\"110398.html\">University of California-Hastings College of Law</a>","<a href=\"497338.html\">Glendale Career College-North-West College-Bakersfield</a>","<a href=\"158325.html\">Baton Rouge General Medical Center School of Nursing &amp; School of Radiologic Technology</a>","<a href=\"457183.html\">Remington College of Nursing Orlando</a>","<a href=\"143297.html\">Blessing Rieman College of Nursing and Health Sciences</a>","<a href=\"497301.html\">Avalon Institute-Las Vegas</a>","<a href=\"237880.html\">West Virginia School of Osteopathic Medicine</a>","<a href=\"448239.html\">Careers Unlimited</a>","<a href=\"209296.html\">National University of Natural Medicine</a>","<a href=\"112525.html\">Western University of Health Sciences</a>","<a href=\"417798.html\">Cheveux School of Hair Design</a>","<a href=\"213932.html\">Roxborough Memorial Hospital School of Nursing</a>"],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,33,null,null,null,null,null,null,null,null,null,null,null,null,null,null,55,null,null,null,null,null,null,null],[3,5,0,7,2,3,12,2,2,1,88,6,12,12,2,3,5,6,1,9,3,87,78,87,1,4,41,44,67,null,100,68,8,59,63,10,22,3,null,null,null,1,83,79,32,68,60,100,10,10,84,null,100,null,65,13,52,94,41,78,75,82,14,56,58,null,null,100,40,71,null,70,90,68,79,41,17,24,82,null,8,29,38,93,100,null,30,49,28,null,null,100,null,null,62,86,75,78,86,100],[0,1,0,1,3,null,1,1,2,null,3,6,1,2,1,3,0,3,null,2,1,null,null,null,null,6,13,null,null,null,null,10,6,1,null,2,3,null,null,null,null,null,null,null,15,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,10,null,null,null,null,null,null,null,30,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[54,315,10,174,483,null,243,131,541,null,55,788,248,325,360,732,27,822,null,767,542,54,54,51,null,202,819,null,53,null,53,503,1233,17,null,724,33,null,null,59,48,null,null,75,1136,46,63,63,null,null,47,65,46,67,67,67,null,70,null,null,72,null,null,null,76,42,77,38,38,null,40,39,86,195,559,39,null,30,null,56,null,null,null,97,98,66,null,105,null,36,110,111,112,112,null,117,32,null,34,141],[1757,1747,1735,1531,1706,1460,2034,1220,1649,1587,720,1843,2771,2649,1118,1562,892,1930,1249,2175,3100,null,null,1288,1317,514,2705,1314,171,1490,null,757,2563,404,1980,4419,null,1202,910,273,616,3165,2276,1077,32,566,256,null,2286,839,null,null,null,null,null,null,1174,null,3209,2913,60,2805,1128,1396,4,null,13,519,384,2972,null,124,0,829,993,null,964,71,3809,null,841,965,995,null,null,47,1079,null,1107,null,null,null,0,null,806,null,363,3731,null,null],["Illinois","Puerto Rico","Texas","New York","Oregon","Wisconsin","Texas","New York","Texas","Texas","California","Louisiana","Tennessee","South Carolina","Mississippi","Arkansas","Louisiana","Oklahoma","New York","Nebraska","Texas","Alabama","Ohio","Nevada","New York","Texas","California","New York","California","California","Florida","California","Texas","Illinois","Illinois","Maryland","Maryland","Massachusetts","Pennsylvania","Ohio","California","California","Virginia","California","Alabama","Washington","Michigan","New Jersey","Texas","New York","California","Pennsylvania","New York","Delaware","Georgia","New York","California","Wyoming","New York","Pennsylvania","New York","Illinois","Virginia","Iowa","New Jersey","Ohio","Ohio","Maryland","Texas","Missouri","Ohio","Florida","Illinois","Massachusetts","Nevada","Michigan","Tennessee","Massachusetts","Arizona","Illinois","Oklahoma","Texas","Ohio","Florida","California","Massachusetts","New York","Illinois","California","California","Louisiana","Florida","Illinois","Nevada","West Virginia","Utah","Oregon","California","North Carolina","Pennsylvania"],["Approximately stable","Decreasing","Unknown or not applicable","Approximately stable","Increasing","Unknown or not applicable","Unknown or not applicable","Decreasing","Approximately stable","Unknown or not applicable","Decreasing","Increasing","Approximately stable","Increasing","Approximately stable","Approximately stable","Decreasing","Decreasing","Unknown or not applicable","Approximately stable","Approximately stable","Approximately stable","Unknown or not applicable","Approximately stable","Unknown or not applicable","Approximately stable","Approximately stable","Unknown or not applicable","Decreasing","Unknown or not applicable","Approximately stable","Increasing","Approximately stable","Decreasing","Unknown or not applicable","Increasing","Unknown or not applicable","Unknown or not applicable","Unknown or not applicable","Approximately stable","Approximately stable","Unknown or not applicable","Unknown or not applicable","Approximately stable","Decreasing","Decreasing","Decreasing","Approximately stable","Unknown or not applicable","Unknown or not applicable","Unknown or not applicable","Approximately stable","Approximately stable","Increasing","Approximately stable","Increasing","Unknown or not applicable","Unknown or not applicable","Unknown or not applicable","Unknown or not applicable","Approximately stable","Unknown or not applicable","Unknown or not applicable","Unknown or not applicable","Approximately stable","Unknown or not applicable","Approximately stable","Unknown or not applicable","Decreasing","Unknown or not applicable","Approximately stable","Increasing","Approximately stable","Approximately stable","Increasing","Decreasing","Unknown or not applicable","Increasing","Unknown or not applicable","Unknown or not applicable","Unknown or not applicable","Unknown or not applicable","Unknown or not applicable","Decreasing","Unknown or not applicable","Decreasing","Unknown or not applicable","Decreasing","Unknown or not applicable","Unknown or not applicable","Approximately stable","Increasing","Approximately stable","Unknown or not applicable","Unknown or not applicable","Approximately stable","Decreasing","Unknown or not applicable","Unknown or not applicable","Approximately stable"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Institution<\/th>\n      <th>Admission percentage total<\/th>\n      <th>Yield percentage total<\/th>\n      <th>Grad rate in six years<\/th>\n      <th>Percent of revenue from tuition and fees<\/th>\n      <th>Student to tenure track faculty ratio<\/th>\n      <th>Average net price for 30K to 48K family income<\/th>\n      <th>Undergrad full time<\/th>\n      <th>Grad full time<\/th>\n      <th>State<\/th>\n      <th>Full-time undergrad enrollment trend<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="map" class="section level1">
+<h1>Map</h1>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-7f6c501d060652148c07" style="width:768px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-7f6c501d060652148c07">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[41.874742,-87.668581,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"setView":[[41.874742,-87.668581],16,[]],"limits":{"lat":[41.874742,41.874742],"lng":[-87.668581,-87.668581]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="enrollment" class="section level1">
 <h1>Enrollment</h1>
@@ -439,18 +463,12 @@ Change over ≤ 11 years
 <th style="text-align:center;">
 Trend
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Special Focus Four-Year: Medical Schools &amp; Centers
-</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
-Undergrads per instructor
+Undergrads per tenure track instructor
 </td>
 <td style="text-align:center;">
 0.0 (2020)
@@ -461,16 +479,10 @@ from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 100%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 86%
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
-Undergrads per tenure track instructor
+Undergrads per instructor
 </td>
 <td style="text-align:center;">
 0.0 (2020)
@@ -480,12 +492,6 @@ Undergrads per tenure track instructor
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 100%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 100%
 </td>
 </tr>
 <tr>
@@ -501,7 +507,17 @@ Total instructors
 </td>
 <td style="text-align:center;">
 </td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tenure track instructors
+</td>
 <td style="text-align:center;">
+1,098 (2020)
+</td>
+<td style="text-align:center;">
+<img src=images/RushUniversity_17.png alt=‘Line plot from 862 to
+1,098 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -514,33 +530,11 @@ Non-tenure track instructors
 98 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_17.png alt=‘Line plot from 193 to 98
+<img src=images/RushUniversity_18.png alt=‘Line plot from 193 to 98
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-8.9 per year
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Tenure track instructors
-</td>
-<td style="text-align:center;">
-1,098 (2020)
-</td>
-<td style="text-align:center;">
-<img src=images/RushUniversity_18.png alt=‘Line plot from 862 to
-1,098 from 2012 to 2020’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -580,10 +574,10 @@ Percent of undergrads with registered disabilities (≤3 is rounded up to
 3)
 </td>
 <td style="text-align:center;">
-3.0% (2021)
+3% (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_103.png alt=‘Line plot from 3.0 to 3.0
+<img src=images/RushUniversity_100.png alt=‘Line plot from 3 to 3
 from 2010 to 2021’ >
 </td>
 </tr>
@@ -606,15 +600,23 @@ Change over ≤ 11 years
 <th style="text-align:center;">
 Trend
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Special Focus Four-Year: Medical Schools &amp; Centers
-</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align:left;">
+Revenue from tution and fees
+</td>
+<td style="text-align:center;">
+3.3% (2021)
+</td>
+<td style="text-align:center;">
+<img src=images/RushUniversity_19.png alt=‘Line plot from 1.9 to 3.3
+from 2011 to 2021’ >
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
 <tr>
 <td style="text-align:left;">
 Revenue minus expenses
@@ -623,16 +625,10 @@ Revenue minus expenses
 $215 M (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_19.png alt=‘Line plot from 105 M to
+<img src=images/RushUniversity_20.png alt=‘Line plot from 105 M to
 215 M from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (higher) than 99%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (higher) than 97%
 </td>
 </tr>
 <tr>
@@ -643,15 +639,11 @@ Revenue
 $2.7 B (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_20.png alt=‘Line plot from 1.5 B to
+<img src=images/RushUniversity_21.png alt=‘Line plot from 1.5 B to
 2.7 B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↑<br />$86 M per year
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 <tr>
@@ -662,15 +654,11 @@ Expenses
 $2.5 B (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_21.png alt=‘Line plot from 1.4 B to
+<img src=images/RushUniversity_22.png alt=‘Line plot from 1.4 B to
 2.5 B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↑<br />$93 M per year
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 <tr>
@@ -681,91 +669,11 @@ Assets
 $4.7 B (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_22.png alt=‘Line plot from 2.6 B to
+<img src=images/RushUniversity_23.png alt=‘Line plot from 2.6 B to
 4.7 B from 2011 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↑<br />$160 M per year
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (higher) than 100%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (higher) than 100%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from tution and fees
-</td>
-<td style="text-align:center;">
-3.3% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/RushUniversity_23.png alt=‘Line plot from 1.9 to 3.3
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 95%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (lower) than 97%
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt appropriations
-</td>
-<td style="text-align:center;">
-0.0% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/RushUniversity_24.png alt=‘Line plot from 0.0 to 0.0
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from govt grants and contracts
-</td>
-<td style="text-align:center;">
-3.4% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/RushUniversity_25.png alt=‘Line plot from 3.5 to 3.4
-from 2011 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Revenue from private sources
-</td>
-<td style="text-align:center;">
-2.8% (2021)
-</td>
-<td style="text-align:center;">
-<img src=images/RushUniversity_26.png alt=‘Line plot from 2.3 to 2.8
-from 2018 to 2021’ >
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-</td>
-<td style="text-align:center;">
 </td>
 </tr>
 </tbody>
@@ -785,6 +693,9 @@ year or just two of three, for example).</p>
 <p>Demographic data for first time degree-seeking students. Note that
 this uses US federal demographic data: it only has two genders and a
 specified set of ethnicities and races.</p>
+</div>
+<div id="freshmen-geography" class="section level1">
+<h1>Freshmen geography</h1>
 </div>
 <div id="tenure-track-faculty" class="section level1">
 <h1>Tenure track faculty</h1>
@@ -821,7 +732,7 @@ Total (tenure-track count)
 1,098 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_61.png alt=‘Line plot from 862 to
+<img src=images/RushUniversity_58.png alt=‘Line plot from 862 to
 1,098 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -835,7 +746,7 @@ Women (tenure-track count)
 599 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_62.png alt=‘Line plot from 436 to 599
+<img src=images/RushUniversity_59.png alt=‘Line plot from 436 to 599
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -850,7 +761,7 @@ Men (tenure-track count)
 499 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_63.png alt=‘Line plot from 426 to 499
+<img src=images/RushUniversity_60.png alt=‘Line plot from 426 to 499
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -861,11 +772,11 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_64.png alt=‘Line plot from 1.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/RushUniversity_61.png alt=‘Line plot from 1 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -878,7 +789,7 @@ Asian (tenure-track count)
 265 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_65.png alt=‘Line plot from 211 to 265
+<img src=images/RushUniversity_62.png alt=‘Line plot from 211 to 265
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -892,7 +803,7 @@ Black or African American (tenure-track count)
 59 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_66.png alt=‘Line plot from 23 to 59
+<img src=images/RushUniversity_63.png alt=‘Line plot from 23 to 59
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -907,7 +818,7 @@ Hispanic or Latino (tenure-track count)
 58 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_67.png alt=‘Line plot from 24 to 58
+<img src=images/RushUniversity_64.png alt=‘Line plot from 24 to 58
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -919,11 +830,11 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (tenure-track count)
 </td>
 <td style="text-align:center;">
-1.0 (2020)
+1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_68.png alt=‘Line plot from 1.0 to 1.0
-from 2012 to 2020’ >
+<img src=images/RushUniversity_65.png alt=‘Line plot from 1 to 1 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -936,7 +847,7 @@ White (tenure-track count)
 693 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_69.png alt=‘Line plot from 594 to 693
+<img src=images/RushUniversity_66.png alt=‘Line plot from 594 to 693
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -950,7 +861,7 @@ Two or more races (tenure-track count)
 21 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_70.png alt=‘Line plot from 8.0 to 21
+<img src=images/RushUniversity_67.png alt=‘Line plot from 8 to 21
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -962,11 +873,11 @@ from 2012 to 2020’ >
 Nonresident alien (tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_71.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/RushUniversity_68.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1010,7 +921,7 @@ Total (non-tenure-track count)
 98 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_72.png alt=‘Line plot from 193 to 98
+<img src=images/RushUniversity_69.png alt=‘Line plot from 193 to 98
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1025,7 +936,7 @@ Women (non-tenure-track count)
 66 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_73.png alt=‘Line plot from 179 to 66
+<img src=images/RushUniversity_70.png alt=‘Line plot from 179 to 66
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1040,7 +951,7 @@ Men (non-tenure-track count)
 32 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_74.png alt=‘Line plot from 14 to 32
+<img src=images/RushUniversity_71.png alt=‘Line plot from 14 to 32
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1051,11 +962,11 @@ from 2012 to 2020’ >
 American Indian or Alaska Native (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_75.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/RushUniversity_72.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1065,11 +976,11 @@ from 2012 to 2020’ >
 Asian (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-6.0 (2020)
+6 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_76.png alt=‘Line plot from 4.0 to 6.0
-from 2012 to 2020’ >
+<img src=images/RushUniversity_73.png alt=‘Line plot from 4 to 6 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1079,10 +990,10 @@ from 2012 to 2020’ >
 Black or African American (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-6.0 (2020)
+6 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_77.png alt=‘Line plot from 13 to 6.0
+<img src=images/RushUniversity_74.png alt=‘Line plot from 13 to 6
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1094,11 +1005,11 @@ from 2012 to 2020’ >
 Hispanic or Latino (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-9.0 (2020)
+9 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_78.png alt=‘Line plot from 2.0 to 9.0
-from 2012 to 2020’ >
+<img src=images/RushUniversity_75.png alt=‘Line plot from 2 to 9 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↑<br />0.9 per year
@@ -1109,11 +1020,11 @@ from 2012 to 2020’ >
 Native Hawaiian or other Pacific Islander (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_79.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/RushUniversity_76.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1126,7 +1037,7 @@ White (non-tenure-track count)
 73 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_80.png alt=‘Line plot from 103 to 73
+<img src=images/RushUniversity_77.png alt=‘Line plot from 103 to 73
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1138,10 +1049,10 @@ from 2012 to 2020’ >
 Two or more races (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-4.0 (2020)
+4 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_81.png alt=‘Line plot from 71 to 4.0
+<img src=images/RushUniversity_78.png alt=‘Line plot from 71 to 4
 from 2012 to 2020’ >
 </td>
 <td style="text-align:center;">
@@ -1152,11 +1063,11 @@ from 2012 to 2020’ >
 Nonresident alien (non-tenure-track count)
 </td>
 <td style="text-align:center;">
-0.0 (2020)
+0 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_82.png alt=‘Line plot from 0.0 to 0.0
-from 2012 to 2020’ >
+<img src=images/RushUniversity_79.png alt=‘Line plot from 0 to 0 from
+2012 to 2020’ >
 </td>
 <td style="text-align:center;">
 </td>
@@ -1180,12 +1091,6 @@ Change over ≤ 11 years
 <th style="text-align:center;">
 Trend
 </th>
-<th style="text-align:center;">
-Schools not in an athletic conference
-</th>
-<th style="text-align:center;">
-Special Focus Four-Year: Medical Schools &amp; Centers
-</th>
 </tr>
 </thead>
 <tbody>
@@ -1197,17 +1102,11 @@ Number of physical books
 14,631 (2021)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_27.png alt=‘Line plot from 47,358 to
+<img src=images/RushUniversity_24.png alt=‘Line plot from 47,358 to
 14,631 from 2014 to 2021’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-5,113 per year
-</td>
-<td style="text-align:center;">
-✪✪<br />Better (higher) than 40%
-</td>
-<td style="text-align:center;">
-✪✪✪✪<br />Better (higher) than 73%
 </td>
 </tr>
 <tr>
@@ -1218,17 +1117,11 @@ Physical library circulations per students and faculty
 0.1 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_28.png alt=‘Line plot from 4.0 to 0.1
+<img src=images/RushUniversity_25.png alt=‘Line plot from 4.0 to 0.1
 from 2015 to 2020’ >
 </td>
 <td style="text-align:center;">
 ↓<br />-0.7 per year
-</td>
-<td style="text-align:center;">
-✪<br />Better (higher) than 9%
-</td>
-<td style="text-align:center;">
-✪<br />Better (higher) than 14%
 </td>
 </tr>
 <tr>
@@ -1239,16 +1132,10 @@ Digital library circulations per students and faculty
 145 (2020)
 </td>
 <td style="text-align:center;">
-<img src=images/RushUniversity_29.png alt=‘Line plot from 28 to 145
+<img src=images/RushUniversity_26.png alt=‘Line plot from 28 to 145
 from 2015 to 2020’ >
 </td>
 <td style="text-align:center;">
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (higher) than 91%
-</td>
-<td style="text-align:center;">
-✪✪✪✪✪<br />Better (higher) than 86%
 </td>
 </tr>
 </tbody>
@@ -1264,28 +1151,28 @@ from 2015 to 2020’ >
 <h1>Degrees by major</h1>
 <div id="bachelors" class="section level2">
 <h2>Bachelors</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4c7be85cbd8269eed7fc" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-4c7be85cbd8269eed7fc">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RadiologicTechnology_Science_Radiographer.html\">Radiologic Technology/Science - Radiographer</a>","<a href=\"majors_Bachelors_CardiovascularTechnology_Technologist.html\">Cardiovascular Technology/Technologist</a>","<a href=\"majors_Bachelors_HealthServices_AlliedHealth_HealthSciences_General.html\">Health Services/Allied Health/Health Sciences, General</a>"],[19,8,6],[57.576,24.242,18.182],[1.271,4.624,0.04],["Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-0a66d98aa775199d5331" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0a66d98aa775199d5331">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Bachelors_RadiologicTechnology_Science_Radiographer.html\">Radiologic Technology/Science - Radiographer</a>","<a href=\"majors_Bachelors_CardiovascularTechnology_Technologist.html\">Cardiovascular Technology/Technologist</a>","<a href=\"majors_Bachelors_HealthServices_AlliedHealth_HealthSciences_General.html\">Health Services/Allied Health/Health Sciences, General</a>"],[19,8,6],[57.576,24.242,18.182],[1.271,4.624,0.04],["Bachelors","Bachelors","Bachelors"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="masters" class="section level2">
 <h2>Masters</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-99344333dbc95790a7f1" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-99344333dbc95790a7f1">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_NursingScience.html\">Nursing Science</a>","<a href=\"majors_Masters_Speech_LanguagePathology_Pathologist.html\">Speech-Language Pathology/Pathologist</a>","<a href=\"majors_Masters_PhysicianAssistant.html\">Physician Assistant</a>","<a href=\"majors_Masters_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Masters_Biotechnology.html\">Biotechnology</a>","<a href=\"majors_Masters_MedicalScience_Scientist.html\">Medical Science/Scientist</a>","<a href=\"majors_Masters_PerfusionTechnology_Perfusionist.html\">Perfusion Technology/Perfusionist</a>","<a href=\"majors_Masters_ClinicalLaboratoryScience_MedicalTechnology_Technologist.html\">Clinical Laboratory Science/Medical Technology/Technologist</a>","<a href=\"majors_Masters_NutritionSciences.html\">Nutrition Sciences</a>","<a href=\"majors_Masters_HospitalandHealthCareFacilitiesAdministration_Management.html\">Hospital and Health Care Facilities Administration/Management</a>","<a href=\"majors_Masters_RespiratoryCareTherapy_Therapist.html\">Respiratory Care Therapy/Therapist</a>","<a href=\"majors_Masters_BiologicalandBiomedicalSciences_Other.html\">Biological and Biomedical Sciences, Other</a>"],[175,37,28,27,24,20,18,16,14,13,9,5],[45.337,9.585,7.254,6.995,6.218,5.181,4.663,4.145,3.627,3.368,2.332,1.295],[12.315,0.864,0.269,0.202,1.644,3.082,14.516,5.229,1.172,1.028,7.317,0.322],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-30c11adc6f52666126ef" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-30c11adc6f52666126ef">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Masters_NursingScience.html\">Nursing Science</a>","<a href=\"majors_Masters_Speech_LanguagePathology_Pathologist.html\">Speech-Language Pathology/Pathologist</a>","<a href=\"majors_Masters_PhysicianAssistant.html\">Physician Assistant</a>","<a href=\"majors_Masters_Health_HealthCareAdministration_Management.html\">Health/Health Care Administration/Management</a>","<a href=\"majors_Masters_Biotechnology.html\">Biotechnology</a>","<a href=\"majors_Masters_MedicalScience_Scientist.html\">Medical Science/Scientist</a>","<a href=\"majors_Masters_PerfusionTechnology_Perfusionist.html\">Perfusion Technology/Perfusionist</a>","<a href=\"majors_Masters_ClinicalLaboratoryScience_MedicalTechnology_Technologist.html\">Clinical Laboratory Science/Medical Technology/Technologist</a>","<a href=\"majors_Masters_NutritionSciences.html\">Nutrition Sciences</a>","<a href=\"majors_Masters_HospitalandHealthCareFacilitiesAdministration_Management.html\">Hospital and Health Care Facilities Administration/Management</a>","<a href=\"majors_Masters_RespiratoryCareTherapy_Therapist.html\">Respiratory Care Therapy/Therapist</a>","<a href=\"majors_Masters_BiologicalandBiomedicalSciences_Other.html\">Biological and Biomedical Sciences, Other</a>"],[175,37,28,27,24,20,18,16,14,13,9,5],[45.337,9.585,7.254,6.995,6.218,5.181,4.663,4.145,3.627,3.368,2.332,1.295],[12.315,0.864,0.269,0.202,1.644,3.082,14.516,5.229,1.172,1.028,7.317,0.322],["Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters","Masters"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="doctorate" class="section level2">
 <h2>Doctorate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-62a5080fa20b65c2d304" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-62a5080fa20b65c2d304">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_NursingPractice.html\">Nursing Practice</a>","<a href=\"majors_Doctorate_Medicine.html\">Medicine</a>","<a href=\"majors_Doctorate_Audiology_Audiologist.html\">Audiology/Audiologist</a>","<a href=\"majors_Doctorate_BiologicalandBiomedicalSciences_Other.html\">Biological and Biomedical Sciences, Other</a>","<a href=\"majors_Doctorate_HealthProfessionsandRelatedClinicalSciences_Other.html\">Health Professions and Related Clinical Sciences, Other</a>","<a href=\"majors_Doctorate_OccupationalTherapy_Therapist.html\">Occupational Therapy/Therapist</a>","<a href=\"majors_Doctorate_NursingScience.html\">Nursing Science</a>","<a href=\"majors_Doctorate_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Doctorate_Neuroscience.html\">Neuroscience</a>"],[196,122,15,8,5,4,3,1,1],[55.211,34.366,4.225,2.254,1.408,1.127,0.845,0.282,0.282],[3.183,0.591,2.283,4.278,4.274,0.201,0.316,0.254,0.166],["Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d30f4b48f00bafa5e865" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d30f4b48f00bafa5e865">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Doctorate_NursingPractice.html\">Nursing Practice</a>","<a href=\"majors_Doctorate_Medicine.html\">Medicine</a>","<a href=\"majors_Doctorate_Audiology_Audiologist.html\">Audiology/Audiologist</a>","<a href=\"majors_Doctorate_BiologicalandBiomedicalSciences_Other.html\">Biological and Biomedical Sciences, Other</a>","<a href=\"majors_Doctorate_HealthProfessionsandRelatedClinicalSciences_Other.html\">Health Professions and Related Clinical Sciences, Other</a>","<a href=\"majors_Doctorate_OccupationalTherapy_Therapist.html\">Occupational Therapy/Therapist</a>","<a href=\"majors_Doctorate_NursingScience.html\">Nursing Science</a>","<a href=\"majors_Doctorate_Biochemistry.html\">Biochemistry</a>","<a href=\"majors_Doctorate_Neuroscience.html\">Neuroscience</a>"],[196,122,15,8,5,4,3,1,1],[55.211,34.366,4.225,2.254,1.408,1.127,0.845,0.282,0.282],[3.183,0.591,2.283,4.278,4.274,0.201,0.316,0.254,0.166],["Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate","Doctorate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="certificate" class="section level2">
 <h2>Certificate</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f32b2ea717611805e429" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-f32b2ea717611805e429">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_BloodBankTechnologySpecialist.html\">Blood Bank Technology Specialist</a>","<a href=\"majors_Certificate_NursingScience.html\">Nursing Science</a>"],[27,14],[65.854,34.146],[10.037,33.333],["Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-f52d4388322d71f6ad83" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f52d4388322d71f6ad83">{"x":{"filter":"none","vertical":false,"data":[["<a href=\"majors_Certificate_BloodBankTechnologySpecialist.html\">Blood Bank Technology Specialist</a>","<a href=\"majors_Certificate_NursingScience.html\">Nursing Science</a>"],[27,14],[65.854,34.146],[10.037,33.333],["Certificate","Certificate"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="associates" class="section level2">
 <h2>Associates</h2>
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-56eb1723ef2b4cd91b13" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-56eb1723ef2b4cd91b13">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-085822dc52018dfa5739" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-085822dc52018dfa5739">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Field<\/th>\n      <th>Degrees awarded 2021<\/th>\n      <th>Percent at Institution<\/th>\n      <th>Percent in Field<\/th>\n      <th>Degree<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false},"selection":{"mode":"multiple","selected":null,"target":"row","selectable":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
