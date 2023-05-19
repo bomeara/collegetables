@@ -22,7 +22,7 @@ There are two main types of pages on this site: one page for each institution (o
 
 ## Changes
 
-* May 19, 2023: Updated with latest information on abortion, legislative risk, and some changes in Missouri and Florida. Also added information on distance to mountains.
+* May 19, 2023: Updated with latest information on abortion, legislative risk, and some changes in Missouri and Florida. Added information on distance to mountains. Also added information on life expectancy by state (hopefully not relevant to undergrads, but perhaps of note to faculty and staff).
 
 ## Details of the metrics
 
