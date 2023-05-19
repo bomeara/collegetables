@@ -1089,6 +1089,38 @@ AppendCATravelBan <- function(comparison_table) {
 	return(left_join(comparison_table, ban_table, by="State"))
 }
 
+AppendDistanceToMountains <- function(comparison_table) {
+	print("Appending distance to mountains and oceans")
+	gmbaR::gmba_read("web")
+	mountains <- gmba_inv()
+	actual_mountains <- subset(mountains, Feature=='Mountain range with well-recognized name')
+	actual_mountains <- actual_mountains[grepl("United States|Canada|Mexico", actual_mountains$Countries),]
+	#actual_oceans <- subset(mountains, Feature=='Ocean')
+	comparison_table$MilesToMountains <- NA
+	comparison_table$ClosestMountainRange <- NA
+	#comparison_table$MilesToOceans <- NA
+	unique_unitids <- unique(comparison_table$`UNITID Unique identification number of the institution`)
+	for (i in seq_along(unique_unitids)) {
+		try({
+			focal_rows <- which(comparison_table$`UNITID Unique identification number of the institution` == unique_unitids[i])
+			longitude <- as.numeric(comparison_table$`Longitude location of institution`[focal_rows[1]])
+			longitude <- longitude[!is.na(longitude)][1]
+			latitude <- as.numeric(comparison_table$`Latitude location of institution`[focal_rows[1]])
+			latitude <- latitude[!is.na(latitude)][1]
+			if(!is.na(longitude) & !is.na(latitude)) {
+				mountain_distances <- st_distance(st_sfc(st_point(c(longitude, latitude)), crs = 4326),st_make_valid(actual_mountains$geometry))
+				comparison_table$MilesToMountains[focal_rows] <- as.numeric(min(mountain_distances, na.rm=TRUE)) * 0.000621371
+				comparison_table$ClosestMountainRange[focal_rows] <- actual_mountains$Name_EN[which.min(mountain_distances)]
+				#ocean_distances <- st_distance(st_sfc(st_point(c(longitude, latitude)), crs = 4326),st_make_valid(actual_oceans$geometry))
+				#comparison_table$MilesToOceans[focal_rows] <- as.numeric(min(ocean_distances)) * 0.000621371
+			}
+		}, silent=TRUE)
+		cat("Completed", i, "of", length(unique_unitids), "\r")
+	}
+	return(comparison_table)
+
+}
+
 AppendGunLawsOld <- function(college_data) {
 	guns <- read.csv("data/gunlaws_giffords_scorecard.csv")
 	guns$`State abbreviation` <- state.abb[match(guns$State,state.name)]
@@ -1416,7 +1448,7 @@ RenderSparklines <- function(spark_height=5, spark_width=40) {
 	}	
 }
 
-RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxcount=40, CIPS_codes, weatherspark, yml, index_table) {
+RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxcount=40, CIPS_codes, weatherspark, yml, index_table, life_expectancy) {
 	
 	institution_ids <- unique(comparison_table$`UNITID Unique identification number of the institution`)
 	dead_institutions <- subset(comparison_table, comparison_table$`Status of institution`%in% c('Closed in current year (active has data)', 'Combined with other institution ', 'Delete out of business'))
@@ -1453,7 +1485,8 @@ RenderInstitutionPagesNew <- function(comparison_table, fields_and_majors, maxco
 					institution_id =  institution_id,
 					comparison_table = comparison_table,
 					weatherspark=weatherspark,
-					index_table=index_table
+					index_table=index_table,
+					life_expectancy=life_expectancy
 				),
 				quiet=TRUE
 			)
@@ -2384,3 +2417,51 @@ dataListFilter <- function(tableId, style = "width: 100%; height: 28px;") {
   }
 }
 
+GetLifeExpectancy <- function() {
+	potential_files <- list.files(file.path("data", "LifeTables"), pattern=".*xlsx", full.names = TRUE)
+	all_df <- data.frame()
+	for(file_index in seq_along(potential_files)) {
+		life_expectancy <- as.data.frame(readxl::read_excel(potential_files[file_index], sheet=1, skip=2))
+		life_expectancy <- life_expectancy[-nrow(life_expectancy),] # get rid of the SOURCE line at the end
+		file_stem <- gsub(".xlsx", "", basename(potential_files[file_index]))
+		table_type <- gsub("[A-Za-z]+", "", file_stem)
+		state_short <- gsub("[0-9]+", "", file_stem)
+		if(table_type=="1") {
+			table_type <- "All"
+		} else if (table_type=="2") {
+			table_type <- "Male"
+		} else if (table_type=="3") {
+			table_type <- "Female"	
+		} 
+		if(table_type != "4") {
+			ages <- as.numeric(gsub('–.+| and over', "", life_expectancy[,1]))
+			local_df <- data.frame(age=ages, annual_death_probability=life_expectancy$qx, expectation_of_life=life_expectancy$ex, state=state_short, table_type=table_type)
+			all_df <- rbind(all_df, local_df)
+		}
+	}
+	
+	all_df %<>% 
+		group_by(age) %>% 
+		mutate(standardized_expectation_of_life = expectation_of_life - median(expectation_of_life, na.rm = TRUE)) %>%
+		mutate(standardized_annual_death_probability = annual_death_probability - median(annual_death_probability, na.rm = TRUE)) 
+
+# ggplot(subset(all_df,table_type=="All"), aes(x=age, y=standardized_expectation_of_life, group=state)) + geom_line(alpha=0.1)
+# ggplot(subset(all_df,table_type=="All"), aes(x=age, y=standardized_annual_death_probability, group=state)) + geom_line(alpha=0.1)
+#  ggplot(subset(all_df,table_type!="All"), aes(x=age, y=standardized_expectation_of_life, group=state)) + geom_line(alpha=0.1) + facet_wrap(~table_type) + ylim(-10, 10)+ ylab("Difference in years life expectancy from median state") + xlab("Age") + geom_line(data=subset(all_df,state=="WV" & table_type!="All"), col="red")
+	return(all_df)
+}
+
+CreateLifeExpectancyPlots <- function(life_expectancy) {
+	for (focal_state in state.abb) {
+		p <-ggplot(subset(life_expectancy,table_type!="All"), aes(x=age, y=standardized_expectation_of_life, group=state)) + geom_line(colour="black", alpha=0.1) + facet_wrap(~table_type) + ylim(-10, 10)+ ylab("Difference in years life expectancy from median state") + xlab("Age") + geom_line(data=subset(life_expectancy,state==focal_state & table_type!="All"), col="red")
+		ggsave(
+  			plot = p,
+  			filename = paste0("docs/images/life_expectancy_", focal_state, ".png"),
+  			bg = "transparent",
+			width = 2000,
+			height= 1200,
+			units = "px"
+		)
+	}
+	return(TRUE)
+}

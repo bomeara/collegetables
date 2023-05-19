@@ -141,6 +141,7 @@ htmltools::tags$script("
 	Reactable.toggleHideColumn('college-list', 'Ecological region')
 	Reactable.toggleHideColumn('college-list', 'Realm')
 	Reactable.toggleHideColumn('college-list', 'Urbanization')
+	Reactable.toggleHideColumn('college-list', 'Miles to mountains')
 	Reactable.toggleHideColumn('college-list', 'Abortion availability')
 	Reactable.toggleHideColumn('college-list', 'California travel ban')
 	Reactable.toggleHideColumn('college-list', 'Gun law stringency')
@@ -316,6 +317,9 @@ crosstalk::filter_slider("contraceptionsupport", "State rep support for contrace
 crosstalk::filter_slider("interracialsamesex", "State rep support for interracial and same-sex marriage", all_colleges, "interracialsamesexmarriage")
 
 crosstalk::filter_select("biome", "Biome", all_colleges, ~`Biome`)
+
+crosstalk::filter_slider("milestomountains", "Miles to mountains", all_colleges, "Miles to mountains")
+
 ```	
 
 ## College traits

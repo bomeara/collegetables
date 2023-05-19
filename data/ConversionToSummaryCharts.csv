@@ -12,8 +12,8 @@ Percent of full time first time undergraduates awarded federal grant aid,Undergr
 Percent of full time first time undergraduates awarded any financial aid,Undergrads getting any aid,Student financing,FALSE,Percent,Higher
 Percent of full time first time undergraduates awarded Pell grants,Undergrads getting Pell grants,Student financing,FALSE,Percent,Higher
 Total dormitory capacity,Dorm capacity,Student conditions,FALSE,,None
-Full time undergrad enrollment divided by tenure stream faculty,Undergrads per tenure track instructor,Teaching,FALSE,,Lower
-Full time undergrad enrollment divided by total instructors,Undergrads per instructor,Teaching,FALSE,,Lower
+Full time undergrad enrollment divided by tenure stream faculty,Undergrads per tenure track instructor (lower is better),Teaching,FALSE,,Lower
+Full time undergrad enrollment divided by total instructors,Undergrads per instructor (lower is better),Teaching,FALSE,,Lower
 Total instructors,Total instructors,Teaching,FALSE,,None
 Tenure-stream Grand total,Tenure track instructors,Teaching,FALSE,,None
 NTT-stream Grand total,Non-tenure track instructors,Teaching,FALSE,,None

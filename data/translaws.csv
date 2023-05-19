@@ -10,21 +10,21 @@ DE,2: Low risk
 FL,5: Worst
 GA,5: Worst
 HI,1: Safest
-ID,4: High risk
+ID,5: Worst
 IL,1: Safest
-IN,4: High risk
+IN,5: Worst
 IA,5: Worst
 KS,3: Moderate risk
 KY,5: Worst
 LA,4: High risk
 ME,2: Low risk
-MD,2: Low risk
+MD,1: Safest
 MA,1: Safest
 MI,2: Low risk
 MN,1: Safest
 MS,5: Worst
 MO,4: High risk
-MT,4: High risk
+MT,5: Worst
 NE,4: High risk
 NV,2: Low risk
 NH,3: Moderate risk

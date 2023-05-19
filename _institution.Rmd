@@ -13,6 +13,7 @@ params:
   spark_height: 60
   weatherspark: "nothing"
   index_table: "index_table"
+  life_expectancy: "nothing"
 title: "`r paste0(params$institution_name)`"
 
 ---
@@ -30,6 +31,10 @@ source("R/functions.R")
 index_table <- params$index_table
 comparison_table <- params$comparison_table
 comparison_table <- comparison_table[order(comparison_table$`IPEDS Year`, decreasing=TRUE),]
+life_expectancy <- params$life_expectancy
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
 ```
 
 
@@ -117,7 +122,7 @@ try({
 
 	harvard_price <- FirstNaOmit(subset(comparison_table, comparison_table$`UNITID Unique identification number of the institution`=="166027")$`Average net price students awarded grant or scholarship aid`)
 	RatioToHarvard <- as.numeric(most_current_info['Average net price students awarded grant or scholarship aid'])/as.numeric(harvard_price)
-	
+	harvard_30K_diff <- as.numeric(most_current_info['Average net price for 30K to 48K family income']) - 1396
 	
 
 }, silent=TRUE)
@@ -151,6 +156,15 @@ try({
 
 ```{r}
 try({
+	if(grepl("New College of Florida", params$institution_name, ignore.case=TRUE)) {
+		notes <- append(notes, "This institution is undergoing a [substantial change in leadership and mission](https://www.theatlantic.com/ideas/archive/2023/03/new-college-florida-ron-desantis-takeover/673556/); past information about the college such as majors, tenure track faculty lines, and other information may not be predictive of the future.")
+	}
+	
+}, silent=TRUE)
+```
+
+```{r}
+try({
 	if(index_focal_vector['Assets trend']=="Decreasing") {
 		notes <- append(notes, "This institution's total assets have tended to decrease over time.")
 	} else if(index_focal_vector['Assets trend']=="") {
@@ -171,6 +185,22 @@ try({
 try({
 	if(most_current_info['State'] == "Texas") {
 		notes <- append(notes, "The state attorney general has <a href='https://www.washingtonpost.com/nation/2022/12/14/texas-transgender-data-paxton/'>sought to identify transgender individuals from state drivers license data</a>. Family and protective services have been ordered to <a href='https://www.washingtonpost.com/nation/2022/02/23/greg-abbott-gender-affirming-care-child-abuse-directive/'>investigate all parents of transgender children for abuse, as well</a>.")
+	}
+}, silent=TRUE)
+```
+
+```{r}
+try({
+	if(most_current_info['State'] == "Missouri") {
+		notes <- append(notes, "The state attorney general has put in an emergency rule that <a href='https://www.npr.org/2023/04/24/1171293057/missouri-attorney-general-transgender-adults-gender-affirming-health-care'>places barriers on gender-affirming care for children and adults</a>. As of May 13, 2023, <a href='https://apnews.com/article/missouri-transgender-health-care-ruling-705afa8c4e8a6d4445629c3f2694053f'>that rule has been temporarily blocked by a judge</a>, but the final outcome is still uncertain.")
+	}
+}, silent=TRUE)
+```
+
+```{r}
+try({
+	if(most_current_info['State'] == "Florida" & grepl("public", most_current_info['Sector of institution'], ignore.case=TRUE)) {
+		notes <- append(notes, "By <a href='https://www.washingtonpost.com/education/2023/05/15/desantis-defunds-dei-programs-florida-colleges/'>state law</a>, this public institution may not spend state or federal money on diversity, equity, or inclusion efforts, with limited exceptions. There are also government restrictions on what courses can be taught.")
 	}
 }, silent=TRUE)
 ```
@@ -505,7 +535,7 @@ try({
 
 ```{r, results='asis'}
 if(length(notes)>0) {
-	cat("# Notes\nThese are items that bear looking into more closely: some may be problems, some may be neutral, some may even be good. For example, a decline in enrollment is often problematic, but it may reflect a school specializing (i.e., focusing on just nursing rather than nursing and business).\n\n")
+	cat("# Notes\nThese are items that bear looking into more closely: some may be problems, some may be neutral, some may be good. These are just things that are worth noticing.\n\n")
 	for (note in notes) {
 		cat(paste0('* ', note, "\n\n"))	
 	}	
@@ -519,7 +549,7 @@ if(length(notes)>0) {
 * **Graduate program**: `r try({most_current_info['Carnegie Classification 2021 Graduate Instructional Program']}, silent=TRUE)`
 * **Enrollment profile**: `r try({most_current_info['Carnegie Classification 2021 Enrollment Profile']}, silent=TRUE)` (see more details below)
 * **Average net price for undergrads on financial aid**: $`r formatMe(as.numeric(most_current_info['Average net price students awarded grant or scholarship aid']))` (`r ifelse(RatioToHarvard>1, paste0(round(RatioToHarvard,1), " times the equivalent cost of Harvard)"), paste0("This is ", 100*round(RatioToHarvard,1), "% the average cost of Harvard)"))`. 
-* **Average net price for families with $30K-48K income**: $`r formatMe(as.numeric(most_current_info['Average net price for 30K to 48K family income']))`. `r ifelse(!is.na(as.numeric(most_current_info['Average net price for 30K to 48K family income'])), ifelse(as.numeric(most_current_info['Average net price for 30K to 48K family income'])<0, " (The negative number means students in this income bracket receive this much OVER the expected total cost)",""),"")`
+* **Average net price for families with $30K-48K income**: $`r formatMe(as.numeric(most_current_info['Average net price for 30K to 48K family income']))` (This is $`r formatMe(abs(harvard_30K_diff))` `r (ifelse(harvard_30K_diff<0, "cheaper than", ifelse(harvard_30K_diff>0, "more expensive than", "equal to")))` what Harvard costs for equivalent students). `r ifelse(!is.na(as.numeric(most_current_info['Average net price for 30K to 48K family income'])), ifelse(as.numeric(most_current_info['Average net price for 30K to 48K family income'])<0, " (The negative number means students in this income bracket receive this much OVER the expected total cost)",""),"")`
 * **Actual price for *your* family**: Go <a href='`r try({PrependHttpsIfNeeded(most_current_info['Net price calculator web address'])}, silent=TRUE)`'>here</a> to see what your family may be asked to pay. It can be MUCH lower than the average price but also higher for some.
 * **Size and setting**: `r try({most_current_info['Carnegie Classification 2021 Size and Setting']}, silent=TRUE)`
 * **In state percentage**: `r most_current_info['Percent first year students from in state']`% of first year students come from `r most_current_info['State']` `r ifelse(!is.na(as.numeric(most_current_info['Percent first year students residence not reported'])), ifelse(as.numeric(most_current_info['Percent first year students residence not reported'])>1, paste0("(note that ",most_current_info['Percent first year students residence not reported'], "% have no residence reported)" ),""),"")`
@@ -545,14 +575,15 @@ if(length(notes)>0) {
 
 # Overview of location
 
-* **Abortion in this state**: `r gsub("\\d: ", "", most_current_info['Abortion'])` (based on https://states.guttmacher.org/policies/ as of March 22, 2023)
+* **Abortion in this state**: `r gsub("\\d: ", "", most_current_info['Abortion'])` (based on https://states.guttmacher.org/policies/ as of May 10, 2023)
 * **Gun law stringency**: `r most_current_info['Gun Law Stringency']` (higher grade = [more stringent](https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state))
 * **State rep support for contraception**: `r round(100*as.numeric(most_current_info['Proportion of reps voting in favor of respect for right to contraception act']),1)`% of US reps from this state [voted in favor](https://www.congress.gov/bill/117th-congress/house-bill/8373) of legal protections for contraception.
 * **State rep support for recognizing same-sex and interracial marriage**: `r round(100*as.numeric(most_current_info['Proportion of reps voting in favor of respect for marriage act']),1)`% of US reps from this state [voted in favor](https://www.congress.gov/bill/117th-congress/house-bill/8404) of requiring states to recognize same-sex and interracial marriages performed in other states
-* **Anti-trans legislative risk**: `r gsub("\\d: ", "", most_current_info['Trans Risk'])` (based on [Erin Reed's work](https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk), as of March 18, 2023)
+* **Anti-trans legislative risk**: `r gsub("\\d: ", "", most_current_info['Trans Risk'])` (based on [Erin Reed's work](https://www.erininthemorning.com/p/april-anti-trans-legislative-risk), as of April 2, 2023)
 * **Ecological region**: `r most_current_info['eco_name']`
 * **Biome**: `r most_current_info['biome']`
-* **Climate**: See overview at [WeatherSpark](`r GetClosestWeatherspark(most_current_info, weatherspark)`).
+* **Distance to mountains**: `r round(as.numeric(most_current_info['MilesToMountains']),1)` miles to `r most_current_info['ClosestMountainRange']`
+* **Climate**: See overview at [WeatherSpark](`r GetClosestWeatherspark(most_current_info, weatherspark)`)
 
 # Similar institutions
 
@@ -763,6 +794,28 @@ Non-tenure track faculty are not eligible for tenure. Some are hired one semeste
 	pretty_table %>% knitr::kable(align="c") %>% kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 	}, silent=TRUE)
 ```
+
+# Life expectancy
+
+
+```{r}
+state_abbreviation <- state.abb[match(most_current_info['State'], state.name)]
+focal_life_expectancy <- life_expectancy[life_expectancy$state == state_abbreviation,]
+focal_life_expectancy$preposition <- ifelse(focal_life_expectancy$standardized_expectation_of_life<0, "below", "over")
+```
+
+This hopefully will not be relevant for potential students, but it may be for people moving to an area longer term, such as faculty and staff choosing where to live. This uses information from US National Vital Statistics Reports for 2020; like much federal data, it assumes people are male or female. For age difference from median, it is from the median state, averaging across all genders (one consequence of this is that the difference from the median life expectancy is almost always negative for men).
+
+* Life expectancy at birth: `r (round(subset(focal_life_expectancy, age==0 & table_type=="Female")$expectation_of_life,1 ))` years women (`r (round(subset(focal_life_expectancy, age==0 & table_type=="Female")$standardized_expectation_of_life,1))` years `r (subset(focal_life_expectancy, age==0 & table_type=="Female")$preposition)` the median),  `r (abs(round(subset(focal_life_expectancy, age==0 & table_type=="Male")$expectation_of_life,1 )))` years men (`r (abs(round(subset(focal_life_expectancy, age==0 & table_type=="Male")$standardized_expectation_of_life,1)))` years `r (subset(focal_life_expectancy, age==0 & table_type=="Male")$preposition)` the median)
+* Remaining life expectancy at age 18: `r (round(subset(focal_life_expectancy, age==18 & table_type=="Female")$expectation_of_life,1 ))` years women (`r abs(round(subset(focal_life_expectancy, age==18 & table_type=="Female")$standardized_expectation_of_life,1))` years `r (subset(focal_life_expectancy, age==18 & table_type=="Female")$preposition)` the median),  `r (abs(round(subset(focal_life_expectancy, age==18 & table_type=="Male")$expectation_of_life,1 )))` years men (`r (abs(round(subset(focal_life_expectancy, age==18 & table_type=="Male")$standardized_expectation_of_life,1)))` years `r (subset(focal_life_expectancy, age==18 & table_type=="Male")$preposition)` the median)
+* Remaining life expectancy at age 30: `r (round(subset(focal_life_expectancy, age==30 & table_type=="Female")$expectation_of_life,1 ))` years women (`r abs(round(subset(focal_life_expectancy, age==30 & table_type=="Female")$standardized_expectation_of_life,1))` years `r (subset(focal_life_expectancy, age==30 & table_type=="Female")$preposition)` the median),  `r (abs(round(subset(focal_life_expectancy, age==30 & table_type=="Male")$expectation_of_life,1 )))` years men (`r (abs(round(subset(focal_life_expectancy, age==30 & table_type=="Male")$standardized_expectation_of_life,1)))` years `r (subset(focal_life_expectancy, age==30 & table_type=="Male")$preposition)` the median)
+* Remaining life expectancy at age 45: `r (round(subset(focal_life_expectancy, age==45 & table_type=="Female")$expectation_of_life,1 ))` years women (`r abs(round(subset(focal_life_expectancy, age==45 & table_type=="Female")$standardized_expectation_of_life,1))` years `r (subset(focal_life_expectancy, age==45 & table_type=="Female")$preposition)` the median),  `r (abs(round(subset(focal_life_expectancy, age==45 & table_type=="Male")$expectation_of_life,1 )))` years men (`r (abs(round(subset(focal_life_expectancy, age==45 & table_type=="Male")$standardized_expectation_of_life,1)))` years `r (subset(focal_life_expectancy, age==45 & table_type=="Male")$preposition)` the median)
+* Remaining life expectancy at age 60: `r (round(subset(focal_life_expectancy, age==60 & table_type=="Female")$expectation_of_life,1 ))` years women (`r abs(round(subset(focal_life_expectancy, age==60 & table_type=="Female")$standardized_expectation_of_life,1))` years `r (subset(focal_life_expectancy, age==60 & table_type=="Female")$preposition)` the median),  `r (abs(round(subset(focal_life_expectancy, age==60 & table_type=="Male")$expectation_of_life,1 )))` years men (`r (abs(round(subset(focal_life_expectancy, age==60 & table_type=="Male")$standardized_expectation_of_life,1)))` years `r (subset(focal_life_expectancy, age==60 & table_type=="Male")$preposition)` the median)
+
+We can also plot the extra / fewer years of life expected for this state (red) compared to other states (dark gray) at each age. Again, this is normalized for the median state.
+
+
+`r paste0("<img src='docs/images/life_expectancy_", state_abbreviation, ".png' alt='Line plots showing difference in life expectancy for each age for people of this state versus the median state'>") `
 
 # SAT scores
 

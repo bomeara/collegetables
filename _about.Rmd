@@ -11,12 +11,18 @@ output:
 
 This was done over a break in summer 2022 while starting to take my kids on college visits, then updated over winter break 2022-3 and tweaked to update with new data; as I mention on the home page, while there are lots of "College Ranking" websites, they use some odd factors to rank (such as college administrators ranking each other, standardized testing scores, how many students they reject, and more for [US News and World Report](https://www.usnews.com/education/best-colleges/articles/ranking-criteria-and-weights)) while omitting things like tenure track faculty numbers, library resources, climate, and whether the state safe for LGBTQ+ students. The US federal data have information on lots of schools: I chose to present info on all the schools that are still open rather than filter for the schools just of interest to my family (my kids are not going to seminary for a Masters degree or to a school for funeral service directors any time soon, but this might be of interest to students, staff, or faculty considering those schools, so I am including them). Some schools, especially smaller ones (some have just a few dozen students) do not include all information and so these school pages might be sparse.
 
+*The New York Times'* Ron Lieber <a href='https://www.nytimes.com/2023/04/15/your-money/college-cost-data-tools.html?unlocked_article_code=hN2IwBdFONp5CmgbxhKM-HVUid0P2EEoomfIcGniJ6EcogeoxOwoimKabx7gynOb0f6-QxIpIELuqqT35rk-nLmDMZMDAljFtcY-YQBvNGWVgLCKOj7omvSxUjcQbXnG4B8H67gTFWQA8USo6Y3Xs5RWuXjQ8Chp2WchftGv-k9oTf7m0nPvki2JmPoQiawOquJTtiwFG9lxEX5-vSzJIvBPu5Gl_-jhW5wisUpTZCQWfzr9Ar56ix7q2rQ2B4qqyQxpPWqow2gJ_D0eF5c4PhAzh-QksTofGv9rUG0SJmgnDhUkCcF361B0kpugBjccqwqYBuaTbSFMqBowPacjapogDFA&giftCopy=1_CurrentCopy&smid=url-share'>wrote an article</a> featuring this site and others that may be helpful for you.
+
 **If you have feedback on the site (corrections, good data sources, etc.) please go [here](https://forms.gle/C9D7WXaMDVrTm3Z3A) (and thank you!).**
 
 There are two main types of pages on this site: one page for each institution (over 9,000 of them) and pages of degrees offered by various groupings of schools.
 
 * The institutions have their individual data as well as comparisons with "similar" schools, where similar is based on athletic conference (for example, small liberal arts schools in Western Massachusetts), the type of the school (i.e., is it a research intensive doctoral institution). For metrics where one direction is better (lower cost is good; more faculty is good) there is a ranking versus schools in the comparison group. There are also line plots showing trends over time. If a trend is "significant" (i.e., it is not likely to be due to random chance, as assessed by fitting a linear model (and not correcting for multiple comparisons)) then there is a column indicating the slope of the trend.
 * The degrees pages show degrees awarded in different fields in the most recent year available. There are many, many specific majors, so the main groups are listed at [fields_overview.html] and you can then drill down into the subfields. 
+
+## Changes
+
+* May 19, 2023: Updated with latest information on abortion, legislative risk, and some changes in Missouri and Florida. Also added information on distance to mountains.
 
 ## Details of the metrics
 
@@ -65,8 +71,8 @@ There are two main types of pages on this site: one page for each institution (o
 * [National Center for Education Statistics IPEDS](https://nces.ed.gov/ipeds/use-the-data): Source of much of the data on enrollment, composition of the student body and faculty, income sources, and more. Data come from mostly 2019-2020 (before the worst effects of the pandemic hit). Some data may have changed rapidly (reorganizing athletic conferences has become popular, for example).
 * Walkability comes from [US EPA data](https://www.epa.gov/smartgrowth/smart-location-mapping): I've rescaled it so that 76-100% is most walkable, 52-76% is above average walkable, 29-52% is below average walkable, and 0-29% is least walkable.
 * Anti-LGBTQ+ laws come from assessments made under [California bill 1887](https://oag.ca.gov/ab1887), as of July 31, 2022, which requires the California Attorney General to determine which states have laws that support discrimination against against lesbian, gay, bisexual, and transgender people and bans state-sponsored travel to those states. Note that this is a property of the state an institution is in, not any policies of the institution itself. 
-* Abortion restrictions come from assessments from the [Guttmacher Institute](https://states.guttmacher.org/policies/) as of March 26, 2023. This may change quickly.
-* Anti-Trans legislative risk comes from [Erin Reed](https://erininthemorn.substack.com/p/march-anti-trans-legislative-risk) as of March 18, 2023. This is another area changing quickly.
+* Abortion restrictions come from assessments from the [Guttmacher Institute](https://states.guttmacher.org/policies/) as of May 10, 2023. This may change quickly.
+* Anti-Trans legislative risk comes from [Erin Reed](https://erininthemorn.substack.com/p/april-anti-trans-legislative-risk) as of April 2, 2023. This is another area changing quickly.
 * Gun law strictness comes from the [Giffords Law Center to Prevent Gun Violence](https://giffords.org/lawcenter/resources/scorecard/) as of Aug. 8, 2022. 
 * Campus misconduct information comes from the [US Department of Education's Campus Safety and Security](https://ope.ed.gov/campussafety/#/) report. This includes data from all institutions that receive US Title IV funding, which includes most instititutions. These numbers are almost certainly a gross underestimate: see [RAINN](https://www.rainn.org/) to learn more.
 * Covid vaccination requirements for students and employees comes from a [database compiled by Andy Thomason and Brian O'Leary for *The Chronicle of Higher Education*](https://www.chronicle.com/blogs/live-coronavirus-updates/heres-a-list-of-colleges-that-will-require-students-to-be-vaccinated-against-covid-19). Hopefully covid is waning, but it is a good indicator of whether a school will do a fairly basic step to keep their communities safe. Note that this field is based on text matching between a school name in IPEDS data and a school name in their database. It is also possible that a small school is missing from their database.
@@ -74,6 +80,10 @@ There are two main types of pages on this site: one page for each institution (o
 * [WorldClim's Bioclimatic variables](https://www.worldclim.org/data/bioclim.html) are used for getting temperature and precipitation.
 * Biome information comes from the [World Wildlife Fund](http://omap.africanmarineatlas.org/BIOSPHERE/data/note_areas_sp/Ecoregions_Ecosystems/WWF_Ecoregions/WWFecoregions.htm) and is accessed using Alexander Zizka and Alexandre Antonelli's [speciesgeocodeR](https://github.com/azizka/speciesgeocodeR) package ([Töpel et al. 2017](https://academic.oup.com/sysbio/article/66/2/145/2670075)).
 * Map data comes from [OpenStreetMap](https://www.openstreetmap.org/).
+* Distance to mountains comes from:
+    - Mark A. Snethlage, Jonas Geschke, Ajay Ranipeta, Walter Jetz, Nigel G. Yoccoz, Christian Körner, Eva M. Spehn, Markus Fischer, Davnah Urbach. (2022) A hierarchical inventory of the world’s mountains for global comparative mountain science. Sci Data 9, 149. doi:10.1038/s41597-022-01256-y
+    - Global Mountain Biodiversity Assessment (2021) GMBA Mountain Inventory v2. GMBA-EarthEnv. doi:10.48601/earthenv-t9k2-1407.
+    - Using the gmbaR package: https://github.com/GMBA-biodiversity/gmbaR
 
 
 Made by Brian O'Meara, working as an individual parent (not as part of any employment, grant, etc.). It is hosted at https://github.com/bomeara/collegetables and made using the R packages knitr, tidyverse, tarchetypes, DT, usmap, ggplot2, ggrepel, plotly, leaflet, rmarkdown, htmlTable, ggbeeswarm, speciesgeocodeR, raster, viridisLite, graphics, and stats. The page is open source, so you can give [suggestions](https://forms.gle/C9D7WXaMDVrTm3Z3A) (especially for new data sources) or even fork it; just make sure to cite the original data sources. 
