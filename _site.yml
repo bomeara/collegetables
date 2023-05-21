@@ -8,5 +8,7 @@ navbar:
       href: about.html
     - text: "Fields"
       href: fields_overview.html	
+    - text: "Tenure"
+      href: tenure.html	
 output_dir: "docs"
 

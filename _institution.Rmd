@@ -199,6 +199,14 @@ try({
 
 ```{r}
 try({
+	if(most_current_info['State'] == "Florida") {
+		notes <- append(notes, '"Florida is openly hostile toward African Americans, people of color and LGBTQ+ individuals. Before traveling to Florida, please understand that the state of Florida devalues and marginalizes the contributions of, and the challenges faced by African Americans and other communities of color" according to an [NAACP travel advisory](https://naacp.org/articles/naacp-issues-travel-advisory-florida) of May 20, 2023.')
+	}
+}, silent=TRUE)
+```
+
+```{r}
+try({
 	if(most_current_info['State'] == "Florida" & grepl("public", most_current_info['Sector of institution'], ignore.case=TRUE)) {
 		notes <- append(notes, "By <a href='https://www.washingtonpost.com/education/2023/05/15/desantis-defunds-dei-programs-florida-colleges/'>state law</a>, this public institution may not spend state or federal money on diversity, equity, or inclusion efforts, with limited exceptions. There are also government restrictions on what courses can be taught.")
 	}
@@ -535,7 +543,7 @@ try({
 
 ```{r, results='asis'}
 if(length(notes)>0) {
-	cat("# Notes\nThese are items that bear looking into more closely: some may be problems, some may be neutral, some may be good. These are just things that are worth noticing.\n\n")
+	cat("# Notes\nThese are items that bear looking into more closely.\n\n")
 	for (note in notes) {
 		cat(paste0('* ', note, "\n\n"))	
 	}	
@@ -559,7 +567,7 @@ if(length(notes)>0) {
 `r ifelse(!is.na(most_current_info['Graduation Rate Bachelors in within 150 percent of normal time Grand total']), paste0('* **Graduation rate (within 6 years) for students seeking a Bachelors**: ', round(as.numeric(most_current_info['Graduation Rate Bachelors in within 150 percent of normal time Grand total']),1), '% (this is what is usually reported as "graduation rate")\n'), "")`
 `r ifelse(!is.na(most_current_info['Graduation Rate Bachelors in 4 years or less Grand total']), paste0('* **Graduation rate (within 4 years) for students seeking a Bachelors**: ', round(as.numeric(most_current_info['Graduation Rate Bachelors in 4 years or less Grand total']),1), '%\n'), "")`
 `r ifelse(!is.na(most_current_info['Graduation Rate Transfer out of bachelors Grand total']), paste0('* **Percent of students seeking a Bachelors who transfer out of this institution**: ', round(as.numeric(most_current_info['Graduation Rate Transfer out of bachelors Grand total']),1), '%\n'), "")`
-* **Student to tenure-stream faculty ratio**: `r round(as.numeric(most_current_info['Full time undergrad enrollment divided by tenure stream faculty']),1)` (undergrads to tenure-stream faculty)
+* **Student to tenure-stream faculty ratio**: `r round(as.numeric(most_current_info['Full time undergrad enrollment divided by tenure stream faculty']),1)` (undergrads to tenure-stream faculty) [[Tenure explained](tenure.html)]
 * **Student to faculty ratio**: `r round(as.numeric(most_current_info['Full time undergrad enrollment divided by total instructors']),1)` (undergrads to all faculty)
 * **Degrees offered**: `r most_current_info['Degrees offered']`
 * **Schedule**: `r most_current_info['Calendar system']`
@@ -579,7 +587,7 @@ if(length(notes)>0) {
 * **Gun law stringency**: `r most_current_info['Gun Law Stringency']` (higher grade = [more stringent](https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state))
 * **State rep support for contraception**: `r round(100*as.numeric(most_current_info['Proportion of reps voting in favor of respect for right to contraception act']),1)`% of US reps from this state [voted in favor](https://www.congress.gov/bill/117th-congress/house-bill/8373) of legal protections for contraception.
 * **State rep support for recognizing same-sex and interracial marriage**: `r round(100*as.numeric(most_current_info['Proportion of reps voting in favor of respect for marriage act']),1)`% of US reps from this state [voted in favor](https://www.congress.gov/bill/117th-congress/house-bill/8404) of requiring states to recognize same-sex and interracial marriages performed in other states
-* **Anti-trans legislative risk**: `r gsub("\\d: ", "", most_current_info['Trans Risk'])` (based on [Erin Reed's work](https://www.erininthemorning.com/p/april-anti-trans-legislative-risk), as of April 2, 2023)
+* **Anti-trans legislative risk**: `r gsub("\\d: ", "", most_current_info['Trans Risk'])` (based on [Erin Reed's work](https://www.erininthemorning.com/p/may-anti-trans-legislative-risk-mapk), as of May 19, 2023)
 * **Ecological region**: `r most_current_info['eco_name']`
 * **Biome**: `r most_current_info['biome']`
 * **Distance to mountains**: `r round(as.numeric(most_current_info['MilesToMountains']),1)` miles to `r most_current_info['ClosestMountainRange']`

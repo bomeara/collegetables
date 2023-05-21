@@ -1603,8 +1603,24 @@ RenderStatePages <- function(degree_granting, students_by_state_by_institution, 
 RenderIndexPageEtAl <- function(pages, index_table, yml) {
 	system("rm docs/index.html")
 	#system("rm docs/degrees_by*")
+	rmarkdown::render(
+		input="_about.Rmd", 
+		output_file="docs/about.html", 
+		quiet=FALSE
+	)
+	
+	rmarkdown::render(
+		input="_fields_overview.Rmd", 
+		output_file="docs/fields_overview.html", 
+		quiet=FALSE
+	)	
 
-
+	rmarkdown::render(
+		input="_tenure.Rmd", 
+		output_file="docs/tenure.html", 
+		quiet=FALSE
+	)
+	
 	rmarkdown::render(
 				input="_index.Rmd", 
 				output_file="docs/index.html", 
@@ -1631,17 +1647,7 @@ RenderIndexPageEtAl <- function(pages, index_table, yml) {
 	# 			output_file="docs/degrees_by_type.html", 
 	# 			quiet=TRUE
 	# )
-	rmarkdown::render(
-		input="_about.Rmd", 
-		output_file="docs/about.html", 
-		quiet=FALSE
-	)
-	
-	rmarkdown::render(
-		input="_fields_overview.Rmd", 
-		output_file="docs/fields_overview.html", 
-		quiet=FALSE
-	)	
+
 }
 
 FilterForTopAndSave <- function(overview) {

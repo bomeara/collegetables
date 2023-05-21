@@ -1,0 +1,70 @@
+---
+title: Tenure
+output:
+  rmdformats::readthedown:
+    self_contained: false
+    includes:
+      in_header: GA_Script.html
+---
+
+## Tenure
+
+A big source of confusion is what is tenure. Is it important, why are some places getting rid of it, is it really a job for life, etc.?
+
+At a lot of workplaces in the US, someone is hired for a job, and they can continue doing that job. They might get promoted (from cook to manager, for example), but they don't have to be: as long as they keep doing the work, that's fine. They might be an at-will employee: the employer can fire the employee at any time (for a non-illegal reason -- one can't fire an employee due to their religion, for example). But the employee can also quit at any time. A different form of employment is to have a contract: employer and employee agree on a job, duties, and compensation for a year or other duration. At the end of that, they can renegotiate, or the contract can end. Leaving / firing during the contract is harder but can happen for cause (employee doesn't show up, for example).
+
+However, a third kind of employment is "up or out". This is used in many law firms, accounting agencies, in the US military, and in much of academia. In this kind of employment, one is hired for a job, but there is a time limit on how long one can stay in that job. At the end of that time, one is either promoted or fired. This is called "up or out" because one either moves up to a higher position, or one is out of the organization. For example, in a law firm, an associate may have a set time period to work to meet the criteria to become a partner. They work hard to build their client list, experience, success; then the existing partners can vote to make them a partner or fire them. A partner generally becomes a co-owner of the firm (though there are non-equity partners): unlike someone working week to week or year to year, they have a long term stake in its success. 
+
+Within academia, the "up or out" system is tenure. Someone is hired as an assistant professor (typically from a pool of 50-800 candidates). They have annual reviews of performance, but often have an intense review after three or so years and a tenure review after six years (it sounds like "tenure" is "ten year" but it's not). For the tenure review, experts in the field outside the university with no conflicts of interest are asked to review the candidate's work; the department faculty look at these reviews, assess the candidate's teaching, research, and service, and vote on whether to grant tenure. This then becomes a recommendation passed to a college or university tenure committee, who themselves make a recommendation, and so forth up the levels of academic hierarchy up to often the board of trustees. Each level has less knowledge of a candidate's field but more information on comparisons across the institution (which helps keep standards consistent). If tenure is granted, the candidate becomes an associate professor. If tenure is not granted, the candidate typically has one more year (since decisions happen late in academic hiring season) and is then fired. The candidate can appeal the decision, but overturning is rare.
+
+After getting tenure, a professor can still be fired for cause, just like someone on a two year contract can be fired for cause. If they steal money, abuse students, stop teaching, or any of a myriad other things there is a process in place to fire them (sometimes they resign before being formally fired). Some examples are at [https://academic-sexual-misconduct-database.org/incidents](https://academic-sexual-misconduct-database.org/incidents). However, they cannot be fired for their views in their area of expertise. For example, an engineering professor may criticize the design of a proposed sea wall, saying it is expensive and will last only half as long as people claim. It does not matter if a major donor to the university is the sea wall manufacturer, or if the CEO of the company is the brother of one of the US senators for the state: the faculty member will not be fired. This creates conditions for academic freedom: faculty can say what they think without fear of losing their job. It can be important to have at least some people in society who can speak truth to power.
+
+Tenure protects intellectual curiousity. A tenured person could have an idea completely heterodox in their field ("we should build sea walls out of rubber rather than steel") -- they might have trouble getting this published, but they are not going to be fired for going against the grain. This is important for the advancement of knowledge: often bizarre ideas are simply wrong, but sometimes they turn out to be right. It also affects policy. For example, which factors should be used in admissions decisions are controversial: geography of the candidates, family income, relatives who are alumni, demographic background, etc. Faculty can debate these issues without fear of losing their jobs.
+
+Another advantage of up or out systems is building a long term partnership. "Good night, Westley. Good work. Sleep well. I'll most likely kill you in the morning," [said by a pirate to a crew member in *The Princess Bride*] might be a good incentive for daily work but limits long term strategic thinking. Should a law firm branch out from transportation law to commerce law in general? It would take time to build up expertise and a client base, but might put the firm on a more solid financial footing. Having people who are incentivized to think about the effect years from now, and secure enough in their jobs that they might be willing to take a risk, is important. Within academia, long term strategies include changes in teaching approaches, long term research projects, building collaborations across departments, and more. People employed more contingently can work on all these, too, of course, but at some personal risk. 
+
+It is possible to have tenure track faculty focus on just teaching, just research, or even just service. However, it is increasingly common to have non tenure track faculty do this, at least for teaching. Sometimes they can get multiyear contracts; other times, they work semester to semester, only knowing they will have a job a few weeks in advance of a class starting. Institutionally this creates more flexibility: teaching staff can be hired and fired as desired. Pay also tends to be far lower than for tenure track faculty. The people in these roles are often the ones who would have been in tenure track jobs in the past, but find jobs without the possibility of tenure the only ones available.  
+
+Below shows the percentage of tenure stream (those who have tenure or who are on the tenure track) faculty at various large US universities over time. 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(targets)
+library(plotly)
+library(magrittr)
+library(htmlwidgets)
+
+tar_load(comparison_table)
+comparison_table$`IPEDS Year` <- as.numeric(comparison_table$`IPEDS Year`)
+comparison_table$`Total instructors` <- as.numeric(comparison_table$`Total instructors`)
+comparison_table$`Tenure-stream percent` <- 100*as.numeric(comparison_table$`Tenure-stream Grand total`)/as.numeric(comparison_table$`Total instructors`)
+comparison_table$`Graduation Rate Bachelors in within 150 percent of normal time Grand total` <- as.numeric(comparison_table$`Graduation Rate Bachelors in within 150 percent of normal time Grand total`)
+comparison_table$undergrad_total <- as.numeric(comparison_table$`AllUndergrads Grand total`)
+
+comparison_table_stable <- subset(comparison_table, `Sector of institution` %in% c("Private for-profit, 4-year or above", "Private not-for-profit, 4-year or above", "Public, 4-year or above") & `AllUndergrads Grand total` > 5000 & `Total instructors`>100)
+
+counts_of_schools <- table(comparison_table_stable$`UNITID Unique identification number of the institution`)
+
+all_there <- names(counts_of_schools)[which(counts_of_schools == max(counts_of_schools))]
+
+comparison_table_main <- subset(comparison_table_stable, `UNITID Unique identification number of the institution` %in% all_there & `IPEDS Year` > 2015)
+
+fig <- comparison_table_main %>% 
+	plot_ly(
+		x = ~`Graduation Rate Bachelors in within 150 percent of normal time Grand total`,
+		y = ~`Tenure-stream percent`,
+		frame = ~`IPEDS Year`,
+		text = ~`Institution entity name`,
+		hoverinfo = "text",
+    	type = 'scatter',
+    	mode = 'markers',
+		size = ~undergrad_total,
+		color = ~`Institutional control or affiliation`
+	) %>% 
+	layout(
+		title = 'Proportion of tenure track instructors and graduation rate through time', 
+		 xaxis = list(title = 'Graduation rate (6 years)'), 
+         yaxis = list(title = 'Percent of instructors who are tenure stream')
+	)
+
+fig
+```
