@@ -213,6 +213,14 @@ try({
 }, silent=TRUE)
 ```
 
+```{r}
+try({
+	if(most_current_info['State'] == "Texas" & grepl("public", most_current_info['Sector of institution'], ignore.case=TRUE)) {
+		notes <- append(notes, "By <a href='https://www.dallasnews.com/news/education/2023/06/14/gov-abbott-signs-dei-bill-into-law-dismantling-diversity-offices-at-colleges/'>state law</a>, this public institution by January 2024 may not have a diversity, equity, and inclusion (DEI) office or mandatory DEI statements or training.")
+	}
+}, silent=TRUE)
+```
+
 
 ```{r}
 try({
