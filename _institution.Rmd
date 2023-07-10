@@ -595,7 +595,7 @@ if(length(notes)>0) {
 * **Gun law stringency**: `r most_current_info['Gun Law Stringency']` (higher grade = [more stringent](https://worldpopulationreview.com/state-rankings/strictest-gun-laws-by-state))
 * **State rep support for contraception**: `r round(100*as.numeric(most_current_info['Proportion of reps voting in favor of respect for right to contraception act']),1)`% of US reps from this state [voted in favor](https://www.congress.gov/bill/117th-congress/house-bill/8373) of legal protections for contraception.
 * **State rep support for recognizing same-sex and interracial marriage**: `r round(100*as.numeric(most_current_info['Proportion of reps voting in favor of respect for marriage act']),1)`% of US reps from this state [voted in favor](https://www.congress.gov/bill/117th-congress/house-bill/8404) of requiring states to recognize same-sex and interracial marriages performed in other states
-* **Anti-trans legislative risk**: `r gsub("\\d: ", "", most_current_info['Trans Risk'])` (based on [Erin Reed's work](https://www.erininthemorning.com/p/may-anti-trans-legislative-risk-mapk), as of May 19, 2023)
+* **Anti-trans legislative risk**: `r gsub("\\d: ", "", most_current_info['Trans Risk'])` (based on [Erin Reed's work](https://www.erininthemorning.com/p/june-anti-trans-legislative-risk), as of June 25, 2023)
 * **Ecological region**: `r most_current_info['eco_name']`
 * **Biome**: `r most_current_info['biome']`
 * **Distance to mountains**: `r round(as.numeric(most_current_info['MilesToMountains']),1)` miles to `r most_current_info['ClosestMountainRange']`
