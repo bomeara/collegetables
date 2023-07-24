@@ -1082,7 +1082,7 @@ AppendAbortion <- function(comparison_table) {
 
 AppendCATravelBan <- function(comparison_table) {
 	print("Appending California travel ban data")
-	banned_states <- state.name[match(c("AL", "AR", "FL", "ID", "IN", "IA", "KS", "KY", "MS", "MT", "NC", "ND", "OH", "OK", "SC", "SD", "TN", "TX", "UT", "WV"),state.abb)]
+	banned_states <- state.name[match(c("AL", "AZ", "AR", "FL", "GA", "ID", "IN", "IA", "KS", "KY", "LA", "MO", "MS", "MT", "NC", "ND", "NE", "OH", "OK", "SC", "SD", "TN", "TX", "UT", "WV", "WY"),state.abb)]
 	ban_table <- data.frame(State=state.name, California.Travel.Ban=FALSE)
 	ban_table$California.Travel.Ban[match(banned_states, ban_table$State)] <- TRUE
 	ban_table <- ban_table %>% dplyr::rename(`California Travel Ban` = 'California.Travel.Ban')
